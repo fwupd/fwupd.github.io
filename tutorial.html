@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Plugin Tutorial: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="index.html" title="fwupd Reference Manual">
+<link rel="prev" href="libfwupd-FuUsbDevice.html" title="FuUsbDevice">
+<link rel="next" href="api-index-full.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="libfwupd-FuUsbDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="reference">
+<div class="titlepage">
+<div><div><h1 class="title">
+<a name="tutorial"></a>Plugin Tutorial</h1></div></div>
+<hr>
+</div>
+<div class="partintro">
+<div></div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.1"></a>Introduction</h2></div></div></div>
+<p>
+          At the heart of fwupd is a plugin loader that gets run at startup,
+          when devices get hotplugged and when updates are done.
+          The idea is we have lots of small plugins that each do one thing, and
+          are ordered by dependencies against each other at runtime.
+          Using plugins we can add support for new hardware or new policies
+          without making big changes all over the source tree.
+        </p>
+<p>
+          There are broadly 3 types of plugin methods:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>
+              <span class="strong"><strong>Mechanism</strong></span>: Upload binary data
+              into a specific hardware device.
+            </p></li>
+<li class="listitem"><p>
+              <span class="strong"><strong>Policy</strong></span>: Control the system when
+              updates are happening, e.g. preventing the user from powering-off.
+            </p></li>
+<li class="listitem"><p>
+              <span class="strong"><strong>Helpers</strong></span>: Providing more
+              metadata about devices, for instance handling device quirks.
+            </p></li>
+</ul></div>
+<p>
+          In general, building things out-of-tree isn't something that we think is
+          a very good idea; the API and ABI <span class="emphasis"><em>internal</em></span> to fwupd is still
+          changing and there's a huge benefit to getting plugins upstream where
+          they can undergo review and be ported as the API adapts.
+          For this reason we don't install the plugin headers onto the system,
+          although you can of course just install the <code class="code">.so</code> binary file
+          manually.
+        </p>
+<p>
+          A plugin only needs to define the vfuncs that are required, and the
+          plugin name is taken automatically from the suffix of the
+          <code class="filename">.so</code> file.
+        </p>
+<div class="example">
+<a name="id-1.5.2.1.7"></a><p class="title"><b>Example 1. A sample plugin</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/*</span>
+<span class="comment"> * Copyright (C) 2017 Richard Hughes</span>
+<span class="comment"> */</span>
+
+<span class="gtkdoc ppc">#include &lt;fu-plugin.h&gt;</span>
+<span class="gtkdoc ppc">#include &lt;fu-plugin-vfuncs.h&gt;</span>
+
+<span class="gtkdoc kwb">struct</span> FuPluginData <span class="gtkdoc opt">{</span>
+ gpointer proxy<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">};</span>
+
+<span class="gtkdoc kwb">void</span>
+<span class="function">fu_plugin_initialize</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="function"><a href="libfwupd-FuPlugin.html#fu-plugin-add-rule">fu_plugin_add_rule</a></span> <span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">,</span> FU_PLUGIN_RULE_RUN_BEFORE<span class="gtkdoc opt">,</span> <span class="string">&quot;dfu&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuPlugin.html#fu-plugin-alloc-data">fu_plugin_alloc_data</a></span> <span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">,</span> <span class="keyword">sizeof</span> <span class="gtkdoc opt">(</span>FuPluginData<span class="gtkdoc opt">));</span>
+<span class="gtkdoc opt">}</span>
+
+<span class="gtkdoc kwb">void</span>
+<span class="function">fu_plugin_destroy</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  FuPluginData <span class="gtkdoc opt">*</span>data <span class="gtkdoc opt">=</span> <span class="function"><a href="libfwupd-FuPlugin.html#fu-plugin-get-data">fu_plugin_get_data</a></span> <span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">);</span>
+  <span class="function">destroy_proxy</span> <span class="gtkdoc opt">(</span>data<span class="gtkdoc opt">-&gt;</span>proxy<span class="gtkdoc opt">);</span>
+<span class="gtkdoc opt">}</span>
+
+gboolean
+<span class="function">fu_plugin_startup</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  FuPluginData <span class="gtkdoc opt">*</span>data <span class="gtkdoc opt">=</span> <span class="function"><a href="libfwupd-FuPlugin.html#fu-plugin-get-data">fu_plugin_get_data</a></span> <span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">);</span>
+  data<span class="gtkdoc opt">-&gt;</span>proxy <span class="gtkdoc opt">=</span> <span class="function">create_proxy</span> <span class="gtkdoc opt">();</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span>data<span class="gtkdoc opt">-&gt;</span>proxy <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">) {</span>
+    <span class="function"><a href="../glib/glib-Error-Reporting.html#g-set-error">g_set_error</a></span> <span class="gtkdoc opt">(</span>error<span class="gtkdoc opt">,</span> FWUPD_ERROR<span class="gtkdoc opt">,</span> FWUPD_ERROR_NOT_SUPPORTED<span class="gtkdoc opt">,</span>
+                 <span class="string">&quot;failed to create proxy&quot;</span><span class="gtkdoc opt">);</span>
+    <span class="keyword">return</span> FALSE<span class="gtkdoc opt">;</span>
+  <span class="gtkdoc opt">}</span>
+  <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          We have to define when our plugin is run in reference to other plugins,
+          in this case, making sure we run before the <code class="code">dfu</code> plugin.
+          For most plugins it does not matter in what order they are run and
+          this information is not required.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.2"></a>Creating an abstract device</h2></div></div></div>
+<p>
+          This section shows how you would create a device which is exported
+          to the daemon and thus can be queried and updated by the client software.
+          The example here is all hardcoded, and a true plugin would have to
+          derive the details about the <code class="code">FuDevice</code> from the hardware,
+          for example reading data from <code class="code">sysfs</code> or <code class="code">/dev</code>.
+        </p>
+<div class="example">
+<a name="id-1.5.2.2.3"></a><p class="title"><b>Example 2. Example adding a custom device</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc ppc">#include &lt;fu-plugin.h&gt;</span>
+
+gboolean
+<span class="function">fu_plugin_coldplug</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="function"><a href="../glib/glib-Miscellaneous-Macros.html#g-autoptr">g_autoptr</a></span><span class="gtkdoc opt">(</span>FuDevice<span class="gtkdoc opt">)</span> dev <span class="gtkdoc opt">=</span> NULL<span class="gtkdoc opt">;</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-set-id">fu_device_set_id</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;dummy-1:2:3&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-add-guid">fu_device_add_guid</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;2d47f29b-83a2-4f31-a2e8-63474f4d4c2e&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-set-version">fu_device_set_version</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;1.2.3&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-get-version-lowest">fu_device_get_version_lowest</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;1.2.2&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-get-version-bootloader">fu_device_get_version_bootloader</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;0.1.2&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-add-icon">fu_device_add_icon</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> <span class="string">&quot;computer&quot;</span><span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-add-flag">fu_device_add_flag</a></span> <span class="gtkdoc opt">(</span>dev<span class="gtkdoc opt">,</span> FWUPD_DEVICE_FLAG_UPDATABLE<span class="gtkdoc opt">);</span>
+  <span class="function"><a href="libfwupd-FuPlugin.html#fu-plugin-device-add">fu_plugin_device_add</a></span> <span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">,</span> dev<span class="gtkdoc opt">);</span>
+  <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          This shows a lot of the plugin architecture in action. Some notable points:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>
+              The device ID (<code class="code">dummy-1:2:3</code>) has to be unique on the
+              system between all plugins, so including the plugin name as a
+              prefix is probably a good idea.
+            </p></li>
+<li class="listitem"><p>
+              The GUID value can be generated automatically using
+              <code class="code">fu_device_add_guid(dev,"some-identifier")</code> but is quoted
+              here explicitly.
+              The GUID value has to match the <code class="code">provides</code> value in the
+              <code class="code">.metainfo.xml</code> file for the firmware update to succeed.
+            </p></li>
+<li class="listitem"><p>
+              Setting a display name and an icon is a good idea in case the
+              GUI software needs to display the device to the user.
+              Icons can be specified using a full path, although icon theme names
+              should be preferred for most devices.
+            </p></li>
+<li class="listitem"><p>
+              The <code class="code">FWUPD_DEVICE_FLAG_UPDATABLE</code> flag tells the client
+              code that the device is in a state where it can be updated.
+              If the device needs to be in a special mode (e.g. a bootloader) then
+              the <code class="code">FWUPD_DEVICE_FLAG_NEEDS_BOOTLOADER</code> flag can also be
+              used.
+              If the update should only be allowed when there is AC power available
+              to the computer (i.e. not on battery) then
+              <code class="code">FWUPD_DEVICE_FLAG_REQUIRE_AC</code> should be used as well.
+              There are other flags and the API documentation should be used when
+              choosing what flags to use for each kind of device.
+            </p></li>
+<li class="listitem"><p>
+              Setting the lowest allows client software to refuse downgrading
+              the device to specific versions.
+              This is required in case the upgrade migrates some kind of data-store
+              so as to be incompatible with previous versions.
+              Similarly, setting the version of the bootloader (if known) allows
+              the firmware to depend on a specific bootloader version, for instance
+              allowing signed firmware to only be installable on hardware with
+              a bootloader new enough to deploy it
+            </p></li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.3"></a>Mechanism Plugins</h2></div></div></div>
+<p>
+          Although it would be a wonderful world if we could update all hardware
+          using a standard shared protocol this is not the universe we live in.
+          Using a mechanism like DFU or UpdateCapsule means that fwupd will just
+          work without requiring any special code, but for the real world we need
+          to support vendor-specific update protocols with layers of backwards
+          compatibility.
+        </p>
+<p>
+          When a plugin has created a device that is <code class="code">FWUPD_DEVICE_FLAG_UPDATABLE</code>
+          we can ask the daemon to update the device with a suitable
+          <code class="code">.cab</code> file.
+          When this is done the daemon checks the update for compatibility with
+          the device, and then calls the vfuncs to update the device.
+        </p>
+<div class="example">
+<a name="id-1.5.2.3.4"></a><p class="title"><b>Example 3. Updating a device</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span>
+                  FuDevice <span class="gtkdoc opt">*</span>dev<span class="gtkdoc opt">,</span>
+                  GBytes <span class="gtkdoc opt">*</span>blob_fw<span class="gtkdoc opt">,</span>
+                  FwupdInstallFlags flags<span class="gtkdoc opt">,</span>
+                  GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  gsize sz <span class="gtkdoc opt">=</span> <span class="number">0</span><span class="gtkdoc opt">;</span>
+  guint8 <span class="gtkdoc opt">*</span>buf <span class="gtkdoc opt">=</span> <span class="function"><a href="../glib/glib-Byte-Arrays.html#g-bytes-get-data">g_bytes_get_data</a></span> <span class="gtkdoc opt">(</span>blob_fw<span class="gtkdoc opt">, &amp;</span>sz<span class="gtkdoc opt">);</span>
+  <span class="comment">/* write &apos;buf&apos; of size &apos;sz&apos; to the hardware */</span>
+  <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><p>
+          It's important to note that the <code class="code">blob_fw</code> is the binary
+          firmware file (e.g. <code class="code">.dfu</code>) and <span class="strong"><strong>not</strong></span>
+          the <code class="code">.cab</code> binary data.
+        </p>
+<p>
+          If <code class="code">FWUPD_INSTALL_FLAG_FORCE</code> is used then the usual checks
+          done by the flashing process can be relaxed (e.g. checking for quirks),
+          but please don't brick the users hardware even if they ask you to.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.4"></a>Policy Helpers</h2></div></div></div>
+<p>
+          For some hardware, we might want to do an action before or after
+          the actual firmware is squirted into the device.
+          This could be something as simple as checking the system battery
+          level is over a certain threshold, or it could be as complicated as
+          ensuring a vendor-specific GPIO is asserted when specific types
+          of hardware are updated.
+        </p>
+<div class="example">
+<a name="id-1.5.2.4.3"></a><p class="title"><b>Example 4. Running before a device update</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update_prepare</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> FuDevice <span class="gtkdoc opt">*</span>device<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="libfwupd-FuDevice.html#fu-device-has-flag">fu_device_has_flag</a></span> <span class="gtkdoc opt">(</span>device<span class="gtkdoc opt">,</span> FWUPD_DEVICE_FLAG_REQUIRE_AC <span class="gtkdoc opt">&amp;&amp; !</span><span class="function">on_ac_power</span> <span class="gtkdoc opt">()) {</span>
+    <span class="function"><a href="../glib/glib-Error-Reporting.html#g-set-error-literal">g_set_error_literal</a></span> <span class="gtkdoc opt">(</span>error<span class="gtkdoc opt">,</span>
+                         FWUPD_ERROR<span class="gtkdoc opt">,</span>
+                         FWUPD_ERROR_AC_POWER_REQUIRED<span class="gtkdoc opt">,</span>
+                         <span class="string">&quot;Cannot install update &quot;</span>
+                         <span class="string">&quot;when not on AC power&quot;</span><span class="gtkdoc opt">);</span>
+    <span class="keyword">return</span> FALSE<span class="gtkdoc opt">;</span>
+  <span class="gtkdoc opt">}</span>
+  <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><div class="example">
+<a name="id-1.5.2.4.4"></a><p class="title"><b>Example 5. Running after a device update</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update_cleanup</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> FuDevice <span class="gtkdoc opt">*</span>device<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="keyword">return</span> <span class="function"><a href="../glib/glib-File-Utilities.html#g-file-set-contents">g_file_set_contents</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;/var/lib/fwupd/something&quot;</span><span class="gtkdoc opt">,</span>
+                              <span class="function"><a href="libfwupd-FuDevice.html#fu-device-get-id">fu_device_get_id</a></span> <span class="gtkdoc opt">(</span>device<span class="gtkdoc opt">), -</span><span class="number">1</span><span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break">
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.5"></a>Detaching to bootloader mode</h2></div></div></div>
+<p>
+          Some hardware can only be updated in a special bootloader mode, which
+          for most devices can be switched to automatically.
+          In some cases the user to do something manually, for instance
+          re-inserting the hardware with a secret button pressed.
+        </p>
+<p>
+          Before the device update is performed the fwupd daemon runs an optional
+          <code class="code">update_detach()</code> vfunc which switches the device to
+          bootloader mode.
+          After the update (or if the update fails) an the daemon runs an
+          optional <code class="code">update_attach()</code> vfunc which should switch the
+          hardware back to runtime mode.
+          Finally an optional <code class="code">update_reload()</code> vfunc is run to
+          get the new firmware version from the hardware.
+        </p>
+<p>
+          The optional vfuncs are <span class="strong"><strong>only</strong></span> run
+          on the plugin currently registered to handle the device ID, although
+          the registered plugin can change during the attach and detach phases.
+        </p>
+<div class="example">
+<a name="id-1.5.2.5.5"></a><p class="title"><b>Example 6. Running before a device update</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update_detach</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> FuDevice <span class="gtkdoc opt">*</span>device<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span>hardware_in_bootloader<span class="gtkdoc opt">)</span>
+    <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+  <span class="keyword">return</span> <span class="function">_device_detach</span><span class="gtkdoc opt">(</span>device<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><div class="example">
+<a name="id-1.5.2.5.6"></a><p class="title"><b>Example 7. Running after a device update</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update_attach</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> FuDevice <span class="gtkdoc opt">*</span>device<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(!</span>hardware_in_bootloader<span class="gtkdoc opt">)</span>
+    <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+  <span class="keyword">return</span> <span class="function">_device_attach</span><span class="gtkdoc opt">(</span>device<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break"><div class="example">
+<a name="id-1.5.2.5.7"></a><p class="title"><b>Example 8. Running after a device update on success</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td>
+        <td class="listing_code"><pre class="programlisting">gboolean
+<span class="function">fu_plugin_update_reload</span> <span class="gtkdoc opt">(</span>FuPlugin <span class="gtkdoc opt">*</span>plugin<span class="gtkdoc opt">,</span> FuDevice <span class="gtkdoc opt">*</span>device<span class="gtkdoc opt">,</span> GError <span class="gtkdoc opt">**</span>error<span class="gtkdoc opt">)</span>
+<span class="gtkdoc opt">{</span>
+  g_autofree gchar <span class="gtkdoc opt">*</span>version <span class="gtkdoc opt">=</span> <span class="function">_get_version</span><span class="gtkdoc opt">(</span>plugin<span class="gtkdoc opt">,</span> device<span class="gtkdoc opt">,</span> error<span class="gtkdoc opt">);</span>
+  <span class="keyword">if</span> <span class="gtkdoc opt">(</span>version <span class="gtkdoc opt">==</span> NULL<span class="gtkdoc opt">)</span>
+    <span class="keyword">return</span> FALSE<span class="gtkdoc opt">;</span>
+  <span class="function"><a href="libfwupd-FuDevice.html#fu-device-set-version">fu_device_set_version</a></span><span class="gtkdoc opt">(</span>device<span class="gtkdoc opt">,</span> version<span class="gtkdoc opt">);</span>
+  <span class="keyword">return</span> TRUE<span class="gtkdoc opt">;</span>
+<span class="gtkdoc opt">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break">
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.6"></a>The Plugin Object Cache</h2></div></div></div>
+<p>
+          The fwupd daemon provides a per-plugin cache which allows objects
+          to be added, removed and queried using a specified key.
+          Objects added to the cache must be <code class="code">GObject</code>s to enable the
+          cache objects to be properly refcounted.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.7"></a>Debugging a Plugin</h2></div></div></div>
+<p>
+          If the fwupd daemon is started with <code class="code">--plugin-verbose=$plugin</code>
+          then the environment variable <code class="code">FWUPD_$PLUGIN_VERBOSE</code> is
+          set process-wide.
+          This allows plugins to detect when they should output detailed debugging
+          information that would normally be too verbose to keep in the journal.
+          For example, using <code class="code">--plugin-verbose=unifying</code> would set
+          <code class="code">FWUPD_UNIFYING_VERBOSE=1</code>.
+        </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>

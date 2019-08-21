@@ -1,0 +1,2143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FwupdRelease: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="libfwupd.html" title="libfwupd">
+<link rel="prev" href="libfwupd-FwupdDevice.html" title="FwupdDevice">
+<link rel="next" href="libfwupd-FwupdRemote.html" title="FwupdRemote">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfwupd-FwupdRelease.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="libfwupd.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfwupd-FwupdDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfwupd-FwupdRemote.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfwupd-FwupdRelease"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfwupd-FwupdRelease.top_of_page"></a>FwupdRelease</span></h2>
+<p>FwupdRelease — a firmware release</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfwupd-FwupdRelease.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="returnvalue">FwupdRelease</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-new" title="fwupd_release_new ()">fwupd_release_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-to-string" title="fwupd_release_to_string ()">fwupd_release_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-version" title="fwupd_release_get_version ()">fwupd_release_get_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-version" title="fwupd_release_set_version ()">fwupd_release_set_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-uri" title="fwupd_release_get_uri ()">fwupd_release_get_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-uri" title="fwupd_release_set_uri ()">fwupd_release_set_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-categories" title="fwupd_release_get_categories ()">fwupd_release_get_categories</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-category" title="fwupd_release_add_category ()">fwupd_release_add_category</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-has-category" title="fwupd_release_has_category ()">fwupd_release_has_category</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-checksums" title="fwupd_release_get_checksums ()">fwupd_release_get_checksums</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-checksum" title="fwupd_release_add_checksum ()">fwupd_release_add_checksum</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-has-checksum" title="fwupd_release_has_checksum ()">fwupd_release_has_checksum</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-metadata" title="fwupd_release_get_metadata ()">fwupd_release_get_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-metadata" title="fwupd_release_add_metadata ()">fwupd_release_add_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-metadata-item" title="fwupd_release_add_metadata_item ()">fwupd_release_add_metadata_item</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-metadata-item" title="fwupd_release_get_metadata_item ()">fwupd_release_get_metadata_item</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-filename" title="fwupd_release_get_filename ()">fwupd_release_get_filename</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-filename" title="fwupd_release_set_filename ()">fwupd_release_set_filename</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-protocol" title="fwupd_release_get_protocol ()">fwupd_release_get_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-protocol" title="fwupd_release_set_protocol ()">fwupd_release_set_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-appstream-id" title="fwupd_release_get_appstream_id ()">fwupd_release_get_appstream_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-appstream-id" title="fwupd_release_set_appstream_id ()">fwupd_release_set_appstream_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-remote-id" title="fwupd_release_get_remote_id ()">fwupd_release_get_remote_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-remote-id" title="fwupd_release_set_remote_id ()">fwupd_release_set_remote_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-vendor" title="fwupd_release_get_vendor ()">fwupd_release_get_vendor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-vendor" title="fwupd_release_set_vendor ()">fwupd_release_set_vendor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-name" title="fwupd_release_get_name ()">fwupd_release_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-name" title="fwupd_release_set_name ()">fwupd_release_set_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-summary" title="fwupd_release_get_summary ()">fwupd_release_get_summary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-summary" title="fwupd_release_set_summary ()">fwupd_release_set_summary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-description" title="fwupd_release_get_description ()">fwupd_release_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-description" title="fwupd_release_set_description ()">fwupd_release_set_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-homepage" title="fwupd_release_get_homepage ()">fwupd_release_get_homepage</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-homepage" title="fwupd_release_set_homepage ()">fwupd_release_set_homepage</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-details-url" title="fwupd_release_get_details_url ()">fwupd_release_get_details_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-details-url" title="fwupd_release_set_details_url ()">fwupd_release_set_details_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-source-url" title="fwupd_release_get_source_url ()">fwupd_release_get_source_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-source-url" title="fwupd_release_set_source_url ()">fwupd_release_set_source_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-size" title="fwupd_release_get_size ()">fwupd_release_get_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-size" title="fwupd_release_set_size ()">fwupd_release_set_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-license" title="fwupd_release_get_license ()">fwupd_release_get_license</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-license" title="fwupd_release_set_license ()">fwupd_release_set_license</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfwupd-fwupd-enums.html#FwupdTrustFlags" title="enum FwupdTrustFlags"><span class="returnvalue">FwupdTrustFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-trust-flags" title="fwupd_release_get_trust_flags ()">fwupd_release_get_trust_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-trust-flags" title="fwupd_release_set_trust_flags ()">fwupd_release_set_trust_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="returnvalue">FwupdReleaseFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-flags" title="fwupd_release_get_flags ()">fwupd_release_get_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-flags" title="fwupd_release_set_flags ()">fwupd_release_set_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-flag" title="fwupd_release_add_flag ()">fwupd_release_add_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-remove-flag" title="fwupd_release_remove_flag ()">fwupd_release_remove_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-has-flag" title="fwupd_release_has_flag ()">fwupd_release_has_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-install-duration" title="fwupd_release_get_install_duration ()">fwupd_release_get_install_duration</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-install-duration" title="fwupd_release_set_install_duration ()">fwupd_release_set_install_duration</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-update-message" title="fwupd_release_get_update_message ()">fwupd_release_get_update_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-update-message" title="fwupd_release_set_update_message ()">fwupd_release_set_update_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="returnvalue">FwupdRelease</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-from-variant" title="fwupd_release_from_variant ()">fwupd_release_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-array-from-variant" title="fwupd_release_array_from_variant ()">fwupd_release_array_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfwupd-FwupdRelease.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfwupd-FwupdRelease.html#FWUPD-TYPE-RELEASE:CAPS" title="FWUPD_TYPE_RELEASE">FWUPD_TYPE_RELEASE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libfwupd-FwupdRelease.html#FwupdReleaseClass" title="struct FwupdReleaseClass">FwupdReleaseClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease">FwupdRelease</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfwupd-FwupdRelease.description"></a><h2>Description</h2>
+<p>An object that represents a firmware release with a specific version.
+Devices can have more than one release, and the releases are typically
+ordered by their version.</p>
+<p>See also: <a class="link" href="libfwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p>
+</div>
+<div class="refsect1">
+<a name="libfwupd-FwupdRelease.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fwupd-release-new"></a><h3>fwupd_release_new ()</h3>
+<pre class="programlisting"><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="returnvalue">FwupdRelease</span></a> *
+fwupd_release_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new release.</p>
+<div class="refsect3">
+<a name="fwupd-release-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-to-string"></a><h3>fwupd_release_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_to_string (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Builds a text representation of the object.</p>
+<div class="refsect3">
+<a name="fwupd-release-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-to-string.returns"></a><h4>Returns</h4>
+<p> text, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-version"></a><h3>fwupd_release_get_version ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_version (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update version.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-version.returns"></a><h4>Returns</h4>
+<p> the update version, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-version"></a><h3>fwupd_release_set_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_version (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets the update version.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>the update version, e.g. <code class="literal">1.2.4</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-uri"></a><h3>fwupd_release_get_uri ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_uri (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update uri.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-uri.returns"></a><h4>Returns</h4>
+<p> the update uri, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-uri"></a><h3>fwupd_release_set_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_uri (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>);</pre>
+<p>Sets the update uri, i.e. where you can download the firmware from.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>the update URI</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-categories"></a><h3>fwupd_release_get_categories ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_release_get_categories (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the release categories.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-categories.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-categories.returns"></a><h4>Returns</h4>
+<p>the categories, which may be empty. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.2.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-category"></a><h3>fwupd_release_add_category ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_category (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category</code></em>);</pre>
+<p>Adds the update category.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-category.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>category</p></td>
+<td class="parameter_description"><p>the update category, e.g. <code class="literal">X-EmbeddedController</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-has-category"></a><h3>fwupd_release_has_category ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_release_has_category (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category</code></em>);</pre>
+<p>Finds out if the release has the update category.</p>
+<div class="refsect3">
+<a name="fwupd-release-has-category.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>category</p></td>
+<td class="parameter_description"><p>the update category, e.g. <code class="literal">X-EmbeddedController</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-has-category.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the release matches</p>
+</div>
+<p class="since">Since: 1.2.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-checksums"></a><h3>fwupd_release_get_checksums ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_release_get_checksums (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the release checksums.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-checksums.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-checksums.returns"></a><h4>Returns</h4>
+<p>the checksums, which may be empty. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-checksum"></a><h3>fwupd_release_add_checksum ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_checksum (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *checksum</code></em>);</pre>
+<p>Sets the update checksum.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-checksum.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>checksum</p></td>
+<td class="parameter_description"><p>the update checksum</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-has-checksum"></a><h3>fwupd_release_has_checksum ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_release_has_checksum (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *checksum</code></em>);</pre>
+<p>Finds out if the release has the update checksum.</p>
+<div class="refsect3">
+<a name="fwupd-release-has-checksum.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>checksum</p></td>
+<td class="parameter_description"><p>the update checksum</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-has-checksum.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the release matches</p>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-metadata"></a><h3>fwupd_release_get_metadata ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+fwupd_release_get_metadata (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the release metadata.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-metadata.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-metadata.returns"></a><h4>Returns</h4>
+<p>the metadata, which may be empty. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-metadata"></a><h3>fwupd_release_add_metadata ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_metadata (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *hash</code></em>);</pre>
+<p>Sets multiple release metadata items.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-metadata.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p>the key-values</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-metadata-item"></a><h3>fwupd_release_add_metadata_item ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_metadata_item (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Sets a release metadata item.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-metadata-item.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-metadata-item"></a><h3>fwupd_release_get_metadata_item ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_metadata_item (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Gets a release metadata item.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-metadata-item.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-metadata-item.returns"></a><h4>Returns</h4>
+<p> the value, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-filename"></a><h3>fwupd_release_get_filename ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_filename (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update filename.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-filename.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-filename.returns"></a><h4>Returns</h4>
+<p> the update filename, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-filename"></a><h3>fwupd_release_set_filename ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_filename (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
+<p>Sets the update filename.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-filename.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>the update filename on disk</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-protocol"></a><h3>fwupd_release_get_protocol ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_protocol (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update protocol.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-protocol.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-protocol.returns"></a><h4>Returns</h4>
+<p> the update protocol, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-protocol"></a><h3>fwupd_release_set_protocol ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_protocol (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *protocol</code></em>);</pre>
+<p>Sets the update protocol.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-protocol.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocol</p></td>
+<td class="parameter_description"><p>the update protocol, e.g. <code class="literal">org.usb.dfu</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-appstream-id"></a><h3>fwupd_release_get_appstream_id ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_appstream_id (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the AppStream ID.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-appstream-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-appstream-id.returns"></a><h4>Returns</h4>
+<p> the AppStream ID, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-appstream-id"></a><h3>fwupd_release_set_appstream_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_appstream_id (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *appstream_id</code></em>);</pre>
+<p>Sets the AppStream ID.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-appstream-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>appstream_id</p></td>
+<td class="parameter_description"><p>the AppStream component ID, e.g. <code class="literal">org.hughski.ColorHug2.firmware</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-remote-id"></a><h3>fwupd_release_get_remote_id ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_remote_id (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the remote ID that can be used for downloading.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-remote-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-remote-id.returns"></a><h4>Returns</h4>
+<p> the ID, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-remote-id"></a><h3>fwupd_release_set_remote_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_remote_id (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *remote_id</code></em>);</pre>
+<p>Sets the remote ID that can be used for downloading.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-remote-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remote_id</p></td>
+<td class="parameter_description"><p>the release ID, e.g. <code class="literal">USB:foo</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-vendor"></a><h3>fwupd_release_get_vendor ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_vendor (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update vendor.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-vendor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-vendor.returns"></a><h4>Returns</h4>
+<p> the update vendor, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-vendor"></a><h3>fwupd_release_set_vendor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_vendor (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                          <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *vendor</code></em>);</pre>
+<p>Sets the update vendor.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-vendor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>vendor</p></td>
+<td class="parameter_description"><p>the vendor name, e.g. <code class="literal">Hughski Limited</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-name"></a><h3>fwupd_release_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_name (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update name.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-name.returns"></a><h4>Returns</h4>
+<p> the update name, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-name"></a><h3>fwupd_release_set_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_name (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Sets the update name.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>the description</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-summary"></a><h3>fwupd_release_get_summary ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_summary (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update summary.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-summary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-summary.returns"></a><h4>Returns</h4>
+<p> the update summary, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-summary"></a><h3>fwupd_release_set_summary ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_summary (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *summary</code></em>);</pre>
+<p>Sets the update summary.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-summary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>summary</p></td>
+<td class="parameter_description"><p>the update one line summary</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-description"></a><h3>fwupd_release_get_description ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_description (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update description in AppStream markup format.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-description.returns"></a><h4>Returns</h4>
+<p> the update description, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-description"></a><h3>fwupd_release_set_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_description (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *description</code></em>);</pre>
+<p>Sets the update description.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>description</p></td>
+<td class="parameter_description"><p>the update description in AppStream markup format</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-homepage"></a><h3>fwupd_release_get_homepage ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_homepage (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update homepage.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-homepage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-homepage.returns"></a><h4>Returns</h4>
+<p> the update homepage, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-homepage"></a><h3>fwupd_release_set_homepage ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_homepage (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *homepage</code></em>);</pre>
+<p>Sets the update homepage.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-homepage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>homepage</p></td>
+<td class="parameter_description"><p>the description</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-details-url"></a><h3>fwupd_release_get_details_url ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_details_url (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the URL for the online update notes.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-details-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-details-url.returns"></a><h4>Returns</h4>
+<p> the update URL, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-details-url"></a><h3>fwupd_release_set_details_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_details_url (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *details_url</code></em>);</pre>
+<p>Sets the URL for the online update notes.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-details-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>details_url</p></td>
+<td class="parameter_description"><p>the URL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-source-url"></a><h3>fwupd_release_get_source_url ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_source_url (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the URL of the source code used to build this release.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-source-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-source-url.returns"></a><h4>Returns</h4>
+<p> the update source_url, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-source-url"></a><h3>fwupd_release_set_source_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_source_url (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source_url</code></em>);</pre>
+<p>Sets the URL of the source code used to build this release.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-source-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source_url</p></td>
+<td class="parameter_description"><p>the URL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-size"></a><h3>fwupd_release_get_size ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fwupd_release_get_size (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update size.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-size.returns"></a><h4>Returns</h4>
+<p> the update size in bytes, or 0 if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-size"></a><h3>fwupd_release_set_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_size (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> size</code></em>);</pre>
+<p>Sets the update size.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the update size in bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-license"></a><h3>fwupd_release_get_license ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_license (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update license.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-license.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-license.returns"></a><h4>Returns</h4>
+<p> the update license, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-license"></a><h3>fwupd_release_set_license ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_license (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *license</code></em>);</pre>
+<p>Sets the update license.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-license.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>license</p></td>
+<td class="parameter_description"><p>the description</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-trust-flags"></a><h3>fwupd_release_get_trust_flags ()</h3>
+<pre class="programlisting"><a class="link" href="libfwupd-fwupd-enums.html#FwupdTrustFlags" title="enum FwupdTrustFlags"><span class="returnvalue">FwupdTrustFlags</span></a>
+fwupd_release_get_trust_flags (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<div class="warning"><p><code class="literal">fwupd_release_get_trust_flags</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Gets the trust level of the release.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-trust-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-trust-flags.returns"></a><h4>Returns</h4>
+<p> the trust bitfield, e.g. <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-TRUST-FLAG-PAYLOAD:CAPS"><span class="type">FWUPD_TRUST_FLAG_PAYLOAD</span></a></p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-trust-flags"></a><h3>fwupd_release_set_trust_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_trust_flags (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                               <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdTrustFlags" title="enum FwupdTrustFlags"><span class="type">FwupdTrustFlags</span></a> trust_flags</code></em>);</pre>
+<div class="warning"><p><code class="literal">fwupd_release_set_trust_flags</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Sets the trust level of the release.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-trust-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>trust_flags</p></td>
+<td class="parameter_description"><p>the bitfield, e.g. <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-TRUST-FLAG-PAYLOAD:CAPS"><span class="type">FWUPD_TRUST_FLAG_PAYLOAD</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-flags"></a><h3>fwupd_release_get_flags ()</h3>
+<pre class="programlisting"><a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="returnvalue">FwupdReleaseFlags</span></a>
+fwupd_release_get_flags (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the release flags.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-flags.returns"></a><h4>Returns</h4>
+<p> the release flags, or 0 if unset</p>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-flags"></a><h3>fwupd_release_set_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_flags (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                         <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a> flags</code></em>);</pre>
+<p>Sets the release flags.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>the release flags, e.g. <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-RELEASE-FLAG-TRUSTED-PAYLOAD:CAPS" title="FWUPD_RELEASE_FLAG_TRUSTED_PAYLOAD"><code class="literal">FWUPD_RELEASE_FLAG_TRUSTED_PAYLOAD</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-flag"></a><h3>fwupd_release_add_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_flag (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                        <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a> flag</code></em>);</pre>
+<p>Adds a specific release flag to the release.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-remove-flag"></a><h3>fwupd_release_remove_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_remove_flag (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                           <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a> flag</code></em>);</pre>
+<p>Removes a specific release flag from the release.</p>
+<div class="refsect3">
+<a name="fwupd-release-remove-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-has-flag"></a><h3>fwupd_release_has_flag ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_release_has_flag (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                        <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a> flag</code></em>);</pre>
+<p>Finds if the release has a specific release flag.</p>
+<div class="refsect3">
+<a name="fwupd-release-has-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libfwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-has-flag.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the flag is set</p>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-install-duration"></a><h3>fwupd_release_get_install_duration ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fwupd_release_get_install_duration (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the time estimate for firmware installation (in seconds)</p>
+<div class="refsect3">
+<a name="fwupd-release-get-install-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-install-duration.returns"></a><h4>Returns</h4>
+<p> the estimated time to flash this release (or 0 if unset)</p>
+</div>
+<p class="since">Since: 1.2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-install-duration"></a><h3>fwupd_release_set_install_duration ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_install_duration (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> duration</code></em>);</pre>
+<p>Sets the time estimate for firmware installation (in seconds)</p>
+<div class="refsect3">
+<a name="fwupd-release-set-install-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>duration</p></td>
+<td class="parameter_description"><p>The amount of time</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-update-message"></a><h3>fwupd_release_get_update_message ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_release_get_update_message (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update message.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-update-message.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-update-message.returns"></a><h4>Returns</h4>
+<p> the update message, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-update-message"></a><h3>fwupd_release_set_update_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_update_message (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                  <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *update_message</code></em>);</pre>
+<p>Sets the update message.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-update-message.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update_message</p></td>
+<td class="parameter_description"><p>the update message string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-from-variant"></a><h3>fwupd_release_from_variant ()</h3>
+<pre class="programlisting"><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="returnvalue">FwupdRelease</span></a> *
+fwupd_release_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates a new release using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-release-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-from-variant.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-array-from-variant"></a><h3>fwupd_release_array_from_variant ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_release_array_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates an array of new releases using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-release-array-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-array-from-variant.returns"></a><h4>Returns</h4>
+<p>releases, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease]</span></p>
+</div>
+<p class="since">Since: 1.2.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfwupd-FwupdRelease.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FWUPD-TYPE-RELEASE:CAPS"></a><h3>FWUPD_TYPE_RELEASE</h3>
+<pre class="programlisting">#define FWUPD_TYPE_RELEASE (fwupd_release_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdReleaseClass"></a><h3>struct FwupdReleaseClass</h3>
+<pre class="programlisting">struct FwupdReleaseClass {
+	GObjectClass			 parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdRelease"></a><h3>FwupdRelease</h3>
+<pre class="programlisting">typedef struct _FwupdRelease FwupdRelease;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>

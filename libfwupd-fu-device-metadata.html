@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-device-metadata: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="libfwupd-FuDeviceLocker.html" title="FuDeviceLocker">
+<link rel="next" href="libfwupd-FuDevice.html" title="FuDevice">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfwupd-fu-device-metadata.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfwupd-FuDeviceLocker.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfwupd-FuDevice.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfwupd-fu-device-metadata"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfwupd-fu-device-metadata.top_of_page"></a>fu-device-metadata</span></h2>
+<p>fu-device-metadata — a device helper object</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfwupd-fu-device-metadata.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfwupd-fu-device-metadata.html#FU-DEVICE-METADATA-TBT-CAN-FORCE-POWER:CAPS" title="FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER">FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-DEVICE-KIND:CAPS" title="FU_DEVICE_METADATA_UEFI_DEVICE_KIND">FU_DEVICE_METADATA_UEFI_DEVICE_KIND</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-FW-VERSION:CAPS" title="FU_DEVICE_METADATA_UEFI_FW_VERSION">FU_DEVICE_METADATA_UEFI_FW_VERSION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-CAPSULE-FLAGS:CAPS" title="FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS">FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfwupd-fu-device-metadata.description"></a><h2>Description</h2>
+<p>An object that makes it easy to close a device when an object goes out of
+scope.</p>
+<p>See also: <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p>
+</div>
+<div class="refsect1">
+<a name="libfwupd-fu-device-metadata.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="libfwupd-fu-device-metadata.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-DEVICE-METADATA-TBT-CAN-FORCE-POWER:CAPS"></a><h3>FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER</h3>
+<pre class="programlisting">#define FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER "Thunderbolt::CanForcePower"
+</pre>
+<p>If the system can force-enable the Thunderbolt controller.
+Consumed by the thunderbolt plugin.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-DEVICE-METADATA-UEFI-DEVICE-KIND:CAPS"></a><h3>FU_DEVICE_METADATA_UEFI_DEVICE_KIND</h3>
+<pre class="programlisting">#define FU_DEVICE_METADATA_UEFI_DEVICE_KIND "UefiDeviceKind"
+</pre>
+<p>The type of UEFI device, e.g. "system-firmware" or "device-firmware"
+Consumed by the uefi plugin when other devices register fake devices that
+need to be handled as a capsule update.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-DEVICE-METADATA-UEFI-FW-VERSION:CAPS"></a><h3>FU_DEVICE_METADATA_UEFI_FW_VERSION</h3>
+<pre class="programlisting">#define FU_DEVICE_METADATA_UEFI_FW_VERSION "UefiFwVersion"
+</pre>
+<p>The firmware version of the UEFI device specified as a 32 bit unsigned
+integer.
+Consumed by the uefi plugin when other devices register fake devices that
+need to be handled as a capsule update.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-DEVICE-METADATA-UEFI-CAPSULE-FLAGS:CAPS"></a><h3>FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS</h3>
+<pre class="programlisting">#define FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS "UefiCapsuleFlags"
+</pre>
+<p>The capsule flags for the UEFI device, e.g. <code class="literal">EFI_CAPSULE_HEADER_FLAGS_PERSIST_ACROSS_RESET</code>
+Consumed by the uefi plugin when other devices register fake devices that
+need to be handled as a capsule update.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>
