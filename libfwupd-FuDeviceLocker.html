@@ -41,7 +41,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <span class="c_punctuation">(</span><a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLockerFunc" title="FuDeviceLockerFunc ()">*FuDeviceLockerFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
@@ -95,20 +95,20 @@ scope.</p>
 <a name="libfwupd-FuDeviceLocker.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="FuDeviceLockerFunc"></a><h3>FuDeviceLockerFunc ()</h3>
-<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
-<span class="c_punctuation">(</span>*FuDeviceLockerFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a> *device</code></em>,
-                       <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<span class="c_punctuation">(</span>*FuDeviceLockerFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><span class="type">GObject</span> *device</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
 <a name="fu-device-locker-new"></a><h3>fu_device_locker_new ()</h3>
 <pre class="programlisting"><a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="returnvalue">FuDeviceLocker</span></a> *
-fu_device_locker_new (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> device</code></em>,
-                      <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+fu_device_locker_new (<em class="parameter"><code><span class="type">gpointer</span> device</code></em>,
+                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Opens the device for use. When the <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a> is deallocated the device
 will be closed and any error will just be directed to the console.
-This object is typically called using <a href="../glib/glib-Miscellaneous-Macros.html#g-autoptr"><code class="function">g_autoptr()</code></a> but the device can also be
-manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-clear-object"><code class="function">g_clear_object()</code></a>.</p>
+This object is typically called using <code class="function">g_autoptr()</code> but the device can also be
+manually closed using <code class="function">g_clear_object()</code>.</p>
 <p>The functions used for opening and closing the device are set automatically.
 If the <em class="parameter"><code>device</code></em>
  is not a type or supertype of <span class="type">GUsbDevice</span> or <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> then
@@ -129,12 +129,12 @@ this function will not work.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p>A <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a></p></td>
+<td class="parameter_description"><p>A <span class="type">GObject</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -142,7 +142,7 @@ this function will not work.</p>
 </div>
 <div class="refsect3">
 <a name="fu-device-locker-new.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the <em class="parameter"><code>open_func</code></em>
+<p> a <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a>, or <code class="literal">NULL</code> if the <em class="parameter"><code>open_func</code></em>
 failed.</p>
 </div>
 </div>
@@ -150,14 +150,14 @@ failed.</p>
 <div class="refsect2">
 <a name="fu-device-locker-new-full"></a><h3>fu_device_locker_new_full ()</h3>
 <pre class="programlisting"><a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="returnvalue">FuDeviceLocker</span></a> *
-fu_device_locker_new_full (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> device</code></em>,
+fu_device_locker_new_full (<em class="parameter"><code><span class="type">gpointer</span> device</code></em>,
                            <em class="parameter"><code><a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLockerFunc" title="FuDeviceLockerFunc ()"><span class="type">FuDeviceLockerFunc</span></a> open_func</code></em>,
                            <em class="parameter"><code><a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLockerFunc" title="FuDeviceLockerFunc ()"><span class="type">FuDeviceLockerFunc</span></a> close_func</code></em>,
-                           <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Opens the device for use. When the <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a> is deallocated the device
 will be closed and any error will just be directed to the console.
-This object is typically called using <a href="../glib/glib-Miscellaneous-Macros.html#g-autoptr"><code class="function">g_autoptr()</code></a> but the device can also be
-manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-clear-object"><code class="function">g_clear_object()</code></a>.</p>
+This object is typically called using <code class="function">g_autoptr()</code> but the device can also be
+manually closed using <code class="function">g_clear_object()</code>.</p>
 <p>NOTE: If the <em class="parameter"><code>open_func</code></em>
  failed then the <em class="parameter"><code>close_func</code></em>
  will not be called.</p>
@@ -173,7 +173,7 @@ manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-cl
 <tbody>
 <tr>
 <td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p>A <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a></p></td>
+<td class="parameter_description"><p>A <span class="type">GObject</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -188,7 +188,7 @@ manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-cl
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-cl
 </div>
 <div class="refsect3">
 <a name="fu-device-locker-new-full.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the <em class="parameter"><code>open_func</code></em>
+<p> a <a class="link" href="libfwupd-FuDeviceLocker.html#FuDeviceLocker" title="FuDeviceLocker"><span class="type">FuDeviceLocker</span></a>, or <code class="literal">NULL</code> if the <em class="parameter"><code>open_func</code></em>
 failed.</p>
 </div>
 </div>
