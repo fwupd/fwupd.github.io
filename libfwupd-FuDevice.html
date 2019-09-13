@@ -224,6 +224,12 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-get-instance-ids" title="fu_device_get_instance_ids()">fu_device_get_instance_ids</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-get-icons" title="fu_device_get_icons()">fu_device_get_icons</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -764,6 +770,14 @@
 <span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-rescan" title="fu_device_rescan ()">fu_device_rescan</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-activate" title="fu_device_activate ()">fu_device_activate</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -1009,6 +1023,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="fu-device-get-guid-default"></a><h3>fu_device_get_guid_default()</h3>
 <pre class="programlisting">#define fu_device_get_guid_default(d)		fwupd_device_get_guid_default(FWUPD_DEVICE(d))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-instance-ids"></a><h3>fu_device_get_instance_ids()</h3>
+<pre class="programlisting">#define fu_device_get_instance_ids(d)		fwupd_device_get_instance_ids(FWUPD_DEVICE(d))
 </pre>
 </div>
 <hr>
@@ -2882,6 +2902,41 @@ If the device is not compatible then an error should be returned.</p>
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-rescan"></a><h3>fu_device_rescan ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_device_rescan (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Rescans a device, re-adding GUIDs or flags based on some hardware change.</p>
+<div class="refsect3">
+<a name="fu-device-rescan.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-rescan.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> for success</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-activate"></a><h3>fu_device_activate ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 fu_device_activate (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
@@ -3046,6 +3101,8 @@ disabled until the next call to <a class="link" href="libfwupd-FuDevice.html#fu-
 	gboolean		 (*close)		(FuDevice *self,
 							 GError		**error);
 	gboolean		 (*probe)		(FuDevice *self,
+							 GError		**error);
+	gboolean		 (*rescan)		(FuDevice *self,
 							 GError		**error);
 	FuFirmware		*(*prepare_firmware) (FuDevice *self,
 							 GBytes		*fw,

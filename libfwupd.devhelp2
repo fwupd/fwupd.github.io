@@ -52,6 +52,7 @@
     <keyword type="function" name="fwupd_client_get_tainted ()" link="libfwupd-FwupdClient.html#fwupd-client-get-tainted" since="1.2.4"/>
     <keyword type="function" name="fwupd_client_get_percentage ()" link="libfwupd-FwupdClient.html#fwupd-client-get-percentage" since="0.7.3"/>
     <keyword type="function" name="fwupd_client_get_daemon_version ()" link="libfwupd-FwupdClient.html#fwupd-client-get-daemon-version" since="0.9.6"/>
+    <keyword type="function" name="fwupd_client_get_host_product ()" link="libfwupd-FwupdClient.html#fwupd-client-get-host-product" since="1.3.1"/>
     <keyword type="function" name="fwupd_client_get_remotes ()" link="libfwupd-FwupdClient.html#fwupd-client-get-remotes" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_remote_by_id ()" link="libfwupd-FwupdClient.html#fwupd-client-get-remote-by-id" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_approved_firmware ()" link="libfwupd-FwupdClient.html#fwupd-client-get-approved-firmware" since="1.2.6"/>
@@ -193,6 +194,7 @@
     <keyword type="function" name="fwupd_remote_get_id ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-id" since="0.9.3"/>
     <keyword type="function" name="fwupd_remote_get_title ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-title" since="0.9.8"/>
     <keyword type="function" name="fwupd_remote_get_agreement ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-agreement" since="1.0.7"/>
+    <keyword type="function" name="fwupd_remote_get_remotes_dir ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-remotes-dir" since="1.3.1"/>
     <keyword type="function" name="fwupd_remote_get_checksum ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-checksum" since="1.0.0"/>
     <keyword type="function" name="fwupd_remote_get_username ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-username" since="0.9.5"/>
     <keyword type="function" name="fwupd_remote_get_password ()" link="libfwupd-FwupdRemote.html#fwupd-remote-get-password" since="0.9.5"/>
@@ -361,6 +363,7 @@
     <keyword type="macro" name="fu_device_get_modified()" link="libfwupd-FuDevice.html#fu-device-get-modified"/>
     <keyword type="macro" name="fu_device_get_guids()" link="libfwupd-FuDevice.html#fu-device-get-guids"/>
     <keyword type="macro" name="fu_device_get_guid_default()" link="libfwupd-FuDevice.html#fu-device-get-guid-default"/>
+    <keyword type="macro" name="fu_device_get_instance_ids()" link="libfwupd-FuDevice.html#fu-device-get-instance-ids"/>
     <keyword type="macro" name="fu_device_get_icons()" link="libfwupd-FuDevice.html#fu-device-get-icons"/>
     <keyword type="macro" name="fu_device_get_name()" link="libfwupd-FuDevice.html#fu-device-get-name"/>
     <keyword type="macro" name="fu_device_get_serial()" link="libfwupd-FuDevice.html#fu-device-get-serial"/>
@@ -433,6 +436,7 @@
     <keyword type="function" name="fu_device_close ()" link="libfwupd-FuDevice.html#fu-device-close" since="1.1.2"/>
     <keyword type="function" name="fu_device_probe ()" link="libfwupd-FuDevice.html#fu-device-probe" since="1.1.2"/>
     <keyword type="function" name="fu_device_setup ()" link="libfwupd-FuDevice.html#fu-device-setup" since="1.1.2"/>
+    <keyword type="function" name="fu_device_rescan ()" link="libfwupd-FuDevice.html#fu-device-rescan" since="1.3.1"/>
     <keyword type="function" name="fu_device_activate ()" link="libfwupd-FuDevice.html#fu-device-activate" since="1.2.6"/>
     <keyword type="function" name="fu_device_probe_invalidate ()" link="libfwupd-FuDevice.html#fu-device-probe-invalidate" since="1.1.2"/>
     <keyword type="function" name="fu_device_poll ()" link="libfwupd-FuDevice.html#fu-device-poll" since="1.1.2"/>
@@ -472,6 +476,7 @@
     <keyword type="function" name="fu_plugin_get_config_value ()" link="libfwupd-FuPlugin.html#fu-plugin-get-config-value" since="1.0.6"/>
     <keyword type="function" name="fu_plugin_add_runtime_version ()" link="libfwupd-FuPlugin.html#fu-plugin-add-runtime-version" since="1.0.7"/>
     <keyword type="function" name="fu_plugin_add_compile_version ()" link="libfwupd-FuPlugin.html#fu-plugin-add-compile-version" since="1.0.7"/>
+    <keyword type="function" name="fu_plugin_has_custom_flag ()" link="libfwupd-FuPlugin.html#fu-plugin-has-custom-flag" since="1.3.1"/>
     <keyword type="macro" name="FU_TYPE_PLUGIN" link="libfwupd-FuPlugin.html#FU-TYPE-PLUGIN:CAPS"/>
     <keyword type="struct" name="struct FuPluginClass" link="libfwupd-FuPlugin.html#FuPluginClass"/>
     <keyword type="enum" name="enum FuPluginVerifyFlags" link="libfwupd-FuPlugin.html#FuPluginVerifyFlags"/>
@@ -506,7 +511,7 @@
     <keyword type="struct" name="FuQuirks" link="libfwupd-fu-quirks.html#FuQuirks"/>
     <keyword type="function" name="fu_udev_device_new ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-new" since="1.1.2"/>
     <keyword type="function" name="fu_udev_device_get_dev ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-dev" since="1.1.2"/>
-    <keyword type="function" name="fu_udev_device_get_device_file ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-device-file" since="1.2.11"/>
+    <keyword type="function" name="fu_udev_device_get_device_file ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-device-file" since="1.3.1"/>
     <keyword type="function" name="fu_udev_device_get_sysfs_path ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-sysfs-path" since="1.1.2"/>
     <keyword type="function" name="fu_udev_device_get_subsystem ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-subsystem" since="1.1.2"/>
     <keyword type="function" name="fu_udev_device_get_vendor ()" link="libfwupd-FuUdevDevice.html#fu-udev-device-get-vendor" since="1.1.2"/>

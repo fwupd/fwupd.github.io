@@ -87,6 +87,13 @@
 <td class="function_type">const <span class="returnvalue">gchar</span> *
 </td>
 <td class="function_name">
+<a class="link" href="libfwupd-FwupdRemote.html#fwupd-remote-get-remotes-dir" title="fwupd_remote_get_remotes_dir ()">fwupd_remote_get_remotes_dir</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
 <a class="link" href="libfwupd-FwupdRemote.html#fwupd-remote-get-checksum" title="fwupd_remote_get_checksum ()">fwupd_remote_get_checksum</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -407,6 +414,33 @@ fwupd_remote_get_agreement (<em class="parameter"><code><a class="link" href="li
 <p> a string, or <code class="literal">NULL</code> if unset</p>
 </div>
 <p class="since">Since: 1.0.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-remotes-dir"></a><h3>fwupd_remote_get_remotes_dir ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fwupd_remote_get_remotes_dir (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the base directory for storing remote metadata</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-remotes-dir.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-remotes-dir.returns"></a><h4>Returns</h4>
+<p> a string, or <code class="literal">NULL</code> if unset</p>
+</div>
+<p class="since">Since: 1.3.1</p>
 </div>
 <hr>
 <div class="refsect2">

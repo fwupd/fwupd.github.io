@@ -275,6 +275,14 @@
 <a class="link" href="libfwupd-FuPlugin.html#fu-plugin-add-compile-version" title="fu_plugin_add_compile_version ()">fu_plugin_add_compile_version</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FuPlugin.html#fu-plugin-has-custom-flag" title="fu_plugin_has_custom_flag ()">fu_plugin_has_custom_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -1347,6 +1355,41 @@ fu_plugin_add_compile_version (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <p class="since">Since: 1.0.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-has-custom-flag"></a><h3>fu_plugin_has_custom_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_plugin_has_custom_flag (<em class="parameter"><code><a class="link" href="libfwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *flag</code></em>);</pre>
+<p>Returns if a per-plugin HwId custom flag exists, typically added from a DMI quirk.</p>
+<div class="refsect3">
+<a name="fu-plugin-has-custom-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>A custom text flag, specific to the plugin, e.g. <code class="literal">uefi-force-enable</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-has-custom-flag.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the quirk entry exists</p>
+</div>
+<p class="since">Since: 1.3.1</p>
 </div>
 </div>
 <div class="refsect1">
