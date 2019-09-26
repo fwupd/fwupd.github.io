@@ -217,10 +217,26 @@
 </tr>
 <tr>
 <td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-fu-common.html#fu-common-bytes-compare-raw" title="fu_common_bytes_compare_raw ()">fu_common_bytes_compare_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <span class="returnvalue">GBytes</span> *
 </td>
 <td class="function_name">
 <a class="link" href="libfwupd-fu-common.html#fu-common-bytes-pad" title="fu_common_bytes_pad ()">fu_common_bytes_pad</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gsize</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-fu-common.html#fu-common-strwidth" title="fu_common_strwidth ()">fu_common_strwidth</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -1125,7 +1141,7 @@ is empty</p>
 fu_common_bytes_compare (<em class="parameter"><code><span class="type">GBytes</span> *bytes1</code></em>,
                          <em class="parameter"><code><span class="type">GBytes</span> *bytes2</code></em>,
                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
-<p>Checks if a byte array are just empty (0xff) bytes.</p>
+<p>Compares the buffers for equality.</p>
 <div class="refsect3">
 <a name="fu-common-bytes-compare.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1157,6 +1173,62 @@ fu_common_bytes_compare (<em class="parameter"><code><span class="type">GBytes</
 <a name="fu-common-bytes-compare.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if <em class="parameter"><code>bytes1</code></em>
 and <em class="parameter"><code>bytes2</code></em>
+are identical</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-bytes-compare-raw"></a><h3>fu_common_bytes_compare_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_common_bytes_compare_raw (<em class="parameter"><code>const <span class="type">guint8</span> *buf1</code></em>,
+                             <em class="parameter"><code><span class="type">gsize</span> bufsz1</code></em>,
+                             <em class="parameter"><code>const <span class="type">guint8</span> *buf2</code></em>,
+                             <em class="parameter"><code><span class="type">gsize</span> bufsz2</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Compares the buffers for equality.</p>
+<div class="refsect3">
+<a name="fu-common-bytes-compare-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf1</p></td>
+<td class="parameter_description"><p>a buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz1</p></td>
+<td class="parameter_description"><p>sizeof <em class="parameter"><code>buf1</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buf2</p></td>
+<td class="parameter_description"><p>another buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz2</p></td>
+<td class="parameter_description"><p>sizeof <em class="parameter"><code>buf2</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-bytes-compare-raw.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>buf1</code></em>
+and <em class="parameter"><code>buf2</code></em>
 are identical</p>
 </div>
 </div>
@@ -1195,6 +1267,33 @@ fu_common_bytes_pad (<em class="parameter"><code><span class="type">GBytes</span
 <p>a <span class="type">GBytes</span>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-strwidth"></a><h3>fu_common_strwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">gsize</span>
+fu_common_strwidth (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
+<p>Returns the width of the string in displayed characters on the console.</p>
+<div class="refsect3">
+<a name="fu-common-strwidth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>text</p></td>
+<td class="parameter_description"><p>The string to operate on</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-strwidth.returns"></a><h4>Returns</h4>
+<p> width of text</p>
+</div>
+<p class="since">Since: 1.3.2</p>
 </div>
 <hr>
 <div class="refsect2">

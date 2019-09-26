@@ -90,6 +90,22 @@
 <span class="returnvalue">GPtrArray</span> *
 </td>
 <td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-issues" title="fwupd_release_get_issues ()">fwupd_release_get_issues</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-issue" title="fwupd_release_add_issue ()">fwupd_release_add_issue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-categories" title="fwupd_release_get_categories ()">fwupd_release_get_categories</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -252,6 +268,21 @@
 </td>
 <td class="function_name">
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-name" title="fwupd_release_set_name ()">fwupd_release_set_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-name-variant-suffix" title="fwupd_release_get_name_variant_suffix ()">fwupd_release_get_name_variant_suffix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-name-variant-suffix" title="fwupd_release_set_name_variant_suffix ()">fwupd_release_set_name_variant_suffix</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -651,6 +682,65 @@ fwupd_release_set_uri (<em class="parameter"><code><a class="link" href="libfwup
 </table></div>
 </div>
 <p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-issues"></a><h3>fwupd_release_get_issues ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+fwupd_release_get_issues (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the list of issues fixed in this release.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-issues.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-issues.returns"></a><h4>Returns</h4>
+<p>the issues, which may be empty. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-issue"></a><h3>fwupd_release_add_issue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_issue (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                         <em class="parameter"><code>const <span class="type">gchar</span> *issue</code></em>);</pre>
+<p>Adds an resolved issue to this release.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-issue.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>issue</p></td>
+<td class="parameter_description"><p>the update issue, e.g. <code class="literal">CVE-2019-12345</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.2</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1318,6 +1408,64 @@ fwupd_release_set_name (<em class="parameter"><code><a class="link" href="libfwu
 </table></div>
 </div>
 <p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-name-variant-suffix"></a><h3>fwupd_release_get_name_variant_suffix ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fwupd_release_get_name_variant_suffix (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update variant suffix.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-name-variant-suffix.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-name-variant-suffix.returns"></a><h4>Returns</h4>
+<p> the update variant, or <code class="literal">NULL</code> if unset</p>
+</div>
+<p class="since">Since: 1.3.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-set-name-variant-suffix"></a><h3>fwupd_release_set_name_variant_suffix ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_set_name_variant_suffix (<em class="parameter"><code><a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                                       <em class="parameter"><code>const <span class="type">gchar</span> *name_variant_suffix</code></em>);</pre>
+<p>Sets the update variant suffix.</p>
+<div class="refsect3">
+<a name="fwupd-release-set-name-variant-suffix.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name_variant_suffix</p></td>
+<td class="parameter_description"><p>the description</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.2</p>
 </div>
 <hr>
 <div class="refsect2">

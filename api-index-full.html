@@ -148,6 +148,10 @@ FuEngineLoadFlags, enum in fu-engine
 </dt>
 <dd></dd>
 <dt>
+FuFirmareSrecRecordKind, enum in fu-srec-firmware
+</dt>
+<dd></dd>
+<dt>
 FuFirmware, struct in FuFirmware
 </dt>
 <dd></dd>
@@ -276,6 +280,10 @@ FuSrecFirmware, struct in fu-srec-firmware
 </dt>
 <dd></dd>
 <dt>
+FuSrecFirmwareRecord, struct in fu-srec-firmware
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuUdevDevice.html#FuUdevDevice" title="FuUdevDevice">FuUdevDevice</a>, struct in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
@@ -357,6 +365,10 @@ FU_BUILD_HASH, macro in fu-hash
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fu-common.html#fu-common-bytes-compare" title="fu_common_bytes_compare ()">fu_common_bytes_compare</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-common.html#fu-common-bytes-compare-raw" title="fu_common_bytes_compare_raw ()">fu_common_bytes_compare_raw</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
 <dt>
@@ -477,6 +489,10 @@ fu_common_guid_is_plausible, function in fu-common-guid
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fu-common.html#fu-common-strtoull" title="fu_common_strtoull ()">fu_common_strtoull</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-common.html#fu-common-strwidth" title="fu_common_strwidth ()">fu_common_strwidth</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1184,6 +1200,10 @@ fu_engine_get_history, function in fu-engine
 </dt>
 <dd></dd>
 <dt>
+fu_engine_get_host_machine_id, function in fu-engine
+</dt>
+<dd></dd>
+<dt>
 fu_engine_get_host_product, function in fu-engine
 </dt>
 <dd></dd>
@@ -1404,6 +1424,10 @@ fu_firmware_strparse_uint8, function in fu-firmware-common
 </dt>
 <dd></dd>
 <dt>
+fu_firmware_tokenize, function in FuFirmware
+</dt>
+<dd></dd>
+<dt>
 fu_firmware_to_string, function in FuFirmware
 </dt>
 <dd></dd>
@@ -1608,6 +1632,10 @@ fu_io_channel_read_bytes, function in fu-io-channel
 </dt>
 <dd></dd>
 <dt>
+fu_io_channel_read_byte_array, function in fu-io-channel
+</dt>
+<dd></dd>
+<dt>
 fu_io_channel_read_raw, function in fu-io-channel
 </dt>
 <dd></dd>
@@ -1625,6 +1653,10 @@ fu_io_channel_unix_new, function in fu-io-channel
 <dd></dd>
 <dt>
 fu_io_channel_write_bytes, function in fu-io-channel
+</dt>
+<dd></dd>
+<dt>
+fu_io_channel_write_byte_array, function in fu-io-channel
 </dt>
 <dd></dd>
 <dt>
@@ -2284,7 +2316,15 @@ fu_smbios_to_string, function in fu-smbios
 </dt>
 <dd></dd>
 <dt>
+fu_srec_firmware_get_records, function in fu-srec-firmware
+</dt>
+<dd></dd>
+<dt>
 fu_srec_firmware_new, function in fu-srec-firmware
+</dt>
+<dd></dd>
+<dt>
+fu_srec_firmware_record_new, function in fu-srec-firmware
 </dt>
 <dd></dd>
 <dt>
@@ -2473,6 +2513,10 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-set-physical-id" title="fu_udev_device_set_physical_id ()">fu_udev_device_set_physical_id</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuUsbDevice.html#fu-usb-device-find-udev-device" title="fu_usb_device_find_udev_device ()">fu_usb_device_find_udev_device</a>, function in <a class="link" href="libfwupd-FuUsbDevice.html" title="FuUsbDevice">FuUsbDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2753,6 +2797,10 @@ fwupd_checksum_guess_kind, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FwupdClient.html#fwupd-client-get-host-machine-id" title="fwupd_client_get_host_machine_id ()">fwupd_client_get_host_machine_id</a>, function in <a class="link" href="libfwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FwupdClient.html#fwupd-client-get-host-product" title="fwupd_client_get_host_product ()">fwupd_client_get_host_product</a>, function in <a class="link" href="libfwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
@@ -2886,6 +2934,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fwupd-enums.html#fwupd-device-flag-from-string" title="fwupd_device_flag_from_string ()">fwupd_device_flag_from_string</a>, function in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-HISTORICAL:CAPS" title="FWUPD_DEVICE_FLAG_HISTORICAL">FWUPD_DEVICE_FLAG_HISTORICAL</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3301,6 +3353,10 @@ fwupd_guid_to_string, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-issue" title="fwupd_release_add_issue ()">fwupd_release_add_issue</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-add-metadata" title="fwupd_release_add_metadata ()">fwupd_release_add_metadata</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
@@ -3385,6 +3441,10 @@ fwupd_guid_to_string, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-issues" title="fwupd_release_get_issues ()">fwupd_release_get_issues</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-license" title="fwupd_release_get_license ()">fwupd_release_get_license</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
@@ -3398,6 +3458,10 @@ fwupd_guid_to_string, function in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-name" title="fwupd_release_get_name ()">fwupd_release_get_name</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-name-variant-suffix" title="fwupd_release_get_name_variant_suffix ()">fwupd_release_get_name_variant_suffix</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3494,6 +3558,10 @@ fwupd_guid_to_string, function in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-name" title="fwupd_release_set_name ()">fwupd_release_set_name</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-name-variant-suffix" title="fwupd_release_set_name_variant_suffix ()">fwupd_release_set_name_variant_suffix</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3745,6 +3813,10 @@ FWUPD_RESULT_KEY_INSTANCE_IDS, macro in fwupd-enums-private
 </dt>
 <dd></dd>
 <dt>
+FWUPD_RESULT_KEY_ISSUES, macro in fwupd-enums-private
+</dt>
+<dd></dd>
+<dt>
 FWUPD_RESULT_KEY_LICENSE, macro in fwupd-enums-private
 </dt>
 <dd></dd>
@@ -3758,6 +3830,10 @@ FWUPD_RESULT_KEY_MODIFIED, macro in fwupd-enums-private
 <dd></dd>
 <dt>
 FWUPD_RESULT_KEY_NAME, macro in fwupd-enums-private
+</dt>
+<dd></dd>
+<dt>
+FWUPD_RESULT_KEY_NAME_VARIANT_SUFFIX, macro in fwupd-enums-private
 </dt>
 <dd></dd>
 <dt>

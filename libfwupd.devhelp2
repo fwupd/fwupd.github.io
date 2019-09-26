@@ -53,6 +53,7 @@
     <keyword type="function" name="fwupd_client_get_percentage ()" link="libfwupd-FwupdClient.html#fwupd-client-get-percentage" since="0.7.3"/>
     <keyword type="function" name="fwupd_client_get_daemon_version ()" link="libfwupd-FwupdClient.html#fwupd-client-get-daemon-version" since="0.9.6"/>
     <keyword type="function" name="fwupd_client_get_host_product ()" link="libfwupd-FwupdClient.html#fwupd-client-get-host-product" since="1.3.1"/>
+    <keyword type="function" name="fwupd_client_get_host_machine_id ()" link="libfwupd-FwupdClient.html#fwupd-client-get-host-machine-id" since="1.3.2"/>
     <keyword type="function" name="fwupd_client_get_remotes ()" link="libfwupd-FwupdClient.html#fwupd-client-get-remotes" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_remote_by_id ()" link="libfwupd-FwupdClient.html#fwupd-client-get-remote-by-id" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_approved_firmware ()" link="libfwupd-FwupdClient.html#fwupd-client-get-approved-firmware" since="1.2.6"/>
@@ -136,6 +137,8 @@
     <keyword type="function" name="fwupd_release_set_version ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-version" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_get_uri ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-uri" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_set_uri ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-uri" since="0.9.3"/>
+    <keyword type="function" name="fwupd_release_get_issues ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-issues" since="1.3.2"/>
+    <keyword type="function" name="fwupd_release_add_issue ()" link="libfwupd-FwupdRelease.html#fwupd-release-add-issue" since="1.3.2"/>
     <keyword type="function" name="fwupd_release_get_categories ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-categories" since="1.2.7"/>
     <keyword type="function" name="fwupd_release_add_category ()" link="libfwupd-FwupdRelease.html#fwupd-release-add-category" since="1.2.7"/>
     <keyword type="function" name="fwupd_release_has_category ()" link="libfwupd-FwupdRelease.html#fwupd-release-has-category" since="1.2.7"/>
@@ -158,6 +161,8 @@
     <keyword type="function" name="fwupd_release_set_vendor ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-vendor" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_get_name ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-name" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_set_name ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-name" since="0.9.3"/>
+    <keyword type="function" name="fwupd_release_get_name_variant_suffix ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-name-variant-suffix" since="1.3.2"/>
+    <keyword type="function" name="fwupd_release_set_name_variant_suffix ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-name-variant-suffix" since="1.3.2"/>
     <keyword type="function" name="fwupd_release_get_summary ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-summary" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_set_summary ()" link="libfwupd-FwupdRelease.html#fwupd-release-set-summary" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_get_description ()" link="libfwupd-FwupdRelease.html#fwupd-release-get-description" since="0.9.3"/>
@@ -260,6 +265,7 @@
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_NO_AUTO_INSTANCE_IDS" link="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-NO-AUTO-INSTANCE-IDS:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_NEEDS_ACTIVATION" link="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-NEEDS-ACTIVATION:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_ENSURE_SEMVER" link="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-ENSURE-SEMVER:CAPS"/>
+    <keyword type="macro" name="FWUPD_DEVICE_FLAG_HISTORICAL" link="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-HISTORICAL:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_UNKNOWN" link="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UNKNOWN:CAPS"/>
     <keyword type="typedef" name="FwupdDeviceFlags" link="libfwupd-fwupd-enums.html#FwupdDeviceFlags"/>
     <keyword type="macro" name="FWUPD_RELEASE_FLAG_NONE" link="libfwupd-fwupd-enums.html#FWUPD-RELEASE-FLAG-NONE:CAPS"/>
@@ -305,7 +311,9 @@
     <keyword type="function" name="fu_common_bytes_align ()" link="libfwupd-fu-common.html#fu-common-bytes-align" since="1.2.4"/>
     <keyword type="function" name="fu_common_bytes_is_empty ()" link="libfwupd-fu-common.html#fu-common-bytes-is-empty"/>
     <keyword type="function" name="fu_common_bytes_compare ()" link="libfwupd-fu-common.html#fu-common-bytes-compare"/>
+    <keyword type="function" name="fu_common_bytes_compare_raw ()" link="libfwupd-fu-common.html#fu-common-bytes-compare-raw"/>
     <keyword type="function" name="fu_common_bytes_pad ()" link="libfwupd-fu-common.html#fu-common-bytes-pad"/>
+    <keyword type="function" name="fu_common_strwidth ()" link="libfwupd-fu-common.html#fu-common-strwidth" since="1.3.2"/>
     <keyword type="function" name="fu_memcpy_safe ()" link="libfwupd-fu-common.html#fu-memcpy-safe"/>
     <keyword type="function" name="fu_byte_array_append_uint8 ()" link="libfwupd-fu-common.html#fu-byte-array-append-uint8"/>
     <keyword type="function" name="fu_byte_array_append_uint16 ()" link="libfwupd-fu-common.html#fu-byte-array-append-uint16"/>
@@ -529,6 +537,7 @@
     <keyword type="function" name="fu_usb_device_get_dev ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-get-dev" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_set_dev ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-set-dev" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_is_open ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-is-open" since="1.0.3"/>
+    <keyword type="function" name="fu_usb_device_find_udev_device ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-find-udev-device" since="1.3.2"/>
     <keyword type="macro" name="FU_TYPE_USB_DEVICE" link="libfwupd-FuUsbDevice.html#FU-TYPE-USB-DEVICE:CAPS"/>
     <keyword type="macro" name="HID_REPORT_GET" link="libfwupd-FuUsbDevice.html#HID-REPORT-GET:CAPS"/>
     <keyword type="macro" name="HID_REPORT_SET" link="libfwupd-FuUsbDevice.html#HID-REPORT-SET:CAPS"/>
