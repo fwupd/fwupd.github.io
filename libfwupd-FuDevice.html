@@ -50,12 +50,6 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
-<a class="link" href="libfwupd-FuDevice.html#fu-device-add-flag" title="fu_device_add_flag()">fu_device_add_flag</a><span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-remove-flag" title="fu_device_remove_flag()">fu_device_remove_flag</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -387,14 +381,6 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gchar</span> *
-</td>
-<td class="function_name">
-<a class="link" href="libfwupd-FuDevice.html#fu-device-get-guids-as-str" title="fu_device_get_guids_as_str ()">fu_device_get_guids_as_str</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
 <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
 </td>
 <td class="function_name">
@@ -469,6 +455,14 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-remove-metadata" title="fu_device_remove_metadata ()">fu_device_remove_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-set-metadata" title="fu_device_set_metadata ()">fu_device_set_metadata</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -532,6 +526,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-set-logical-id" title="fu_device_set_logical_id ()">fu_device_set_logical_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-add-flag" title="fu_device_add_flag ()">fu_device_add_flag</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -703,7 +705,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GBytes</span> *
+<span class="returnvalue">FuFirmware</span> *
 </td>
 <td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-read-firmware" title="fu_device_read_firmware ()">fu_device_read_firmware</a> <span class="c_punctuation">()</span>
@@ -723,6 +725,30 @@
 </td>
 <td class="function_name">
 <a class="link" href="libfwupd-FuDevice.html#fu-device-detach" title="fu_device_detach ()">fu_device_detach</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-reload" title="fu_device_reload ()">fu_device_reload</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-prepare" title="fu_device_prepare ()">fu_device_prepare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfwupd-FuDevice.html#fu-device-cleanup" title="fu_device_cleanup ()">fu_device_cleanup</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -853,12 +879,6 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 </div>
 <hr>
 <div class="refsect2">
-<a name="fu-device-add-flag"></a><h3>fu_device_add_flag()</h3>
-<pre class="programlisting">#define fu_device_add_flag(d,v)			fwupd_device_add_flag(FWUPD_DEVICE(d),v)
-</pre>
-</div>
-<hr>
-<div class="refsect2">
 <a name="fu-device-remove-flag"></a><h3>fu_device_remove_flag()</h3>
 <pre class="programlisting">#define fu_device_remove_flag(d,v)		fwupd_device_remove_flag(FWUPD_DEVICE(d),v)
 </pre>
@@ -920,8 +940,7 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <hr>
 <div class="refsect2">
 <a name="fu-device-set-plugin"></a><h3>fu_device_set_plugin()</h3>
-<pre class="programlisting">#define fu_device_set_plugin(d,v)		fwupd_device_set_plugin(FWUPD_DEVICE(d),v)
-</pre>
+<pre class="programlisting">#define             fu_device_set_plugin(d,v)</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -1284,34 +1303,6 @@ valid GUID then <a class="link" href="libfwupd-FuDevice.html#fu-device-add-guid"
 </div>
 <hr>
 <div class="refsect2">
-<a name="fu-device-get-guids-as-str"></a><h3>fu_device_get_guids_as_str ()</h3>
-<pre class="programlisting"><span class="returnvalue">gchar</span> *
-fu_device_get_guids_as_str (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
-<p>Gets the device GUIDs as a joined string, which may be useful for error
-messages.</p>
-<div class="refsect3">
-<a name="fu-device-get-guids-as-str.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>self</p></td>
-<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="fu-device-get-guids-as-str.returns"></a><h4>Returns</h4>
-<p> a string, which may be empty length but not <code class="literal">NULL</code></p>
-</div>
-<p class="since">Since: 1.0.8</p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="fu-device-get-alternate"></a><h3>fu_device_get_alternate ()</h3>
 <pre class="programlisting"><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
 fu_device_get_alternate (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
@@ -1613,6 +1604,37 @@ fu_device_get_metadata_integer (<em class="parameter"><code><a class="link" href
 <p> a string value, or <code class="literal">G_MAXUINT</code> for unfound or failure to parse.</p>
 </div>
 <p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-remove-metadata"></a><h3>fu_device_remove_metadata ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_remove_metadata (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *key</code></em>);</pre>
+<p>Removes an item of metadata on the device.</p>
+<div class="refsect3">
+<a name="fu-device-remove-metadata.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.3</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1927,6 +1949,13 @@ with the same physical ID.</p>
 </table></div>
 </div>
 <p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-add-flag"></a><h3>fu_device_add_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_add_flag (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                    <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdDeviceFlags" title="FwupdDeviceFlags"><span class="type">FwupdDeviceFlags</span></a> flag</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -2610,7 +2639,7 @@ or using a quirk entry.</p>
 <hr>
 <div class="refsect2">
 <a name="fu-device-read-firmware"></a><h3>fu_device_read_firmware ()</h3>
-<pre class="programlisting"><span class="returnvalue">GBytes</span> *
+<pre class="programlisting"><span class="returnvalue">FuFirmware</span> *
 fu_device_read_firmware (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Reads firmware from the device by calling a plugin-specific vfunc.</p>
@@ -2638,7 +2667,7 @@ fu_device_read_firmware (<em class="parameter"><code><a class="link" href="libfw
 </div>
 <div class="refsect3">
 <a name="fu-device-read-firmware.returns"></a><h4>Returns</h4>
-<p>A <span class="type">GBytes</span>, or <code class="literal">NULL</code> for error. </p>
+<p>A <span class="type">FuFirmware</span>, or <code class="literal">NULL</code> for error. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
@@ -2712,6 +2741,115 @@ fu_device_detach (<em class="parameter"><code><a class="link" href="libfwupd-FuD
 <p> <code class="literal">TRUE</code> on success</p>
 </div>
 <p class="since">Since: 1.0.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-reload"></a><h3>fu_device_reload ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_device_reload (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Reloads a device that has just gone from bootloader into application mode.</p>
+<div class="refsect3">
+<a name="fu-device-reload.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-reload.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success</p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-prepare"></a><h3>fu_device_prepare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_device_prepare (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                   <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Prepares a device for update. A different plugin can handle each of
+FuDevice-&gt;<code class="function">prepare()</code>, FuDevice-&gt;<code class="function">detach()</code> and FuDevice-&gt;<code class="function">write_firmware()</code>.</p>
+<div class="refsect3">
+<a name="fu-device-prepare.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-prepare.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success</p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-cleanup"></a><h3>fu_device_cleanup ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fu_device_cleanup (<em class="parameter"><code><a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                   <em class="parameter"><code><a class="link" href="libfwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Cleans up a device after an update. A different plugin can handle each of
+FuDevice-&gt;<code class="function">write_firmware()</code>, FuDevice-&gt;<code class="function">attach()</code> and FuDevice-&gt;<code class="function">cleanup()</code>.</p>
+<div class="refsect3">
+<a name="fu-device-cleanup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-cleanup.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success</p>
+</div>
+<p class="since">Since: 1.3.3</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3090,7 +3228,7 @@ disabled until the next call to <a class="link" href="libfwupd-FuDevice.html#fu-
 							 FuFirmware *firmware,
 							 FwupdInstallFlags flags,
 							 GError		**error);
-	GBytes			*(*read_firmware) (FuDevice *self,
+	FuFirmware		*(*read_firmware) (FuDevice *self,
 							 GError		**error);
 	gboolean		 (*detach)		(FuDevice *self,
 							 GError		**error);
@@ -3119,6 +3257,14 @@ disabled until the next call to <a class="link" href="libfwupd-FuDevice.html#fu-
 	gboolean		 (*poll)		(FuDevice *self,
 							 GError		**error);
 	gboolean		 (*activate)		(FuDevice *self,
+							 GError		**error);
+	gboolean		 (*reload)		(FuDevice *self,
+							 GError		**error);
+	gboolean		 (*prepare)		(FuDevice *self,
+							 FwupdInstallFlags flags,
+							 GError		**error);
+	gboolean		 (*cleanup)		(FuDevice *self,
+							 FwupdInstallFlags flags,
 							 GError		**error);
 };
 </pre>

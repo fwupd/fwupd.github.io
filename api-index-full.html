@@ -132,6 +132,14 @@ FuDeviceList, struct in fu-device-list
 </dt>
 <dd></dd>
 <dt>
+FuDfuFirmware, struct in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+FuDfuFirmwareClass, struct in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-fu-common.html#FuDumpFlags" title="enum FuDumpFlags">FuDumpFlags</a>, enum in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
@@ -169,10 +177,6 @@ FuFirmwareImageClass, struct in FuFirmwareImage
 <dd></dd>
 <dt>
 FuHistory, struct in fu-history
-</dt>
-<dd></dd>
-<dt>
-FuHistoryFlags, enum in fu-history
 </dt>
 <dd></dd>
 <dt>
@@ -269,6 +273,14 @@ FuProgressbar, struct in fu-progressbar
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fu-quirks.html#FuQuirks" title="FuQuirks">FuQuirks</a>, struct in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-quirks.html#FuQuirksIter" title="FuQuirksIter ()">FuQuirksIter</a>, user_function in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-quirks.html#FuQuirksLoadFlags" title="enum FuQuirksLoadFlags">FuQuirksLoadFlags</a>, enum in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
 </dt>
 <dd></dd>
 <dt>
@@ -440,7 +452,19 @@ fu_common_guid_is_plausible, function in fu-common-guid
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-fu-common.html#fu-common-read-uint16-safe" title="fu_common_read_uint16_safe ()">fu_common_read_uint16_safe</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-fu-common.html#fu-common-read-uint32" title="fu_common_read_uint32 ()">fu_common_read_uint32</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-common.html#fu-common-read-uint32-safe" title="fu_common_read_uint32_safe ()">fu_common_read_uint32_safe</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-common.html#fu-common-read-uint8-safe" title="fu_common_read_uint8_safe ()">fu_common_read_uint8_safe</a>, function in <a class="link" href="libfwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
 <dt>
@@ -520,6 +544,10 @@ fu_common_version_parse, function in fu-common-version
 </dt>
 <dd></dd>
 <dt>
+fu_common_version_parse_from_format, function in fu-common-version
+</dt>
+<dd></dd>
+<dt>
 fu_common_version_verify_format, function in fu-common-version
 </dt>
 <dd></dd>
@@ -592,7 +620,7 @@ fu_debug_get_option_group, function in fu-debug
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="libfwupd-FuDevice.html#fu-device-add-flag" title="fu_device_add_flag()">fu_device_add_flag</a>, macro in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-add-flag" title="fu_device_add_flag ()">fu_device_add_flag</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -621,6 +649,10 @@ fu_device_add_instance_id_full, function in fu-device-private
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuDevice.html#fu-device-attach" title="fu_device_attach ()">fu_device_attach</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-cleanup" title="fu_device_cleanup ()">fu_device_cleanup</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -688,7 +720,7 @@ fu_device_ensure_id, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="libfwupd-FuDevice.html#fu-device-get-guids-as-str" title="fu_device_get_guids_as_str ()">fu_device_get_guids_as_str</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+fu_device_get_guids_as_str, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
@@ -756,6 +788,10 @@ fu_device_get_parent_guids, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
+fu_device_get_possible_plugins, function in fu-device-private
+</dt>
+<dd></dd>
+<dt>
 fu_device_get_priority, function in fu-device-private
 </dt>
 <dd></dd>
@@ -777,6 +813,10 @@ fu_device_get_priority, function in fu-device-private
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuDevice.html#fu-device-get-serial" title="fu_device_get_serial()">fu_device_get_serial</a>, macro in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+fu_device_get_specialized_gtype, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
@@ -920,6 +960,10 @@ fu_device_list_wait_for_replug, function in fu-device-list
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-prepare" title="fu_device_prepare ()">fu_device_prepare</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuDevice.html#fu-device-prepare-firmware" title="fu_device_prepare_firmware ()">fu_device_prepare_firmware</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -936,6 +980,10 @@ fu_device_list_wait_for_replug, function in fu-device-list
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-reload" title="fu_device_reload ()">fu_device_reload</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuDevice.html#FU-DEVICE-REMOVE-DELAY-RE-ENUMERATE:CAPS" title="FU_DEVICE_REMOVE_DELAY_RE_ENUMERATE">FU_DEVICE_REMOVE_DELAY_RE_ENUMERATE</a>, macro in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -945,6 +993,10 @@ fu_device_list_wait_for_replug, function in fu-device-list
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuDevice.html#fu-device-remove-flag" title="fu_device_remove_flag()">fu_device_remove_flag</a>, macro in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-remove-metadata" title="fu_device_remove_metadata ()">fu_device_remove_metadata</a>, function in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1044,7 +1096,7 @@ fu_device_set_parent, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="libfwupd-FuDevice.html#fu-device-set-plugin" title="fu_device_set_plugin()">fu_device_set_plugin</a>, macro in <a class="link" href="libfwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+<a class="link" href="libfwupd-FuDevice.html#fu-device-set-plugin" title="fu_device_set_plugin()">fu_device_set_plugin</a>, macro in fu-device-private
 </dt>
 <dd></dd>
 <dt>
@@ -1124,6 +1176,42 @@ fu_device_set_priority, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
+fu_dfu_firmware_get_pid, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_get_release, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_get_version, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_get_vid, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_new, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_set_pid, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_set_release, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_set_version, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_dfu_firmware_set_vid, function in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
 fu_engine_activate, function in fu-engine
 </dt>
 <dd></dd>
@@ -1168,6 +1256,10 @@ fu_engine_composite_prepare, function in fu-engine
 </dt>
 <dd></dd>
 <dt>
+fu_engine_firmware_read, function in fu-engine
+</dt>
+<dd></dd>
+<dt>
 fu_engine_get_approved_firmware, function in fu-engine
 </dt>
 <dd></dd>
@@ -1193,6 +1285,14 @@ fu_engine_get_devices, function in fu-engine
 <dd></dd>
 <dt>
 fu_engine_get_downgrades, function in fu-engine
+</dt>
+<dd></dd>
+<dt>
+fu_engine_get_firmware_gtype_by_id, function in fu-engine
+</dt>
+<dd></dd>
+<dt>
+fu_engine_get_firmware_gtype_ids, function in fu-engine
 </dt>
 <dd></dd>
 <dt>
@@ -1340,19 +1440,15 @@ fu_firmware_get_image_default_bytes, function in FuFirmware
 </dt>
 <dd></dd>
 <dt>
+fu_firmware_get_version, function in FuFirmware
+</dt>
+<dd></dd>
+<dt>
 fu_firmware_image_add_string, function in fu-firmware-image-private
 </dt>
 <dd></dd>
 <dt>
 fu_firmware_image_get_addr, function in FuFirmwareImage
-</dt>
-<dd></dd>
-<dt>
-fu_firmware_image_get_bytes, function in FuFirmwareImage
-</dt>
-<dd></dd>
-<dt>
-fu_firmware_image_get_bytes_chunk, function in FuFirmwareImage
 </dt>
 <dd></dd>
 <dt>
@@ -1388,6 +1484,14 @@ fu_firmware_image_to_string, function in FuFirmwareImage
 </dt>
 <dd></dd>
 <dt>
+fu_firmware_image_write, function in FuFirmwareImage
+</dt>
+<dd></dd>
+<dt>
+fu_firmware_image_write_chunk, function in FuFirmwareImage
+</dt>
+<dd></dd>
+<dt>
 fu_firmware_new, function in FuFirmware
 </dt>
 <dd></dd>
@@ -1400,7 +1504,15 @@ fu_firmware_parse, function in FuFirmware
 </dt>
 <dd></dd>
 <dt>
+fu_firmware_parse_file, function in FuFirmware
+</dt>
+<dd></dd>
+<dt>
 fu_firmware_parse_full, function in FuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_firmware_set_version, function in FuFirmware
 </dt>
 <dd></dd>
 <dt>
@@ -1433,6 +1545,10 @@ fu_firmware_to_string, function in FuFirmware
 <dd></dd>
 <dt>
 fu_firmware_write, function in FuFirmware
+</dt>
+<dd></dd>
+<dt>
+fu_firmware_write_file, function in FuFirmware
 </dt>
 <dd></dd>
 <dt>
@@ -1728,6 +1844,10 @@ fu_plugin_activate, function in fu-plugin-vfuncs
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuPlugin.html#fu-plugin-add-firmware-gtype" title="fu_plugin_add_firmware_gtype ()">fu_plugin_add_firmware_gtype</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuPlugin.html#fu-plugin-add-report-metadata" title="fu_plugin_add_report_metadata ()">fu_plugin_add_report_metadata</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
 </dt>
 <dd></dd>
@@ -1761,10 +1881,6 @@ fu_plugin_activate, function in fu-plugin-vfuncs
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuPlugin.html#fu-plugin-check-hwid" title="fu_plugin_check_hwid ()">fu_plugin_check_hwid</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
-</dt>
-<dd></dd>
-<dt>
-<a class="link" href="libfwupd-FuPlugin.html#fu-plugin-check-supported" title="fu_plugin_check_supported ()">fu_plugin_check_supported</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1837,6 +1953,10 @@ fu_plugin_get_build_hash, function in fu-plugin-private
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FuPlugin.html#fu-plugin-get-hwids" title="fu_plugin_get_hwids ()">fu_plugin_get_hwids</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuPlugin.html#fu-plugin-get-hwid-replace-value" title="fu_plugin_get_hwid_replace_value ()">fu_plugin_get_hwid_replace_value</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2056,6 +2176,10 @@ fu_plugin_set_compile_versions, function in fu-plugin-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuPlugin.html#fu-plugin-set-device-gtype" title="fu_plugin_set_device_gtype ()">fu_plugin_set_device_gtype</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuPlugin.html#fu-plugin-set-enabled" title="fu_plugin_set_enabled ()">fu_plugin_set_enabled</a>, function in <a class="link" href="libfwupd-FuPlugin.html" title="FuPlugin">FuPlugin</a>
 </dt>
 <dd></dd>
@@ -2132,23 +2256,11 @@ fu_plugin_update_prepare, function in fu-plugin-vfuncs
 </dt>
 <dd></dd>
 <dt>
-fu_plugin_update_reload, function in fu-plugin-vfuncs
-</dt>
-<dd></dd>
-<dt>
 fu_plugin_usb_device_added, function in fu-plugin-vfuncs
 </dt>
 <dd></dd>
 <dt>
 fu_plugin_verify, function in fu-plugin-vfuncs
-</dt>
-<dd></dd>
-<dt>
-fu_plugin_verify_attach, function in fu-plugin-vfuncs
-</dt>
-<dd></dd>
-<dt>
-fu_plugin_verify_detach, function in fu-plugin-vfuncs
 </dt>
 <dd></dd>
 <dt>
@@ -2173,10 +2285,6 @@ fu_progressbar_set_title, function in fu-progressbar
 <dd></dd>
 <dt>
 fu_progressbar_update, function in fu-progressbar
-</dt>
-<dd></dd>
-<dt>
-<a class="link" href="libfwupd-fu-quirks.html#fu-quirks-add-value" title="fu_quirks_add_value ()">fu_quirks_add_value</a>, function in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2208,7 +2316,7 @@ fu_progressbar_update, function in fu-progressbar
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="libfwupd-fu-quirks.html#fu-quirks-get-kvs-for-guid" title="fu_quirks_get_kvs_for_guid ()">fu_quirks_get_kvs_for_guid</a>, function in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
+<a class="link" href="libfwupd-fu-quirks.html#FU-QUIRKS-GTYPE:CAPS" title="FU_QUIRKS_GTYPE">FU_QUIRKS_GTYPE</a>, macro in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2229,6 +2337,10 @@ fu_progressbar_update, function in fu-progressbar
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fu-quirks.html#fu-quirks-lookup-by-id" title="fu_quirks_lookup_by_id ()">fu_quirks_lookup_by_id</a>, function in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fu-quirks.html#fu-quirks-lookup-by-id-iter" title="fu_quirks_lookup_by_id_iter ()">fu_quirks_lookup_by_id_iter</a>, function in <a class="link" href="libfwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2384,6 +2496,10 @@ FU_TYPE_DEVICE_LIST, macro in fu-device-list
 </dt>
 <dd></dd>
 <dt>
+FU_TYPE_DFU_FIRMWARE, macro in FuDfuFirmware
+</dt>
+<dd></dd>
+<dt>
 FU_TYPE_ENGINE, macro in fu-engine
 </dt>
 <dd></dd>
@@ -2484,6 +2600,10 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-get-fd" title="fu_udev_device_get_fd ()">fu_udev_device_get_fd</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-get-model" title="fu_udev_device_get_model ()">fu_udev_device_get_model</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
@@ -2508,11 +2628,31 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-ioctl" title="fu_udev_device_ioctl ()">fu_udev_device_ioctl</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-new" title="fu_udev_device_new ()">fu_udev_device_new</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-pread" title="fu_udev_device_pread ()">fu_udev_device_pread</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-pwrite" title="fu_udev_device_pwrite ()">fu_udev_device_pwrite</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-set-fd" title="fu_udev_device_set_fd ()">fu_udev_device_set_fd</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-set-physical-id" title="fu_udev_device_set_physical_id ()">fu_udev_device_set_physical_id</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FuUdevDevice.html#fu-udev-device-set-readonly" title="fu_udev_device_set_readonly ()">fu_udev_device_set_readonly</a>, function in <a class="link" href="libfwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2613,6 +2753,10 @@ fu_util_prompt_for_boolean, function in fu-util-common
 <dd></dd>
 <dt>
 fu_util_prompt_for_number, function in fu-util-common
+</dt>
+<dd></dd>
+<dt>
+fu_util_prompt_warning, function in fu-util-common
 </dt>
 <dd></dd>
 <dt>
@@ -2929,6 +3073,18 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-CAN-VERIFY:CAPS" title="FWUPD_DEVICE_FLAG_CAN_VERIFY">FWUPD_DEVICE_FLAG_CAN_VERIFY</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-CAN-VERIFY-IMAGE:CAPS" title="FWUPD_DEVICE_FLAG_CAN_VERIFY_IMAGE">FWUPD_DEVICE_FLAG_CAN_VERIFY_IMAGE</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-DUAL-IMAGE:CAPS" title="FWUPD_DEVICE_FLAG_DUAL_IMAGE">FWUPD_DEVICE_FLAG_DUAL_IMAGE</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-ENSURE-SEMVER:CAPS" title="FWUPD_DEVICE_FLAG_ENSURE_SEMVER">FWUPD_DEVICE_FLAG_ENSURE_SEMVER</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
@@ -2985,6 +3141,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-ONLY-SUPPORTED:CAPS" title="FWUPD_DEVICE_FLAG_ONLY_SUPPORTED">FWUPD_DEVICE_FLAG_ONLY_SUPPORTED</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-REGISTERED:CAPS" title="FWUPD_DEVICE_FLAG_REGISTERED">FWUPD_DEVICE_FLAG_REGISTERED</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
@@ -2994,6 +3154,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-REQUIRE-AC:CAPS" title="FWUPD_DEVICE_FLAG_REQUIRE_AC">FWUPD_DEVICE_FLAG_REQUIRE_AC</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-SELF-RECOVERY:CAPS" title="FWUPD_DEVICE_FLAG_SELF_RECOVERY">FWUPD_DEVICE_FLAG_SELF_RECOVERY</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3017,11 +3181,19 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-USABLE-DURING-UPDATE:CAPS" title="FWUPD_DEVICE_FLAG_USABLE_DURING_UPDATE">FWUPD_DEVICE_FLAG_USABLE_DURING_UPDATE</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-USE-RUNTIME-VERSION:CAPS" title="FWUPD_DEVICE_FLAG_USE_RUNTIME_VERSION">FWUPD_DEVICE_FLAG_USE_RUNTIME_VERSION</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-WAIT-FOR-REPLUG:CAPS" title="FWUPD_DEVICE_FLAG_WAIT_FOR_REPLUG">FWUPD_DEVICE_FLAG_WAIT_FOR_REPLUG</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-WILL-DISAPPEAR:CAPS" title="FWUPD_DEVICE_FLAG_WILL_DISAPPEAR">FWUPD_DEVICE_FLAG_WILL_DISAPPEAR</a>, macro in <a class="link" href="libfwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3421,6 +3593,14 @@ fwupd_guid_to_string, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-detach-caption" title="fwupd_release_get_detach_caption ()">fwupd_release_get_detach_caption</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-detach-image" title="fwupd_release_get_detach_image ()">fwupd_release_get_detach_image</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-get-details-url" title="fwupd_release_get_details_url ()">fwupd_release_get_details_url</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
@@ -3533,6 +3713,14 @@ fwupd_guid_to_string, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-detach-caption" title="fwupd_release_set_detach_caption ()">fwupd_release_set_detach_caption</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-detach-image" title="fwupd_release_set_detach_image ()">fwupd_release_set_detach_image</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="libfwupd-FwupdRelease.html#fwupd-release-set-details-url" title="fwupd_release_set_details_url ()">fwupd_release_set_details_url</a>, function in <a class="link" href="libfwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
@@ -3638,6 +3826,10 @@ fwupd_release_to_variant, function in fwupd-release-private
 <dd></dd>
 <dt>
 <a class="link" href="libfwupd-FwupdRemote.html#fwupd-remote-get-approval-required" title="fwupd_remote_get_approval_required ()">fwupd_remote_get_approval_required</a>, function in <a class="link" href="libfwupd-FwupdRemote.html" title="FwupdRemote">FwupdRemote</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="libfwupd-FwupdRemote.html#fwupd-remote-get-automatic-reports" title="fwupd_remote_get_automatic_reports ()">fwupd_remote_get_automatic_reports</a>, function in <a class="link" href="libfwupd-FwupdRemote.html" title="FwupdRemote">FwupdRemote</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3770,6 +3962,14 @@ FWUPD_RESULT_KEY_CREATED, macro in fwupd-enums-private
 <dd></dd>
 <dt>
 FWUPD_RESULT_KEY_DESCRIPTION, macro in fwupd-enums-private
+</dt>
+<dd></dd>
+<dt>
+FWUPD_RESULT_KEY_DETACH_CAPTION, macro in fwupd-enums-private
+</dt>
+<dd></dd>
+<dt>
+FWUPD_RESULT_KEY_DETACH_IMAGE, macro in fwupd-enums-private
 </dt>
 <dd></dd>
 <dt>
