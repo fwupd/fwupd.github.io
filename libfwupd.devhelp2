@@ -50,6 +50,7 @@
     <keyword type="function" name="fwupd_client_modify_device ()" link="libfwupd-FwupdClient.html#fwupd-client-modify-device" since="1.0.4"/>
     <keyword type="function" name="fwupd_client_get_status ()" link="libfwupd-FwupdClient.html#fwupd-client-get-status" since="0.7.3"/>
     <keyword type="function" name="fwupd_client_get_tainted ()" link="libfwupd-FwupdClient.html#fwupd-client-get-tainted" since="1.2.4"/>
+    <keyword type="function" name="fwupd_client_get_daemon_interactive ()" link="libfwupd-FwupdClient.html#fwupd-client-get-daemon-interactive" since="1.3.4"/>
     <keyword type="function" name="fwupd_client_get_percentage ()" link="libfwupd-FwupdClient.html#fwupd-client-get-percentage" since="0.7.3"/>
     <keyword type="function" name="fwupd_client_get_daemon_version ()" link="libfwupd-FwupdClient.html#fwupd-client-get-daemon-version" since="0.9.6"/>
     <keyword type="function" name="fwupd_client_get_host_product ()" link="libfwupd-FwupdClient.html#fwupd-client-get-host-product" since="1.3.1"/>
@@ -562,6 +563,7 @@
     <keyword type="function" name="fu_usb_device_new ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-new" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_get_vid ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-get-vid" since="1.1.2"/>
     <keyword type="function" name="fu_usb_device_get_pid ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-get-pid" since="1.1.2"/>
+    <keyword type="function" name="fu_usb_device_get_spec ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-get-spec" since="1.3.4"/>
     <keyword type="function" name="fu_usb_device_get_dev ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-get-dev" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_set_dev ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-set-dev" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_is_open ()" link="libfwupd-FuUsbDevice.html#fu-usb-device-is-open" since="1.0.3"/>
@@ -641,6 +643,8 @@
     <keyword type="constant" name="FWUPD_VERSION_FORMAT_BCD" link="libfwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-BCD:CAPS"/>
     <keyword type="constant" name="FWUPD_VERSION_FORMAT_INTEL_ME" link="libfwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-INTEL-ME:CAPS"/>
     <keyword type="constant" name="FWUPD_VERSION_FORMAT_INTEL_ME2" link="libfwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-INTEL-ME2:CAPS"/>
+    <keyword type="constant" name="FWUPD_VERSION_FORMAT_SURFACE_LEGACY" link="libfwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-SURFACE-LEGACY:CAPS"/>
+    <keyword type="constant" name="FWUPD_VERSION_FORMAT_SURFACE" link="libfwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-SURFACE:CAPS"/>
     <keyword type="constant" name="FU_APP_FLAGS_NONE" link="libfwupd-fu-common.html#FU-APP-FLAGS-NONE:CAPS"/>
     <keyword type="constant" name="FU_APP_FLAGS_NO_IDLE_SOURCES" link="libfwupd-fu-common.html#FU-APP-FLAGS-NO-IDLE-SOURCES:CAPS"/>
     <keyword type="constant" name="FU_DUMP_FLAGS_NONE" link="libfwupd-fu-common.html#FU-DUMP-FLAGS-NONE:CAPS"/>
