@@ -6,8 +6,8 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="fwupd Reference Manual">
 <link rel="up" href="index.html" title="fwupd Reference Manual">
-<link rel="prev" href="libfwupd-fwupd-version.html" title="fwupd-version">
-<link rel="next" href="libfwupd-fu-chunk.html" title="fu-chunk">
+<link rel="prev" href="fwupd-fwupd-version.html" title="fwupd-version">
+<link rel="next" href="fwupd-FuArchive.html" title="FuArchive">
 <meta name="generator" content="GTK-Doc V1.32 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -16,8 +16,8 @@
 <td width="100%" align="left" class="shortcuts"></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
-<td><a accesskey="p" href="libfwupd-fwupd-version.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
-<td><a accesskey="n" href="libfwupd-fu-chunk.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+<td><a accesskey="p" href="fwupd-fwupd-version.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-FuArchive.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="reference">
 <div class="titlepage">
@@ -34,31 +34,76 @@
 <p><b>Table of Contents</b></p>
 <dl class="toc">
 <dt>
-<span class="refentrytitle"><a href="libfwupd-fu-chunk.html">fu-chunk</a></span><span class="refpurpose"></span>
+<span class="refentrytitle"><a href="fwupd-FuArchive.html">FuArchive</a></span><span class="refpurpose"> — an in-memory archive decompressor</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-fu-common.html">fu-common</a></span><span class="refpurpose"> — common functionality for plugins to use</span>
+<span class="refentrytitle"><a href="fwupd-fu-chunk.html">fu-chunk</a></span><span class="refpurpose"> — A packet of chunked data</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-FuDeviceLocker.html">FuDeviceLocker</a></span><span class="refpurpose"> — a device helper object</span>
+<span class="refentrytitle"><a href="fwupd-fu-common-cab.html">fu-common-cab</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-fu-device-metadata.html">fu-device-metadata</a></span><span class="refpurpose"> — a device helper object</span>
+<span class="refentrytitle"><a href="fwupd-fu-common-guid.html">fu-common-guid</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-FuDevice.html">FuDevice</a></span><span class="refpurpose"> — a physical or logical device</span>
+<span class="refentrytitle"><a href="fwupd-fu-common-version.html">fu-common-version</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-FuPlugin.html">FuPlugin</a></span><span class="refpurpose"> — a daemon plugin</span>
+<span class="refentrytitle"><a href="fwupd-fu-common.html">fu-common</a></span><span class="refpurpose"> — common functionality for plugins to use</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-fu-quirks.html">fu-quirks</a></span><span class="refpurpose"> — device quirks</span>
+<span class="refentrytitle"><a href="fwupd-FuDeviceLocker.html">FuDeviceLocker</a></span><span class="refpurpose"> — a device helper object</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-FuUdevDevice.html">FuUdevDevice</a></span><span class="refpurpose"> — a udev device</span>
+<span class="refentrytitle"><a href="fwupd-fu-device-metadata.html">fu-device-metadata</a></span><span class="refpurpose"> — a device helper object</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="libfwupd-FuUsbDevice.html">FuUsbDevice</a></span><span class="refpurpose"> — a USB device</span>
+<span class="refentrytitle"><a href="fwupd-FuDevice.html">FuDevice</a></span><span class="refpurpose"> — a physical or logical device</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuDfuFirmware.html">FuDfuFirmware</a></span><span class="refpurpose"> — DFU firmware image</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-firmware-common.html">fu-firmware-common</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuFirmwareImage.html">FuFirmwareImage</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuFirmware.html">FuFirmware</a></span><span class="refpurpose"> — a firmware file</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-hwids.html">fu-hwids</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-ihex-firmware.html">fu-ihex-firmware</a></span><span class="refpurpose"> — Ihex firmware image</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-srec-firmware.html">fu-srec-firmware</a></span><span class="refpurpose"> — SREC firmware image</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-io-channel.html">fu-io-channel</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-mutex.html">fu-mutex</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-plugin-vfuncs.html">fu-plugin-vfuncs</a></span><span class="refpurpose"> — Virtual functions for plugins</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuPlugin.html">FuPlugin</a></span><span class="refpurpose"> — a daemon plugin</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-quirks.html">fu-quirks</a></span><span class="refpurpose"> — device quirks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-fu-smbios.html">fu-smbios</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuUdevDevice.html">FuUdevDevice</a></span><span class="refpurpose"> — a udev device</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="fwupd-FuUsbDevice.html">FuUsbDevice</a></span><span class="refpurpose"> — a USB device</span>
 </dt>
 </dl>
 </div>
