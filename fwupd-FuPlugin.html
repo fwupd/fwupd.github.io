@@ -1,0 +1,1597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FuPlugin: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-fu-plugin-vfuncs.html" title="fu-plugin-vfuncs">
+<link rel="next" href="fwupd-fu-quirks.html" title="fu-quirks">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-FuPlugin.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-fu-plugin-vfuncs.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-quirks.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-FuPlugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-FuPlugin.top_of_page"></a>FuPlugin</span></h2>
+<p>FuPlugin — a daemon plugin</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-FuPlugin.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-name" title="fu_plugin_get_name ()">fu_plugin_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuPlugin.html#FuPluginData" title="FuPluginData"><span class="returnvalue">FuPluginData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-data" title="fu_plugin_get_data ()">fu_plugin_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuPlugin.html#FuPluginData" title="FuPluginData"><span class="returnvalue">FuPluginData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-alloc-data" title="fu_plugin_alloc_data ()">fu_plugin_alloc_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-enabled" title="fu_plugin_get_enabled ()">fu_plugin_get_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-set-enabled" title="fu_plugin_set_enabled ()">fu_plugin_set_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-set-build-hash" title="fu_plugin_set_build_hash ()">fu_plugin_set_build_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GUsbContext</span> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-usb-context" title="fu_plugin_get_usb_context ()">fu_plugin_get_usb_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-device-add" title="fu_plugin_device_add ()">fu_plugin_device_add</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-device-remove" title="fu_plugin_device_remove ()">fu_plugin_device_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-device-register" title="fu_plugin_device_register ()">fu_plugin_device_register</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-request-recoldplug" title="fu_plugin_request_recoldplug ()">fu_plugin_request_recoldplug</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-set-coldplug-delay" title="fu_plugin_set_coldplug_delay ()">fu_plugin_set_coldplug_delay</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-set-device-gtype" title="fu_plugin_set_device_gtype ()">fu_plugin_set_device_gtype</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-firmware-gtype" title="fu_plugin_add_firmware_gtype ()">fu_plugin_add_firmware_gtype</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-cache-lookup" title="fu_plugin_cache_lookup ()">fu_plugin_cache_lookup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-cache-remove" title="fu_plugin_cache_remove ()">fu_plugin_cache_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-cache-add" title="fu_plugin_cache_add ()">fu_plugin_cache_add</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-check-hwid" title="fu_plugin_check_hwid ()">fu_plugin_check_hwid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-hwid-replace-value" title="fu_plugin_get_hwid_replace_value ()">fu_plugin_get_hwid_replace_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-hwids" title="fu_plugin_get_hwids ()">fu_plugin_get_hwids</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-dmi-value" title="fu_plugin_get_dmi_value ()">fu_plugin_get_dmi_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-smbios-string" title="fu_plugin_get_smbios_string ()">fu_plugin_get_smbios_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-smbios-data" title="fu_plugin_get_smbios_data ()">fu_plugin_get_smbios_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-rule" title="fu_plugin_add_rule ()">fu_plugin_add_rule</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-udev-subsystem" title="fu_plugin_add_udev_subsystem ()">fu_plugin_add_udev_subsystem</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="returnvalue">FuQuirks</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-quirks" title="fu_plugin_get_quirks ()">fu_plugin_get_quirks</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-lookup-quirk-by-id" title="fu_plugin_lookup_quirk_by_id ()">fu_plugin_lookup_quirk_by_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-lookup-quirk-by-id-as-uint64" title="fu_plugin_lookup_quirk_by_id_as_uint64 ()">fu_plugin_lookup_quirk_by_id_as_uint64</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-report-metadata" title="fu_plugin_add_report_metadata ()">fu_plugin_add_report_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-get-config-value" title="fu_plugin_get_config_value ()">fu_plugin_get_config_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-runtime-version" title="fu_plugin_add_runtime_version ()">fu_plugin_add_runtime_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-compile-version" title="fu_plugin_add_compile_version ()">fu_plugin_add_compile_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-has-custom-flag" title="fu_plugin_has_custom_flag ()">fu_plugin_has_custom_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuPlugin.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FU-TYPE-PLUGIN:CAPS" title="FU_TYPE_PLUGIN">FU_TYPE_PLUGIN</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FuPluginClass" title="struct FuPluginClass">FuPluginClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FuPluginVerifyFlags" title="enum FuPluginVerifyFlags">FuPluginVerifyFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FuPluginRule" title="enum FuPluginRule">FuPluginRule</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FuPluginData" title="FuPluginData">FuPluginData</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin">FuPlugin</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuPlugin.description"></a><h2>Description</h2>
+<p>An object that represents a plugin run by the daemon.</p>
+<p>See also: <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuPlugin.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-plugin-get-name"></a><h3>fu_plugin_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_get_name (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Gets the plugin name.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-name.returns"></a><h4>Returns</h4>
+<p> a plugin name, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unknown.</p>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-data"></a><h3>fu_plugin_get_data ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuPlugin.html#FuPluginData" title="FuPluginData"><span class="returnvalue">FuPluginData</span></a> *
+fu_plugin_get_data (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Gets the per-plugin allocated private data. This will return <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> unless
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-alloc-data" title="fu_plugin_alloc_data ()"><code class="function">fu_plugin_alloc_data()</code></a> has been called by the plugin.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-data.returns"></a><h4>Returns</h4>
+<p>a pointer to a structure, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-alloc-data"></a><h3>fu_plugin_alloc_data ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuPlugin.html#FuPluginData" title="FuPluginData"><span class="returnvalue">FuPluginData</span></a> *
+fu_plugin_alloc_data (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> data_sz</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-enabled"></a><h3>fu_plugin_get_enabled ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_plugin_get_enabled (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Returns if the plugin is enabled. Plugins may self-disable using
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-set-enabled" title="fu_plugin_set_enabled ()"><code class="function">fu_plugin_set_enabled()</code></a> or can be disabled by the daemon.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-enabled.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the plugin is currently enabled.</p>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-set-enabled"></a><h3>fu_plugin_set_enabled ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_set_enabled (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                       <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
+<p>Enables or disables a plugin. Plugins can self-disable at any point.</p>
+<div class="refsect3">
+<a name="fu-plugin-set-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enabled</p></td>
+<td class="parameter_description"><p>the enabled value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-set-build-hash"></a><h3>fu_plugin_set_build_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_set_build_hash (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                          <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *build_hash</code></em>);</pre>
+<p>Sets the plugin build hash, typically a SHA256 checksum. All plugins must
+set the correct checksum to avoid the daemon being marked as tainted.</p>
+<div class="refsect3">
+<a name="fu-plugin-set-build-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>build_hash</p></td>
+<td class="parameter_description"><p>A checksum</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-usb-context"></a><h3>fu_plugin_get_usb_context ()</h3>
+<pre class="programlisting"><span class="returnvalue">GUsbContext</span> *
+fu_plugin_get_usb_context (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Gets the shared USB context that all plugins can use.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-usb-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-usb-context.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GUsbContext</span>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-device-add"></a><h3>fu_plugin_device_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_device_add (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                      <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *device</code></em>);</pre>
+<p>Asks the daemon to add a device to the exported list. If this device ID
+has already been added by a different plugin then this request will be
+ignored.</p>
+<p>Plugins should use <code class="function">fu_plugin_device_add_delay()</code> if they are not capable of
+actually flashing an image to the hardware so that higher-priority plugins
+can add the device themselves.</p>
+<div class="refsect3">
+<a name="fu-plugin-device-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-device-remove"></a><h3>fu_plugin_device_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_device_remove (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                         <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *device</code></em>);</pre>
+<p>Asks the daemon to remove a device from the exported list.</p>
+<div class="refsect3">
+<a name="fu-plugin-device-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-device-register"></a><h3>fu_plugin_device_register ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_device_register (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                           <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *device</code></em>);</pre>
+<p>Registers the device with other plugins so they can set metadata.</p>
+<p>Plugins do not have to call this manually as this is done automatically
+when using <a class="link" href="fwupd-FuPlugin.html#fu-plugin-device-add" title="fu_plugin_device_add ()"><code class="function">fu_plugin_device_add()</code></a>. They may wish to use this manually
+if for instance the coldplug should be ignored based on the metadata
+set from other plugins.</p>
+<div class="refsect3">
+<a name="fu-plugin-device-register.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-request-recoldplug"></a><h3>fu_plugin_request_recoldplug ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_request_recoldplug (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Ask all the plugins to coldplug all devices, which will include the <code class="function">prepare()</code>
+and <code class="function">cleanup()</code> phases. Duplicate devices added will be ignored.</p>
+<div class="refsect3">
+<a name="fu-plugin-request-recoldplug.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-set-coldplug-delay"></a><h3>fu_plugin_set_coldplug_delay ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_set_coldplug_delay (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> duration</code></em>);</pre>
+<p>Set the minimum time that should be waited in-between the call to
+<a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-coldplug-prepare" title="fu_plugin_coldplug_prepare ()"><code class="function">fu_plugin_coldplug_prepare()</code></a> and <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-coldplug" title="fu_plugin_coldplug ()"><code class="function">fu_plugin_coldplug()</code></a>. This is usually going
+to be the minimum hardware initialisation time from a datasheet.</p>
+<p>It is better to use this function rather than using a <code class="function">sleep()</code> in the plugin
+itself as then only one delay is done in the daemon rather than waiting for
+each coldplug prepare in a serial way.</p>
+<p>Additionally, very long delays should be avoided as the daemon will be
+blocked from processing requests whilst the coldplug delay is being
+performed.</p>
+<div class="refsect3">
+<a name="fu-plugin-set-coldplug-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>duration</p></td>
+<td class="parameter_description"><p>A delay in milliseconds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-set-device-gtype"></a><h3>fu_plugin_set_device_gtype ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_set_device_gtype (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                            <em class="parameter"><code><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> device_gtype</code></em>);</pre>
+<p>Sets the device <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> which is used when creating devices.</p>
+<p>If this method is used then <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-usb-device-added" title="fu_plugin_usb_device_added ()"><code class="function">fu_plugin_usb_device_added()</code></a> is not called, and
+instead the object is created in the daemon for the plugin.</p>
+<p>Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
+<div class="refsect3">
+<a name="fu-plugin-set-device-gtype.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device_gtype</p></td>
+<td class="parameter_description"><p>a <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <code class="literal">FU_TYPE_DEVICE</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-firmware-gtype"></a><h3>fu_plugin_add_firmware_gtype ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_firmware_gtype (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                              <em class="parameter"><code><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> gtype</code></em>);</pre>
+<p>Adds a firmware <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> which is used when creating devices.
+*
+Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
+<div class="refsect3">
+<a name="fu-plugin-add-firmware-gtype.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>A string describing the type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gtype</p></td>
+<td class="parameter_description"><p>a <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <code class="literal">FU_TYPE_DEVICE</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-cache-lookup"></a><h3>fu_plugin_cache_lookup ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+fu_plugin_cache_lookup (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>Finds an object in the per-plugin cache.</p>
+<div class="refsect3">
+<a name="fu-plugin-cache-lookup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-cache-lookup.returns"></a><h4>Returns</h4>
+<p>a <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unfound. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-cache-remove"></a><h3>fu_plugin_cache_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_cache_remove (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>Removes an object from the per-plugin cache.</p>
+<div class="refsect3">
+<a name="fu-plugin-cache-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-cache-add"></a><h3>fu_plugin_cache_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_cache_add (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                     <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                     <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dev</code></em>);</pre>
+<p>Adds an object to the per-plugin cache.</p>
+<div class="refsect3">
+<a name="fu-plugin-cache-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dev</p></td>
+<td class="parameter_description"><p>a <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a>, typically a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.8.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-check-hwid"></a><h3>fu_plugin_check_hwid ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_plugin_check_hwid (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                      <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *hwid</code></em>);</pre>
+<p>Checks to see if a specific GUID exists. All hardware IDs on a
+specific system can be shown using the <code class="literal">fwupdmgr hwids</code> command.</p>
+<div class="refsect3">
+<a name="fu-plugin-check-hwid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hwid</p></td>
+<td class="parameter_description"><p>A Hardware ID GUID, e.g. <code class="literal">6de5d951-d755-576b-bd09-c5cf66b27234</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-check-hwid.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the HwId is found on the system.</p>
+</div>
+<p class="since">Since: 0.9.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-hwid-replace-value"></a><h3>fu_plugin_get_hwid_replace_value ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_get_hwid_replace_value (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                                  <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *keys</code></em>,
+                                  <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the replacement value for a specific key. All hardware IDs on a
+specific system can be shown using the <code class="literal">fwupdmgr hwids</code> command.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-hwid-replace-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>keys</p></td>
+<td class="parameter_description"><p>A key, e.g. <code class="literal">HardwareID-3</code> or <a class="link" href="fwupd-fu-hwids.html#FU-HWIDS-KEY-PRODUCT-SKU:CAPS" title="FU_HWIDS_KEY_PRODUCT_SKU"><code class="literal">FU_HWIDS_KEY_PRODUCT_SKU</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-hwid-replace-value.returns"></a><h4>Returns</h4>
+<p>a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-hwids"></a><h3>fu_plugin_get_hwids ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_plugin_get_hwids (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Returns all the HWIDs defined in the system. All hardware IDs on a
+specific system can be shown using the <code class="literal">fwupdmgr hwids</code> command.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-hwids.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-hwids.returns"></a><h4>Returns</h4>
+<p>An array of GUIDs. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+<p class="since">Since: 1.1.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-dmi-value"></a><h3>fu_plugin_get_dmi_value ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_get_dmi_value (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dmi_id</code></em>);</pre>
+<p>Gets a hardware DMI value.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-dmi-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dmi_id</p></td>
+<td class="parameter_description"><p>A DMI ID, e.g. <code class="literal">BiosVersion</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-dmi-value.returns"></a><h4>Returns</h4>
+<p> The string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-smbios-string"></a><h3>fu_plugin_get_smbios_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_get_smbios_string (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> structure_type</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> offset</code></em>);</pre>
+<p>Gets a hardware SMBIOS string.</p>
+<p>The <em class="parameter"><code>type</code></em>
+ and <em class="parameter"><code>offset</code></em>
+ can be referenced from the DMTF SMBIOS specification:
+https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.1.1.pdf</p>
+<div class="refsect3">
+<a name="fu-plugin-get-smbios-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>structure_type</p></td>
+<td class="parameter_description"><p>A SMBIOS structure type, e.g. <a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BIOS"><code class="literal">FU_SMBIOS_STRUCTURE_TYPE_BIOS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>A SMBIOS offset</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-smbios-string.returns"></a><h4>Returns</h4>
+<p> A string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-smbios-data"></a><h3>fu_plugin_get_smbios_data ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_plugin_get_smbios_data (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> structure_type</code></em>);</pre>
+<p>Gets a hardware SMBIOS data.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-smbios-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>structure_type</p></td>
+<td class="parameter_description"><p>A SMBIOS structure type, e.g. <a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BIOS"><code class="literal">FU_SMBIOS_STRUCTURE_TYPE_BIOS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-smbios-data.returns"></a><h4>Returns</h4>
+<p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-rule"></a><h3>fu_plugin_add_rule ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_rule (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                    <em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPluginRule" title="enum FuPluginRule"><span class="type">FuPluginRule</span></a> rule</code></em>,
+                    <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>If the plugin name is found, the rule will be used to sort the plugin list,
+for example the plugin specified by <em class="parameter"><code>name</code></em>
+ will be ordered after this plugin
+when <a class="link" href="fwupd-FuPlugin.html#FU-PLUGIN-RULE-RUN-AFTER:CAPS"><code class="literal">FU_PLUGIN_RULE_RUN_AFTER</code></a> is used.</p>
+<p>NOTE: The depsolver is iterative and may not solve overly-complicated rules;
+If depsolving fails then fwupd will not start.</p>
+<div class="refsect3">
+<a name="fu-plugin-add-rule.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>rule</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPluginRule" title="enum FuPluginRule"><span class="type">FuPluginRule</span></a>, e.g. <a class="link" href="fwupd-FuPlugin.html#FU-PLUGIN-RULE-CONFLICTS:CAPS"><code class="literal">FU_PLUGIN_RULE_CONFLICTS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a plugin name, e.g. <code class="literal">upower</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-udev-subsystem"></a><h3>fu_plugin_add_udev_subsystem ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_udev_subsystem (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subsystem</code></em>);</pre>
+<p>Registers the udev subsystem to be watched by the daemon.</p>
+<p>Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
+<div class="refsect3">
+<a name="fu-plugin-add-udev-subsystem.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>subsystem</p></td>
+<td class="parameter_description"><p>a subsystem name, e.g. <code class="literal">pciport</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-quirks"></a><h3>fu_plugin_get_quirks ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="returnvalue">FuQuirks</span></a> *
+fu_plugin_get_quirks (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>);</pre>
+<p>Returns the hardware database object. This can be used to discover device
+quirks or other device-specific settings.</p>
+<div class="refsect3">
+<a name="fu-plugin-get-quirks.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-get-quirks.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not set. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-lookup-quirk-by-id"></a><h3>fu_plugin_lookup_quirk_by_id ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_lookup_quirk_by_id (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Looks up an entry in the hardware database using a string value.</p>
+<div class="refsect3">
+<a name="fu-plugin-lookup-quirk-by-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group</p></td>
+<td class="parameter_description"><p>A string, e.g. "DfuFlags"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>An ID to match the entry, e.g. "Summary"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-lookup-quirk-by-id.returns"></a><h4>Returns</h4>
+<p>values from the database, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-lookup-quirk-by-id-as-uint64"></a><h3>fu_plugin_lookup_quirk_by_id_as_uint64 ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fu_plugin_lookup_quirk_by_id_as_uint64
+                               (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Looks up an entry in the hardware database using a string key, returning
+an integer value. Values are assumed base 10, unless prefixed with "0x"
+where they are parsed as base 16.</p>
+<div class="refsect3">
+<a name="fu-plugin-lookup-quirk-by-id-as-uint64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group</p></td>
+<td class="parameter_description"><p>A string, e.g. "DfuFlags"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>An ID to match the entry, e.g. "Size"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-lookup-quirk-by-id-as-uint64.returns"></a><h4>Returns</h4>
+<p> guint64 id or 0 if not found</p>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-report-metadata"></a><h3>fu_plugin_add_report_metadata ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_report_metadata (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Sets any additional metadata to be included in the firmware report to aid
+debugging problems.</p>
+<p>Any data included here will be sent to the metadata server after user
+confirmation.</p>
+<div class="refsect3">
+<a name="fu-plugin-add-report-metadata.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">FwupdateVersion</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">10</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-get-config-value"></a><h3>fu_plugin_get_config_value ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_plugin_get_config_value (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>Return the value of a key if it's been configured</p>
+<div class="refsect3">
+<a name="fu-plugin-get-config-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>A settings key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-runtime-version"></a><h3>fu_plugin_add_runtime_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_runtime_version (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component_id</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets a runtime version of a specific dependency.</p>
+<div class="refsect3">
+<a name="fu-plugin-add-runtime-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>component_id</p></td>
+<td class="parameter_description"><p>An AppStream component id, e.g. "org.gnome.Software"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>A version string, e.g. "1.2.3"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-compile-version"></a><h3>fu_plugin_add_compile_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_compile_version (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component_id</code></em>,
+                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets a compile-time version of a specific dependency.</p>
+<div class="refsect3">
+<a name="fu-plugin-add-compile-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>component_id</p></td>
+<td class="parameter_description"><p>An AppStream component id, e.g. "org.gnome.Software"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>A version string, e.g. "1.2.3"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.0.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-has-custom-flag"></a><h3>fu_plugin_has_custom_flag ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_plugin_has_custom_flag (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *flag</code></em>);</pre>
+<p>Returns if a per-plugin HwId custom flag exists, typically added from a DMI quirk.</p>
+<div class="refsect3">
+<a name="fu-plugin-has-custom-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>A custom text flag, specific to the plugin, e.g. <code class="literal">uefi-force-enable</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-plugin-has-custom-flag.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the quirk entry exists</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuPlugin.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-PLUGIN:CAPS"></a><h3>FU_TYPE_PLUGIN</h3>
+<pre class="programlisting">#define FU_TYPE_PLUGIN (fu_plugin_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuPluginClass"></a><h3>struct FuPluginClass</h3>
+<pre class="programlisting">struct FuPluginClass {
+	GObjectClass	 parent_class;
+	/* signals */
+	void		 (* device_added)		(FuPlugin *self,
+							 FuDevice *device);
+	void		 (* device_removed)		(FuPlugin *self,
+							 FuDevice *device);
+	void		 (* status_changed)		(FuPlugin *self,
+							 FwupdStatus	 status);
+	void		 (* percentage_changed)		(FuPlugin *self,
+							 guint		 percentage);
+	void		 (* recoldplug)			(FuPlugin *self);
+	void		 (* set_coldplug_delay)		(FuPlugin *self,
+							 guint		 duration);
+	void		 (* device_register)		(FuPlugin *self,
+							 FuDevice *device);
+	gboolean	 (* check_supported)		(FuPlugin *self,
+							 const gchar *guid);
+	void		 (* rules_changed)		(FuPlugin *self);
+	gboolean	 (* add_firmware_gtype)		(FuPlugin *self,
+							 const gchar *id,
+							 GType		 gtype);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuPluginVerifyFlags"></a><h3>enum FuPluginVerifyFlags</h3>
+<p>Flags used when verifying, currently unused.</p>
+<div class="refsect3">
+<a name="FuPluginVerifyFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-VERIFY-FLAG-NONE:CAPS"></a>FU_PLUGIN_VERIFY_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuPluginRule"></a><h3>enum FuPluginRule</h3>
+<p>The rules used for ordering plugins.
+Plugins are expected to add rules in <code class="function">fu_plugin_initialize()</code>.</p>
+<div class="refsect3">
+<a name="FuPluginRule.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-CONFLICTS:CAPS"></a>FU_PLUGIN_RULE_CONFLICTS</p></td>
+<td class="enum_member_description">
+<p>The plugin conflicts with another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-RUN-AFTER:CAPS"></a>FU_PLUGIN_RULE_RUN_AFTER</p></td>
+<td class="enum_member_description">
+<p>Order the plugin after another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-RUN-BEFORE:CAPS"></a>FU_PLUGIN_RULE_RUN_BEFORE</p></td>
+<td class="enum_member_description">
+<p>Order the plugin before another</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-BETTER-THAN:CAPS"></a>FU_PLUGIN_RULE_BETTER_THAN</p></td>
+<td class="enum_member_description">
+<p>Is better than another plugin</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-INHIBITS-IDLE:CAPS"></a>FU_PLUGIN_RULE_INHIBITS_IDLE</p></td>
+<td class="enum_member_description">
+<p>The plugin inhibits the idle shutdown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PLUGIN-RULE-METADATA-SOURCE:CAPS"></a>FU_PLUGIN_RULE_METADATA_SOURCE</p></td>
+<td class="enum_member_description">
+<p>Uses another plugin as a source of report metadata</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuPluginData"></a><h3>FuPluginData</h3>
+<pre class="programlisting">typedef struct FuPluginData FuPluginData;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuPlugin"></a><h3>FuPlugin</h3>
+<pre class="programlisting">typedef struct _FuPlugin FuPlugin;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

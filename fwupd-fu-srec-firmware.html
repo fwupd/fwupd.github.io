@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-srec-firmware: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-fu-ihex-firmware.html" title="fu-ihex-firmware">
+<link rel="next" href="fwupd-fu-io-channel.html" title="fu-io-channel">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-fu-srec-firmware.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-fu-ihex-firmware.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-io-channel.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-fu-srec-firmware"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-fu-srec-firmware.top_of_page"></a>fu-srec-firmware</span></h2>
+<p>fu-srec-firmware — SREC firmware image</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-fu-srec-firmware.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-srec-firmware.html#fu-srec-firmware-new" title="fu_srec_firmware_new ()">fu_srec_firmware_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-srec-firmware.html#fu-srec-firmware-get-records" title="fu_srec_firmware_get_records ()">fu_srec_firmware_get_records</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmwareRecord" title="FuSrecFirmwareRecord"><span class="returnvalue">FuSrecFirmwareRecord</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-srec-firmware.html#fu-srec-firmware-record-new" title="fu_srec_firmware_record_new ()">fu_srec_firmware_record_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-srec-firmware.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-srec-firmware.html#FU-TYPE-SREC-FIRMWARE:CAPS" title="FU_TYPE_SREC_FIRMWARE">FU_TYPE_SREC_FIRMWARE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-fu-srec-firmware.html#FuFirmareSrecRecordKind" title="enum FuFirmareSrecRecordKind">FuFirmareSrecRecordKind</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmwareRecord" title="FuSrecFirmwareRecord">FuSrecFirmwareRecord</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmware" title="FuSrecFirmware">FuSrecFirmware</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-srec-firmware.description"></a><h2>Description</h2>
+<p>An object that represents a SREC firmware image.</p>
+<p>See also: <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-srec-firmware.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-srec-firmware-new"></a><h3>fu_srec_firmware_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+fu_srec_firmware_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> of sub type Srec</p>
+<p class="since">Since: 1.3.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-srec-firmware-get-records"></a><h3>fu_srec_firmware_get_records ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_srec_firmware_get_records (<em class="parameter"><code><a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmware" title="FuSrecFirmware"><span class="type">FuSrecFirmware</span></a> *self</code></em>);</pre>
+<p>Returns the raw records from SREC tokenization.</p>
+<p>This might be useful if the plugin is expecting the SREC file to be a list
+of operations, rather than a simple linear image with filled holes.</p>
+<div class="refsect3">
+<a name="fu-srec-firmware-get-records.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmware" title="FuSrecFirmware"><span class="type">FuSrecFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-srec-firmware-get-records.returns"></a><h4>Returns</h4>
+<p>records. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuSrecFirmwareRecord]</span></p>
+</div>
+<p class="since">Since: 1.3.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-srec-firmware-record-new"></a><h3>fu_srec_firmware_record_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmwareRecord" title="FuSrecFirmwareRecord"><span class="returnvalue">FuSrecFirmwareRecord</span></a> *
+fu_srec_firmware_record_new (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> ln</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fu-srec-firmware.html#FuFirmareSrecRecordKind" title="enum FuFirmareSrecRecordKind"><span class="type">FuFirmareSrecRecordKind</span></a> kind</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> addr</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-srec-firmware.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-SREC-FIRMWARE:CAPS"></a><h3>FU_TYPE_SREC_FIRMWARE</h3>
+<pre class="programlisting">#define FU_TYPE_SREC_FIRMWARE (fu_srec_firmware_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuFirmareSrecRecordKind"></a><h3>enum FuFirmareSrecRecordKind</h3>
+<div class="refsect3">
+<a name="FuFirmareSrecRecordKind.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S0-HEADER:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S0_HEADER</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S1-DATA-16:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S1_DATA_16</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S2-DATA-24:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S2_DATA_24</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S3-DATA-32:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S3_DATA_32</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S4-RESERVED:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S4_RESERVED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S5-COUNT-16:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S5_COUNT_16</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S6-COUNT-24:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S6_COUNT_24</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S7-COUNT-32:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S7_COUNT_32</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S8-TERMINATION-24:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S8_TERMINATION_24</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-S9-TERMINATION-16:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_S9_TERMINATION_16</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-FIRMWARE-SREC-RECORD-KIND-LAST:CAPS"></a>FU_FIRMWARE_SREC_RECORD_KIND_LAST</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuSrecFirmwareRecord"></a><h3>FuSrecFirmwareRecord</h3>
+<pre class="programlisting">typedef struct {
+	guint			 ln;
+	FuFirmareSrecRecordKind	 kind;
+	guint32			 addr;
+	GByteArray		*buf;
+} FuSrecFirmwareRecord;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuSrecFirmware"></a><h3>FuSrecFirmware</h3>
+<pre class="programlisting">typedef struct _FuSrecFirmware FuSrecFirmware;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-smbios: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-fu-quirks.html" title="fu-quirks">
+<link rel="next" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-fu-smbios.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-fu-quirks.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-FuUdevDevice.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-fu-smbios"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-fu-smbios.top_of_page"></a>fu-smbios</span></h2>
+<p>fu-smbios</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-fu-smbios.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="returnvalue">FuSmbios</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-smbios.html#fu-smbios-new" title="fu_smbios_new ()">fu_smbios_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-smbios.html#fu-smbios-to-string" title="fu_smbios_to_string ()">fu_smbios_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-smbios.html#fu-smbios-get-string" title="fu_smbios_get_string ()">fu_smbios_get_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-smbios.html#fu-smbios-get-data" title="fu_smbios_get_data ()">fu_smbios_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-smbios.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FU-TYPE-SMBIOS:CAPS" title="FU_TYPE_SMBIOS">FU_TYPE_SMBIOS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BIOS">FU_SMBIOS_STRUCTURE_TYPE_BIOS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-SYSTEM:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_SYSTEM">FU_SMBIOS_STRUCTURE_TYPE_SYSTEM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BASEBOARD:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BASEBOARD">FU_SMBIOS_STRUCTURE_TYPE_BASEBOARD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-CHASSIS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_CHASSIS">FU_SMBIOS_STRUCTURE_TYPE_CHASSIS</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios">FuSmbios</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-smbios.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-smbios.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-smbios-new"></a><h3>fu_smbios_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="returnvalue">FuSmbios</span></a> *
+fu_smbios_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new object to parse SMBIOS data.</p>
+<div class="refsect3">
+<a name="fu-smbios-new.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a></p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-smbios-to-string"></a><h3>fu_smbios_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_smbios_to_string (<em class="parameter"><code><a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a> *self</code></em>);</pre>
+<p>Dumps the parsed SMBIOS data to a string.</p>
+<div class="refsect3">
+<a name="fu-smbios-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-smbios-to-string.returns"></a><h4>Returns</h4>
+<p> a UTF-8 string</p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-smbios-get-string"></a><h3>fu_smbios_get_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_smbios_get_string (<em class="parameter"><code><a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a> *self</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> type</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> offset</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Reads a string from the SMBIOS string table of a specific structure.</p>
+<p>The <em class="parameter"><code>type</code></em>
+ and <em class="parameter"><code>offset</code></em>
+ can be referenced from the DMTF SMBIOS specification:
+https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.1.1.pdf</p>
+<div class="refsect3">
+<a name="fu-smbios-get-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>A structure type, e.g. <a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BIOS"><code class="literal">FU_SMBIOS_STRUCTURE_TYPE_BIOS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>A structure offset</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-smbios-get-string.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if invalid or not found</p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-smbios-get-data"></a><h3>fu_smbios_get_data ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_smbios_get_data (<em class="parameter"><code><a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a> *self</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> type</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Reads a SMBIOS data blob, which includes the SMBIOS section header.</p>
+<div class="refsect3">
+<a name="fu-smbios-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>A structure type, e.g. <a class="link" href="fwupd-fu-smbios.html#FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS" title="FU_SMBIOS_STRUCTURE_TYPE_BIOS"><code class="literal">FU_SMBIOS_STRUCTURE_TYPE_BIOS</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-smbios-get-data.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if invalid or not found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-smbios.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-SMBIOS:CAPS"></a><h3>FU_TYPE_SMBIOS</h3>
+<pre class="programlisting">#define FU_TYPE_SMBIOS (fu_smbios_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-SMBIOS-STRUCTURE-TYPE-BIOS:CAPS"></a><h3>FU_SMBIOS_STRUCTURE_TYPE_BIOS</h3>
+<pre class="programlisting">#define FU_SMBIOS_STRUCTURE_TYPE_BIOS		0x00
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-SMBIOS-STRUCTURE-TYPE-SYSTEM:CAPS"></a><h3>FU_SMBIOS_STRUCTURE_TYPE_SYSTEM</h3>
+<pre class="programlisting">#define FU_SMBIOS_STRUCTURE_TYPE_SYSTEM		0x01
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-SMBIOS-STRUCTURE-TYPE-BASEBOARD:CAPS"></a><h3>FU_SMBIOS_STRUCTURE_TYPE_BASEBOARD</h3>
+<pre class="programlisting">#define FU_SMBIOS_STRUCTURE_TYPE_BASEBOARD 0x02
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-SMBIOS-STRUCTURE-TYPE-CHASSIS:CAPS"></a><h3>FU_SMBIOS_STRUCTURE_TYPE_CHASSIS</h3>
+<pre class="programlisting">#define FU_SMBIOS_STRUCTURE_TYPE_CHASSIS 0x03
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuSmbios"></a><h3>FuSmbios</h3>
+<pre class="programlisting">typedef struct _FuSmbios FuSmbios;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>
