@@ -57,14 +57,14 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-quirks.html#fu-quirks-load" title="fu_quirks_load ()">fu_quirks_load</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
-<td class="function_type">const <span class="returnvalue">gchar</span> *
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-quirks.html#fu-quirks-lookup-by-id" title="fu_quirks_lookup_by_id ()">fu_quirks_lookup_by_id</a> <span class="c_punctuation">()</span>
@@ -72,7 +72,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-quirks.html#fu-quirks-lookup-by-id-iter" title="fu_quirks_lookup_by_id_iter ()">fu_quirks_lookup_by_id_iter</a> <span class="c_punctuation">()</span>
@@ -214,9 +214,9 @@ in an easy way without the user compiling anything.</p>
 <a name="FuQuirksIter"></a><h3>FuQuirksIter ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 <span class="c_punctuation">(</span>*FuQuirksIter<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a> *self</code></em>,
-                 <em class="parameter"><code>const <span class="type">gchar</span> *key</code></em>,
-                 <em class="parameter"><code>const <span class="type">gchar</span> *value</code></em>,
-                 <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -234,10 +234,10 @@ fu_quirks_new (<em class="parameter"><code><span class="type">void</span></code>
 <hr>
 <div class="refsect2">
 <a name="fu-quirks-load"></a><h3>fu_quirks_load ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_quirks_load (<em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a> *self</code></em>,
                 <em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirksLoadFlags" title="enum FuQuirksLoadFlags"><span class="type">FuQuirksLoadFlags</span></a> load_flags</code></em>,
-                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Loads the various files that define the hardware quirks used in plugins.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
@@ -261,7 +261,7 @@ fu_quirks_load (<em class="parameter"><code><a class="link" href="fwupd-fu-quirk
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>A <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -269,17 +269,17 @@ fu_quirks_load (<em class="parameter"><code><a class="link" href="fwupd-fu-quirk
 </div>
 <div class="refsect3">
 <a name="fu-quirks-load.returns"></a><h4>Returns</h4>
-<p> <code class="literal">TRUE</code> for success</p>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
 </div>
 <p class="since">Since: 1.0.1</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="fu-quirks-lookup-by-id"></a><h3>fu_quirks_lookup_by_id ()</h3>
-<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fu_quirks_lookup_by_id (<em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a> *self</code></em>,
-                        <em class="parameter"><code>const <span class="type">gchar</span> *group</code></em>,
-                        <em class="parameter"><code>const <span class="type">gchar</span> *key</code></em>);</pre>
+                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group</code></em>,
+                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
 <p>Looks up an entry in the hardware database using a string value.</p>
 <div class="refsect3">
 <a name="fu-quirks-lookup-by-id.parameters"></a><h4>Parameters</h4>
@@ -310,7 +310,7 @@ fu_quirks_lookup_by_id (<em class="parameter"><code><a class="link" href="fwupd-
 </div>
 <div class="refsect3">
 <a name="fu-quirks-lookup-by-id.returns"></a><h4>Returns</h4>
-<p>values from the database, or <code class="literal">NULL</code> if not found. </p>
+<p>values from the database, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.1</p>
@@ -318,11 +318,11 @@ fu_quirks_lookup_by_id (<em class="parameter"><code><a class="link" href="fwupd-
 <hr>
 <div class="refsect2">
 <a name="fu-quirks-lookup-by-id-iter"></a><h3>fu_quirks_lookup_by_id_iter ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_quirks_lookup_by_id_iter (<em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a> *self</code></em>,
-                             <em class="parameter"><code>const <span class="type">gchar</span> *group</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group</code></em>,
                              <em class="parameter"><code><a class="link" href="fwupd-fu-quirks.html#FuQuirksIter" title="FuQuirksIter ()"><span class="type">FuQuirksIter</span></a> iter_cb</code></em>,
-                             <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Looks up all entries in the hardware database using a GUID value.</p>
 <div class="refsect3">
 <a name="fu-quirks-lookup-by-id-iter.parameters"></a><h4>Parameters</h4>
@@ -359,7 +359,7 @@ fu_quirks_lookup_by_id_iter (<em class="parameter"><code><a class="link" href="f
 </div>
 <div class="refsect3">
 <a name="fu-quirks-lookup-by-id-iter.returns"></a><h4>Returns</h4>
-<p> <code class="literal">TRUE</code> if the ID was found, and <em class="parameter"><code>iter</code></em>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the ID was found, and <em class="parameter"><code>iter</code></em>
 was called</p>
 </div>
 <p class="since">Since: 1.3.3</p>

@@ -334,7 +334,8 @@
     <keyword type="struct" name="FuChunk" link="fwupd-fu-chunk.html#FuChunk"/>
     <keyword type="function" name="fu_common_cab_build_silo ()" link="fwupd-fu-common-cab.html#fu-common-cab-build-silo"/>
     <keyword type="function" name="fu_common_guid_is_plausible ()" link="fwupd-fu-common-guid.html#fu-common-guid-is-plausible" since="1.2.5"/>
-    <keyword type="function" name="fu_common_vercmp ()" link="fwupd-fu-common-version.html#fu-common-vercmp" since="0.3.5"/>
+    <keyword type="function" name="fu_common_vercmp ()" link="fwupd-fu-common-version.html#fu-common-vercmp" deprecated="" since="0.3.5"/>
+    <keyword type="function" name="fu_common_vercmp_full ()" link="fwupd-fu-common-version.html#fu-common-vercmp-full" since="1.3.9"/>
     <keyword type="function" name="fu_common_version_from_uint64 ()" link="fwupd-fu-common-version.html#fu-common-version-from-uint64" since="1.3.6"/>
     <keyword type="function" name="fu_common_version_from_uint32 ()" link="fwupd-fu-common-version.html#fu-common-version-from-uint32" since="1.2.0"/>
     <keyword type="function" name="fu_common_version_from_uint16 ()" link="fwupd-fu-common-version.html#fu-common-version-from-uint16" since="1.2.0"/>
