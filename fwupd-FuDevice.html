@@ -41,6 +41,14 @@
 <tbody>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="fwupd-FuDevice.html#FuDeviceRetryFunc" title="FuDeviceRetryFunc ()">*FuDeviceRetryFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
 </td>
 <td class="function_name">
@@ -128,6 +136,12 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-update-message" title="fu_device_set_update_message()">fu_device_set_update_message</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-update-error" title="fu_device_set_update_error()">fu_device_set_update_error</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -152,25 +166,19 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
-<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-lowest" title="fu_device_set_version_lowest()">fu_device_set_version_lowest</a><span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name">
-<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-bootloader" title="fu_device_set_version_bootloader()">fu_device_set_version_bootloader</a><span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name">
-<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-format" title="fu_device_set_version_format()">fu_device_set_version_format</a><span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-version-raw" title="fu_device_set_version_raw()">fu_device_set_version_raw</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-lowest-raw" title="fu_device_set_version_lowest_raw()">fu_device_set_version_lowest_raw</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-bootloader-raw" title="fu_device_set_version_bootloader_raw()">fu_device_set_version_bootloader_raw</a><span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -314,6 +322,18 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-version-lowest-raw" title="fu_device_get_version_lowest_raw()">fu_device_get_version_lowest_raw</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-version-bootloader-raw" title="fu_device_get_version_bootloader_raw()">fu_device_get_version_bootloader_raw</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-vendor-id" title="fu_device_get_vendor_id()">fu_device_get_vendor_id</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -393,10 +413,26 @@
 </tr>
 <tr>
 <td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-add-instance-id-full" title="fu_device_add_instance_id_full ()">fu_device_add_instance_id_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-alternate" title="fu_device_get_alternate ()">fu_device_get_alternate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-root" title="fu_device_get_root ()">fu_device_get_root</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -507,7 +543,31 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-format" title="fu_device_set_version_format ()">fu_device_set_version_format</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-version" title="fu_device_set_version ()">fu_device_set_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-lowest" title="fu_device_set_version_lowest ()">fu_device_set_version_lowest</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-version-bootloader" title="fu_device_set_version_bootloader ()">fu_device_set_version_bootloader</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -866,6 +926,30 @@
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-poll-interval" title="fu_device_set_poll_interval ()">fu_device_set_poll_interval</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-retry-set-delay" title="fu_device_retry_set_delay ()">fu_device_retry_set_delay</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-retry-add-recovery" title="fu_device_retry_add_recovery ()">fu_device_retry_add_recovery</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-retry" title="fu_device_retry ()">fu_device_retry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -884,6 +968,10 @@
 <tr>
 <td class="datatype_keyword">struct</td>
 <td class="function_name"><a class="link" href="fwupd-FuDevice.html#FuDeviceClass" title="struct FuDeviceClass">FuDeviceClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FuDevice.html#FuDeviceInstanceFlags" title="enum FuDeviceInstanceFlags">FuDeviceInstanceFlags</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
@@ -907,6 +995,14 @@
 </div>
 <div class="refsect1">
 <a name="fwupd-FuDevice.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="FuDeviceRetryFunc"></a><h3>FuDeviceRetryFunc ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="c_punctuation">(</span>*FuDeviceRetryFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *device</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+</div>
+<hr>
 <div class="refsect2">
 <a name="fu-device-new"></a><h3>fu_device_new ()</h3>
 <pre class="programlisting"><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
@@ -993,6 +1089,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-set-update-message"></a><h3>fu_device_set_update_message()</h3>
+<pre class="programlisting">#define fu_device_set_update_message(d,v) fwupd_device_set_update_message(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-set-update-error"></a><h3>fu_device_set_update_error()</h3>
 <pre class="programlisting">#define fu_device_set_update_error(d,v)		fwupd_device_set_update_error(FWUPD_DEVICE(d),v)
 </pre>
@@ -1017,26 +1119,20 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 </div>
 <hr>
 <div class="refsect2">
-<a name="fu-device-set-version-lowest"></a><h3>fu_device_set_version_lowest()</h3>
-<pre class="programlisting">#define fu_device_set_version_lowest(d,v) fwupd_device_set_version_lowest(FWUPD_DEVICE(d),v)
-</pre>
-</div>
-<hr>
-<div class="refsect2">
-<a name="fu-device-set-version-bootloader"></a><h3>fu_device_set_version_bootloader()</h3>
-<pre class="programlisting">#define fu_device_set_version_bootloader(d,v) fwupd_device_set_version_bootloader(FWUPD_DEVICE(d),v)
-</pre>
-</div>
-<hr>
-<div class="refsect2">
-<a name="fu-device-set-version-format"></a><h3>fu_device_set_version_format()</h3>
-<pre class="programlisting">#define fu_device_set_version_format(d,v) fwupd_device_set_version_format(FWUPD_DEVICE(d),v)
-</pre>
-</div>
-<hr>
-<div class="refsect2">
 <a name="fu-device-set-version-raw"></a><h3>fu_device_set_version_raw()</h3>
 <pre class="programlisting">#define fu_device_set_version_raw(d,v)		fwupd_device_set_version_raw(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-version-lowest-raw"></a><h3>fu_device_set_version_lowest_raw()</h3>
+<pre class="programlisting">#define fu_device_set_version_lowest_raw(d,v) fwupd_device_set_version_lowest_raw(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-version-bootloader-raw"></a><h3>fu_device_set_version_bootloader_raw()</h3>
+<pre class="programlisting">#define fu_device_set_version_bootloader_raw(d,v) fwupd_device_set_version_bootloader_raw(FWUPD_DEVICE(d),v)
 </pre>
 </div>
 <hr>
@@ -1175,6 +1271,18 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="fu-device-get-version-raw"></a><h3>fu_device_get_version_raw()</h3>
 <pre class="programlisting">#define fu_device_get_version_raw(d)		fwupd_device_get_version_raw(FWUPD_DEVICE(d))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-version-lowest-raw"></a><h3>fu_device_get_version_lowest_raw()</h3>
+<pre class="programlisting">#define fu_device_get_version_lowest_raw(d) fwupd_device_get_version_lowest_raw(FWUPD_DEVICE(d))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-version-bootloader-raw"></a><h3>fu_device_get_version_bootloader_raw()</h3>
+<pre class="programlisting">#define fu_device_get_version_bootloader_raw(d) fwupd_device_get_version_bootloader_raw(FWUPD_DEVICE(d))
 </pre>
 </div>
 <hr>
@@ -1446,6 +1554,43 @@ valid GUID then <a class="link" href="fwupd-FuDevice.html#fu-device-add-guid" ti
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-add-instance-id-full"></a><h3>fu_device_add_instance_id_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_add_instance_id_full (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *instance_id</code></em>,
+                                <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDeviceInstanceFlags" title="enum FuDeviceInstanceFlags"><span class="type">FuDeviceInstanceFlags</span></a> flags</code></em>);</pre>
+<p>Adds an instance ID with all parameters set</p>
+<div class="refsect3">
+<a name="fu-device-add-instance-id-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>instance_id</p></td>
+<td class="parameter_description"><p>A Instance ID, e.g. <code class="literal">WacomAES</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDeviceInstanceFlags" title="enum FuDeviceInstanceFlags"><span class="type">FuDeviceInstanceFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-get-alternate"></a><h3>fu_device_get_alternate ()</h3>
 <pre class="programlisting"><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
 fu_device_get_alternate (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
@@ -1475,6 +1620,37 @@ added device, then this function will return <a href="../glib/glib-Standard-Macr
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.7.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-root"></a><h3>fu_device_get_root ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="returnvalue">FuDevice</span></a> *
+fu_device_get_root (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Gets the root parent device. A parent device is logically "above" the current
+device and this may be reflected in client tools.</p>
+<p>If there is no parent device defined, then <em class="parameter"><code>self</code></em>
+ is returned.</p>
+<div class="refsect3">
+<a name="fu-device-get-root.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-get-root.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.4.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1933,11 +2109,41 @@ same as what is returned by <a class="link" href="fwupd-FuDevice.html#fu-device-
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-set-version-format"></a><h3>fu_device_set_version_format ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_set_version_format (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                              <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdVersionFormat" title="enum FwupdVersionFormat"><span class="type">FwupdVersionFormat</span></a> fmt</code></em>);</pre>
+<p>Sets the version format.</p>
+<div class="refsect3">
+<a name="fu-device-set-version-format.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fmt</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdVersionFormat" title="enum FwupdVersionFormat"><span class="type">FwupdVersionFormat</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-PLAIN:CAPS"><code class="literal">FWUPD_VERSION_FORMAT_PLAIN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-set-version"></a><h3>fu_device_set_version ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_device_set_version (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
-                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>,
-                       <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdVersionFormat" title="enum FwupdVersionFormat"><span class="type">FwupdVersionFormat</span></a> fmt</code></em>);</pre>
+                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
 <p>Sets the device version, sanitizing the string if required.</p>
 <div class="refsect3">
 <a name="fu-device-set-version.parameters"></a><h4>Parameters</h4>
@@ -1958,15 +2164,72 @@ fu_device_set_version (<em class="parameter"><code><a class="link" href="fwupd-F
 <td class="parameter_description"><p>a string, e.g. <code class="literal">1.2.3</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
-<tr>
-<td class="parameter_name"><p>fmt</p></td>
-<td class="parameter_description"><p>a <a class="link" href="fwupd-fwupd-enums.html#FwupdVersionFormat" title="enum FwupdVersionFormat"><span class="type">FwupdVersionFormat</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-VERSION-FORMAT-TRIPLET:CAPS"><code class="literal">FWUPD_VERSION_FORMAT_TRIPLET</code></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
 </tbody>
 </table></div>
 </div>
 <p class="since">Since: 1.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-version-lowest"></a><h3>fu_device_set_version_lowest ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_set_version_lowest (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets the device lowest version, sanitizing the string if required.</p>
+<div class="refsect3">
+<a name="fu-device-set-version-lowest.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">1.2.3</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-version-bootloader"></a><h3>fu_device_set_version_bootloader ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_set_version_bootloader (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                                  <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets the device bootloader version, sanitizing the string if required.</p>
+<div class="refsect3">
+<a name="fu-device-set-version-bootloader.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">1.2.3</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3476,6 +3739,139 @@ disabled until the next call to <a class="link" href="fwupd-FuDevice.html#fu-dev
 </div>
 <p class="since">Since: 1.1.2</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-retry-set-delay"></a><h3>fu_device_retry_set_delay ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_retry_set_delay (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> delay</code></em>);</pre>
+<p>Sets the recovery delay between failed retries.</p>
+<div class="refsect3">
+<a name="fu-device-retry-set-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>delay</p></td>
+<td class="parameter_description"><p>delay in ms</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-retry-add-recovery"></a><h3>fu_device_retry_add_recovery ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_retry_add_recovery (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> domain</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> code</code></em>,
+                              <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDeviceRetryFunc" title="FuDeviceRetryFunc ()"><span class="type">FuDeviceRetryFunc</span></a> func</code></em>);</pre>
+<p>Sets the optional function to be called when <a class="link" href="fwupd-FuDevice.html#fu-device-retry" title="fu_device_retry ()"><code class="function">fu_device_retry()</code></a> fails, which
+is possibly a device reset.</p>
+<p>If <em class="parameter"><code>func</code></em>
+ is <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then recovery is not possible and an error is returned
+straight away.</p>
+<div class="refsect3">
+<a name="fu-device-retry-add-recovery.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>, or <code class="literal">0</code> for all domains</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>code</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>A function to recover the device. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-retry"></a><h3>fu_device_retry ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_device_retry (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                 <em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDeviceRetryFunc" title="FuDeviceRetryFunc ()"><span class="type">FuDeviceRetryFunc</span></a> func</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> count</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Calls a specific function a number of times, optionally handling the error
+with a reset action.</p>
+<p>If <a class="link" href="fwupd-FuDevice.html#fu-device-retry-add-recovery" title="fu_device_retry_add_recovery ()"><code class="function">fu_device_retry_add_recovery()</code></a> has not been used then all errors are
+considered non-fatal until the last try.</p>
+<p>If the reset function returns <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then the function returns straight away
+without processing any pending retries.</p>
+<div class="refsect3">
+<a name="fu-device-retry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>A function to execute. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>count</p></td>
+<td class="parameter_description"><p>The number of tries to try the function</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>a helper to pass to <em class="parameter"><code>user_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="fwupd-FuDevice.other_details"></a><h2>Types and Values</h2>
@@ -3536,6 +3932,37 @@ disabled until the next call to <a class="link" href="fwupd-FuDevice.html#fu-dev
 							 GError		**error);
 };
 </pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuDeviceInstanceFlags"></a><h3>enum FuDeviceInstanceFlags</h3>
+<p>The flags to use when interacting with a device instance</p>
+<div class="refsect3">
+<a name="FuDeviceInstanceFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FU-DEVICE-INSTANCE-FLAG-NONE:CAPS"></a>FU_DEVICE_INSTANCE_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-DEVICE-INSTANCE-FLAG-ONLY-QUIRKS:CAPS"></a>FU_DEVICE_INSTANCE_FLAG_ONLY_QUIRKS</p></td>
+<td class="enum_member_description">
+<p>Only use instance ID for quirk matching</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
 </div>
 <hr>
 <div class="refsect2">

@@ -533,6 +533,38 @@
           <code class="code">FWUPD_LOGITECH_HID_VERBOSE=1</code>.
         </p>
 </div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.5.2.8"></a>Using existing code to develop a plugin</h2></div></div></div>
+<p>
+          It is not usually possible to <span style="color: red">&lt;em&gt;share&lt;/em&gt;</span> a plugin codebase with
+          firmware update programs designed for other operating systems.
+          Matching the same rationale as the Linux kernel, trying to use one
+          code base between projects with a compatibility shim layer in-between
+          is real headache to maintain.
+        </p>
+<p>
+          The general consensus is that trying to use a abstraction layer for
+          hardware is a very bad idea as you're not able to take advantage of the
+          platform specific helpers -- for instance quirk files and the custom
+          GType device creation.
+          The time the <span style="color: red">&lt;em&gt;vendor&lt;/em&gt;</span> saves by creating a shim layer and
+          importing existing source code into fwupd will be overtaken 100x by
+          <span style="color: red">&lt;em&gt;upstream&lt;/em&gt;</span> maintenance costs longer term, which isn't fair.
+        </p>
+<p>
+          In a similar way, using C++ rather than GObject C means expanding the
+          test matrix to include clang in C++ mode and GNU g++ too.
+          It's also doubled the runtime requirements to now include both the C
+          standard library as well as the C++ standard library and increases the
+          dependency surface.
+        </p>
+<p>
+          Most rewritten fwupd plugins at up to x10 smaller than the standalone
+          code as they can take advantage of helpers provided by fwupd rather
+          than re-implementing error handling, device quirking and data chunking.
+        </p>
+</div>
 </div>
 </div>
 <div class="footer">

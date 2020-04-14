@@ -200,6 +200,22 @@
 </td>
 </tr>
 <tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-version-lowest-raw" title="fwupd_device_get_version_lowest_raw ()">fwupd_device_get_version_lowest_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-version-lowest-raw" title="fwupd_device_set_version_lowest_raw ()">fwupd_device_set_version_lowest_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
 <td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 </td>
 <td class="function_name">
@@ -212,6 +228,22 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-version-bootloader" title="fwupd_device_set_version_bootloader ()">fwupd_device_set_version_bootloader</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-version-bootloader-raw" title="fwupd_device_get_version_bootloader_raw ()">fwupd_device_get_version_bootloader_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-version-bootloader-raw" title="fwupd_device_set_version_bootloader_raw ()">fwupd_device_set_version_bootloader_raw</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -541,6 +573,22 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-update-message" title="fwupd_device_set_update_message ()">fwupd_device_set_update_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fwupd-enums.html#FwupdStatus" title="enum FwupdStatus"><span class="returnvalue">FwupdStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-status" title="fwupd_device_get_status ()">fwupd_device_get_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-status" title="fwupd_device_set_status ()">fwupd_device_set_status</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -1223,6 +1271,64 @@ fwupd_device_set_version_lowest (<em class="parameter"><code><a class="link" hre
 </div>
 <hr>
 <div class="refsect2">
+<a name="fwupd-device-get-version-lowest-raw"></a><h3>fwupd_device_get_version_lowest_raw ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fwupd_device_get_version_lowest_raw (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>);</pre>
+<p>Gets the lowest version of firmware the device will accept in raw format.</p>
+<div class="refsect3">
+<a name="fwupd-device-get-version-lowest-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-device-get-version-lowest-raw.returns"></a><h4>Returns</h4>
+<p> integer version number, or <code class="literal">0</code> if unset</p>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-set-version-lowest-raw"></a><h3>fwupd_device_set_version_lowest_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_device_set_version_lowest_raw (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
+                                     <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> version_lowest_raw</code></em>);</pre>
+<p>Sets the raw lowest version number from the hardware before converted to a string.</p>
+<div class="refsect3">
+<a name="fwupd-device-set-version-lowest-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version_lowest_raw</p></td>
+<td class="parameter_description"><p>the raw hardware version</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fwupd-device-get-version-bootloader"></a><h3>fwupd_device_get_version_bootloader ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fwupd_device_get_version_bootloader (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>);</pre>
@@ -1278,6 +1384,66 @@ fwupd_device_set_version_bootloader (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-get-version-bootloader-raw"></a><h3>fwupd_device_get_version_bootloader_raw ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fwupd_device_get_version_bootloader_raw
+                               (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>);</pre>
+<p>Gets the bootloader version of firmware the device will accept in raw format.</p>
+<div class="refsect3">
+<a name="fwupd-device-get-version-bootloader-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-device-get-version-bootloader-raw.returns"></a><h4>Returns</h4>
+<p> integer version number, or <code class="literal">0</code> if unset</p>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-set-version-bootloader-raw"></a><h3>fwupd_device_set_version_bootloader_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_device_set_version_bootloader_raw
+                               (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> version_bootloader_raw</code></em>);</pre>
+<p>Sets the raw bootloader version number from the hardware before converted to a string.</p>
+<div class="refsect3">
+<a name="fwupd-device-set-version-bootloader-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version_bootloader_raw</p></td>
+<td class="parameter_description"><p>the raw hardware version</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2522,6 +2688,64 @@ fwupd_device_set_update_message (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <p class="since">Since: 1.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-get-status"></a><h3>fwupd_device_get_status ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fwupd-enums.html#FwupdStatus" title="enum FwupdStatus"><span class="returnvalue">FwupdStatus</span></a>
+fwupd_device_get_status (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *self</code></em>);</pre>
+<p>Returns what the device is currently doing.</p>
+<div class="refsect3">
+<a name="fwupd-device-get-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-device-get-status.returns"></a><h4>Returns</h4>
+<p> the status value, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-STATUS-DEVICE-WRITE:CAPS"><code class="literal">FWUPD_STATUS_DEVICE_WRITE</code></a></p>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-set-status"></a><h3>fwupd_device_set_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_device_set_status (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *self</code></em>,
+                         <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdStatus" title="enum FwupdStatus"><span class="type">FwupdStatus</span></a> status</code></em>);</pre>
+<p>Sets what the device is currently doing.</p>
+<div class="refsect3">
+<a name="fwupd-device-set-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>the status value, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-STATUS-DEVICE-WRITE:CAPS"><code class="literal">FWUPD_STATUS_DEVICE_WRITE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.0</p>
 </div>
 <hr>
 <div class="refsect2">
