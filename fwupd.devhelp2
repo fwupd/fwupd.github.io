@@ -59,6 +59,7 @@
     <keyword type="function" name="fwupd_client_clear_results ()" link="fwupd-FwupdClient.html#fwupd-client-clear-results" since="0.7.0"/>
     <keyword type="function" name="fwupd_client_get_results ()" link="fwupd-FwupdClient.html#fwupd-client-get-results" since="0.7.0"/>
     <keyword type="function" name="fwupd_client_get_device_by_id ()" link="fwupd-FwupdClient.html#fwupd-client-get-device-by-id" since="0.9.3"/>
+    <keyword type="function" name="fwupd_client_get_devices_by_guid ()" link="fwupd-FwupdClient.html#fwupd-client-get-devices-by-guid" since="1.4.1"/>
     <keyword type="function" name="fwupd_client_install ()" link="fwupd-FwupdClient.html#fwupd-client-install" since="0.7.0"/>
     <keyword type="function" name="fwupd_client_update_metadata ()" link="fwupd-FwupdClient.html#fwupd-client-update-metadata" since="1.0.0"/>
     <keyword type="function" name="fwupd_client_modify_remote ()" link="fwupd-FwupdClient.html#fwupd-client-modify-remote" since="0.9.8"/>
@@ -319,6 +320,8 @@
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_MD_SET_NAME_CATEGORY" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-MD-SET-NAME-CATEGORY:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_MD_SET_VERFMT" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-MD-SET-VERFMT:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_ADD_COUNTERPART_GUIDS" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-ADD-COUNTERPART-GUIDS:CAPS"/>
+    <keyword type="macro" name="FWUPD_DEVICE_FLAG_NO_GUID_MATCHING" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-NO-GUID-MATCHING:CAPS"/>
+    <keyword type="macro" name="FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UPDATABLE-HIDDEN:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_UNKNOWN" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UNKNOWN:CAPS"/>
     <keyword type="typedef" name="FwupdDeviceFlags" link="fwupd-fwupd-enums.html#FwupdDeviceFlags"/>
     <keyword type="macro" name="FWUPD_RELEASE_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-RELEASE-FLAG-NONE:CAPS"/>
@@ -487,6 +490,8 @@
     <keyword type="function" name="fu_device_add_child ()" link="fwupd-FuDevice.html#fu-device-add-child" since="1.0.8"/>
     <keyword type="function" name="fu_device_add_parent_guid ()" link="fwupd-FuDevice.html#fu-device-add-parent-guid" since="1.0.8"/>
     <keyword type="function" name="fu_device_add_counterpart_guid ()" link="fwupd-FuDevice.html#fu-device-add-counterpart-guid" since="1.1.2"/>
+    <keyword type="function" name="fu_device_get_proxy ()" link="fwupd-FuDevice.html#fu-device-get-proxy" since="1.4.1"/>
+    <keyword type="function" name="fu_device_set_proxy ()" link="fwupd-FuDevice.html#fu-device-set-proxy" since="1.4.1"/>
     <keyword type="function" name="fu_device_get_metadata ()" link="fwupd-FuDevice.html#fu-device-get-metadata" since="0.1.0"/>
     <keyword type="function" name="fu_device_get_metadata_boolean ()" link="fwupd-FuDevice.html#fu-device-get-metadata-boolean" since="0.9.7"/>
     <keyword type="function" name="fu_device_get_metadata_integer ()" link="fwupd-FuDevice.html#fu-device-get-metadata-integer" since="0.9.7"/>
@@ -503,8 +508,12 @@
     <keyword type="function" name="fu_device_set_physical_id ()" link="fwupd-FuDevice.html#fu-device-set-physical-id" since="1.1.2"/>
     <keyword type="function" name="fu_device_get_logical_id ()" link="fwupd-FuDevice.html#fu-device-get-logical-id" since="1.1.2"/>
     <keyword type="function" name="fu_device_set_logical_id ()" link="fwupd-FuDevice.html#fu-device-set-logical-id" since="1.1.2"/>
+    <keyword type="function" name="fu_device_get_proxy_guid ()" link="fwupd-FuDevice.html#fu-device-get-proxy-guid" since="1.4.1"/>
+    <keyword type="function" name="fu_device_set_proxy_guid ()" link="fwupd-FuDevice.html#fu-device-set-proxy-guid" since="1.4.1"/>
     <keyword type="function" name="fu_device_get_protocol ()" link="fwupd-FuDevice.html#fu-device-get-protocol" since="1.3.5"/>
     <keyword type="function" name="fu_device_set_protocol ()" link="fwupd-FuDevice.html#fu-device-set-protocol" since="1.3.5"/>
+    <keyword type="function" name="fu_device_get_priority ()" link="fwupd-FuDevice.html#fu-device-get-priority" since="1.1.1"/>
+    <keyword type="function" name="fu_device_set_priority ()" link="fwupd-FuDevice.html#fu-device-set-priority" since="1.1.1"/>
     <keyword type="function" name="fu_device_add_flag ()" link="fwupd-FuDevice.html#fu-device-add-flag" since="0.1.0"/>
     <keyword type="function" name="fu_device_get_custom_flags ()" link="fwupd-FuDevice.html#fu-device-get-custom-flags" since="1.1.0"/>
     <keyword type="function" name="fu_device_has_custom_flag ()" link="fwupd-FuDevice.html#fu-device-has-custom-flag" since="1.1.0"/>
@@ -743,6 +752,7 @@
     <keyword type="macro" name="FU_QUIRKS_GUID" link="fwupd-fu-quirks.html#FU-QUIRKS-GUID:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_COUNTERPART_GUID" link="fwupd-fu-quirks.html#FU-QUIRKS-COUNTERPART-GUID:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_PARENT_GUID" link="fwupd-fu-quirks.html#FU-QUIRKS-PARENT-GUID:CAPS"/>
+    <keyword type="macro" name="FU_QUIRKS_PROXY_GUID" link="fwupd-fu-quirks.html#FU-QUIRKS-PROXY-GUID:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_CHILDREN" link="fwupd-fu-quirks.html#FU-QUIRKS-CHILDREN:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_VERSION" link="fwupd-fu-quirks.html#FU-QUIRKS-VERSION:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_VENDOR" link="fwupd-fu-quirks.html#FU-QUIRKS-VENDOR:CAPS"/>
@@ -755,6 +765,7 @@
     <keyword type="macro" name="FU_QUIRKS_GTYPE" link="fwupd-fu-quirks.html#FU-QUIRKS-GTYPE:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_PROTOCOL" link="fwupd-fu-quirks.html#FU-QUIRKS-PROTOCOL:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_UPDATE_MESSAGE" link="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-MESSAGE:CAPS"/>
+    <keyword type="macro" name="FU_QUIRKS_PRIORITY" link="fwupd-fu-quirks.html#FU-QUIRKS-PRIORITY:CAPS"/>
     <keyword type="struct" name="FuQuirks" link="fwupd-fu-quirks.html#FuQuirks"/>
     <keyword type="function" name="fu_smbios_new ()" link="fwupd-fu-smbios.html#fu-smbios-new" since="1.0.0"/>
     <keyword type="function" name="fu_smbios_to_string ()" link="fwupd-fu-smbios.html#fu-smbios-to-string" since="1.0.0"/>
