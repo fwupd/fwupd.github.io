@@ -766,6 +766,7 @@
     <keyword type="macro" name="FU_QUIRKS_PROTOCOL" link="fwupd-fu-quirks.html#FU-QUIRKS-PROTOCOL:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_UPDATE_MESSAGE" link="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-MESSAGE:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_PRIORITY" link="fwupd-fu-quirks.html#FU-QUIRKS-PRIORITY:CAPS"/>
+    <keyword type="macro" name="FU_QUIRKS_REMOVE_DELAY" link="fwupd-fu-quirks.html#FU-QUIRKS-REMOVE-DELAY:CAPS"/>
     <keyword type="struct" name="FuQuirks" link="fwupd-fu-quirks.html#FuQuirks"/>
     <keyword type="function" name="fu_smbios_new ()" link="fwupd-fu-smbios.html#fu-smbios-new" since="1.0.0"/>
     <keyword type="function" name="fu_smbios_to_string ()" link="fwupd-fu-smbios.html#fu-smbios-to-string" since="1.0.0"/>
