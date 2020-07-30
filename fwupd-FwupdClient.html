@@ -188,7 +188,39 @@
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-install-bytes" title="fwupd_client_install_bytes ()">fwupd_client_install_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-install-release" title="fwupd_client_install_release ()">fwupd_client_install_release</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-update-metadata" title="fwupd_client_update_metadata ()">fwupd_client_update_metadata</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-update-metadata-bytes" title="fwupd_client_update_metadata_bytes ()">fwupd_client_update_metadata_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-refresh-remote" title="fwupd_client_refresh_remote ()">fwupd_client_refresh_remote</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -300,6 +332,54 @@
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-self-sign" title="fwupd_client_self_sign ()">fwupd_client_self_sign</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-feature-flags" title="fwupd_client_set_feature_flags ()">fwupd_client_set_feature_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent" title="fwupd_client_set_user_agent ()">fwupd_client_set_user_agent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent-for-package" title="fwupd_client_set_user_agent_for_package ()">fwupd_client_set_user_agent_for_package</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-download-bytes" title="fwupd_client_download_bytes ()">fwupd_client_download_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-upload-bytes" title="fwupd_client_upload_bytes ()">fwupd_client_upload_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-ensure-networking" title="fwupd_client_ensure_networking ()">fwupd_client_ensure_networking</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -318,6 +398,14 @@
 <tr>
 <td class="datatype_keyword">struct</td>
 <td class="function_name"><a class="link" href="fwupd-FwupdClient.html#FwupdClientClass" title="struct FwupdClientClass">FwupdClientClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags">FwupdClientDownloadFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdClient.html#FwupdClientUploadFlags" title="enum FwupdClientUploadFlags">FwupdClientUploadFlags</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword"> </td>
@@ -1159,6 +1247,124 @@ fwupd_client_install (<em class="parameter"><code><a class="link" href="fwupd-Fw
 </div>
 <hr>
 <div class="refsect2">
+<a name="fwupd-client-install-bytes"></a><h3>fwupd_client_install_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_install_bytes (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *device_id</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
+                            <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> install_flags</code></em>,
+                            <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Install firmware onto a specific device.</p>
+<div class="refsect3">
+<a name="fwupd-client-install-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device_id</p></td>
+<td class="parameter_description"><p>the device ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>install_flags</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-ALLOW-REINSTALL:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_ALLOW_REINSTALL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>the <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-install-bytes.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-install-release"></a><h3>fwupd_client_install_release ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_install_release (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                              <em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code><a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                              <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> install_flags</code></em>,
+                              <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Installs a new release on a device, downloading the firmware if required.</p>
+<div class="refsect3">
+<a name="fwupd-client-install-release.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>install_flags</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-ALLOW-REINSTALL:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_ALLOW_REINSTALL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-install-release.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fwupd-client-update-metadata"></a><h3>fwupd_client_update_metadata ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fwupd_client_update_metadata (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
@@ -1220,6 +1426,117 @@ matched when the firmware is downloaded.</p>
 <p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
 </div>
 <p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-update-metadata-bytes"></a><h3>fwupd_client_update_metadata_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_update_metadata_bytes (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                                    <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *remote_id</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *metadata</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *signature</code></em>,
+                                    <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Updates the metadata. This allows a session process to download the metadata
+and metadata signing file to be passed into the daemon to be checked and
+parsed.</p>
+<p>The <em class="parameter"><code>remote_id</code></em>
+ allows the firmware to be tagged so that the remote can be
+matched when the firmware is downloaded.</p>
+<div class="refsect3">
+<a name="fwupd-client-update-metadata-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remote_id</p></td>
+<td class="parameter_description"><p>remote ID, e.g. <code class="literal">lvfs-testing</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>metadata</p></td>
+<td class="parameter_description"><p>XML metadata data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signature</p></td>
+<td class="parameter_description"><p>signature data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-update-metadata-bytes.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-refresh-remote"></a><h3>fwupd_client_refresh_remote ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_refresh_remote (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *remote</code></em>,
+                             <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Refreshes a remote by downloading new metadata.</p>
+<div class="refsect3">
+<a name="fwupd-client-refresh-remote.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remote</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-refresh-remote.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1764,6 +2081,291 @@ fwupd_client_self_sign (<em class="parameter"><code><a class="link" href="fwupd-
 </div>
 <p class="since">Since: 1.2.6</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-set-feature-flags"></a><h3>fwupd_client_set_feature_flags ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_set_feature_flags (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                                <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a> feature_flags</code></em>,
+                                <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Sets the features the client supports. This allows firmware to depend on
+specific front-end features, for instance showing the user an image on
+how to detach the hardware.</p>
+<p>Clients can call this none or multiple times.</p>
+<div class="refsect3">
+<a name="fwupd-client-set-feature-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_flags</p></td>
+<td class="parameter_description"><p><a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a>, e.g. <code class="literal">FWUPD_FEATURE_FLAG_UPDATE_TEXT</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>the <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-set-feature-flags.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-set-user-agent"></a><h3>fwupd_client_set_user_agent ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_client_set_user_agent (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user_agent</code></em>);</pre>
+<p>Manually sets the user agent that is used for downloading. The user agent
+should contain the runtime version of fwupd somewhere in the provided string.</p>
+<div class="refsect3">
+<a name="fwupd-client-set-user-agent.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_agent</p></td>
+<td class="parameter_description"><p>the user agent ID, e.g. <code class="literal">gnome-software/3.34.1</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-set-user-agent-for-package"></a><h3>fwupd_client_set_user_agent_for_package ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_client_set_user_agent_for_package
+                               (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *package_name</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *package_version</code></em>);</pre>
+<p>Builds a user-agent to use for the download.</p>
+<p>Supplying harmless details to the server means it knows more about each
+client. This allows the web service to respond in a different way, for
+instance sending a different metadata file for old versions of fwupd, or
+returning an error for Solaris machines.</p>
+<p>Before freaking out about theoretical privacy implications, much more data
+than this is sent to each and every website you visit.</p>
+<div class="refsect3">
+<a name="fwupd-client-set-user-agent-for-package.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>package_name</p></td>
+<td class="parameter_description"><p>client program name, e.g. "gnome-software"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>package_version</p></td>
+<td class="parameter_description"><p>client program version, e.g. "3.28.1"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-download-bytes"></a><h3>fwupd_client_download_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fwupd_client_download_bytes (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *url</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags"><span class="type">FwupdClientDownloadFlags</span></a> flags</code></em>,
+                             <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Downloads data from a remote server. The <a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent" title="fwupd_client_set_user_agent ()"><code class="function">fwupd_client_set_user_agent()</code></a> function
+should be called before this method is used.</p>
+<div class="refsect3">
+<a name="fwupd-client-download-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>url</p></td>
+<td class="parameter_description"><p>the remote URL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags"><span class="type">FwupdClientDownloadFlags</span></a>, e.g. <a class="link" href="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"><code class="literal">FWUPD_CLIENT_DOWNLOAD_FLAG_NONE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>the <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-download-bytes.returns"></a><h4>Returns</h4>
+<p>downloaded data, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-upload-bytes"></a><h3>fwupd_client_upload_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fwupd_client_upload_bytes (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *url</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *payload</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *signature</code></em>,
+                           <em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClientUploadFlags" title="enum FwupdClientUploadFlags"><span class="type">FwupdClientUploadFlags</span></a> flags</code></em>,
+                           <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Uploads data to a remote server. The <a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent" title="fwupd_client_set_user_agent ()"><code class="function">fwupd_client_set_user_agent()</code></a> function
+should be called before this method is used.</p>
+<div class="refsect3">
+<a name="fwupd-client-upload-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>url</p></td>
+<td class="parameter_description"><p>the remote URL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>payload</p></td>
+<td class="parameter_description"><p>payload string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signature</p></td>
+<td class="parameter_description"><p>signature string. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags"><span class="type">FwupdClientDownloadFlags</span></a>, e.g. <a class="link" href="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"><code class="literal">FWUPD_CLIENT_DOWNLOAD_FLAG_NONE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>the <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-upload-bytes.returns"></a><h4>Returns</h4>
+<p>downloaded data, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-ensure-networking"></a><h3>fwupd_client_ensure_networking ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_ensure_networking (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *client</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Sets up the client networking support ready for use. Most other download and
+upload methods call this automatically, and do you only need to call this if
+the session is being used outside the <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a>.</p>
+<div class="refsect3">
+<a name="fwupd-client-ensure-networking.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-ensure-networking.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="fwupd-FwupdClient.other_details"></a><h2>Types and Values</h2>
@@ -1788,6 +2390,59 @@ fwupd_client_self_sign (<em class="parameter"><code><a class="link" href="fwupd-
 							 FwupdDevice *result);
 };
 </pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdClientDownloadFlags"></a><h3>enum FwupdClientDownloadFlags</h3>
+<p>The options to use for downloading.</p>
+<div class="refsect3">
+<a name="FwupdClientDownloadFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="enum_member_name"><p><a name="FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"></a>FWUPD_CLIENT_DOWNLOAD_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdClientUploadFlags"></a><h3>enum FwupdClientUploadFlags</h3>
+<p>The options to use for uploading.</p>
+<div class="refsect3">
+<a name="FwupdClientUploadFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-CLIENT-UPLOAD-FLAG-NONE:CAPS"></a>FWUPD_CLIENT_UPLOAD_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-CLIENT-UPLOAD-FLAG-ALWAYS-MULTIPART:CAPS"></a>FWUPD_CLIENT_UPLOAD_FLAG_ALWAYS_MULTIPART</p></td>
+<td class="enum_member_description">
+<p>Always use multipart/form-data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
 </div>
 <hr>
 <div class="refsect2">

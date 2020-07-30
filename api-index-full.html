@@ -853,10 +853,6 @@ fu_device_incorporate_from_component, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-TBT-CAN-FORCE-POWER:CAPS" title="FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER">FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER</a>, macro in <a class="link" href="fwupd-fu-device-metadata.html" title="fu-device-metadata">fu-device-metadata</a>
-</dt>
-<dd></dd>
-<dt>
 <a class="link" href="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-CAPSULE-FLAGS:CAPS" title="FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS">FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS</a>, macro in <a class="link" href="fwupd-fu-device-metadata.html" title="fu-device-metadata">fu-device-metadata</a>
 </dt>
 <dd></dd>
@@ -1082,6 +1078,10 @@ fu_device_set_parent, function in fu-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-update-error" title="fu_device_set_update_error()">fu_device_set_update_error</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-update-image" title="fu_device_set_update_image()">fu_device_set_update_image</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2061,6 +2061,10 @@ fu_plugin_set_usb_context, function in fu-plugin-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-IMAGE:CAPS" title="FU_QUIRKS_UPDATE_IMAGE">FU_QUIRKS_UPDATE_IMAGE</a>, macro in <a class="link" href="fwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-MESSAGE:CAPS" title="FU_QUIRKS_UPDATE_MESSAGE">FU_QUIRKS_UPDATE_MESSAGE</a>, macro in <a class="link" href="fwupd-fu-quirks.html" title="fu-quirks">fu-quirks</a>
 </dt>
 <dd></dd>
@@ -2217,11 +2221,19 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-devtype" title="fu_udev_device_get_devtype ()">fu_udev_device_get_devtype</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-fd" title="fu_udev_device_get_fd ()">fu_udev_device_get_fd</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-model" title="fu_udev_device_get_model ()">fu_udev_device_get_model</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-parent-name" title="fu_udev_device_get_parent_name ()">fu_udev_device_get_parent_name</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2234,6 +2246,10 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-subsystem" title="fu_udev_device_get_subsystem ()">fu_udev_device_get_subsystem</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-get-sysfs-attr" title="fu_udev_device_get_sysfs_attr ()">fu_udev_device_get_sysfs_attr</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2257,7 +2273,15 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-pread-full" title="fu_udev_device_pread_full ()">fu_udev_device_pread_full</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-pwrite" title="fu_udev_device_pwrite ()">fu_udev_device_pwrite</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-pwrite-full" title="fu_udev_device_pwrite_full ()">fu_udev_device_pwrite_full</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2274,6 +2298,10 @@ fu_udev_device_emit_changed, function in fu-udev-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-set-readonly" title="fu_udev_device_set_readonly ()">fu_udev_device_set_readonly</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuUdevDevice.html#fu-udev-device-write-sysfs" title="fu_udev_device_write_sysfs ()">fu_udev_device_write_sysfs</a>, function in <a class="link" href="fwupd-FuUdevDevice.html" title="FuUdevDevice">FuUdevDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2322,6 +2350,14 @@ fu_usb_device_get_platform_id, function in fu-usb-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags">FwupdClientDownloadFlags</a>, enum in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#FwupdClientUploadFlags" title="enum FwupdClientUploadFlags">FwupdClientUploadFlags</a>, enum in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice">FwupdDevice</a>, struct in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
@@ -2335,6 +2371,10 @@ fu_usb_device_get_platform_id, function in fu-usb-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-fwupd-error.html#FwupdError" title="enum FwupdError">FwupdError</a>, enum in <a class="link" href="fwupd-fwupd-error.html" title="fwupd-error">fwupd-error</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags">FwupdFeatureFlags</a>, enum in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2410,6 +2450,10 @@ fwupd_build_user_agent, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+fwupd_build_user_agent_system, function in fwupd-common-private
+</dt>
+<dd></dd>
+<dt>
 fwupd_checksum_format_for_display, function in fwupd-common-private
 </dt>
 <dd></dd>
@@ -2439,6 +2483,14 @@ fwupd_checksum_guess_kind, function in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-connect" title="fwupd_client_connect ()">fwupd_client_connect</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-download-bytes" title="fwupd_client_download_bytes ()">fwupd_client_download_bytes</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-ensure-networking" title="fwupd_client_ensure_networking ()">fwupd_client_ensure_networking</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2522,6 +2574,14 @@ fwupd_checksum_guess_kind, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-install-bytes" title="fwupd_client_install_bytes ()">fwupd_client_install_bytes</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-install-release" title="fwupd_client_install_release ()">fwupd_client_install_release</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-modify-config" title="fwupd_client_modify_config ()">fwupd_client_modify_config</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
@@ -2538,6 +2598,10 @@ fwupd_checksum_guess_kind, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-refresh-remote" title="fwupd_client_refresh_remote ()">fwupd_client_refresh_remote</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-self-sign" title="fwupd_client_self_sign ()">fwupd_client_self_sign</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
@@ -2546,11 +2610,31 @@ fwupd_checksum_guess_kind, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-feature-flags" title="fwupd_client_set_feature_flags ()">fwupd_client_set_feature_flags</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent" title="fwupd_client_set_user_agent ()">fwupd_client_set_user_agent</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent-for-package" title="fwupd_client_set_user_agent_for_package ()">fwupd_client_set_user_agent_for_package</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-unlock" title="fwupd_client_unlock ()">fwupd_client_unlock</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-update-metadata" title="fwupd_client_update_metadata ()">fwupd_client_update_metadata</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-update-metadata-bytes" title="fwupd_client_update_metadata_bytes ()">fwupd_client_update_metadata_bytes</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-upload-bytes" title="fwupd_client_upload_bytes ()">fwupd_client_upload_bytes</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2726,6 +2810,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-SKIPS-RESTART:CAPS" title="FWUPD_DEVICE_FLAG_SKIPS_RESTART">FWUPD_DEVICE_FLAG_SKIPS_RESTART</a>, macro in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-SUPPORTED:CAPS" title="FWUPD_DEVICE_FLAG_SUPPORTED">FWUPD_DEVICE_FLAG_SUPPORTED</a>, macro in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
@@ -2870,6 +2958,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-update-image" title="fwupd_device_get_update_image ()">fwupd_device_get_update_image</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-update-message" title="fwupd_device_get_update_message ()">fwupd_device_get_update_message</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
@@ -3010,6 +3102,10 @@ fwupd_device_incorporate, function in fwupd-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-update-image" title="fwupd_device_set_update_image ()">fwupd_device_set_update_image</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-update-message" title="fwupd_device_set_update_message ()">fwupd_device_set_update_message</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
@@ -3086,6 +3182,14 @@ fwupd_device_to_variant_full, function in fwupd-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-feature-flag-from-string" title="fwupd_feature_flag_from_string ()">fwupd_feature_flag_from_string</a>, function in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-feature-flag-to-string" title="fwupd_feature_flag_to_string ()">fwupd_feature_flag_to_string</a>, function in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
 fwupd_get_os_release, function in fwupd-common
 </dt>
 <dd></dd>
@@ -3111,6 +3215,10 @@ fwupd_guid_t, typedef in fwupd-common
 <dd></dd>
 <dt>
 fwupd_guid_to_string, function in fwupd-common
+</dt>
+<dd></dd>
+<dt>
+fwupd_hash_kv_to_variant, function in fwupd-common-private
 </dt>
 <dd></dd>
 <dt>
@@ -3290,6 +3398,10 @@ fwupd_guid_to_string, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdRelease.html#fwupd-release-get-update-image" title="fwupd_release_get_update_image ()">fwupd_release_get_update_image</a>, function in <a class="link" href="fwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdRelease.html#fwupd-release-get-update-message" title="fwupd_release_get_update_message ()">fwupd_release_get_update_message</a>, function in <a class="link" href="fwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
@@ -3403,6 +3515,10 @@ fwupd_guid_to_string, function in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdRelease.html#fwupd-release-set-trust-flags" title="fwupd_release_set_trust_flags ()">fwupd_release_set_trust_flags</a>, function in <a class="link" href="fwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdRelease.html#fwupd-release-set-update-image" title="fwupd_release_set_update_image ()">fwupd_release_set_update_image</a>, function in <a class="link" href="fwupd-FwupdRelease.html" title="FwupdRelease">FwupdRelease</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3563,6 +3679,10 @@ fwupd_remote_load_from_filename, function in fwupd-remote-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-load-signature" title="fwupd_remote_load_signature ()">fwupd_remote_load_signature</a>, function in <a class="link" href="fwupd-FwupdRemote.html" title="FwupdRemote">FwupdRemote</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-load-signature-bytes" title="fwupd_remote_load_signature_bytes ()">fwupd_remote_load_signature_bytes</a>, function in <a class="link" href="fwupd-FwupdRemote.html" title="FwupdRemote">FwupdRemote</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3730,6 +3850,10 @@ FWUPD_RESULT_KEY_UPDATE_ERROR, macro in fwupd-enums-private
 </dt>
 <dd></dd>
 <dt>
+FWUPD_RESULT_KEY_UPDATE_IMAGE, macro in fwupd-enums-private
+</dt>
+<dd></dd>
+<dt>
 FWUPD_RESULT_KEY_UPDATE_MESSAGE, macro in fwupd-enums-private
 </dt>
 <dd></dd>
@@ -3814,11 +3938,23 @@ FWUPD_RESULT_KEY_VERSION_RAW, macro in fwupd-enums-private
 </dt>
 <dd></dd>
 <dt>
+fwupd_unix_input_stream_from_bytes, function in fwupd-common-private
+</dt>
+<dd></dd>
+<dt>
+fwupd_unix_input_stream_from_fn, function in fwupd-common-private
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fwupd-enums.html#fwupd-update-state-from-string" title="fwupd_update_state_from_string ()">fwupd_update_state_from_string</a>, function in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-fwupd-enums.html#fwupd-update-state-to-string" title="fwupd_update_state_to_string ()">fwupd_update_state_to_string</a>, function in <a class="link" href="fwupd-fwupd-enums.html" title="fwupd-enums">fwupd-enums</a>
+</dt>
+<dd></dd>
+<dt>
+fwupd_variant_to_hash_kv, function in fwupd-common-private
 </dt>
 <dd></dd>
 <dt>

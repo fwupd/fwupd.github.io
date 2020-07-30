@@ -61,7 +61,11 @@
     <keyword type="function" name="fwupd_client_get_device_by_id ()" link="fwupd-FwupdClient.html#fwupd-client-get-device-by-id" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_devices_by_guid ()" link="fwupd-FwupdClient.html#fwupd-client-get-devices-by-guid" since="1.4.1"/>
     <keyword type="function" name="fwupd_client_install ()" link="fwupd-FwupdClient.html#fwupd-client-install" since="0.7.0"/>
+    <keyword type="function" name="fwupd_client_install_bytes ()" link="fwupd-FwupdClient.html#fwupd-client-install-bytes" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_install_release ()" link="fwupd-FwupdClient.html#fwupd-client-install-release" since="1.4.5"/>
     <keyword type="function" name="fwupd_client_update_metadata ()" link="fwupd-FwupdClient.html#fwupd-client-update-metadata" since="1.0.0"/>
+    <keyword type="function" name="fwupd_client_update_metadata_bytes ()" link="fwupd-FwupdClient.html#fwupd-client-update-metadata-bytes" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_refresh_remote ()" link="fwupd-FwupdClient.html#fwupd-client-refresh-remote" since="1.4.5"/>
     <keyword type="function" name="fwupd_client_modify_remote ()" link="fwupd-FwupdClient.html#fwupd-client-modify-remote" since="0.9.8"/>
     <keyword type="function" name="fwupd_client_modify_device ()" link="fwupd-FwupdClient.html#fwupd-client-modify-device" since="1.0.4"/>
     <keyword type="function" name="fwupd_client_get_status ()" link="fwupd-FwupdClient.html#fwupd-client-get-status" since="0.7.3"/>
@@ -76,8 +80,16 @@
     <keyword type="function" name="fwupd_client_get_approved_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-get-approved-firmware" since="1.2.6"/>
     <keyword type="function" name="fwupd_client_set_approved_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-set-approved-firmware" since="1.2.6"/>
     <keyword type="function" name="fwupd_client_self_sign ()" link="fwupd-FwupdClient.html#fwupd-client-self-sign" since="1.2.6"/>
+    <keyword type="function" name="fwupd_client_set_feature_flags ()" link="fwupd-FwupdClient.html#fwupd-client-set-feature-flags" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_set_user_agent ()" link="fwupd-FwupdClient.html#fwupd-client-set-user-agent" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_set_user_agent_for_package ()" link="fwupd-FwupdClient.html#fwupd-client-set-user-agent-for-package" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_download_bytes ()" link="fwupd-FwupdClient.html#fwupd-client-download-bytes" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_upload_bytes ()" link="fwupd-FwupdClient.html#fwupd-client-upload-bytes" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_ensure_networking ()" link="fwupd-FwupdClient.html#fwupd-client-ensure-networking" since="1.4.5"/>
     <keyword type="macro" name="FWUPD_TYPE_CLIENT" link="fwupd-FwupdClient.html#FWUPD-TYPE-CLIENT:CAPS"/>
     <keyword type="struct" name="struct FwupdClientClass" link="fwupd-FwupdClient.html#FwupdClientClass"/>
+    <keyword type="enum" name="enum FwupdClientDownloadFlags" link="fwupd-FwupdClient.html#FwupdClientDownloadFlags"/>
+    <keyword type="enum" name="enum FwupdClientUploadFlags" link="fwupd-FwupdClient.html#FwupdClientUploadFlags"/>
     <keyword type="struct" name="FwupdClient" link="fwupd-FwupdClient.html#FwupdClient"/>
     <keyword type="function" name="fwupd_device_new ()" link="fwupd-FwupdDevice.html#fwupd-device-new" since="0.9.3"/>
     <keyword type="function" name="fwupd_device_to_string ()" link="fwupd-FwupdDevice.html#fwupd-device-to-string" since="0.9.3"/>
@@ -148,6 +160,8 @@
     <keyword type="function" name="fwupd_device_set_update_error ()" link="fwupd-FwupdDevice.html#fwupd-device-set-update-error" since="0.9.8"/>
     <keyword type="function" name="fwupd_device_get_update_message ()" link="fwupd-FwupdDevice.html#fwupd-device-get-update-message" since="1.2.4"/>
     <keyword type="function" name="fwupd_device_set_update_message ()" link="fwupd-FwupdDevice.html#fwupd-device-set-update-message" since="1.2.4"/>
+    <keyword type="function" name="fwupd_device_get_update_image ()" link="fwupd-FwupdDevice.html#fwupd-device-get-update-image" since="1.4.5"/>
+    <keyword type="function" name="fwupd_device_set_update_image ()" link="fwupd-FwupdDevice.html#fwupd-device-set-update-image" since="1.4.5"/>
     <keyword type="function" name="fwupd_device_get_status ()" link="fwupd-FwupdDevice.html#fwupd-device-get-status" since="1.4.0"/>
     <keyword type="function" name="fwupd_device_set_status ()" link="fwupd-FwupdDevice.html#fwupd-device-set-status" since="1.4.0"/>
     <keyword type="function" name="fwupd_device_add_release ()" link="fwupd-FwupdDevice.html#fwupd-device-add-release" since="0.9.8"/>
@@ -225,6 +239,8 @@
     <keyword type="function" name="fwupd_release_set_install_duration ()" link="fwupd-FwupdRelease.html#fwupd-release-set-install-duration" since="1.2.1"/>
     <keyword type="function" name="fwupd_release_get_update_message ()" link="fwupd-FwupdRelease.html#fwupd-release-get-update-message" since="1.2.4"/>
     <keyword type="function" name="fwupd_release_set_update_message ()" link="fwupd-FwupdRelease.html#fwupd-release-set-update-message" since="1.2.4"/>
+    <keyword type="function" name="fwupd_release_get_update_image ()" link="fwupd-FwupdRelease.html#fwupd-release-get-update-image" since="1.4.5"/>
+    <keyword type="function" name="fwupd_release_set_update_image ()" link="fwupd-FwupdRelease.html#fwupd-release-set-update-image" since="1.4.5"/>
     <keyword type="function" name="fwupd_release_from_variant ()" link="fwupd-FwupdRelease.html#fwupd-release-from-variant" since="1.0.0"/>
     <keyword type="function" name="fwupd_release_array_from_variant ()" link="fwupd-FwupdRelease.html#fwupd-release-array-from-variant" since="1.2.10"/>
     <keyword type="macro" name="FWUPD_TYPE_RELEASE" link="fwupd-FwupdRelease.html#FWUPD-TYPE-RELEASE:CAPS"/>
@@ -256,6 +272,7 @@
     <keyword type="function" name="fwupd_remote_get_keyring_kind ()" link="fwupd-FwupdRemote.html#fwupd-remote-get-keyring-kind" since="0.9.7"/>
     <keyword type="function" name="fwupd_remote_build_firmware_uri ()" link="fwupd-FwupdRemote.html#fwupd-remote-build-firmware-uri" since="0.9.7"/>
     <keyword type="function" name="fwupd_remote_load_signature ()" link="fwupd-FwupdRemote.html#fwupd-remote-load-signature" since="1.4.0"/>
+    <keyword type="function" name="fwupd_remote_load_signature_bytes ()" link="fwupd-FwupdRemote.html#fwupd-remote-load-signature-bytes" since="1.4.5"/>
     <keyword type="function" name="fwupd_remote_from_variant ()" link="fwupd-FwupdRemote.html#fwupd-remote-from-variant" since="1.0.0"/>
     <keyword type="function" name="fwupd_remote_array_from_variant ()" link="fwupd-FwupdRemote.html#fwupd-remote-array-from-variant" since="1.2.10"/>
     <keyword type="macro" name="FWUPD_TYPE_REMOTE" link="fwupd-FwupdRemote.html#FWUPD-TYPE-REMOTE:CAPS"/>
@@ -279,12 +296,15 @@
     <keyword type="function" name="fwupd_update_state_from_string ()" link="fwupd-fwupd-enums.html#fwupd-update-state-from-string" since="0.7.0"/>
     <keyword type="function" name="fwupd_trust_flag_to_string ()" link="fwupd-fwupd-enums.html#fwupd-trust-flag-to-string" since="0.7.0"/>
     <keyword type="function" name="fwupd_trust_flag_from_string ()" link="fwupd-fwupd-enums.html#fwupd-trust-flag-from-string" since="0.7.0"/>
+    <keyword type="function" name="fwupd_feature_flag_to_string ()" link="fwupd-fwupd-enums.html#fwupd-feature-flag-to-string" since="1.4.5"/>
+    <keyword type="function" name="fwupd_feature_flag_from_string ()" link="fwupd-fwupd-enums.html#fwupd-feature-flag-from-string" since="1.4.5"/>
     <keyword type="function" name="fwupd_keyring_kind_from_string ()" link="fwupd-fwupd-enums.html#fwupd-keyring-kind-from-string" since="0.9.7"/>
     <keyword type="function" name="fwupd_keyring_kind_to_string ()" link="fwupd-fwupd-enums.html#fwupd-keyring-kind-to-string" since="0.9.7"/>
     <keyword type="function" name="fwupd_version_format_from_string ()" link="fwupd-fwupd-enums.html#fwupd-version-format-from-string" since="1.2.9"/>
     <keyword type="function" name="fwupd_version_format_to_string ()" link="fwupd-fwupd-enums.html#fwupd-version-format-to-string" since="1.2.9"/>
     <keyword type="enum" name="enum FwupdStatus" link="fwupd-fwupd-enums.html#FwupdStatus"/>
     <keyword type="enum" name="enum FwupdTrustFlags" link="fwupd-fwupd-enums.html#FwupdTrustFlags"/>
+    <keyword type="enum" name="enum FwupdFeatureFlags" link="fwupd-fwupd-enums.html#FwupdFeatureFlags"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-NONE:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_INTERNAL" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-INTERNAL:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_UPDATABLE" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UPDATABLE:CAPS"/>
@@ -322,6 +342,7 @@
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_ADD_COUNTERPART_GUIDS" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-ADD-COUNTERPART-GUIDS:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_NO_GUID_MATCHING" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-NO-GUID-MATCHING:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UPDATABLE-HIDDEN:CAPS"/>
+    <keyword type="macro" name="FWUPD_DEVICE_FLAG_SKIPS_RESTART" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-SKIPS-RESTART:CAPS"/>
     <keyword type="macro" name="FWUPD_DEVICE_FLAG_UNKNOWN" link="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UNKNOWN:CAPS"/>
     <keyword type="typedef" name="FwupdDeviceFlags" link="fwupd-fwupd-enums.html#FwupdDeviceFlags"/>
     <keyword type="macro" name="FWUPD_RELEASE_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-RELEASE-FLAG-NONE:CAPS"/>
@@ -419,7 +440,6 @@
     <keyword type="function" name="fu_device_locker_close ()" link="fwupd-FuDeviceLocker.html#fu-device-locker-close" since="1.4.0"/>
     <keyword type="macro" name="FU_TYPE_DEVICE_LOCKER" link="fwupd-FuDeviceLocker.html#FU-TYPE-DEVICE-LOCKER:CAPS"/>
     <keyword type="struct" name="FuDeviceLocker" link="fwupd-FuDeviceLocker.html#FuDeviceLocker"/>
-    <keyword type="macro" name="FU_DEVICE_METADATA_TBT_CAN_FORCE_POWER" link="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-TBT-CAN-FORCE-POWER:CAPS"/>
     <keyword type="macro" name="FU_DEVICE_METADATA_UEFI_DEVICE_KIND" link="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-DEVICE-KIND:CAPS"/>
     <keyword type="macro" name="FU_DEVICE_METADATA_UEFI_FW_VERSION" link="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-FW-VERSION:CAPS"/>
     <keyword type="macro" name="FU_DEVICE_METADATA_UEFI_CAPSULE_FLAGS" link="fwupd-fu-device-metadata.html#FU-DEVICE-METADATA-UEFI-CAPSULE-FLAGS:CAPS"/>
@@ -439,6 +459,7 @@
     <keyword type="macro" name="fu_device_set_serial()" link="fwupd-FuDevice.html#fu-device-set-serial"/>
     <keyword type="macro" name="fu_device_set_summary()" link="fwupd-FuDevice.html#fu-device-set-summary"/>
     <keyword type="macro" name="fu_device_set_update_message()" link="fwupd-FuDevice.html#fu-device-set-update-message"/>
+    <keyword type="macro" name="fu_device_set_update_image()" link="fwupd-FuDevice.html#fu-device-set-update-image"/>
     <keyword type="macro" name="fu_device_set_update_error()" link="fwupd-FuDevice.html#fu-device-set-update-error"/>
     <keyword type="macro" name="fu_device_set_update_state()" link="fwupd-FuDevice.html#fu-device-set-update-state"/>
     <keyword type="macro" name="fu_device_set_vendor()" link="fwupd-FuDevice.html#fu-device-set-vendor"/>
@@ -765,6 +786,7 @@
     <keyword type="macro" name="FU_QUIRKS_GTYPE" link="fwupd-fu-quirks.html#FU-QUIRKS-GTYPE:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_PROTOCOL" link="fwupd-fu-quirks.html#FU-QUIRKS-PROTOCOL:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_UPDATE_MESSAGE" link="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-MESSAGE:CAPS"/>
+    <keyword type="macro" name="FU_QUIRKS_UPDATE_IMAGE" link="fwupd-fu-quirks.html#FU-QUIRKS-UPDATE-IMAGE:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_PRIORITY" link="fwupd-fu-quirks.html#FU-QUIRKS-PRIORITY:CAPS"/>
     <keyword type="macro" name="FU_QUIRKS_REMOVE_DELAY" link="fwupd-fu-quirks.html#FU-QUIRKS-REMOVE-DELAY:CAPS"/>
     <keyword type="struct" name="FuQuirks" link="fwupd-fu-quirks.html#FuQuirks"/>
@@ -794,7 +816,13 @@
     <keyword type="function" name="fu_udev_device_set_fd ()" link="fwupd-FuUdevDevice.html#fu-udev-device-set-fd" since="1.3.3"/>
     <keyword type="function" name="fu_udev_device_ioctl ()" link="fwupd-FuUdevDevice.html#fu-udev-device-ioctl" since="1.3.3"/>
     <keyword type="function" name="fu_udev_device_pwrite ()" link="fwupd-FuUdevDevice.html#fu-udev-device-pwrite" since="1.3.3"/>
+    <keyword type="function" name="fu_udev_device_pwrite_full ()" link="fwupd-FuUdevDevice.html#fu-udev-device-pwrite-full" since="1.4.5"/>
     <keyword type="function" name="fu_udev_device_pread ()" link="fwupd-FuUdevDevice.html#fu-udev-device-pread" since="1.3.3"/>
+    <keyword type="function" name="fu_udev_device_pread_full ()" link="fwupd-FuUdevDevice.html#fu-udev-device-pread-full" since="1.4.5"/>
+    <keyword type="function" name="fu_udev_device_get_sysfs_attr ()" link="fwupd-FuUdevDevice.html#fu-udev-device-get-sysfs-attr" since="1.4.5"/>
+    <keyword type="function" name="fu_udev_device_get_parent_name ()" link="fwupd-FuUdevDevice.html#fu-udev-device-get-parent-name" since="1.4.5"/>
+    <keyword type="function" name="fu_udev_device_write_sysfs ()" link="fwupd-FuUdevDevice.html#fu-udev-device-write-sysfs" since="1.4.5"/>
+    <keyword type="function" name="fu_udev_device_get_devtype ()" link="fwupd-FuUdevDevice.html#fu-udev-device-get-devtype" since="1.4.5"/>
     <keyword type="macro" name="G_UDEV_TYPE_DEVICE" link="fwupd-FuUdevDevice.html#G-UDEV-TYPE-DEVICE:CAPS"/>
     <keyword type="macro" name="GUdevDevice" link="fwupd-FuUdevDevice.html#GUdevDevice"/>
     <keyword type="macro" name="FU_TYPE_UDEV_DEVICE" link="fwupd-FuUdevDevice.html#FU-TYPE-UDEV-DEVICE:CAPS"/>
@@ -812,6 +840,9 @@
     <keyword type="macro" name="FU_TYPE_USB_DEVICE" link="fwupd-FuUsbDevice.html#FU-TYPE-USB-DEVICE:CAPS"/>
     <keyword type="struct" name="struct FuUsbDeviceClass" link="fwupd-FuUsbDevice.html#FuUsbDeviceClass"/>
     <keyword type="struct" name="FuUsbDevice" link="fwupd-FuUsbDevice.html#FuUsbDevice"/>
+    <keyword type="constant" name="FWUPD_CLIENT_DOWNLOAD_FLAG_NONE" link="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="FWUPD_CLIENT_UPLOAD_FLAG_NONE" link="fwupd-FwupdClient.html#FWUPD-CLIENT-UPLOAD-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="FWUPD_CLIENT_UPLOAD_FLAG_ALWAYS_MULTIPART" link="fwupd-FwupdClient.html#FWUPD-CLIENT-UPLOAD-FLAG-ALWAYS-MULTIPART:CAPS"/>
     <keyword type="constant" name="FWUPD_REMOTE_KIND_UNKNOWN" link="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-UNKNOWN:CAPS"/>
     <keyword type="constant" name="FWUPD_REMOTE_KIND_DOWNLOAD" link="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-DOWNLOAD:CAPS"/>
     <keyword type="constant" name="FWUPD_REMOTE_KIND_LOCAL" link="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-LOCAL:CAPS"/>
@@ -850,6 +881,10 @@
     <keyword type="constant" name="FWUPD_TRUST_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-TRUST-FLAG-NONE:CAPS"/>
     <keyword type="constant" name="FWUPD_TRUST_FLAG_PAYLOAD" link="fwupd-fwupd-enums.html#FWUPD-TRUST-FLAG-PAYLOAD:CAPS"/>
     <keyword type="constant" name="FWUPD_TRUST_FLAG_METADATA" link="fwupd-fwupd-enums.html#FWUPD-TRUST-FLAG-METADATA:CAPS"/>
+    <keyword type="constant" name="FWUPD_FEATURE_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-FEATURE-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="FWUPD_FEATURE_FLAG_CAN_REPORT" link="fwupd-fwupd-enums.html#FWUPD-FEATURE-FLAG-CAN-REPORT:CAPS"/>
+    <keyword type="constant" name="FWUPD_FEATURE_FLAG_DETACH_ACTION" link="fwupd-fwupd-enums.html#FWUPD-FEATURE-FLAG-DETACH-ACTION:CAPS"/>
+    <keyword type="constant" name="FWUPD_FEATURE_FLAG_UPDATE_ACTION" link="fwupd-fwupd-enums.html#FWUPD-FEATURE-FLAG-UPDATE-ACTION:CAPS"/>
     <keyword type="constant" name="FWUPD_RELEASE_URGENCY_UNKNOWN" link="fwupd-fwupd-enums.html#FWUPD-RELEASE-URGENCY-UNKNOWN:CAPS"/>
     <keyword type="constant" name="FWUPD_RELEASE_URGENCY_LOW" link="fwupd-fwupd-enums.html#FWUPD-RELEASE-URGENCY-LOW:CAPS"/>
     <keyword type="constant" name="FWUPD_RELEASE_URGENCY_MEDIUM" link="fwupd-fwupd-enums.html#FWUPD-RELEASE-URGENCY-MEDIUM:CAPS"/>

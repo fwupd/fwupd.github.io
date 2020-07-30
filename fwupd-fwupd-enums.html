@@ -130,6 +130,21 @@
 </td>
 </tr>
 <tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-feature-flag-to-string" title="fwupd_feature_flag_to_string ()">fwupd_feature_flag_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="returnvalue">FwupdFeatureFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-feature-flag-from-string" title="fwupd_feature_flag_from_string ()">fwupd_feature_flag_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
 <td class="function_type">
 <a class="link" href="fwupd-fwupd-enums.html#FwupdKeyringKind" title="enum FwupdKeyringKind"><span class="returnvalue">FwupdKeyringKind</span></a>
 </td>
@@ -177,6 +192,10 @@
 <tr>
 <td class="datatype_keyword">enum</td>
 <td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FwupdTrustFlags" title="enum FwupdTrustFlags">FwupdTrustFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags">FwupdFeatureFlags</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
@@ -325,6 +344,10 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UPDATABLE-HIDDEN:CAPS" title="FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN">FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-SKIPS-RESTART:CAPS" title="FWUPD_DEVICE_FLAG_SKIPS_RESTART">FWUPD_DEVICE_FLAG_SKIPS_RESTART</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
@@ -722,6 +745,60 @@ fwupd_trust_flag_from_string (<em class="parameter"><code>const <a href="../glib
 </div>
 <hr>
 <div class="refsect2">
+<a name="fwupd-feature-flag-to-string"></a><h3>fwupd_feature_flag_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_feature_flag_to_string (<em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a> feature_flag</code></em>);</pre>
+<p>Converts a <a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a> to a string.</p>
+<div class="refsect3">
+<a name="fwupd-feature-flag-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>feature_flag</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-FEATURE-FLAG-DETACH-ACTION:CAPS"><code class="literal">FWUPD_FEATURE_FLAG_DETACH_ACTION</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-feature-flag-to-string.returns"></a><h4>Returns</h4>
+<p> identifier string</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-feature-flag-from-string"></a><h3>fwupd_feature_flag_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="returnvalue">FwupdFeatureFlags</span></a>
+fwupd_feature_flag_from_string (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *feature_flag</code></em>);</pre>
+<p>Converts a string to a <a class="link" href="fwupd-fwupd-enums.html#FwupdFeatureFlags" title="enum FwupdFeatureFlags"><span class="type">FwupdFeatureFlags</span></a>.</p>
+<div class="refsect3">
+<a name="fwupd-feature-flag-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>feature_flag</p></td>
+<td class="parameter_description"><p>A string, e.g. <code class="literal">detach-action</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-feature-flag-from-string.returns"></a><h4>Returns</h4>
+<p> enumerated value</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fwupd-keyring-kind-from-string"></a><h3>fwupd_keyring_kind_from_string ()</h3>
 <pre class="programlisting"><a class="link" href="fwupd-fwupd-enums.html#FwupdKeyringKind" title="enum FwupdKeyringKind"><span class="returnvalue">FwupdKeyringKind</span></a>
 fwupd_keyring_kind_from_string (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *keyring_kind</code></em>);</pre>
@@ -985,6 +1062,51 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 </div>
 <hr>
 <div class="refsect2">
+<a name="FwupdFeatureFlags"></a><h3>enum FwupdFeatureFlags</h3>
+<p>The flags to the feature capabilities of the front-end client.</p>
+<div class="refsect3">
+<a name="FwupdFeatureFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-FEATURE-FLAG-NONE:CAPS"></a>FWUPD_FEATURE_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>No trust</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-FEATURE-FLAG-CAN-REPORT:CAPS"></a>FWUPD_FEATURE_FLAG_CAN_REPORT</p></td>
+<td class="enum_member_description">
+<p>Can upload a report of the update back to the server</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-FEATURE-FLAG-DETACH-ACTION:CAPS"></a>FWUPD_FEATURE_FLAG_DETACH_ACTION</p></td>
+<td class="enum_member_description">
+<p>Can perform detach action, typically showing text</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-FEATURE-FLAG-UPDATE-ACTION:CAPS"></a>FWUPD_FEATURE_FLAG_UPDATE_ACTION</p></td>
+<td class="enum_member_description">
+<p>Can perform update action, typically showing text</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
 <a name="FWUPD-DEVICE-FLAG-NONE:CAPS"></a><h3>FWUPD_DEVICE_FLAG_NONE</h3>
 <pre class="programlisting">#define FWUPD_DEVICE_FLAG_NONE			(0u)		/* Since: 0.1.3 */
 </pre>
@@ -1203,6 +1325,12 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 <div class="refsect2">
 <a name="FWUPD-DEVICE-FLAG-UPDATABLE-HIDDEN:CAPS"></a><h3>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</h3>
 <pre class="programlisting">#define FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN (1llu &lt;&lt; 37) /* Since: 1.4.1 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-DEVICE-FLAG-SKIPS-RESTART:CAPS"></a><h3>FWUPD_DEVICE_FLAG_SKIPS_RESTART</h3>
+<pre class="programlisting">#define FWUPD_DEVICE_FLAG_SKIPS_RESTART		(1llu &lt;&lt; 38) /* Since: 1.4.5 */
 </pre>
 </div>
 <hr>
