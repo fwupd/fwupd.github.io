@@ -8,7 +8,7 @@
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-fu-common-version.html" title="fu-common-version">
 <link rel="next" href="fwupd-FuDeviceLocker.html" title="FuDeviceLocker">
-<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -389,6 +389,38 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-kernel-locked-down" title="fu_common_kernel_locked_down ()">fu_common_kernel_locked_down</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-is-live-media" title="fu_common_is_live_media ()">fu_common_is_live_media</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-get-volumes-by-kind" title="fu_common_get_volumes_by_kind ()">fu_common_get_volumes_by_kind</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">FuVolume</span> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-get-esp-for-path" title="fu_common_get_esp_for_path ()">fu_common_get_esp_for_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">FuVolume</span> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-get-esp-default" title="fu_common_get_esp_default ()">fu_common_get_esp_default</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 </tbody>
@@ -2216,6 +2248,119 @@ fu_common_kernel_locked_down (<em class="parameter"><code><span class="type">voi
 <p>Determines if kernel lockdown in effect</p>
 <p class="since">Since: 1.3.8</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-is-live-media"></a><h3>fu_common_is_live_media ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_is_live_media (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Checks if the user is running from a live media using various heuristics.</p>
+<div class="refsect3">
+<a name="fu-common-is-live-media.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if live</p>
+</div>
+<p class="since">Since: 1.4.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-get-volumes-by-kind"></a><h3>fu_common_get_volumes_by_kind ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_common_get_volumes_by_kind (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *kind</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Call into the plugin's get results routine</p>
+<p>Finds all volumes of a specific type</p>
+<div class="refsect3">
+<a name="fu-common-get-volumes-by-kind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>kind</p></td>
+<td class="parameter_description"><p>A volume kind, typically a GUID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-get-volumes-by-kind.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the kind was not found. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuVolume]</span></p>
+</div>
+<p class="since">Since: 1.4.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-get-esp-for-path"></a><h3>fu_common_get_esp_for_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">FuVolume</span> *
+fu_common_get_esp_for_path (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *esp_path</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the platform ESP using a UNIX or UDisks path</p>
+<div class="refsect3">
+<a name="fu-common-get-esp-for-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>esp_path</p></td>
+<td class="parameter_description"><p>A path to the ESP</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-get-esp-for-path.returns"></a><h4>Returns</h4>
+<p>a <span class="type">FuVolume</span>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the ESP was not found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.4.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-get-esp-default"></a><h3>fu_common_get_esp_default ()</h3>
+<pre class="programlisting"><span class="returnvalue">FuVolume</span> *
+fu_common_get_esp_default (<em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the platform default ESP</p>
+<div class="refsect3">
+<a name="fu-common-get-esp-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-get-esp-default.returns"></a><h4>Returns</h4>
+<p>a <span class="type">FuVolume</span>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the ESP was not found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.4.6</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="fwupd-fu-common.other_details"></a><h2>Types and Values</h2>
@@ -2411,6 +2556,6 @@ fu_common_kernel_locked_down (<em class="parameter"><code><span class="type">voi
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32</div>
+<hr>Generated by GTK-Doc V1.32.1</div>
 </body>
 </html>

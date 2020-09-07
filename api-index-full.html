@@ -8,7 +8,7 @@
 <link rel="up" href="index.html" title="fwupd Reference Manual">
 <link rel="prev" href="tutorial.html" title="Plugin Tutorial">
 <link rel="next" href="deprecated-api-index.html" title="Index of deprecated API">
-<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -253,6 +253,10 @@ FuHidDeviceFlags, enum in FuHidDevice
 </dt>
 <dd></dd>
 <dt>
+FuVolume, struct in FuVolume
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuArchive.html#fu-archive-iterate" title="fu_archive_iterate ()">fu_archive_iterate</a>, function in <a class="link" href="fwupd-FuArchive.html" title="FuArchive">FuArchive</a>
 </dt>
 <dd></dd>
@@ -385,6 +389,14 @@ fu_cabinet_set_size_max, function in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-get-esp-default" title="fu_common_get_esp_default ()">fu_common_get_esp_default</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-get-esp-for-path" title="fu_common_get_esp_for_path ()">fu_common_get_esp_for_path</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fu-common.html#fu-common-get-files-recursive" title="fu_common_get_files_recursive ()">fu_common_get_files_recursive</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
@@ -393,7 +405,15 @@ fu_cabinet_set_size_max, function in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-get-volumes-by-kind" title="fu_common_get_volumes_by_kind ()">fu_common_get_volumes_by_kind</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fu-common-guid.html#fu-common-guid-is-plausible" title="fu_common_guid_is_plausible ()">fu_common_guid_is_plausible</a>, function in <a class="link" href="fwupd-fu-common-guid.html" title="fu-common-guid">fu-common-guid</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-is-live-media" title="fu_common_is_live_media ()">fu_common_is_live_media</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1222,6 +1242,10 @@ FU_EFIVAR_GUID_EFI_GLOBAL, macro in fu-efivar
 <dd></dd>
 <dt>
 FU_EFIVAR_GUID_FWUPDATE, macro in fu-efivar
+</dt>
+<dd></dd>
+<dt>
+FU_EFIVAR_GUID_SECURITY_DATABASE, macro in fu-efivar
 </dt>
 <dd></dd>
 <dt>
@@ -2209,6 +2233,10 @@ FU_TYPE_HID_DEVICE, macro in FuHidDevice
 </dt>
 <dd></dd>
 <dt>
+FU_TYPE_VOLUME, macro in FuVolume
+</dt>
+<dd></dd>
+<dt>
 fu_udev_device_emit_changed, function in fu-udev-device-private
 </dt>
 <dd></dd>
@@ -2338,6 +2366,46 @@ fu_usb_device_get_platform_id, function in fu-usb-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuUsbDevice.html#fu-usb-device-set-dev" title="fu_usb_device_set_dev ()">fu_usb_device_set_dev</a>, function in <a class="link" href="fwupd-FuUsbDevice.html" title="FuUsbDevice">FuUsbDevice</a>
+</dt>
+<dd></dd>
+<dt>
+fu_volume_check_free_space, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_get_id, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_get_mount_point, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_is_mounted, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+FU_VOLUME_KIND_ESP, macro in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_locker, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_mount, function in FuVolume
+</dt>
+<dd></dd>
+<dt>
+fu_volume_new_from_mount_path, function in fu-volume-private
+</dt>
+<dd></dd>
+<dt>
+fu_volume_new_from_proxy, function in fu-volume-private
+</dt>
+<dd></dd>
+<dt>
+fu_volume_unmount, function in FuVolume
 </dt>
 <dd></dd>
 <a name="idxW"></a><h3 class="title">W</h3>
@@ -2498,6 +2566,10 @@ fwupd_checksum_guess_kind, function in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-get-blocked-firmware" title="fwupd_client_get_blocked_firmware ()">fwupd_client_get_blocked_firmware</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-get-daemon-interactive" title="fwupd_client_get_daemon_interactive ()">fwupd_client_get_daemon_interactive</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
@@ -2607,6 +2679,10 @@ fwupd_checksum_guess_kind, function in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-approved-firmware" title="fwupd_client_set_approved_firmware ()">fwupd_client_set_approved_firmware</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-blocked-firmware" title="fwupd_client_set_blocked_firmware ()">fwupd_client_set_blocked_firmware</a>, function in <a class="link" href="fwupd-FwupdClient.html" title="FwupdClient">FwupdClient</a>
 </dt>
 <dd></dd>
 <dt>
@@ -3967,6 +4043,6 @@ fwupd_variant_to_hash_kv, function in fwupd-common-private
 <dd></dd>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32</div>
+<hr>Generated by GTK-Doc V1.32.1</div>
 </body>
 </html>

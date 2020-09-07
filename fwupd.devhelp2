@@ -79,6 +79,8 @@
     <keyword type="function" name="fwupd_client_get_remote_by_id ()" link="fwupd-FwupdClient.html#fwupd-client-get-remote-by-id" since="0.9.3"/>
     <keyword type="function" name="fwupd_client_get_approved_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-get-approved-firmware" since="1.2.6"/>
     <keyword type="function" name="fwupd_client_set_approved_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-set-approved-firmware" since="1.2.6"/>
+    <keyword type="function" name="fwupd_client_get_blocked_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-get-blocked-firmware" since="1.4.6"/>
+    <keyword type="function" name="fwupd_client_set_blocked_firmware ()" link="fwupd-FwupdClient.html#fwupd-client-set-blocked-firmware" since="1.4.6"/>
     <keyword type="function" name="fwupd_client_self_sign ()" link="fwupd-FwupdClient.html#fwupd-client-self-sign" since="1.2.6"/>
     <keyword type="function" name="fwupd_client_set_feature_flags ()" link="fwupd-FwupdClient.html#fwupd-client-set-feature-flags" since="1.4.5"/>
     <keyword type="function" name="fwupd_client_set_user_agent ()" link="fwupd-FwupdClient.html#fwupd-client-set-user-agent" since="1.4.5"/>
@@ -430,6 +432,10 @@
     <keyword type="function" name="fu_common_string_append_kb ()" link="fwupd-fu-common.html#fu-common-string-append-kb" since="1.2.4"/>
     <keyword type="function" name="fu_common_strnsplit ()" link="fwupd-fu-common.html#fu-common-strnsplit" since="1.3.1"/>
     <keyword type="function" name="fu_common_kernel_locked_down ()" link="fwupd-fu-common.html#fu-common-kernel-locked-down" since="1.3.8"/>
+    <keyword type="function" name="fu_common_is_live_media ()" link="fwupd-fu-common.html#fu-common-is-live-media" since="1.4.6"/>
+    <keyword type="function" name="fu_common_get_volumes_by_kind ()" link="fwupd-fu-common.html#fu-common-get-volumes-by-kind" since="1.4.6"/>
+    <keyword type="function" name="fu_common_get_esp_for_path ()" link="fwupd-fu-common.html#fu-common-get-esp-for-path" since="1.4.6"/>
+    <keyword type="function" name="fu_common_get_esp_default ()" link="fwupd-fu-common.html#fu-common-get-esp-default" since="1.4.6"/>
     <keyword type="enum" name="enum FuAppFlags" link="fwupd-fu-common.html#FuAppFlags"/>
     <keyword type="enum" name="enum FuDumpFlags" link="fwupd-fu-common.html#FuDumpFlags"/>
     <keyword type="typedef" name="FuEndianType" link="fwupd-fu-common.html#FuEndianType"/>
