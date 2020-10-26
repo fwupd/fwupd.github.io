@@ -73,6 +73,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-filename-glob" title="fu_common_filename_glob ()">fu_common_filename_glob</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
@@ -284,6 +292,14 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-byte-array-set-size" title="fu_byte_array_set_size ()">fu_byte_array_set_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-byte-array-append-uint8" title="fu_byte_array_append_uint8 ()">fu_byte_array_append_uint8</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -396,6 +412,22 @@
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-cpuid" title="fu_common_cpuid ()">fu_common_cpuid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-is-cpu-intel" title="fu_common_is_cpu_intel ()">fu_common_is_cpu_intel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-is-live-media" title="fu_common_is_live_media ()">fu_common_is_live_media</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -421,6 +453,38 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-get-esp-default" title="fu_common_get_esp_default ()">fu_common_get_esp_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-crc8" title="fu_common_crc8 ()">fu_common_crc8</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint16"><span class="returnvalue">guint16</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-crc16" title="fu_common_crc16 ()">fu_common_crc16</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-crc32" title="fu_common_crc32 ()">fu_common_crc32</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-crc32-full" title="fu_common_crc32_full ()">fu_common_crc32_full</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 </tbody>
@@ -590,6 +654,50 @@ fu_common_realpath (<em class="parameter"><code>const <a href="../glib/glib-Basi
 <p> A filename, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if invalid or not found</p>
 </div>
 <p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-filename-glob"></a><h3>fu_common_filename_glob ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_common_filename_glob (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *directory</code></em>,
+                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pattern</code></em>,
+                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Returns all the filenames that match a specific glob pattern.
+Any results are sorted. No matching files will set <em class="parameter"><code>error</code></em>
+.</p>
+<div class="refsect3">
+<a name="fu-common-filename-glob.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>directory</p></td>
+<td class="parameter_description"><p>a directory path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pattern</p></td>
+<td class="parameter_description"><p>a glob pattern, e.g. <code class="literal">*foo*</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-filename-glob.returns"></a><h4>Returns</h4>
+<p>matching files, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1725,6 +1833,37 @@ was set, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="lit
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-byte-array-set-size"></a><h3>fu_byte_array_set_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_byte_array_set_size (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> length</code></em>);</pre>
+<p>Sets the size of the GByteArray, expanding it with NULs if necessary.</p>
+<div class="refsect3">
+<a name="fu-byte-array-set-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the new size of the GByteArray</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-byte-array-append-uint8"></a><h3>fu_byte_array_append_uint8 ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_byte_array_append_uint8 (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
@@ -2250,6 +2389,77 @@ fu_common_kernel_locked_down (<em class="parameter"><code><span class="type">voi
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-common-cpuid"></a><h3>fu_common_cpuid ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_cpuid (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> leaf</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *eax</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *ebx</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *ecx</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *edx</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Calls CPUID and returns the registers for the given leaf.</p>
+<div class="refsect3">
+<a name="fu-common-cpuid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>leaf</p></td>
+<td class="parameter_description"><p>The CPUID level, now called the 'leaf' by Intel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>eax</p></td>
+<td class="parameter_description"><p>EAX register. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ebx</p></td>
+<td class="parameter_description"><p>EBX register. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ecx</p></td>
+<td class="parameter_description"><p>ECX register. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>edx</p></td>
+<td class="parameter_description"><p>EDX register. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-cpuid.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the registers are set.</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-is-cpu-intel"></a><h3>fu_common_is_cpu_intel ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_is_cpu_intel (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Uses CPUID to discover the CPU vendor and check if it is Intel.</p>
+<div class="refsect3">
+<a name="fu-common-is-cpu-intel.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the vendor was Intel.</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-common-is-live-media"></a><h3>fu_common_is_live_media ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_common_is_live_media (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
@@ -2360,6 +2570,158 @@ fu_common_get_esp_default (<em class="parameter"><code><a href="../glib/glib-Err
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-crc8"></a><h3>fu_common_crc8 ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a>
+fu_common_crc8 (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>);</pre>
+<p>Returns the cyclic redundancy check value for the given memory buffer.</p>
+<div class="refsect3">
+<a name="fu-common-crc8.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>memory buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>sizeof buf</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-crc8.returns"></a><h4>Returns</h4>
+<p> CRC value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-crc16"></a><h3>fu_common_crc16 ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint16"><span class="returnvalue">guint16</span></a>
+fu_common_crc16 (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>);</pre>
+<p>Returns the cyclic redundancy check value for the given memory buffer.</p>
+<div class="refsect3">
+<a name="fu-common-crc16.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>memory buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>sizeof buf</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-crc16.returns"></a><h4>Returns</h4>
+<p> CRC value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-crc32"></a><h3>fu_common_crc32 ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_common_crc32 (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>);</pre>
+<p>Returns the cyclic redundancy check value for the given memory buffer.</p>
+<div class="refsect3">
+<a name="fu-common-crc32.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>memory buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>sizeof buf</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-crc32.returns"></a><h4>Returns</h4>
+<p> CRC value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-crc32-full"></a><h3>fu_common_crc32_full ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_common_crc32_full (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> crc</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> polynomial</code></em>);</pre>
+<p>Returns the cyclic redundancy check value for the given memory buffer.</p>
+<div class="refsect3">
+<a name="fu-common-crc32-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>memory buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>sizeof buf</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>crc</p></td>
+<td class="parameter_description"><p>initial CRC value, typically 0xFFFFFFFF</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>polynomial</p></td>
+<td class="parameter_description"><p>CRC polynomial, typically 0xEDB88320</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-crc32-full.returns"></a><h4>Returns</h4>
+<p> CRC value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
 </div>
 </div>
 <div class="refsect1">
@@ -2529,6 +2891,13 @@ fu_common_get_esp_default (<em class="parameter"><code><a href="../glib/glib-Err
 <td class="enum_member_annotations"> </td>
 </tr>
 <tr>
+<td class="enum_member_name"><p><a name="FU-PATH-KIND-PROCFS:CAPS"></a>FU_PATH_KIND_PROCFS</p></td>
+<td class="enum_member_description">
+<p>The procfs location (IE /proc)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
 <td class="enum_member_name"><p><a name="FU-PATH-KIND-POLKIT-ACTIONS:CAPS"></a>FU_PATH_KIND_POLKIT_ACTIONS</p></td>
 <td class="enum_member_description">
 <p>The directory for policy kit actions (IE /usr/share/polkit-1/actions/)</p>
@@ -2546,6 +2915,13 @@ fu_common_get_esp_default (<em class="parameter"><code><a href="../glib/glib-Err
 <td class="enum_member_name"><p><a name="FU-PATH-KIND-SYSFSDIR-SECURITY:CAPS"></a>FU_PATH_KIND_SYSFSDIR_SECURITY</p></td>
 <td class="enum_member_description">
 <p>The sysfs security location (IE /sys/kernel/security)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-PATH-KIND-ACPI-TABLES:CAPS"></a>FU_PATH_KIND_ACPI_TABLES</p></td>
+<td class="enum_member_description">
+<p>The location of the ACPI tables</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>

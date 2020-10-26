@@ -136,6 +136,12 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-branch" title="fu_device_set_branch()">fu_device_set_branch</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-update-message" title="fu_device_set_update_message()">fu_device_set_update_message</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -263,6 +269,12 @@
 <td class="define_keyword">#define</td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-summary" title="fu_device_get_summary()">fu_device_get_summary</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-branch" title="fu_device_get_branch()">fu_device_get_branch</a><span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -808,6 +820,14 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-sleep-with-progress" title="fu_device_sleep_with_progress ()">fu_device_sleep_with_progress</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-quirks" title="fu_device_set_quirks ()">fu_device_set_quirks</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -825,6 +845,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-release-default" title="fu_device_get_release_default ()">fu_device_get_release_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-specialized-gtype" title="fu_device_get_specialized_gtype ()">fu_device_get_specialized_gtype</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -849,6 +877,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-read-firmware" title="fu_device_read_firmware ()">fu_device_read_firmware</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-dump-firmware" title="fu_device_dump_firmware ()">fu_device_dump_firmware</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -1003,6 +1039,38 @@
 <a class="link" href="fwupd-FuDevice.html#fu-device-retry" title="fu_device_retry ()">fu_device_retry</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-bind-driver" title="fu_device_bind_driver ()">fu_device_bind_driver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-unbind-driver" title="fu_device_unbind_driver ()">fu_device_unbind_driver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-report-metadata-pre" title="fu_device_report_metadata_pre ()">fu_device_report_metadata_pre</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-report-metadata-post" title="fu_device_report_metadata_post ()">fu_device_report_metadata_post</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -1142,6 +1210,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-set-branch"></a><h3>fu_device_set_branch()</h3>
+<pre class="programlisting">#define fu_device_set_branch(d,v)		fwupd_device_set_branch(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-set-update-message"></a><h3>fu_device_set_update_message()</h3>
 <pre class="programlisting">#define fu_device_set_update_message(d,v) fwupd_device_set_update_message(FWUPD_DEVICE(d),v)
 </pre>
@@ -1270,6 +1344,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="fu-device-get-summary"></a><h3>fu_device_get_summary()</h3>
 <pre class="programlisting">#define fu_device_get_summary(d)		fwupd_device_get_summary(FWUPD_DEVICE(d))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-branch"></a><h3>fu_device_get_branch()</h3>
+<pre class="programlisting">#define fu_device_get_branch(d)			fwupd_device_get_branch(FWUPD_DEVICE(d))
 </pre>
 </div>
 <hr>
@@ -3179,6 +3259,39 @@ fu_device_set_progress_full (<em class="parameter"><code><a class="link" href="f
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-sleep-with-progress"></a><h3>fu_device_sleep_with_progress ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_sleep_with_progress (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> delay_secs</code></em>);</pre>
+<p>Sleeps, setting the device progress from 0..100% as time continues.
+The value is gven in whole seconds as it does not make sense to show the
+progressbar advancing so quickly for durations of less than one second.</p>
+<div class="refsect3">
+<a name="fu-device-sleep-with-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>delay_secs</p></td>
+<td class="parameter_description"><p>the delay in seconds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-set-quirks"></a><h3>fu_device_set_quirks ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_device_set_quirks (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
@@ -3265,6 +3378,33 @@ fu_device_get_release_default (<em class="parameter"><code><a class="link" href=
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-specialized-gtype"></a><h3>fu_device_get_specialized_gtype ()</h3>
+<pre class="programlisting"><a href="../gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+fu_device_get_specialized_gtype (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Gets the specialized type of the device</p>
+<div class="refsect3">
+<a name="fu-device-get-specialized-gtype.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-get-specialized-gtype.returns"></a><h4>Returns</h4>
+<p><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p>
+</div>
+<p class="since">Since: 1.3.3</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -3372,7 +3512,11 @@ or using a quirk entry.</p>
 <pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
 fu_device_read_firmware (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
-<p>Reads firmware from the device by calling a plugin-specific vfunc.</p>
+<p>Reads firmware from the device by calling a plugin-specific vfunc.
+The device subclass should try to ensure the firmware does not contain any
+serial numbers or user-configuration values and can be used to calculate the
+device checksum.</p>
+<p>The return value can be converted to a blob of memory using <a class="link" href="fwupd-FuFirmware.html#fu-firmware-write" title="fu_firmware_write ()"><code class="function">fu_firmware_write()</code></a>.</p>
 <div class="refsect3">
 <a name="fu-device-read-firmware.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -3401,6 +3545,45 @@ fu_device_read_firmware (<em class="parameter"><code><a class="link" href="fwupd
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-dump-firmware"></a><h3>fu_device_dump_firmware ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_device_dump_firmware (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Reads the raw firmware image from the device by calling a plugin-specific
+vfunc. This raw firmware image may contain serial numbers or device-specific
+configuration but should be a byte-for-byte match compared to using an
+external SPI programmer.</p>
+<div class="refsect3">
+<a name="fu-device-dump-firmware.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-dump-firmware.returns"></a><h4>Returns</h4>
+<p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4114,6 +4297,148 @@ without processing any pending retries.</p>
 </div>
 <p class="since">Since: 1.4.0</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-bind-driver"></a><h3>fu_device_bind_driver ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_device_bind_driver (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subsystem</code></em>,
+                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *driver</code></em>,
+                       <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Binds a driver to the device, which normally means the kernel driver takes
+control of the hardware.</p>
+<div class="refsect3">
+<a name="fu-device-bind-driver.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>subsystem</p></td>
+<td class="parameter_description"><p>A subsystem string, e.g. <code class="literal">pci</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>driver</p></td>
+<td class="parameter_description"><p>A kernel module name, e.g. <code class="literal">tg3</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-bind-driver.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if driver was bound.</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-unbind-driver"></a><h3>fu_device_unbind_driver ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_device_unbind_driver (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Unbinds the driver from the device, which normally means the kernel releases
+the hardware so it can be used from userspace.</p>
+<p>If there is no driver bound then this function will return with success
+without actually doing anything.</p>
+<div class="refsect3">
+<a name="fu-device-unbind-driver.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-unbind-driver.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if driver was unbound.</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-report-metadata-pre"></a><h3>fu_device_report_metadata_pre ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+fu_device_report_metadata_pre (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Collects metadata that would be useful for debugging a failed update report.</p>
+<div class="refsect3">
+<a name="fu-device-report-metadata-pre.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-report-metadata-pre.returns"></a><h4>Returns</h4>
+<p>A <a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there is no data. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-report-metadata-post"></a><h3>fu_device_report_metadata_post ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+fu_device_report_metadata_post (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Collects metadata that would be useful for debugging a failed update report.</p>
+<div class="refsect3">
+<a name="fu-device-report-metadata-post.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-report-metadata-post.returns"></a><h4>Returns</h4>
+<p>A <a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there is no data. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="fwupd-FuDevice.other_details"></a><h2>Types and Values</h2>
@@ -4171,6 +4496,18 @@ without processing any pending retries.</p>
 							 GError		**error);
 	gboolean		 (*cleanup)		(FuDevice *self,
 							 FwupdInstallFlags flags,
+							 GError		**error);
+	void			 (*report_metadata_pre) (FuDevice *self,
+							 GHashTable *metadata);
+	void			 (*report_metadata_post)(FuDevice *self,
+							 GHashTable *metadata);
+	gboolean		 (*bind_driver)		(FuDevice *self,
+							 const gchar *subsystem,
+							 const gchar *driver,
+							 GError		**error);
+	gboolean		 (*unbind_driver) (FuDevice *self,
+							 GError		**error);
+	GBytes			*(*dump_firmware) (FuDevice *self,
 							 GError		**error);
 };
 </pre>

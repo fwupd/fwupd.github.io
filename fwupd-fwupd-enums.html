@@ -73,6 +73,21 @@
 <td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-plugin-flag-to-string" title="fwupd_plugin_flag_to_string ()">fwupd_plugin_flag_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="returnvalue">FwupdPluginFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fwupd-enums.html#fwupd-plugin-flag-from-string" title="fwupd_plugin_flag_from_string ()">fwupd_plugin_flag_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-fwupd-enums.html#fwupd-release-flag-to-string" title="fwupd_release_flag_to_string ()">fwupd_release_flag_to_string</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -351,6 +366,14 @@
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-HAS-MULTIPLE-BRANCHES:CAPS" title="FWUPD_DEVICE_FLAG_HAS_MULTIPLE_BRANCHES">FWUPD_DEVICE_FLAG_HAS_MULTIPLE_BRANCHES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-BACKUP-BEFORE-INSTALL:CAPS" title="FWUPD_DEVICE_FLAG_BACKUP_BEFORE_INSTALL">FWUPD_DEVICE_FLAG_BACKUP_BEFORE_INSTALL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-UNKNOWN:CAPS" title="FWUPD_DEVICE_FLAG_UNKNOWN">FWUPD_DEVICE_FLAG_UNKNOWN</a></td>
 </tr>
 <tr>
@@ -388,6 +411,58 @@
 <tr>
 <td class="datatype_keyword">enum</td>
 <td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FwupdReleaseUrgency" title="enum FwupdReleaseUrgency">FwupdReleaseUrgency</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-NONE:CAPS" title="FWUPD_PLUGIN_FLAG_NONE">FWUPD_PLUGIN_FLAG_NONE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-DISABLED:CAPS" title="FWUPD_PLUGIN_FLAG_DISABLED">FWUPD_PLUGIN_FLAG_DISABLED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-USER-WARNING:CAPS" title="FWUPD_PLUGIN_FLAG_USER_WARNING">FWUPD_PLUGIN_FLAG_USER_WARNING</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-CLEAR-UPDATABLE:CAPS" title="FWUPD_PLUGIN_FLAG_CLEAR_UPDATABLE">FWUPD_PLUGIN_FLAG_CLEAR_UPDATABLE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-NO-HARDWARE:CAPS" title="FWUPD_PLUGIN_FLAG_NO_HARDWARE">FWUPD_PLUGIN_FLAG_NO_HARDWARE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-CAPSULES-UNSUPPORTED:CAPS" title="FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED">FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-UNLOCK-REQUIRED:CAPS" title="FWUPD_PLUGIN_FLAG_UNLOCK_REQUIRED">FWUPD_PLUGIN_FLAG_UNLOCK_REQUIRED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-EFIVAR-NOT-MOUNTED:CAPS" title="FWUPD_PLUGIN_FLAG_EFIVAR_NOT_MOUNTED">FWUPD_PLUGIN_FLAG_EFIVAR_NOT_MOUNTED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-ESP-NOT-FOUND:CAPS" title="FWUPD_PLUGIN_FLAG_ESP_NOT_FOUND">FWUPD_PLUGIN_FLAG_ESP_NOT_FOUND</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-LEGACY-BIOS:CAPS" title="FWUPD_PLUGIN_FLAG_LEGACY_BIOS">FWUPD_PLUGIN_FLAG_LEGACY_BIOS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-FAILED-OPEN:CAPS" title="FWUPD_PLUGIN_FLAG_FAILED_OPEN">FWUPD_PLUGIN_FLAG_FAILED_OPEN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-UNKNOWN:CAPS" title="FWUPD_PLUGIN_FLAG_UNKNOWN">FWUPD_PLUGIN_FLAG_UNKNOWN</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags">FwupdPluginFlags</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword">enum</td>
@@ -529,6 +604,60 @@ fwupd_device_flag_from_string (<em class="parameter"><code>const <a href="../gli
 </div>
 <hr>
 <div class="refsect2">
+<a name="fwupd-plugin-flag-to-string"></a><h3>fwupd_plugin_flag_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_plugin_flag_to_string (<em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a> plugin_flag</code></em>);</pre>
+<p>Converts a <a class="link" href="fwupd-fwupd-enums.html#FwupdDeviceFlags" title="FwupdDeviceFlags"><span class="type">FwupdDeviceFlags</span></a> to a string.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-flag-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin_flag</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-DEVICE-FLAG-REQUIRE-AC:CAPS" title="FWUPD_DEVICE_FLAG_REQUIRE_AC"><code class="literal">FWUPD_DEVICE_FLAG_REQUIRE_AC</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-flag-to-string.returns"></a><h4>Returns</h4>
+<p> identifier string</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-flag-from-string"></a><h3>fwupd_plugin_flag_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="returnvalue">FwupdPluginFlags</span></a>
+fwupd_plugin_flag_from_string (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *plugin_flag</code></em>);</pre>
+<p>Converts a string to a <a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a>.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-flag-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin_flag</p></td>
+<td class="parameter_description"><p>A string, e.g. <code class="literal">require-ac</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-flag-from-string.returns"></a><h4>Returns</h4>
+<p> enumerated value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fwupd-release-flag-to-string"></a><h3>fwupd_release_flag_to_string ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fwupd_release_flag_to_string (<em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdReleaseFlags" title="FwupdReleaseFlags"><span class="type">FwupdReleaseFlags</span></a> release_flag</code></em>);</pre>
@@ -624,7 +753,7 @@ fwupd_release_urgency_from_string (<em class="parameter"><code>const <a href="..
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>release_urgency</p></td>
-<td class="parameter_description"><p>A string, e.g. <code class="literal">trusted-payload</code></p></td>
+<td class="parameter_description"><p>A string, e.g. <code class="literal">low</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
@@ -1101,6 +1230,13 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-FEATURE-FLAG-SWITCH-BRANCH:CAPS"></a>FWUPD_FEATURE_FLAG_SWITCH_BRANCH</p></td>
+<td class="enum_member_description">
+<p>Can switch the firmware branch</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -1330,7 +1466,19 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 <hr>
 <div class="refsect2">
 <a name="FWUPD-DEVICE-FLAG-SKIPS-RESTART:CAPS"></a><h3>FWUPD_DEVICE_FLAG_SKIPS_RESTART</h3>
-<pre class="programlisting">#define FWUPD_DEVICE_FLAG_SKIPS_RESTART		(1llu &lt;&lt; 38) /* Since: 1.4.5 */
+<pre class="programlisting">#define FWUPD_DEVICE_FLAG_SKIPS_RESTART		(1llu &lt;&lt; 38) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-DEVICE-FLAG-HAS-MULTIPLE-BRANCHES:CAPS"></a><h3>FWUPD_DEVICE_FLAG_HAS_MULTIPLE_BRANCHES</h3>
+<pre class="programlisting">#define FWUPD_DEVICE_FLAG_HAS_MULTIPLE_BRANCHES (1llu &lt;&lt; 39) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-DEVICE-FLAG-BACKUP-BEFORE-INSTALL:CAPS"></a><h3>FWUPD_DEVICE_FLAG_BACKUP_BEFORE_INSTALL</h3>
+<pre class="programlisting">#define FWUPD_DEVICE_FLAG_BACKUP_BEFORE_INSTALL (1llu &lt;&lt; 40) /* Since: 1.5.0 */
 </pre>
 </div>
 <hr>
@@ -1443,8 +1591,87 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 </div>
 <hr>
 <div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-NONE:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_NONE</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_NONE			(0u)		/* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-DISABLED:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_DISABLED</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_DISABLED		(1u &lt;&lt; 0) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-USER-WARNING:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_USER_WARNING</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_USER_WARNING		(1u &lt;&lt; 1) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-CLEAR-UPDATABLE:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_CLEAR_UPDATABLE</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_CLEAR_UPDATABLE (1u &lt;&lt; 2) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-NO-HARDWARE:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_NO_HARDWARE</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_NO_HARDWARE		(1u &lt;&lt; 3) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-CAPSULES-UNSUPPORTED:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED (1u &lt;&lt; 4) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-UNLOCK-REQUIRED:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_UNLOCK_REQUIRED</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_UNLOCK_REQUIRED (1u &lt;&lt; 5) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-EFIVAR-NOT-MOUNTED:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_EFIVAR_NOT_MOUNTED</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_EFIVAR_NOT_MOUNTED (1u &lt;&lt; 6) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-ESP-NOT-FOUND:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_ESP_NOT_FOUND</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_ESP_NOT_FOUND		(1u &lt;&lt; 7) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-LEGACY-BIOS:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_LEGACY_BIOS</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_LEGACY_BIOS		(1u &lt;&lt; 8) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-FAILED-OPEN:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_FAILED_OPEN</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_FAILED_OPEN		(1u &lt;&lt; 9) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FWUPD-PLUGIN-FLAG-UNKNOWN:CAPS"></a><h3>FWUPD_PLUGIN_FLAG_UNKNOWN</h3>
+<pre class="programlisting">#define FWUPD_PLUGIN_FLAG_UNKNOWN		G_MAXUINT64 /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdPluginFlags"></a><h3>FwupdPluginFlags</h3>
+<pre class="programlisting">typedef guint64 FwupdPluginFlags;
+</pre>
+<p>The plugin flags.</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="FwupdInstallFlags"></a><h3>enum FwupdInstallFlags</h3>
-<p>Flags to set when performing the firwmare update or install.</p>
+<p>Flags to set when performing the firmware update or install.</p>
 <div class="refsect3">
 <a name="FwupdInstallFlags.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1496,6 +1723,34 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-INSTALL-FLAG-ALLOW-BRANCH-SWITCH:CAPS"></a>FWUPD_INSTALL_FLAG_ALLOW_BRANCH_SWITCH</p></td>
+<td class="enum_member_description">
+<p>Allow firmware branch switching</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-INSTALL-FLAG-IGNORE-CHECKSUM:CAPS"></a>FWUPD_INSTALL_FLAG_IGNORE_CHECKSUM</p></td>
+<td class="enum_member_description">
+<p>Ignore firmware CRCs and checksums</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-INSTALL-FLAG-IGNORE-VID-PID:CAPS"></a>FWUPD_INSTALL_FLAG_IGNORE_VID_PID</p></td>
+<td class="enum_member_description">
+<p>Ignore firmware vendor and project checks</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-INSTALL-FLAG-IGNORE-POWER:CAPS"></a>FWUPD_INSTALL_FLAG_IGNORE_POWER</p></td>
+<td class="enum_member_description">
+<p>Ignore requirement of external power source</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -1503,7 +1758,7 @@ fwupd_version_format_to_string (<em class="parameter"><code><a class="link" href
 <hr>
 <div class="refsect2">
 <a name="FwupdSelfSignFlags"></a><h3>enum FwupdSelfSignFlags</h3>
-<p>Flags to set when performing the firwmare update or install.</p>
+<p>Flags to set when performing the firmware update or install.</p>
 <div class="refsect3">
 <a name="FwupdSelfSignFlags.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
