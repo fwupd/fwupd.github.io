@@ -180,6 +180,7 @@
     <keyword type="function" name="fwupd_device_set_parent_id ()" link="fwupd-FwupdDevice.html#fwupd-device-set-parent-id" since="1.0.8"/>
     <keyword type="function" name="fwupd_device_get_parent ()" link="fwupd-FwupdDevice.html#fwupd-device-get-parent" since="1.0.8"/>
     <keyword type="function" name="fwupd_device_set_parent ()" link="fwupd-FwupdDevice.html#fwupd-device-set-parent" since="1.0.8"/>
+    <keyword type="function" name="fwupd_device_add_child ()" link="fwupd-FwupdDevice.html#fwupd-device-add-child" since="1.5.1"/>
     <keyword type="function" name="fwupd_device_get_children ()" link="fwupd-FwupdDevice.html#fwupd-device-get-children" since="1.3.7"/>
     <keyword type="function" name="fwupd_device_get_name ()" link="fwupd-FwupdDevice.html#fwupd-device-get-name" since="0.9.3"/>
     <keyword type="function" name="fwupd_device_set_name ()" link="fwupd-FwupdDevice.html#fwupd-device-set-name" since="0.9.3"/>
@@ -554,6 +555,8 @@
     <keyword type="function" name="fu_common_is_cpu_intel ()" link="fwupd-fu-common.html#fu-common-is-cpu-intel" since="1.5.0"/>
     <keyword type="function" name="fu_common_is_live_media ()" link="fwupd-fu-common.html#fu-common-is-live-media" since="1.4.6"/>
     <keyword type="function" name="fu_common_get_volumes_by_kind ()" link="fwupd-fu-common.html#fu-common-get-volumes-by-kind" since="1.4.6"/>
+    <keyword type="function" name="fu_common_get_volume_by_device ()" link="fwupd-fu-common.html#fu-common-get-volume-by-device" since="1.5.1"/>
+    <keyword type="function" name="fu_common_get_volume_by_devnum ()" link="fwupd-fu-common.html#fu-common-get-volume-by-devnum" since="1.5.1"/>
     <keyword type="function" name="fu_common_get_esp_for_path ()" link="fwupd-fu-common.html#fu-common-get-esp-for-path" since="1.4.6"/>
     <keyword type="function" name="fu_common_get_esp_default ()" link="fwupd-fu-common.html#fu-common-get-esp-default" since="1.4.6"/>
     <keyword type="function" name="fu_common_crc8 ()" link="fwupd-fu-common.html#fu-common-crc8" since="1.5.0"/>

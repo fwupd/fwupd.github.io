@@ -736,7 +736,7 @@ fu_plugin_set_coldplug_delay (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> duration</code></em>);</pre>
 <p>Set the minimum time that should be waited in-between the call to
 <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-coldplug-prepare" title="fu_plugin_coldplug_prepare ()"><code class="function">fu_plugin_coldplug_prepare()</code></a> and <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-coldplug" title="fu_plugin_coldplug ()"><code class="function">fu_plugin_coldplug()</code></a>. This is usually going
-to be the minimum hardware initialisation time from a datasheet.</p>
+to be the minimum hardware initialization time from a datasheet.</p>
 <p>It is better to use this function rather than using a <code class="function">sleep()</code> in the plugin
 itself as then only one delay is done in the daemon rather than waiting for
 each coldplug prepare in a serial way.</p>
