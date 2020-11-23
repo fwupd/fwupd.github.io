@@ -337,6 +337,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fwupd-client-sync.html#fwupd-client-download-file" title="fwupd_client_download_file ()">fwupd_client_download_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
 </td>
 <td class="function_name">
@@ -2177,6 +2185,66 @@ should be called before this method is used.</p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-download-file"></a><h3>fwupd_client_download_file ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_client_download_file (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *url</code></em>,
+                            <em class="parameter"><code><a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a> *file</code></em>,
+                            <em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags"><span class="type">FwupdClientDownloadFlags</span></a> flags</code></em>,
+                            <em class="parameter"><code><a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Downloads data from a remote server. The <a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-user-agent" title="fwupd_client_set_user_agent ()"><code class="function">fwupd_client_set_user_agent()</code></a> function
+should be called before this method is used.</p>
+<div class="refsect3">
+<a name="fwupd-client-download-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>url</p></td>
+<td class="parameter_description"><p>the remote URL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file</p></td>
+<td class="parameter_description"><p>a <a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p><a class="link" href="fwupd-FwupdClient.html#FwupdClientDownloadFlags" title="enum FwupdClientDownloadFlags"><span class="type">FwupdClientDownloadFlags</span></a>, e.g. <a class="link" href="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"><code class="literal">FWUPD_CLIENT_DOWNLOAD_FLAG_NONE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>the <a href="../gio/GCancellable.html#GCancellable-struct"><span class="type">GCancellable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-download-file.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the file was written, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error</p>
+</div>
+<p class="since">Since: 1.5.2</p>
 </div>
 <hr>
 <div class="refsect2">
