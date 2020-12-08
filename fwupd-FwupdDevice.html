@@ -8,7 +8,7 @@
 <link rel="up" href="libfwupd.html" title="libfwupd">
 <link rel="prev" href="fwupd-fwupd-client-sync.html" title="fwupd-client-sync">
 <link rel="next" href="fwupd-FwupdRelease.html" title="FwupdRelease">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -896,7 +896,7 @@ fwupd_device_get_parent (<em class="parameter"><code><a class="link" href="fwupd
 <div class="refsect3">
 <a name="fwupd-device-get-parent.returns"></a><h4>Returns</h4>
 <p>the parent device, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
 </div>
@@ -987,7 +987,7 @@ fwupd_device_get_children (<em class="parameter"><code><a class="link" href="fwu
 <div class="refsect3">
 <a name="fwupd-device-get-children.returns"></a><h4>Returns</h4>
 <p>the children, which may be empty. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.7</p>
 </div>
@@ -2100,7 +2100,7 @@ fwupd_device_get_checksums (<em class="parameter"><code><a class="link" href="fw
 <div class="refsect3">
 <a name="fwupd-device-get-checksums.returns"></a><h4>Returns</h4>
 <p>the checksums, which may be empty. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.3</p>
 </div>
@@ -2457,7 +2457,7 @@ fwupd_device_get_guids (<em class="parameter"><code><a class="link" href="fwupd-
 <div class="refsect3">
 <a name="fwupd-device-get-guids.returns"></a><h4>Returns</h4>
 <p>the GUIDs. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.3</p>
 </div>
@@ -2578,7 +2578,7 @@ fwupd_device_get_instance_ids (<em class="parameter"><code><a class="link" href=
 <div class="refsect3">
 <a name="fwupd-device-get-instance-ids.returns"></a><h4>Returns</h4>
 <p>the InstanceID. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.2.5</p>
 </div>
@@ -2639,7 +2639,7 @@ be loaded from the users icon theme.</p>
 <div class="refsect3">
 <a name="fwupd-device-get-icons.returns"></a><h4>Returns</h4>
 <p>an array of icon names. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.8</p>
 </div>
@@ -2988,7 +2988,7 @@ fwupd_device_get_releases (<em class="parameter"><code><a class="link" href="fwu
 <div class="refsect3">
 <a name="fwupd-device-get-releases.returns"></a><h4>Returns</h4>
 <p>array of releases. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease]</span></p>
 </div>
 <p class="since">Since: 0.9.8</p>
 </div>
@@ -3016,7 +3016,7 @@ fwupd_device_get_release_default (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="fwupd-device-get-release-default.returns"></a><h4>Returns</h4>
 <p>the <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not set. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.8</p>
 </div>
@@ -3080,7 +3080,7 @@ fwupd_device_from_variant (<em class="parameter"><code><a href="../glib/glib-GVa
 <a name="fwupd-device-from-variant.returns"></a><h4>Returns</h4>
 <p>a new <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
 was invalid. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.0</p>
 </div>
@@ -3109,7 +3109,7 @@ fwupd_device_array_from_variant (<em class="parameter"><code><a href="../glib/gl
 <a name="fwupd-device-array-from-variant.returns"></a><h4>Returns</h4>
 <p>devices, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
 was invalid. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice]</span></p>
 </div>
 <p class="since">Since: 1.2.10</p>
 </div>
@@ -3160,6 +3160,6 @@ fwupd_device_array_ensure_parents (<em class="parameter"><code><a href="../glib/
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

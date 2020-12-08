@@ -8,7 +8,7 @@
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-fu-device-metadata.html" title="fu-device-metadata">
 <link rel="next" href="fwupd-FuDfuFirmware.html" title="FuDfuFirmware">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -1495,7 +1495,7 @@ device in some way.</p>
 <div class="refsect3">
 <a name="fu-device-get-alternate-id.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.1.0</p>
 </div>
@@ -1555,7 +1555,7 @@ fu_device_get_equivalent_id (<em class="parameter"><code><a class="link" href="f
 <div class="refsect3">
 <a name="fu-device-get-equivalent-id.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> or NULL. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.6.1</p>
 </div>
@@ -1756,7 +1756,7 @@ added device, then this function will return <a href="../glib/glib-Standard-Macr
 <div class="refsect3">
 <a name="fu-device-get-alternate.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.7.2</p>
 </div>
@@ -1787,7 +1787,7 @@ device and this may be reflected in client tools.</p>
 <div class="refsect3">
 <a name="fu-device-get-root.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.0</p>
 </div>
@@ -1820,7 +1820,7 @@ return <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="litera
 <div class="refsect3">
 <a name="fu-device-get-parent.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
 </div>
@@ -1849,7 +1849,7 @@ device and this may be reflected in client tools.</p>
 <div class="refsect3">
 <a name="fu-device-get-children.returns"></a><h4>Returns</h4>
 <p>child devices. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuDevice]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuDevice]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
 </div>
@@ -1986,7 +1986,7 @@ return <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="litera
 <div class="refsect3">
 <a name="fu-device-get-proxy.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.1</p>
 </div>
@@ -3347,7 +3347,7 @@ fu_device_get_quirks (<em class="parameter"><code><a class="link" href="fwupd-Fu
 <div class="refsect3">
 <a name="fu-device-get-quirks.returns"></a><h4>Returns</h4>
 <p>the <a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a> object, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.3</p>
 </div>
@@ -3375,7 +3375,7 @@ fu_device_get_release_default (<em class="parameter"><code><a class="link" href=
 <div class="refsect3">
 <a name="fu-device-get-release-default.returns"></a><h4>Returns</h4>
 <p>the <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> object. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.5</p>
 </div>
@@ -3502,7 +3502,7 @@ or using a quirk entry.</p>
 <div class="refsect3">
 <a name="fu-device-prepare-firmware.returns"></a><h4>Returns</h4>
 <p>A new <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.1.2</p>
 </div>
@@ -3542,7 +3542,7 @@ device checksum.</p>
 <div class="refsect3">
 <a name="fu-device-read-firmware.returns"></a><h4>Returns</h4>
 <p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
 </div>
@@ -3581,7 +3581,7 @@ external SPI programmer.</p>
 <div class="refsect3">
 <a name="fu-device-dump-firmware.returns"></a><h4>Returns</h4>
 <p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4407,7 +4407,7 @@ fu_device_report_metadata_pre (<em class="parameter"><code><a class="link" href=
 <div class="refsect3">
 <a name="fu-device-report-metadata-pre.returns"></a><h4>Returns</h4>
 <p>A <a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there is no data. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4435,7 +4435,7 @@ fu_device_report_metadata_post (<em class="parameter"><code><a class="link" href
 <div class="refsect3">
 <a name="fu-device-report-metadata-post.returns"></a><h4>Returns</h4>
 <p>A <a href="../glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there is no data. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4569,6 +4569,6 @@ e.g. unplug, press a magic button and then replug.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

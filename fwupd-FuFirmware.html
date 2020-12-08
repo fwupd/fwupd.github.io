@@ -8,7 +8,7 @@
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-FuFirmwareImage.html" title="FuFirmwareImage">
 <link rel="next" href="fwupd-fu-hwids.html" title="fu-hwids">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -880,7 +880,7 @@ fu_firmware_write (<em class="parameter"><code><a class="link" href="fwupd-FuFir
 <div class="refsect3">
 <a name="fu-firmware-write.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1105,7 +1105,7 @@ fu_firmware_get_images (<em class="parameter"><code><a class="link" href="fwupd-
 <div class="refsect3">
 <a name="fu-firmware-get-images.returns"></a><h4>Returns</h4>
 <p>images. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuFirmwareImage]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuFirmwareImage]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1147,7 +1147,7 @@ fu_firmware_get_image_by_id (<em class="parameter"><code><a class="link" href="f
 <div class="refsect3">
 <a name="fu-firmware-get-image-by-id.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1189,7 +1189,7 @@ fu_firmware_get_image_by_id_bytes (<em class="parameter"><code><a class="link" h
 <div class="refsect3">
 <a name="fu-firmware-get-image-by-id-bytes.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1231,7 +1231,7 @@ fu_firmware_get_image_by_idx (<em class="parameter"><code><a class="link" href="
 <div class="refsect3">
 <a name="fu-firmware-get-image-by-idx.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1273,7 +1273,7 @@ fu_firmware_get_image_by_idx_bytes (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="fu-firmware-get-image-by-idx-bytes.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1311,7 +1311,7 @@ or <a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-idx" tit
 <div class="refsect3">
 <a name="fu-firmware-get-image-default.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1347,7 +1347,7 @@ fu_firmware_get_image_default_bytes (<em class="parameter"><code><a class="link"
 <div class="refsect3">
 <a name="fu-firmware-get-image-default-bytes.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of the image, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -1418,6 +1418,6 @@ fu_firmware_get_image_default_bytes (<em class="parameter"><code><a class="link"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

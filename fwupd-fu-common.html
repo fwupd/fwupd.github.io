@@ -8,7 +8,7 @@
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-fu-common-version.html" title="fu-common-version">
 <link rel="next" href="fwupd-FuDeviceLocker.html" title="FuDeviceLocker">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -711,7 +711,7 @@ Any results are sorted. No matching files will set <em class="parameter"><code>e
 <div class="refsect3">
 <a name="fu-common-filename-glob.returns"></a><h4>Returns</h4>
 <p>matching files, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -821,7 +821,7 @@ will be returned.</p>
 <div class="refsect3">
 <a name="fu-common-get-files-recursive.returns"></a><h4>Returns</h4>
 <p>array of files, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
 </div>
 <p class="since">Since: 1.0.6</p>
 </div>
@@ -976,7 +976,7 @@ fu_common_get_contents_fd (<em class="parameter"><code><a href="../glib/glib-Bas
 <div class="refsect3">
 <a name="fu-common-get-contents-fd.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.5</p>
 </div>
@@ -1102,7 +1102,7 @@ completely bespoke error where required.</p>
 <div class="refsect3">
 <a name="fu-common-error-array-get-best.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, never <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.8</p>
 </div>
@@ -1376,7 +1376,7 @@ the block is already aligned then the original <em class="parameter"><code>bytes
 <a name="fu-common-bytes-align.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, possibly <em class="parameter"><code>bytes</code></em>
 . </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.2.4</p>
 </div>
@@ -1541,7 +1541,7 @@ fu_common_bytes_pad (<em class="parameter"><code><a href="../glib/glib-Byte-Arra
 <div class="refsect3">
 <a name="fu-common-bytes-pad.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -2391,7 +2391,7 @@ into</p></td>
 <div class="refsect3">
 <a name="fu-common-strnsplit.returns"></a><h4>Returns</h4>
 <p>a newly-allocated NULL-terminated array of strings. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.1</p>
 </div>
@@ -2518,7 +2518,7 @@ fu_common_get_volumes_by_kind (<em class="parameter"><code>const <a href="../gli
 <div class="refsect3">
 <a name="fu-common-get-volumes-by-kind.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the kind was not found. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuVolume]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuVolume]</span></p>
 </div>
 <p class="since">Since: 1.4.6</p>
 </div>
@@ -2554,7 +2554,7 @@ fu_common_get_volume_by_device (<em class="parameter"><code>const <a href="../gl
 <div class="refsect3">
 <a name="fu-common-get-volume-by-device.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the kind was not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.1</p>
 </div>
@@ -2590,7 +2590,7 @@ fu_common_get_volume_by_devnum (<em class="parameter"><code><a href="../glib/gli
 <div class="refsect3">
 <a name="fu-common-get-volume-by-devnum.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the kind was not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.1</p>
 </div>
@@ -2626,7 +2626,7 @@ fu_common_get_esp_for_path (<em class="parameter"><code>const <a href="../glib/g
 <div class="refsect3">
 <a name="fu-common-get-esp-for-path.returns"></a><h4>Returns</h4>
 <p>a <span class="type">FuVolume</span>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the ESP was not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.6</p>
 </div>
@@ -2654,7 +2654,7 @@ fu_common_get_esp_default (<em class="parameter"><code><a href="../glib/glib-Err
 <div class="refsect3">
 <a name="fu-common-get-esp-default.returns"></a><h4>Returns</h4>
 <p>a <span class="type">FuVolume</span>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the ESP was not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.4.6</p>
 </div>
@@ -3019,6 +3019,6 @@ fu_common_crc32_full (<em class="parameter"><code>const <a href="../glib/glib-Ba
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

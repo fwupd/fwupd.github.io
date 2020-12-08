@@ -8,7 +8,7 @@
 <link rel="up" href="libfwupd.html" title="libfwupd">
 <link rel="prev" href="libfwupd.html" title="libfwupd">
 <link rel="next" href="fwupd-fwupd-client-sync.html" title="fwupd-client-sync">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -45,6 +45,22 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FwupdClient.html#fwupd-client-new" title="fwupd_client_new ()">fwupd_client_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="returnvalue">GMainContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-get-main-context" title="fwupd_client_get_main_context ()">fwupd_client_get_main_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()">fwupd_client_set_main_context</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -768,6 +784,66 @@ fwupd_client_new (<em class="parameter"><code><span class="type">void</span></co
 </div>
 <hr>
 <div class="refsect2">
+<a name="fwupd-client-get-main-context"></a><h3>fwupd_client_get_main_context ()</h3>
+<pre class="programlisting"><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="returnvalue">GMainContext</span></a> *
+fwupd_client_get_main_context (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>);</pre>
+<p>Gets the internal <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to use for synchronous methods.
+By default the value is set to the value of <a href="../glib/glib-The-Main-Event-Loop.html#g-main-context-ref-thread-default"><code class="function">g_main_context_ref_thread_default()</code></a></p>
+<div class="refsect3">
+<a name="fwupd-client-get-main-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-client-get-main-context.returns"></a><h4>Returns</h4>
+<p>the <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-client-set-main-context"></a><h3>fwupd_client_set_main_context ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_client_set_main_context (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *main_ctx</code></em>);</pre>
+<p>Sets the internal <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to use for synchronous methods.</p>
+<div class="refsect3">
+<a name="fwupd-client-set-main-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>main_ctx</p></td>
+<td class="parameter_description"><p><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.3</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fwupd-client-connect-async"></a><h3>fwupd_client_connect_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fwupd_client_connect_async (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>,
@@ -939,7 +1015,7 @@ fwupd_client_get_devices_finish (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="fwupd-client-get-devices-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1028,7 +1104,7 @@ fwupd_client_get_plugins_finish (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="fwupd-client-get-plugins-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1117,7 +1193,7 @@ fwupd_client_get_history_finish (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="fwupd-client-get-history-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1212,7 +1288,7 @@ fwupd_client_get_releases_finish (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="fwupd-client-get-releases-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1307,7 +1383,7 @@ fwupd_client_get_downgrades_finish (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="fwupd-client-get-downgrades-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1402,7 +1478,7 @@ fwupd_client_get_upgrades_finish (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="fwupd-client-get-upgrades-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -1494,7 +1570,7 @@ fwupd_client_get_details_bytes_finish (<em class="parameter"><code><a class="lin
 <div class="refsect3">
 <a name="fwupd-client-get-details-bytes-finish.returns"></a><h4>Returns</h4>
 <p>an array of results. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdDevice]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -2143,7 +2219,7 @@ fwupd_client_get_results_finish (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="fwupd-client-get-results-finish.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for failure. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -2234,7 +2310,7 @@ fwupd_client_get_host_security_attrs_finish
 <div class="refsect3">
 <a name="fwupd-client-get-host-security-attrs-finish.returns"></a><h4>Returns</h4>
 <p>attributes. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdSecurityAttr][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdSecurityAttr][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -2329,7 +2405,7 @@ fwupd_client_get_device_by_id_finish (<em class="parameter"><code><a class="link
 <div class="refsect3">
 <a name="fwupd-client-get-device-by-id-finish.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for failure. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -2427,7 +2503,7 @@ fwupd_client_get_devices_by_guid_finish
 <div class="refsect3">
 <a name="fwupd-client-get-devices-by-guid-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRelease][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -3236,7 +3312,7 @@ fwupd_client_get_report_metadata_finish
 <div class="refsect3">
 <a name="fwupd-client-get-report-metadata-finish.returns"></a><h4>Returns</h4>
 <p>attributes. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -3541,7 +3617,7 @@ fwupd_client_get_remotes_finish (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="fwupd-client-get-remotes-finish.returns"></a><h4>Returns</h4>
 <p>results. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRemote][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRemote][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -3633,7 +3709,7 @@ fwupd_client_get_remote_by_id_finish (<em class="parameter"><code><a class="link
 <div class="refsect3">
 <a name="fwupd-client-get-remote-by-id-finish.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -3724,7 +3800,7 @@ fwupd_client_get_approved_firmware_finish
 <div class="refsect3">
 <a name="fwupd-client-get-approved-firmware-finish.returns"></a><h4>Returns</h4>
 <p>checksums, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -3908,7 +3984,7 @@ fwupd_client_get_blocked_firmware_finish
 <div class="refsect3">
 <a name="fwupd-client-get-blocked-firmware-finish.returns"></a><h4>Returns</h4>
 <p>checksums, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4401,7 +4477,7 @@ fwupd_client_download_bytes_finish (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="fwupd-client-download-bytes-finish.returns"></a><h4>Returns</h4>
 <p>downloaded data, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4515,7 +4591,7 @@ fwupd_client_upload_bytes_finish (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="fwupd-client-upload-bytes-finish.returns"></a><h4>Returns</h4>
 <p>response data, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -4642,6 +4718,6 @@ the session is being used outside the <a class="link" href="fwupd-FwupdClient.ht
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

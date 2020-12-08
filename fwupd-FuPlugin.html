@@ -8,7 +8,7 @@
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-fu-plugin-vfuncs.html" title="fu-plugin-vfuncs">
 <link rel="next" href="fwupd-fu-quirks.html" title="fu-quirks">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -447,7 +447,7 @@ fu_plugin_get_data (<em class="parameter"><code><a class="link" href="fwupd-FuPl
 <div class="refsect3">
 <a name="fu-plugin-get-data.returns"></a><h4>Returns</h4>
 <p>a pointer to a structure, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.8.0</p>
 </div>
@@ -575,7 +575,7 @@ fu_plugin_get_usb_context (<em class="parameter"><code><a class="link" href="fwu
 <div class="refsect3">
 <a name="fu-plugin-get-usb-context.returns"></a><h4>Returns</h4>
 <p>a <span class="type">GUsbContext</span>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.8.0</p>
 </div>
@@ -872,7 +872,7 @@ fu_plugin_cache_lookup (<em class="parameter"><code><a class="link" href="fwupd-
 <div class="refsect3">
 <a name="fu-plugin-cache-lookup.returns"></a><h4>Returns</h4>
 <p>a <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unfound. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.8.0</p>
 </div>
@@ -1019,7 +1019,7 @@ specific system can be shown using the <code class="literal">fwupdmgr hwids</cod
 <div class="refsect3">
 <a name="fu-plugin-get-hwid-replace-value.returns"></a><h4>Returns</h4>
 <p>a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.3.3</p>
 </div>
@@ -1048,7 +1048,7 @@ specific system can be shown using the <code class="literal">fwupdmgr hwids</cod
 <div class="refsect3">
 <a name="fu-plugin-get-hwids.returns"></a><h4>Returns</h4>
 <p>An array of GUIDs. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
 </div>
 <p class="since">Since: 1.1.1</p>
 </div>
@@ -1164,7 +1164,7 @@ fu_plugin_get_smbios_data (<em class="parameter"><code><a class="link" href="fwu
 <div class="refsect3">
 <a name="fu-plugin-get-smbios-data.returns"></a><h4>Returns</h4>
 <p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.8</p>
 </div>
@@ -1267,7 +1267,7 @@ quirks or other device-specific settings.</p>
 <div class="refsect3">
 <a name="fu-plugin-get-quirks.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="fwupd-fu-quirks.html#FuQuirks" title="FuQuirks"><span class="type">FuQuirks</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not set. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.1</p>
 </div>
@@ -1309,7 +1309,7 @@ fu_plugin_lookup_quirk_by_id (<em class="parameter"><code><a class="link" href="
 <div class="refsect3">
 <a name="fu-plugin-lookup-quirk-by-id.returns"></a><h4>Returns</h4>
 <p>values from the database, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.1</p>
 </div>
@@ -1705,6 +1705,6 @@ Plugins are expected to add rules in <code class="function">fu_plugin_initialize
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

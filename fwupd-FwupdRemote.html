@@ -8,7 +8,7 @@
 <link rel="up" href="libfwupd.html" title="libfwupd">
 <link rel="prev" href="fwupd-FwupdPlugin.html" title="FwupdPlugin">
 <link rel="next" href="fwupd-fwupd-error.html" title="fwupd-error">
-<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -667,7 +667,7 @@ fwupd_remote_get_firmware_base_uri (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="fwupd-remote-get-firmware-base-uri.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.7</p>
 </div>
@@ -695,7 +695,7 @@ fwupd_remote_get_report_uri (<em class="parameter"><code><a class="link" href="f
 <div class="refsect3">
 <a name="fwupd-remote-get-report-uri.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.4</p>
 </div>
@@ -723,7 +723,7 @@ fwupd_remote_get_security_report_uri (<em class="parameter"><code><a class="link
 <div class="refsect3">
 <a name="fwupd-remote-get-security-report-uri.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.5.0</p>
 </div>
@@ -751,7 +751,7 @@ fwupd_remote_get_metadata_uri (<em class="parameter"><code><a class="link" href=
 <div class="refsect3">
 <a name="fwupd-remote-get-metadata-uri.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.7</p>
 </div>
@@ -779,7 +779,7 @@ fwupd_remote_get_metadata_uri_sig (<em class="parameter"><code><a class="link" h
 <div class="refsect3">
 <a name="fwupd-remote-get-metadata-uri-sig.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.7</p>
 </div>
@@ -1040,7 +1040,7 @@ including any basename URI substitution.</p>
 <div class="refsect3">
 <a name="fwupd-remote-build-firmware-uri.returns"></a><h4>Returns</h4>
 <p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 0.9.7</p>
 </div>
@@ -1093,6 +1093,8 @@ fwupd_remote_load_signature_bytes (<em class="parameter"><code><a class="link" h
                                    <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
                                    <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Parses the signature, updating the metadata URI as appropriate.</p>
+<p>This can only be called for remotes with <code class="literal">Keyring=jcat</code> which is
+the default for most remotes.</p>
 <div class="refsect3">
 <a name="fwupd-remote-load-signature-bytes.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1151,7 +1153,7 @@ fwupd_remote_from_variant (<em class="parameter"><code><a href="../glib/glib-GVa
 <a name="fwupd-remote-from-variant.returns"></a><h4>Returns</h4>
 <p>a new <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
 was invalid. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 1.0.0</p>
 </div>
@@ -1180,7 +1182,7 @@ fwupd_remote_array_from_variant (<em class="parameter"><code><a href="../glib/gl
 <a name="fwupd-remote-array-from-variant.returns"></a><h4>Returns</h4>
 <p>remotes, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
 was invalid. </p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRemote]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRemote]</span></p>
 </div>
 <p class="since">Since: 1.2.10</p>
 </div>
@@ -1253,6 +1255,6 @@ was invalid. </p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.32.1</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>
