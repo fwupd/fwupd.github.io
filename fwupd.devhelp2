@@ -536,6 +536,7 @@
     <keyword type="function" name="fu_common_bytes_compare ()" link="fwupd-fu-common.html#fu-common-bytes-compare" since="1.2.6"/>
     <keyword type="function" name="fu_common_bytes_compare_raw ()" link="fwupd-fu-common.html#fu-common-bytes-compare-raw" since="1.3.2"/>
     <keyword type="function" name="fu_common_bytes_pad ()" link="fwupd-fu-common.html#fu-common-bytes-pad" since="1.3.1"/>
+    <keyword type="function" name="fu_common_bytes_new_offset ()" link="fwupd-fu-common.html#fu-common-bytes-new-offset" since="1.5.4"/>
     <keyword type="function" name="fu_common_strwidth ()" link="fwupd-fu-common.html#fu-common-strwidth" since="1.3.2"/>
     <keyword type="function" name="fu_memcpy_safe ()" link="fwupd-fu-common.html#fu-memcpy-safe" since="1.3.1"/>
     <keyword type="function" name="fu_common_read_uint8_safe ()" link="fwupd-fu-common.html#fu-common-read-uint8-safe" since="1.3.3"/>
@@ -1088,6 +1089,7 @@
     <keyword type="constant" name="FWUPD_INSTALL_FLAG_IGNORE_CHECKSUM" link="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-IGNORE-CHECKSUM:CAPS"/>
     <keyword type="constant" name="FWUPD_INSTALL_FLAG_IGNORE_VID_PID" link="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-IGNORE-VID-PID:CAPS"/>
     <keyword type="constant" name="FWUPD_INSTALL_FLAG_IGNORE_POWER" link="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-IGNORE-POWER:CAPS"/>
+    <keyword type="constant" name="FWUPD_INSTALL_FLAG_NO_SEARCH" link="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-NO-SEARCH:CAPS"/>
     <keyword type="constant" name="FWUPD_SELF_SIGN_FLAG_NONE" link="fwupd-fwupd-enums.html#FWUPD-SELF-SIGN-FLAG-NONE:CAPS"/>
     <keyword type="constant" name="FWUPD_SELF_SIGN_FLAG_ADD_TIMESTAMP" link="fwupd-fwupd-enums.html#FWUPD-SELF-SIGN-FLAG-ADD-TIMESTAMP:CAPS"/>
     <keyword type="constant" name="FWUPD_SELF_SIGN_FLAG_ADD_CERT" link="fwupd-fwupd-enums.html#FWUPD-SELF-SIGN-FLAG-ADD-CERT:CAPS"/>
