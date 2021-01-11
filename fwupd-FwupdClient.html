@@ -788,7 +788,7 @@ fwupd_client_new (<em class="parameter"><code><span class="type">void</span></co
 <pre class="programlisting"><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="returnvalue">GMainContext</span></a> *
 fwupd_client_get_main_context (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>);</pre>
 <p>Gets the internal <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to use for synchronous methods.
-By default the value is set to the value of <a href="../glib/glib-The-Main-Event-Loop.html#g-main-context-ref-thread-default"><code class="function">g_main_context_ref_thread_default()</code></a></p>
+By default the value is set a new <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-get-main-context.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -817,7 +817,7 @@ By default the value is set to the value of <a href="../glib/glib-The-Main-Event
 <pre class="programlisting"><span class="returnvalue">void</span>
 fwupd_client_set_main_context (<em class="parameter"><code><a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a> *self</code></em>,
                                <em class="parameter"><code><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *main_ctx</code></em>);</pre>
-<p>Sets the internal <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to use for synchronous methods.</p>
+<p>Sets the internal <a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to use for returning progress signals.</p>
 <div class="refsect3">
 <a name="fwupd-client-set-main-context.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -834,8 +834,8 @@ fwupd_client_set_main_context (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>main_ctx</p></td>
-<td class="parameter_description"><p><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a></p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p><a href="../glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to use the global default main context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -2519,6 +2519,9 @@ fwupd_client_install_async (<em class="parameter"><code><a class="link" href="fw
                             <em class="parameter"><code><a href="../gio/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> callback_data</code></em>);</pre>
 <p>Install firmware onto a specific device.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-install-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2622,6 +2625,9 @@ fwupd_client_install_bytes_async (<em class="parameter"><code><a class="link" hr
                                   <em class="parameter"><code><a href="../gio/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                   <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> callback_data</code></em>);</pre>
 <p>Install firmware onto a specific device.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-install-bytes-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2725,6 +2731,9 @@ fwupd_client_install_release_async (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><a href="../gio/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                     <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> callback_data</code></em>);</pre>
 <p>Installs a new release on a device, downloading the firmware if required.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-install-release-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2834,6 +2843,9 @@ parsed.</p>
 <p>The <em class="parameter"><code>remote_id</code></em>
  allows the firmware to be tagged so that the remote can be
 matched when the firmware is downloaded.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-update-metadata-bytes-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2936,6 +2948,9 @@ fwupd_client_refresh_remote_async (<em class="parameter"><code><a class="link" h
                                    <em class="parameter"><code><a href="../gio/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> callback_data</code></em>);</pre>
 <p>Refreshes a remote by downloading new metadata.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-refresh-remote-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -4394,6 +4409,9 @@ should be called before this method is used.</p>
 <p>You must have called <a class="link" href="fwupd-FwupdClient.html#fwupd-client-connect-async" title="fwupd_client_connect_async ()"><code class="function">fwupd_client_connect_async()</code></a> on <em class="parameter"><code>self</code></em>
  before using
 this method.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-download-bytes-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -4498,6 +4516,9 @@ should be called before this method is used.</p>
 <p>You must have called <a class="link" href="fwupd-FwupdClient.html#fwupd-client-connect-async" title="fwupd_client_connect_async ()"><code class="function">fwupd_client_connect_async()</code></a> on <em class="parameter"><code>self</code></em>
  before using
 this method.</p>
+<p>NOTE: This method is thread-safe, but progress signals will be
+emitted in the global default main context, if not explicitly set with
+<a class="link" href="fwupd-FwupdClient.html#fwupd-client-set-main-context" title="fwupd_client_set_main_context ()"><code class="function">fwupd_client_set_main_context()</code></a>.</p>
 <div class="refsect3">
 <a name="fwupd-client-upload-bytes-async.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">

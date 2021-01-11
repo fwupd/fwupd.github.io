@@ -89,6 +89,10 @@ FuCabinetParseFlags, enum in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-common.html#FuCpuVendor" title="enum FuCpuVendor">FuCpuVendor</a>, enum in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice">FuDevice</a>, struct in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -98,6 +102,10 @@ FuCabinetParseFlags, enum in fu-cabinet
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuDevice.html#FuDeviceInstanceFlags" title="enum FuDeviceInstanceFlags">FuDeviceInstanceFlags</a>, enum in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuDevice.html#FuDeviceInternalFlags" title="enum FuDeviceInternalFlags">FuDeviceInternalFlags</a>, enum in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -122,6 +130,18 @@ FuCabinetParseFlags, enum in fu-cabinet
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-fu-common.html#FuDumpFlags" title="enum FuDumpFlags">FuDumpFlags</a>, enum in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature">FuEfiSignature</a>, struct in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind">FuEfiSignatureKind</a>, enum in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature-list.html#FuEfiSignatureList" title="FuEfiSignatureList">FuEfiSignatureList</a>, struct in <a class="link" href="fwupd-fu-efi-signature-list.html" title="fu-efi-signature-list">fu-efi-signature-list</a>
 </dt>
 <dd></dd>
 <dt>
@@ -445,6 +465,10 @@ fu_cabinet_set_size_max, function in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-get-cpu-vendor" title="fu_common_get_cpu_vendor ()">fu_common_get_cpu_vendor</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fu-common.html#fu-common-get-esp-default" title="fu_common_get_esp_default ()">fu_common_get_esp_default</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
@@ -553,6 +577,10 @@ fu_cabinet_set_size_max, function in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-common.html#fu-common-strsafe" title="fu_common_strsafe ()">fu_common_strsafe</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-fu-common.html#fu-common-strstrip" title="fu_common_strstrip ()">fu_common_strstrip</a>, function in <a class="link" href="fwupd-fu-common.html" title="fu-common">fu-common</a>
 </dt>
 <dd></dd>
@@ -649,6 +677,10 @@ fu_cabinet_set_size_max, function in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-add-internal-flag" title="fu_device_add_internal_flag ()">fu_device_add_internal_flag</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-add-parent-guid" title="fu_device_add_parent_guid ()">fu_device_add_parent_guid</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -658,6 +690,10 @@ fu_device_add_possible_plugin, function in fu-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-add-release" title="fu_device_add_release()">fu_device_add_release</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-add-vendor-id" title="fu_device_add_vendor_id()">fu_device_add_vendor_id</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -881,7 +917,7 @@ fu_device_get_possible_plugins, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="fwupd-FuDevice.html#fu-device-get-vendor-id" title="fu_device_get_vendor_id()">fu_device_get_vendor_id</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-vendor-ids" title="fu_device_get_vendor_ids()">fu_device_get_vendor_ids</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -929,7 +965,15 @@ fu_device_get_possible_plugins, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-has-internal-flag" title="fu_device_has_internal_flag ()">fu_device_has_internal_flag</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
 fu_device_has_parent_guid, function in fu-device-private
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-has-vendor-id" title="fu_device_has_vendor_id()">fu_device_has_vendor_id</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -942,6 +986,14 @@ fu_device_has_parent_guid, function in fu-device-private
 <dd></dd>
 <dt>
 fu_device_incorporate_from_component, function in fu-device-private
+</dt>
+<dd></dd>
+<dt>
+fu_device_internal_flag_from_string, function in fu-device-private
+</dt>
+<dd></dd>
+<dt>
+fu_device_internal_flag_to_string, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
@@ -1017,6 +1069,10 @@ fu_device_incorporate_from_component, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-remove-internal-flag" title="fu_device_remove_internal_flag ()">fu_device_remove_internal_flag</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-remove-metadata" title="fu_device_remove_metadata ()">fu_device_remove_metadata</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -1038,6 +1094,10 @@ fu_device_incorporate_from_component, function in fu-device-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-retry-add-recovery" title="fu_device_retry_add_recovery ()">fu_device_retry_add_recovery</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuDevice.html#fu-device-retry-full" title="fu_device_retry_full ()">fu_device_retry_full</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1213,10 +1273,6 @@ fu_device_set_parent, function in fu-device-private
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="fwupd-FuDevice.html#fu-device-set-vendor-id" title="fu_device_set_vendor_id()">fu_device_set_vendor_id</a>, macro in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
-</dt>
-<dd></dd>
-<dt>
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-version" title="fu_device_set_version ()">fu_device_set_version</a>, function in <a class="link" href="fwupd-FuDevice.html" title="FuDevice">FuDevice</a>
 </dt>
 <dd></dd>
@@ -1389,6 +1445,42 @@ fu_efivar_supported, function in fu-efivar
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-get-kind" title="fu_efi_signature_get_kind ()">fu_efi_signature_get_kind</a>, function in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-get-owner" title="fu_efi_signature_get_owner ()">fu_efi_signature_get_owner</a>, function in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-MICROSOFT:CAPS" title="FU_EFI_SIGNATURE_GUID_MICROSOFT">FU_EFI_SIGNATURE_GUID_MICROSOFT</a>, macro in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-OVMF:CAPS" title="FU_EFI_SIGNATURE_GUID_OVMF">FU_EFI_SIGNATURE_GUID_OVMF</a>, macro in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-OVMF-LEGACY:CAPS" title="FU_EFI_SIGNATURE_GUID_OVMF_LEGACY">FU_EFI_SIGNATURE_GUID_OVMF_LEGACY</a>, macro in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-ZERO:CAPS" title="FU_EFI_SIGNATURE_GUID_ZERO">FU_EFI_SIGNATURE_GUID_ZERO</a>, macro in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-kind-to-string" title="fu_efi_signature_kind_to_string ()">fu_efi_signature_kind_to_string</a>, function in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature-list.html#fu-efi-signature-list-new" title="fu_efi_signature_list_new ()">fu_efi_signature_list_new</a>, function in <a class="link" href="fwupd-fu-efi-signature-list.html" title="fu-efi-signature-list">fu-efi-signature-list</a>
+</dt>
+<dd></dd>
+<dt>
+fu_efi_signature_new, function in fu-efi-signature-private
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuFirmware.html#fu-firmware-add-flag" title="fu_firmware_add_flag ()">fu_firmware_add_flag</a>, function in <a class="link" href="fwupd-FuFirmware.html" title="FuFirmware">FuFirmware</a>
 </dt>
 <dd></dd>
@@ -1422,6 +1514,10 @@ fu_efivar_supported, function in fu-efivar
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-images" title="fu_firmware_get_images ()">fu_firmware_get_images</a>, function in <a class="link" href="fwupd-FuFirmware.html" title="FuFirmware">FuFirmware</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-checksum" title="fu_firmware_get_image_by_checksum ()">fu_firmware_get_image_by_checksum</a>, function in <a class="link" href="fwupd-FuFirmware.html" title="FuFirmware">FuFirmware</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1470,6 +1566,10 @@ fu_firmware_image_add_string, function in fu-firmware-image-private
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FuFirmwareImage.html#fu-firmware-image-get-bytes" title="fu_firmware_image_get_bytes ()">fu_firmware_image_get_bytes</a>, function in <a class="link" href="fwupd-FuFirmwareImage.html" title="FuFirmwareImage">FuFirmwareImage</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FuFirmwareImage.html#fu-firmware-image-get-checksum" title="fu_firmware_image_get_checksum ()">fu_firmware_image_get_checksum</a>, function in <a class="link" href="fwupd-FuFirmwareImage.html" title="FuFirmwareImage">FuFirmwareImage</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2493,6 +2593,14 @@ FU_TYPE_CABINET, macro in fu-cabinet
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-fu-efi-signature.html#FU-TYPE-EFI-SIGNATURE:CAPS" title="FU_TYPE_EFI_SIGNATURE">FU_TYPE_EFI_SIGNATURE</a>, macro in <a class="link" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">fu-efi-signature</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-fu-efi-signature-list.html#FU-TYPE-EFI-SIGNATURE-LIST:CAPS" title="FU_TYPE_EFI_SIGNATURE_LIST">FU_TYPE_EFI_SIGNATURE_LIST</a>, macro in <a class="link" href="fwupd-fu-efi-signature-list.html" title="fu-efi-signature-list">fu-efi-signature-list</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FuFirmware.html#FU-TYPE-FIRMWARE:CAPS" title="FU_TYPE_FIRMWARE">FU_TYPE_FIRMWARE</a>, macro in <a class="link" href="fwupd-FuFirmware.html" title="FuFirmware">FuFirmware</a>
 </dt>
 <dd></dd>
@@ -3474,6 +3582,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-add-vendor-id" title="fwupd_device_add_vendor_id ()">fwupd_device_add_vendor_id</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-array-ensure-parents" title="fwupd_device_array_ensure_parents ()">fwupd_device_array_ensure_parents</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
@@ -3786,6 +3898,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-vendor-ids" title="fwupd_device_get_vendor_ids ()">fwupd_device_get_vendor_ids</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-version" title="fwupd_device_get_version ()">fwupd_device_get_version</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
@@ -3823,6 +3939,10 @@ FWUPD_DBUS_SERVICE, macro in fwupd-common
 <dd></dd>
 <dt>
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-has-instance-id" title="fwupd_device_has_instance_id ()">fwupd_device_has_instance_id</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-has-vendor-id" title="fwupd_device_has_vendor_id ()">fwupd_device_has_vendor_id</a>, function in <a class="link" href="fwupd-FwupdDevice.html" title="FwupdDevice">FwupdDevice</a>
 </dt>
 <dd></dd>
 <dt>
@@ -5051,6 +5171,10 @@ FWUPD_SECURITY_ATTR_ID_TPM_RECONSTRUCTION_PCR0, macro in fwupd-security-attr-pri
 <dd></dd>
 <dt>
 FWUPD_SECURITY_ATTR_ID_TPM_VERSION_20, macro in fwupd-security-attr-private
+</dt>
+<dd></dd>
+<dt>
+FWUPD_SECURITY_ATTR_ID_UEFI_PK, macro in fwupd-security-attr-private
 </dt>
 <dd></dd>
 <dt>

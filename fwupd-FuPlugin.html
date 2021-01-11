@@ -808,9 +808,10 @@ instead the object is created in the daemon for the plugin.</p>
 fu_plugin_add_firmware_gtype (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
                               <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
                               <em class="parameter"><code><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> gtype</code></em>);</pre>
-<p>Adds a firmware <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> which is used when creating devices.
-*
-Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
+<p>Adds a firmware <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> which is used when creating devices. If <em class="parameter"><code>id</code></em>
+ is not
+specified then it is guessed using the <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> name.</p>
+<p>Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
 <div class="refsect3">
 <a name="fu-plugin-add-firmware-gtype.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -827,12 +828,12 @@ Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs
 </tr>
 <tr>
 <td class="parameter_name"><p>id</p></td>
-<td class="parameter_description"><p>A string describing the type</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p>An optional string describing the type, e.g. "ihex". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>gtype</p></td>
-<td class="parameter_description"><p>a <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <code class="literal">FU_TYPE_DEVICE</code></p></td>
+<td class="parameter_description"><p>a <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> e.g. <code class="literal">FU_TYPE_FOO_FIRMWARE</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>

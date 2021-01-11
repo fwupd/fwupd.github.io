@@ -486,6 +486,30 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-add-vendor-id" title="fwupd_device_add_vendor_id ()">fwupd_device_add_vendor_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-has-vendor-id" title="fwupd_device_has_vendor_id ()">fwupd_device_has_vendor_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-vendor-ids" title="fwupd_device_get_vendor_ids ()">fwupd_device_get_vendor_ids</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-add-guid" title="fwupd_device_add_guid ()">fwupd_device_add_guid</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -2314,7 +2338,11 @@ fwupd_device_set_vendor (<em class="parameter"><code><a class="link" href="fwupd
 <a name="fwupd-device-get-vendor-id"></a><h3>fwupd_device_get_vendor_id ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fwupd_device_get_vendor_id (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>);</pre>
-<p>Gets the device vendor ID.</p>
+<div class="warning">
+<p><code class="literal">fwupd_device_get_vendor_id</code> has been deprecated since version 1.5.5 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-get-vendor-ids" title="fwupd_device_get_vendor_ids ()"><code class="function">fwupd_device_get_vendor_ids()</code></a> instead.</p>
+</div>
+<p>Gets the combined device vendor ID.</p>
 <div class="refsect3">
 <a name="fwupd-device-get-vendor-id.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2332,7 +2360,7 @@ fwupd_device_get_vendor_id (<em class="parameter"><code><a class="link" href="fw
 </div>
 <div class="refsect3">
 <a name="fwupd-device-get-vendor-id.returns"></a><h4>Returns</h4>
-<p> the device vendor, e.g. 'USB:0x1234', or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+<p> the device vendor, e.g. 'USB:0x1234|PCI:0x5678', or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
 </div>
 <p class="since">Since: 0.9.4</p>
 </div>
@@ -2342,9 +2370,44 @@ fwupd_device_get_vendor_id (<em class="parameter"><code><a class="link" href="fw
 <pre class="programlisting"><span class="returnvalue">void</span>
 fwupd_device_set_vendor_id (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *vendor_id</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">fwupd_device_set_vendor_id</code> has been deprecated since version 1.5.5 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-add-vendor-id" title="fwupd_device_add_vendor_id ()"><code class="function">fwupd_device_add_vendor_id()</code></a> instead.</p>
+</div>
 <p>Sets the device vendor ID.</p>
 <div class="refsect3">
 <a name="fwupd-device-set-vendor-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>vendor_id</p></td>
+<td class="parameter_description"><p>the ID, e.g. 'USB:0x1234' or 'USB:0x1234|PCI:0x5678'</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-add-vendor-id"></a><h3>fwupd_device_add_vendor_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_device_add_vendor_id (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *vendor_id</code></em>);</pre>
+<p>Adds a device vendor ID.</p>
+<div class="refsect3">
+<a name="fwupd-device-add-vendor-id.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2365,7 +2428,70 @@ fwupd_device_set_vendor_id (<em class="parameter"><code><a class="link" href="fw
 </tbody>
 </table></div>
 </div>
-<p class="since">Since: 0.9.4</p>
+<p class="since">Since: 1.5.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-has-vendor-id"></a><h3>fwupd_device_has_vendor_id ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_device_has_vendor_id (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *vendor_id</code></em>);</pre>
+<p>Finds out if the device has this specific vendor ID.</p>
+<div class="refsect3">
+<a name="fwupd-device-has-vendor-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>vendor_id</p></td>
+<td class="parameter_description"><p>the ID, e.g. 'USB:0x1234'</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-device-has-vendor-id.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the ID is found</p>
+</div>
+<p class="since">Since: 1.5.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-device-get-vendor-ids"></a><h3>fwupd_device_get_vendor_ids ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_device_get_vendor_ids (<em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *device</code></em>);</pre>
+<p>Gets the device vendor ID.</p>
+<div class="refsect3">
+<a name="fwupd-device-get-vendor-ids.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-device-get-vendor-ids.returns"></a><h4>Returns</h4>
+<p>the device vendor ID. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.5</p>
 </div>
 <hr>
 <div class="refsect2">
