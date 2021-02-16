@@ -48,10 +48,26 @@
 </td>
 </tr>
 <tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-hwids.html#fu-hwids-get-keys" title="fu_hwids_get_keys ()">fu_hwids_get_keys</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
 <td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-hwids.html#fu-hwids-get-value" title="fu_hwids_get_value ()">fu_hwids_get_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-hwids.html#fu-hwids-add-smbios-override" title="fu_hwids_add_smbios_override ()">fu_hwids_add_smbios_override</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -181,6 +197,35 @@ fu_hwids_new (<em class="parameter"><code><span class="type">void</span></code><
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-hwids-get-keys"></a><h3>fu_hwids_get_keys ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_hwids_get_keys (<em class="parameter"><code><a class="link" href="fwupd-fu-hwids.html#FuHwids" title="FuHwids"><span class="type">FuHwids</span></a> *self</code></em>);</pre>
+<p>Returns all the defined HWID keys.</p>
+<div class="refsect3">
+<a name="fu-hwids-get-keys.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-hwids.html#FuHwids" title="FuHwids"><span class="type">FuHwids</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-hwids-get-keys.returns"></a><h4>Returns</h4>
+<p>All the known keys,
+e.g. <a class="link" href="fwupd-fu-hwids.html#FU-HWIDS-KEY-FAMILY:CAPS" title="FU_HWIDS_KEY_FAMILY"><code class="literal">FU_HWIDS_KEY_FAMILY</code></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-hwids-get-value"></a><h3>fu_hwids_get_value ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fu_hwids_get_value (<em class="parameter"><code><a class="link" href="fwupd-fu-hwids.html#FuHwids" title="FuHwids"><span class="type">FuHwids</span></a> *self</code></em>,
@@ -214,6 +259,44 @@ for display.</p>
 <p> the string, e.g. <code class="literal">1.2.3</code>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found</p>
 </div>
 <p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-hwids-add-smbios-override"></a><h3>fu_hwids_add_smbios_override ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_hwids_add_smbios_override (<em class="parameter"><code><a class="link" href="fwupd-fu-hwids.html#FuHwids" title="FuHwids"><span class="type">FuHwids</span></a> *self</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Sets SMBIOS override values so you can emulate another system.</p>
+<p>This function has no effect if called after <a class="link" href="fwupd-fu-hwids.html#fu-hwids-setup" title="fu_hwids_setup ()"><code class="function">fu_hwids_setup()</code></a></p>
+<div class="refsect3">
+<a name="fu-hwids-add-smbios-override.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-hwids.html#FuHwids" title="FuHwids"><span class="type">FuHwids</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>A key, e.g. <a class="link" href="fwupd-fu-hwids.html#FU-HWIDS-KEY-PRODUCT-SKU:CAPS" title="FU_HWIDS_KEY_PRODUCT_SKU"><code class="literal">FU_HWIDS_KEY_PRODUCT_SKU</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>A new value, e.g. "ExampleModel" or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -419,8 +502,8 @@ fu_hwids_setup (<em class="parameter"><code><a class="link" href="fwupd-fu-hwids
 </tr>
 <tr>
 <td class="parameter_name"><p>smbios</p></td>
-<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a></p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-smbios.html#FuSmbios" title="FuSmbios"><span class="type">FuSmbios</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>

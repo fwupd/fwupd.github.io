@@ -90,7 +90,8 @@
     <keyword type="function" name="fwupd_client_install_finish ()" link="fwupd-FwupdClient.html#fwupd-client-install-finish" since="1.5.0"/>
     <keyword type="function" name="fwupd_client_install_bytes_async ()" link="fwupd-FwupdClient.html#fwupd-client-install-bytes-async" since="1.5.0"/>
     <keyword type="function" name="fwupd_client_install_bytes_finish ()" link="fwupd-FwupdClient.html#fwupd-client-install-bytes-finish" since="1.5.0"/>
-    <keyword type="function" name="fwupd_client_install_release_async ()" link="fwupd-FwupdClient.html#fwupd-client-install-release-async" since="1.5.0"/>
+    <keyword type="function" name="fwupd_client_install_release_async ()" link="fwupd-FwupdClient.html#fwupd-client-install-release-async" deprecated="1.5.6" since="1.5.0"/>
+    <keyword type="function" name="fwupd_client_install_release2_async ()" link="fwupd-FwupdClient.html#fwupd-client-install-release2-async" since="1.5.6"/>
     <keyword type="function" name="fwupd_client_install_release_finish ()" link="fwupd-FwupdClient.html#fwupd-client-install-release-finish" since="1.5.0"/>
     <keyword type="function" name="fwupd_client_update_metadata_bytes_async ()" link="fwupd-FwupdClient.html#fwupd-client-update-metadata-bytes-async" since="1.5.0"/>
     <keyword type="function" name="fwupd_client_update_metadata_bytes_finish ()" link="fwupd-FwupdClient.html#fwupd-client-update-metadata-bytes-finish" since="1.5.0"/>
@@ -160,7 +161,8 @@
     <keyword type="function" name="fwupd_client_get_devices_by_guid ()" link="fwupd-fwupd-client-sync.html#fwupd-client-get-devices-by-guid" since="1.4.1"/>
     <keyword type="function" name="fwupd_client_install ()" link="fwupd-fwupd-client-sync.html#fwupd-client-install" since="0.7.0"/>
     <keyword type="function" name="fwupd_client_install_bytes ()" link="fwupd-fwupd-client-sync.html#fwupd-client-install-bytes" since="1.4.5"/>
-    <keyword type="function" name="fwupd_client_install_release ()" link="fwupd-fwupd-client-sync.html#fwupd-client-install-release" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_install_release ()" link="fwupd-fwupd-client-sync.html#fwupd-client-install-release" deprecated="1.5.6" since="1.4.5"/>
+    <keyword type="function" name="fwupd_client_install_release2 ()" link="fwupd-fwupd-client-sync.html#fwupd-client-install-release2" since="1.5.6"/>
     <keyword type="function" name="fwupd_client_update_metadata ()" link="fwupd-fwupd-client-sync.html#fwupd-client-update-metadata" since="1.0.0"/>
     <keyword type="function" name="fwupd_client_update_metadata_bytes ()" link="fwupd-fwupd-client-sync.html#fwupd-client-update-metadata-bytes" since="1.4.5"/>
     <keyword type="function" name="fwupd_client_refresh_remote ()" link="fwupd-fwupd-client-sync.html#fwupd-client-refresh-remote" since="1.4.5"/>
@@ -271,8 +273,10 @@
     <keyword type="function" name="fwupd_release_to_string ()" link="fwupd-FwupdRelease.html#fwupd-release-to-string" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_get_version ()" link="fwupd-FwupdRelease.html#fwupd-release-get-version" since="0.9.3"/>
     <keyword type="function" name="fwupd_release_set_version ()" link="fwupd-FwupdRelease.html#fwupd-release-set-version" since="0.9.3"/>
-    <keyword type="function" name="fwupd_release_get_uri ()" link="fwupd-FwupdRelease.html#fwupd-release-get-uri" since="0.9.3"/>
-    <keyword type="function" name="fwupd_release_set_uri ()" link="fwupd-FwupdRelease.html#fwupd-release-set-uri" since="0.9.3"/>
+    <keyword type="function" name="fwupd_release_get_uri ()" link="fwupd-FwupdRelease.html#fwupd-release-get-uri" deprecated="1.5.6: Use fwupd_release_get_locations() instead." since="0.9.3"/>
+    <keyword type="function" name="fwupd_release_set_uri ()" link="fwupd-FwupdRelease.html#fwupd-release-set-uri" deprecated="1.5.6: Use fwupd_release_add_location() instead." since="0.9.3"/>
+    <keyword type="function" name="fwupd_release_get_locations ()" link="fwupd-FwupdRelease.html#fwupd-release-get-locations" since="1.5.6"/>
+    <keyword type="function" name="fwupd_release_add_location ()" link="fwupd-FwupdRelease.html#fwupd-release-add-location" since="1.5.6"/>
     <keyword type="function" name="fwupd_release_get_issues ()" link="fwupd-FwupdRelease.html#fwupd-release-get-issues" since="1.3.2"/>
     <keyword type="function" name="fwupd_release_add_issue ()" link="fwupd-FwupdRelease.html#fwupd-release-add-issue" since="1.3.2"/>
     <keyword type="function" name="fwupd_release_get_categories ()" link="fwupd-FwupdRelease.html#fwupd-release-get-categories" since="1.2.7"/>
@@ -497,11 +501,25 @@
     <keyword type="macro" name="FU_TYPE_ARCHIVE" link="fwupd-FuArchive.html#FU-TYPE-ARCHIVE:CAPS"/>
     <keyword type="enum" name="enum FuArchiveFlags" link="fwupd-FuArchive.html#FuArchiveFlags"/>
     <keyword type="struct" name="FuArchive" link="fwupd-FuArchive.html#FuArchive"/>
-    <keyword type="function" name="fu_chunk_new ()" link="fwupd-fu-chunk.html#fu-chunk-new"/>
+    <keyword type="function" name="fu_chunk_bytes_new ()" link="fwupd-fu-chunk.html#fu-chunk-bytes-new" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_set_idx ()" link="fwupd-fu-chunk.html#fu-chunk-set-idx" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_idx ()" link="fwupd-fu-chunk.html#fu-chunk-get-idx" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_set_page ()" link="fwupd-fu-chunk.html#fu-chunk-set-page" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_page ()" link="fwupd-fu-chunk.html#fu-chunk-get-page" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_set_address ()" link="fwupd-fu-chunk.html#fu-chunk-set-address" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_address ()" link="fwupd-fu-chunk.html#fu-chunk-get-address" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_data ()" link="fwupd-fu-chunk.html#fu-chunk-get-data" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_data_out ()" link="fwupd-fu-chunk.html#fu-chunk-get-data-out" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_data_sz ()" link="fwupd-fu-chunk.html#fu-chunk-get-data-sz" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_set_bytes ()" link="fwupd-fu-chunk.html#fu-chunk-set-bytes" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_get_bytes ()" link="fwupd-fu-chunk.html#fu-chunk-get-bytes" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_new ()" link="fwupd-fu-chunk.html#fu-chunk-new" since="1.1.2"/>
     <keyword type="function" name="fu_chunk_to_string ()" link="fwupd-fu-chunk.html#fu-chunk-to-string" since="1.1.2"/>
     <keyword type="function" name="fu_chunk_array_to_string ()" link="fwupd-fu-chunk.html#fu-chunk-array-to-string" since="1.0.1"/>
-    <keyword type="function" name="fu_chunk_array_new ()" link="fwupd-fu-chunk.html#fu-chunk-array-new"/>
-    <keyword type="function" name="fu_chunk_array_new_from_bytes ()" link="fwupd-fu-chunk.html#fu-chunk-array-new-from-bytes"/>
+    <keyword type="function" name="fu_chunk_array_new ()" link="fwupd-fu-chunk.html#fu-chunk-array-new" since="1.1.2"/>
+    <keyword type="function" name="fu_chunk_array_mutable_new ()" link="fwupd-fu-chunk.html#fu-chunk-array-mutable-new" since="1.5.6"/>
+    <keyword type="function" name="fu_chunk_array_new_from_bytes ()" link="fwupd-fu-chunk.html#fu-chunk-array-new-from-bytes" since="1.1.2"/>
+    <keyword type="macro" name="FU_TYPE_CHUNK" link="fwupd-fu-chunk.html#FU-TYPE-CHUNK:CAPS"/>
     <keyword type="struct" name="FuChunk" link="fwupd-fu-chunk.html#FuChunk"/>
     <keyword type="function" name="fu_common_cab_build_silo ()" link="fwupd-fu-common-cab.html#fu-common-cab-build-silo"/>
     <keyword type="function" name="fu_common_guid_is_plausible ()" link="fwupd-fu-common-guid.html#fu-common-guid-is-plausible" since="1.2.5"/>
@@ -543,6 +561,7 @@
     <keyword type="function" name="fu_common_bytes_pad ()" link="fwupd-fu-common.html#fu-common-bytes-pad" since="1.3.1"/>
     <keyword type="function" name="fu_common_bytes_new_offset ()" link="fwupd-fu-common.html#fu-common-bytes-new-offset" since="1.5.4"/>
     <keyword type="function" name="fu_common_strwidth ()" link="fwupd-fu-common.html#fu-common-strwidth" since="1.3.2"/>
+    <keyword type="function" name="fu_memdup_safe ()" link="fwupd-fu-common.html#fu-memdup-safe" since="1.5.6"/>
     <keyword type="function" name="fu_memcpy_safe ()" link="fwupd-fu-common.html#fu-memcpy-safe" since="1.3.1"/>
     <keyword type="function" name="fu_common_read_uint8_safe ()" link="fwupd-fu-common.html#fu-common-read-uint8-safe" since="1.3.3"/>
     <keyword type="function" name="fu_common_read_uint16_safe ()" link="fwupd-fu-common.html#fu-common-read-uint16-safe" since="1.3.3"/>
@@ -562,11 +581,13 @@
     <keyword type="function" name="fu_common_string_append_kb ()" link="fwupd-fu-common.html#fu-common-string-append-kb" since="1.2.4"/>
     <keyword type="function" name="fu_common_strnsplit ()" link="fwupd-fu-common.html#fu-common-strnsplit" since="1.3.1"/>
     <keyword type="function" name="fu_common_strsafe ()" link="fwupd-fu-common.html#fu-common-strsafe" since="1.5.5"/>
+    <keyword type="function" name="fu_common_strjoin_array ()" link="fwupd-fu-common.html#fu-common-strjoin-array" since="1.5.6"/>
     <keyword type="function" name="fu_common_kernel_locked_down ()" link="fwupd-fu-common.html#fu-common-kernel-locked-down" since="1.3.8"/>
     <keyword type="function" name="fu_common_cpuid ()" link="fwupd-fu-common.html#fu-common-cpuid" since="1.5.0"/>
     <keyword type="function" name="fu_common_is_cpu_intel ()" link="fwupd-fu-common.html#fu-common-is-cpu-intel" deprecated="1.5.5: Use fu_common_get_cpu_vendor() instead." since="1.5.0"/>
     <keyword type="function" name="fu_common_get_cpu_vendor ()" link="fwupd-fu-common.html#fu-common-get-cpu-vendor" since="1.5.5"/>
     <keyword type="function" name="fu_common_is_live_media ()" link="fwupd-fu-common.html#fu-common-is-live-media" since="1.4.6"/>
+    <keyword type="function" name="fu_common_get_memory_size ()" link="fwupd-fu-common.html#fu-common-get-memory-size" since="1.5.6"/>
     <keyword type="function" name="fu_common_get_volumes_by_kind ()" link="fwupd-fu-common.html#fu-common-get-volumes-by-kind" since="1.4.6"/>
     <keyword type="function" name="fu_common_get_volume_by_device ()" link="fwupd-fu-common.html#fu-common-get-volume-by-device" since="1.5.1"/>
     <keyword type="function" name="fu_common_get_volume_by_devnum ()" link="fwupd-fu-common.html#fu-common-get-volume-by-devnum" since="1.5.1"/>
@@ -576,6 +597,7 @@
     <keyword type="function" name="fu_common_crc16 ()" link="fwupd-fu-common.html#fu-common-crc16" since="1.5.0"/>
     <keyword type="function" name="fu_common_crc32 ()" link="fwupd-fu-common.html#fu-common-crc32" since="1.5.0"/>
     <keyword type="function" name="fu_common_crc32_full ()" link="fwupd-fu-common.html#fu-common-crc32-full" since="1.5.0"/>
+    <keyword type="function" name="fu_common_uri_get_scheme ()" link="fwupd-fu-common.html#fu-common-uri-get-scheme" since="1.5.6"/>
     <keyword type="enum" name="enum FuAppFlags" link="fwupd-fu-common.html#FuAppFlags"/>
     <keyword type="enum" name="enum FuDumpFlags" link="fwupd-fu-common.html#FuDumpFlags"/>
     <keyword type="typedef" name="FuEndianType" link="fwupd-fu-common.html#FuEndianType"/>
@@ -770,11 +792,16 @@
     <keyword type="function" name="fu_efi_signature_list_new ()" link="fwupd-fu-efi-signature-list.html#fu-efi-signature-list-new" since="1.5.5"/>
     <keyword type="macro" name="FU_TYPE_EFI_SIGNATURE_LIST" link="fwupd-fu-efi-signature-list.html#FU-TYPE-EFI-SIGNATURE-LIST:CAPS"/>
     <keyword type="struct" name="FuEfiSignatureList" link="fwupd-fu-efi-signature-list.html#FuEfiSignatureList"/>
-    <keyword type="function" name="fu_firmware_strparse_uint4 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint4" since="1.3.1"/>
-    <keyword type="function" name="fu_firmware_strparse_uint8 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint8" since="1.3.1"/>
-    <keyword type="function" name="fu_firmware_strparse_uint16 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint16" since="1.3.1"/>
-    <keyword type="function" name="fu_firmware_strparse_uint24 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint24" since="1.3.1"/>
-    <keyword type="function" name="fu_firmware_strparse_uint32 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint32" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint4 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint4" deprecated="" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint8 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint8" deprecated="" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint16 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint16" deprecated="" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint24 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint24" deprecated="" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint32 ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint32" deprecated="" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_strparse_uint4_safe ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint4-safe" since="1.5.6"/>
+    <keyword type="function" name="fu_firmware_strparse_uint8_safe ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint8-safe" since="1.5.6"/>
+    <keyword type="function" name="fu_firmware_strparse_uint16_safe ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint16-safe" since="1.5.6"/>
+    <keyword type="function" name="fu_firmware_strparse_uint24_safe ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint24-safe" since="1.5.6"/>
+    <keyword type="function" name="fu_firmware_strparse_uint32_safe ()" link="fwupd-fu-firmware-common.html#fu-firmware-strparse-uint32-safe" since="1.5.6"/>
     <keyword type="function" name="fu_firmware_image_new ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-new" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_image_to_string ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-to-string" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_image_get_version ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-get-version" since="1.3.4"/>
@@ -791,6 +818,8 @@
     <keyword type="function" name="fu_firmware_image_set_idx ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-set-idx" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_image_get_bytes ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-get-bytes" since="1.5.0"/>
     <keyword type="function" name="fu_firmware_image_set_bytes ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-set-bytes" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_image_add_chunk ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-add-chunk" since="1.5.6"/>
+    <keyword type="function" name="fu_firmware_image_get_chunks ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-get-chunks" since="1.5.6"/>
     <keyword type="function" name="fu_firmware_image_get_checksum ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-get-checksum" since="1.5.5"/>
     <keyword type="function" name="fu_firmware_image_parse ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-parse" since="1.5.0"/>
     <keyword type="function" name="fu_firmware_image_build ()" link="fwupd-FuFirmwareImage.html#fu-firmware-image-build" since="1.5.0"/>
@@ -806,6 +835,7 @@
     <keyword type="function" name="fu_firmware_flag_from_string ()" link="fwupd-FuFirmware.html#fu-firmware-flag-from-string" since="1.5.0"/>
     <keyword type="function" name="fu_firmware_new ()" link="fwupd-FuFirmware.html#fu-firmware-new" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_new_from_bytes ()" link="fwupd-FuFirmware.html#fu-firmware-new-from-bytes" since="1.3.1"/>
+    <keyword type="function" name="fu_firmware_new_from_gtypes ()" link="fwupd-FuFirmware.html#fu-firmware-new-from-gtypes" since="1.5.6"/>
     <keyword type="function" name="fu_firmware_to_string ()" link="fwupd-FuFirmware.html#fu-firmware-to-string" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_get_version ()" link="fwupd-FuFirmware.html#fu-firmware-get-version" since="1.3.3"/>
     <keyword type="function" name="fu_firmware_set_version ()" link="fwupd-FuFirmware.html#fu-firmware-set-version" since="1.3.3"/>
@@ -835,10 +865,14 @@
     <keyword type="macro" name="FU_FIRMWARE_FLAG_NONE" link="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-NONE:CAPS"/>
     <keyword type="macro" name="FU_FIRMWARE_FLAG_DEDUPE_ID" link="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-ID:CAPS"/>
     <keyword type="macro" name="FU_FIRMWARE_FLAG_DEDUPE_IDX" link="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-IDX:CAPS"/>
+    <keyword type="macro" name="FU_FIRMWARE_FLAG_HAS_CHECKSUM" link="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-HAS-CHECKSUM:CAPS"/>
+    <keyword type="macro" name="FU_FIRMWARE_FLAG_HAS_VID_PID" link="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-HAS-VID-PID:CAPS"/>
     <keyword type="typedef" name="FuFirmwareFlags" link="fwupd-FuFirmware.html#FuFirmwareFlags"/>
     <keyword type="struct" name="FuFirmware" link="fwupd-FuFirmware.html#FuFirmware"/>
     <keyword type="function" name="fu_hwids_new ()" link="fwupd-fu-hwids.html#fu-hwids-new" since="0.9.3"/>
+    <keyword type="function" name="fu_hwids_get_keys ()" link="fwupd-fu-hwids.html#fu-hwids-get-keys" since="1.5.6"/>
     <keyword type="function" name="fu_hwids_get_value ()" link="fwupd-fu-hwids.html#fu-hwids-get-value" since="0.9.3"/>
+    <keyword type="function" name="fu_hwids_add_smbios_override ()" link="fwupd-fu-hwids.html#fu-hwids-add-smbios-override" since="1.5.6"/>
     <keyword type="function" name="fu_hwids_get_replace_keys ()" link="fwupd-fu-hwids.html#fu-hwids-get-replace-keys" since="0.9.3"/>
     <keyword type="function" name="fu_hwids_get_replace_values ()" link="fwupd-fu-hwids.html#fu-hwids-get-replace-values" since="0.9.3"/>
     <keyword type="function" name="fu_hwids_get_guid ()" link="fwupd-fu-hwids.html#fu-hwids-get-guid" since="0.9.3"/>
@@ -915,17 +949,17 @@
     <keyword type="function" name="fu_plugin_update_cleanup ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-update-cleanup" since="0.8.0"/>
     <keyword type="function" name="fu_plugin_composite_prepare ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-composite-prepare" since="1.0.9"/>
     <keyword type="function" name="fu_plugin_composite_cleanup ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-composite-cleanup" since="1.0.9"/>
-    <keyword type="function" name="fu_plugin_usb_device_added ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-usb-device-added" since="1.0.2"/>
-    <keyword type="function" name="fu_plugin_udev_device_added ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-udev-device-added" since="1.1.2"/>
-    <keyword type="function" name="fu_plugin_udev_device_changed ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-udev-device-changed" since="1.1.2"/>
+    <keyword type="function" name="fu_plugin_backend_device_added ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-backend-device-added" since="1.5.6"/>
+    <keyword type="function" name="fu_plugin_backend_device_changed ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-backend-device-changed" since="1.5.6"/>
+    <keyword type="function" name="fu_plugin_backend_device_removed ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-backend-device-removed" since="1.5.6"/>
     <keyword type="function" name="fu_plugin_device_added ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-device-added" since="1.5.0"/>
-    <keyword type="function" name="fu_plugin_device_removed ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-device-removed" since="1.1.2"/>
     <keyword type="function" name="fu_plugin_device_created ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-device-created" since="1.4.0"/>
     <keyword type="function" name="fu_plugin_device_registered ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-device-registered" since="0.9.7"/>
     <keyword type="function" name="fu_plugin_add_security_attrs ()" link="fwupd-fu-plugin-vfuncs.html#fu-plugin-add-security-attrs" since="1.5.0"/>
     <keyword type="macro" name="fu_plugin_get_flags()" link="fwupd-FuPlugin.html#fu-plugin-get-flags"/>
     <keyword type="macro" name="fu_plugin_has_flag()" link="fwupd-FuPlugin.html#fu-plugin-has-flag"/>
     <keyword type="macro" name="fu_plugin_add_flag()" link="fwupd-FuPlugin.html#fu-plugin-add-flag"/>
+    <keyword type="macro" name="fu_plugin_remove_flag()" link="fwupd-FuPlugin.html#fu-plugin-remove-flag"/>
     <keyword type="function" name="fu_plugin_get_name ()" link="fwupd-FuPlugin.html#fu-plugin-get-name" since="0.8.0"/>
     <keyword type="function" name="fu_plugin_get_data ()" link="fwupd-FuPlugin.html#fu-plugin-get-data" since="0.8.0"/>
     <keyword type="function" name="fu_plugin_alloc_data ()" link="fwupd-FuPlugin.html#fu-plugin-alloc-data"/>
@@ -946,6 +980,7 @@
     <keyword type="function" name="fu_plugin_cache_add ()" link="fwupd-FuPlugin.html#fu-plugin-cache-add" since="0.8.0"/>
     <keyword type="function" name="fu_plugin_check_hwid ()" link="fwupd-FuPlugin.html#fu-plugin-check-hwid" since="0.9.1"/>
     <keyword type="function" name="fu_plugin_get_hwid_replace_value ()" link="fwupd-FuPlugin.html#fu-plugin-get-hwid-replace-value" since="1.3.3"/>
+    <keyword type="function" name="fu_plugin_get_devices ()" link="fwupd-FuPlugin.html#fu-plugin-get-devices" since="1.5.6"/>
     <keyword type="function" name="fu_plugin_get_hwids ()" link="fwupd-FuPlugin.html#fu-plugin-get-hwids" since="1.1.1"/>
     <keyword type="function" name="fu_plugin_get_dmi_value ()" link="fwupd-FuPlugin.html#fu-plugin-get-dmi-value" since="0.9.7"/>
     <keyword type="function" name="fu_plugin_get_smbios_string ()" link="fwupd-FuPlugin.html#fu-plugin-get-smbios-string" since="0.9.8"/>
@@ -1046,6 +1081,7 @@
     <keyword type="struct" name="struct FuUdevDeviceClass" link="fwupd-FuUdevDevice.html#FuUdevDeviceClass"/>
     <keyword type="enum" name="enum FuUdevDeviceFlags" link="fwupd-FuUdevDevice.html#FuUdevDeviceFlags"/>
     <keyword type="struct" name="FuUdevDevice" link="fwupd-FuUdevDevice.html#FuUdevDevice"/>
+    <keyword type="macro" name="G_USB_CHECK_VERSION()" link="fwupd-FuUsbDevice.html#G-USB-CHECK-VERSION:CAPS"/>
     <keyword type="function" name="fu_usb_device_new ()" link="fwupd-FuUsbDevice.html#fu-usb-device-new" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_get_vid ()" link="fwupd-FuUsbDevice.html#fu-usb-device-get-vid" since="1.1.2"/>
     <keyword type="function" name="fu_usb_device_get_pid ()" link="fwupd-FuUsbDevice.html#fu-usb-device-get-pid" since="1.1.2"/>
@@ -1054,10 +1090,13 @@
     <keyword type="function" name="fu_usb_device_set_dev ()" link="fwupd-FuUsbDevice.html#fu-usb-device-set-dev" since="1.0.2"/>
     <keyword type="function" name="fu_usb_device_is_open ()" link="fwupd-FuUsbDevice.html#fu-usb-device-is-open" since="1.0.3"/>
     <keyword type="function" name="fu_usb_device_find_udev_device ()" link="fwupd-FuUsbDevice.html#fu-usb-device-find-udev-device" since="1.3.2"/>
+    <keyword type="typedef" name="GUsbContext" link="fwupd-FuUsbDevice.html#GUsbContext"/>
+    <keyword type="typedef" name="GUsbDevice" link="fwupd-FuUsbDevice.html#GUsbDevice"/>
     <keyword type="macro" name="FU_TYPE_USB_DEVICE" link="fwupd-FuUsbDevice.html#FU-TYPE-USB-DEVICE:CAPS"/>
     <keyword type="struct" name="struct FuUsbDeviceClass" link="fwupd-FuUsbDevice.html#FuUsbDeviceClass"/>
     <keyword type="struct" name="FuUsbDevice" link="fwupd-FuUsbDevice.html#FuUsbDevice"/>
     <keyword type="constant" name="FWUPD_CLIENT_DOWNLOAD_FLAG_NONE" link="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-NONE:CAPS"/>
+    <keyword type="constant" name="FWUPD_CLIENT_DOWNLOAD_FLAG_ONLY_IPFS" link="fwupd-FwupdClient.html#FWUPD-CLIENT-DOWNLOAD-FLAG-ONLY-IPFS:CAPS"/>
     <keyword type="constant" name="FWUPD_CLIENT_UPLOAD_FLAG_NONE" link="fwupd-FwupdClient.html#FWUPD-CLIENT-UPLOAD-FLAG-NONE:CAPS"/>
     <keyword type="constant" name="FWUPD_CLIENT_UPLOAD_FLAG_ALWAYS_MULTIPART" link="fwupd-FwupdClient.html#FWUPD-CLIENT-UPLOAD-FLAG-ALWAYS-MULTIPART:CAPS"/>
     <keyword type="constant" name="FWUPD_REMOTE_KIND_UNKNOWN" link="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-UNKNOWN:CAPS"/>

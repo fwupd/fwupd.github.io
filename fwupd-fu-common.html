@@ -265,6 +265,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-memdup-safe" title="fu_memdup_safe ()">fu_memdup_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
@@ -417,6 +425,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-strjoin-array" title="fu_common_strjoin_array ()">fu_common_strjoin_array</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
@@ -453,6 +469,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-is-live-media" title="fu_common_is_live_media ()">fu_common_is_live_media</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-get-memory-size" title="fu_common_get_memory_size ()">fu_common_get_memory_size</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -525,6 +549,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-crc32-full" title="fu_common_crc32_full ()">fu_common_crc32_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-uri-get-scheme" title="fu_common_uri_get_scheme ()">fu_common_uri_get_scheme</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 </tbody>
@@ -1650,6 +1682,53 @@ fu_common_strwidth (<em class="parameter"><code>const <a href="../glib/glib-Basi
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-memdup-safe"></a><h3>fu_memdup_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+fu_memdup_safe (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *src</code></em>,
+                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> n</code></em>,
+                <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Duplicates some memory using memdup in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<p>NOTE: This function intentionally limits allocation size to 1GB.</p>
+<div class="refsect3">
+<a name="fu-memdup-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>src</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n</p></td>
+<td class="parameter_description"><p>number of bytes to copy from <em class="parameter"><code>src</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-memdup-safe.returns"></a><h4>Returns</h4>
+<p>block of allocated memory, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for an error. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-memcpy-safe"></a><h3>fu_memcpy_safe ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_memcpy_safe (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *dst</code></em>,
@@ -2509,6 +2588,47 @@ fu_common_strsafe (<em class="parameter"><code>const <a href="../glib/glib-Basic
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-common-strjoin-array"></a><h3>fu_common_strjoin_array ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_common_strjoin_array (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *separator</code></em>,
+                         <em class="parameter"><code><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *array</code></em>);</pre>
+<p>Joins an array of strings together to form one long string, with the optional
+separator inserted between each of them.</p>
+<p>If <em class="parameter"><code>array</code></em>
+ has no items, the return value will be an empty string.
+If <em class="parameter"><code>array</code></em>
+ contains a single item, separator will not appear in the resulting
+string.</p>
+<div class="refsect3">
+<a name="fu-common-strjoin-array.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>separator</p></td>
+<td class="parameter_description"><p>string to insert between each of the strings, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-strjoin-array.returns"></a><h4>Returns</h4>
+<p> a string</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-common-kernel-locked-down"></a><h3>fu_common_kernel_locked_down ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_common_kernel_locked_down (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
@@ -2613,6 +2733,18 @@ fu_common_is_live_media (<em class="parameter"><code><span class="type">void</sp
 <p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if live</p>
 </div>
 <p class="since">Since: 1.4.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-get-memory-size"></a><h3>fu_common_get_memory_size ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fu_common_get_memory_size (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Returns the size of physical memory.</p>
+<div class="refsect3">
+<a name="fu-common-get-memory-size.returns"></a><h4>Returns</h4>
+<p> bytes</p>
+</div>
+<p class="since">Since: 1.5.6</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2937,6 +3069,33 @@ fu_common_crc32_full (<em class="parameter"><code>const <a href="../glib/glib-Ba
 <p> CRC value</p>
 </div>
 <p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-uri-get-scheme"></a><h3>fu_common_uri_get_scheme ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_common_uri_get_scheme (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>);</pre>
+<p>Returns the USI scheme for the given URI.</p>
+<div class="refsect3">
+<a name="fu-common-uri-get-scheme.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>valid URI, e.g. <code class="literal">https://foo.bar/baz</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-uri-get-scheme.returns"></a><h4>Returns</h4>
+<p> scheme value, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if invalid, e.g. <code class="literal">https</code></p>
+</div>
+<p class="since">Since: 1.5.6</p>
 </div>
 </div>
 <div class="refsect1">

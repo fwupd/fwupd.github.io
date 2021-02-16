@@ -963,6 +963,8 @@ fwupd_device_add_child (<em class="parameter"><code><a class="link" href="fwupd-
                         <em class="parameter"><code><a class="link" href="fwupd-FwupdDevice.html#FwupdDevice" title="FwupdDevice"><span class="type">FwupdDevice</span></a> *child</code></em>);</pre>
 <p>Adds a child device. An child device is logically linked to the primary
 device in some way.</p>
+<p>NOTE: You should never call this function from user code, it is for daemon
+use only. Only use <a class="link" href="fwupd-FwupdDevice.html#fwupd-device-set-parent" title="fwupd_device_set_parent ()"><code class="function">fwupd_device_set_parent()</code></a> to set up a logical tree.</p>
 <div class="refsect3">
 <a name="fwupd-device-add-child.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">

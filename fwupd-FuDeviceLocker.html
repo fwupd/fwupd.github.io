@@ -119,7 +119,7 @@ This object is typically called using <a href="../glib/glib-Miscellaneous-Macros
 manually closed using <a href="../gobject/gobject-The-Base-Object-Type.html#g-clear-object"><code class="function">g_clear_object()</code></a>.</p>
 <p>The functions used for opening and closing the device are set automatically.
 If the <em class="parameter"><code>device</code></em>
- is not a type or supertype of <span class="type">GUsbDevice</span> or <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> then
+ is not a type or supertype of <a class="link" href="fwupd-FuUsbDevice.html#GUsbDevice" title="GUsbDevice"><span class="type">GUsbDevice</span></a> or <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> then
 this function will not work.</p>
 <p>For custom objects please use <a class="link" href="fwupd-FuDeviceLocker.html#fu-device-locker-new-full" title="fu_device_locker_new_full ()"><code class="function">fu_device_locker_new_full()</code></a>.</p>
 <p>NOTE: If the <em class="parameter"><code>open_func</code></em>

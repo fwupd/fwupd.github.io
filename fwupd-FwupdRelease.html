@@ -90,6 +90,22 @@
 <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FwupdRelease.html#fwupd-release-get-locations" title="fwupd_release_get_locations ()">fwupd_release_get_locations</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRelease.html#fwupd-release-add-location" title="fwupd_release_add_location ()">fwupd_release_add_location</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FwupdRelease.html#fwupd-release-get-issues" title="fwupd_release_get_issues ()">fwupd_release_get_issues</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -722,7 +738,11 @@ fwupd_release_set_version (<em class="parameter"><code><a class="link" href="fwu
 <a name="fwupd-release-get-uri"></a><h3>fwupd_release_get_uri ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fwupd_release_get_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
-<p>Gets the update uri.</p>
+<div class="warning">
+<p><code class="literal">fwupd_release_get_uri</code> has been deprecated since version 1.5.6 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="fwupd-FwupdRelease.html#fwupd-release-get-locations" title="fwupd_release_get_locations ()"><code class="function">fwupd_release_get_locations()</code></a> instead.</p>
+</div>
+<p>Gets the default update URI.</p>
 <div class="refsect3">
 <a name="fwupd-release-get-uri.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -740,7 +760,7 @@ fwupd_release_get_uri (<em class="parameter"><code><a class="link" href="fwupd-F
 </div>
 <div class="refsect3">
 <a name="fwupd-release-get-uri.returns"></a><h4>Returns</h4>
-<p> the update uri, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+<p> the update URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
 </div>
 <p class="since">Since: 0.9.3</p>
 </div>
@@ -750,7 +770,11 @@ fwupd_release_get_uri (<em class="parameter"><code><a class="link" href="fwupd-F
 <pre class="programlisting"><span class="returnvalue">void</span>
 fwupd_release_set_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
                        <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>);</pre>
-<p>Sets the update uri, i.e. where you can download the firmware from.</p>
+<div class="warning">
+<p><code class="literal">fwupd_release_set_uri</code> has been deprecated since version 1.5.6 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="fwupd-FwupdRelease.html#fwupd-release-add-location" title="fwupd_release_add_location ()"><code class="function">fwupd_release_add_location()</code></a> instead.</p>
+</div>
+<p>Sets the update URI, i.e. where you can download the firmware from.</p>
 <div class="refsect3">
 <a name="fwupd-release-set-uri.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -774,6 +798,67 @@ fwupd_release_set_uri (<em class="parameter"><code><a class="link" href="fwupd-F
 </table></div>
 </div>
 <p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-get-locations"></a><h3>fwupd_release_get_locations ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_release_get_locations (<em class="parameter"><code><a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>);</pre>
+<p>Gets the update URI, i.e. where you can download the firmware from.</p>
+<p>Typically the first URI will be the main HTTP mirror, but all URIs may not
+be valid HTTP URIs. For example, "ipns://QmSrPmba" is valid here.</p>
+<div class="refsect3">
+<a name="fwupd-release-get-locations.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-release-get-locations.returns"></a><h4>Returns</h4>
+<p>the URIs. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-release-add-location"></a><h3>fwupd_release_add_location ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_release_add_location (<em class="parameter"><code><a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a> *release</code></em>,
+                            <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *location</code></em>);</pre>
+<p>Adds an update URI, i.e. where you can download the firmware from.</p>
+<div class="refsect3">
+<a name="fwupd-release-add-location.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>release</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>location</p></td>
+<td class="parameter_description"><p>the update URI</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
 </div>
 <hr>
 <div class="refsect2">
