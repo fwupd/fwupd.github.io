@@ -839,6 +839,8 @@
     <keyword type="function" name="fu_firmware_to_string ()" link="fwupd-FuFirmware.html#fu-firmware-to-string" since="1.3.1"/>
     <keyword type="function" name="fu_firmware_get_version ()" link="fwupd-FuFirmware.html#fu-firmware-get-version" since="1.3.3"/>
     <keyword type="function" name="fu_firmware_set_version ()" link="fwupd-FuFirmware.html#fu-firmware-set-version" since="1.3.3"/>
+    <keyword type="function" name="fu_firmware_get_version_raw ()" link="fwupd-FuFirmware.html#fu-firmware-get-version-raw" since="1.5.7"/>
+    <keyword type="function" name="fu_firmware_set_version_raw ()" link="fwupd-FuFirmware.html#fu-firmware-set-version-raw" since="1.5.7"/>
     <keyword type="function" name="fu_firmware_add_flag ()" link="fwupd-FuFirmware.html#fu-firmware-add-flag" since="1.5.0"/>
     <keyword type="function" name="fu_firmware_has_flag ()" link="fwupd-FuFirmware.html#fu-firmware-has-flag" since="1.5.0"/>
     <keyword type="function" name="fu_firmware_tokenize ()" link="fwupd-FuFirmware.html#fu-firmware-tokenize" since="1.3.2"/>
