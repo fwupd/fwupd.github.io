@@ -82,6 +82,12 @@
 <tr>
 <td class="define_keyword">#define</td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-has-protocol" title="fu_device_has_protocol()">fu_device_has_protocol</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-add-checksum" title="fu_device_add_checksum()">fu_device_add_checksum</a><span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -179,6 +185,12 @@
 <td class="define_keyword">#define</td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-add-vendor-id" title="fu_device_add_vendor_id()">fu_device_add_vendor_id</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-add-protocol" title="fu_device_add_protocol()">fu_device_add_protocol</a><span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -359,6 +371,12 @@
 <td class="define_keyword">#define</td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-vendor-ids" title="fu_device_get_vendor_ids()">fu_device_get_vendor_ids</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-protocols" title="fu_device_get_protocols()">fu_device_get_protocols</a><span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -644,6 +662,21 @@
 <td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-backend-id" title="fu_device_get_backend_id ()">fu_device_get_backend_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-backend-id" title="fu_device_set_backend_id ()">fu_device_set_backend_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-get-proxy-guid" title="fu_device_get_proxy_guid ()">fu_device_get_proxy_guid</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -811,6 +844,22 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-FuDevice.html#fu-device-set-progress" title="fu_device_set_progress ()">fu_device_set_progress</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-get-battery-level" title="fu_device_get_battery_level ()">fu_device_get_battery_level</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuDevice.html#fu-device-set-battery-level" title="fu_device_set_battery_level ()">fu_device_set_battery_level</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -1199,6 +1248,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-has-protocol"></a><h3>fu_device_has_protocol()</h3>
+<pre class="programlisting">#define fu_device_has_protocol(d,v)		fwupd_device_has_protocol(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-add-checksum"></a><h3>fu_device_add_checksum()</h3>
 <pre class="programlisting">#define fu_device_add_checksum(d,v)		fwupd_device_add_checksum(FWUPD_DEVICE(d),v)
 </pre>
@@ -1296,6 +1351,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="fu-device-add-vendor-id"></a><h3>fu_device_add_vendor_id()</h3>
 <pre class="programlisting">#define fu_device_add_vendor_id(d,v)		fwupd_device_add_vendor_id(FWUPD_DEVICE(d),v)
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-add-protocol"></a><h3>fu_device_add_protocol()</h3>
+<pre class="programlisting">#define fu_device_add_protocol(d,v)		fwupd_device_add_protocol(FWUPD_DEVICE(d),v)
 </pre>
 </div>
 <hr>
@@ -1476,6 +1537,12 @@ fu_device_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="fu-device-get-vendor-ids"></a><h3>fu_device_get_vendor_ids()</h3>
 <pre class="programlisting">#define fu_device_get_vendor_ids(d)		fwupd_device_get_vendor_ids(FWUPD_DEVICE(d))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-protocols"></a><h3>fu_device_get_protocols()</h3>
+<pre class="programlisting">#define fu_device_get_protocols(d)		fwupd_device_get_protocols(FWUPD_DEVICE(d))
 </pre>
 </div>
 <hr>
@@ -2610,6 +2677,68 @@ with the same physical ID.</p>
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-device-get-backend-id"></a><h3>fu_device_get_backend_id ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_device_get_backend_id (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Gets the ID set for the device as recognised by the backend. This is typically
+a Linux sysfs path or USB platform ID. If unset, it also falls back to the
+physical ID as this may be the same value.</p>
+<div class="refsect3">
+<a name="fu-device-get-backend-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-get-backend-id.returns"></a><h4>Returns</h4>
+<p> a string value, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if never set.</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-backend-id"></a><h3>fu_device_set_backend_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_set_backend_id (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                          <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *backend_id</code></em>);</pre>
+<p>Sets the backend ID on the device. This is designed to disambiguate devices
+with the same physical ID. This is typically a Linux sysfs path or USB
+platform ID.</p>
+<div class="refsect3">
+<a name="fu-device-set-backend-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>backend_id</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">dev2</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-device-get-proxy-guid"></a><h3>fu_device_get_proxy_guid ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fu_device_get_proxy_guid (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
@@ -2673,6 +2802,7 @@ fu_device_set_proxy_guid (<em class="parameter"><code><a class="link" href="fwup
 <a name="fu-device-get-protocol"></a><h3>fu_device_get_protocol ()</h3>
 <pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
 fu_device_get_protocol (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<div class="warning"><p><code class="literal">fu_device_get_protocol</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Gets the protocol ID on the device.</p>
 <div class="refsect3">
 <a name="fu-device-get-protocol.parameters"></a><h4>Parameters</h4>
@@ -2701,6 +2831,7 @@ fu_device_get_protocol (<em class="parameter"><code><a class="link" href="fwupd-
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_device_set_protocol (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *protocol</code></em>);</pre>
+<div class="warning"><p><code class="literal">fu_device_set_protocol</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Sets the protocol ID on the device.</p>
 <div class="refsect3">
 <a name="fu-device-set-protocol.parameters"></a><h4>Parameters</h4>
@@ -3267,6 +3398,65 @@ fu_device_set_progress (<em class="parameter"><code><a class="link" href="fwupd-
 </table></div>
 </div>
 <p class="since">Since: 1.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-get-battery-level"></a><h3>fu_device_get_battery_level ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+fu_device_get_battery_level (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>);</pre>
+<p>Returns the battery level.</p>
+<div class="refsect3">
+<a name="fu-device-get-battery-level.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-device-get-battery-level.returns"></a><h4>Returns</h4>
+<p> value in percent</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-device-set-battery-level"></a><h3>fu_device_set_battery_level ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_device_set_battery_level (<em class="parameter"><code><a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a> *self</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> battery_level</code></em>);</pre>
+<p>Sets the battery level, or 0 for invalid. Setting this allows fwupd to show
+a warning if the device change is too low to perform the update.</p>
+<div class="refsect3">
+<a name="fu-device-set-battery-level.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuDevice.html#FuDevice" title="FuDevice"><span class="type">FuDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>battery_level</p></td>
+<td class="parameter_description"><p>the percentage value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4836,6 +5026,13 @@ e.g. unplug, press a magic button and then replug.</p>
 <td class="enum_member_name"><p><a name="FU-DEVICE-INTERNAL-FLAG-RETRY-OPEN:CAPS"></a>FU_DEVICE_INTERNAL_FLAG_RETRY_OPEN</p></td>
 <td class="enum_member_description">
 <p>Retry the device open up to 5 times if it fails</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-DEVICE-INTERNAL-FLAG-REPLUG-MATCH-GUID:CAPS"></a>FU_DEVICE_INTERNAL_FLAG_REPLUG_MATCH_GUID</p></td>
+<td class="enum_member_description">
+<p>Match GUIDs on device replug where the physical and logical IDs will be different</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>

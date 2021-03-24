@@ -305,6 +305,46 @@
 </tr>
 <tr>
 <td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-read-uint64-safe" title="fu_common_read_uint64_safe ()">fu_common_read_uint64_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-write-uint8-safe" title="fu_common_write_uint8_safe ()">fu_common_write_uint8_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-write-uint16-safe" title="fu_common_write_uint16_safe ()">fu_common_write_uint16_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-write-uint32-safe" title="fu_common_write_uint32_safe ()">fu_common_write_uint32_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-write-uint64-safe" title="fu_common_write_uint64_safe ()">fu_common_write_uint64_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
@@ -340,6 +380,14 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-byte-array-append-uint64" title="fu_byte_array_append_uint64 ()">fu_byte_array_append_uint64</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-write-uint16" title="fu_common_write_uint16 ()">fu_common_write_uint16</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -349,6 +397,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-write-uint32" title="fu_common_write_uint32 ()">fu_common_write_uint32</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-write-uint64" title="fu_common_write_uint64 ()">fu_common_write_uint64</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -365,6 +421,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-common-read-uint32" title="fu_common_read_uint32 ()">fu_common_read_uint32</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-read-uint64" title="fu_common_read_uint64 ()">fu_common_read_uint64</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -1574,7 +1638,7 @@ are identical</p>
 <pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
 fu_common_bytes_pad (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> sz</code></em>);</pre>
-<p>Pads a GBytes to a given <em class="parameter"><code>sz</code></em>
+<p>Pads a GBytes to a minimum <em class="parameter"><code>sz</code></em>
  with <code class="literal">0xff</code>.</p>
 <div class="refsect3">
 <a name="fu-common-bytes-pad.parameters"></a><h4>Parameters</h4>
@@ -2004,6 +2068,325 @@ was set, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="lit
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-common-read-uint64-safe"></a><h3>fu_common_read_uint64_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_read_uint64_safe (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> offset</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *value</code></em>,
+                            <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Read a value from a buffer using a specified endian in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<div class="refsect3">
+<a name="fu-common-read-uint64-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>maximum size of <em class="parameter"><code>buf</code></em>
+, typically <code class="literal">sizeof(buf)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset in bytes into <em class="parameter"><code>buf</code></em>
+to copy from</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the parsed value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-read-uint64-safe.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+was set, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-write-uint8-safe"></a><h3>fu_common_write_uint8_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_write_uint8_safe (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> offset</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> value</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Write a value to a buffer in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<div class="refsect3">
+<a name="fu-common-write-uint8-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>maximum size of <em class="parameter"><code>buf</code></em>
+, typically <code class="literal">sizeof(buf)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset in bytes into <em class="parameter"><code>buf</code></em>
+to write to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-write-uint8-safe.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+was written, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-write-uint16-safe"></a><h3>fu_common_write_uint16_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_write_uint16_safe (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> offset</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> value</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Write a value to a buffer using a specified endian in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<div class="refsect3">
+<a name="fu-common-write-uint16-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>maximum size of <em class="parameter"><code>buf</code></em>
+, typically <code class="literal">sizeof(buf)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset in bytes into <em class="parameter"><code>buf</code></em>
+to write to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-write-uint16-safe.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+was written, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-write-uint32-safe"></a><h3>fu_common_write_uint32_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_write_uint32_safe (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> offset</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> value</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Write a value to a buffer using a specified endian in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<div class="refsect3">
+<a name="fu-common-write-uint32-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>maximum size of <em class="parameter"><code>buf</code></em>
+, typically <code class="literal">sizeof(buf)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset in bytes into <em class="parameter"><code>buf</code></em>
+to write to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-write-uint32-safe.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+was written, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-write-uint64-safe"></a><h3>fu_common_write_uint64_safe ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_common_write_uint64_safe (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> bufsz</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> offset</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> value</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Write a value to a buffer using a specified endian in a safe way.</p>
+<p>You don't need to use this function in "obviously correct" cases, nor should
+you use it when performance is a concern. Only us it when you're not sure if
+malicious data from a device or firmware could cause memory corruption.</p>
+<div class="refsect3">
+<a name="fu-common-write-uint64-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>source buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>maximum size of <em class="parameter"><code>buf</code></em>
+, typically <code class="literal">sizeof(buf)</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset in bytes into <em class="parameter"><code>buf</code></em>
+to write to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-write-uint64-safe.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+was written, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-byte-array-set-size"></a><h3>fu_byte_array_set_size ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_byte_array_set_size (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
@@ -2140,6 +2523,43 @@ fu_byte_array_append_uint32 (<em class="parameter"><code><a href="../glib/glib-B
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-byte-array-append-uint64"></a><h3>fu_byte_array_append_uint64 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_byte_array_append_uint64 (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> data</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>);</pre>
+<p>Adds a 64 bit integer to a byte array</p>
+<div class="refsect3">
+<a name="fu-byte-array-append-uint64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-common-write-uint16"></a><h3>fu_common_write_uint16 ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_common_write_uint16 (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
@@ -2214,6 +2634,43 @@ fu_common_write_uint32 (<em class="parameter"><code><a href="../glib/glib-Basic-
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-common-write-uint64"></a><h3>fu_common_write_uint64 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_common_write_uint64 (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> val_native</code></em>,
+                        <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>);</pre>
+<p>Writes a value to a buffer using a specified endian.</p>
+<div class="refsect3">
+<a name="fu-common-write-uint64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>A writable buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val_native</p></td>
+<td class="parameter_description"><p>a value in host byte-order</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-common-read-uint16"></a><h3>fu_common_read_uint16 ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint16"><span class="returnvalue">guint16</span></a>
 fu_common_read_uint16 (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
@@ -2281,6 +2738,41 @@ fu_common_read_uint32 (<em class="parameter"><code>const <a href="../glib/glib-B
 <p> a value in host byte-order</p>
 </div>
 <p class="since">Since: 1.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-read-uint64"></a><h3>fu_common_read_uint64 ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fu_common_read_uint64 (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *buf</code></em>,
+                       <em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a> endian</code></em>);</pre>
+<p>Read a value from a buffer using a specified endian.</p>
+<div class="refsect3">
+<a name="fu-common-read-uint64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>A readable buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endian</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a>, e.g. <a href="../glib/glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS"><code class="literal">G_LITTLE_ENDIAN</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-read-uint64.returns"></a><h4>Returns</h4>
+<p> a value in host byte-order</p>
+</div>
+<p class="since">Since: 1.5.8</p>
 </div>
 <hr>
 <div class="refsect2">

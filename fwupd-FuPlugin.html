@@ -184,6 +184,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuPlugin.html#fu-plugin-add-possible-quirk-key" title="fu_plugin_add_possible_quirk_key ()">fu_plugin_add_possible_quirk_key</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a href="../glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
 </td>
 <td class="function_name">
@@ -861,6 +869,39 @@ specified then it is guessed using the <a href="../gobject/gobject-Type-Informat
 </table></div>
 </div>
 <p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-plugin-add-possible-quirk-key"></a><h3>fu_plugin_add_possible_quirk_key ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_plugin_add_possible_quirk_key (<em class="parameter"><code><a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a> *self</code></em>,
+                                  <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *possible_key</code></em>);</pre>
+<p>Adds a possible quirk key. If added by a plugin it should be namespaced
+using the plugin name, where possible.</p>
+<p>Plugins can use this method only in <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a></p>
+<div class="refsect3">
+<a name="fu-plugin-add-possible-quirk-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>possible_key</p></td>
+<td class="parameter_description"><p>A quirk string, e.g. <code class="literal">DfuVersion</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
 </div>
 <hr>
 <div class="refsect2">
