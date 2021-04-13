@@ -1247,6 +1247,7 @@
     <keyword type="constant" name="FU_DEVICE_INTERNAL_FLAG_MD_SET_ICON" link="fwupd-FuDevice.html#FU-DEVICE-INTERNAL-FLAG-MD-SET-ICON:CAPS"/>
     <keyword type="constant" name="FU_DEVICE_INTERNAL_FLAG_RETRY_OPEN" link="fwupd-FuDevice.html#FU-DEVICE-INTERNAL-FLAG-RETRY-OPEN:CAPS"/>
     <keyword type="constant" name="FU_DEVICE_INTERNAL_FLAG_REPLUG_MATCH_GUID" link="fwupd-FuDevice.html#FU-DEVICE-INTERNAL-FLAG-REPLUG-MATCH-GUID:CAPS"/>
+    <keyword type="constant" name="FU_DEVICE_INTERNAL_FLAG_INHERIT_ACTIVATION" link="fwupd-FuDevice.html#FU-DEVICE-INTERNAL-FLAG-INHERIT-ACTIVATION:CAPS"/>
     <keyword type="constant" name="FU_EFI_SIGNATURE_KIND_UNKNOWN" link="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-KIND-UNKNOWN:CAPS"/>
     <keyword type="constant" name="FU_EFI_SIGNATURE_KIND_SHA256" link="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-KIND-SHA256:CAPS"/>
     <keyword type="constant" name="FU_EFI_SIGNATURE_KIND_X509" link="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-KIND-X509:CAPS"/>
