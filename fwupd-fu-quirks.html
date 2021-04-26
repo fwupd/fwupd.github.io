@@ -203,6 +203,10 @@
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-quirks.html#FU-QUIRKS-BATTERY-THRESHOLD:CAPS" title="FU_QUIRKS_BATTERY_THRESHOLD">FU_QUIRKS_BATTERY_THRESHOLD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
 <td class="function_name"><a class="link" href="fwupd-fu-quirks.html#FU-QUIRKS-REMOVE-DELAY:CAPS" title="FU_QUIRKS_REMOVE_DELAY">FU_QUIRKS_REMOVE_DELAY</a></td>
 </tr>
 <tr>
@@ -455,6 +459,20 @@ using the plugin name, where possible.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-QUIRKS-LOAD-FLAG-NO-CACHE:CAPS"></a>FU_QUIRKS_LOAD_FLAG_NO_CACHE</p></td>
+<td class="enum_member_description">
+<p>Do not save to a persistent cache</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-QUIRKS-LOAD-FLAG-NO-VERIFY:CAPS"></a>FU_QUIRKS_LOAD_FLAG_NO_VERIFY</p></td>
+<td class="enum_member_description">
+<p>Do not check the key files for errors</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -601,6 +619,12 @@ using the plugin name, where possible.</p>
 <div class="refsect2">
 <a name="FU-QUIRKS-PRIORITY:CAPS"></a><h3>FU_QUIRKS_PRIORITY</h3>
 <pre class="programlisting">#define FU_QUIRKS_PRIORITY			"Priority"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-QUIRKS-BATTERY-THRESHOLD:CAPS"></a><h3>FU_QUIRKS_BATTERY_THRESHOLD</h3>
+<pre class="programlisting">#define FU_QUIRKS_BATTERY_THRESHOLD		"BatteryThreshold"
 </pre>
 </div>
 <hr>

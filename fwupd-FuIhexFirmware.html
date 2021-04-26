@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>fu-ihex-firmware: fwupd Reference Manual</title>
+<title>FuIhexFirmware: fwupd Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="fwupd Reference Manual">
 <link rel="up" href="plugin-reference.html" title="Plugin Reference">
 <link rel="prev" href="fwupd-fu-hwids.html" title="fu-hwids">
-<link rel="next" href="fwupd-fu-srec-firmware.html" title="fu-srec-firmware">
+<link rel="next" href="fwupd-FuSrecFirmware.html" title="FuSrecFirmware">
 <meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -15,24 +15,24 @@
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
 <td width="100%" align="left" class="shortcuts">
 <a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
-                  <a href="#fwupd-fu-ihex-firmware.description" class="shortcut">Description</a></span>
+                  <a href="#fwupd-FuIhexFirmware.description" class="shortcut">Description</a></span>
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
 <td><a accesskey="p" href="fwupd-fu-hwids.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
-<td><a accesskey="n" href="fwupd-fu-srec-firmware.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="fwupd-FuSrecFirmware.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
-<a name="fwupd-fu-ihex-firmware"></a><div class="titlepage"></div>
+<a name="fwupd-FuIhexFirmware"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
-<h2><span class="refentrytitle"><a name="fwupd-fu-ihex-firmware.top_of_page"></a>fu-ihex-firmware</span></h2>
-<p>fu-ihex-firmware — Ihex firmware image</p>
+<h2><span class="refentrytitle"><a name="fwupd-FuIhexFirmware.top_of_page"></a>FuIhexFirmware</span></h2>
+<p>FuIhexFirmware — Ihex firmware image</p>
 </td>
 <td class="gallery_image" valign="top" align="right"></td>
 </tr></table></div>
 <div class="refsect1">
-<a name="fwupd-fu-ihex-firmware.functions"></a><h2>Functions</h2>
+<a name="fwupd-FuIhexFirmware.functions"></a><h2>Functions</h2>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_proto_type">
@@ -44,7 +44,7 @@
 <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
 </td>
 <td class="function_name">
-<a class="link" href="fwupd-fu-ihex-firmware.html#fu-ihex-firmware-new" title="fu_ihex_firmware_new ()">fu_ihex_firmware_new</a> <span class="c_punctuation">()</span>
+<a class="link" href="fwupd-FuIhexFirmware.html#fu-ihex-firmware-new" title="fu_ihex_firmware_new ()">fu_ihex_firmware_new</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -52,14 +52,22 @@
 <a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
 </td>
 <td class="function_name">
-<a class="link" href="fwupd-fu-ihex-firmware.html#fu-ihex-firmware-get-records" title="fu_ihex_firmware_get_records ()">fu_ihex_firmware_get_records</a> <span class="c_punctuation">()</span>
+<a class="link" href="fwupd-FuIhexFirmware.html#fu-ihex-firmware-get-records" title="fu_ihex_firmware_get_records ()">fu_ihex_firmware_get_records</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuIhexFirmware.html#fu-ihex-firmware-set-padding-value" title="fu_ihex_firmware_set_padding_value ()">fu_ihex_firmware_set_padding_value</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
-<a name="fwupd-fu-ihex-firmware.other"></a><h2>Types and Values</h2>
+<a name="fwupd-FuIhexFirmware.other"></a><h2>Types and Values</h2>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="other_proto_type">
@@ -68,54 +76,58 @@
 <tbody>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-TYPE-IHEX-FIRMWARE:CAPS" title="FU_TYPE_IHEX_FIRMWARE">FU_TYPE_IHEX_FIRMWARE</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-TYPE-IHEX-FIRMWARE:CAPS" title="FU_TYPE_IHEX_FIRMWARE">FU_TYPE_IHEX_FIRMWARE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmwareClass" title="struct FuIhexFirmwareClass">FuIhexFirmwareClass</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword"> </td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FuIhexFirmwareRecord" title="FuIhexFirmwareRecord">FuIhexFirmwareRecord</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmwareRecord" title="FuIhexFirmwareRecord">FuIhexFirmwareRecord</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-DATA:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_DATA">FU_IHEX_FIRMWARE_RECORD_TYPE_DATA</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-DATA:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_DATA">FU_IHEX_FIRMWARE_RECORD_TYPE_DATA</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EOF:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EOF">FU_IHEX_FIRMWARE_RECORD_TYPE_EOF</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EOF:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EOF">FU_IHEX_FIRMWARE_RECORD_TYPE_EOF</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EXTENDED-SEGMENT:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_SEGMENT">FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_SEGMENT</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EXTENDED-SEGMENT:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_SEGMENT">FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_SEGMENT</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-START-SEGMENT:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_START_SEGMENT">FU_IHEX_FIRMWARE_RECORD_TYPE_START_SEGMENT</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-START-SEGMENT:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_START_SEGMENT">FU_IHEX_FIRMWARE_RECORD_TYPE_START_SEGMENT</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EXTENDED-LINEAR:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_LINEAR">FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_LINEAR</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-EXTENDED-LINEAR:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_LINEAR">FU_IHEX_FIRMWARE_RECORD_TYPE_EXTENDED_LINEAR</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-START-LINEAR:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_START_LINEAR">FU_IHEX_FIRMWARE_RECORD_TYPE_START_LINEAR</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-START-LINEAR:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_START_LINEAR">FU_IHEX_FIRMWARE_RECORD_TYPE_START_LINEAR</a></td>
 </tr>
 <tr>
 <td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-SIGNATURE:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_SIGNATURE">FU_IHEX_FIRMWARE_RECORD_TYPE_SIGNATURE</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FU-IHEX-FIRMWARE-RECORD-TYPE-SIGNATURE:CAPS" title="FU_IHEX_FIRMWARE_RECORD_TYPE_SIGNATURE">FU_IHEX_FIRMWARE_RECORD_TYPE_SIGNATURE</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword"> </td>
-<td class="function_name"><a class="link" href="fwupd-fu-ihex-firmware.html#FuIhexFirmware" title="FuIhexFirmware">FuIhexFirmware</a></td>
+<td class="function_name"><a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmware" title="FuIhexFirmware">FuIhexFirmware</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
-<a name="fwupd-fu-ihex-firmware.description"></a><h2>Description</h2>
+<a name="fwupd-FuIhexFirmware.description"></a><h2>Description</h2>
 <p>An object that represents a Ihex firmware image.</p>
 <p>See also: <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
 </div>
 <div class="refsect1">
-<a name="fwupd-fu-ihex-firmware.functions_details"></a><h2>Functions</h2>
+<a name="fwupd-FuIhexFirmware.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="fu-ihex-firmware-new"></a><h3>fu_ihex_firmware_new ()</h3>
 <pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
@@ -127,7 +139,7 @@ fu_ihex_firmware_new (<em class="parameter"><code><span class="type">void</span>
 <div class="refsect2">
 <a name="fu-ihex-firmware-get-records"></a><h3>fu_ihex_firmware_get_records ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
-fu_ihex_firmware_get_records (<em class="parameter"><code><a class="link" href="fwupd-fu-ihex-firmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a> *self</code></em>);</pre>
+fu_ihex_firmware_get_records (<em class="parameter"><code><a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a> *self</code></em>);</pre>
 <p>Returns the raw lines from tokenization.</p>
 <p>This might be useful if the plugin is expecting the hex file to be a list
 of operations, rather than a simple linear image with filled holes.</p>
@@ -141,7 +153,7 @@ of operations, rather than a simple linear image with filled holes.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>self</p></td>
-<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-ihex-firmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a></p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
@@ -153,12 +165,53 @@ of operations, rather than a simple linear image with filled holes.</p>
 </div>
 <p class="since">Since: 1.3.4</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fu-ihex-firmware-set-padding-value"></a><h3>fu_ihex_firmware_set_padding_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_ihex_firmware_set_padding_value (<em class="parameter"><code><a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a> *self</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> padding_value</code></em>);</pre>
+<p>Set the padding value to fill incomplete address ranges.</p>
+<p>The default value of zero can be changed to <code class="literal">0xff</code> if functions like
+<a class="link" href="fwupd-fu-common.html#fu-common-bytes-is-empty" title="fu_common_bytes_is_empty ()"><code class="function">fu_common_bytes_is_empty()</code></a> are going to be used on subsections of the data.</p>
+<div class="refsect3">
+<a name="fu-ihex-firmware-set-padding-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuIhexFirmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>padding_value</p></td>
+<td class="parameter_description"><p>the byte used to pad the image</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
 </div>
 <div class="refsect1">
-<a name="fwupd-fu-ihex-firmware.other_details"></a><h2>Types and Values</h2>
+<a name="fwupd-FuIhexFirmware.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
 <a name="FU-TYPE-IHEX-FIRMWARE:CAPS"></a><h3>FU_TYPE_IHEX_FIRMWARE</h3>
 <pre class="programlisting">#define FU_TYPE_IHEX_FIRMWARE (fu_ihex_firmware_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuIhexFirmwareClass"></a><h3>struct FuIhexFirmwareClass</h3>
+<pre class="programlisting">struct FuIhexFirmwareClass {
+	FuFirmwareClass		 parent_class;
+};
 </pre>
 </div>
 <hr>

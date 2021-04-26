@@ -216,6 +216,13 @@
 </td>
 </tr>
 <tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-bytes-get-data-safe" title="fu_bytes_get_data_safe ()">fu_bytes_get_data_safe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
 <td class="function_type">
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
@@ -356,6 +363,22 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-byte-array-set-size-full" title="fu_byte_array_set_size_full ()">fu_byte_array_set_size_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-byte-array-align-up" title="fu_byte_array_align_up ()">fu_byte_array_align_up</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-byte-array-append-uint8" title="fu_byte_array_append_uint8 ()">fu_byte_array_append_uint8</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -381,6 +404,14 @@
 </td>
 <td class="function_name">
 <a class="link" href="fwupd-fu-common.html#fu-byte-array-append-uint64" title="fu_byte_array_append_uint64 ()">fu_byte_array_append_uint64</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-byte-array-append-bytes" title="fu_byte_array_append_bytes ()">fu_byte_array_append_bytes</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -513,14 +544,6 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
-</td>
-<td class="function_name">
-<a class="link" href="fwupd-fu-common.html#fu-common-is-cpu-intel" title="fu_common_is_cpu_intel ()">fu_common_is_cpu_intel</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
 <a class="link" href="fwupd-fu-common.html#FuCpuVendor" title="enum FuCpuVendor"><span class="returnvalue">FuCpuVendor</span></a>
 </td>
 <td class="function_name">
@@ -623,6 +646,45 @@
 <a class="link" href="fwupd-fu-common.html#fu-common-uri-get-scheme" title="fu_common_uri_get_scheme ()">fu_common_uri_get_scheme</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-common-align-up" title="fu_common_align_up ()">fu_common_align_up</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-battery-state-to-string" title="fu_battery_state_to_string ()">fu_battery_state_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-xmlb-builder-insert-kv" title="fu_xmlb_builder_insert_kv ()">fu_xmlb_builder_insert_kv</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-xmlb-builder-insert-kx" title="fu_xmlb_builder_insert_kx ()">fu_xmlb_builder_insert_kx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-common.html#fu-xmlb-builder-insert-kb" title="fu_xmlb_builder_insert_kb ()">fu_xmlb_builder_insert_kb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -653,6 +715,14 @@
 <tr>
 <td class="datatype_keyword">enum</td>
 <td class="function_name"><a class="link" href="fwupd-fu-common.html#FuCpuVendor" title="enum FuCpuVendor">FuCpuVendor</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-common.html#FU-BATTERY-VALUE-INVALID:CAPS" title="FU_BATTERY_VALUE_INVALID">FU_BATTERY_VALUE_INVALID</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-fu-common.html#FuBatteryState" title="enum FuBatteryState">FuBatteryState</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1506,6 +1576,53 @@ the block is already aligned then the original <em class="parameter"><code>bytes
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-bytes-get-data-safe"></a><h3>fu_bytes_get_data_safe ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+fu_bytes_get_data_safe (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *bufsz</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the byte data in the <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. This data should not be modified.
+This function will always return the same pointer for a given <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>.</p>
+<p>If the size of <em class="parameter"><code>bytes</code></em>
+ is zero, then <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned and the <em class="parameter"><code>error</code></em>
+ is set,
+which differs in behavior to that of <a href="../glib/glib-Byte-Arrays.html#g-bytes-get-data"><code class="function">g_bytes_get_data()</code></a>.</p>
+<p>This may be useful when calling <a href="../glib/glib-File-Utilities.html#g-mapped-file-new"><code class="function">g_mapped_file_new()</code></a> on a zero-length file.</p>
+<div class="refsect3">
+<a name="fu-bytes-get-data-safe.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bufsz</p></td>
+<td class="parameter_description"><p>location to return size of byte data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-bytes-get-data-safe.returns"></a><h4>Returns</h4>
+<p> a pointer to the byte data, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-common-bytes-is-empty"></a><h3>fu_common_bytes_is_empty ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 fu_common_bytes_is_empty (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
@@ -1919,7 +2036,7 @@ to copy from</p></td>
 <tr>
 <td class="parameter_name"><p>value</p></td>
 <td class="parameter_description"><p>the parsed value. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
@@ -1979,7 +2096,7 @@ to copy from</p></td>
 <tr>
 <td class="parameter_name"><p>value</p></td>
 <td class="parameter_description"><p>the parsed value. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>endian</p></td>
@@ -2044,7 +2161,7 @@ to copy from</p></td>
 <tr>
 <td class="parameter_name"><p>value</p></td>
 <td class="parameter_description"><p>the parsed value. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>endian</p></td>
@@ -2109,7 +2226,7 @@ to copy from</p></td>
 <tr>
 <td class="parameter_name"><p>value</p></td>
 <td class="parameter_description"><p>the parsed value. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>endian</p></td>
@@ -2418,6 +2535,85 @@ fu_byte_array_set_size (<em class="parameter"><code><a href="../glib/glib-Byte-A
 </div>
 <hr>
 <div class="refsect2">
+<a name="fu-byte-array-set-size-full"></a><h3>fu_byte_array_set_size_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_byte_array_set_size_full (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> length</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> data</code></em>);</pre>
+<p>Sets the size of the GByteArray, expanding with <em class="parameter"><code>data</code></em>
+ as required.</p>
+<div class="refsect3">
+<a name="fu-byte-array-set-size-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the new size of the GByteArray</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>the byte used to pad the array</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-byte-array-align-up"></a><h3>fu_byte_array_align_up ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_byte_array_align_up (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> alignment</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> data</code></em>);</pre>
+<p>Align a byte array length to a power of 2 boundary, where <em class="parameter"><code>alignment</code></em>
+ is the
+bit position to align to. If <em class="parameter"><code>alignment</code></em>
+ is zero then <em class="parameter"><code>array</code></em>
+ is unchanged.</p>
+<div class="refsect3">
+<a name="fu-byte-array-align-up.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alignment</p></td>
+<td class="parameter_description"><p>align to this power of 2</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>the byte used to pad the array</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="fu-byte-array-append-uint8"></a><h3>fu_byte_array_append_uint8 ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 fu_byte_array_append_uint8 (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
@@ -2551,6 +2747,37 @@ fu_byte_array_append_uint64 (<em class="parameter"><code><a href="../glib/glib-B
 <tr>
 <td class="parameter_name"><p>endian</p></td>
 <td class="parameter_description"><p><a class="link" href="fwupd-fu-common.html#FuEndianType" title="FuEndianType"><span class="type">FuEndianType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-byte-array-append-bytes"></a><h3>fu_byte_array_append_bytes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_byte_array_append_bytes (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
+<p>Adds the contents of a GBytes to a byte array</p>
+<div class="refsect3">
+<a name="fu-byte-array-append-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>array</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -3188,22 +3415,6 @@ fu_common_cpuid (<em class="parameter"><code><a href="../glib/glib-Basic-Types.h
 </div>
 <hr>
 <div class="refsect2">
-<a name="fu-common-is-cpu-intel"></a><h3>fu_common_is_cpu_intel ()</h3>
-<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
-fu_common_is_cpu_intel (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
-<div class="warning">
-<p><code class="literal">fu_common_is_cpu_intel</code> has been deprecated since version 1.5.5 and should not be used in newly-written code.</p>
-<p>Use <a class="link" href="fwupd-fu-common.html#fu-common-get-cpu-vendor" title="fu_common_get_cpu_vendor ()"><code class="function">fu_common_get_cpu_vendor()</code></a> instead.</p>
-</div>
-<p>Uses CPUID to discover the CPU vendor and check if it is Intel.</p>
-<div class="refsect3">
-<a name="fu-common-is-cpu-intel.returns"></a><h4>Returns</h4>
-<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the vendor was Intel.</p>
-</div>
-<p class="since">Since: 1.5.0</p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="fu-common-get-cpu-vendor"></a><h3>fu_common_get_cpu_vendor ()</h3>
 <pre class="programlisting"><a class="link" href="fwupd-fu-common.html#FuCpuVendor" title="enum FuCpuVendor"><span class="returnvalue">FuCpuVendor</span></a>
 fu_common_get_cpu_vendor (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
@@ -3589,6 +3800,189 @@ fu_common_uri_get_scheme (<em class="parameter"><code>const <a href="../glib/gli
 </div>
 <p class="since">Since: 1.5.6</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="fu-common-align-up"></a><h3>fu_common_align_up ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>
+fu_common_align_up (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> value</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> alignment</code></em>);</pre>
+<p>Align a value to a power of 2 boundary, where <em class="parameter"><code>alignment</code></em>
+ is the bit position
+to align to. If <em class="parameter"><code>alignment</code></em>
+ is zero then <em class="parameter"><code>value</code></em>
+ is always returned unchanged.</p>
+<div class="refsect3">
+<a name="fu-common-align-up.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to align</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alignment</p></td>
+<td class="parameter_description"><p>align to this power of 2, where 0x1F is the maximum value of 2GB</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-common-align-up.returns"></a><h4>Returns</h4>
+<p> aligned value, which will be the same as <em class="parameter"><code>value</code></em>
+if already aligned,
+or <a href="../glib/glib-Basic-Types.html#G-MAXSIZE:CAPS"><code class="literal">G_MAXSIZE</code></a> if the value would overflow</p>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-battery-state-to-string"></a><h3>fu_battery_state_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_battery_state_to_string (<em class="parameter"><code><a class="link" href="fwupd-fu-common.html#FuBatteryState" title="enum FuBatteryState"><span class="type">FuBatteryState</span></a> battery_state</code></em>);</pre>
+<p>Converts an enumerated type to a string.</p>
+<div class="refsect3">
+<a name="fu-battery-state-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>battery_state</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-common.html#FuBatteryState" title="enum FuBatteryState"><span class="type">FuBatteryState</span></a>, e.g. <a class="link" href="fwupd-fu-common.html#FU-BATTERY-STATE-FULLY-CHARGED:CAPS"><code class="literal">FU_BATTERY_STATE_FULLY_CHARGED</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-battery-state-to-string.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid</p>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-xmlb-builder-insert-kv"></a><h3>fu_xmlb_builder_insert_kv ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_xmlb_builder_insert_kv (<em class="parameter"><code><a href="../libxmlb/libxmlb-XbBuilderNode.html#XbBuilderNode"><span class="type">XbBuilderNode</span></a> *bn</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Convenience function to add an XML node with a string value. If <em class="parameter"><code>value</code></em>
+ is <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+then no member is added.</p>
+<div class="refsect3">
+<a name="fu-xmlb-builder-insert-kv.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bn</p></td>
+<td class="parameter_description"><p><span class="type">JsonBuilder</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>string key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>string value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-xmlb-builder-insert-kx"></a><h3>fu_xmlb_builder_insert_kx ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_xmlb_builder_insert_kx (<em class="parameter"><code><a href="../libxmlb/libxmlb-XbBuilderNode.html#XbBuilderNode"><span class="type">XbBuilderNode</span></a> *bn</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> value</code></em>);</pre>
+<p>Convenience function to add an XML node with a integer value. If <em class="parameter"><code>value</code></em>
+ is 0
+then no member is added.</p>
+<div class="refsect3">
+<a name="fu-xmlb-builder-insert-kx.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bn</p></td>
+<td class="parameter_description"><p><span class="type">JsonBuilder</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>string key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>integer value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-xmlb-builder-insert-kb"></a><h3>fu_xmlb_builder_insert_kb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_xmlb_builder_insert_kb (<em class="parameter"><code><a href="../libxmlb/libxmlb-XbBuilderNode.html#XbBuilderNode"><span class="type">XbBuilderNode</span></a> *bn</code></em>,
+                           <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);</pre>
+<p>Convenience function to add an XML node with a boolean value.</p>
+<div class="refsect3">
+<a name="fu-xmlb-builder-insert-kb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bn</p></td>
+<td class="parameter_description"><p><span class="type">JsonBuilder</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>string key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>boolean value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6.0</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="fwupd-fu-common.other_details"></a><h2>Types and Values</h2>
@@ -3826,6 +4220,66 @@ fu_common_uri_get_scheme (<em class="parameter"><code>const <a href="../glib/gli
 <td class="enum_member_name"><p><a name="FU-CPU-VENDOR-AMD:CAPS"></a>FU_CPU_VENDOR_AMD</p></td>
 <td class="enum_member_description">
 <p>AMD</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-BATTERY-VALUE-INVALID:CAPS"></a><h3>FU_BATTERY_VALUE_INVALID</h3>
+<pre class="programlisting">#define FU_BATTERY_VALUE_INVALID			101
+</pre>
+<p>This value signifies the battery level is either unset, or the value cannot
+be discovered.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuBatteryState"></a><h3>enum FuBatteryState</h3>
+<p>The device battery state.</p>
+<div class="refsect3">
+<a name="FuBatteryState.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FU-BATTERY-STATE-UNKNOWN:CAPS"></a>FU_BATTERY_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>Unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-BATTERY-STATE-CHARGING:CAPS"></a>FU_BATTERY_STATE_CHARGING</p></td>
+<td class="enum_member_description">
+<p>Charging</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-BATTERY-STATE-DISCHARGING:CAPS"></a>FU_BATTERY_STATE_DISCHARGING</p></td>
+<td class="enum_member_description">
+<p>Discharging</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-BATTERY-STATE-EMPTY:CAPS"></a>FU_BATTERY_STATE_EMPTY</p></td>
+<td class="enum_member_description">
+<p>Empty</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-BATTERY-STATE-FULLY-CHARGED:CAPS"></a>FU_BATTERY_STATE_FULLY_CHARGED</p></td>
+<td class="enum_member_description">
+<p>Fully charged</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>

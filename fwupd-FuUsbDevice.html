@@ -411,13 +411,7 @@ fu_usb_device_find_udev_device (<em class="parameter"><code><a class="link" href
 <a name="FuUsbDeviceClass"></a><h3>struct FuUsbDeviceClass</h3>
 <pre class="programlisting">struct FuUsbDeviceClass {
 	FuDeviceClass parent_class;
-	gboolean	 (*open)		(FuUsbDevice		*device,
-						 GError			**error);
-	gboolean	 (*close)		(FuUsbDevice		*device,
-						 GError			**error);
-	gboolean	 (*probe)		(FuUsbDevice		*device,
-						 GError			**error);
-	gpointer __reserved[28];
+	gpointer __reserved[31];
 };
 </pre>
 </div>
