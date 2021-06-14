@@ -1,0 +1,1690 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin.Device</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin.Device"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.Device"/>
+  <meta name="twitter:title" content="FwupdPlugin.Device"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Device"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.6.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Device.html#description">Device</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.Device.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Device.activate.html">activate</a>
+  
+    <a class="method" href="method.Device.add_child.html">add_child</a>
+  
+    <a class="method" href="method.Device.add_counterpart_guid.html">add_counterpart_guid</a>
+  
+    <a class="method" href="method.Device.add_flag.html">add_flag</a>
+  
+    <a class="method" href="method.Device.add_guid.html">add_guid</a>
+  
+    <a class="method" href="method.Device.add_instance_id.html">add_instance_id</a>
+  
+    <a class="method" href="method.Device.add_instance_id_full.html">add_instance_id_full</a>
+  
+    <a class="method" href="method.Device.add_internal_flag.html">add_internal_flag</a>
+  
+    <a class="method" href="method.Device.add_parent_guid.html">add_parent_guid</a>
+  
+    <a class="method" href="method.Device.add_possible_plugin.html">add_possible_plugin</a>
+  
+    <a class="method" href="method.Device.add_security_attrs.html">add_security_attrs</a>
+  
+    <a class="method" href="method.Device.attach.html">attach</a>
+  
+    <a class="method" href="method.Device.bind_driver.html">bind_driver</a>
+  
+    <a class="method" href="method.Device.cleanup.html">cleanup</a>
+  
+    <a class="method" href="method.Device.close.html">close</a>
+  
+    <a class="method" href="method.Device.convert_instance_ids.html">convert_instance_ids</a>
+  
+    <a class="method" href="method.Device.detach.html">detach</a>
+  
+    <a class="method" href="method.Device.dump_firmware.html">dump_firmware</a>
+  
+    <a class="method" href="method.Device.ensure_id.html">ensure_id</a>
+  
+    <a class="method" href="method.Device.get_alternate.html">get_alternate</a>
+  
+    <a class="method" href="method.Device.get_alternate_id.html">get_alternate_id</a>
+  
+    <a class="method" href="method.Device.get_backend_id.html">get_backend_id</a>
+  
+    <a class="method" href="method.Device.get_battery_level.html">get_battery_level</a>
+  
+    <a class="method" href="method.Device.get_battery_threshold.html">get_battery_threshold</a>
+  
+    <a class="method" href="method.Device.get_children.html">get_children</a>
+  
+    <a class="method" href="method.Device.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Device.get_custom_flags.html">get_custom_flags</a>
+  
+    <a class="method" href="method.Device.get_equivalent_id.html">get_equivalent_id</a>
+  
+    <a class="method" href="method.Device.get_firmware_size_max.html">get_firmware_size_max</a>
+  
+    <a class="method" href="method.Device.get_firmware_size_min.html">get_firmware_size_min</a>
+  
+    <a class="method" href="method.Device.get_guids_as_str.html">get_guids_as_str</a>
+  
+    <a class="method" href="method.Device.get_logical_id.html">get_logical_id</a>
+  
+    <a class="method" href="method.Device.get_metadata.html">get_metadata</a>
+  
+    <a class="method" href="method.Device.get_metadata_boolean.html">get_metadata_boolean</a>
+  
+    <a class="method" href="method.Device.get_metadata_integer.html">get_metadata_integer</a>
+  
+    <a class="method" href="method.Device.get_order.html">get_order</a>
+  
+    <a class="method" href="method.Device.get_parent.html">get_parent</a>
+  
+    <a class="method" href="method.Device.get_parent_guids.html">get_parent_guids</a>
+  
+    <a class="method" href="method.Device.get_physical_id.html">get_physical_id</a>
+  
+    <a class="method" href="method.Device.get_possible_plugins.html">get_possible_plugins</a>
+  
+    <a class="method" href="method.Device.get_priority.html">get_priority</a>
+  
+    <a class="method" href="method.Device.get_progress.html">get_progress</a>
+  
+    <a class="method" href="method.Device.get_proxy.html">get_proxy</a>
+  
+    <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
+  
+    <a class="method" href="method.Device.get_release_default.html">get_release_default</a>
+  
+    <a class="method" href="method.Device.get_remove_delay.html">get_remove_delay</a>
+  
+    <a class="method" href="method.Device.get_root.html">get_root</a>
+  
+    <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
+  
+    <a class="method" href="method.Device.get_status.html">get_status</a>
+  
+    <a class="method" href="method.Device.has_custom_flag.html">has_custom_flag</a>
+  
+    <a class="method" href="method.Device.has_guid.html">has_guid</a>
+  
+    <a class="method" href="method.Device.has_internal_flag.html">has_internal_flag</a>
+  
+    <a class="method" href="method.Device.has_parent_guid.html">has_parent_guid</a>
+  
+    <a class="method" href="method.Device.incorporate.html">incorporate</a>
+  
+    <a class="method" href="method.Device.incorporate_flag.html">incorporate_flag</a>
+  
+    <a class="method" href="method.Device.inhibit.html">inhibit</a>
+  
+    <a class="method" href="method.Device.open.html">open</a>
+  
+    <a class="method" href="method.Device.poll.html">poll</a>
+  
+    <a class="method" href="method.Device.prepare.html">prepare</a>
+  
+    <a class="method" href="method.Device.prepare_firmware.html">prepare_firmware</a>
+  
+    <a class="method" href="method.Device.probe.html">probe</a>
+  
+    <a class="method" href="method.Device.probe_invalidate.html">probe_invalidate</a>
+  
+    <a class="method" href="method.Device.read_firmware.html">read_firmware</a>
+  
+    <a class="method" href="method.Device.reload.html">reload</a>
+  
+    <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
+  
+    <a class="method" href="method.Device.remove_internal_flag.html">remove_internal_flag</a>
+  
+    <a class="method" href="method.Device.remove_metadata.html">remove_metadata</a>
+  
+    <a class="method" href="method.Device.report_metadata_post.html">report_metadata_post</a>
+  
+    <a class="method" href="method.Device.report_metadata_pre.html">report_metadata_pre</a>
+  
+    <a class="method" href="method.Device.rescan.html">rescan</a>
+  
+    <a class="method" href="method.Device.retry.html">retry</a>
+  
+    <a class="method" href="method.Device.retry_add_recovery.html">retry_add_recovery</a>
+  
+    <a class="method" href="method.Device.retry_full.html">retry_full</a>
+  
+    <a class="method" href="method.Device.retry_set_delay.html">retry_set_delay</a>
+  
+    <a class="method" href="method.Device.set_alternate.html">set_alternate</a>
+  
+    <a class="method" href="method.Device.set_alternate_id.html">set_alternate_id</a>
+  
+    <a class="method" href="method.Device.set_backend_id.html">set_backend_id</a>
+  
+    <a class="method" href="method.Device.set_battery_level.html">set_battery_level</a>
+  
+    <a class="method" href="method.Device.set_battery_threshold.html">set_battery_threshold</a>
+  
+    <a class="method" href="method.Device.set_context.html">set_context</a>
+  
+    <a class="method" href="method.Device.set_custom_flags.html">set_custom_flags</a>
+  
+    <a class="method" href="method.Device.set_equivalent_id.html">set_equivalent_id</a>
+  
+    <a class="method" href="method.Device.set_firmware_size.html">set_firmware_size</a>
+  
+    <a class="method" href="method.Device.set_firmware_size_max.html">set_firmware_size_max</a>
+  
+    <a class="method" href="method.Device.set_firmware_size_min.html">set_firmware_size_min</a>
+  
+    <a class="method" href="method.Device.set_id.html">set_id</a>
+  
+    <a class="method" href="method.Device.set_logical_id.html">set_logical_id</a>
+  
+    <a class="method" href="method.Device.set_metadata.html">set_metadata</a>
+  
+    <a class="method" href="method.Device.set_metadata_boolean.html">set_metadata_boolean</a>
+  
+    <a class="method" href="method.Device.set_metadata_integer.html">set_metadata_integer</a>
+  
+    <a class="method" href="method.Device.set_name.html">set_name</a>
+  
+    <a class="method" href="method.Device.set_order.html">set_order</a>
+  
+    <a class="method" href="method.Device.set_parent.html">set_parent</a>
+  
+    <a class="method" href="method.Device.set_physical_id.html">set_physical_id</a>
+  
+    <a class="method" href="method.Device.set_poll_interval.html">set_poll_interval</a>
+  
+    <a class="method" href="method.Device.set_priority.html">set_priority</a>
+  
+    <a class="method" href="method.Device.set_progress.html">set_progress</a>
+  
+    <a class="method" href="method.Device.set_progress_full.html">set_progress_full</a>
+  
+    <a class="method" href="method.Device.set_proxy.html">set_proxy</a>
+  
+    <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
+  
+    <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
+  
+    <a class="method" href="method.Device.set_status.html">set_status</a>
+  
+    <a class="method" href="method.Device.set_version.html">set_version</a>
+  
+    <a class="method" href="method.Device.set_version_bootloader.html">set_version_bootloader</a>
+  
+    <a class="method" href="method.Device.set_version_format.html">set_version_format</a>
+  
+    <a class="method" href="method.Device.set_version_lowest.html">set_version_lowest</a>
+  
+    <a class="method" href="method.Device.setup.html">setup</a>
+  
+    <a class="method" href="method.Device.sleep_with_progress.html">sleep_with_progress</a>
+  
+    <a class="method" href="method.Device.to_string.html">to_string</a>
+  
+    <a class="method" href="method.Device.unbind_driver.html">unbind_driver</a>
+  
+    <a class="method" href="method.Device.uninhibit.html">uninhibit</a>
+  
+    <a class="method" href="method.Device.write_firmware.html">write_firmware</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Device.backend-id.html">backend-id</a>
+  
+    <a class="property" href="property.Device.battery-level.html">battery-level</a>
+  
+    <a class="property" href="property.Device.battery-threshold.html">battery-threshold</a>
+  
+    <a class="property" href="property.Device.context.html">context</a>
+  
+    <a class="property" href="property.Device.logical-id.html">logical-id</a>
+  
+    <a class="property" href="property.Device.parent.html">parent</a>
+  
+    <a class="property" href="property.Device.physical-id.html">physical-id</a>
+  
+    <a class="property" href="property.Device.progress.html">progress</a>
+  
+    <a class="property" href="property.Device.proxy.html">proxy</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Device.internal_flag_from_string.html">internal_flag_from_string</a>
+  
+    <a class="func" href="type_func.Device.internal_flag_to_string.html">internal_flag_to_string</a>
+  
+  </div>
+</div>
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">FwupdPlugin</a><span class="sep" role="presentation"></span>Device</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-device.c#L29">[src]</a>
+          
+        </h4>
+
+        <pre><code>class FwupdPlugin.Device : Fwupd.Device {
+  parent_instance: FwupdDevice
+}</pre></code>
+
+        <div class="docblock">
+          <p>A physical or logical device that is exported to the&nbsp;daemon.</p>
+<p>See also: <a href="class.DeviceLocker.html"><code>FuDeviceLocker</code></a>, <a href="javascript:void(0)" data-namespace="Fwupd" data-link="class.Device.html" class="external"><code>FwupdDevice</code></a></p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class">FwupdDevice</a></li>
+          
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.Device.new.html">fu_device_new</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new <code>Fudevice</code>.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 0.1.0</p></div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Device.activate.html">fu_device_activate</a></h6>
+          <div class="docblock">
+            <p>Activates up a device, which normally means the device switches to a new
+firmware version. This should only be called when data loss cannot&nbsp;occur.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_child.html">fu_device_add_child</a></h6>
+          <div class="docblock">
+            <p>Sets any child device. An child device is logically linked to the primary
+device in some&nbsp;way.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_counterpart_guid.html">fu_device_add_counterpart_guid</a></h6>
+          <div class="docblock">
+            <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
+is converted to a <span class="caps">GUID</span> using&nbsp;fwupd_guid_hash_string().</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_flag.html">fu_device_add_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a device flag to the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_guid.html">fu_device_add_guid</a></h6>
+          <div class="docblock">
+            <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
+is converted to a <span class="caps">GUID</span> using&nbsp;fwupd_guid_hash_string().</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_instance_id.html">fu_device_add_instance_id</a></h6>
+          <div class="docblock">
+            <p>Adds an instance <span class="caps">ID</span> to the device. If the <code>instance_id</code> argument is already a
+valid <span class="caps">GUID</span> then fu_device_add_guid() should be used&nbsp;instead.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_instance_id_full.html">fu_device_add_instance_id_full</a></h6>
+          <div class="docblock">
+            <p>Adds an instance <span class="caps">ID</span> with all parameters&nbsp;set.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.9</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_internal_flag.html">fu_device_add_internal_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_parent_guid.html">fu_device_add_parent_guid</a></h6>
+          <div class="docblock">
+            <p>Sets any parent device using a <span class="caps">GUID</span>. An parent device is logically linked to
+the primary device in some way and can be added before or after <code>self</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_possible_plugin.html">fu_device_add_possible_plugin</a></h6>
+          <div class="docblock">
+            <p>Adds a plugin name to the list of plugins that <em>might</em> be able to handle this
+device. This is tyically called from a quirk&nbsp;handler.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_security_attrs.html">fu_device_add_security_attrs</a></h6>
+          <div class="docblock">
+            <p>Adds <span class="caps">HSI</span> security&nbsp;attributes.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.attach.html">fu_device_attach</a></h6>
+          <div class="docblock">
+            <p>Attaches a device from the bootloader into application&nbsp;mode.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.bind_driver.html">fu_device_bind_driver</a></h6>
+          <div class="docblock">
+            <p>Binds a driver to the device, which normally means the kernel driver takes
+control of the&nbsp;hardware.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.cleanup.html">fu_device_cleanup</a></h6>
+          <div class="docblock">
+            <p>Cleans up a device after an update. A different plugin can handle each of
+FuDevice-&gt;write_firmware(), FuDevice-&gt;attach() and&nbsp;FuDevice-&gt;cleanup().</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.close.html">fu_device_close</a></h6>
+          <div class="docblock">
+            <p>Closes a device, optionally running a object-specific&nbsp;vfunc.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.convert_instance_ids.html">fu_device_convert_instance_ids</a></h6>
+          <div class="docblock">
+            <p>Converts all the Device Instance IDs added using fu_device_add_instance_id()
+into actual GUIDs, <strong>unless</strong> <code>FU_DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS</code> has
+been&nbsp;set.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.detach.html">fu_device_detach</a></h6>
+          <div class="docblock">
+            <p>Detaches a device from the application into bootloader&nbsp;mode.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.dump_firmware.html">fu_device_dump_firmware</a></h6>
+          <div class="docblock">
+            <p>Reads the raw firmware image from the device by calling a plugin-specific
+vfunc. This raw firmware image may contain serial numbers or device-specific
+configuration but should be a byte-for-byte match compared to using an
+external <span class="caps">SPI</span>&nbsp;programmer.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.ensure_id.html">fu_device_ensure_id</a></h6>
+          <div class="docblock">
+            <p>If not already set, generates a device <span class="caps">ID</span> with the optional physical and
+logical&nbsp;IDs.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_alternate.html">fu_device_get_alternate</a></h6>
+          <div class="docblock">
+            <p>Gets any alternate device. An alternate device may be linked to the primary
+device in some&nbsp;way.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_alternate_id.html">fu_device_get_alternate_id</a></h6>
+          <div class="docblock">
+            <p>Gets any alternate device <span class="caps">ID</span>. An alternate device may be linked to the primary
+device in some&nbsp;way.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_backend_id.html">fu_device_get_backend_id</a></h6>
+          <div class="docblock">
+            <p>Gets the <span class="caps">ID</span> set for the device as recognized by the backend. This is typically
+a Linux sysfs path or <span class="caps">USB</span> platform <span class="caps">ID</span>. If unset, it also falls back to the
+physical <span class="caps">ID</span> as this may be the same&nbsp;value.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_battery_level.html">fu_device_get_battery_level</a></h6>
+          <div class="docblock">
+            <p>Returns the battery&nbsp;level.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_battery_threshold.html">fu_device_get_battery_threshold</a></h6>
+          <div class="docblock">
+            <p>Returns the battery threshold under which a firmware update cannot be&nbsp;performed.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_children.html">fu_device_get_children</a></h6>
+          <div class="docblock">
+            <p>Gets any child devices. A child device is logically &#8220;below&#8221; the current
+device and this may be reflected in client&nbsp;tools.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_context.html">fu_device_get_context</a></h6>
+          <div class="docblock">
+            <p>Gets the context assigned for this&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_custom_flags.html">fu_device_get_custom_flags</a></h6>
+          <div class="docblock">
+            <p>Gets the custom flags for the device from the quirk&nbsp;system.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_equivalent_id.html">fu_device_get_equivalent_id</a></h6>
+          <div class="docblock">
+            <p>Gets any equivalent <span class="caps">ID</span> for a&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.6.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_firmware_size_max.html">fu_device_get_firmware_size_max</a></h6>
+          <div class="docblock">
+            <p>Gets the maximum size of the firmware&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_firmware_size_min.html">fu_device_get_firmware_size_min</a></h6>
+          <div class="docblock">
+            <p>Gets the minimum size of the firmware&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_guids_as_str.html">fu_device_get_guids_as_str</a></h6>
+          <div class="docblock">
+            <p>Gets the device GUIDs as a joined string, which may be useful for error&nbsp;messages.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_logical_id.html">fu_device_get_logical_id</a></h6>
+          <div class="docblock">
+            <p>Gets the logical <span class="caps">ID</span> set for the device, which disambiguates devices with the
+same physical <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_metadata.html">fu_device_get_metadata</a></h6>
+          <div class="docblock">
+            <p>Gets an item of metadata from the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_metadata_boolean.html">fu_device_get_metadata_boolean</a></h6>
+          <div class="docblock">
+            <p>Gets an item of metadata from the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.9.7</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_metadata_integer.html">fu_device_get_metadata_integer</a></h6>
+          <div class="docblock">
+            <p>Gets an item of metadata from the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.9.7</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_order.html">fu_device_get_order</a></h6>
+          <div class="docblock">
+            <p>Gets the device order, where higher numbers are installed after lower&nbsp;numbers.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_parent.html">fu_device_get_parent</a></h6>
+          <div class="docblock">
+            <p>Gets any parent device. An parent device is logically &#8220;above&#8221; the current
+device and this may be reflected in client&nbsp;tools.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_parent_guids.html">fu_device_get_parent_guids</a></h6>
+          <div class="docblock">
+            <p>Gets any parent device GUIDs. If a device is added to the daemon that matches
+any GUIDs added from fu_device_add_parent_guid() then this device is marked the parent of <code>self</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_physical_id.html">fu_device_get_physical_id</a></h6>
+          <div class="docblock">
+            <p>Gets the physical <span class="caps">ID</span> set for the device, which represents the electrical
+connection used to compare&nbsp;devices.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_possible_plugins.html">fu_device_get_possible_plugins</a></h6>
+          <div class="docblock">
+            <p>Gets the list of possible plugin names, typically added from quirk&nbsp;files.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_priority.html">fu_device_get_priority</a></h6>
+          <div class="docblock">
+            <p>Gets the device priority, where higher numbers are&nbsp;better.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_progress.html">fu_device_get_progress</a></h6>
+          <div class="docblock">
+            <p>Returns the progress&nbsp;completion.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_proxy.html">fu_device_get_proxy</a></h6>
+          <div class="docblock">
+            <p>Gets any proxy device. A proxy device can be used to perform an action on
+behalf of another device, for instance attach()ing it after a successful&nbsp;update.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_proxy_guid.html">fu_device_get_proxy_guid</a></h6>
+          <div class="docblock">
+            <p>Gets the proxy <span class="caps">GUID</span> device, which which is set to let the engine match up the
+proxy between&nbsp;plugins.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_release_default.html">fu_device_get_release_default</a></h6>
+          <div class="docblock">
+            <p>Gets the default release for the device, creating one if not&nbsp;found.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_remove_delay.html">fu_device_get_remove_delay</a></h6>
+          <div class="docblock">
+            <p>Returns the maximum delay expected when replugging the device going into
+bootloader&nbsp;mode.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_root.html">fu_device_get_root</a></h6>
+          <div class="docblock">
+            <p>Gets the root parent device. A parent device is logically &#8220;above&#8221; the current
+device and this may be reflected in client&nbsp;tools.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_specialized_gtype.html">fu_device_get_specialized_gtype</a></h6>
+          <div class="docblock">
+            <p>Gets the specialized type of the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_status.html">fu_device_get_status</a></h6>
+          <div class="docblock">
+            <p>Returns what the device is currently&nbsp;doing.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_custom_flag.html">fu_device_has_custom_flag</a></h6>
+          <div class="docblock">
+            <p>Checks if the custom flag exists for the device from the quirk&nbsp;system.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_guid.html">fu_device_has_guid</a></h6>
+          <div class="docblock">
+            <p>Finds out if the device has a specific <span class="caps">GUID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_internal_flag.html">fu_device_has_internal_flag</a></h6>
+          <div class="docblock">
+            <p>Tests for a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_parent_guid.html">fu_device_has_parent_guid</a></h6>
+          <div class="docblock">
+            <p>Searches the list of parent GUIDs for a string&nbsp;match.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.incorporate.html">fu_device_incorporate</a></h6>
+          <div class="docblock">
+            <p>Copy all properties from the donor object if they have not already been&nbsp;set.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.incorporate_flag.html">fu_device_incorporate_flag</a></h6>
+          <div class="docblock">
+            <p>Copy the value of a specific flag from the donor&nbsp;object.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.inhibit.html">fu_device_inhibit</a></h6>
+          <div class="docblock">
+            <p>Prevent the device from being updated, changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE</code>
+to <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> if not already&nbsp;inhibited.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.open.html">fu_device_open</a></h6>
+          <div class="docblock">
+            <p>Opens a device, optionally running a object-specific&nbsp;vfunc.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.poll.html">fu_device_poll</a></h6>
+          <div class="docblock">
+            <p>Polls a device, typically querying the hardware for&nbsp;status.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.prepare.html">fu_device_prepare</a></h6>
+          <div class="docblock">
+            <p>Prepares a device for update. A different plugin can handle each of
+FuDevice-&gt;prepare(), FuDevice-&gt;detach() and&nbsp;FuDevice-&gt;write_firmware().</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.prepare_firmware.html">fu_device_prepare_firmware</a></h6>
+          <div class="docblock">
+            <p>Prepares the firmware by calling an optional device-specific vfunc for the
+device, which can do things like decompressing or parsing of the firmware&nbsp;data.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.probe.html">fu_device_probe</a></h6>
+          <div class="docblock">
+            <p>Probes a device, setting parameters on the object that does not need
+the device open or the interface claimed.
+If the device is not compatible then an error should be&nbsp;returned.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.probe_invalidate.html">fu_device_probe_invalidate</a></h6>
+          <div class="docblock">
+            <p>Normally when calling fu_device_probe() multiple times it is only done once.
+Calling this method causes the next requests to fu_device_probe() and
+fu_device_setup() actually probe the&nbsp;hardware.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.read_firmware.html">fu_device_read_firmware</a></h6>
+          <div class="docblock">
+            <p>Reads firmware from the device by calling a plugin-specific vfunc.
+The device subclass should try to ensure the firmware does not contain any
+serial numbers or user-configuration values and can be used to calculate the
+device&nbsp;checksum.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.reload.html">fu_device_reload</a></h6>
+          <div class="docblock">
+            <p>Reloads a device that has just gone from bootloader into application&nbsp;mode.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_flag.html">fu_device_remove_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a device flag from the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_internal_flag.html">fu_device_remove_internal_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_metadata.html">fu_device_remove_metadata</a></h6>
+          <div class="docblock">
+            <p>Removes an item of metadata on the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.report_metadata_post.html">fu_device_report_metadata_post</a></h6>
+          <div class="docblock">
+            <p>Collects metadata that would be useful for debugging a failed update&nbsp;report.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.report_metadata_pre.html">fu_device_report_metadata_pre</a></h6>
+          <div class="docblock">
+            <p>Collects metadata that would be useful for debugging a failed update&nbsp;report.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.rescan.html">fu_device_rescan</a></h6>
+          <div class="docblock">
+            <p>Rescans a device, re-adding GUIDs or flags based on some hardware&nbsp;change.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.3.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.retry.html">fu_device_retry</a></h6>
+          <div class="docblock">
+            <p>Calls a specific function a number of times, optionally handling the error
+with a reset&nbsp;action.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.retry_add_recovery.html">fu_device_retry_add_recovery</a></h6>
+          <div class="docblock">
+            <p>Sets the optional function to be called when fu_device_retry() fails, which
+is possibly a device&nbsp;reset.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.retry_full.html">fu_device_retry_full</a></h6>
+          <div class="docblock">
+            <p>Calls a specific function a number of times, optionally handling the error
+with a reset&nbsp;action.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.retry_set_delay.html">fu_device_retry_set_delay</a></h6>
+          <div class="docblock">
+            <p>Sets the recovery delay between failed&nbsp;retries.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_alternate.html">fu_device_set_alternate</a></h6>
+          <div class="docblock">
+            <p>Sets any alternate device. An alternate device may be linked to the primary
+device in some&nbsp;way.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_alternate_id.html">fu_device_set_alternate_id</a></h6>
+          <div class="docblock">
+            <p>Sets any alternate device <span class="caps">ID</span>. An alternate device may be linked to the primary
+device in some&nbsp;way.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_backend_id.html">fu_device_set_backend_id</a></h6>
+          <div class="docblock">
+            <p>Sets the backend <span class="caps">ID</span> on the device. This is designed to disambiguate devices
+with the same physical <span class="caps">ID</span>. This is typically a Linux sysfs path or <span class="caps">USB</span>
+platform <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_battery_level.html">fu_device_set_battery_level</a></h6>
+          <div class="docblock">
+            <p>Sets the battery level, or <code>FU_BATTERY_VALUE_INVALID</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_battery_threshold.html">fu_device_set_battery_threshold</a></h6>
+          <div class="docblock">
+            <p>Sets the battery level, or <code>FU_BATTERY_VALUE_INVALID</code> for the&nbsp;default.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_context.html">fu_device_set_context</a></h6>
+          <div class="docblock">
+            <p>Sets the optional context which may be useful to this device.
+This is typically set after the device has been created, but before
+the device has been opened or&nbsp;probed.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_custom_flags.html">fu_device_set_custom_flags</a></h6>
+          <div class="docblock">
+            <p>Sets the custom flags from the quirk system that can be used to
+affect device matching. The actual string format is defined by the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_equivalent_id.html">fu_device_set_equivalent_id</a></h6>
+          <div class="docblock">
+            <p>Sets any equivalent <span class="caps">ID</span> for a&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.6.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_firmware_size.html">fu_device_set_firmware_size</a></h6>
+          <div class="docblock">
+            <p>Sets the exact allowed size of the firmware&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_firmware_size_max.html">fu_device_set_firmware_size_max</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum allowed size of the firmware&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_firmware_size_min.html">fu_device_set_firmware_size_min</a></h6>
+          <div class="docblock">
+            <p>Sets the minimum allowed size of the firmware&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_id.html">fu_device_set_id</a></h6>
+          <div class="docblock">
+            <p>Sets the <span class="caps">ID</span> on the device. The <span class="caps">ID</span> should represent the <em>connection</em> of the
+device, so that any similar device plugged into a different slot will
+have a different <code>id</code> string.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_logical_id.html">fu_device_set_logical_id</a></h6>
+          <div class="docblock">
+            <p>Sets the logical <span class="caps">ID</span> on the device. This is designed to disambiguate devices
+with the same physical <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_metadata.html">fu_device_set_metadata</a></h6>
+          <div class="docblock">
+            <p>Sets an item of metadata on the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_metadata_boolean.html">fu_device_set_metadata_boolean</a></h6>
+          <div class="docblock">
+            <p>Sets an item of metadata on the device. When <code>value</code> is set to <code>TRUE</code>
+the actual stored value is <code>true</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.9.7</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_metadata_integer.html">fu_device_set_metadata_integer</a></h6>
+          <div class="docblock">
+            <p>Sets an item of metadata on the device. The integer is stored as a
+base-10 string&nbsp;internally.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.9.7</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_name.html">fu_device_set_name</a></h6>
+          <div class="docblock">
+            <p>Sets the name on the device. Any invalid parts will be converted or&nbsp;removed.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_order.html">fu_device_set_order</a></h6>
+          <div class="docblock">
+            <p>Sets the device order, where higher numbers are installed after lower&nbsp;numbers.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_parent.html">fu_device_set_parent</a></h6>
+          <div class="docblock">
+            <p>Sets any parent device. An parent device is logically &#8220;above&#8221; the current
+device and this may be reflected in client&nbsp;tools.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_physical_id.html">fu_device_set_physical_id</a></h6>
+          <div class="docblock">
+            <p>Sets the physical <span class="caps">ID</span> on the device which represents the electrical connection
+of the device to the system. Multiple <code>FuDevices</code> can share a physical <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_poll_interval.html">fu_device_set_poll_interval</a></h6>
+          <div class="docblock">
+            <p>Polls the hardware every interval period. If the subclassed <code>-&gt;poll()</code> method
+returns <code>FALSE</code> then a warning is printed to the console and the poll is
+disabled until the next call to&nbsp;fu_device_set_poll_interval().</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_priority.html">fu_device_set_priority</a></h6>
+          <div class="docblock">
+            <p>Sets the device priority, where higher numbers are&nbsp;better.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_progress.html">fu_device_set_progress</a></h6>
+          <div class="docblock">
+            <p>Sets the progress&nbsp;completion.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_progress_full.html">fu_device_set_progress_full</a></h6>
+          <div class="docblock">
+            <p>Sets the progress completion using the raw progress&nbsp;values.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_proxy.html">fu_device_set_proxy</a></h6>
+          <div class="docblock">
+            <p>Sets any proxy device. A proxy device can be used to perform an action on
+behalf of another device, for instance attach()ing it after a successful&nbsp;update.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_proxy_guid.html">fu_device_set_proxy_guid</a></h6>
+          <div class="docblock">
+            <p>Sets the <span class="caps">GUID</span> of the proxy device. The proxy device may update <code>self</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_remove_delay.html">fu_device_set_remove_delay</a></h6>
+          <div class="docblock">
+            <p>Sets the amount of time a device is allowed to return in bootloader&nbsp;mode.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_status.html">fu_device_set_status</a></h6>
+          <div class="docblock">
+            <p>Sets what the device is currently&nbsp;doing.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_version.html">fu_device_set_version</a></h6>
+          <div class="docblock">
+            <p>Sets the device version, sanitizing the string if&nbsp;required.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.9</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_version_bootloader.html">fu_device_set_version_bootloader</a></h6>
+          <div class="docblock">
+            <p>Sets the device bootloader version, sanitizing the string if&nbsp;required.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_version_format.html">fu_device_set_version_format</a></h6>
+          <div class="docblock">
+            <p>Sets the device version&nbsp;format.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_version_lowest.html">fu_device_set_version_lowest</a></h6>
+          <div class="docblock">
+            <p>Sets the device lowest version, sanitizing the string if&nbsp;required.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.4.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.setup.html">fu_device_setup</a></h6>
+          <div class="docblock">
+            <p>Sets up a device, setting parameters on the object that requires
+the device to be open and have the interface claimed.
+If the device is not compatible then an error should be&nbsp;returned.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.sleep_with_progress.html">fu_device_sleep_with_progress</a></h6>
+          <div class="docblock">
+            <p>Sleeps, setting the device progress from 0..100% as time continues.
+The value is gven in whole seconds as it does not make sense to show the
+progressbar advancing so quickly for durations of less than one&nbsp;second.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.to_string.html">fu_device_to_string</a></h6>
+          <div class="docblock">
+            <p>This allows us to easily print the device, the release and the
+daemon-specific&nbsp;metadata.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.9.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.unbind_driver.html">fu_device_unbind_driver</a></h6>
+          <div class="docblock">
+            <p>Unbinds the driver from the device, which normally means the kernel releases
+the hardware so it can be used from&nbsp;userspace.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.uninhibit.html">fu_device_uninhibit</a></h6>
+          <div class="docblock">
+            <p>Allow the device from being updated if there are no other inhibitors,
+changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_DEVICE_FLAG_UPDATABLE</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.write_firmware.html">fu_device_write_firmware</a></h6>
+          <div class="docblock">
+            <p>Writes firmware to the device by calling a plugin-specific&nbsp;vfunc.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+      </div>
+
+      
+        
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Device.backend-id.html">FwupdPlugin.Device:backend-id</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.battery-level.html">FwupdPlugin.Device:battery-level</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.battery-threshold.html">FwupdPlugin.Device:battery-threshold</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.context.html">FwupdPlugin.Device:context</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.logical-id.html">FwupdPlugin.Device:logical-id</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.parent.html">FwupdPlugin.Device:parent</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.physical-id.html">FwupdPlugin.Device:physical-id</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.progress.html">FwupdPlugin.Device:progress</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.proxy.html">FwupdPlugin.Device:proxy</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct FwupdPluginDeviceClass {
+  FwupdDeviceClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>FwupdDeviceClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+     
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Device.internal_flag_from_string.html">fu_device_internal_flag_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to an internal device&nbsp;flag.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.5</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.internal_flag_to_string.html">fu_device_internal_flag_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts an internal device flag to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.5</p></div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fwupd.Plugin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="Fwupd-2.0"/>
+  
+
+  
+  <meta property="og:title" content="Fwupd.Plugin"/>
+  <meta property="og:description" content="Reference for Fwupd.Plugin"/>
+  <meta name="twitter:title" content="Fwupd.Plugin"/>
+  <meta name="twitter:description" content="Reference for Fwupd.Plugin"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Fwupd</a></h3>
+        <p>API Version: 2.0</p>
+        
+        <p>Library Version: 1.6.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Plugin.html#description">Plugin</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.Plugin.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Plugin.add_flag.html">add_flag</a>
+  
+    <a class="method" href="method.Plugin.get_flags.html">get_flags</a>
+  
+    <a class="method" href="method.Plugin.get_name.html">get_name</a>
+  
+    <a class="method" href="method.Plugin.has_flag.html">has_flag</a>
+  
+    <a class="method" href="method.Plugin.remove_flag.html">remove_flag</a>
+  
+    <a class="method" href="method.Plugin.set_flags.html">set_flags</a>
+  
+    <a class="method" href="method.Plugin.set_name.html">set_name</a>
+  
+    <a class="method" href="method.Plugin.to_json.html">to_json</a>
+  
+    <a class="method" href="method.Plugin.to_string.html">to_string</a>
+  
+    <a class="method" href="method.Plugin.to_variant.html">to_variant</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Plugin.flags.html">flags</a>
+  
+    <a class="property" href="property.Plugin.name.html">name</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Plugin.array_from_variant.html">array_from_variant</a>
+  
+    <a class="func" href="type_func.Plugin.flag_from_string.html">flag_from_string</a>
+  
+    <a class="func" href="type_func.Plugin.flag_to_string.html">flag_to_string</a>
+  
+    <a class="func" href="type_func.Plugin.from_variant.html">from_variant</a>
+  
+  </div>
+</div>
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Fwupd</a><span class="sep" role="presentation"></span>Plugin</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupd/fwupd-plugin.c#L14">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Fwupd.Plugin : GObject.Object {
+  parent_instance: GObject
+}</pre></code>
+
+        <div class="docblock">
+          <p>A plugin which is used by fwupd to enumerate and update&nbsp;devices.</p>
+<p>See also: <a href="class.Release.html"><code>FwupdRelease</code></a></p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.Plugin.new.html">fwupd_plugin_new</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new&nbsp;plugin.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Plugin.add_flag.html">fwupd_plugin_add_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a specific plugin flag to the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.get_flags.html">fwupd_plugin_get_flags</a></h6>
+          <div class="docblock">
+            <p>Gets the plugin&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.get_name.html">fwupd_plugin_get_name</a></h6>
+          <div class="docblock">
+            <p>Gets the plugin&nbsp;name.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.has_flag.html">fwupd_plugin_has_flag</a></h6>
+          <div class="docblock">
+            <p>Finds if the plugin has a specific plugin&nbsp;flag.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.remove_flag.html">fwupd_plugin_remove_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a specific plugin flag from the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.set_flags.html">fwupd_plugin_set_flags</a></h6>
+          <div class="docblock">
+            <p>Sets the plugin&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.set_name.html">fwupd_plugin_set_name</a></h6>
+          <div class="docblock">
+            <p>Sets the plugin&nbsp;name.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.to_json.html">fwupd_plugin_to_json</a></h6>
+          <div class="docblock">
+            <p>Adds a fwupd plugin to a <span class="caps">JSON</span>&nbsp;builder.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.to_string.html">fwupd_plugin_to_string</a></h6>
+          <div class="docblock">
+            <p>Builds a text representation of the&nbsp;object.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.to_variant.html">fwupd_plugin_to_variant</a></h6>
+          <div class="docblock">
+            <p>Serialize the plugin data omitting sensitive&nbsp;fields.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Plugin.flags.html">Fwupd.Plugin:flags</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Plugin.name.html">Fwupd.Plugin:name</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct FwupdPluginClass {
+  GObjectClass parent_class;
+  void (* _fwupd_reserved1) (
+void
+  );
+  void (* _fwupd_reserved2) (
+void
+  );
+  void (* _fwupd_reserved3) (
+void
+  );
+  void (* _fwupd_reserved4) (
+void
+  );
+  void (* _fwupd_reserved5) (
+void
+  );
+  void (* _fwupd_reserved6) (
+void
+  );
+  void (* _fwupd_reserved7) (
+void
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>GObjectClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved1</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved1) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved2</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved2) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved3</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved3) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved4</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved4) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved5</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved5) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved6</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved6) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved7</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved7) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+     
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Plugin.array_from_variant.html">fwupd_plugin_array_from_variant</a></h6>
+
+        <div class="docblock">
+          <p>Creates an array of new plugins using serialized&nbsp;data.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Plugin.flag_from_string.html">fwupd_plugin_flag_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to an enumerated plugin&nbsp;flag.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Plugin.flag_to_string.html">fwupd_plugin_flag_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts an enumerated plugin flag to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Plugin.from_variant.html">fwupd_plugin_from_variant</a></h6>
+
+        <div class="docblock">
+          <p>Creates a new plugin using serialized&nbsp;data.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

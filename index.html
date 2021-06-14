@@ -1,139 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>fwupd Reference Manual: fwupd Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
-<link rel="home" href="index.html" title="fwupd Reference Manual">
-<link rel="next" href="intro.html" title="About fwupd">
-<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
-<link rel="stylesheet" href="style.css" type="text/css">
+  <title>fwupd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="libfwupd/org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="fwupd"/>
+  <meta property="og:title" content="fwupd"/>
+  <meta property="og:description" content="Documentation for fwupd"/>
+  <meta name="twitter:title" content="fwupd docs"/>
+  <meta name="twitter:description" content="Documentation for fwupd"/>
+  <meta name="twitter:card" content="summary"/>
+  <link rel="stylesheet" href="libfwupd/style.css" type="text/css" />
 </head>
-<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<div class="book">
-<div class="titlepage">
-<div><div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">fwupd Reference Manual</p></th></tr></table></div></div>
-<hr>
-</div>
-<div class="toc"><dl class="toc">
-<dt><span class="reference"><a href="intro.html">I. About fwupd</a></span></dt>
-<dt><span class="reference"><a href="libfwupd.html">II. libfwupd</a></span></dt>
-<dd><dl>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FwupdClient.html">FwupdClient</a></span><span class="refpurpose"> — a way of interfacing with the daemon</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fwupd-client-sync.html">fwupd-client-sync</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FwupdDevice.html">FwupdDevice</a></span><span class="refpurpose"> — a hardware device</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FwupdRelease.html">FwupdRelease</a></span><span class="refpurpose"> — a firmware release</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FwupdPlugin.html">FwupdPlugin</a></span><span class="refpurpose"> — a hardware plugin</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FwupdRemote.html">FwupdRemote</a></span><span class="refpurpose"> — a source of firmware</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fwupd-error.html">fwupd-error</a></span><span class="refpurpose"> — an error domain shared by the daemon and library</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fwupd-enums.html">fwupd-enums</a></span><span class="refpurpose"> — enumerated values shared by the daemon and library</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fwupd-version.html">fwupd-version</a></span><span class="refpurpose"> — Obtains the version for the installed fwupd</span>
-</dt>
-</dl></dd>
-<dt><span class="reference"><a href="plugin-reference.html">III. Plugin Reference</a></span></dt>
-<dd><dl>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuArchive.html">FuArchive</a></span><span class="refpurpose"> — an in-memory archive decompressor</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-chunk.html">fu-chunk</a></span><span class="refpurpose"> — A packet of chunked data</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-common-cab.html">fu-common-cab</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-common-guid.html">fu-common-guid</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-common-version.html">fu-common-version</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-common.html">fu-common</a></span><span class="refpurpose"> — common functionality for plugins to use</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuDeviceLocker.html">FuDeviceLocker</a></span><span class="refpurpose"> — a device helper object</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-device-metadata.html">fu-device-metadata</a></span><span class="refpurpose"> — a device helper object</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuDevice.html">FuDevice</a></span><span class="refpurpose"> — a physical or logical device</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuDfuFirmware.html">FuDfuFirmware</a></span><span class="refpurpose"> — DFU firmware image</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-efi-signature.html">fu-efi-signature</a></span><span class="refpurpose"> — Parser for EFI_SIGNATURE</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-efi-signature-list.html">fu-efi-signature-list</a></span><span class="refpurpose"> — Parser for EFI_SIGNATURE_LIST</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-firmware-common.html">fu-firmware-common</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuFirmwareImage.html">FuFirmwareImage</a></span><span class="refpurpose"> — a firmware image section</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuFirmware.html">FuFirmware</a></span><span class="refpurpose"> — a firmware file</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-hwids.html">fu-hwids</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-ihex-firmware.html">fu-ihex-firmware</a></span><span class="refpurpose"> — Ihex firmware image</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-srec-firmware.html">fu-srec-firmware</a></span><span class="refpurpose"> — SREC firmware image</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-io-channel.html">fu-io-channel</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-mutex.html">fu-mutex</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-plugin-vfuncs.html">fu-plugin-vfuncs</a></span><span class="refpurpose"> — Virtual functions for plugins</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuPlugin.html">FuPlugin</a></span><span class="refpurpose"> — a daemon plugin</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-quirks.html">fu-quirks</a></span><span class="refpurpose"> — device quirks</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-fu-smbios.html">fu-smbios</a></span><span class="refpurpose"></span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuUdevDevice.html">FuUdevDevice</a></span><span class="refpurpose"> — a udev device</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="fwupd-FuUsbDevice.html">FuUsbDevice</a></span><span class="refpurpose"> — a USB device</span>
-</dt>
-</dl></dd>
-<dt><span class="reference"><a href="tutorial.html">IV. Plugin Tutorial</a></span></dt>
-<dt><span class="index"><a href="api-index-full.html">API Index</a></span></dt>
-<dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt>
-</dl></div>
-</div>
-<div class="footer">
-<hr>Generated by GTK-Doc V1.33.1</div>
+<body>
+  <div id="body-wrapper" tabindex="-1">
+    <img src="libfwupd/org.freedesktop.fwupd.svg" class="logo"/>
+    <div class="section namespace">
+      <h2><a href="index.html">fwupd developer documentation</a></h2>
+    </div>
+  </div>
+  <section id="main" style="max-width: 100%" class="content">
+    <header>
+      <h1>libfwupd</h1>
+      <div class="description">
+        <p>Functionality exported by libfwupd for client applications.</p>
+      </div>
+    </header>
+    <ul>
+      <li><a href="libfwupd/index.html">Developer documentation</a></li>
+    </ul>
+    <header>
+      <h1>libfwupdplugin</h1>
+      <div class="description">
+        <p>Functionality available to fwupd plugins.</p>
+      </div>
+    </header>
+    <ul>
+      <li><a href="libfwupdplugin/index.html">Developer documentation</a></li>
+    </ul>
+  </section>
 </body>
 </html>
