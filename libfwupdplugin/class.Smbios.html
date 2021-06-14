@@ -1,0 +1,546 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin.Smbios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin.Smbios"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.Smbios"/>
+  <meta name="twitter:title" content="FwupdPlugin.Smbios"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Smbios"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.6.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Smbios.html#description">Smbios</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.Smbios.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Smbios.get_data.html">get_data</a>
+  
+    <a class="method" href="method.Smbios.get_integer.html">get_integer</a>
+  
+    <a class="method" href="method.Smbios.get_string.html">get_string</a>
+  
+    <a class="method" href="method.Smbios.setup.html">setup</a>
+  
+    <a class="method" href="method.Smbios.setup_from_file.html">setup_from_file</a>
+  
+    <a class="method" href="method.Smbios.setup_from_path.html">setup_from_path</a>
+  
+    <a class="method" href="method.Smbios.to_string.html">to_string</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">FwupdPlugin</a><span class="sep" role="presentation"></span>Smbios</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-smbios.c#L19">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class FwupdPlugin.Smbios : FwupdPlugin.Firmware {
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          <p>Enumerate the <span class="caps">SMBIOS</span> data on the system, either using <span class="caps">DMI</span> or Device&nbsp;Tree.</p>
+<p>See also: <a href="class.Hwids.html"><code>FuHwids</code></a></p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.Firmware.html" title="Firmware">FuFirmware</a></li>
+          
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.Smbios.new.html">fu_smbios_new</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new object to parse <span class="caps">SMBIOS</span>&nbsp;data.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Smbios.get_data.html">fu_smbios_get_data</a></h6>
+          <div class="docblock">
+            <p>Reads a <span class="caps">SMBIOS</span> data blob, which includes the <span class="caps">SMBIOS</span> section&nbsp;header.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.get_integer.html">fu_smbios_get_integer</a></h6>
+          <div class="docblock">
+            <p>Reads an integer value from the <span class="caps">SMBIOS</span> string table of a specific&nbsp;structure.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.get_string.html">fu_smbios_get_string</a></h6>
+          <div class="docblock">
+            <p>Reads a string from the <span class="caps">SMBIOS</span> string table of a specific&nbsp;structure.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.setup.html">fu_smbios_setup</a></h6>
+          <div class="docblock">
+            <p>Reads all the <span class="caps">SMBIOS</span> values from the&nbsp;hardware.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.setup_from_file.html">fu_smbios_setup_from_file</a></h6>
+          <div class="docblock">
+            <p>Reads all the <span class="caps">SMBIOS</span> values from a <span class="caps">DMI</span>&nbsp;blob.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.setup_from_path.html">fu_smbios_setup_from_path</a></h6>
+          <div class="docblock">
+            <p>Reads all the <span class="caps">SMBIOS</span> values from a specific&nbsp;path.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Smbios.to_string.html">fu_smbios_to_string</a></h6>
+          <div class="docblock">
+            <p>Dumps the parsed <span class="caps">SMBIOS</span> data to a&nbsp;string.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Firmware.html">FuFirmware</a> (47)</h5>
+
+          
+          <div class="docblock">
+          
+            <h6><a href="method.Firmware.add_chunk.html">fu_firmware_add_chunk</a></h6>
+            <div class="docblock">
+              <p>Adds a chunk to the&nbsp;image.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.add_flag.html">fu_firmware_add_flag</a></h6>
+            <div class="docblock">
+              <p>Adds a specific firmware flag to the&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          
+            <h6><a href="method.Firmware.add_image.html">fu_firmware_add_image</a></h6>
+            <div class="docblock">
+              <p>Adds an image to the&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.build.html">fu_firmware_build</a></h6>
+            <div class="docblock">
+              <p>Builds a firmware from an <span class="caps">XML</span> manifest. The manifest would typically have the
+following&nbsp;form:</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          
+            <h6><a href="method.Firmware.build_from_xml.html">fu_firmware_build_from_xml</a></h6>
+            <div class="docblock">
+              <p>Builds a firmware from an <span class="caps">XML</span> manifest. The manifest would typically have the
+following&nbsp;form:</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.export.html">fu_firmware_export</a></h6>
+            <div class="docblock">
+              <p>This allows us to build an <span class="caps">XML</span> object for the nested&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.export_to_xml.html">fu_firmware_export_to_xml</a></h6>
+            <div class="docblock">
+              <p>This allows us to build an <span class="caps">XML</span> object for the nested&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_addr.html">fu_firmware_get_addr</a></h6>
+            <div class="docblock">
+              <p>Gets the base address of the&nbsp;image.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_alignment.html">fu_firmware_get_alignment</a></h6>
+            <div class="docblock">
+              <p>Gets the alignment of the&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_bytes.html">fu_firmware_get_bytes</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware payload, which does not have any header or footer&nbsp;included.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_checksum.html">fu_firmware_get_checksum</a></h6>
+            <div class="docblock">
+              <p>Returns a checksum of the payload&nbsp;data.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_chunks.html">fu_firmware_get_chunks</a></h6>
+            <div class="docblock">
+              <p>Gets the optional image&nbsp;chunks.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_filename.html">fu_firmware_get_filename</a></h6>
+            <div class="docblock">
+              <p>Gets an optional filename that represents the image source or&nbsp;destination.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_id.html">fu_firmware_get_id</a></h6>
+            <div class="docblock">
+              <p>Gets the image <span class="caps">ID</span>, typically set at&nbsp;construction.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_idx.html">fu_firmware_get_idx</a></h6>
+            <div class="docblock">
+              <p>Gets the index of the image which is used for&nbsp;ordering.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_image_by_checksum.html">fu_firmware_get_image_by_checksum</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware image using the image checksum. The checksum type is guessed
+based on the length of the input&nbsp;string.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.5</p></div>
+          
+            <h6><a href="method.Firmware.get_image_by_id.html">fu_firmware_get_image_by_id</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware image using the image <span class="caps">ID</span>.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.get_image_by_id_bytes.html">fu_firmware_get_image_by_id_bytes</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware image bytes using the image <span class="caps">ID</span>.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.get_image_by_idx.html">fu_firmware_get_image_by_idx</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware image using the image&nbsp;index.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.get_image_by_idx_bytes.html">fu_firmware_get_image_by_idx_bytes</a></h6>
+            <div class="docblock">
+              <p>Gets the firmware image bytes using the image&nbsp;index.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.get_images.html">fu_firmware_get_images</a></h6>
+            <div class="docblock">
+              <p>Returns all the images in the&nbsp;firmware.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.3.1</p></div>
+          
+            <h6><a href="method.Firmware.get_offset.html">fu_firmware_get_offset</a></h6>
+            <div class="docblock">
+              <p>Gets the base offset of the&nbsp;image.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+            <h6><a href="method.Firmware.get_size.html">fu_firmware_get_size</a></h6>
+            <div class="docblock">
+              <p>Gets the total size of the image, which is typically the same size as the
+data from&nbsp;fu_firmware_write().</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.6.0</p></div>
+          
+          </div>
+          
+        </div>
+        
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct FwupdPluginSmbiosClass {
+  FuFirmwareClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>FuFirmwareClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+     
+
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

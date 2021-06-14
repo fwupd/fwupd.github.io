@@ -1,0 +1,334 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin.UdevDevice.ioctl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta priority="og:title" content="FwupdPlugin.UdevDevice.ioctl"/>
+  <meta priority="og:description" content="Reference for FwupdPlugin.UdevDevice.ioctl"/>
+  <meta name="twitter:title" content="FwupdPlugin.UdevDevice.ioctl"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.UdevDevice.ioctl"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.6.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.UdevDevice.html">UdevDevice</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.UdevDevice.emit_changed.html">emit_changed</a>
+  
+    <a class="method" href="method.UdevDevice.get_dev.html">get_dev</a>
+  
+    <a class="method" href="method.UdevDevice.get_device_file.html">get_device_file</a>
+  
+    <a class="method" href="method.UdevDevice.get_devtype.html">get_devtype</a>
+  
+    <a class="method" href="method.UdevDevice.get_driver.html">get_driver</a>
+  
+    <a class="method" href="method.UdevDevice.get_fd.html">get_fd</a>
+  
+    <a class="method" href="method.UdevDevice.get_model.html">get_model</a>
+  
+    <a class="method" href="method.UdevDevice.get_number.html">get_number</a>
+  
+    <a class="method" href="method.UdevDevice.get_parent_name.html">get_parent_name</a>
+  
+    <a class="method" href="method.UdevDevice.get_revision.html">get_revision</a>
+  
+    <a class="method" href="method.UdevDevice.get_siblings_with_subsystem.html">get_siblings_with_subsystem</a>
+  
+    <a class="method" href="method.UdevDevice.get_slot_depth.html">get_slot_depth</a>
+  
+    <a class="method" href="method.UdevDevice.get_subsystem.html">get_subsystem</a>
+  
+    <a class="method" href="method.UdevDevice.get_subsystem_model.html">get_subsystem_model</a>
+  
+    <a class="method" href="method.UdevDevice.get_subsystem_vendor.html">get_subsystem_vendor</a>
+  
+    <a class="method" href="method.UdevDevice.get_sysfs_attr.html">get_sysfs_attr</a>
+  
+    <a class="method" href="method.UdevDevice.get_sysfs_path.html">get_sysfs_path</a>
+  
+    <a class="method" href="method.UdevDevice.get_vendor.html">get_vendor</a>
+  
+    <a class="method current" href="method.UdevDevice.ioctl.html">ioctl</a>
+  
+    <a class="method" href="method.UdevDevice.pread.html">pread</a>
+  
+    <a class="method" href="method.UdevDevice.pread_full.html">pread_full</a>
+  
+    <a class="method" href="method.UdevDevice.pwrite.html">pwrite</a>
+  
+    <a class="method" href="method.UdevDevice.pwrite_full.html">pwrite_full</a>
+  
+    <a class="method" href="method.UdevDevice.set_fd.html">set_fd</a>
+  
+    <a class="method" href="method.UdevDevice.set_flags.html">set_flags</a>
+  
+    <a class="method" href="method.UdevDevice.set_logical_id.html">set_logical_id</a>
+  
+    <a class="method" href="method.UdevDevice.set_physical_id.html">set_physical_id</a>
+  
+    <a class="method" href="method.UdevDevice.set_readonly.html">set_readonly</a>
+  
+    <a class="method" href="method.UdevDevice.write_sysfs.html">write_sysfs</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.UdevDevice.html">UdevDevice</a><span class="sep"></span>ioctl</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-udev-device.h#L82">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
+<span class="n">fu_udev_device_ioctl</span> <span class="p">(</span>
+  <span class="n">FuUdevDevice</span><span class="o">*</span> <span class="n">self</span><span class="p">,</span>
+  <span class="n">gulong</span> <span class="n">request</span><span class="p">,</span>
+  <span class="n">guint8</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
+  <span class="n">gint</span><span class="o">*</span> <span class="n">rc</span><span class="p">,</span>
+  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-udev-device.c#L1330">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Control a device using a low-level&nbsp;request.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          
+          
+          <tr><td>Available since:</td><td>1.3.3</td></tr>
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>request</code></td>
+            <td><code>gulong</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>Request&nbsp;number.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>buf</code></td>
+            <td><code>guint8*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A buffer to use, which <em>must</em> be large enough for the&nbsp;request.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
+          
+          <tr class="arg-name">
+            <td><code>rc</code></td>
+            <td><code>gint*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The raw return value from the&nbsp;ioctl.</p></td>
+          </tr>
+          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be set to <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: full">The instance takes ownership of the data, and is responsible for freeing it.</td></tr>
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>error</code></td>
+            <td><code>GError **</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> for&nbsp;success.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

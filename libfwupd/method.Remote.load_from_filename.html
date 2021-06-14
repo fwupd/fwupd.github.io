@@ -1,0 +1,332 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fwupd.Remote.load_from_filename</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="Fwupd-2.0"/>
+  
+
+  
+  <meta priority="og:title" content="Fwupd.Remote.load_from_filename"/>
+  <meta priority="og:description" content="Reference for Fwupd.Remote.load_from_filename"/>
+  <meta name="twitter:title" content="Fwupd.Remote.load_from_filename"/>
+  <meta name="twitter:description" content="Reference for Fwupd.Remote.load_from_filename"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Fwupd</a></h3>
+        <p>API Version: 2.0</p>
+        
+        <p>Library Version: 1.6.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Remote.html">Remote</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Remote.build_firmware_uri.html">build_firmware_uri</a>
+  
+    <a class="method" href="method.Remote.get_age.html">get_age</a>
+  
+    <a class="method" href="method.Remote.get_agreement.html">get_agreement</a>
+  
+    <a class="method" href="method.Remote.get_approval_required.html">get_approval_required</a>
+  
+    <a class="method" href="method.Remote.get_automatic_reports.html">get_automatic_reports</a>
+  
+    <a class="method" href="method.Remote.get_automatic_security_reports.html">get_automatic_security_reports</a>
+  
+    <a class="method" href="method.Remote.get_checksum.html">get_checksum</a>
+  
+    <a class="method" href="method.Remote.get_enabled.html">get_enabled</a>
+  
+    <a class="method" href="method.Remote.get_filename_cache.html">get_filename_cache</a>
+  
+    <a class="method" href="method.Remote.get_filename_cache_sig.html">get_filename_cache_sig</a>
+  
+    <a class="method" href="method.Remote.get_filename_source.html">get_filename_source</a>
+  
+    <a class="method" href="method.Remote.get_firmware_base_uri.html">get_firmware_base_uri</a>
+  
+    <a class="method" href="method.Remote.get_id.html">get_id</a>
+  
+    <a class="method" href="method.Remote.get_keyring_kind.html">get_keyring_kind</a>
+  
+    <a class="method" href="method.Remote.get_kind.html">get_kind</a>
+  
+    <a class="method" href="method.Remote.get_metadata_uri.html">get_metadata_uri</a>
+  
+    <a class="method" href="method.Remote.get_metadata_uri_sig.html">get_metadata_uri_sig</a>
+  
+    <a class="method" href="method.Remote.get_order_after.html">get_order_after</a>
+  
+    <a class="method" href="method.Remote.get_order_before.html">get_order_before</a>
+  
+    <a class="method" href="method.Remote.get_password.html">get_password</a>
+  
+    <a class="method" href="method.Remote.get_priority.html">get_priority</a>
+  
+    <a class="method" href="method.Remote.get_remotes_dir.html">get_remotes_dir</a>
+  
+    <a class="method" href="method.Remote.get_report_uri.html">get_report_uri</a>
+  
+    <a class="method" href="method.Remote.get_security_report_uri.html">get_security_report_uri</a>
+  
+    <a class="method" href="method.Remote.get_title.html">get_title</a>
+  
+    <a class="method" href="method.Remote.get_username.html">get_username</a>
+  
+    <a class="method current" href="method.Remote.load_from_filename.html">load_from_filename</a>
+  
+    <a class="method" href="method.Remote.load_signature.html">load_signature</a>
+  
+    <a class="method" href="method.Remote.load_signature_bytes.html">load_signature_bytes</a>
+  
+    <a class="method" href="method.Remote.set_agreement.html">set_agreement</a>
+  
+    <a class="method" href="method.Remote.set_filename_source.html">set_filename_source</a>
+  
+    <a class="method" href="method.Remote.set_keyring_kind.html">set_keyring_kind</a>
+  
+    <a class="method" href="method.Remote.set_mtime.html">set_mtime</a>
+  
+    <a class="method" href="method.Remote.set_priority.html">set_priority</a>
+  
+    <a class="method" href="method.Remote.set_remotes_dir.html">set_remotes_dir</a>
+  
+    <a class="method" href="method.Remote.setup.html">setup</a>
+  
+    <a class="method" href="method.Remote.to_variant.html">to_variant</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Fwupd</a><span class="sep"></span><a href="class.Remote.html">Remote</a><span class="sep"></span>load_from_filename</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupd/fwupd-remote-private.h#L14">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
+<span class="n">fwupd_remote_load_from_filename</span> <span class="p">(</span>
+  <span class="n">FwupdRemote</span><span class="o">*</span> <span class="n">self</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">gchar</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span>
+  <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
+  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupd/fwupd-remote.c#L526">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Loads metadata about the remote from a keyfile.
+This can be called zero or multiple times for each&nbsp;remote.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          
+          
+          <tr><td>Available since:</td><td>0.9.3</td></tr>
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>filename</code></td>
+            <td><code>const gchar*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A&nbsp;filename.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+          
+          <tr class="arg-name">
+            <td><code>cancellable</code></td>
+            <td><code>GCancellable*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>Optional <code>GCancellable</code>.</p></td>
+          </tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>error</code></td>
+            <td><code>GError **</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> for&nbsp;success.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
