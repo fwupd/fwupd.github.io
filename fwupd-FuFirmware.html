@@ -1,0 +1,1627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FuFirmware: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-FuFirmwareImage.html" title="FuFirmwareImage">
+<link rel="next" href="fwupd-fu-hwids.html" title="fu-hwids">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-FuFirmware.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-FuFirmwareImage.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-hwids.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-FuFirmware"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-FuFirmware.top_of_page"></a>FuFirmware</span></h2>
+<p>FuFirmware — a firmware file</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-FuFirmware.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-flag-to-string" title="fu_firmware_flag_to_string ()">fu_firmware_flag_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="returnvalue">FuFirmwareFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-flag-from-string" title="fu_firmware_flag_from_string ()">fu_firmware_flag_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-new" title="fu_firmware_new ()">fu_firmware_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-new-from-bytes" title="fu_firmware_new_from_bytes ()">fu_firmware_new_from_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-new-from-gtypes" title="fu_firmware_new_from_gtypes ()">fu_firmware_new_from_gtypes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-to-string" title="fu_firmware_to_string ()">fu_firmware_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-version" title="fu_firmware_get_version ()">fu_firmware_get_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-set-version" title="fu_firmware_set_version ()">fu_firmware_set_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-version-raw" title="fu_firmware_get_version_raw ()">fu_firmware_get_version_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-set-version-raw" title="fu_firmware_set_version_raw ()">fu_firmware_set_version_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-add-flag" title="fu_firmware_add_flag ()">fu_firmware_add_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-has-flag" title="fu_firmware_has_flag ()">fu_firmware_has_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-tokenize" title="fu_firmware_tokenize ()">fu_firmware_tokenize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-build" title="fu_firmware_build ()">fu_firmware_build</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-parse" title="fu_firmware_parse ()">fu_firmware_parse</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-parse-file" title="fu_firmware_parse_file ()">fu_firmware_parse_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-parse-full" title="fu_firmware_parse_full ()">fu_firmware_parse_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-write" title="fu_firmware_write ()">fu_firmware_write</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-write-file" title="fu_firmware_write_file ()">fu_firmware_write_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-add-image" title="fu_firmware_add_image ()">fu_firmware_add_image</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-remove-image" title="fu_firmware_remove_image ()">fu_firmware_remove_image</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-remove-image-by-idx" title="fu_firmware_remove_image_by_idx ()">fu_firmware_remove_image_by_idx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-remove-image-by-id" title="fu_firmware_remove_image_by_id ()">fu_firmware_remove_image_by_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-images" title="fu_firmware_get_images ()">fu_firmware_get_images</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-id" title="fu_firmware_get_image_by_id ()">fu_firmware_get_image_by_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-id-bytes" title="fu_firmware_get_image_by_id_bytes ()">fu_firmware_get_image_by_id_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-idx" title="fu_firmware_get_image_by_idx ()">fu_firmware_get_image_by_idx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-idx-bytes" title="fu_firmware_get_image_by_idx_bytes ()">fu_firmware_get_image_by_idx_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-checksum" title="fu_firmware_get_image_by_checksum ()">fu_firmware_get_image_by_checksum</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-default" title="fu_firmware_get_image_default ()">fu_firmware_get_image_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-default-bytes" title="fu_firmware_get_image_default_bytes ()">fu_firmware_get_image_default_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuFirmware.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-TYPE-FIRMWARE:CAPS" title="FU_TYPE_FIRMWARE">FU_TYPE_FIRMWARE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FuFirmwareClass" title="struct FuFirmwareClass">FuFirmwareClass</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-NONE:CAPS" title="FU_FIRMWARE_FLAG_NONE">FU_FIRMWARE_FLAG_NONE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-ID:CAPS" title="FU_FIRMWARE_FLAG_DEDUPE_ID">FU_FIRMWARE_FLAG_DEDUPE_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-IDX:CAPS" title="FU_FIRMWARE_FLAG_DEDUPE_IDX">FU_FIRMWARE_FLAG_DEDUPE_IDX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-HAS-CHECKSUM:CAPS" title="FU_FIRMWARE_FLAG_HAS_CHECKSUM">FU_FIRMWARE_FLAG_HAS_CHECKSUM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-HAS-VID-PID:CAPS" title="FU_FIRMWARE_FLAG_HAS_VID_PID">FU_FIRMWARE_FLAG_HAS_VID_PID</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags">FuFirmwareFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware">FuFirmware</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuFirmware.description"></a><h2>Description</h2>
+<p>An object that represents a firmware file.
+See also: <a class="link" href="fwupd-FuDfuFirmware.html#FuDfuFirmware" title="FuDfuFirmware"><span class="type">FuDfuFirmware</span></a>, <a class="link" href="fwupd-fu-ihex-firmware.html#FuIhexFirmware" title="FuIhexFirmware"><span class="type">FuIhexFirmware</span></a>, <a class="link" href="fwupd-fu-srec-firmware.html#FuSrecFirmware" title="FuSrecFirmware"><span class="type">FuSrecFirmware</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuFirmware.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-firmware-flag-to-string"></a><h3>fu_firmware_flag_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_firmware_flag_to_string (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a> flag</code></em>);</pre>
+<p>Converts a <a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a> to a string.</p>
+<div class="refsect3">
+<a name="fu-firmware-flag-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a>, e.g. <a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-ID:CAPS" title="FU_FIRMWARE_FLAG_DEDUPE_ID"><code class="literal">FU_FIRMWARE_FLAG_DEDUPE_ID</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-flag-to-string.returns"></a><h4>Returns</h4>
+<p> identifier string</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-flag-from-string"></a><h3>fu_firmware_flag_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="returnvalue">FuFirmwareFlags</span></a>
+fu_firmware_flag_from_string (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *flag</code></em>);</pre>
+<p>Converts a string to a <a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a>.</p>
+<div class="refsect3">
+<a name="fu-firmware-flag-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>A string, e.g. <code class="literal">dedupe-id</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-flag-from-string.returns"></a><h4>Returns</h4>
+<p> enumerated value</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-new"></a><h3>fu_firmware_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+fu_firmware_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates an empty firmware object.</p>
+<div class="refsect3">
+<a name="fu-firmware-new.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-new-from-bytes"></a><h3>fu_firmware_new_from_bytes ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+fu_firmware_new_from_bytes (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *fw</code></em>);</pre>
+<p>Creates a firmware object with the provided image set as default.</p>
+<div class="refsect3">
+<a name="fu-firmware-new-from-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>fw</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> image</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-new-from-bytes.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-new-from-gtypes"></a><h3>fu_firmware_new_from_gtypes ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+fu_firmware_new_from_gtypes (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *fw</code></em>,
+                             <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                             <em class="parameter"><code>...</code></em>);</pre>
+<p>Tries to parse the firmware with each <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> in order.</p>
+<div class="refsect3">
+<a name="fu-firmware-new-from-gtypes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>fw</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-IGNORE-CHECKSUM:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_IGNORE_CHECKSUM</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>An array of <span class="type">GTypes</span>, ending with <a href="../gobject/gobject-Type-Information.html#G-TYPE-INVALID:CAPS"><code class="literal">G_TYPE_INVALID</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-new-from-gtypes.returns"></a><h4>Returns</h4>
+<p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-to-string"></a><h3>fu_firmware_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_firmware_to_string (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>);</pre>
+<p>This allows us to easily print the object.</p>
+<div class="refsect3">
+<a name="fu-firmware-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-to-string.returns"></a><h4>Returns</h4>
+<p> a string value, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid.</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-version"></a><h3>fu_firmware_get_version ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_firmware_get_version (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>);</pre>
+<p>Gets an optional version that represents the firmware.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-version.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-set-version"></a><h3>fu_firmware_set_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_firmware_set_version (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *version</code></em>);</pre>
+<p>Sets an optional version that represents the firmware.</p>
+<div class="refsect3">
+<a name="fu-firmware-set-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version</p></td>
+<td class="parameter_description"><p>A string version, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-version-raw"></a><h3>fu_firmware_get_version_raw ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fu_firmware_get_version_raw (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>);</pre>
+<p>Gets an raw version that represents the firmware. This is most frequently
+used when building firmware with <code class="literal">&lt;version_raw&gt;0x123456&lt;/version_raw&gt;</code> in a
+<code class="literal">firmware.builder.xml</code> file to avoid string splitting and sanity checks.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-version-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-version-raw.returns"></a><h4>Returns</h4>
+<p> an integer, or <a href="../glib/glib-Basic-Types.html#G-MAXUINT64:CAPS"><code class="literal">G_MAXUINT64</code></a> for invalid</p>
+</div>
+<p class="since">Since: 1.5.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-set-version-raw"></a><h3>fu_firmware_set_version_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_firmware_set_version_raw (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> version_raw</code></em>);</pre>
+<p>Sets an raw version that represents the firmware.</p>
+<p>This is optional, and is typically only used for debugging.</p>
+<div class="refsect3">
+<a name="fu-firmware-set-version-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>version_raw</p></td>
+<td class="parameter_description"><p>A raw version, or <a href="../glib/glib-Basic-Types.html#G-MAXUINT64:CAPS"><code class="literal">G_MAXUINT64</code></a> for invalid</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-add-flag"></a><h3>fu_firmware_add_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_firmware_add_flag (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *firmware</code></em>,
+                      <em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a> flag</code></em>);</pre>
+<p>Adds a specific firmware flag to the firmware.</p>
+<div class="refsect3">
+<a name="fu-firmware-add-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>firmware</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-has-flag"></a><h3>fu_firmware_has_flag ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_has_flag (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *firmware</code></em>,
+                      <em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a> flag</code></em>);</pre>
+<p>Finds if the firmware has a specific firmware flag.</p>
+<div class="refsect3">
+<a name="fu-firmware-has-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>firmware</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-FuFirmware.html#FuFirmwareFlags" title="FuFirmwareFlags"><span class="type">FuFirmwareFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-has-flag.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the flag is set</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-tokenize"></a><h3>fu_firmware_tokenize ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_tokenize (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *fw</code></em>,
+                      <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Tokenizes a firmware, typically breaking the firmware into records.</p>
+<p>Records can be enumerated using subclass-specific functionality, for example
+using <a class="link" href="fwupd-fu-srec-firmware.html#fu-srec-firmware-get-records" title="fu_srec_firmware_get_records ()"><code class="function">fu_srec_firmware_get_records()</code></a>.</p>
+<div class="refsect3">
+<a name="fu-firmware-tokenize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fw</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-FORCE:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_FORCE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-tokenize.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.3.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-build"></a><h3>fu_firmware_build ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_build (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                   <em class="parameter"><code><a href="../libxmlb/libxmlb-XbNode.html#XbNode"><span class="type">XbNode</span></a> *n</code></em>,
+                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Builds a firmware from an XML manifest. The manifest would typically have the
+following form:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">firmware</span> <span class="n">gtype</span><span class="o">=</span><span class="s">&quot;FuBcm57xxFirmware&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.2.3</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">image</span> <span class="n">gtype</span><span class="o">=</span><span class="s">&quot;FuBcm57xxStage1Image&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">7.8.9</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="n">stage1</span><span class="o">&lt;/</span><span class="n">id</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">idx</span><span class="o">&gt;</span><span class="mh">0x01</span><span class="o">&lt;/</span><span class="n">idx</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span><span class="n">stage1</span><span class="p">.</span><span class="n">bin</span><span class="o">&lt;/</span><span class="n">filename</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">image</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">image</span> <span class="n">gtype</span><span class="o">=</span><span class="s">&quot;FuBcm57xxStage2Image&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="n">stage2</span><span class="o">&lt;/</span><span class="n">id</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">data</span><span class="o">/&gt;</span> <span class="o">&lt;!--</span> <span class="n">empty</span><span class="o">!</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;/</span><span class="n">image</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">image</span> <span class="n">gtype</span><span class="o">=</span><span class="s">&quot;FuBcm57xxDictImage&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="n">ape</span><span class="o">&lt;/</span><span class="n">id</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">addr</span><span class="o">&gt;</span><span class="mh">0x7</span><span class="o">&lt;/</span><span class="n">addr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">data</span><span class="o">&gt;</span><span class="n">aGVsbG8gd29ybGQ</span><span class="o">=&lt;/</span><span class="n">data</span><span class="o">&gt;</span> <span class="o">&lt;!--</span> <span class="n">base64</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;/</span><span class="n">image</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">firmware</span><span class="o">&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>This would be used in a build-system to merge images from generated files:
+<code class="literal">fwupdtool firmware-build fw.builder.xml test.fw</code></p>
+<p>Static binary content can be specified in the <code class="literal">&lt;image&gt;/&lt;data&gt;</code> sections and
+is encoded as base64 text if not empty.</p>
+<p>Additionally, extra nodes can be included under <code class="literal">&lt;image&gt;</code> and <code class="literal">&lt;firmware&gt;</code>
+which can be parsed by the subclassed objects. You should verify the
+subclassed object <code class="literal">FuFirmwareImage-&gt;build</code> vfunc for the specific additional
+options supported.</p>
+<p>Plugins should manually <a href="../gobject/gobject-Type-Information.html#g-type-ensure"><code class="function">g_type_ensure()</code></a> subclassed image objects if not
+constructed as part of the plugin <a class="link" href="fwupd-fu-plugin-vfuncs.html#fu-plugin-init" title="fu_plugin_init ()"><code class="function">fu_plugin_init()</code></a> or <code class="function">fu_plugin_setup()</code>
+functions.</p>
+<div class="refsect3">
+<a name="fu-firmware-build.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n</p></td>
+<td class="parameter_description"><p>A <a href="../libxmlb/libxmlb-XbNode.html#XbNode"><span class="type">XbNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-build.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-parse"></a><h3>fu_firmware_parse ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_parse (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                   <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *fw</code></em>,
+                   <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses a firmware, typically breaking the firmware into images.</p>
+<div class="refsect3">
+<a name="fu-firmware-parse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fw</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-FORCE:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_FORCE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-parse.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-parse-file"></a><h3>fu_firmware_parse_file ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_parse_file (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                        <em class="parameter"><code><a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a> *file</code></em>,
+                        <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses a firmware file, typically breaking the firmware into images.</p>
+<div class="refsect3">
+<a name="fu-firmware-parse-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file</p></td>
+<td class="parameter_description"><p>A <a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-FORCE:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_FORCE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-parse-file.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-parse-full"></a><h3>fu_firmware_parse_full ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_parse_full (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *fw</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> addr_start</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> addr_end</code></em>,
+                        <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a> flags</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses a firmware, typically breaking the firmware into images.</p>
+<div class="refsect3">
+<a name="fu-firmware-parse-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fw</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr_start</p></td>
+<td class="parameter_description"><p>Start address, useful for ignoring a bootloader</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr_end</p></td>
+<td class="parameter_description"><p>End address, useful for ignoring config bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>some <a class="link" href="fwupd-fwupd-enums.html#FwupdInstallFlags" title="enum FwupdInstallFlags"><span class="type">FwupdInstallFlags</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-INSTALL-FLAG-FORCE:CAPS"><code class="literal">FWUPD_INSTALL_FLAG_FORCE</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-parse-full.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-write"></a><h3>fu_firmware_write ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_firmware_write (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Writes a firmware, typically packing the images into a binary blob.</p>
+<div class="refsect3">
+<a name="fu-firmware-write.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-write.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-write-file"></a><h3>fu_firmware_write_file ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_write_file (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                        <em class="parameter"><code><a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a> *file</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Writes a firmware, typically packing the images into a binary blob.</p>
+<div class="refsect3">
+<a name="fu-firmware-write-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file</p></td>
+<td class="parameter_description"><p>A <a href="../gio/GFile.html#GFile-struct"><span class="type">GFile</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-write-file.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-add-image"></a><h3>fu_firmware_add_image ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_firmware_add_image (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                       <em class="parameter"><code><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a> *img</code></em>);</pre>
+<p>Adds an image to the firmware.</p>
+<p>If <a class="link" href="fwupd-FuFirmware.html#FU-FIRMWARE-FLAG-DEDUPE-ID:CAPS" title="FU_FIRMWARE_FLAG_DEDUPE_ID"><code class="literal">FU_FIRMWARE_FLAG_DEDUPE_ID</code></a> is set, an image with the same ID is already
+present it is replaced.</p>
+<div class="refsect3">
+<a name="fu-firmware-add-image.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>img</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-remove-image"></a><h3>fu_firmware_remove_image ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_remove_image (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                          <em class="parameter"><code><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a> *img</code></em>,
+                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Remove an image from the firmware.</p>
+<div class="refsect3">
+<a name="fu-firmware-remove-image.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>img</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-remove-image.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the image was removed</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-remove-image-by-idx"></a><h3>fu_firmware_remove_image_by_idx ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_remove_image_by_idx (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> idx</code></em>,
+                                 <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Removes the first image from the firmware matching the index.</p>
+<div class="refsect3">
+<a name="fu-firmware-remove-image-by-idx.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>index</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-remove-image-by-idx.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if an image was removed</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-remove-image-by-id"></a><h3>fu_firmware_remove_image_by_id ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fu_firmware_remove_image_by_id (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Removes the first image from the firmware matching the ID.</p>
+<div class="refsect3">
+<a name="fu-firmware-remove-image-by-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>image ID, e.g. "config". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-remove-image-by-id.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if an image was removed</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-images"></a><h3>fu_firmware_get_images ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_firmware_get_images (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>);</pre>
+<p>Returns all the images in the firmware.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-images.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-images.returns"></a><h4>Returns</h4>
+<p>images. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuFirmwareImage]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-by-id"></a><h3>fu_firmware_get_image_by_id ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+fu_firmware_get_image_by_id (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the firmware image using the image ID.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>image ID, e.g. "config". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-id.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-by-id-bytes"></a><h3>fu_firmware_get_image_by_id_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_firmware_get_image_by_id_bytes (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                   <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the firmware image bytes using the image ID.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-id-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>image ID, e.g. "config". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-id-bytes.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-by-idx"></a><h3>fu_firmware_get_image_by_idx ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+fu_firmware_get_image_by_idx (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> idx</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the firmware image using the image index.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-idx.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>image index</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-idx.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-by-idx-bytes"></a><h3>fu_firmware_get_image_by_idx_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_firmware_get_image_by_idx_bytes (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> idx</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the firmware image bytes using the image index.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-idx-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>image index</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-idx-bytes.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-by-checksum"></a><h3>fu_firmware_get_image_by_checksum ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+fu_firmware_get_image_by_checksum (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                   <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *checksum</code></em>,
+                                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the firmware image using the image checksum. The checksum type is guessed
+based on the length of the input string.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-checksum.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>checksum</p></td>
+<td class="parameter_description"><p>checksum string of any format</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-by-checksum.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-default"></a><h3>fu_firmware_get_image_default ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="returnvalue">FuFirmwareImage</span></a> *
+fu_firmware_get_image_default (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the default firmware image.</p>
+<p>NOTE: If the firmware has multiple images included then <a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-id" title="fu_firmware_get_image_by_id ()"><code class="function">fu_firmware_get_image_by_id()</code></a>
+or <a class="link" href="fwupd-FuFirmware.html#fu-firmware-get-image-by-idx" title="fu_firmware_get_image_by_idx ()"><code class="function">fu_firmware_get_image_by_idx()</code></a> must be used rather than this function.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-default.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-FuFirmwareImage.html#FuFirmwareImage" title="FuFirmwareImage"><span class="type">FuFirmwareImage</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-firmware-get-image-default-bytes"></a><h3>fu_firmware_get_image_default_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_firmware_get_image_default_bytes (<em class="parameter"><code><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> *self</code></em>,
+                                     <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the default firmware image.</p>
+<div class="refsect3">
+<a name="fu-firmware-get-image-default-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FuPlugin.html#FuPlugin" title="FuPlugin"><span class="type">FuPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-firmware-get-image-default-bytes.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> of the image, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the image is not found. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FuFirmware.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-FIRMWARE:CAPS"></a><h3>FU_TYPE_FIRMWARE</h3>
+<pre class="programlisting">#define FU_TYPE_FIRMWARE (fu_firmware_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuFirmwareClass"></a><h3>struct FuFirmwareClass</h3>
+<pre class="programlisting">struct FuFirmwareClass {
+	GObjectClass		 parent_class;
+	gboolean		 (*parse)		(FuFirmware *self,
+							 GBytes		*fw,
+							 guint64	 addr_start,
+							 guint64	 addr_end,
+							 FwupdInstallFlags flags,
+							 GError		**error);
+	GBytes			*(*write)		(FuFirmware *self,
+							 GError		**error);
+	void			 (*to_string)		(FuFirmware *self,
+							 guint		 indent,
+							 GString *str);
+	gboolean		 (*tokenize)		(FuFirmware *self,
+							 GBytes		*fw,
+							 FwupdInstallFlags flags,
+							 GError		**error);
+	gboolean		 (*build)		(FuFirmware *self,
+							 XbNode		*n,
+							 GError		**error);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-FIRMWARE-FLAG-NONE:CAPS"></a><h3>FU_FIRMWARE_FLAG_NONE</h3>
+<pre class="programlisting">#define FU_FIRMWARE_FLAG_NONE			(0u)		/* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-FIRMWARE-FLAG-DEDUPE-ID:CAPS"></a><h3>FU_FIRMWARE_FLAG_DEDUPE_ID</h3>
+<pre class="programlisting">#define FU_FIRMWARE_FLAG_DEDUPE_ID		(1u &lt;&lt; 0) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-FIRMWARE-FLAG-DEDUPE-IDX:CAPS"></a><h3>FU_FIRMWARE_FLAG_DEDUPE_IDX</h3>
+<pre class="programlisting">#define FU_FIRMWARE_FLAG_DEDUPE_IDX		(1u &lt;&lt; 1) /* Since: 1.5.0 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-FIRMWARE-FLAG-HAS-CHECKSUM:CAPS"></a><h3>FU_FIRMWARE_FLAG_HAS_CHECKSUM</h3>
+<pre class="programlisting">#define FU_FIRMWARE_FLAG_HAS_CHECKSUM		(1u &lt;&lt; 2) /* Since: 1.5.6 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-FIRMWARE-FLAG-HAS-VID-PID:CAPS"></a><h3>FU_FIRMWARE_FLAG_HAS_VID_PID</h3>
+<pre class="programlisting">#define FU_FIRMWARE_FLAG_HAS_VID_PID		(1u &lt;&lt; 3) /* Since: 1.5.6 */
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuFirmwareFlags"></a><h3>FuFirmwareFlags</h3>
+<pre class="programlisting">typedef guint64 FuFirmwareFlags;
+</pre>
+<p>The firmware flags.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuFirmware"></a><h3>FuFirmware</h3>
+<pre class="programlisting">typedef struct _FuFirmware FuFirmware;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

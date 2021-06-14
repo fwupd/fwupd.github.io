@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-efi-signature: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-FuDfuFirmware.html" title="FuDfuFirmware">
+<link rel="next" href="fwupd-fu-efi-signature-list.html" title="fu-efi-signature-list">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-fu-efi-signature.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-FuDfuFirmware.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-efi-signature-list.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-fu-efi-signature"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-fu-efi-signature.top_of_page"></a>fu-efi-signature</span></h2>
+<p>fu-efi-signature — Parser for EFI_SIGNATURE</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-kind-to-string" title="fu_efi_signature_kind_to_string ()">fu_efi_signature_kind_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind"><span class="returnvalue">FuEfiSignatureKind</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-get-kind" title="fu_efi_signature_get_kind ()">fu_efi_signature_get_kind</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-efi-signature.html#fu-efi-signature-get-owner" title="fu_efi_signature_get_owner ()">fu_efi_signature_get_owner</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FU-TYPE-EFI-SIGNATURE:CAPS" title="FU_TYPE_EFI_SIGNATURE">FU_TYPE_EFI_SIGNATURE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind">FuEfiSignatureKind</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-ZERO:CAPS" title="FU_EFI_SIGNATURE_GUID_ZERO">FU_EFI_SIGNATURE_GUID_ZERO</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-MICROSOFT:CAPS" title="FU_EFI_SIGNATURE_GUID_MICROSOFT">FU_EFI_SIGNATURE_GUID_MICROSOFT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-OVMF:CAPS" title="FU_EFI_SIGNATURE_GUID_OVMF">FU_EFI_SIGNATURE_GUID_OVMF</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-OVMF-LEGACY:CAPS" title="FU_EFI_SIGNATURE_GUID_OVMF_LEGACY">FU_EFI_SIGNATURE_GUID_OVMF_LEGACY</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature">FuEfiSignature</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature.description"></a><h2>Description</h2>
+<p>An object that represents a UEFI Signature.</p>
+<p>See also: <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-efi-signature-kind-to-string"></a><h3>fu_efi_signature_kind_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_efi_signature_kind_to_string (<em class="parameter"><code><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind"><span class="type">FuEfiSignatureKind</span></a> kind</code></em>);</pre>
+<p>Converts the signature kind to a text representation.</p>
+<div class="refsect3">
+<a name="fu-efi-signature-kind-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>kind</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind"><span class="type">FuEfiSignatureKind</span></a>, e.g. <a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-KIND-X509:CAPS"><code class="literal">FU_EFI_SIGNATURE_KIND_X509</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-efi-signature-kind-to-string.returns"></a><h4>Returns</h4>
+<p> text, e.g. <code class="literal">x509_cert</code></p>
+</div>
+<p class="since">Since: 1.5.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-efi-signature-get-kind"></a><h3>fu_efi_signature_get_kind ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind"><span class="returnvalue">FuEfiSignatureKind</span></a>
+fu_efi_signature_get_kind (<em class="parameter"><code><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature"><span class="type">FuEfiSignature</span></a> *self</code></em>);</pre>
+<p>Returns the signature kind.</p>
+<div class="refsect3">
+<a name="fu-efi-signature-get-kind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature"><span class="type">FuEfiSignature</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-efi-signature-get-kind.returns"></a><h4>Returns</h4>
+<p> <a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignatureKind" title="enum FuEfiSignatureKind"><span class="type">FuEfiSignatureKind</span></a>, e.g. <a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-KIND-SHA256:CAPS"><code class="literal">FU_EFI_SIGNATURE_KIND_SHA256</code></a></p>
+</div>
+<p class="since">Since: 1.5.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-efi-signature-get-owner"></a><h3>fu_efi_signature_get_owner ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_efi_signature_get_owner (<em class="parameter"><code><a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature"><span class="type">FuEfiSignature</span></a> *self</code></em>);</pre>
+<p>Returns the GUID of the signature owner.</p>
+<div class="refsect3">
+<a name="fu-efi-signature-get-owner.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-fu-efi-signature.html#FuEfiSignature" title="FuEfiSignature"><span class="type">FuEfiSignature</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-efi-signature-get-owner.returns"></a><h4>Returns</h4>
+<p> GUID owner, perhaps <a class="link" href="fwupd-fu-efi-signature.html#FU-EFI-SIGNATURE-GUID-MICROSOFT:CAPS" title="FU_EFI_SIGNATURE_GUID_MICROSOFT"><code class="literal">FU_EFI_SIGNATURE_GUID_MICROSOFT</code></a></p>
+</div>
+<p class="since">Since: 1.5.5</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-EFI-SIGNATURE:CAPS"></a><h3>FU_TYPE_EFI_SIGNATURE</h3>
+<pre class="programlisting">#define FU_TYPE_EFI_SIGNATURE (fu_efi_signature_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuEfiSignatureKind"></a><h3>enum FuEfiSignatureKind</h3>
+<div class="refsect3">
+<a name="FuEfiSignatureKind.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FU-EFI-SIGNATURE-KIND-UNKNOWN:CAPS"></a>FU_EFI_SIGNATURE_KIND_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-EFI-SIGNATURE-KIND-SHA256:CAPS"></a>FU_EFI_SIGNATURE_KIND_SHA256</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FU-EFI-SIGNATURE-KIND-X509:CAPS"></a>FU_EFI_SIGNATURE_KIND_X509</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-EFI-SIGNATURE-GUID-ZERO:CAPS"></a><h3>FU_EFI_SIGNATURE_GUID_ZERO</h3>
+<pre class="programlisting">#define FU_EFI_SIGNATURE_GUID_ZERO		"00000000-0000-0000-0000-000000000000"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-EFI-SIGNATURE-GUID-MICROSOFT:CAPS"></a><h3>FU_EFI_SIGNATURE_GUID_MICROSOFT</h3>
+<pre class="programlisting">#define FU_EFI_SIGNATURE_GUID_MICROSOFT		"77fa9abd-0359-4d32-bd60-28f4e78f784b"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-EFI-SIGNATURE-GUID-OVMF:CAPS"></a><h3>FU_EFI_SIGNATURE_GUID_OVMF</h3>
+<pre class="programlisting">#define FU_EFI_SIGNATURE_GUID_OVMF		"a0baa8a3-041d-48a8-bc87-c36d121b5e3d"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FU-EFI-SIGNATURE-GUID-OVMF-LEGACY:CAPS"></a><h3>FU_EFI_SIGNATURE_GUID_OVMF_LEGACY</h3>
+<pre class="programlisting">#define FU_EFI_SIGNATURE_GUID_OVMF_LEGACY "d5c1df0b-1bac-4edf-ba48-08834009ca5a"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuEfiSignature"></a><h3>FuEfiSignature</h3>
+<pre class="programlisting">typedef struct _FuEfiSignature FuEfiSignature;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

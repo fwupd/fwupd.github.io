@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-efi-signature-list: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-fu-efi-signature.html" title="fu-efi-signature">
+<link rel="next" href="fwupd-fu-firmware-common.html" title="fu-firmware-common">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-fu-efi-signature-list.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-fu-efi-signature.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-firmware-common.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-fu-efi-signature-list"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-fu-efi-signature-list.top_of_page"></a>fu-efi-signature-list</span></h2>
+<p>fu-efi-signature-list — Parser for EFI_SIGNATURE_LIST</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature-list.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="function_type">
+<a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-efi-signature-list.html#fu-efi-signature-list-new" title="fu_efi_signature_list_new ()">fu_efi_signature_list_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature-list.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature-list.html#FU-TYPE-EFI-SIGNATURE-LIST:CAPS" title="FU_TYPE_EFI_SIGNATURE_LIST">FU_TYPE_EFI_SIGNATURE_LIST</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-efi-signature-list.html#FuEfiSignatureList" title="FuEfiSignatureList">FuEfiSignatureList</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature-list.description"></a><h2>Description</h2>
+<p>An object that represents a UEFI SignatureList.</p>
+<p>See also: <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature-list.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-efi-signature-list-new"></a><h3>fu_efi_signature_list_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="returnvalue">FuFirmware</span></a> *
+fu_efi_signature_list_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="fwupd-FuFirmware.html#FuFirmware" title="FuFirmware"><span class="type">FuFirmware</span></a> that can parse an EFI_SIGNATURE_LIST</p>
+<p class="since">Since: 1.5.5</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-efi-signature-list.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-EFI-SIGNATURE-LIST:CAPS"></a><h3>FU_TYPE_EFI_SIGNATURE_LIST</h3>
+<pre class="programlisting">#define FU_TYPE_EFI_SIGNATURE_LIST (fu_efi_signature_list_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuEfiSignatureList"></a><h3>FuEfiSignatureList</h3>
+<pre class="programlisting">typedef struct _FuEfiSignatureList FuEfiSignatureList;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

@@ -1,0 +1,1260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FwupdRemote: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="libfwupd.html" title="libfwupd">
+<link rel="prev" href="fwupd-FwupdPlugin.html" title="FwupdPlugin">
+<link rel="next" href="fwupd-fwupd-error.html" title="fwupd-error">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-FwupdRemote.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="libfwupd.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-FwupdPlugin.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fwupd-error.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-FwupdRemote"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-FwupdRemote.top_of_page"></a>FwupdRemote</span></h2>
+<p>FwupdRemote — a source of firmware</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-FwupdRemote.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="returnvalue">FwupdRemoteKind</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-kind-from-string" title="fwupd_remote_kind_from_string ()">fwupd_remote_kind_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-kind-to-string" title="fwupd_remote_kind_to_string ()">fwupd_remote_kind_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="returnvalue">FwupdRemote</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-new" title="fwupd_remote_new ()">fwupd_remote_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-id" title="fwupd_remote_get_id ()">fwupd_remote_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-title" title="fwupd_remote_get_title ()">fwupd_remote_get_title</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-agreement" title="fwupd_remote_get_agreement ()">fwupd_remote_get_agreement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-remotes-dir" title="fwupd_remote_get_remotes_dir ()">fwupd_remote_get_remotes_dir</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-checksum" title="fwupd_remote_get_checksum ()">fwupd_remote_get_checksum</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-username" title="fwupd_remote_get_username ()">fwupd_remote_get_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-password" title="fwupd_remote_get_password ()">fwupd_remote_get_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-filename-cache" title="fwupd_remote_get_filename_cache ()">fwupd_remote_get_filename_cache</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-filename-cache-sig" title="fwupd_remote_get_filename_cache_sig ()">fwupd_remote_get_filename_cache_sig</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-filename-source" title="fwupd_remote_get_filename_source ()">fwupd_remote_get_filename_source</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-firmware-base-uri" title="fwupd_remote_get_firmware_base_uri ()">fwupd_remote_get_firmware_base_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-report-uri" title="fwupd_remote_get_report_uri ()">fwupd_remote_get_report_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-security-report-uri" title="fwupd_remote_get_security_report_uri ()">fwupd_remote_get_security_report_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-metadata-uri" title="fwupd_remote_get_metadata_uri ()">fwupd_remote_get_metadata_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-metadata-uri-sig" title="fwupd_remote_get_metadata_uri_sig ()">fwupd_remote_get_metadata_uri_sig</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-enabled" title="fwupd_remote_get_enabled ()">fwupd_remote_get_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-approval-required" title="fwupd_remote_get_approval_required ()">fwupd_remote_get_approval_required</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-automatic-reports" title="fwupd_remote_get_automatic_reports ()">fwupd_remote_get_automatic_reports</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-automatic-security-reports" title="fwupd_remote_get_automatic_security_reports ()">fwupd_remote_get_automatic_security_reports</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-priority" title="fwupd_remote_get_priority ()">fwupd_remote_get_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-age" title="fwupd_remote_get_age ()">fwupd_remote_get_age</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="returnvalue">FwupdRemoteKind</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-kind" title="fwupd_remote_get_kind ()">fwupd_remote_get_kind</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fwupd-enums.html#FwupdKeyringKind" title="enum FwupdKeyringKind"><span class="returnvalue">FwupdKeyringKind</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-get-keyring-kind" title="fwupd_remote_get_keyring_kind ()">fwupd_remote_get_keyring_kind</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-build-firmware-uri" title="fwupd_remote_build_firmware_uri ()">fwupd_remote_build_firmware_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-load-signature" title="fwupd_remote_load_signature ()">fwupd_remote_load_signature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-load-signature-bytes" title="fwupd_remote_load_signature_bytes ()">fwupd_remote_load_signature_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="returnvalue">FwupdRemote</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-from-variant" title="fwupd_remote_from_variant ()">fwupd_remote_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdRemote.html#fwupd-remote-array-from-variant" title="fwupd_remote_array_from_variant ()">fwupd_remote_array_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdRemote.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdRemote.html#FWUPD-TYPE-REMOTE:CAPS" title="FWUPD_TYPE_REMOTE">FWUPD_TYPE_REMOTE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteClass" title="struct FwupdRemoteClass">FwupdRemoteClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind">FwupdRemoteKind</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote">FwupdRemote</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdRemote.description"></a><h2>Description</h2>
+<p>An object that represents a source of metadata that provides firmware.</p>
+<p>See also: <a class="link" href="fwupd-FwupdClient.html#FwupdClient" title="FwupdClient"><span class="type">FwupdClient</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdRemote.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fwupd-remote-kind-from-string"></a><h3>fwupd_remote_kind_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="returnvalue">FwupdRemoteKind</span></a>
+fwupd_remote_kind_from_string (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *kind</code></em>);</pre>
+<p>Converts an printable string to an enumerated type.</p>
+<div class="refsect3">
+<a name="fwupd-remote-kind-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>kind</p></td>
+<td class="parameter_description"><p>a string, e.g. <code class="literal">download</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-kind-from-string.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="type">FwupdRemoteKind</span></a>, e.g. <a class="link" href="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-DOWNLOAD:CAPS"><code class="literal">FWUPD_REMOTE_KIND_DOWNLOAD</code></a></p>
+</div>
+<p class="since">Since: 0.9.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-kind-to-string"></a><h3>fwupd_remote_kind_to_string ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_kind_to_string (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="type">FwupdRemoteKind</span></a> kind</code></em>);</pre>
+<p>Converts an enumerated type to a printable string.</p>
+<div class="refsect3">
+<a name="fwupd-remote-kind-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>kind</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="type">FwupdRemoteKind</span></a>, e.g. <a class="link" href="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-DOWNLOAD:CAPS"><code class="literal">FWUPD_REMOTE_KIND_DOWNLOAD</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-kind-to-string.returns"></a><h4>Returns</h4>
+<p> a string, e.g. <code class="literal">download</code></p>
+</div>
+<p class="since">Since: 0.9.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-new"></a><h3>fwupd_remote_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="returnvalue">FwupdRemote</span></a> *
+fwupd_remote_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new fwupd remote.</p>
+<div class="refsect3">
+<a name="fwupd-remote-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-id"></a><h3>fwupd_remote_get_id ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_id (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the remote ID, e.g. <code class="literal">lvfs-testing</code>.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-id.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-title"></a><h3>fwupd_remote_get_title ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_title (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the remote title, e.g. <code class="literal">Linux Vendor Firmware Service</code>.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-title.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-agreement"></a><h3>fwupd_remote_get_agreement ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_agreement (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the remote agreement in AppStream markup format</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-agreement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-agreement.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.0.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-remotes-dir"></a><h3>fwupd_remote_get_remotes_dir ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_remotes_dir (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the base directory for storing remote metadata</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-remotes-dir.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-remotes-dir.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.3.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-checksum"></a><h3>fwupd_remote_get_checksum ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_checksum (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the remote checksum.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-checksum.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-checksum.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-username"></a><h3>fwupd_remote_get_username ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_username (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the username configured for the remote.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-username.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-username.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset</p>
+</div>
+<p class="since">Since: 0.9.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-password"></a><h3>fwupd_remote_get_password ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_password (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the password configured for the remote.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-password.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-password.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset</p>
+</div>
+<p class="since">Since: 0.9.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-filename-cache"></a><h3>fwupd_remote_get_filename_cache ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_filename_cache (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the path and filename that the remote is using for a cache.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-cache.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-cache.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset</p>
+</div>
+<p class="since">Since: 0.9.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-filename-cache-sig"></a><h3>fwupd_remote_get_filename_cache_sig ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_filename_cache_sig (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the path and filename that the remote is using for a signature cache.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-cache-sig.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-cache-sig.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset</p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-filename-source"></a><h3>fwupd_remote_get_filename_source ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_filename_source (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the path and filename of the remote itself, typically a <code class="literal">.conf</code> file.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-filename-source.returns"></a><h4>Returns</h4>
+<p> a string, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-firmware-base-uri"></a><h3>fwupd_remote_get_firmware_base_uri ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_firmware_base_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the base URI for firmware.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-firmware-base-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-firmware-base-uri.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for unset. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-report-uri"></a><h3>fwupd_remote_get_report_uri ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_report_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the URI for the remote reporting.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-report-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-report-uri.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-security-report-uri"></a><h3>fwupd_remote_get_security_report_uri ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_security_report_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the URI for the security report.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-security-report-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-security-report-uri.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-metadata-uri"></a><h3>fwupd_remote_get_metadata_uri ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_metadata_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the URI for the remote metadata.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-metadata-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-metadata-uri.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-metadata-uri-sig"></a><h3>fwupd_remote_get_metadata_uri_sig ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_get_metadata_uri_sig (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the URI for the remote metadata signature.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-metadata-uri-sig.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-metadata-uri-sig.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-enabled"></a><h3>fwupd_remote_get_enabled ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_get_enabled (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets if the remote is enabled and should be used.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-enabled.returns"></a><h4>Returns</h4>
+<p> a <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if the remote is enabled</p>
+</div>
+<p class="since">Since: 0.9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-approval-required"></a><h3>fwupd_remote_get_approval_required ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_get_approval_required (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets if firmware from the remote should be checked against the list
+of a approved checksums.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-approval-required.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-approval-required.returns"></a><h4>Returns</h4>
+<p> a <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if the remote is restricted</p>
+</div>
+<p class="since">Since: 1.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-automatic-reports"></a><h3>fwupd_remote_get_automatic_reports ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_get_automatic_reports (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets if reports should be automatically uploaded to this remote</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-automatic-reports.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-automatic-reports.returns"></a><h4>Returns</h4>
+<p> a <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if the remote should have reports uploaded automatically</p>
+</div>
+<p class="since">Since: 1.3.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-automatic-security-reports"></a><h3>fwupd_remote_get_automatic_security_reports ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_get_automatic_security_reports
+                               (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets if security reports should be automatically uploaded to this remote</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-automatic-security-reports.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-automatic-security-reports.returns"></a><h4>Returns</h4>
+<p> a <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if the remote should have reports uploaded automatically</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-priority"></a><h3>fwupd_remote_get_priority ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+fwupd_remote_get_priority (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the priority of the remote, where bigger numbers are better.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-priority.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-priority.returns"></a><h4>Returns</h4>
+<p> a priority, or 0 for the default value</p>
+</div>
+<p class="since">Since: 0.9.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-age"></a><h3>fwupd_remote_get_age ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fwupd_remote_get_age (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the age of the remote in seconds.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-age.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-age.returns"></a><h4>Returns</h4>
+<p> a age, or <a href="../glib/glib-Basic-Types.html#G-MAXUINT64:CAPS"><code class="literal">G_MAXUINT64</code></a> for unavailable</p>
+</div>
+<p class="since">Since: 0.9.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-kind"></a><h3>fwupd_remote_get_kind ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="returnvalue">FwupdRemoteKind</span></a>
+fwupd_remote_get_kind (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the kind of the remote.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-kind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-kind.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-FwupdRemote.html#FwupdRemoteKind" title="enum FwupdRemoteKind"><span class="type">FwupdRemoteKind</span></a>, e.g. <a class="link" href="fwupd-FwupdRemote.html#FWUPD-REMOTE-KIND-LOCAL:CAPS"><span class="type">FWUPD_REMOTE_KIND_LOCAL</span></a></p>
+</div>
+<p class="since">Since: 0.9.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-get-keyring-kind"></a><h3>fwupd_remote_get_keyring_kind ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fwupd-enums.html#FwupdKeyringKind" title="enum FwupdKeyringKind"><span class="returnvalue">FwupdKeyringKind</span></a>
+fwupd_remote_get_keyring_kind (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>);</pre>
+<p>Gets the keyring kind of the remote.</p>
+<div class="refsect3">
+<a name="fwupd-remote-get-keyring-kind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-get-keyring-kind.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="fwupd-fwupd-enums.html#FwupdKeyringKind" title="enum FwupdKeyringKind"><span class="type">FwupdKeyringKind</span></a>, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-KEYRING-KIND-GPG:CAPS"><span class="type">FWUPD_KEYRING_KIND_GPG</span></a></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-build-firmware-uri"></a><h3>fwupd_remote_build_firmware_uri ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_remote_build_firmware_uri (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>,
+                                 <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *url</code></em>,
+                                 <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Builds a URI for the URL using the username and password set for the remote,
+including any basename URI substitution.</p>
+<div class="refsect3">
+<a name="fwupd-remote-build-firmware-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>url</p></td>
+<td class="parameter_description"><p>the URL to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-build-firmware-uri.returns"></a><h4>Returns</h4>
+<p>a URI, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for error. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.7</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-load-signature"></a><h3>fwupd_remote_load_signature ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_load_signature (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>,
+                             <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses the signature, updating the metadata URI as appropriate.</p>
+<div class="refsect3">
+<a name="fwupd-remote-load-signature.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>A filename</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-load-signature.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-load-signature-bytes"></a><h3>fwupd_remote_load_signature_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_remote_load_signature_bytes (<em class="parameter"><code><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a> *self</code></em>,
+                                   <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
+                                   <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses the signature, updating the metadata URI as appropriate.</p>
+<p>This can only be called for remotes with <code class="literal">Keyring=jcat</code> which is
+the default for most remotes.</p>
+<div class="refsect3">
+<a name="fwupd-remote-load-signature-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>A <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-load-signature-bytes.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for success</p>
+</div>
+<p class="since">Since: 1.4.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-from-variant"></a><h3>fwupd_remote_from_variant ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="returnvalue">FwupdRemote</span></a> *
+fwupd_remote_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates a new remote using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-remote-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-from-variant.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="fwupd-FwupdRemote.html#FwupdRemote" title="FwupdRemote"><span class="type">FwupdRemote</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-remote-array-from-variant"></a><h3>fwupd_remote_array_from_variant ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_remote_array_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates an array of new devices using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-remote-array-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-remote-array-from-variant.returns"></a><h4>Returns</h4>
+<p>remotes, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdRemote]</span></p>
+</div>
+<p class="since">Since: 1.2.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdRemote.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FWUPD-TYPE-REMOTE:CAPS"></a><h3>FWUPD_TYPE_REMOTE</h3>
+<pre class="programlisting">#define FWUPD_TYPE_REMOTE (fwupd_remote_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdRemoteClass"></a><h3>struct FwupdRemoteClass</h3>
+<pre class="programlisting">struct FwupdRemoteClass {
+	GObjectClass		 parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdRemoteKind"></a><h3>enum FwupdRemoteKind</h3>
+<p>The kind of remote.</p>
+<div class="refsect3">
+<a name="FwupdRemoteKind.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-REMOTE-KIND-UNKNOWN:CAPS"></a>FWUPD_REMOTE_KIND_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>Unknown kind</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-REMOTE-KIND-DOWNLOAD:CAPS"></a>FWUPD_REMOTE_KIND_DOWNLOAD</p></td>
+<td class="enum_member_description">
+<p>Requires files to be downloaded</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-REMOTE-KIND-LOCAL:CAPS"></a>FWUPD_REMOTE_KIND_LOCAL</p></td>
+<td class="enum_member_description">
+<p>Reads files from the local machine</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FWUPD-REMOTE-KIND-DIRECTORY:CAPS"></a>FWUPD_REMOTE_KIND_DIRECTORY</p></td>
+<td class="enum_member_description">
+<p>Reads directory from the local machine</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdRemote"></a><h3>FwupdRemote</h3>
+<pre class="programlisting">typedef struct _FwupdRemote FwupdRemote;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

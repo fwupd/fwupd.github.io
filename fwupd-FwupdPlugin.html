@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FwupdPlugin: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="libfwupd.html" title="libfwupd">
+<link rel="prev" href="fwupd-FwupdRelease.html" title="FwupdRelease">
+<link rel="next" href="fwupd-FwupdRemote.html" title="FwupdRemote">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-FwupdPlugin.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="libfwupd.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-FwupdRelease.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-FwupdRemote.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-FwupdPlugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-FwupdPlugin.top_of_page"></a>FwupdPlugin</span></h2>
+<p>FwupdPlugin — a hardware plugin</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-FwupdPlugin.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="returnvalue">FwupdPlugin</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-new" title="fwupd_plugin_new ()">fwupd_plugin_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-to-string" title="fwupd_plugin_to_string ()">fwupd_plugin_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-get-name" title="fwupd_plugin_get_name ()">fwupd_plugin_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-set-name" title="fwupd_plugin_set_name ()">fwupd_plugin_set_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-get-flags" title="fwupd_plugin_get_flags ()">fwupd_plugin_get_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-set-flags" title="fwupd_plugin_set_flags ()">fwupd_plugin_set_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-add-flag" title="fwupd_plugin_add_flag ()">fwupd_plugin_add_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-remove-flag" title="fwupd_plugin_remove_flag ()">fwupd_plugin_remove_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-has-flag" title="fwupd_plugin_has_flag ()">fwupd_plugin_has_flag</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="returnvalue">FwupdPlugin</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-from-variant" title="fwupd_plugin_from_variant ()">fwupd_plugin_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-FwupdPlugin.html#fwupd-plugin-array-from-variant" title="fwupd_plugin_array_from_variant ()">fwupd_plugin_array_from_variant</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdPlugin.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdPlugin.html#FWUPD-TYPE-PLUGIN:CAPS" title="FWUPD_TYPE_PLUGIN">FWUPD_TYPE_PLUGIN</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="fwupd-FwupdPlugin.html#FwupdPluginClass" title="struct FwupdPluginClass">FwupdPluginClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin">FwupdPlugin</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdPlugin.description"></a><h2>Description</h2>
+<p>An object that represents a fwupd plugin.</p>
+<p>See also: <a class="link" href="fwupd-FwupdRelease.html#FwupdRelease" title="FwupdRelease"><span class="type">FwupdRelease</span></a></p>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdPlugin.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fwupd-plugin-new"></a><h3>fwupd_plugin_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="returnvalue">FwupdPlugin</span></a> *
+fwupd_plugin_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new plugin.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-to-string"></a><h3>fwupd_plugin_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_plugin_to_string (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>);</pre>
+<p>Builds a text representation of the object.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-to-string.returns"></a><h4>Returns</h4>
+<p> text, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for invalid</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-get-name"></a><h3>fwupd_plugin_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fwupd_plugin_get_name (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the plugin name.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-get-name.returns"></a><h4>Returns</h4>
+<p> the plugin name, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if unset</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-set-name"></a><h3>fwupd_plugin_set_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_plugin_set_name (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Sets the plugin name.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-set-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>the plugin name, e.g. <code class="literal">bios</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-get-flags"></a><h3>fwupd_plugin_get_flags ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint64"><span class="returnvalue">guint64</span></a>
+fwupd_plugin_get_flags (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>);</pre>
+<p>Gets the plugin flags.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-get-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-get-flags.returns"></a><h4>Returns</h4>
+<p> the plugin flags, or 0 if unset</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-set-flags"></a><h3>fwupd_plugin_set_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_plugin_set_flags (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>,
+                        <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> flags</code></em>);</pre>
+<p>Sets the plugin flags.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-set-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>the plugin flags, e.g. <a class="link" href="fwupd-fwupd-enums.html#FWUPD-PLUGIN-FLAG-CAPSULES-UNSUPPORTED:CAPS" title="FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED"><code class="literal">FWUPD_PLUGIN_FLAG_CAPSULES_UNSUPPORTED</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-add-flag"></a><h3>fwupd_plugin_add_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_plugin_add_flag (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a> flag</code></em>);</pre>
+<p>Adds a specific plugin flag to the plugin.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-add-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-remove-flag"></a><h3>fwupd_plugin_remove_flag ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fwupd_plugin_remove_flag (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>,
+                          <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a> flag</code></em>);</pre>
+<p>Removes a specific plugin flag from the plugin.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-remove-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-has-flag"></a><h3>fwupd_plugin_has_flag ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+fwupd_plugin_has_flag (<em class="parameter"><code><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a> *plugin</code></em>,
+                       <em class="parameter"><code><a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a> flag</code></em>);</pre>
+<p>Finds if the plugin has a specific plugin flag.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-has-flag.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>A <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flag</p></td>
+<td class="parameter_description"><p>the <a class="link" href="fwupd-fwupd-enums.html#FwupdPluginFlags" title="FwupdPluginFlags"><span class="type">FwupdPluginFlags</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-has-flag.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the flag is set</p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-from-variant"></a><h3>fwupd_plugin_from_variant ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="returnvalue">FwupdPlugin</span></a> *
+fwupd_plugin_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates a new plugin using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-from-variant.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="fwupd-FwupdPlugin.html#FwupdPlugin" title="FwupdPlugin"><span class="type">FwupdPlugin</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fwupd-plugin-array-from-variant"></a><h3>fwupd_plugin_array_from_variant ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fwupd_plugin_array_from_variant (<em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Creates an array of new plugins using packed data.</p>
+<div class="refsect3">
+<a name="fwupd-plugin-array-from-variant.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fwupd-plugin-array-from-variant.returns"></a><h4>Returns</h4>
+<p>plugins, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+was invalid. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FwupdPlugin]</span></p>
+</div>
+<p class="since">Since: 1.5.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-FwupdPlugin.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FWUPD-TYPE-PLUGIN:CAPS"></a><h3>FWUPD_TYPE_PLUGIN</h3>
+<pre class="programlisting">#define FWUPD_TYPE_PLUGIN (fwupd_plugin_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdPluginClass"></a><h3>struct FwupdPluginClass</h3>
+<pre class="programlisting">struct FwupdPluginClass {
+	GObjectClass			 parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FwupdPlugin"></a><h3>FwupdPlugin</h3>
+<pre class="programlisting">typedef struct _FwupdPlugin FwupdPlugin;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

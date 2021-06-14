@@ -1,0 +1,849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fu-chunk: fwupd Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="fwupd Reference Manual">
+<link rel="up" href="plugin-reference.html" title="Plugin Reference">
+<link rel="prev" href="fwupd-FuArchive.html" title="FuArchive">
+<link rel="next" href="fwupd-fu-common-cab.html" title="fu-common-cab">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#fwupd-fu-chunk.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="plugin-reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="fwupd-FuArchive.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="fwupd-fu-common-cab.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="fwupd-fu-chunk"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="fwupd-fu-chunk.top_of_page"></a>fu-chunk</span></h2>
+<p>fu-chunk — A packet of chunked data</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="fwupd-fu-chunk.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="returnvalue">FuChunk</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-bytes-new" title="fu_chunk_bytes_new ()">fu_chunk_bytes_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-set-idx" title="fu_chunk_set_idx ()">fu_chunk_set_idx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-idx" title="fu_chunk_get_idx ()">fu_chunk_get_idx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-set-page" title="fu_chunk_set_page ()">fu_chunk_set_page</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-page" title="fu_chunk_get_page ()">fu_chunk_get_page</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-set-address" title="fu_chunk_set_address ()">fu_chunk_set_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-address" title="fu_chunk_get_address ()">fu_chunk_get_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-data" title="fu_chunk_get_data ()">fu_chunk_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-data-out" title="fu_chunk_get_data_out ()">fu_chunk_get_data_out</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-data-sz" title="fu_chunk_get_data_sz ()">fu_chunk_get_data_sz</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-set-bytes" title="fu_chunk_set_bytes ()">fu_chunk_set_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-bytes" title="fu_chunk_get_bytes ()">fu_chunk_get_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="returnvalue">FuChunk</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-new" title="fu_chunk_new ()">fu_chunk_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-to-string" title="fu_chunk_to_string ()">fu_chunk_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-array-to-string" title="fu_chunk_array_to_string ()">fu_chunk_array_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-array-new" title="fu_chunk_array_new ()">fu_chunk_array_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-array-mutable-new" title="fu_chunk_array_mutable_new ()">fu_chunk_array_mutable_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-array-new-from-bytes" title="fu_chunk_array_new_from_bytes ()">fu_chunk_array_new_from_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-chunk.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="fwupd-fu-chunk.html#FU-TYPE-CHUNK:CAPS" title="FU_TYPE_CHUNK">FU_TYPE_CHUNK</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk">FuChunk</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-chunk.description"></a><h2>Description</h2>
+<p>An object that represents a packet of data.</p>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-chunk.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fu-chunk-bytes-new"></a><h3>fu_chunk_bytes_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="returnvalue">FuChunk</span></a> *
+fu_chunk_bytes_new (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
+<p>Creates a new packet of data.</p>
+<div class="refsect3">
+<a name="fu-chunk-bytes-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-bytes-new.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-set-idx"></a><h3>fu_chunk_set_idx ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_chunk_set_idx (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>,
+                  <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> idx</code></em>);</pre>
+<p>Sets the index of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-set-idx.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>index, starting at 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-idx"></a><h3>fu_chunk_get_idx ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_chunk_get_idx (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the index of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-idx.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-idx.returns"></a><h4>Returns</h4>
+<p> index</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-set-page"></a><h3>fu_chunk_set_page ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_chunk_set_page (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>,
+                   <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> page</code></em>);</pre>
+<p>Sets the page of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-set-page.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>page number, starting at 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-page"></a><h3>fu_chunk_get_page ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_chunk_get_page (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the page of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-page.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-page.returns"></a><h4>Returns</h4>
+<p> page</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-set-address"></a><h3>fu_chunk_set_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_chunk_set_address (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>,
+                      <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> address</code></em>);</pre>
+<p>Sets the address of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-set-address.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>memory address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-address"></a><h3>fu_chunk_get_address ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_chunk_get_address (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the address of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-address.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-address.returns"></a><h4>Returns</h4>
+<p> address</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-data"></a><h3>fu_chunk_get_data ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+fu_chunk_get_data (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the data of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-data.returns"></a><h4>Returns</h4>
+<p> bytes</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-data-out"></a><h3>fu_chunk_get_data_out ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *
+fu_chunk_get_data_out (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the mutable data of the chunk.</p>
+<p>WARNING: At the moment <a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-data-out" title="fu_chunk_get_data_out ()"><code class="function">fu_chunk_get_data_out()</code></a> returns the same data as
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-get-data" title="fu_chunk_get_data ()"><code class="function">fu_chunk_get_data()</code></a> in all cases. The caller should verify the data passed to
+<a class="link" href="fwupd-fu-chunk.html#fu-chunk-array-new" title="fu_chunk_array_new ()"><code class="function">fu_chunk_array_new()</code></a> is also writable (i.e. not <code class="literal">const</code> or <code class="literal">mmap</code>) before
+using this function.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-data-out.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-data-out.returns"></a><h4>Returns</h4>
+<p>bytes. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-data-sz"></a><h3>fu_chunk_get_data_sz ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>
+fu_chunk_get_data_sz (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the data size of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-data-sz.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-data-sz.returns"></a><h4>Returns</h4>
+<p> size in bytes</p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-set-bytes"></a><h3>fu_chunk_set_bytes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fu_chunk_set_bytes (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
+<p>Sets the GBytes blob</p>
+<div class="refsect3">
+<a name="fu-chunk-set-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-get-bytes"></a><h3>fu_chunk_get_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="returnvalue">GBytes</span></a> *
+fu_chunk_get_bytes (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Gets the data as bytes of the chunk.</p>
+<div class="refsect3">
+<a name="fu-chunk-get-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-get-bytes.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-new"></a><h3>fu_chunk_new ()</h3>
+<pre class="programlisting"><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="returnvalue">FuChunk</span></a> *
+fu_chunk_new (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> idx</code></em>,
+              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> page</code></em>,
+              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> address</code></em>,
+              <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *data</code></em>,
+              <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> data_sz</code></em>);</pre>
+<p>Creates a new packet of chunked data.</p>
+<div class="refsect3">
+<a name="fu-chunk-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the packet number</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>the hardware memory page</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the address *within* the page</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>the data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data_sz</p></td>
+<td class="parameter_description"><p>size of <em class="parameter"><code>data_sz</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-new.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-to-string"></a><h3>fu_chunk_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_chunk_to_string (<em class="parameter"><code><a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a> *self</code></em>);</pre>
+<p>Converts the chunked packet to a string representation.</p>
+<div class="refsect3">
+<a name="fu-chunk-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="fwupd-fu-chunk.html#FuChunk" title="FuChunk"><span class="type">FuChunk</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-to-string.returns"></a><h4>Returns</h4>
+<p>A string. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-array-to-string"></a><h3>fu_chunk_array_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+fu_chunk_array_to_string (<em class="parameter"><code><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *chunks</code></em>);</pre>
+<p>Converts all the chunked packets in an array to a string representation.</p>
+<div class="refsect3">
+<a name="fu-chunk-array-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>chunks</p></td>
+<td class="parameter_description"><p>array of packets. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuChunk]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-array-to-string.returns"></a><h4>Returns</h4>
+<p>A string. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.0.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-array-new"></a><h3>fu_chunk_array_new ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_chunk_array_new (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *data</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> data_sz</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> addr_start</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> page_sz</code></em>,
+                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> packet_sz</code></em>);</pre>
+<p>Chunks a linear blob of memory into packets, ensuring each packet does not
+cross a package boundary and is less that a specific transfer size.</p>
+<div class="refsect3">
+<a name="fu-chunk-array-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a linear blob of memory, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data_sz</p></td>
+<td class="parameter_description"><p>size of <em class="parameter"><code>data_sz</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr_start</p></td>
+<td class="parameter_description"><p>the hardware address offset, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page_sz</p></td>
+<td class="parameter_description"><p>the hardware page size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet_sz</p></td>
+<td class="parameter_description"><p>the transfer size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-array-new.returns"></a><h4>Returns</h4>
+<p>array of packets. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuChunk]</span></p>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-array-mutable-new"></a><h3>fu_chunk_array_mutable_new ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_chunk_array_mutable_new (<em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *data</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> data_sz</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> addr_start</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> page_sz</code></em>,
+                            <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> packet_sz</code></em>);</pre>
+<p>Chunks a mutable blob of memory into packets, ensuring each packet does not
+cross a package boundary and is less that a specific transfer size.</p>
+<div class="refsect3">
+<a name="fu-chunk-array-mutable-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a mutable blob of memory</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data_sz</p></td>
+<td class="parameter_description"><p>size of <em class="parameter"><code>data_sz</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr_start</p></td>
+<td class="parameter_description"><p>the hardware address offset, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page_sz</p></td>
+<td class="parameter_description"><p>the hardware page size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet_sz</p></td>
+<td class="parameter_description"><p>the transfer size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-array-mutable-new.returns"></a><h4>Returns</h4>
+<p>array of packets. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuChunk]</span></p>
+</div>
+<p class="since">Since: 1.5.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fu-chunk-array-new-from-bytes"></a><h3>fu_chunk_array_new_from_bytes ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+fu_chunk_array_new_from_bytes (<em class="parameter"><code><a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> *blob</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> addr_start</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> page_sz</code></em>,
+                               <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> packet_sz</code></em>);</pre>
+<p>Chunks a linear blob of memory into packets, ensuring each packet does not
+cross a package boundary and is less that a specific transfer size.</p>
+<div class="refsect3">
+<a name="fu-chunk-array-new-from-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr_start</p></td>
+<td class="parameter_description"><p>the hardware address offset, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page_sz</p></td>
+<td class="parameter_description"><p>the hardware page size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet_sz</p></td>
+<td class="parameter_description"><p>the transfer size, or 0</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fu-chunk-array-new-from-bytes.returns"></a><h4>Returns</h4>
+<p>array of packets. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> FuChunk]</span></p>
+</div>
+<p class="since">Since: 1.1.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="fwupd-fu-chunk.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FU-TYPE-CHUNK:CAPS"></a><h3>FU_TYPE_CHUNK</h3>
+<pre class="programlisting">#define FU_TYPE_CHUNK (fu_chunk_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FuChunk"></a><h3>FuChunk</h3>
+<pre class="programlisting">typedef struct _FuChunk FuChunk;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>
