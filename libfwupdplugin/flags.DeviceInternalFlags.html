@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -90,8 +90,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -118,7 +120,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-device.h#L214">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device.h#L232">[src]</a>
         
       </h4>
 
@@ -210,6 +212,36 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <td><p>The device opened successfully and ready to&nbsp;use.</p></td>
         </tr>
       
+        <tr>
+          <td><code title="Value: 2048">FU_DEVICE_INTERNAL_FLAG_NO_SERIAL_NUMBER</code></td>
+          <td><p>Do not attempt to read the device serial&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 4096">FU_DEVICE_INTERNAL_FLAG_AUTO_PARENT_CHILDREN</code></td>
+          <td><p>Automatically assign the parent for children of this&nbsp;device.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 8192">FU_DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET</code></td>
+          <td><p>Device needs resetting twice for attach after the firmware&nbsp;update.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 16384">FU_DEVICE_INTERNAL_FLAG_INHIBIT_CHILDREN</code></td>
+          <td><p>Children of the device are inhibited by the&nbsp;parent.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 32768">FU_DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN</code></td>
+          <td><p>Do not auto-remove clildren in the device&nbsp;list.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 65536">FU_DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_OPEN</code></td>
+          <td><p>Use parent to open and close the&nbsp;device.</p></td>
+        </tr>
+      
       </table>
       </div>
     </div>
@@ -221,8 +253,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   </section>
 </section>
 
-
-    
 
     <section id="search" class="content hidden"></section>
 

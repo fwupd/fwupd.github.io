@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Host Security ID Specification</title>
+  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Host Security ID Specification"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Host Security ID Specification"/>
-  <meta name="twitter:title" content="FwupdPlugin: Host Security ID Specification"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Host Security ID Specification"/>
+  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
 
 
   
@@ -75,20 +75,23 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
       
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
   <section>
     <div class="docblock">
-    <hr />
+    <h1 id="host-security-id-specification">Host Security ID Specification<a class="md-anchor" href="#host-security-id-specification" title="Permanent link"></a></h1>
+<hr />
 <p><strong><span class="caps">WARNING</span>:
 This specification is still in active development: it is incomplete, subject to change, and may have errors; use this at your own risk.
 It is based on publicly available&nbsp;information.</strong></p>
@@ -100,7 +103,7 @@ It is based on publicly available&nbsp;information.</strong></p>
 <li>Alex&nbsp;Matrosov</li>
 </ul>
 <hr />
-<h1 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h1>
+<h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>Not all system vendors prioritize building a secure platform.
 The truth is that <strong>security costs money</strong>.
 Vendors have to choose between saving a few cents on a bill-of-materials by sharing a <span class="caps">SPI</span> chip, or correctly implementing BootGuard.
@@ -109,11 +112,11 @@ These disclosures are often technical in nature and difficult for an average con
 <p>The Linux Vendor Firmware Service (<span class="caps">LVFS</span>) could provide some <strong>easy-to-understand</strong> information to people buying hardware.
 The service already knows a huge amount of information about machines from signed reports uploaded to the <span class="caps">LVFS</span> and from analyzing firmware binaries.
 However this information alone does not explain firmware security to the user in a way they can actually&nbsp;interpret.</p>
-<h2 id="other-tools">Other Tools<a class="md-anchor" href="#other-tools" title="Permanent link"></a></h2>
+<h3 id="other-tools">Other Tools<a class="md-anchor" href="#other-tools" title="Permanent link"></a></h3>
 <p>Traditionally, figuring out the true security of your hardware and firmware requires sifting through the marketing documentation provided by the <span class="caps">OEM</span> and in many cases just &#8220;trusting&#8221; they did it right.
 Tools such as Chipsec can check the hardware configuration, but they do not work out of the box and use technical jargon that an average user cannot interpret.
 Unfortunately, running a tool like Chipsec requires that you actively turn off some security layers such as <span class="caps">UEFI</span> Secure Boot, and allow 3rd party unsigned kernel modules to be&nbsp;loaded.</p>
-<h1 id="verifying-host-firmware-security-verifying">Verifying Host Firmware Security {#verifying}<a class="md-anchor" href="#verifying-host-firmware-security-verifying" title="Permanent link"></a></h1>
+<h2 id="verifying-host-firmware-security-verifying">Verifying Host Firmware Security {#verifying}<a class="md-anchor" href="#verifying-host-firmware-security-verifying" title="Permanent link"></a></h2>
 <p>To start out some core protections must be assigned a relative
 importance.
 Then an evaluation must be done to determine how each vendor is conforming to the model.
@@ -131,18 +134,18 @@ It is not expected that non-consumer hardware will publish an <span class="caps"
 <p>Orthogonal to the security features provided by the firmware there are other security considerations related to the firmware which may require internet access to discover or that runtime <span class="caps">OS</span> changes directly affect the security of the firmware.
 It would not make sense to have <em>have updates on the <span class="caps">LVFS</span></em> as a requirement for a specific security level as this would mean offline the platform might be a higher level initially but as soon as it is brought online it is downgraded which would be really confusing to users.
 The <em>core</em> security level will not change at Operating System runtime, but the suffix&nbsp;may.</p>
-<h2 id="hsi0-insecure-hsi-level0">HSI:0 (Insecure) {#hsi-level0}<a class="md-anchor" href="#hsi0-insecure-hsi-level0" title="Permanent link"></a></h2>
+<h3 id="hsi0-insecure-hsi-level0">HSI:0 (Insecure) {#hsi-level0}<a class="md-anchor" href="#hsi0-insecure-hsi-level0" title="Permanent link"></a></h3>
 <p>The lowest security level with little or no detected firmware protections.
 This is the default security level if no tests can be run or some tests in the next security level have&nbsp;failed.</p>
-<h2 id="hsi1-critical-hsi-level1">HSI:1 (Critical) {#hsi-level1}<a class="md-anchor" href="#hsi1-critical-hsi-level1" title="Permanent link"></a></h2>
+<h3 id="hsi1-critical-hsi-level1">HSI:1 (Critical) {#hsi-level1}<a class="md-anchor" href="#hsi1-critical-hsi-level1" title="Permanent link"></a></h3>
 <p>This security level corresponds to the most basic of security protections considered essential by security professionals.
 Any failures at this level would have critical security impact and could likely be used to compromise the system firmware without physical&nbsp;access.</p>
-<h2 id="hsi3-theoretical-hsi-level2">HSI:3 (Theoretical) {#hsi-level2}<a class="md-anchor" href="#hsi3-theoretical-hsi-level2" title="Permanent link"></a></h2>
+<h3 id="hsi3-theoretical-hsi-level2">HSI:3 (Theoretical) {#hsi-level2}<a class="md-anchor" href="#hsi3-theoretical-hsi-level2" title="Permanent link"></a></h3>
 <p>This security level corresponds to firmware security issues that pose a theoretical concern or where any exploit would be difficult or impractical to use.
 At this level various technologies may be employed to protect the boot process from modification by an attacker with local access to the&nbsp;machine.</p>
-<h2 id="hsi4-system-protection-hsi-level4">HSI:4 (System Protection) {#hsi-level4}<a class="md-anchor" href="#hsi4-system-protection-hsi-level4" title="Permanent link"></a></h2>
+<h3 id="hsi4-system-protection-hsi-level4">HSI:4 (System Protection) {#hsi-level4}<a class="md-anchor" href="#hsi4-system-protection-hsi-level4" title="Permanent link"></a></h3>
 <p>This security level corresponds to out-of-band protection of the system firmware perhaps including&nbsp;recovery.</p>
-<h2 id="hsi5-system-attestation-hsi-level5">HSI:5 (System Attestation) {#hsi-level5}<a class="md-anchor" href="#hsi5-system-attestation-hsi-level5" title="Permanent link"></a></h2>
+<h3 id="hsi5-system-attestation-hsi-level5">HSI:5 (System Attestation) {#hsi-level5}<a class="md-anchor" href="#hsi5-system-attestation-hsi-level5" title="Permanent link"></a></h3>
 <p>This security level corresponds to out-of-band attestation of the system firmware.
 There are currently no tests implemented for <span class="caps">HSI</span>:5 and so this security level cannot yet be&nbsp;obtained.</p>
 <h3 id="hsi-runtime-suffix-runtime-bang">HSI Runtime Suffix <code>!</code> {#runtime-bang}<a class="md-anchor" href="#hsi-runtime-suffix-runtime-bang" title="Permanent link"></a></h3>
@@ -175,7 +178,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://wiki.ubuntu.com/<span class="caps">UEFI</span>/SecureBoot</a></li>
+<li><a href="https://wiki.ubuntu.com/UEFI/SecureBoot">Ubuntu SecureBoot Wiki&nbsp;Page</a></li>
 </ul>
 <h3 id="uefi-pk-orgfwupdhsiuefipk">UEFI PK {#org.fwupd.hsi.Uefi.Pk}<a class="md-anchor" href="#uefi-pk-orgfwupdhsiuefipk" title="Permanent link"></a></h3>
 <p><span class="caps">UEFI</span> defines a platform key for the system.
@@ -185,7 +188,7 @@ This should not be a test key, e.g. <code>DO NOT TRUST - AMI Test PK</code></p>
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://wiki.ubuntu.com/<span class="caps">UEFI</span>/SecureBoot/Testing</a></li>
+<li><a href="https://wiki.ubuntu.com/UEFI/SecureBoot/Testing">Ubuntu SecureBoot Wiki&nbsp;Page</a></li>
 </ul>
 <h3 id="bios-write-enable-bwe-orgfwupdhsispibioswe">BIOS Write Enable (BWE) {#org.fwupd.hsi.Spi.Bioswe}<a class="md-anchor" href="#bios-write-enable-bwe-orgfwupdhsispibioswe" title="Permanent link"></a></h3>
 <p>Intel hardware provides this mechanism to protect the <span class="caps">SPI</span> <span class="caps">ROM</span> chip located on the motherboard from being overwritten by the operating&nbsp;system.</p>
@@ -230,7 +233,7 @@ Additionally on Intel architectures the <span class="caps">FLOCKDN</span> regist
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://en.wikipedia.org/wiki/Trusted_Platform_Module</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Trusted_Platform_Module"><span class="caps">TPM</span> Wikipedia&nbsp;Page</a></li>
 </ul>
 <h3 id="me-not-in-manufacturing-mode-orgfwupdhsimeimanufacturingmode">ME not in manufacturing mode {#org.fwupd.hsi.Mei.ManufacturingMode}<a class="md-anchor" href="#me-not-in-manufacturing-mode-orgfwupdhsimeimanufacturingmode" title="Permanent link"></a></h3>
 <p>There have been some unfortunate cases of the <span class="caps">ME</span> being distributed in manufacturing mode.
@@ -300,7 +303,7 @@ The <span class="caps">ACPI</span> <span class="caps">DMAR</span> table is used 
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
 </ul>
 <h3 id="intel-bootguard-orgfwupdhsiintelbootguard">Intel BootGuard {#org.fwupd.hsi.IntelBootguard}<a class="md-anchor" href="#intel-bootguard-orgfwupdhsiintelbootguard" title="Permanent link"></a></h3>
 <p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
@@ -325,7 +328,7 @@ This means that the memory modules can be physically removed and the contents re
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://en.wikipedia.org/wiki/Cold_boot_attack</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cold_boot_attack">Cold Boot Attack Wikipedia&nbsp;Page</a></li>
 </ul>
 <h3 id="intel-cet-available-orgfwupdhsiintelcet">Intel CET Available {#org.fwupd.hsi.IntelCet}<a class="md-anchor" href="#intel-cet-available-orgfwupdhsiintelcet" title="Permanent link"></a></h3>
 <p>Control enforcement technology is available on new Intel platforms and prevents exploits from hijacking the control-flow transfer instructions for both forward-edge (indirect call/jmp) and back-edge transfer&nbsp;(ret).</p>
@@ -355,7 +358,7 @@ This can make exploits easier to write, as it allows the kernel to access user-s
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://en.wikipedia.org/wiki/Supervisor_Mode_Access_Prevention</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Supervisor_Mode_Access_Prevention"><span class="caps">SMAP</span> Wikipedia&nbsp;Page</a></li>
 </ul>
 <h3 id="kernel-dma-protection-orgfwupdhsiiommu">Kernel DMA protection {#org.fwupd.hsi.Iommu}<a class="md-anchor" href="#kernel-dma-protection-orgfwupdhsiiommu" title="Permanent link"></a></h3>
 <p>The <span class="caps">IOMMU</span> on modern systems is used to mitigate against <span class="caps">DMA</span> attacks.
@@ -366,14 +369,14 @@ Common implementations are Intel <span class="caps">VT</span>-d and <span class=
 </ul>
 <p>See&nbsp;also:</p>
 <ul>
-<li><a href="">https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
 </ul>
 <h3 id="suspend-to-idle-orgfwupdhsisuspendtoidle">Suspend-to-Idle {#org.fwupd.hsi.SuspendToIdle}<a class="md-anchor" href="#suspend-to-idle-orgfwupdhsisuspendtoidle" title="Permanent link"></a></h3>
 <p>The platform should be set up with Suspend-to-Idle as the default S3 sleep&nbsp;state.</p>
 <ul>
 <li>For <span class="caps">HSI</span>-3 this should be set <em>[v1.5.0]</em></li>
 </ul>
-<h1 id="conclusion-conclusions">Conclusion {#conclusions}<a class="md-anchor" href="#conclusion-conclusions" title="Permanent link"></a></h1>
+<h2 id="conclusion-conclusions">Conclusion {#conclusions}<a class="md-anchor" href="#conclusion-conclusions" title="Permanent link"></a></h2>
 <p>Any system with a Host Security <span class="caps">ID</span> of <code>0</code> can easily be modified from userspace.
 PCs with confidential documents should have a <code>HSI:3</code> or higher level of protection.
 In a graphical tool that would show details about the computer (such as <span class="caps">GNOME</span> Control Center&#8217;s details tab) the <span class="caps">OS</span> could display a field indicating Host Security <span class="caps">ID</span>.
@@ -393,7 +396,7 @@ By making some of the <code>HSI:x</code> attributes part of the <span class="cap
 <p>This is not widely used as it has several high severity security&nbsp;issues.</p>
 <h3 id="intel-mpx">Intel MPX<a class="md-anchor" href="#intel-mpx" title="Permanent link"></a></h3>
 <p><span class="caps">MPX</span> support was removed from <span class="caps">GCC</span> and the Linux kernel in 2019 and it is now considered&nbsp;obsolete.</p>
-<h1 id="further-work">Further Work<a class="md-anchor" href="#further-work" title="Permanent link"></a></h1>
+<h2 id="further-work">Further Work<a class="md-anchor" href="#further-work" title="Permanent link"></a></h2>
 <p>More internal and external devices should be factored into the security equation.
 For now the focus for further tests should be around internal device firmware as it is what can be most directly controlled by fwupd and the hardware&nbsp;manufacturer.</p>
 <p>Security conscious manufacturers are actively participating in the development of future initiatives in the Trusted Computing Group (<span class="caps">TCG</span>).
@@ -402,8 +405,6 @@ As those become ratified standards that are available in hardware, there are opp
   </section>
 </section>
 
-
-    
 
     <section id="search" class="content hidden"></section>
 

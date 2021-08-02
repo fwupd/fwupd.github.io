@@ -1,0 +1,651 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fwupd.Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="Fwupd-2.0"/>
+  
+
+  
+  <meta property="og:title" content="Fwupd.Request"/>
+  <meta property="og:description" content="Reference for Fwupd.Request"/>
+  <meta name="twitter:title" content="Fwupd.Request"/>
+  <meta name="twitter:description" content="Reference for Fwupd.Request"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="../urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Fwupd</a></h3>
+        <p>API Version: 2.0</p>
+        
+        <p>Library Version: 1.6.2</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Request.html#description">Request</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.Request.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Request.get_created.html">get_created</a>
+  
+    <a class="method" href="method.Request.get_device_id.html">get_device_id</a>
+  
+    <a class="method" href="method.Request.get_id.html">get_id</a>
+  
+    <a class="method" href="method.Request.get_image.html">get_image</a>
+  
+    <a class="method" href="method.Request.get_kind.html">get_kind</a>
+  
+    <a class="method" href="method.Request.get_message.html">get_message</a>
+  
+    <a class="method" href="method.Request.set_created.html">set_created</a>
+  
+    <a class="method" href="method.Request.set_device_id.html">set_device_id</a>
+  
+    <a class="method" href="method.Request.set_id.html">set_id</a>
+  
+    <a class="method" href="method.Request.set_image.html">set_image</a>
+  
+    <a class="method" href="method.Request.set_kind.html">set_kind</a>
+  
+    <a class="method" href="method.Request.set_message.html">set_message</a>
+  
+    <a class="method" href="method.Request.to_string.html">to_string</a>
+  
+    <a class="method" href="method.Request.to_variant.html">to_variant</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Request.id.html">id</a>
+  
+    <a class="property" href="property.Request.image.html">image</a>
+  
+    <a class="property" href="property.Request.kind.html">kind</a>
+  
+    <a class="property" href="property.Request.message.html">message</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Request.from_variant.html">from_variant</a>
+  
+    <a class="func" href="type_func.Request.kind_from_string.html">kind_from_string</a>
+  
+    <a class="func" href="type_func.Request.kind_to_string.html">kind_to_string</a>
+  
+  </div>
+</div>
+
+
+
+
+
+    </nav>
+
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Fwupd</a><span class="sep" role="presentation"></span>Request</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupd/fwupd-request.c#L12">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Fwupd.Request : GObject.Object {
+  parent_instance: GObject
+}</pre></code>
+
+        <div class="docblock">
+          <p>A user request from the&nbsp;device.</p>
+<p>See also: <a href="class.Device.html"><code>FwupdDevice</code></a></p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.Request.new.html">fwupd_request_new</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new&nbsp;request.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Request.get_created.html">fwupd_request_get_created</a></h6>
+          <div class="docblock">
+            <p>Gets when the request was&nbsp;created.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_device_id.html">fwupd_request_get_device_id</a></h6>
+          <div class="docblock">
+            <p>Gets the device_id that created the&nbsp;request.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_id.html">fwupd_request_get_id</a></h6>
+          <div class="docblock">
+            <p>Gets the <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_image.html">fwupd_request_get_image</a></h6>
+          <div class="docblock">
+            <p>Gets the update&nbsp;image.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_kind.html">fwupd_request_get_kind</a></h6>
+          <div class="docblock">
+            <p>Returns what the request is currently&nbsp;doing.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_message.html">fwupd_request_get_message</a></h6>
+          <div class="docblock">
+            <p>Gets the update&nbsp;message.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_created.html">fwupd_request_set_created</a></h6>
+          <div class="docblock">
+            <p>Sets when the request was&nbsp;created.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_device_id.html">fwupd_request_set_device_id</a></h6>
+          <div class="docblock">
+            <p>Sets the device_id that created the&nbsp;request.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_id.html">fwupd_request_set_id</a></h6>
+          <div class="docblock">
+            <p>Sets the <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_image.html">fwupd_request_set_image</a></h6>
+          <div class="docblock">
+            <p>Sets the update&nbsp;image.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_kind.html">fwupd_request_set_kind</a></h6>
+          <div class="docblock">
+            <p>Sets what the request is currently&nbsp;doing.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_message.html">fwupd_request_set_message</a></h6>
+          <div class="docblock">
+            <p>Sets the update&nbsp;message.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.to_string.html">fwupd_request_to_string</a></h6>
+          <div class="docblock">
+            <p>Builds a text representation of the&nbsp;object.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.to_variant.html">fwupd_request_to_variant</a></h6>
+          <div class="docblock">
+            <p>Serialize the request&nbsp;data.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Request.id.html">Fwupd.Request:id</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Request.image.html">Fwupd.Request:image</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Request.kind.html">Fwupd.Request:kind</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Request.message.html">Fwupd.Request:message</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct FwupdRequestClass {
+  GObjectClass parent_class;
+  void (* _fwupd_reserved1) (
+void
+  );
+  void (* _fwupd_reserved2) (
+void
+  );
+  void (* _fwupd_reserved3) (
+void
+  );
+  void (* _fwupd_reserved4) (
+void
+  );
+  void (* _fwupd_reserved5) (
+void
+  );
+  void (* _fwupd_reserved6) (
+void
+  );
+  void (* _fwupd_reserved7) (
+void
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>GObjectClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved1</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved1) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved2</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved2) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved3</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved3) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved4</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved4) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved5</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved5) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved6</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved6) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_fwupd_reserved7</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _fwupd_reserved7) (
+void
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+     
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Request.from_variant.html">fwupd_request_from_variant</a></h6>
+
+        <div class="docblock">
+          <p>Creates a new request using serialized&nbsp;data.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.6.2</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Request.kind_from_string.html">fwupd_request_kind_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to an enumerated update message&nbsp;kind.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.6.2</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Request.kind_to_string.html">fwupd_request_kind_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a enumerated update message kind to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.6.2</p></div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -130,8 +130,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -145,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.6.1</td></tr>
+        <tr><td><em>Version</em></td><td>1.6.2</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -278,6 +280,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
+            <td><a title="Request" class="symbol" href="class.Request.html">Request</a></td>
+            
+            <td class="docblock-summary"><p>A user request from the&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="SecurityAttr" class="symbol" href="class.SecurityAttr.html">SecurityAttr</a></td>
             
             <td class="docblock-summary"><p>A Host Security <span class="caps">ID</span> attribute that represents something that was&nbsp;measured.</p></td>
@@ -362,6 +371,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><a title="RemoteKind" class="symbol" href="enum.RemoteKind.html">RemoteKind</a></td>
             
             <td class="docblock-summary"><p>The kind of&nbsp;remote.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RequestKind" class="symbol" href="enum.RequestKind.html">RequestKind</a></td>
+            
+            <td class="docblock-summary"><p>The kind of request we are asking of the&nbsp;user.</p></td>
             
           </tr>
           
@@ -568,6 +584,34 @@ machine-id from the&nbsp;machine-hash.</p></td>
             <td><a title="checksum_guess_kind" class="symbol" href="func.checksum_guess_kind.html">checksum_guess_kind</a></td>
             
             <td class="docblock-summary"><p>Guesses the checksum kind based on the length of the&nbsp;hash.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_json_add_boolean" class="symbol" href="func.common_json_add_boolean.html">common_json_add_boolean</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_json_add_int" class="symbol" href="func.common_json_add_int.html">common_json_add_int</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_json_add_string" class="symbol" href="func.common_json_add_string.html">common_json_add_string</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_json_add_stringv" class="symbol" href="func.common_json_add_stringv.html">common_json_add_stringv</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           
@@ -1001,6 +1045,13 @@ or when the device is unplugged with some&nbsp;devices.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_ONLY_VERSION_UPGRADE" class="symbol" href="const.DEVICE_FLAG_ONLY_VERSION_UPGRADE.html">DEVICE_FLAG_ONLY_VERSION_UPGRADE</a></td>
+            
+            <td class="docblock-summary"><p>The device firmware can only be updated to a newer version and never downgraded or&nbsp;reinstalled.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_REGISTERED" class="symbol" href="const.DEVICE_FLAG_REGISTERED.html">DEVICE_FLAG_REGISTERED</a></td>
             
             <td class="docblock-summary"><p>The device has been registered with other&nbsp;plugins.</p></td>
@@ -1097,6 +1148,13 @@ The update will implicitly be applied next time the device is power cycled or po
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_WILDCARD_INSTALL" class="symbol" href="const.DEVICE_FLAG_WILDCARD_INSTALL.html">DEVICE_FLAG_WILDCARD_INSTALL</a></td>
+            
+            <td class="docblock-summary"><p>All devices with matching GUIDs will be updated at the same&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_WILL_DISAPPEAR" class="symbol" href="const.DEVICE_FLAG_WILL_DISAPPEAR.html">DEVICE_FLAG_WILL_DISAPPEAR</a></td>
             
             <td class="docblock-summary"><p>The device will disappear after the update is complete and success
@@ -1129,6 +1187,14 @@ or failure can&#8217;t be&nbsp;verified.</p></td>
             <td><a title="MINOR_VERSION" class="symbol" href="const.MINOR_VERSION.html">MINOR_VERSION</a></td>
             
             <td class="docblock-summary"><p>The compile-time minor&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PLUGIN_FLAG_AUTH_REQUIRED" class="symbol" href="const.PLUGIN_FLAG_AUTH_REQUIRED.html">PLUGIN_FLAG_AUTH_REQUIRED</a></td>
+            
+            <td class="docblock-summary"><p>The plugin requires the user to provide authentication details.
+Supported clients will display this information to a&nbsp;user.</p></td>
             
           </tr>
           
@@ -1176,6 +1242,13 @@ Supported clients will display this information to a&nbsp;user.</p></td>
             
             <td class="docblock-summary"><p>Failed to open plugin (missing dependency).
 Supported clients will display this information to a&nbsp;user.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PLUGIN_FLAG_KERNEL_TOO_OLD" class="symbol" href="const.PLUGIN_FLAG_KERNEL_TOO_OLD.html">PLUGIN_FLAG_KERNEL_TOO_OLD</a></td>
+            
+            <td class="docblock-summary"><p>The feature is not supported as the kernel is too&nbsp;old.</p></td>
             
           </tr>
           
@@ -1278,6 +1351,20 @@ Supported clients will display this information to a&nbsp;user.</p></td>
             <td><a title="RELEASE_FLAG_TRUSTED_PAYLOAD" class="symbol" href="const.RELEASE_FLAG_TRUSTED_PAYLOAD.html">RELEASE_FLAG_TRUSTED_PAYLOAD</a></td>
             
             <td class="docblock-summary"><p>The payload binary is&nbsp;trusted.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="REQUEST_ID_PRESS_UNLOCK" class="symbol" href="const.REQUEST_ID_PRESS_UNLOCK.html">REQUEST_ID_PRESS_UNLOCK</a></td>
+            
+            <td class="docblock-summary"><p>The user needs to press unlock on the&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="REQUEST_ID_REMOVE_REPLUG" class="symbol" href="const.REQUEST_ID_REMOVE_REPLUG.html">REQUEST_ID_REMOVE_REPLUG</a></td>
+            
+            <td class="docblock-summary"><p>The user needs to remove and reinsert the&nbsp;device.</p></td>
             
           </tr>
           
@@ -1513,6 +1600,13 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_REQUEST_KIND" class="symbol" href="const.RESULT_KEY_REQUEST_KIND.html">RESULT_KEY_REQUEST_KIND</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent&nbsp;RequestKind.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_SERIAL" class="symbol" href="const.RESULT_KEY_SERIAL.html">RESULT_KEY_SERIAL</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;Serial.</p></td>
@@ -1632,6 +1726,13 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_VERSION_BUILD_DATE" class="symbol" href="const.RESULT_KEY_VERSION_BUILD_DATE.html">RESULT_KEY_VERSION_BUILD_DATE</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent&nbsp;VersionBuildDate.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_VERSION_FORMAT" class="symbol" href="const.RESULT_KEY_VERSION_FORMAT.html">RESULT_KEY_VERSION_FORMAT</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;VersionFormat.</p></td>
@@ -1669,7 +1770,7 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           <tr class="section-item">
             <td><a title="SECURITY_ATTR_ID_ENCRYPTED_RAM" class="symbol" href="const.SECURITY_ATTR_ID_ENCRYPTED_RAM.html">SECURITY_ATTR_ID_ENCRYPTED_RAM</a></td>
             
-            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute indiciating encrypted <span class="caps">RAM</span>&nbsp;available.</p></td>
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute indicating encrypted <span class="caps">RAM</span>&nbsp;available.</p></td>
             
           </tr>
           
@@ -1891,8 +1992,6 @@ Supported clients will display this information to a&nbsp;user.</p></td>
   
 </section>
 
-
-    
 
     <section id="search" class="content hidden"></section>
 

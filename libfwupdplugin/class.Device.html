@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -92,6 +92,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="ctor" href="ctor.Device.new.html">new</a>
+  
+    <a class="ctor" href="ctor.Device.new_with_context.html">new_with_context</a>
   
   </div>
 </div>
@@ -112,6 +114,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.add_guid.html">add_guid</a>
   
+    <a class="method" href="method.Device.add_guid_full.html">add_guid_full</a>
+  
     <a class="method" href="method.Device.add_instance_id.html">add_instance_id</a>
   
     <a class="method" href="method.Device.add_instance_id_full.html">add_instance_id_full</a>
@@ -120,7 +124,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.add_parent_guid.html">add_parent_guid</a>
   
+    <a class="method" href="method.Device.add_parent_physical_id.html">add_parent_physical_id</a>
+  
     <a class="method" href="method.Device.add_possible_plugin.html">add_possible_plugin</a>
+  
+    <a class="method" href="method.Device.add_private_flag.html">add_private_flag</a>
   
     <a class="method" href="method.Device.add_security_attrs.html">add_security_attrs</a>
   
@@ -137,6 +145,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.detach.html">detach</a>
   
     <a class="method" href="method.Device.dump_firmware.html">dump_firmware</a>
+  
+    <a class="method" href="method.Device.emit_request.html">emit_request</a>
   
     <a class="method" href="method.Device.ensure_id.html">ensure_id</a>
   
@@ -178,11 +188,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_parent_guids.html">get_parent_guids</a>
   
+    <a class="method" href="method.Device.get_parent_physical_ids.html">get_parent_physical_ids</a>
+  
     <a class="method" href="method.Device.get_physical_id.html">get_physical_id</a>
   
     <a class="method" href="method.Device.get_possible_plugins.html">get_possible_plugins</a>
   
     <a class="method" href="method.Device.get_priority.html">get_priority</a>
+  
+    <a class="method" href="method.Device.get_private_flags.html">get_private_flags</a>
   
     <a class="method" href="method.Device.get_progress.html">get_progress</a>
   
@@ -190,9 +204,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
   
+    <a class="method" href="method.Device.get_proxy_with_fallback.html">get_proxy_with_fallback</a>
+  
     <a class="method" href="method.Device.get_release_default.html">get_release_default</a>
   
     <a class="method" href="method.Device.get_remove_delay.html">get_remove_delay</a>
+  
+    <a class="method" href="method.Device.get_request_cnt.html">get_request_cnt</a>
+  
+    <a class="method" href="method.Device.get_results.html">get_results</a>
   
     <a class="method" href="method.Device.get_root.html">get_root</a>
   
@@ -208,9 +228,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.has_parent_guid.html">has_parent_guid</a>
   
+    <a class="method" href="method.Device.has_parent_physical_id.html">has_parent_physical_id</a>
+  
+    <a class="method" href="method.Device.has_private_flag.html">has_private_flag</a>
+  
     <a class="method" href="method.Device.incorporate.html">incorporate</a>
   
     <a class="method" href="method.Device.incorporate_flag.html">incorporate_flag</a>
+  
+    <a class="method" href="method.Device.incorporate_from_component.html">incorporate_from_component</a>
   
     <a class="method" href="method.Device.inhibit.html">inhibit</a>
   
@@ -228,13 +254,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.read_firmware.html">read_firmware</a>
   
+    <a class="method" href="method.Device.register_private_flag.html">register_private_flag</a>
+  
     <a class="method" href="method.Device.reload.html">reload</a>
+  
+    <a class="method" href="method.Device.remove_child.html">remove_child</a>
   
     <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
   
     <a class="method" href="method.Device.remove_internal_flag.html">remove_internal_flag</a>
   
     <a class="method" href="method.Device.remove_metadata.html">remove_metadata</a>
+  
+    <a class="method" href="method.Device.remove_private_flag.html">remove_private_flag</a>
   
     <a class="method" href="method.Device.report_metadata_post.html">report_metadata_post</a>
   
@@ -294,6 +326,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_priority.html">set_priority</a>
   
+    <a class="method" href="method.Device.set_private_flags.html">set_private_flags</a>
+  
     <a class="method" href="method.Device.set_progress.html">set_progress</a>
   
     <a class="method" href="method.Device.set_progress_full.html">set_progress_full</a>
@@ -305,6 +339,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
   
     <a class="method" href="method.Device.set_status.html">set_status</a>
+  
+    <a class="method" href="method.Device.set_update_state.html">set_update_state</a>
+  
+    <a class="method" href="method.Device.set_vendor.html">set_vendor</a>
   
     <a class="method" href="method.Device.set_version.html">set_version</a>
   
@@ -358,6 +396,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Device.child-added.html">child-added</a>
+  
+    <a class="signal" href="signal.Device.child-removed.html">child-removed</a>
+  
+    <a class="signal" href="signal.Device.request.html">request</a>
+  
+  </div>
+</div>
+
 
 
 
@@ -378,8 +429,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -395,7 +448,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-device.c#L29">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device.c#L29">[src]</a>
           
         </h4>
 
@@ -466,6 +519,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <div class="docblock"><p>Available since: 0.1.0</p></div>
         </div>
       
+        <div class="">
+          <h6><a href="ctor.Device.new_with_context.html">fu_device_new_with_context</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new <code>Fudevice</code>.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
       </div>
     </div>
     
@@ -524,6 +587,15 @@ is converted to a <span class="caps">GUID</span> using&nbsp;fwupd_guid_hash_stri
         </div>
       
         <div class="">
+          <h6><a href="method.Device.add_guid_full.html">fu_device_add_guid_full</a></h6>
+          <div class="docblock">
+            <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
+is converted to a <span class="caps">GUID</span> using&nbsp;fwupd_guid_hash_string().</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.add_instance_id.html">fu_device_add_instance_id</a></h6>
           <div class="docblock">
             <p>Adds an instance <span class="caps">ID</span> to the device. If the <code>instance_id</code> argument is already a
@@ -558,12 +630,29 @@ the primary device in some way and can be added before or after <code>self</code
         </div>
       
         <div class="">
+          <h6><a href="method.Device.add_parent_physical_id.html">fu_device_add_parent_physical_id</a></h6>
+          <div class="docblock">
+            <p>Sets any parent device using the physical <span class="caps">ID</span>. An parent device is logically
+linked to the primary device in some way and can be added before or after <code>self</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.add_possible_plugin.html">fu_device_add_possible_plugin</a></h6>
           <div class="docblock">
             <p>Adds a plugin name to the list of plugins that <em>might</em> be able to handle this
 device. This is tyically called from a quirk&nbsp;handler.</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_private_flag.html">fu_device_add_private_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a private flag that can be used by the plugin for any&nbsp;purpose.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -635,6 +724,14 @@ configuration but should be a byte-for-byte match compared to using an
 external <span class="caps">SPI</span>&nbsp;programmer.</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.emit_request.html">fu_device_emit_request</a></h6>
+          <div class="docblock">
+            <p>Emit a request from a plugin to the&nbsp;client.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -807,6 +904,16 @@ any GUIDs added from fu_device_add_parent_guid() then this device is marked the 
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_parent_physical_ids.html">fu_device_get_parent_physical_ids</a></h6>
+          <div class="docblock">
+            <p>Gets any parent device IDs. If a device is added to the daemon that matches
+the physical <span class="caps">ID</span> added from fu_device_add_parent_physical_id() then this
+device is marked the parent of <code>self</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_physical_id.html">fu_device_get_physical_id</a></h6>
           <div class="docblock">
             <p>Gets the physical <span class="caps">ID</span> set for the device, which represents the electrical
@@ -829,6 +936,14 @@ connection used to compare&nbsp;devices.</p>
             <p>Gets the device priority, where higher numbers are&nbsp;better.</p>
           </div>
           <div class="docblock"><p>Available since: 1.1.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_private_flags.html">fu_device_get_private_flags</a></h6>
+          <div class="docblock">
+            <p>Returns all the private flags that can be used by the plugin for any&nbsp;purpose.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -858,6 +973,14 @@ proxy between&nbsp;plugins.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_proxy_with_fallback.html">fu_device_get_proxy_with_fallback</a></h6>
+          <div class="docblock">
+            <p>Gets the proxy device, falling back to the device&nbsp;itself.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_release_default.html">fu_device_get_release_default</a></h6>
           <div class="docblock">
             <p>Gets the default release for the device, creating one if not&nbsp;found.</p>
@@ -872,6 +995,24 @@ proxy between&nbsp;plugins.</p>
 bootloader&nbsp;mode.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_request_cnt.html">fu_device_get_request_cnt</a></h6>
+          <div class="docblock">
+            <p>Returns the number of requests of a specific kind. This function is only
+useful to the daemon, which uses it to synthesize artificial events for
+plugins not yet ported to&nbsp;FwupdRequest.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_results.html">fu_device_get_results</a></h6>
+          <div class="docblock">
+            <p>Gets the results of the last update operation on the device by calling a&nbsp;vfunc.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -932,6 +1073,22 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.has_parent_physical_id.html">fu_device_has_parent_physical_id</a></h6>
+          <div class="docblock">
+            <p>Searches the list of parent IDs for a string&nbsp;match.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_private_flag.html">fu_device_has_private_flag</a></h6>
+          <div class="docblock">
+            <p>Tests for a private flag that can be used by the plugin for any&nbsp;purpose.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.incorporate.html">fu_device_incorporate</a></h6>
           <div class="docblock">
             <p>Copy all properties from the donor object if they have not already been&nbsp;set.</p>
@@ -945,6 +1102,14 @@ device and this may be reflected in client&nbsp;tools.</p>
             <p>Copy the value of a specific flag from the donor&nbsp;object.</p>
           </div>
           <div class="docblock"><p>Available since: 1.3.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.incorporate_from_component.html">fu_device_incorporate_from_component</a></h6>
+          <div class="docblock">
+            <p>Copy all properties from the donor AppStream&nbsp;component.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.2.4</p></div>
         </div>
       
         <div class="">
@@ -1022,11 +1187,27 @@ device&nbsp;checksum.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.register_private_flag.html">fu_device_register_private_flag</a></h6>
+          <div class="docblock">
+            <p>Registers a private device flag so that it can be set from quirk&nbsp;files.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.reload.html">fu_device_reload</a></h6>
           <div class="docblock">
             <p>Reloads a device that has just gone from bootloader into application&nbsp;mode.</p>
           </div>
           <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_child.html">fu_device_remove_child</a></h6>
+          <div class="docblock">
+            <p>Removes child&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -1051,6 +1232,14 @@ device&nbsp;checksum.</p>
             <p>Removes an item of metadata on the&nbsp;device.</p>
           </div>
           <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_private_flag.html">fu_device_remove_private_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a private flag that can be used by the plugin for any&nbsp;purpose.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -1305,6 +1494,14 @@ disabled until the next call to&nbsp;fu_device_set_poll_interval().</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.set_private_flags.html">fu_device_set_private_flags</a></h6>
+          <div class="docblock">
+            <p>Sets private flags that can be used by the plugin for any&nbsp;purpose.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.set_progress.html">fu_device_set_progress</a></h6>
           <div class="docblock">
             <p>Sets the progress&nbsp;completion.</p>
@@ -1351,6 +1548,22 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
             <p>Sets what the device is currently&nbsp;doing.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_update_state.html">fu_device_set_update_state</a></h6>
+          <div class="docblock">
+            <p>Sets the update state, clearing the update error as&nbsp;required.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_vendor.html">fu_device_set_vendor</a></h6>
+          <div class="docblock">
+            <p>Sets the vendor name on the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -1565,6 +1778,50 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
     
 
     
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.Device.child-added.html">FwupdPlugin.Device::child-added</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Device.child-removed.html">FwupdPlugin.Device::child-removed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Device.request.html">FwupdPlugin.Device::request</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
 
     
     <div class="class toggle-wrapper default-hide">
@@ -1640,44 +1897,6 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
   </section>
 </section>
-
-
-    
-<div class="toc">
-  <nav aria-labelledby="toc-title">
-    <p id="toc-title">Content</p>
-    <ul class="toc-list">
-      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
-      
-      
-      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
-      
-      
-      
-<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
-
-
-      
-
-      
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
-
-      
-
-    </ul>
-  </nav>
-</div>
 
 
     <section id="search" class="content hidden"></section>

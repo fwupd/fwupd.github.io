@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -174,6 +174,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Remote.setup.html">setup</a>
   
+    <a class="method" href="method.Remote.to_json.html">to_json</a>
+  
     <a class="method" href="method.Remote.to_variant.html">to_variant</a>
   
   </div>
@@ -224,8 +226,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -241,7 +245,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupd/fwupd-remote.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupd/fwupd-remote.c#L20">[src]</a>
           
         </h4>
 
@@ -616,6 +620,14 @@ been set. Calling this method multiple times has no&nbsp;effect.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.to_json.html">fwupd_remote_to_json</a></h6>
+          <div class="docblock">
+            <p>Adds a fwupd remote to a <span class="caps">JSON</span>&nbsp;builder.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.to_variant.html">fwupd_remote_to_variant</a></h6>
           <div class="docblock">
             <p>Serialize the remote&nbsp;data.</p>
@@ -898,44 +910,6 @@ void
 
   </section>
 </section>
-
-
-    
-<div class="toc">
-  <nav aria-labelledby="toc-title">
-    <p id="toc-title">Content</p>
-    <ul class="toc-list">
-      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
-      
-      
-      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
-      
-      
-      
-<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
-
-
-      
-
-      
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
-
-      
-
-    </ul>
-  </nav>
-</div>
 
 
     <section id="search" class="content hidden"></section>

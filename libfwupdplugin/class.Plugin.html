@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -109,6 +109,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Plugin.add_report_metadata.html">add_report_metadata</a>
   
     <a class="method" href="method.Plugin.add_rule.html">add_rule</a>
+  
+    <a class="method" href="method.Plugin.add_udev_subsystem.html">add_udev_subsystem</a>
   
     <a class="method" href="method.Plugin.alloc_data.html">alloc_data</a>
   
@@ -277,8 +279,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -294,7 +298,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupdplugin/fu-plugin.c#L22">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-plugin.c#L22">[src]</a>
           
         </h4>
 
@@ -412,6 +416,14 @@ for example the plugin specified by <code>name</code> will be ordered after this
 when <code>FU_PLUGIN_RULE_RUN_AFTER</code> is&nbsp;used.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.add_udev_subsystem.html">fu_plugin_add_udev_subsystem</a></h6>
+          <div class="docblock">
+            <p>Registers the udev subsystem to be watched by the&nbsp;daemon.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -1165,46 +1177,6 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
 
   </section>
 </section>
-
-
-    
-<div class="toc">
-  <nav aria-labelledby="toc-title">
-    <p id="toc-title">Content</p>
-    <ul class="toc-list">
-      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
-      
-      
-      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
-      
-      
-      
-<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
-
-
-      
-
-      
-<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
-
-
-      
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
-
-
-    </ul>
-  </nav>
-</div>
 
 
     <section id="search" class="content hidden"></section>

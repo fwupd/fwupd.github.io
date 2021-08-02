@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -194,6 +194,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_version_bootloader_raw.html">get_version_bootloader_raw</a>
   
+    <a class="method" href="method.Device.get_version_build_date.html">get_version_build_date</a>
+  
     <a class="method" href="method.Device.get_version_format.html">get_version_format</a>
   
     <a class="method" href="method.Device.get_version_lowest.html">get_version_lowest</a>
@@ -206,6 +208,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
+    <a class="method" href="method.Device.has_icon.html">has_icon</a>
+  
     <a class="method" href="method.Device.has_instance_id.html">has_instance_id</a>
   
     <a class="method" href="method.Device.has_protocol.html">has_protocol</a>
@@ -213,6 +217,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.has_vendor_id.html">has_vendor_id</a>
   
     <a class="method" href="method.Device.incorporate.html">incorporate</a>
+  
+    <a class="method" href="method.Device.remove_child.html">remove_child</a>
   
     <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
   
@@ -268,6 +274,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_version_bootloader_raw.html">set_version_bootloader_raw</a>
   
+    <a class="method" href="method.Device.set_version_build_date.html">set_version_build_date</a>
+  
     <a class="method" href="method.Device.set_version_format.html">set_version_format</a>
   
     <a class="method" href="method.Device.set_version_lowest.html">set_version_lowest</a>
@@ -300,6 +308,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="property" href="property.Device.protocol.html">protocol</a>
   
     <a class="property" href="property.Device.status.html">status</a>
+  
+    <a class="property" href="property.Device.update-error.html">update-error</a>
+  
+    <a class="property" href="property.Device.update-image.html">update-image</a>
+  
+    <a class="property" href="property.Device.update-message.html">update-message</a>
   
     <a class="property" href="property.Device.update-state.html">update-state</a>
   
@@ -338,8 +352,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -355,7 +371,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/master/libfwupd/fwupd-device.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupd/fwupd-device.c#L19">[src]</a>
           
         </h4>
 
@@ -805,6 +821,14 @@ device in some&nbsp;way.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_version_build_date.html">fwupd_device_get_version_build_date</a></h6>
+          <div class="docblock">
+            <p>Gets the date when the firmware was&nbsp;built.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_version_format.html">fwupd_device_get_version_format</a></h6>
           <div class="docblock">
             <p>Gets the update&nbsp;state.</p>
@@ -853,6 +877,14 @@ device in some&nbsp;way.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.has_icon.html">fwupd_device_has_icon</a></h6>
+          <div class="docblock">
+            <p>Finds out if the device has this specific&nbsp;icon.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.has_instance_id.html">fwupd_device_has_instance_id</a></h6>
           <div class="docblock">
             <p>Finds out if the device has this specific&nbsp;InstanceID.</p>
@@ -882,6 +914,14 @@ device in some&nbsp;way.</p>
             <p>Copy all properties from the donor object if they have not already been&nbsp;set.</p>
           </div>
           <div class="docblock"><p>Available since: 1.1.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.remove_child.html">fwupd_device_remove_child</a></h6>
+          <div class="docblock">
+            <p>Removes a child&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
         </div>
       
         <div class="">
@@ -1102,6 +1142,14 @@ parent&nbsp;device.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.set_version_build_date.html">fwupd_device_set_version_build_date</a></h6>
+          <div class="docblock">
+            <p>Sets the date when the firmware was&nbsp;built.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.set_version_format.html">fwupd_device_set_version_format</a></h6>
           <div class="docblock">
             <p>Sets the update&nbsp;state.</p>
@@ -1217,6 +1265,36 @@ Optionally provides additional data based upon&nbsp;flags.</p>
       
         <div class="">
           <h6><a href="property.Device.status.html">Fwupd.Device:status</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.update-error.html">Fwupd.Device:update-error</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.update-image.html">Fwupd.Device:update-image</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.update-message.html">Fwupd.Device:update-message</a></h6>
 
           <div class="docblock">
             No description available.
@@ -1472,44 +1550,6 @@ the client must check for this manually if this should be&nbsp;allowed.</p>
 
   </section>
 </section>
-
-
-    
-<div class="toc">
-  <nav aria-labelledby="toc-title">
-    <p id="toc-title">Content</p>
-    <ul class="toc-list">
-      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
-      
-      
-      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
-      
-      
-      
-<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
-
-
-      
-<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
-
-
-      
-
-      
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
-
-      
-
-    </ul>
-  </nav>
-</div>
 
 
     <section id="search" class="content hidden"></section>

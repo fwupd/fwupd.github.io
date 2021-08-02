@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.1</p>
+        <p>Library Version: 1.6.2</p>
         
       </div>
       
@@ -132,8 +132,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
+
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+    
 
     
 <section id="main" class="content">
@@ -147,7 +149,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.6.1</td></tr>
+        <tr><td><em>Version</em></td><td>1.6.2</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -222,9 +224,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <ul>
         
-          <li><a href="tutorial.html">fwupd Plugin Tutorial</a></li>
+          <li><a href="tutorial.html">Unknown document</a></li>
         
-          <li><a href="hsi.html">Host Security ID Specification</a></li>
+          <li><a href="hsi.html">Unknown document</a></li>
         
           <li><a href="classes_hierarchy.html">Classes Hierarchy</a></li>
         
@@ -320,6 +322,34 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="EfiFirmwareFile" class="symbol" href="class.EfiFirmwareFile.html">EfiFirmwareFile</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EfiFirmwareFilesystem" class="symbol" href="class.EfiFirmwareFilesystem.html">EfiFirmwareFilesystem</a></td>
+            
+            <td class="docblock-summary"><p>A <span class="caps">UEFI</span>&nbsp;filesystem.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EfiFirmwareSection" class="symbol" href="class.EfiFirmwareSection.html">EfiFirmwareSection</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EfiFirmwareVolume" class="symbol" href="class.EfiFirmwareVolume.html">EfiFirmwareVolume</a></td>
+            
+            <td class="docblock-summary"><p>A <span class="caps">UEFI</span> file&nbsp;volume.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="EfiSignature" class="symbol" href="class.EfiSignature.html">EfiSignature</a></td>
             
             <td class="docblock-summary"><p>A <span class="caps">UEFI</span> Signature as found in an <code>EFI_SIGNATURE_LIST</code>.</p></td>
@@ -365,6 +395,27 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
             <td><a title="I2cDevice" class="symbol" href="class.I2cDevice.html">I2cDevice</a></td>
             
             <td class="docblock-summary"><p>A I²C device with an assigned bus&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfdBios" class="symbol" href="class.IfdBios.html">IfdBios</a></td>
+            
+            <td class="docblock-summary"><p>An Intel <span class="caps">BIOS</span>&nbsp;section.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfdFirmware" class="symbol" href="class.IfdFirmware.html">IfdFirmware</a></td>
+            
+            <td class="docblock-summary"><p>An Intel Flash&nbsp;Descriptor.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfdImage" class="symbol" href="class.IfdImage.html">IfdImage</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           
@@ -574,6 +625,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="IfdRegion" class="symbol" href="enum.IfdRegion.html">IfdRegion</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PathKind" class="symbol" href="enum.PathKind.html">PathKind</a></td>
             
             <td class="docblock-summary"><p>Path types to use when dynamically determining a path at&nbsp;runtime.</p></td>
@@ -659,6 +717,13 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
             <td><a title="HidDeviceFlags" class="symbol" href="flags.HidDeviceFlags.html">HidDeviceFlags</a></td>
             
             <td class="docblock-summary"><p>Flags used when calling fu_hid_device_get_report() and&nbsp;fu_hid_device_set_report().</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfdAccess" class="symbol" href="flags.IfdAccess.html">IfdAccess</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           
@@ -900,6 +965,13 @@ the block is already aligned then the original <code>bytes</code> is&nbsp;return
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_check_kernel_version" class="symbol" href="func.common_check_kernel_version.html">common_check_kernel_version</a></td>
+            
+            <td class="docblock-summary"><p>Determines if the system is running at least a certain required kernel&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_cpuid" class="symbol" href="func.common_cpuid.html">common_cpuid</a></td>
             
             <td class="docblock-summary"><p>Calls <span class="caps">CPUID</span> and returns the registers for the given&nbsp;leaf.</p></td>
@@ -908,6 +980,13 @@ the block is already aligned then the original <code>bytes</code> is&nbsp;return
           
           <tr class="section-item">
             <td><a title="common_crc16" class="symbol" href="func.common_crc16.html">common_crc16</a></td>
+            
+            <td class="docblock-summary"><p>Returns the <span class="caps">CRC</span>-16-<span class="caps">IBM</span> cyclic redundancy value for the given memory&nbsp;buffer.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_crc16_full" class="symbol" href="func.common_crc16_full.html">common_crc16_full</a></td>
             
             <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
@@ -1045,6 +1124,14 @@ will be&nbsp;returned.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_get_firmware_search_path" class="symbol" href="func.common_get_firmware_search_path.html">common_get_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Reads the FU_PATH_KIND_FIRMWARE_SEARCH and
+returns its&nbsp;contents.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_get_memory_size" class="symbol" href="func.common_get_memory_size.html">common_get_memory_size</a></td>
             
             <td class="docblock-summary"><p>Returns the size of physical&nbsp;memory.</p></td>
@@ -1165,6 +1252,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_reset_firmware_search_path" class="symbol" href="func.common_reset_firmware_search_path.html">common_reset_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Resets the FU_PATH_KIND_FIRMWARE_SEARCH to an empty&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_rmtree" class="symbol" href="func.common_rmtree.html">common_rmtree</a></td>
             
             <td class="docblock-summary"><p>Recursively removes a&nbsp;directory.</p></td>
@@ -1175,6 +1269,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
             <td><a title="common_set_contents_bytes" class="symbol" href="func.common_set_contents_bytes.html">common_set_contents_bytes</a></td>
             
             <td class="docblock-summary"><p>Writes a blob of data to a filename, creating the parent directories as&nbsp;required.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_set_firmware_search_path" class="symbol" href="func.common_set_firmware_search_path.html">common_set_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Writes path to the&nbsp;FU_PATH_KIND_FIRMWARE_SEARCH.</p></td>
             
           </tr>
           
@@ -1383,6 +1484,13 @@ The supported formats&nbsp;are:</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="efi_guid_to_name" class="symbol" href="func.efi_guid_to_name.html">efi_guid_to_name</a></td>
+            
+            <td class="docblock-summary"><p>Converts a <span class="caps">GUID</span> to the known nice&nbsp;name.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="efivar_delete" class="symbol" href="func.efivar_delete.html">efivar_delete</a></td>
             
             <td class="docblock-summary"><p>Removes a variable from <span class="caps">NVRAM</span>.</p></td>
@@ -1472,6 +1580,34 @@ kernel as some (hopefully small) variables are hidden from&nbsp;userspace.</p></
             <td><a title="efivar_supported" class="symbol" href="func.efivar_supported.html">efivar_supported</a></td>
             
             <td class="docblock-summary"><p>Determines if the kernel supports <span class="caps">EFI</span>&nbsp;variables.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ifd_access_to_string" class="symbol" href="func.ifd_access_to_string.html">ifd_access_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts a <code>FuIfdAccess</code> to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ifd_region_to_access" class="symbol" href="func.ifd_region_to_access.html">ifd_region_to_access</a></td>
+            
+            <td class="docblock-summary"><p>Converts a <code>FuIfdRegion</code> to an access&nbsp;level.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ifd_region_to_name" class="symbol" href="func.ifd_region_to_name.html">ifd_region_to_name</a></td>
+            
+            <td class="docblock-summary"><p>Converts a <code>FuIfdRegion</code> to a name the user might&nbsp;recognize.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ifd_region_to_string" class="symbol" href="func.ifd_region_to_string.html">ifd_region_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts a <code>FuIfdRegion</code> to a&nbsp;string.</p></td>
             
           </tr>
           
@@ -1714,6 +1850,20 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_get_update_image" class="symbol" href="func.device_get_update_image.html">device_get_update_image</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_get_update_message" class="symbol" href="func.device_get_update_message.html">device_get_update_message</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_get_update_state" class="symbol" href="func.device_get_update_state.html">device_get_update_state</a></td>
             
             <td class="docblock-summary"></td>
@@ -1756,6 +1906,13 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_get_version_build_date" class="symbol" href="func.device_get_version_build_date.html">device_get_version_build_date</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_get_version_format" class="symbol" href="func.device_get_version_format.html">device_get_version_format</a></td>
             
             <td class="docblock-summary"></td>
@@ -1785,6 +1942,13 @@ then no member is&nbsp;added.</p></td>
           
           <tr class="section-item">
             <td><a title="device_has_flag" class="symbol" href="func.device_has_flag.html">device_has_flag</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_has_icon" class="symbol" href="func.device_has_icon.html">device_has_icon</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -1903,21 +2067,14 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="device_set_update_state" class="symbol" href="func.device_set_update_state.html">device_set_update_state</a></td>
-            
-            <td class="docblock-summary"></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="device_set_vendor" class="symbol" href="func.device_set_vendor.html">device_set_vendor</a></td>
-            
-            <td class="docblock-summary"></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="device_set_version_bootloader_raw" class="symbol" href="func.device_set_version_bootloader_raw.html">device_set_version_bootloader_raw</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_set_version_build_date" class="symbol" href="func.device_set_version_build_date.html">device_set_version_build_date</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -1932,6 +2089,20 @@ then no member is&nbsp;added.</p></td>
           
           <tr class="section-item">
             <td><a title="device_set_version_raw" class="symbol" href="func.device_set_version_raw.html">device_set_version_raw</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFD_FREG_BASE" class="symbol" href="func.IFD_FREG_BASE.html">IFD_FREG_BASE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFD_FREG_LIMIT" class="symbol" href="func.IFD_FREG_LIMIT.html">IFD_FREG_LIMIT</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -2088,6 +2259,132 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_FILE_BIOS_GUARD" class="symbol" href="const.EFI_FIRMWARE_FILE_BIOS_GUARD.html">EFI_FIRMWARE_FILE_BIOS_GUARD</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_FILE_FV_IMAGE" class="symbol" href="const.EFI_FIRMWARE_FILE_FV_IMAGE.html">EFI_FIRMWARE_FILE_FV_IMAGE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_FILE_MICROCODE" class="symbol" href="const.EFI_FIRMWARE_FILE_MICROCODE.html">EFI_FIRMWARE_FILE_MICROCODE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_ACPI1_TABLE" class="symbol" href="const.EFI_FIRMWARE_SECTION_ACPI1_TABLE.html">EFI_FIRMWARE_SECTION_ACPI1_TABLE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_ACPI2_TABLE" class="symbol" href="const.EFI_FIRMWARE_SECTION_ACPI2_TABLE.html">EFI_FIRMWARE_SECTION_ACPI2_TABLE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_ESRT_TABLE" class="symbol" href="const.EFI_FIRMWARE_SECTION_ESRT_TABLE.html">EFI_FIRMWARE_SECTION_ESRT_TABLE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_LZMA_COMPRESS" class="symbol" href="const.EFI_FIRMWARE_SECTION_LZMA_COMPRESS.html">EFI_FIRMWARE_SECTION_LZMA_COMPRESS</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_SMBIOS_TABLE" class="symbol" href="const.EFI_FIRMWARE_SECTION_SMBIOS_TABLE.html">EFI_FIRMWARE_SECTION_SMBIOS_TABLE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_SECTION_TIANO_COMPRESS" class="symbol" href="const.EFI_FIRMWARE_SECTION_TIANO_COMPRESS.html">EFI_FIRMWARE_SECTION_TIANO_COMPRESS</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_APPLE_BOOT" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_APPLE_BOOT.html">EFI_FIRMWARE_VOLUME_GUID_APPLE_BOOT</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_FFS1" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_FFS1.html">EFI_FIRMWARE_VOLUME_GUID_FFS1</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_FFS2" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_FFS2.html">EFI_FIRMWARE_VOLUME_GUID_FFS2</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_FFS3" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_FFS3.html">EFI_FIRMWARE_VOLUME_GUID_FFS3</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA.html">EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA2" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA2.html">EFI_FIRMWARE_VOLUME_GUID_NVRAM_EVSA2</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_NVRAM_NVAR" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_NVRAM_NVAR.html">EFI_FIRMWARE_VOLUME_GUID_NVRAM_NVAR</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_PFH1" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_PFH1.html">EFI_FIRMWARE_VOLUME_GUID_PFH1</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFI_FIRMWARE_VOLUME_GUID_PFH2" class="symbol" href="const.EFI_FIRMWARE_VOLUME_GUID_PFH2.html">EFI_FIRMWARE_VOLUME_GUID_PFH2</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="EFI_SIGNATURE_GUID_MICROSOFT" class="symbol" href="const.EFI_SIGNATURE_GUID_MICROSOFT.html">EFI_SIGNATURE_GUID_MICROSOFT</a></td>
             
             <td class="docblock-summary"></td>
@@ -2159,6 +2456,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           
           <tr class="section-item">
             <td><a title="EFIVAR_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS" class="symbol" href="const.EFIVAR_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS.html">EFIVAR_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EFIVAR_GUID_EFI_CAPSULE_REPORT" class="symbol" href="const.EFIVAR_GUID_EFI_CAPSULE_REPORT.html">EFIVAR_GUID_EFI_CAPSULE_REPORT</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -2650,7 +2954,7 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           <tr class="section-item">
             <td><a title="QUIRKS_BATTERY_THRESHOLD" class="symbol" href="const.QUIRKS_BATTERY_THRESHOLD.html">QUIRKS_BATTERY_THRESHOLD</a></td>
             
-            <td class="docblock-summary"><p>The quirk key for the battery theshold in&nbsp;percent.</p></td>
+            <td class="docblock-summary"><p>The quirk key for the battery threshold in&nbsp;percent.</p></td>
             
           </tr>
           
@@ -2721,6 +3025,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="QUIRKS_ICON" class="symbol" href="const.QUIRKS_ICON.html">QUIRKS_ICON</a></td>
             
             <td class="docblock-summary"><p>The quirk key for the&nbsp;icon.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_INHIBIT" class="symbol" href="const.QUIRKS_INHIBIT.html">QUIRKS_INHIBIT</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to inhibit the <span class="caps">UPDATABLE</span> flag and to set an update&nbsp;error.</p></td>
             
           </tr>
           
@@ -2886,8 +3197,6 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
   
 </section>
 
-
-    
 
     <section id="search" class="content hidden"></section>
 
