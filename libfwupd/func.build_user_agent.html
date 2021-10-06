@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupd.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -89,10 +89,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -107,7 +105,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupd/fwupd-common.h#L65">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupd/fwupd-common.h#L69">[src]</a>
         
       </h4>
 
@@ -127,7 +125,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupd/fwupd-common.c#L299">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupd/fwupd-common.c#L283">[src]</a>
         
       </h4>
 
@@ -139,7 +137,7 @@ instance sending a different metadata file for old versions of fwupd, or
 returning an error for Solaris&nbsp;machines.</p>
 <p>Before freaking out about theoretical privacy implications, much more data
 than this is sent to each and every website you&nbsp;visit.</p>
-<p>Rather that using this function you should use <a href="method.Client.set_user_agent_for_package.html">fwupd_client_set_user_agent_for_package()</a>
+<p>Rather that using this function you should use <a href="method.Client.set_user_agent_for_package.html"><code>fwupd_client_set_user_agent_for_package()</code></a>
 which uses the <em>runtime</em> version of the daemon rather than the <em>build-time</em>&nbsp;version.</p>
       </div>
 
@@ -238,6 +236,8 @@ which uses the <em>runtime</em> version of the daemon rather than the <em>build-
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

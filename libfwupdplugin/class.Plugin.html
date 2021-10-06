@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -164,9 +164,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.runner_add_security_attrs.html">runner_add_security_attrs</a>
   
+    <a class="method" href="method.Plugin.runner_attach.html">runner_attach</a>
+  
     <a class="method" href="method.Plugin.runner_backend_device_added.html">runner_backend_device_added</a>
   
     <a class="method" href="method.Plugin.runner_backend_device_changed.html">runner_backend_device_changed</a>
+  
+    <a class="method" href="method.Plugin.runner_cleanup.html">runner_cleanup</a>
   
     <a class="method" href="method.Plugin.runner_clear_results.html">runner_clear_results</a>
   
@@ -180,6 +184,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.runner_composite_prepare.html">runner_composite_prepare</a>
   
+    <a class="method" href="method.Plugin.runner_detach.html">runner_detach</a>
+  
     <a class="method" href="method.Plugin.runner_device_added.html">runner_device_added</a>
   
     <a class="method" href="method.Plugin.runner_device_created.html">runner_device_created</a>
@@ -190,25 +196,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.runner_get_results.html">runner_get_results</a>
   
+    <a class="method" href="method.Plugin.runner_prepare.html">runner_prepare</a>
+  
+    <a class="method" href="method.Plugin.runner_reload.html">runner_reload</a>
+  
     <a class="method" href="method.Plugin.runner_startup.html">runner_startup</a>
   
     <a class="method" href="method.Plugin.runner_unlock.html">runner_unlock</a>
   
-    <a class="method" href="method.Plugin.runner_update.html">runner_update</a>
-  
-    <a class="method" href="method.Plugin.runner_update_attach.html">runner_update_attach</a>
-  
-    <a class="method" href="method.Plugin.runner_update_cleanup.html">runner_update_cleanup</a>
-  
-    <a class="method" href="method.Plugin.runner_update_detach.html">runner_update_detach</a>
-  
-    <a class="method" href="method.Plugin.runner_update_prepare.html">runner_update_prepare</a>
-  
-    <a class="method" href="method.Plugin.runner_update_reload.html">runner_update_reload</a>
-  
     <a class="method" href="method.Plugin.runner_verify.html">runner_verify</a>
   
+    <a class="method" href="method.Plugin.runner_write_firmware.html">runner_write_firmware</a>
+  
     <a class="method" href="method.Plugin.set_build_hash.html">set_build_hash</a>
+  
+    <a class="method" href="method.Plugin.set_config_value.html">set_config_value</a>
   
     <a class="method" href="method.Plugin.set_name.html">set_name</a>
   
@@ -228,6 +230,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="signal" href="signal.Plugin.check-supported.html">check-supported</a>
+  
+    <a class="signal" href="signal.Plugin.config-changed.html">config-changed</a>
   
     <a class="signal" href="signal.Plugin.device-added.html">device-added</a>
   
@@ -261,6 +265,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="vfunc.Plugin.check_supported.html">check_supported</a>
   
+    <a class="method" href="vfunc.Plugin.config_changed.html">config_changed</a>
+  
     <a class="method" href="vfunc.Plugin.device_added.html">device_added</a>
   
     <a class="method" href="vfunc.Plugin.device_register.html">device_register</a>
@@ -279,10 +285,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -298,7 +302,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-plugin.c#L22">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-plugin.c#L22">[src]</a>
           
         </h4>
 
@@ -323,6 +327,65 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </div>
     </summary>
 
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for FwupdPlugin.Plugin">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.48.0 (0)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="97pt" height="188pt"
+ viewBox="0.00 0.00 97.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="FuPlugin">
+<path fill="none" stroke="black" d="M65.5,-36C65.5,-36 23.5,-36 23.5,-36 17.5,-36 11.5,-30 11.5,-24 11.5,-24 11.5,-12 11.5,-12 11.5,-6 17.5,0 23.5,0 23.5,0 65.5,0 65.5,0 71.5,0 77.5,-6 77.5,-12 77.5,-12 77.5,-24 77.5,-24 77.5,-30 71.5,-36 65.5,-36"/>
+<text text-anchor="middle" x="44.5" y="-14.3" font-family="Times,serif" font-size="14.00">FuPlugin</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="Fwupd.Plugin">
+<path fill="none" stroke="black" d="M77,-108C77,-108 12,-108 12,-108 6,-108 0,-102 0,-96 0,-96 0,-84 0,-84 0,-78 6,-72 12,-72 12,-72 77,-72 77,-72 83,-72 89,-78 89,-84 89,-84 89,-96 89,-96 89,-102 83,-108 77,-108"/>
+<text text-anchor="middle" x="44.5" y="-86.3" font-family="Times,serif" font-size="14.00">FwupdPlugin</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge2" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M44.5,-71.7C44.5,-60.85 44.5,-46.92 44.5,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M63.5,-180C63.5,-180 25.5,-180 25.5,-180 19.5,-180 13.5,-174 13.5,-168 13.5,-168 13.5,-156 13.5,-156 13.5,-150 19.5,-144 25.5,-144 25.5,-144 63.5,-144 63.5,-144 69.5,-144 75.5,-150 75.5,-156 75.5,-156 75.5,-168 75.5,-168 75.5,-174 69.5,-180 63.5,-180"/>
+<text text-anchor="middle" x="44.5" y="-158.3" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge1" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M44.5,-143.7C44.5,-132.85 44.5,-118.92 44.5,-108.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
     
 
     
@@ -519,7 +582,7 @@ has already been added by a different plugin then this request will be&nbsp;igno
           <h6><a href="method.Plugin.get_data.html">fu_plugin_get_data</a></h6>
           <div class="docblock">
             <p>Gets the per-plugin allocated private data. This will return <code>NULL</code> unless
-fu_plugin_alloc_data() has been called by the&nbsp;plugin.</p>
+<code>fu_plugin_alloc_data()</code> has been called by the&nbsp;plugin.</p>
           </div>
           <div class="docblock"><p>Available since: 0.8.0</p></div>
         </div>
@@ -527,8 +590,8 @@ fu_plugin_alloc_data() has been called by the&nbsp;plugin.</p>
         <div class="">
           <h6><a href="method.Plugin.get_devices.html">fu_plugin_get_devices</a></h6>
           <div class="docblock">
-            <p>Returns all devices added by the plugin using fu_plugin_device_add() and
-not yet removed with&nbsp;fu_plugin_device_remove().</p>
+            <p>Returns all devices added by the plugin using <code>fu_plugin_device_add()</code> and
+not yet removed with <code>fu_plugin_device_remove()</code>.</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.6</p></div>
         </div>
@@ -638,6 +701,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.runner_attach.html">fu_plugin_runner_attach</a></h6>
+          <div class="docblock">
+            <p>Runs the update_attach routine for the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.runner_backend_device_added.html">fu_plugin_runner_backend_device_added</a></h6>
           <div class="docblock">
             <p>Call the backend_device_added routine for the&nbsp;plugin.</p>
@@ -651,6 +722,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
             <p>Call the backend_device_changed routine for the&nbsp;plugin.</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_cleanup.html">fu_plugin_runner_cleanup</a></h6>
+          <div class="docblock">
+            <p>Runs the update_cleanup routine for the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
         </div>
       
         <div class="">
@@ -702,6 +781,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.runner_detach.html">fu_plugin_runner_detach</a></h6>
+          <div class="docblock">
+            <p>Runs the update_detach routine for the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.runner_device_added.html">fu_plugin_runner_device_added</a></h6>
           <div class="docblock">
             <p>Call the device_added routine for the&nbsp;plugin.</p>
@@ -742,6 +829,22 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.runner_prepare.html">fu_plugin_runner_prepare</a></h6>
+          <div class="docblock">
+            <p>Runs the update_prepare routine for the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_reload.html">fu_plugin_runner_reload</a></h6>
+          <div class="docblock">
+            <p>Runs reload routine for a&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.runner_startup.html">fu_plugin_runner_startup</a></h6>
           <div class="docblock">
             <p>Runs the startup routine for the&nbsp;plugin.</p>
@@ -758,59 +861,19 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Plugin.runner_update.html">fu_plugin_runner_update</a></h6>
-          <div class="docblock">
-            <p>Call into the plugin&#8217;s update&nbsp;routine.</p>
-          </div>
-          <div class="docblock"><p>Available since: 0.8.0</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.runner_update_attach.html">fu_plugin_runner_update_attach</a></h6>
-          <div class="docblock">
-            <p>Runs the update_attach routine for the&nbsp;plugin.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.1.2</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.runner_update_cleanup.html">fu_plugin_runner_update_cleanup</a></h6>
-          <div class="docblock">
-            <p>Runs the update_cleanup routine for the&nbsp;plugin.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.1.2</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.runner_update_detach.html">fu_plugin_runner_update_detach</a></h6>
-          <div class="docblock">
-            <p>Runs the update_detach routine for the&nbsp;plugin.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.1.2</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.runner_update_prepare.html">fu_plugin_runner_update_prepare</a></h6>
-          <div class="docblock">
-            <p>Runs the update_prepare routine for the&nbsp;plugin.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.1.2</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.runner_update_reload.html">fu_plugin_runner_update_reload</a></h6>
-          <div class="docblock">
-            <p>Runs reload routine for a&nbsp;device.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.1.2</p></div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Plugin.runner_verify.html">fu_plugin_runner_verify</a></h6>
           <div class="docblock">
             <p>Call into the plugin&#8217;s verify&nbsp;routine.</p>
           </div>
           <div class="docblock"><p>Available since: 0.8.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_write_firmware.html">fu_plugin_runner_write_firmware</a></h6>
+          <div class="docblock">
+            <p>Call into the plugin&#8217;s write firmware&nbsp;routine.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
         </div>
       
         <div class="">
@@ -820,6 +883,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
 set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
           </div>
           <div class="docblock"><p>Available since: 1.2.4</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.set_config_value.html">fu_plugin_set_config_value</a></h6>
+          <div class="docblock">
+            <p>Sets a plugin config&nbsp;value.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
         </div>
       
         <div class="">
@@ -871,6 +942,14 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
       
         <div class="">
           <h6><a href="signal.Plugin.check-supported.html">FwupdPlugin.Plugin::check-supported</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Plugin.config-changed.html">FwupdPlugin.Plugin::config-changed</a></h6>
           <div class="docblock">
             No description available.
           </div>
@@ -957,6 +1036,9 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
     const gchar* guid
   );
   void (* rules_changed) (
+    FuPlugin* self
+  );
+  void (* config_changed) (
     FuPlugin* self
   );
   
@@ -1061,6 +1143,17 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
           <td style="vertical-align:top">No description available.</td>
         </td>
         
+        <tr>
+          <td style="vertical-align:top"><code>config_changed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* config_changed) (
+    FuPlugin* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
         </table>
       </div>
       
@@ -1078,6 +1171,16 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
       
       <div class="">
         <h6 id="vfunc-check_supported"><a href="vfunc.Plugin.check_supported.html">FwupdPlugin.PluginClass.check_supported</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-config_changed"><a href="vfunc.Plugin.config_changed.html">FwupdPlugin.PluginClass.config_changed</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1177,6 +1280,48 @@ set the correct checksum to avoid the daemon being marked as&nbsp;tainted.</p>
 
   </section>
 </section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
 
 
     <section id="search" class="content hidden"></section>

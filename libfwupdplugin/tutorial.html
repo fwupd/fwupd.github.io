@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
+  <title>FwupdPlugin &ndash; 1.0: Plugin Tutorial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
-  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta property="og:title" content="FwupdPlugin: Plugin Tutorial"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin Tutorial"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin Tutorial"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin Tutorial"/>
 
 
   
@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,23 +75,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
       
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
   <section>
     <div class="docblock">
-    <h1 id="title-fwupd-plugin-tutorial">Title: fwupd Plugin Tutorial<a class="md-anchor" href="#title-fwupd-plugin-tutorial" title="Permanent link"></a></h1>
-<h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>At the heart of fwupd is a plugin loader that gets run at startup, when devices
 get hotplugged and when updates are done.
 The idea is we have lots of small plugins that each do one thing, and are
@@ -231,9 +228,10 @@ ask the daemon to update the device with a suitable <code>.cab</code> file.
 When this is done the daemon checks the update for compatibility with the device,
 and then calls the vfuncs to update the&nbsp;device.</p>
 <div class="codehilite"><pre><span></span><code>gboolean
-fu_plugin_update (FuPlugin *plugin,
+fu_plugin_write_firmware (FuPlugin *plugin,
                   FuDevice *dev,
                   GBytes *blob_fw,
+                  FuProgress *progress,
                   FwupdInstallFlags flags,
                   GError **error)
 {
@@ -256,7 +254,7 @@ This could be something as simple as checking the system battery level is over a
 certain threshold, or it could be as complicated as ensuring a vendor-specific
 <span class="caps">GPIO</span> is asserted when specific types of hardware are&nbsp;updated.</p>
 <div class="codehilite"><pre><span></span><code>gboolean
-fu_plugin_update_prepare (FuPlugin *plugin, FuDevice *device, GError **error)
+fu_plugin_prepare (FuPlugin *plugin, FuDevice *device, GError **error)
 {
     if (fu_device_has_flag (device, FWUPD_DEVICE_FLAG_REQUIRE_AC &amp;&amp;
         !on_ac_power ()) {
@@ -271,7 +269,7 @@ fu_plugin_update_prepare (FuPlugin *plugin, FuDevice *device, GError **error)
 }
 
 gboolean
-fu_plugin_update_cleanup (FuPlugin *plugin, FuDevice *device, GError **error)
+fu_plugin_cleanup (FuPlugin *plugin, FuDevice *device, GError **error)
 {
     return g_file_set_contents (&quot;/var/lib/fwupd/something&quot;,
                                 fu_device_get_id (device), -1, error);
@@ -293,23 +291,23 @@ version from the&nbsp;hardware.</p>
 handle the device <span class="caps">ID</span>, although the registered plugin can change during the
 attach and detach&nbsp;phases.</p>
 <div class="codehilite"><pre><span></span><code>gboolean
-fu_plugin_update_detach (FuPlugin *plugin, FuDevice *device, GError **error)
+fu_plugin_detach (FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
 {
     if (hardware_in_bootloader)
         return TRUE;
-    return _device_detach(device, error);
+    return _device_detach(device, progress, error);
 }
 
 gboolean
-fu_plugin_update_attach (FuPlugin *plugin, FuDevice *device, GError **error)
+fu_plugin_attach (FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
 {
     if (!hardware_in_bootloader)
         return TRUE;
-    return _device_attach(device, error);
+    return _device_attach(device, progress, error);
 }
 
 gboolean
-fu_plugin_update_reload (FuPlugin *plugin, FuDevice *device, GError **error)
+fu_plugin_reload (FuPlugin *plugin, FuDevice *device, GError **error)
 {
     g_autofree gchar *version = _get_version(plugin, device, error);
     if (version == NULL)
@@ -353,6 +351,8 @@ handling, device quirking and data&nbsp;chunking.</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

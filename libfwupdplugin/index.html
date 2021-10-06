@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -132,10 +132,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -149,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.6.2</td></tr>
+        <tr><td><em>Version</em></td><td>1.7.0</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -224,9 +222,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <ul>
         
-          <li><a href="tutorial.html">Unknown document</a></li>
+          <li><a href="env.html">Environment Variables</a></li>
         
-          <li><a href="hsi.html">Unknown document</a></li>
+          <li><a href="tutorial.html">Plugin Tutorial</a></li>
+        
+          <li><a href="hsi.html">Host Security ID Specification</a></li>
         
           <li><a href="classes_hierarchy.html">Classes Hierarchy</a></li>
         
@@ -275,6 +275,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><a title="Cabinet" class="symbol" href="class.Cabinet.html">Cabinet</a></td>
             
             <td class="docblock-summary"><p>Cabinet archive parser and&nbsp;writer.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CfuOffer" class="symbol" href="class.CfuOffer.html">CfuOffer</a></td>
+            
+            <td class="docblock-summary"><p>A <span class="caps">CFU</span> offer. This is a 16 byte blob which contains enough data for the device to either accept
+or refuse a firmware payload. The offer may be loaded from disk, network, or even constructed
+manually. There is much left to how the specific firmware implements <span class="caps">CFU</span>, and it&#8217;s expected
+that multiple different plugins will use this offer in different&nbsp;ways.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CfuPayload" class="symbol" href="class.CfuPayload.html">CfuPayload</a></td>
+            
+            <td class="docblock-summary"><p>A <span class="caps">CFU</span> payload. This contains of a variable number of blocks, each containing the address, size
+and the chunk data. The chunks do not have to be the same size, and the address ranges do not
+have to be&nbsp;continuous.</p></td>
             
           </tr>
           
@@ -441,6 +460,14 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="Progress" class="symbol" href="class.Progress.html">Progress</a></td>
+            
+            <td class="docblock-summary"><p>Objects can use <code>fu_progress_set_percentage()</code> if the absolute percentage
+is known. Percentages should always go up, not&nbsp;down.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="Quirks" class="symbol" href="class.Quirks.html">Quirks</a></td>
             
             <td class="docblock-summary"><p>Quirks can be used to modify device behavior.
@@ -537,6 +564,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           <tbody>
           
           <tr class="section-item">
+            <td><a title="DeviceInternalFlags" class="symbol" href="alias.DeviceInternalFlags.html">DeviceInternalFlags</a></td>
+            
+            <td class="docblock-summary"><p>The device internal&nbsp;flags.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="EndianType" class="symbol" href="alias.EndianType.html">EndianType</a></td>
             
             <td class="docblock-summary"><p>The endian type, e.g. <code>G_LITTLE_ENDIAN</code>.</p></td>
@@ -554,6 +588,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="FirmwareFlags" class="symbol" href="alias.FirmwareFlags.html">FirmwareFlags</a></td>
             
             <td class="docblock-summary"><p>The firmware&nbsp;flags.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ProgressFlags" class="symbol" href="alias.ProgressFlags.html">ProgressFlags</a></td>
+            
+            <td class="docblock-summary"><p>The progress internal&nbsp;flags.</p></td>
             
           </tr>
           
@@ -642,7 +683,7 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="PluginRule" class="symbol" href="enum.PluginRule.html">PluginRule</a></td>
             
             <td class="docblock-summary"><p>The rules used for ordering plugins.
-Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
+Plugins are expected to add rules in <code>fu_plugin_initialize()</code>.</p></td>
             
           </tr>
           
@@ -700,13 +741,6 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="DeviceInternalFlags" class="symbol" href="flags.DeviceInternalFlags.html">DeviceInternalFlags</a></td>
-            
-            <td class="docblock-summary"><p>The device internal&nbsp;flags.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="DumpFlags" class="symbol" href="flags.DumpFlags.html">DumpFlags</a></td>
             
             <td class="docblock-summary"><p>The flags to use when configuring&nbsp;debugging.</p></td>
@@ -716,7 +750,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           <tr class="section-item">
             <td><a title="HidDeviceFlags" class="symbol" href="flags.HidDeviceFlags.html">HidDeviceFlags</a></td>
             
-            <td class="docblock-summary"><p>Flags used when calling fu_hid_device_get_report() and&nbsp;fu_hid_device_set_report().</p></td>
+            <td class="docblock-summary"><p>Flags used when calling <code>fu_hid_device_get_report()</code> and <code>fu_hid_device_set_report()</code>.</p></td>
             
           </tr>
           
@@ -751,7 +785,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           <tr class="section-item">
             <td><a title="UdevDeviceFlags" class="symbol" href="flags.UdevDeviceFlags.html">UdevDeviceFlags</a></td>
             
-            <td class="docblock-summary"><p>Flags used when opening the device using&nbsp;fu_device_open().</p></td>
+            <td class="docblock-summary"><p>Flags used when opening the device using <code>fu_device_open()</code>.</p></td>
             
           </tr>
           
@@ -782,6 +816,13 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CommonStrsplitFunc" class="symbol" href="callback.CommonStrsplitFunc.html">CommonStrsplitFunc</a></td>
+            
+            <td class="docblock-summary"><p>The <code>fu_common_strnsplit_full()</code> iteration&nbsp;callback.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="ContextLookupIter" class="symbol" href="callback.ContextLookupIter.html">ContextLookupIter</a></td>
             
             <td class="docblock-summary"><p>The context lookup iteration&nbsp;callback.</p></td>
@@ -791,7 +832,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           <tr class="section-item">
             <td><a title="DeviceLockerFunc" class="symbol" href="callback.DeviceLockerFunc.html">DeviceLockerFunc</a></td>
             
-            <td class="docblock-summary"><p>Callback to use when opening and closing using&nbsp;fu_device_locker_new_full().</p></td>
+            <td class="docblock-summary"><p>Callback to use when opening and closing using <code>fu_device_locker_new_full()</code>.</p></td>
             
           </tr>
           
@@ -903,6 +944,27 @@ bit position to align to. If <code>alignment</code> is zero then <code>array</co
             
             <td class="docblock-summary"><p>Get the byte data in the <code>GBytes</code>. This data should not be modified.
 This function will always return the same pointer for a given <code>GBytes</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="cfu_device_offer_to_string" class="symbol" href="func.cfu_device_offer_to_string.html">cfu_device_offer_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts an enumerated offer type to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="cfu_device_reject_to_string" class="symbol" href="func.cfu_device_reject_to_string.html">cfu_device_reject_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts an enumerated reject type to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="cfu_device_status_to_string" class="symbol" href="func.cfu_device_status_to_string.html">cfu_device_status_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts an enumerated status type to a&nbsp;string.</p></td>
             
           </tr>
           
@@ -1340,6 +1402,14 @@ to the last&nbsp;token.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_strnsplit_full" class="symbol" href="func.common_strnsplit_full.html">common_strnsplit_full</a></td>
+            
+            <td class="docblock-summary"><p>Splits the string, calling the given function for each
+of the tokens found. If any <code>callback</code> returns <code>FALSE</code> scanning is&nbsp;aborted.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_strsafe" class="symbol" href="func.common_strsafe.html">common_strsafe</a></td>
             
             <td class="docblock-summary"><p>Converts a string into something that can be safely&nbsp;printed.</p></td>
@@ -1680,6 +1750,13 @@ then no member is&nbsp;added.</p></td>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="CHECK_VERSION" class="symbol" href="func.CHECK_VERSION.html">CHECK_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>Check whether a fwupd version equal to or greater than&nbsp;major.minor.micro.</p></td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="device_add_checksum" class="symbol" href="func.device_add_checksum.html">device_add_checksum</a></td>
@@ -2166,6 +2243,335 @@ be&nbsp;discovered.</p></td>
             <td><a title="BUILD_HASH" class="symbol" href="const.BUILD_HASH.html">BUILD_HASH</a></td>
             
             <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_FLAG_FIRST_BLOCK" class="symbol" href="const.CFU_DEVICE_FLAG_FIRST_BLOCK.html">CFU_DEVICE_FLAG_FIRST_BLOCK</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_FLAG_LAST_BLOCK" class="symbol" href="const.CFU_DEVICE_FLAG_LAST_BLOCK.html">CFU_DEVICE_FLAG_LAST_BLOCK</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_ACCEPT" class="symbol" href="const.CFU_DEVICE_OFFER_ACCEPT.html">CFU_DEVICE_OFFER_ACCEPT</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_BUSY" class="symbol" href="const.CFU_DEVICE_OFFER_BUSY.html">CFU_DEVICE_OFFER_BUSY</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_COMMAND" class="symbol" href="const.CFU_DEVICE_OFFER_COMMAND.html">CFU_DEVICE_OFFER_COMMAND</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_NOT_SUPPORTED" class="symbol" href="const.CFU_DEVICE_OFFER_NOT_SUPPORTED.html">CFU_DEVICE_OFFER_NOT_SUPPORTED</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_REJECT" class="symbol" href="const.CFU_DEVICE_OFFER_REJECT.html">CFU_DEVICE_OFFER_REJECT</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_OFFER_SKIP" class="symbol" href="const.CFU_DEVICE_OFFER_SKIP.html">CFU_DEVICE_OFFER_SKIP</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_DEBUG_SAME_VERSION" class="symbol" href="const.CFU_DEVICE_REJECT_DEBUG_SAME_VERSION.html">CFU_DEVICE_REJECT_DEBUG_SAME_VERSION</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_INV_COMPONENT" class="symbol" href="const.CFU_DEVICE_REJECT_INV_COMPONENT.html">CFU_DEVICE_REJECT_INV_COMPONENT</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_OLD_FIRMWARE" class="symbol" href="const.CFU_DEVICE_REJECT_OLD_FIRMWARE.html">CFU_DEVICE_REJECT_OLD_FIRMWARE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_SIGN_RULE" class="symbol" href="const.CFU_DEVICE_REJECT_SIGN_RULE.html">CFU_DEVICE_REJECT_SIGN_RULE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_SWAP_PENDING" class="symbol" href="const.CFU_DEVICE_REJECT_SWAP_PENDING.html">CFU_DEVICE_REJECT_SWAP_PENDING</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_VER_RELEASE_DEBUG" class="symbol" href="const.CFU_DEVICE_REJECT_VER_RELEASE_DEBUG.html">CFU_DEVICE_REJECT_VER_RELEASE_DEBUG</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_REJECT_WRONG_BANK" class="symbol" href="const.CFU_DEVICE_REJECT_WRONG_BANK.html">CFU_DEVICE_REJECT_WRONG_BANK</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_COMPLETE" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_COMPLETE.html">CFU_DEVICE_STATUS_ERROR_COMPLETE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_CRC" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_CRC.html">CFU_DEVICE_STATUS_ERROR_CRC</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_INVALID" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_INVALID.html">CFU_DEVICE_STATUS_ERROR_INVALID</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_INVALID_ADDR" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_INVALID_ADDR.html">CFU_DEVICE_STATUS_ERROR_INVALID_ADDR</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_NO_OFFER" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_NO_OFFER.html">CFU_DEVICE_STATUS_ERROR_NO_OFFER</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_PREPARE" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_PREPARE.html">CFU_DEVICE_STATUS_ERROR_PREPARE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_SIGNATURE" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_SIGNATURE.html">CFU_DEVICE_STATUS_ERROR_SIGNATURE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_VERIFY" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_VERIFY.html">CFU_DEVICE_STATUS_ERROR_VERIFY</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_VERSION" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_VERSION.html">CFU_DEVICE_STATUS_ERROR_VERSION</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_ERROR_WRITE" class="symbol" href="const.CFU_DEVICE_STATUS_ERROR_WRITE.html">CFU_DEVICE_STATUS_ERROR_WRITE</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_SUCCESS" class="symbol" href="const.CFU_DEVICE_STATUS_SUCCESS.html">CFU_DEVICE_STATUS_SUCCESS</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CFU_DEVICE_STATUS_SWAP_PENDING" class="symbol" href="const.CFU_DEVICE_STATUS_SWAP_PENDING.html">CFU_DEVICE_STATUS_SWAP_PENDING</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET.html">DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET</a></td>
+            
+            <td class="docblock-summary"><p>Device needs resetting twice for attach after the firmware&nbsp;update.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_AUTO_PARENT_CHILDREN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_AUTO_PARENT_CHILDREN.html">DEVICE_INTERNAL_FLAG_AUTO_PARENT_CHILDREN</a></td>
+            
+            <td class="docblock-summary"><p>Automatically assign the parent for children of this&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_ENSURE_SEMVER" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ENSURE_SEMVER.html">DEVICE_INTERNAL_FLAG_ENSURE_SEMVER</a></td>
+            
+            <td class="docblock-summary"><p>Ensure the version is a valid semantic version, e.g. numbers separated with&nbsp;dots.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_INHERIT_ACTIVATION" class="symbol" href="const.DEVICE_INTERNAL_FLAG_INHERIT_ACTIVATION.html">DEVICE_INTERNAL_FLAG_INHERIT_ACTIVATION</a></td>
+            
+            <td class="docblock-summary"><p>Inherit activation status from the history database on&nbsp;startup.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_INHIBIT_CHILDREN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_INHIBIT_CHILDREN.html">DEVICE_INTERNAL_FLAG_INHIBIT_CHILDREN</a></td>
+            
+            <td class="docblock-summary"><p>Children of the device are inhibited by the&nbsp;parent.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_IS_OPEN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_IS_OPEN.html">DEVICE_INTERNAL_FLAG_IS_OPEN</a></td>
+            
+            <td class="docblock-summary"><p>The device opened successfully and ready to&nbsp;use.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_ICON" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_ICON.html">DEVICE_INTERNAL_FLAG_MD_SET_ICON</a></td>
+            
+            <td class="docblock-summary"><p>Set the device icon from the metadata if&nbsp;available.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_NAME" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_NAME.html">DEVICE_INTERNAL_FLAG_MD_SET_NAME</a></td>
+            
+            <td class="docblock-summary"><p>Set the device name from the metadata <code>name</code> if&nbsp;available.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_NAME_CATEGORY" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_NAME_CATEGORY.html">DEVICE_INTERNAL_FLAG_MD_SET_NAME_CATEGORY</a></td>
+            
+            <td class="docblock-summary"><p>Set the device name from the metadata <code>category</code> if&nbsp;available.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_VERFMT" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_VERFMT.html">DEVICE_INTERNAL_FLAG_MD_SET_VERFMT</a></td>
+            
+            <td class="docblock-summary"><p>Set the device version format from the metadata if&nbsp;available.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS.html">DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS</a></td>
+            
+            <td class="docblock-summary"><p>Do not add instance IDs from the device&nbsp;baseclass.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN.html">DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN</a></td>
+            
+            <td class="docblock-summary"><p>Do not auto-remove clildren in the device&nbsp;list.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_SERIAL_NUMBER" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_SERIAL_NUMBER.html">DEVICE_INTERNAL_FLAG_NO_SERIAL_NUMBER</a></td>
+            
+            <td class="docblock-summary"><p>Do not attempt to read the device serial&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NONE" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NONE.html">DEVICE_INTERNAL_FLAG_NONE</a></td>
+            
+            <td class="docblock-summary"><p>No flags&nbsp;set.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED.html">DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED</a></td>
+            
+            <td class="docblock-summary"><p>Only devices supported in the metadata will be&nbsp;opened.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_REPLUG_MATCH_GUID" class="symbol" href="const.DEVICE_INTERNAL_FLAG_REPLUG_MATCH_GUID.html">DEVICE_INTERNAL_FLAG_REPLUG_MATCH_GUID</a></td>
+            
+            <td class="docblock-summary"><p>Match GUIDs on device replug where the physical and logical IDs will be&nbsp;different.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_RETRY_OPEN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_RETRY_OPEN.html">DEVICE_INTERNAL_FLAG_RETRY_OPEN</a></td>
+            
+            <td class="docblock-summary"><p>Retry the device open up to 5 times if it&nbsp;fails.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_BATTERY" class="symbol" href="const.DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_BATTERY.html">DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_BATTERY</a></td>
+            
+            <td class="docblock-summary"><p>Use parent for the battery level and&nbsp;threshold.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_OPEN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_OPEN.html">DEVICE_INTERNAL_FLAG_USE_PARENT_FOR_OPEN</a></td>
+            
+            <td class="docblock-summary"><p>Use parent to open and close the&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_USE_PROXY_FALLBACK" class="symbol" href="const.DEVICE_INTERNAL_FLAG_USE_PROXY_FALLBACK.html">DEVICE_INTERNAL_FLAG_USE_PROXY_FALLBACK</a></td>
+            
+            <td class="docblock-summary"><p>Use parent for the battery level and&nbsp;threshold.</p></td>
             
           </tr>
           
@@ -2952,6 +3358,48 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="MAJOR_VERSION" class="symbol" href="const.MAJOR_VERSION.html">MAJOR_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>The compile-time major&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="MICRO_VERSION" class="symbol" href="const.MICRO_VERSION.html">MICRO_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>The compile-time micro&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="MINOR_VERSION" class="symbol" href="const.MINOR_VERSION.html">MINOR_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>The compile-time minor&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PROGRESS_FLAG_GUESSED" class="symbol" href="const.PROGRESS_FLAG_GUESSED.html">PROGRESS_FLAG_GUESSED</a></td>
+            
+            <td class="docblock-summary"><p>The steps have not been measured on real hardware and have been&nbsp;guessed.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PROGRESS_FLAG_NO_PROFILE" class="symbol" href="const.PROGRESS_FLAG_NO_PROFILE.html">PROGRESS_FLAG_NO_PROFILE</a></td>
+            
+            <td class="docblock-summary"><p>The steps cannot be accurate enough for a profile&nbsp;result.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PROGRESS_FLAG_NONE" class="symbol" href="const.PROGRESS_FLAG_NONE.html">PROGRESS_FLAG_NONE</a></td>
+            
+            <td class="docblock-summary"><p>No flags&nbsp;set.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="QUIRKS_BATTERY_THRESHOLD" class="symbol" href="const.QUIRKS_BATTERY_THRESHOLD.html">QUIRKS_BATTERY_THRESHOLD</a></td>
             
             <td class="docblock-summary"><p>The quirk key for the battery threshold in&nbsp;percent.</p></td>
@@ -3197,6 +3645,8 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
   
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -89,10 +89,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -107,7 +105,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-common.h#L222">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-common.h#L224">[src]</a>
         
       </h4>
 
@@ -128,7 +126,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-common.c#L3300">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-common.c#L3417">[src]</a>
         
       </h4>
 
@@ -136,8 +134,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>Get the byte data in the <code>GBytes</code>. This data should not be modified.
 This function will always return the same pointer for a given <code>GBytes</code>.</p>
 <p>If the size of <code>bytes</code> is zero, then <code>NULL</code> is returned and the <code>error</code> is set,
-which differs in behavior to that of&nbsp;g_bytes_get_data().</p>
-<p>This may be useful when calling g_mapped_file_new() on a zero-length&nbsp;file.</p>
+which differs in behavior to that of <code>g_bytes_get_data()</code>.</p>
+<p>This may be useful when calling <code>g_mapped_file_new()</code> on a zero-length&nbsp;file.</p>
       </div>
 
       <div class="docblock">
@@ -244,6 +242,8 @@ which differs in behavior to that of&nbsp;g_bytes_get_data().</p>
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

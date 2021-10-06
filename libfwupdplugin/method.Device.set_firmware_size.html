@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -119,6 +119,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.attach.html">attach</a>
   
+    <a class="method" href="method.Device.attach_full.html">attach_full</a>
+  
     <a class="method" href="method.Device.bind_driver.html">bind_driver</a>
   
     <a class="method" href="method.Device.cleanup.html">cleanup</a>
@@ -128,6 +130,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.convert_instance_ids.html">convert_instance_ids</a>
   
     <a class="method" href="method.Device.detach.html">detach</a>
+  
+    <a class="method" href="method.Device.detach_full.html">detach_full</a>
   
     <a class="method" href="method.Device.dump_firmware.html">dump_firmware</a>
   
@@ -183,8 +187,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_private_flags.html">get_private_flags</a>
   
-    <a class="method" href="method.Device.get_progress.html">get_progress</a>
-  
     <a class="method" href="method.Device.get_proxy.html">get_proxy</a>
   
     <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
@@ -203,10 +205,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
   
-    <a class="method" href="method.Device.get_status.html">get_status</a>
-  
-    <a class="method" href="method.Device.has_custom_flag.html">has_custom_flag</a>
-  
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
     <a class="method" href="method.Device.has_internal_flag.html">has_internal_flag</a>
@@ -220,8 +218,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.incorporate.html">incorporate</a>
   
     <a class="method" href="method.Device.incorporate_flag.html">incorporate_flag</a>
-  
-    <a class="method" href="method.Device.incorporate_from_component.html">incorporate_from_component</a>
   
     <a class="method" href="method.Device.inhibit.html">inhibit</a>
   
@@ -315,15 +311,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_progress.html">set_progress</a>
   
-    <a class="method" href="method.Device.set_progress_full.html">set_progress_full</a>
-  
     <a class="method" href="method.Device.set_proxy.html">set_proxy</a>
   
     <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
   
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
-  
-    <a class="method" href="method.Device.set_status.html">set_status</a>
   
     <a class="method" href="method.Device.set_update_state.html">set_update_state</a>
   
@@ -339,8 +331,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.setup.html">setup</a>
   
-    <a class="method" href="method.Device.sleep_with_progress.html">sleep_with_progress</a>
-  
     <a class="method" href="method.Device.to_string.html">to_string</a>
   
     <a class="method" href="method.Device.unbind_driver.html">unbind_driver</a>
@@ -353,10 +343,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -371,7 +359,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device.h#L383">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-device.h#L515">[src]</a>
         
       </h4>
 
@@ -391,7 +379,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device.c#L1663">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-device.c#L1637">[src]</a>
         
       </h4>
 
@@ -451,6 +439,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   </section>
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

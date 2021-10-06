@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupd.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: 1.7.0</p>
         
       </div>
       
@@ -130,10 +130,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
     </nav>
-
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
-    
 
     
 <section id="main" class="content">
@@ -147,7 +145,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.6.2</td></tr>
+        <tr><td><em>Version</em></td><td>1.7.0</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -1104,6 +1102,14 @@ Extra metadata such as serial number can be exposed about this&nbsp;device.</p><
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_UNREACHABLE" class="symbol" href="const.DEVICE_FLAG_UNREACHABLE.html">DEVICE_FLAG_UNREACHABLE</a></td>
+            
+            <td class="docblock-summary"><p>The device is currently unreachable, perhaps because it is in a lower power state or is out of
+wireless&nbsp;range.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_UPDATABLE" class="symbol" href="const.DEVICE_FLAG_UPDATABLE.html">DEVICE_FLAG_UPDATABLE</a></td>
             
             <td class="docblock-summary"><p>Device has the ability to be updated in this or any other&nbsp;mode.</p></td>
@@ -1992,6 +1998,8 @@ Supported clients will display this information to a&nbsp;user.</p></td>
   
 </section>
 
+
+    
 
     <section id="search" class="content hidden"></section>
 

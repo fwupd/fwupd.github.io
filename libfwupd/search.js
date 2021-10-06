@@ -10,6 +10,7 @@ const QUERY_TYPES = [
     "callback",
     "class",
     "constant",
+    "content",
     "ctor",
     "domain",
     "enum",
@@ -97,7 +98,7 @@ function searchQuery(query) {
         return {
             name: doc.name,
             type: doc.type,
-            text: getTextForDocument(doc, searchIndex.meta),
+            text: getLabelForDocument(doc, searchIndex.meta),
             href: getLinkForDocument(doc),
             summary: doc.summary,
         };
@@ -138,7 +139,7 @@ function renderResults(query, results) {
         results.forEach(function(item) {
             html += "<tr>" +
                         "<td class=\"result " + item.type + "\">" +
-                        "<a href=\"" + item.href + "\"><code>" + item.text + "</code></a>" +
+                        "<a href=\"" + item.href + "\">" + item.text + "</a>" +
                         "</td>" +
                         "<td>" + item.summary + "</td>" +
                     "</tr>";
@@ -182,8 +183,9 @@ function getLinkForDocument(doc) {
         case "bitfield": return "flags." + doc.name + ".html";
         case "callback": return "callback." + doc.name + ".html";
         case "class": return "class." + doc.name + ".html";
-        case "class_method": return "class_method." + doc.type_name + "." + doc.name + ".html";
+        case "class_method": return "class_method." + doc.struct_for + "." + doc.name + ".html";
         case "constant": return "const." + doc.name + ".html";
+        case "content": return doc.href;
         case "ctor": return "ctor." + doc.type_name + "." + doc.name + ".html";
         case "domain": return "error." + doc.name + ".html";
         case "enum": return "enum." + doc.name + ".html";
@@ -198,6 +200,48 @@ function getLinkForDocument(doc) {
         case "union": return "union." + doc.name + ".html";
         case "vfunc": return "vfunc." + doc.type_name + "." + doc.name + ".html";
     }
+    return null;
+}
+
+function getLabelForDocument(doc, meta) {
+    switch (doc.type) {
+        case "alias":
+        case "bitfield":
+        case "class":
+        case "domain":
+        case "enum":
+        case "interface":
+        case "record":
+        case "union":
+            return "<code>" + doc.ctype + "</code>";
+        case "class_method":
+        case "constant":
+        case "ctor":
+        case "function":
+        case "function_macro":
+        case "method":
+        case "type_func":
+            return "<code>" + doc.ident + "</code>";
+
+        // NOTE: meta.ns added for more consistent results, otherwise
+        // searching for "Button" would return all signals, properties
+        // and vfuncs (eg "Button.clicked") before the actual object 
+        // (eg "GtkButton") because "Button" matches higher with starting
+        // sequences.
+        case "property":
+            return "<code>" + meta.ns + doc.type_name + ":" + doc.name + "</code>";
+        case "signal":
+            return "<code>" + meta.ns + doc.type_name + "::" + doc.name + "</code>";
+        case "vfunc":
+            return "<code>" + meta.ns + doc.type_name + "." + doc.name + "</code>";
+
+        case "callback":
+            return "<code>" + doc.name + "</code>";
+
+        case "content":
+            return doc.name;
+    }
+
     return null;
 }
 
@@ -234,6 +278,9 @@ function getTextForDocument(doc, meta) {
             return meta.ns + doc.type_name + "." + doc.name;
 
         case "callback":
+            return doc.name;
+
+        case "content":
             return doc.name;
     }
 

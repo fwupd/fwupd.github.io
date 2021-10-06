@@ -499,6 +499,34 @@ footer {
   transition: border .3s linear;
 }
 
+.toc {
+  display: block;
+  margin-top: 2em;
+  z-index: 3;
+  min-width: 15ch;
+  font-size: 80%;
+}
+
+.toc nav {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+#toc-title {
+  text-transform: uppercase;
+  font-weight: var(--heading-weight);
+}
+
+.toc-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.toc-list-item {
+  padding-top: .25em;
+}
+
 /*********************************
  * ANCHORS & TOGGLERS
  *********************************/
@@ -837,6 +865,7 @@ table.returns tr.arg-description td {
 .implements a,
 .ancestors a,
 .sidebar .links a
+.toc a
 {
   font-family: var(--symbol-font-family);
   font-size: calc(1em * var(--symbol-font-scale));
@@ -865,5 +894,9 @@ table.returns tr.arg-description td {
     position: static;
     height: initial;
     order: 1;
+  }
+
+  .toc {
+    display: hidden;
   }
 }
