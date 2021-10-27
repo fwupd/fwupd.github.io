@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.0</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.0</td></tr>
+        <tr><td><em>Version</em></td><td>main</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -275,6 +275,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><a title="Cabinet" class="symbol" href="class.Cabinet.html">Cabinet</a></td>
             
             <td class="docblock-summary"><p>Cabinet archive parser and&nbsp;writer.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CfiDevice" class="symbol" href="class.CfiDevice.html">CfiDevice</a></td>
+            
+            <td class="docblock-summary"><p>A chip conforming to the Common Flash Memory Interface, typically a <span class="caps">SPI</span> flash&nbsp;chip.</p></td>
             
           </tr>
           
@@ -641,6 +648,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="CabinetSignFlags" class="symbol" href="enum.CabinetSignFlags.html">CabinetSignFlags</a></td>
             
             <td class="docblock-summary"><p>The flags to use when signing the&nbsp;archive.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CfiDeviceCmd" class="symbol" href="enum.CfiDeviceCmd.html">CfiDeviceCmd</a></td>
+            
+            <td class="docblock-summary"><p>Commands used when calling <code>fu_cfi_device_get_cmd()</code>.</p></td>
             
           </tr>
           
@@ -1027,6 +1041,14 @@ the block is already aligned then the original <code>bytes</code> is&nbsp;return
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_check_full_disk_encryption" class="symbol" href="func.common_check_full_disk_encryption.html">common_check_full_disk_encryption</a></td>
+            
+            <td class="docblock-summary"><p>Checks that all <span class="caps">FDE</span> volumes are not going to be affected by a firmware update. If unsure,
+return with failure and let the user&nbsp;decide.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_check_kernel_version" class="symbol" href="func.common_check_kernel_version.html">common_check_kernel_version</a></td>
             
             <td class="docblock-summary"><p>Determines if the system is running at least a certain required kernel&nbsp;version.</p></td>
@@ -1070,6 +1092,13 @@ the block is already aligned then the original <code>bytes</code> is&nbsp;return
           
           <tr class="section-item">
             <td><a title="common_crc8" class="symbol" href="func.common_crc8.html">common_crc8</a></td>
+            
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_crc8_full" class="symbol" href="func.common_crc8_full.html">common_crc8_full</a></td>
             
             <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
@@ -1247,6 +1276,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
             <td><a title="common_kernel_locked_down" class="symbol" href="func.common_kernel_locked_down.html">common_kernel_locked_down</a></td>
             
             <td class="docblock-summary"><p>Determines if kernel lockdown in&nbsp;effect.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_mkdir" class="symbol" href="func.common_mkdir.html">common_mkdir</a></td>
+            
+            <td class="docblock-summary"><p>Creates any required directories, including any parent&nbsp;directories.</p></td>
             
           </tr>
           

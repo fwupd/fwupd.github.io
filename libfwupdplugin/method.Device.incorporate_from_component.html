@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="../urlmap.js"></script>
+  <script src="urlmap_fwupdplugin.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.6.2</p>
+        <p>Library Version: wip/hughsie/FuSpiChip</p>
         
       </div>
       
@@ -117,7 +117,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.add_security_attrs.html">add_security_attrs</a>
   
+    <a class="method" href="method.Device.add_string.html">add_string</a>
+  
     <a class="method" href="method.Device.attach.html">attach</a>
+  
+    <a class="method" href="method.Device.attach_full.html">attach_full</a>
   
     <a class="method" href="method.Device.bind_driver.html">bind_driver</a>
   
@@ -128,6 +132,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.convert_instance_ids.html">convert_instance_ids</a>
   
     <a class="method" href="method.Device.detach.html">detach</a>
+  
+    <a class="method" href="method.Device.detach_full.html">detach_full</a>
   
     <a class="method" href="method.Device.dump_firmware.html">dump_firmware</a>
   
@@ -159,6 +165,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_guids_as_str.html">get_guids_as_str</a>
   
+    <a class="method" href="method.Device.get_internal_flags.html">get_internal_flags</a>
+  
     <a class="method" href="method.Device.get_logical_id.html">get_logical_id</a>
   
     <a class="method" href="method.Device.get_metadata.html">get_metadata</a>
@@ -183,8 +191,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_private_flags.html">get_private_flags</a>
   
-    <a class="method" href="method.Device.get_progress.html">get_progress</a>
-  
     <a class="method" href="method.Device.get_proxy.html">get_proxy</a>
   
     <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
@@ -202,10 +208,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.get_root.html">get_root</a>
   
     <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
-  
-    <a class="method" href="method.Device.get_status.html">get_status</a>
-  
-    <a class="method" href="method.Device.has_custom_flag.html">has_custom_flag</a>
   
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
@@ -291,6 +293,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_id.html">set_id</a>
   
+    <a class="method" href="method.Device.set_internal_flags.html">set_internal_flags</a>
+  
     <a class="method" href="method.Device.set_logical_id.html">set_logical_id</a>
   
     <a class="method" href="method.Device.set_metadata.html">set_metadata</a>
@@ -315,15 +319,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_progress.html">set_progress</a>
   
-    <a class="method" href="method.Device.set_progress_full.html">set_progress_full</a>
-  
     <a class="method" href="method.Device.set_proxy.html">set_proxy</a>
   
     <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
   
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
-  
-    <a class="method" href="method.Device.set_status.html">set_status</a>
   
     <a class="method" href="method.Device.set_update_state.html">set_update_state</a>
   
@@ -338,8 +338,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.set_version_lowest.html">set_version_lowest</a>
   
     <a class="method" href="method.Device.setup.html">setup</a>
-  
-    <a class="method" href="method.Device.sleep_with_progress.html">sleep_with_progress</a>
   
     <a class="method" href="method.Device.to_string.html">to_string</a>
   
@@ -362,7 +360,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Device.html">Device</a><span class="sep"></span>incorporate_from_component</h1>
+    <h1><a href="index.html">FwupdPlugin</a>.<a href="class.Device.html">Device</a>.incorporate_from_component</h1>
   </header>
 
   <section>
@@ -371,7 +369,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device-private.h#L33">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/wip/hughsie/FuSpiChip/libfwupdplugin/fu-device-private.h#L38">[src]</a>
         
       </h4>
 
@@ -391,7 +389,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.6.2/libfwupdplugin/fu-device.c#L4533">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/wip/hughsie/FuSpiChip/libfwupdplugin/fu-device.c#L4518">[src]</a>
         
       </h4>
 
@@ -420,7 +418,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <table class="arguments">
+        <table>
           
           <tr class="arg-name">
             <td><code>component</code></td>
@@ -428,7 +426,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A Xmlb&nbsp;node.</p></td>
+            <td><p>a Xmlb&nbsp;node</p></td>
           </tr>
           
           
@@ -436,9 +434,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function</td></tr>
           
           
         </table>

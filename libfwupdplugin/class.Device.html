@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.0</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -132,6 +132,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.add_security_attrs.html">add_security_attrs</a>
   
+    <a class="method" href="method.Device.add_string.html">add_string</a>
+  
     <a class="method" href="method.Device.attach.html">attach</a>
   
     <a class="method" href="method.Device.attach_full.html">attach_full</a>
@@ -177,6 +179,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.get_firmware_size_min.html">get_firmware_size_min</a>
   
     <a class="method" href="method.Device.get_guids_as_str.html">get_guids_as_str</a>
+  
+    <a class="method" href="method.Device.get_internal_flags.html">get_internal_flags</a>
   
     <a class="method" href="method.Device.get_logical_id.html">get_logical_id</a>
   
@@ -301,6 +305,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.set_firmware_size_min.html">set_firmware_size_min</a>
   
     <a class="method" href="method.Device.set_id.html">set_id</a>
+  
+    <a class="method" href="method.Device.set_internal_flags.html">set_internal_flags</a>
   
     <a class="method" href="method.Device.set_logical_id.html">set_logical_id</a>
   
@@ -434,7 +440,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.0/libfwupdplugin/fu-device.c#L29">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c#L29">[src]</a>
           
         </h4>
 
@@ -709,6 +715,14 @@ device. This is tyically called from a quirk&nbsp;handler.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.add_string.html">fu_device_add_string</a></h6>
+          <div class="docblock">
+            <p>Add daemon-specific device metadata to an existing&nbsp;string.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.1</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.attach.html">fu_device_attach</a></h6>
           <div class="docblock">
             <p>Attaches a device from the bootloader into application&nbsp;mode.</p>
@@ -753,7 +767,7 @@ FuDevice-&gt;<code>write_firmware()</code>, FuDevice-&gt;<code>attach()</code> a
         <div class="">
           <h6><a href="method.Device.convert_instance_ids.html">fu_device_convert_instance_ids</a></h6>
           <div class="docblock">
-            <p>Converts all the Device Instance IDs added using <code>fu_device_add_instance_id()</code>
+            <p>Converts all the Device instance IDs added using <code>fu_device_add_instance_id()</code>
 into actual GUIDs, <strong>unless</strong> <code>FU_DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS</code> has
 been&nbsp;set.</p>
           </div>
@@ -903,6 +917,14 @@ device and this may be reflected in client&nbsp;tools.</p>
             <p>Gets the device GUIDs as a joined string, which may be useful for error&nbsp;messages.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_internal_flags.html">fu_device_get_internal_flags</a></h6>
+          <div class="docblock">
+            <p>Gets all the internal&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.1</p></div>
         </div>
       
         <div class="">
@@ -1434,6 +1456,14 @@ device, so that any similar device plugged into a different slot will
 have a different <code>id</code> string.</p>
           </div>
           <div class="docblock"><p>Available since: 0.7.1</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_internal_flags.html">fu_device_set_internal_flags</a></h6>
+          <div class="docblock">
+            <p>Sets the internal&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.1</p></div>
         </div>
       
         <div class="">

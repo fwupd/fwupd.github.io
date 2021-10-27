@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.0</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -145,7 +145,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.0</td></tr>
+        <tr><td><em>Version</em></td><td>main</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -839,6 +839,16 @@ differences in the <code>str</code> will produce radically different return&nbsp
             
             <td class="docblock-summary"><p>The device will add counterpart GUIDs from an alternate mode like bootloader.
 This flag is typically specified in a&nbsp;quirk.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_FLAG_AFFECTS_FDE" class="symbol" href="const.DEVICE_FLAG_AFFECTS_FDE.html">DEVICE_FLAG_AFFECTS_FDE</a></td>
+            
+            <td class="docblock-summary"><p>The device is warning that a volume with full-disk-encryption was found on this machine,
+typically a Windows <span class="caps">NTFS</span> partition with BitLocker.
+Updating the firmware on this device may invalidate secrets used to decrypt the volume, and
+the recovery key may be&nbsp;required.</p></td>
             
           </tr>
           
