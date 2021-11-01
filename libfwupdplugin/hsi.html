@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: main</p>
+        <p>Library Version: 1.7.1</p>
         
       </div>
       
@@ -187,9 +187,13 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <h3 id="uefi-secureboot"><a href="#org.fwupd.hsi.Uefi.SecureBoot">UEFI SecureBoot</a><a class="md-anchor" href="#uefi-secureboot" title="Permanent link"></a></h3>
 <p><span class="caps">UEFI</span> Secure boot is a verification mechanism for ensuring that code launched by firmware is&nbsp;trusted.</p>
 <p>Secure Boot requires that each binary loaded at boot is validated against trusted&nbsp;certificates.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 SecureBoot must be available for use on <span class="caps">UEFI</span> systems. <em>[v1.5.0]</em></li>
+<li><code>not-found</code>: support has not been&nbsp;detected</li>
+<li><code>not-enabled</code>: detected, but has been turned&nbsp;off</li>
+<li><code>enabled</code>: supported and&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on <span class="caps">UEFI</span> systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://wiki.ubuntu.com/UEFI/SecureBoot">Ubuntu SecureBoot Wiki&nbsp;Page</a></li>
@@ -198,19 +202,27 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <h3 id="uefi-pk"><a href="#org.fwupd.hsi.Uefi.Pk">UEFI PK</a><a class="md-anchor" href="#uefi-pk" title="Permanent link"></a></h3>
 <p><span class="caps">UEFI</span> defines a platform key for the system.
 This should not be a test key, e.g. <code>DO NOT TRUST - AMI Test PK</code></p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 a test key must not be enrolled. <em>[v1.5.0]</em></li>
+<li><code>valid</code>: valid&nbsp;key</li>
+<li><code>not-valid</code>: an invalid key has been&nbsp;enrolled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on <span class="caps">UEFI</span> systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://wiki.ubuntu.com/UEFI/SecureBoot/Testing">Ubuntu SecureBoot Wiki&nbsp;Page</a></li>
 </ul>
 <p><a id="org.fwupd.hsi.Spi.Bioswe"></a></p>
 <h3 id="bios-write-enable-bwe"><a href="#org.fwupd.hsi.Spi.Bioswe">BIOS Write Enable (BWE)</a><a class="md-anchor" href="#bios-write-enable-bwe" title="Permanent link"></a></h3>
-<p>Intel hardware provides this mechanism to protect the <span class="caps">SPI</span> <span class="caps">ROM</span> chip located on the motherboard from being overwritten by the operating&nbsp;system.</p>
+<p>Intel hardware provides this mechanism to protect the <span class="caps">SPI</span> <span class="caps">ROM</span> chip located on the motherboard from being overwritten by the operating
+system. The <code>BIOSWE</code> bit must be unset otherwise userspace can write to the <span class="caps">SPI</span>&nbsp;chip.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 the <code>BIOSWE</code> bit must be unset. <em>[v1.5.0]</em></li>
+<li><code>not-found</code>: the <span class="caps">SPI</span> device was not&nbsp;found</li>
+<li><code>not-enabled</code>: write enable is&nbsp;disabled</li>
+<li><code>enabled</code>: write enable is&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>not-enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="http://www.intel.com/content/www/us/en/chipsets/6-chipset-c200-chipset-datasheet.html">Intel C200&nbsp;Datasheet</a></li>
@@ -219,9 +231,12 @@ This should not be a test key, e.g. <code>DO NOT TRUST - AMI Test PK</code></p>
 <h3 id="bios-lock-enable-ble"><a href="#org.fwupd.hsi.Spi.Ble">BIOS Lock Enable (BLE)</a><a class="md-anchor" href="#bios-lock-enable-ble" title="Permanent link"></a></h3>
 <p>If the lock bit is set then System Management Interrupts (SMIs) are raised when setting <span class="caps">BIOS</span> Write Enable.
 The <code>BLE</code> bit must be enabled in the <span class="caps">PCH</span> otherwise <code>BIOSWE</code> can easily be&nbsp;unset.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be set. <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: the register is&nbsp;locked</li>
+<li><code>not-enabled</code>: the register is not&nbsp;locked</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="http://www.intel.com/content/www/us/en/chipsets/6-chipset-c200-chipset-datasheet.html">Intel C200&nbsp;Datasheet</a></li>
@@ -230,9 +245,12 @@ The <code>BLE</code> bit must be enabled in the <span class="caps">PCH</span> ot
 <h3 id="smm-bios-write-protect-smm_bwp"><a href="#org.fwupd.hsi.Spi.SmmBwp">SMM Bios Write Protect (SMM_BWP)</a><a class="md-anchor" href="#smm-bios-write-protect-smm_bwp" title="Permanent link"></a></h3>
 <p>This bit set defines when the <span class="caps">BIOS</span> region can be written by the host.
 The <code>SMM_BWP</code> bit must be set to make the <span class="caps">BIOS</span> region non-writable unless all processors are in system management&nbsp;mode.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be set <em>[v1.5.0]</em></li>
+<li><code>locked</code>: the region is&nbsp;locked</li>
+<li><code>not-locked</code>: the region is not&nbsp;locked</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>locked</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="http://www.intel.com/content/www/us/en/chipsets/6-chipset-c200-chipset-datasheet.html">Intel C200&nbsp;Datasheet</a></li>
@@ -241,16 +259,23 @@ The <code>SMM_BWP</code> bit must be set to make the <span class="caps">BIOS</sp
 <h3 id="read-only-spi-descriptor"><a href="#org.fwupd.hsi.Spi.Descriptor">Read-only SPI Descriptor</a><a class="md-anchor" href="#read-only-spi-descriptor" title="Permanent link"></a></h3>
 <p>The <span class="caps">SPI</span> descriptor must always be read only from all other regions.
 Additionally on Intel architectures the <span class="caps">FLOCKDN</span> register must be set to prevent configuration registers in the <span class="caps">SPI</span> <span class="caps">BAR</span> from being&nbsp;changed.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be read only from all regions <em>[v1.6.0]</em></li>
+<li><code>not-valid</code>: any region can write to the flash&nbsp;descriptor</li>
+<li><code>locked</code>: the <span class="caps">SPI</span> <span class="caps">BAR</span> is locked and read only from all&nbsp;regions</li>
+<li><code>not-locked</code>: the <span class="caps">SPI</span> <span class="caps">BAR</span> is not&nbsp;locked</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>locked</code>. <em>[v1.6.0]</em></p>
 <p><a id="org.fwupd.hsi.Tpm.Version20"></a></p>
 <h3 id="tpm-20-present"><a href="#org.fwupd.hsi.Tpm.Version20">TPM 2.0 Present</a><a class="md-anchor" href="#tpm-20-present" title="Permanent link"></a></h3>
 <p>A <span class="caps">TPM</span> securely stores platform specific secrets that can only be divulged to trusted consumers in a secure&nbsp;environment.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be available for use by the <span class="caps">OS</span> or applications
-    <em>[v1.5.0]</em></li>
+<li><code>found</code>: device found in v2&nbsp;mode</li>
+<li><code>not-found</code>: no device&nbsp;found</li>
+<li><code>not-enabled</code>: not in v2&nbsp;mode</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>found</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Trusted_Platform_Module"><span class="caps">TPM</span> Wikipedia&nbsp;Page</a></li>
@@ -259,9 +284,12 @@ Additionally on Intel architectures the <span class="caps">FLOCKDN</span> regist
 <h3 id="me-not-in-manufacturing-mode"><a href="#org.fwupd.hsi.Mei.ManufacturingMode">ME not in manufacturing mode</a><a class="md-anchor" href="#me-not-in-manufacturing-mode" title="Permanent link"></a></h3>
 <p>There have been some unfortunate cases of the <span class="caps">ME</span> being distributed in manufacturing mode.
 In manufacturing mode many features from the <span class="caps">ME</span> can be interacted with that decrease the platform&#8217;s&nbsp;security.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be unset <em>[v1.5.0]</em></li>
+<li><code>locked</code>: device has had manufacturing mode&nbsp;disabled</li>
+<li><code>not-locked</code>: device is in manufacturing&nbsp;mode</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>locked</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="http://blog.ptsecurity.com/2018/10/intel-me-manufacturing-mode-macbook.html"><span class="caps">ME</span> Manufacturing Mode: obscured&nbsp;dangers</a></li>
@@ -270,9 +298,12 @@ In manufacturing mode many features from the <span class="caps">ME</span> can be
 <p><a id="org.fwupd.hsi.Mei.OverrideStrap"></a></p>
 <h3 id="me-flash-descriptor-override"><a href="#org.fwupd.hsi.Mei.OverrideStrap">ME Flash Descriptor Override</a><a class="md-anchor" href="#me-flash-descriptor-override" title="Permanent link"></a></h3>
 <p>The Flash Descriptor Security Override Strap is not accessible to end users on consumer boards and Intel stresses that this is for debugging&nbsp;only.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should be unset <em>[v1.5.0]</em></li>
+<li><code>locked</code>: device in in normal runtime&nbsp;mode</li>
+<li><code>not-locked</code>: device is in debugging&nbsp;mode</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>locked</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://chromium.googlesource.com/chromiumos/third_party/flashrom/+/master/Documentation/mysteries_intel.txt">Chromium documentation for Intel <span class="caps">ME</span></a></li>
@@ -281,40 +312,57 @@ In manufacturing mode many features from the <span class="caps">ME</span> can be
 <h3 id="csme-version"><a href="#org.fwupd.hsi.Mei.Version">CSME Version</a><a class="md-anchor" href="#csme-version" title="Permanent link"></a></h3>
 <p>Converged Security and Manageability Engine is a standalone management module that can manage and control some local devices without the host <span class="caps">CPU</span> involvement.
 The <span class="caps">CSME</span> lives in the <span class="caps">PCH</span> and can only be updated by the <span class="caps">OEM</span> vendor.
-The version of the <span class="caps">CSME</span> module can be checked to detect the most common and serious&nbsp;vulnerabilities.</p>
+The version of the <span class="caps">CSME</span> module can be checked to detect the most common and serious vulnerabilities: <span class="caps">CVE</span>-2017-5705, <span class="caps">CVE</span>-2017-5708, <span class="caps">CVE</span>-2017-5711, <span class="caps">CVE</span>-2017-5712, <span class="caps">CVE</span>-2017-5711, <span class="caps">CVE</span>-2017-5712, <span class="caps">CVE</span>-2017-5706, <span class="caps">CVE</span>-2017-5709, <span class="caps">CVE</span>-2017-5707 or <span class="caps">CVE</span>-2017-5710.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-1 this should not be vulnerable to <span class="caps">CVE</span>-2017-5705, <span class="caps">CVE</span>-2017-5708, <span class="caps">CVE</span>-2017-5711, <span class="caps">CVE</span>-2017-5712, <span class="caps">CVE</span>-2017-5711, <span class="caps">CVE</span>-2017-5712, <span class="caps">CVE</span>-2017-5706, <span class="caps">CVE</span>-2017-5709, <span class="caps">CVE</span>-2017-5707 or <span class="caps">CVE</span>-2017-5710 <em>[v1.5.0]</em></li>
+<li><code>valid</code>: affected by one of the below&nbsp;CVEs</li>
+<li><code>not-valid</code>: is not affected by the most critical&nbsp;CVEs</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html">Intel <span class="caps">CSME</span> Security Review Cumulative&nbsp;Update</a></li>
 </ul>
-<p><a id="org.fwupd.hsi.IntelDci"></a></p>
-<h3 id="intel-dci"><a href="#org.fwupd.hsi.IntelDci">Intel DCI</a><a class="md-anchor" href="#intel-dci" title="Permanent link"></a></h3>
-<p>Newer Intel CPUs support debugging over <span class="caps">USB3</span> via a proprietary Direct Connection Interface (<span class="caps">DCI</span>) with the use of off-the-shelf hardware.
-<span class="caps">DCI</span> should always be disabled and locked on production&nbsp;hardware.</p>
+<p><a id="org.fwupd.hsi.IntelDci.Enabled"></a></p>
+<h3 id="intel-dci"><a href="#org.fwupd.hsi.IntelDci.Enabled">Intel DCI</a><a class="md-anchor" href="#intel-dci" title="Permanent link"></a></h3>
+<p>Newer Intel CPUs support debugging over <span class="caps">USB3</span> via a proprietary Direct Connection Interface (<span class="caps">DCI</span>) with the use of off-the-shelf&nbsp;hardware.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>
-<p>For <span class="caps">HSI</span>-1 this should be disabled. <em>[v1.5.0]</em></p>
-</li>
-<li>
-<p>For <span class="caps">HSI</span>-2 this should be locked. <em>[v1.5.0]</em></p>
-</li>
+<li><code>enabled</code>: debugging is currently&nbsp;enabled</li>
+<li><code>not-enabled</code>: debugging is not currently&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-1 on systems that run this test, the result must be <code>not-enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://www.intel.co.uk/content/www/uk/en/support/articles/000029393/processors.html">Intel Direct Connect&nbsp;Interface</a></li>
 <li><a href="https://github.com/chipsec/chipsec/blob/master/chipsec/cfg/8086/pch_4xxlp.xml#L270">Chipsec 4xxlp register&nbsp;definitions</a></li>
 <li><a href="https://github.com/riscv/riscv-edk2-platforms/blob/85a50de1b459d1d6644a402081120770aa6dd8c7/Silicon/Intel/CoffeelakeSiliconPkg/Pch/Include/Register/PchRegsDci.h"><span class="caps">RISC</span>-V <span class="caps">EDK</span> <span class="caps">PCH</span> register&nbsp;definitions</a></li>
 </ul>
+<p><a id="org.fwupd.hsi.IntelDci.Locked"></a></p>
+<h3 id="intel-dci_1"><a href="#org.fwupd.hsi.IntelDci.Locked">Intel DCI</a><a class="md-anchor" href="#intel-dci_1" title="Permanent link"></a></h3>
+<p>Newer Intel CPUs support debugging over <span class="caps">USB3</span> via a proprietary Direct Connection Interface (<span class="caps">DCI</span>) with the use of off-the-shelf&nbsp;hardware.</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>locked</code>: <span class="caps">CPU</span> debugging has been&nbsp;disabled</li>
+<li><code>not-locked</code>: is is still possible to enable <span class="caps">CPU</span>&nbsp;debugging</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>locked</code>. <em>[v1.5.0]</em></p>
+<p>See&nbsp;also:</p>
+<ul>
+<li><a href="https://www.intel.co.uk/content/www/uk/en/support/articles/000029393/processors.html">Intel Direct Connect&nbsp;Interface</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.Tpm.ReconstructionPcr0"></a></p>
 <h3 id="pcr0-tpm-event-log-reconstruction"><a href="#org.fwupd.hsi.Tpm.ReconstructionPcr0">PCR0 TPM Event Log Reconstruction</a><a class="md-anchor" href="#pcr0-tpm-event-log-reconstruction" title="Permanent link"></a></h3>
 <p>The <span class="caps">TPM</span> event log records which events are registered for the <span class="caps">PCR0</span> hash.
 When reconstructed the event log values should always match the <span class="caps">TPM</span> <span class="caps">PCR0</span>.
 If extra events are included in the event log, or some are missing, the reconstitution will&nbsp;fail.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-2 this should match the <span class="caps">TPM</span>-provided <span class="caps">PCR0</span> <em>[v1.5.0]</em></li>
+<li><code>valid</code>: all&nbsp;correct</li>
+<li><code>not-valid</code>: could not reconstitute the hash&nbsp;value</li>
+<li><code>not-found</code>: no <span class="caps">TPM</span> hardware could be&nbsp;found</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://www.kernel.org/doc/html/latest/security/tpm/tpm_event_log.html">Linux Kernel <span class="caps">TPM</span>&nbsp;Documentation</a></li>
@@ -324,46 +372,110 @@ If extra events are included in the event log, or some are missing, the reconsti
 <p>The <span class="caps">IOMMU</span> on modern systems is used to mitigate against <span class="caps">DMA</span> attacks.
 All I/O for devices capable of <span class="caps">DMA</span> is mapped into a private virtual memory region.
 The <span class="caps">ACPI</span> <span class="caps">DMAR</span> table is used to set up pre-boot <span class="caps">DMA</span> protection which eliminates some firmware&nbsp;attacks.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-2 this should be available <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: detected&nbsp;correctly</li>
+<li><code>not-valid</code>: could not determine&nbsp;state</li>
+<li><code>not-enabled</code>: was not&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
 </ul>
-<p><a id="org.fwupd.hsi.IntelBootguard"></a></p>
-<h3 id="intel-bootguard"><a href="#org.fwupd.hsi.IntelBootguard">Intel BootGuard</a><a class="md-anchor" href="#intel-bootguard" title="Permanent link"></a></h3>
+<p><a id="org.fwupd.hsi.Kernel.IntelBootguard"></a>
+<a id="org.fwupd.hsi.IntelBootguard.Enabled"></a></p>
+<h3 id="intel-bootguard-enabled"><a href="#org.fwupd.hsi.IntelBootguard.Enabled">Intel BootGuard: Enabled</a><a class="md-anchor" href="#intel-bootguard-enabled" title="Permanent link"></a></h3>
 <p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
 It forms a root-of-trust by fusing in cryptographic keys into the processor itself that are used to verify the Authenticated Code Modules found in the <span class="caps">SPI</span>&nbsp;flash.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>
-<p>For <span class="caps">HSI</span>-1 verified boot must be enabled with <span class="caps">ACM</span> protection. <em>[v1.5.0]</em></p>
-</li>
-<li>
-<p>For <span class="caps">HSI</span>-2 the error enforcement policy must be set to &#8220;immediate shutdown&#8221;. <em>[v1.5.0]</em></p>
-</li>
+<li><code>enabled</code>: detected and&nbsp;enabled</li>
+<li><code>not-enabled</code>: not detected, or detected but not&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/jasperlake/include/soc/me.h">Coreboot&nbsp;documentation</a></li>
 </ul>
+<p><a id="org.fwupd.hsi.IntelBootguard.Verified"></a></p>
+<h3 id="intel-bootguard-verified"><a href="#org.fwupd.hsi.IntelBootguard.Verified">Intel BootGuard: Verified</a><a class="md-anchor" href="#intel-bootguard-verified" title="Permanent link"></a></h3>
+<p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
+It forms a root-of-trust by fusing in cryptographic keys into the processor itself that are used to verify the Authenticated Code Modules found in the <span class="caps">SPI</span>&nbsp;flash.</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>success</code>: verified boot&nbsp;chain</li>
+<li><code>not-valid</code>: boot is not&nbsp;verified</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>success</code>. <em>[v1.5.0]</em></p>
+<p><a id="org.fwupd.hsi.IntelBootguard.Acm"></a></p>
+<h3 id="intel-bootguard-acm"><a href="#org.fwupd.hsi.IntelBootguard.Acm">Intel BootGuard: ACM</a><a class="md-anchor" href="#intel-bootguard-acm" title="Permanent link"></a></h3>
+<p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
+It forms a root-of-trust by fusing in cryptographic keys into the processor itself that are used to verify the Authenticated Code Modules found in the <span class="caps">SPI</span>&nbsp;flash.</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>valid</code>: <span class="caps">ACM</span>&nbsp;protected</li>
+<li><code>not-valid</code>: boot is not&nbsp;verified</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
+<p><a id="org.fwupd.hsi.IntelBootguard.Policy"></a></p>
+<h3 id="intel-bootguard-policy"><a href="#org.fwupd.hsi.IntelBootguard.Policy">Intel BootGuard: Policy</a><a class="md-anchor" href="#intel-bootguard-policy" title="Permanent link"></a></h3>
+<p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
+It forms a root-of-trust by fusing in cryptographic keys into the processor itself that are used to verify the Authenticated Code Modules found in the <span class="caps">SPI</span>&nbsp;flash.</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>valid</code>: error enforce policy is set to&nbsp;shutdown</li>
+<li><code>not-valid</code>: policy is&nbsp;invalid</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
+<p><a id="org.fwupd.hsi.IntelBootguard.Otp"></a></p>
+<h3 id="intel-bootguard-otp"><a href="#org.fwupd.hsi.IntelBootguard.Otp">Intel BootGuard: OTP</a><a class="md-anchor" href="#intel-bootguard-otp" title="Permanent link"></a></h3>
+<p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
+It forms a root-of-trust by fusing in cryptographic keys into the processor itself that are used to verify the Authenticated Code Modules found in the <span class="caps">SPI</span>&nbsp;flash.</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>valid</code>: <span class="caps">SOC</span> is&nbsp;locked</li>
+<li><code>not-valid</code>: <span class="caps">SOC</span> is not&nbsp;locked</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
 <p><a id="org.fwupd.hsi.SuspendToRam"></a></p>
 <h3 id="suspend-to-ram-disabled"><a href="#org.fwupd.hsi.SuspendToRam">Suspend to RAM disabled</a><a class="md-anchor" href="#suspend-to-ram-disabled" title="Permanent link"></a></h3>
 <p>Suspend to Ram (S3) keeps the raw contents of the <span class="caps">DRAM</span> refreshed when the system is asleep.
-This means that the memory modules can be physically removed and the contents recovered, or a cold boot attack can be performed with a <span class="caps">USB</span>&nbsp;device.</p>
+This means that the memory modules can be physically removed and the contents recovered, or a cold boot attack can be performed with a <span class="caps">USB</span> device.
+The firmware should be configured to prefer using suspend to idle instead of suspend to ram or to not offer suspend to <span class="caps">RAM</span>.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-3 the firmware should be configured to prefer using suspend to idle instead of suspend to ram or to not offer suspend to <span class="caps">RAM</span>. <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: sleep&nbsp;enabled</li>
+<li><code>not-enabled</code>: suspend-to-ram being&nbsp;used</li>
+<li><code>not-valid</code>: could not determine the&nbsp;default</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>not-enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Cold_boot_attack">Cold Boot Attack Wikipedia&nbsp;Page</a></li>
 </ul>
-<p><a id="org.fwupd.hsi.IntelCet"></a></p>
-<h3 id="intel-cet-available"><a href="#org.fwupd.hsi.IntelCet">Intel CET Available</a><a class="md-anchor" href="#intel-cet-available" title="Permanent link"></a></h3>
+<p><a id="org.fwupd.hsi.IntelCet.Enabled"></a></p>
+<h3 id="intel-cet-available"><a href="#org.fwupd.hsi.IntelCet.Enabled">Intel CET: Available</a><a class="md-anchor" href="#intel-cet-available" title="Permanent link"></a></h3>
 <p>Control enforcement technology is available on new Intel platforms and prevents exploits from hijacking the control-flow transfer instructions for both forward-edge (indirect call/jmp) and back-edge transfer&nbsp;(ret).</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-3 this should be available and enabled <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: feature enabled by the&nbsp;platform</li>
+<li><code>not-supported</code>: not&nbsp;supported</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
+<p>See&nbsp;also:</p>
+<ul>
+<li><a href="https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf">Intel <span class="caps">CET</span> Technology&nbsp;Preview</a></li>
+</ul>
+<p><a id="org.fwupd.hsi.IntelCet.Active"></a></p>
+<h3 id="intel-cet-active"><a href="#org.fwupd.hsi.IntelCet.Active">Intel CET: Active</a><a class="md-anchor" href="#intel-cet-active" title="Permanent link"></a></h3>
+<p>Control enforcement technology is available on new Intel platforms and prevents exploits from hijacking the control-flow transfer instructions for both forward-edge (indirect call/jmp) and back-edge transfer&nbsp;(ret).</p>
+<p>Permitted&nbsp;results:</p>
+<ul>
+<li><code>supported</code>: being&nbsp;used</li>
+<li><code>not-supported</code>: not being used by the&nbsp;host</li>
+</ul>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>supported</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf">Intel <span class="caps">CET</span> Technology&nbsp;Preview</a></li>
@@ -372,9 +484,12 @@ This means that the memory modules can be physically removed and the contents re
 <h3 id="dram-memory-encryption"><a href="#org.fwupd.hsi.EncryptedRam">DRAM memory encryption</a><a class="md-anchor" href="#dram-memory-encryption" title="Permanent link"></a></h3>
 <p><span class="caps">TME</span> (Intel) or <span class="caps">TSME</span> (<span class="caps">AMD</span>) is used by the firmware on supported SOCs to encrypt all data on external memory buses.
 It mitigates against an attacker being able to capture memory data while the system is running or to capture memory by removing a <span class="caps">DRAM</span>&nbsp;chip.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-4 this should be supported and enabled <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: detected and&nbsp;enabled</li>
+<li><code>not-supported</code>: not&nbsp;available</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-4 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://software.intel.com/content/www/us/en/develop/blogs/intel-releases-new-technology-specification-for-memory-encryption.html">Intel <span class="caps">TME</span> Press&nbsp;Release</a></li>
@@ -384,9 +499,12 @@ It mitigates against an attacker being able to capture memory data while the sys
 <h3 id="supervisor-mode-access-prevention"><a href="#org.fwupd.hsi.IntelSmap">Supervisor Mode Access Prevention</a><a class="md-anchor" href="#supervisor-mode-access-prevention" title="Permanent link"></a></h3>
 <p>Without Supervisor Mode Access Prevention, the supervisor code usually has full read and write access to user-space memory mappings.
 This can make exploits easier to write, as it allows the kernel to access user-space memory when it did not intend&nbsp;to.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-4 the <span class="caps">SMAP</span> and <span class="caps">SMEP</span> features should be available on the <span class="caps">CPU</span>. <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: features are detected and&nbsp;enabled</li>
+<li><code>not-supported</code>: not&nbsp;enabled</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-4 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Supervisor_Mode_Access_Prevention"><span class="caps">SMAP</span> Wikipedia&nbsp;Page</a></li>
@@ -396,9 +514,12 @@ This can make exploits easier to write, as it allows the kernel to access user-s
 <p>The <span class="caps">IOMMU</span> on modern systems is used to mitigate against <span class="caps">DMA</span> attacks.
 All I/O for devices capable of <span class="caps">DMA</span> is mapped into a private virtual memory region.
 Common implementations are Intel <span class="caps">VT</span>-d and <span class="caps">AMD</span>-Vi.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-2 this should be available for use. <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: hardware detected and&nbsp;enabled</li>
+<li><code>not-found</code>: hardware was not&nbsp;detected</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p>See&nbsp;also:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
@@ -406,9 +527,13 @@ Common implementations are Intel <span class="caps">VT</span>-d and <span class=
 <p><a id="org.fwupd.hsi.SuspendToIdle"></a></p>
 <h3 id="suspend-to-idle"><a href="#org.fwupd.hsi.SuspendToIdle">Suspend-to-Idle</a><a class="md-anchor" href="#suspend-to-idle" title="Permanent link"></a></h3>
 <p>The platform should be set up with Suspend-to-Idle as the default S3 sleep&nbsp;state.</p>
+<p>Permitted&nbsp;results:</p>
 <ul>
-<li>For <span class="caps">HSI</span>-3 this should be set <em>[v1.5.0]</em></li>
+<li><code>enabled</code>: deep sleep&nbsp;enabled</li>
+<li><code>not-enabled</code>: suspend-to-idle being&nbsp;used</li>
+<li><code>not-valid</code>: could not determine the&nbsp;default</li>
 </ul>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>not-enabled</code>. <em>[v1.5.0]</em></p>
 <p><a id="conclusions"></a></p>
 <h2 id="conclusion"><a href="#conclusions">Conclusion</a><a class="md-anchor" href="#conclusion" title="Permanent link"></a></h2>
 <p>Any system with a Host Security <span class="caps">ID</span> of <code>0</code> can easily be modified from userspace.
