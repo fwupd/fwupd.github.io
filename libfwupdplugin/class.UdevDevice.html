@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.1</p>
+        <p>Library Version: 1.7.2</p>
         
       </div>
       
@@ -105,6 +105,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="method" href="method.UdevDevice.emit_changed.html">emit_changed</a>
+  
+    <a class="method" href="method.UdevDevice.get_bind_id.html">get_bind_id</a>
   
     <a class="method" href="method.UdevDevice.get_children_with_subsystem.html">get_children_with_subsystem</a>
   
@@ -138,6 +140,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.UdevDevice.get_sysfs_attr.html">get_sysfs_attr</a>
   
+    <a class="method" href="method.UdevDevice.get_sysfs_attr_uint64.html">get_sysfs_attr_uint64</a>
+  
     <a class="method" href="method.UdevDevice.get_sysfs_path.html">get_sysfs_path</a>
   
     <a class="method" href="method.UdevDevice.get_vendor.html">get_vendor</a>
@@ -151,6 +155,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.UdevDevice.pwrite.html">pwrite</a>
   
     <a class="method" href="method.UdevDevice.pwrite_full.html">pwrite_full</a>
+  
+    <a class="method" href="method.UdevDevice.seek.html">seek</a>
+  
+    <a class="method" href="method.UdevDevice.set_bind_id.html">set_bind_id</a>
   
     <a class="method" href="method.UdevDevice.set_dev.html">set_dev</a>
   
@@ -172,6 +180,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Properties</h5>
   <div class="links">
+  
+    <a class="property" href="property.UdevDevice.bind-id.html">bind-id</a>
   
     <a class="property" href="property.UdevDevice.device-file.html">device-file</a>
   
@@ -221,7 +231,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.1/libfwupdplugin/fu-udev-device.c#L28">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-udev-device.c#L28">[src]</a>
           
         </h4>
 
@@ -325,6 +335,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <p>Emits the ::changed signal for the&nbsp;object.</p>
           </div>
           <div class="docblock"><p>Available since: 1.1.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.UdevDevice.get_bind_id.html">fu_udev_device_get_bind_id</a></h6>
+          <div class="docblock">
+            <p>Gets the device <span class="caps">ID</span> used for binding the device, e.g. <code>pci:1:2:3</code></p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.2</p></div>
         </div>
       
         <div class="">
@@ -458,6 +476,14 @@ provided&nbsp;subsystem.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.UdevDevice.get_sysfs_attr_uint64.html">fu_udev_device_get_sysfs_attr_uint64</a></h6>
+          <div class="docblock">
+            <p>Reads an arbitrary sysfs attribute &#8216;attr&#8217; associated with <span class="caps">UDEV</span> device as a&nbsp;uint64.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.2</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.UdevDevice.get_sysfs_path.html">fu_udev_device_get_sysfs_path</a></h6>
           <div class="docblock">
             <p>Gets the device sysfs path, e.g. <code>/sys/devices/pci0000:00/0000:00:14.0</code>.</p>
@@ -511,6 +537,22 @@ provided&nbsp;subsystem.</p>
             <p>Write a buffer to a file descriptor at a given&nbsp;offset.</p>
           </div>
           <div class="docblock"><p>Available since: 1.4.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.UdevDevice.seek.html">fu_udev_device_seek</a></h6>
+          <div class="docblock">
+            <p>Seeks a file descriptor to a given&nbsp;offset.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.UdevDevice.set_bind_id.html">fu_udev_device_set_bind_id</a></h6>
+          <div class="docblock">
+            <p>Sets the device <span class="caps">ID</span> used for binding the device, e.g. <code>pci:1:2:3</code></p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.2</p></div>
         </div>
       
         <div class="">
@@ -572,7 +614,7 @@ over <code>pci</code> for a mouse&nbsp;device.</p>
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (128)</h5>
+          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (130)</h5>
 
           
           <div class="docblock">
@@ -750,6 +792,16 @@ been&nbsp;set.</p>
       </h4>
 
       <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.UdevDevice.bind-id.html">FwupdPlugin.UdevDevice:bind-id</a></h6>
+
+          <div class="docblock">
+            No description available.
+          </div>
+
+          
+        </div>
       
         <div class="">
           <h6><a href="property.UdevDevice.device-file.html">FwupdPlugin.UdevDevice:device-file</a></h6>
