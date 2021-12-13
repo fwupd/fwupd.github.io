@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -96,6 +96,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="ctor" href="ctor.Firmware.new_from_bytes.html">new_from_bytes</a>
   
     <a class="ctor" href="ctor.Firmware.new_from_gtypes.html">new_from_gtypes</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Firmware.flag_from_string.html">flag_from_string</a>
+  
+    <a class="func" href="type_func.Firmware.flag_to_string.html">flag_to_string</a>
+  
+    <a class="func" href="type_func.Firmware.strparse_uint16_safe.html">strparse_uint16_safe</a>
+  
+    <a class="func" href="type_func.Firmware.strparse_uint24_safe.html">strparse_uint24_safe</a>
+  
+    <a class="func" href="type_func.Firmware.strparse_uint32_safe.html">strparse_uint32_safe</a>
+  
+    <a class="func" href="type_func.Firmware.strparse_uint4_safe.html">strparse_uint4_safe</a>
+  
+    <a class="func" href="type_func.Firmware.strparse_uint8_safe.html">strparse_uint8_safe</a>
   
   </div>
 </div>
@@ -212,29 +235,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 <div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Firmware.flag_from_string.html">flag_from_string</a>
-  
-    <a class="func" href="type_func.Firmware.flag_to_string.html">flag_to_string</a>
-  
-    <a class="func" href="type_func.Firmware.strparse_uint16_safe.html">strparse_uint16_safe</a>
-  
-    <a class="func" href="type_func.Firmware.strparse_uint24_safe.html">strparse_uint24_safe</a>
-  
-    <a class="func" href="type_func.Firmware.strparse_uint32_safe.html">strparse_uint32_safe</a>
-  
-    <a class="func" href="type_func.Firmware.strparse_uint4_safe.html">strparse_uint4_safe</a>
-  
-    <a class="func" href="type_func.Firmware.strparse_uint8_safe.html">strparse_uint8_safe</a>
-  
-  </div>
-</div>
-
-
-
-<div class="section">
   <h5>Virtual methods</h5>
   <div class="links">
   
@@ -273,7 +273,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-firmware.c#L15">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-firmware.c#L15">[src]</a>
           
         </h4>
 
@@ -311,9 +311,50 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <ul>
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="descendants toggle-wrapper default-hide">
+      <h4 id="descendants">Descendants <a href="#descendants" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li class="class"><a href="class.ArchiveFirmware.html" title="ArchiveFirmware">FuArchiveFirmware</a></li>
+        
+          <li class="class"><a href="class.CfuOffer.html" title="CfuOffer">FuCfuOffer</a></li>
+        
+          <li class="class"><a href="class.CfuPayload.html" title="CfuPayload">FuCfuPayload</a></li>
+        
+          <li class="class"><a href="class.DfuFirmware.html" title="DfuFirmware">FuDfuFirmware</a></li>
+        
+          <li class="class"><a href="class.EfiFirmwareFile.html" title="EfiFirmwareFile">FuEfiFirmwareFile</a></li>
+        
+          <li class="class"><a href="class.EfiFirmwareFilesystem.html" title="EfiFirmwareFilesystem">FuEfiFirmwareFilesystem</a></li>
+        
+          <li class="class"><a href="class.EfiFirmwareSection.html" title="EfiFirmwareSection">FuEfiFirmwareSection</a></li>
+        
+          <li class="class"><a href="class.EfiFirmwareVolume.html" title="EfiFirmwareVolume">FuEfiFirmwareVolume</a></li>
+        
+          <li class="class"><a href="class.EfiSignature.html" title="EfiSignature">FuEfiSignature</a></li>
+        
+          <li class="class"><a href="class.EfiSignatureList.html" title="EfiSignatureList">FuEfiSignatureList</a></li>
+        
+          <li class="class"><a href="class.FmapFirmware.html" title="FmapFirmware">FuFmapFirmware</a></li>
+        
+          <li class="class"><a href="class.IfdFirmware.html" title="IfdFirmware">FuIfdFirmware</a></li>
+        
+          <li class="class"><a href="class.IfdImage.html" title="IfdImage">FuIfdImage</a></li>
+        
+          <li class="class"><a href="class.IhexFirmware.html" title="IhexFirmware">FuIhexFirmware</a></li>
+        
+          <li class="class"><a href="class.Smbios.html" title="Smbios">FuSmbios</a></li>
+        
+          <li class="class"><a href="class.SrecFirmware.html" title="SrecFirmware">FuSrecFirmware</a></li>
         </ul>
       </div>
     </div>
@@ -359,6 +400,94 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
           <div class="docblock"><p>Available since: 1.5.6</p></div>
         </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.flag_from_string.html">fu_firmware_flag_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to a <code>FuFirmwareFlags</code>.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.flag_to_string.html">fu_firmware_flag_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a <code>FuFirmwareFlags</code> to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.strparse_uint16_safe.html">fu_firmware_strparse_uint16_safe</a></h6>
+
+        <div class="docblock">
+          <p>Parses a base 16 number from a string of 4 characters in length.
+The returned <code>value</code> will range from from 0 to&nbsp;0xffff.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.6</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.strparse_uint24_safe.html">fu_firmware_strparse_uint24_safe</a></h6>
+
+        <div class="docblock">
+          <p>Parses a base 16 number from a string of 6 characters in length.
+The returned <code>value</code> will range from from 0 to&nbsp;0xffffff.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.6</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.strparse_uint32_safe.html">fu_firmware_strparse_uint32_safe</a></h6>
+
+        <div class="docblock">
+          <p>Parses a base 16 number from a string of 8 characters in length.
+The returned <code>value</code> will range from from 0 to&nbsp;0xffffffff.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.6</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.strparse_uint4_safe.html">fu_firmware_strparse_uint4_safe</a></h6>
+
+        <div class="docblock">
+          <p>Parses a base 16 number from a string of 1 character in length.
+The returned <code>value</code> will range from from 0 to&nbsp;0xf.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.6</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Firmware.strparse_uint8_safe.html">fu_firmware_strparse_uint8_safe</a></h6>
+
+        <div class="docblock">
+          <p>Parses a base 16 number from a string of 2 characters in length.
+The returned <code>value</code> will range from from 0 to&nbsp;0xff.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.5.6</p></div>
+      </div>
       
       </div>
     </div>
@@ -556,7 +685,7 @@ based on the length of the input&nbsp;string.</p>
           <h6><a href="method.Firmware.get_size.html">fu_firmware_get_size</a></h6>
           <div class="docblock">
             <p>Gets the total size of the image, which is typically the same size as the
-data from <code>fu_firmware_write()</code>.</p>
+data from&nbsp;fu_firmware_write().</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.0</p></div>
         </div>
@@ -654,7 +783,7 @@ used when building firmware with <code>&lt;version_raw&gt;0x123456&lt;/version_r
         <div class="">
           <h6><a href="method.Firmware.set_bytes.html">fu_firmware_set_bytes</a></h6>
           <div class="docblock">
-            <p>Sets the contents of the image if not created with <code>fu_firmware_new_from_bytes()</code>.</p>
+            <p>Sets the contents of the image if not created with&nbsp;fu_firmware_new_from_bytes().</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.0</p></div>
         </div>
@@ -695,7 +824,7 @@ used when building firmware with <code>&lt;version_raw&gt;0x123456&lt;/version_r
           <h6><a href="method.Firmware.set_size.html">fu_firmware_set_size</a></h6>
           <div class="docblock">
             <p>Sets the total size of the image, which should be the same size as the
-data from <code>fu_firmware_write()</code>.</p>
+data from&nbsp;fu_firmware_write().</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.0</p></div>
         </div>
@@ -762,6 +891,12 @@ than <code>chunk_sz_max</code>. Use <code>fu_common_bytes_pad()</code> if paddin
 
       
         
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
+        
       
 
       
@@ -770,6 +905,34 @@ than <code>chunk_sz_max</code>. Use <code>fu_common_bytes_pad()</code> if paddin
 
     
 
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
     
 
     
@@ -997,100 +1160,12 @@ following&nbsp;form:</p>
 
      
 
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.flag_from_string.html">fu_firmware_flag_from_string</a></h6>
-
-        <div class="docblock">
-          <p>Converts a string to a <code>FuFirmwareFlags</code>.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.0</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.flag_to_string.html">fu_firmware_flag_to_string</a></h6>
-
-        <div class="docblock">
-          <p>Converts a <code>FuFirmwareFlags</code> to a&nbsp;string.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.0</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.strparse_uint16_safe.html">fu_firmware_strparse_uint16_safe</a></h6>
-
-        <div class="docblock">
-          <p>Parses a base 16 number from a string of 4 characters in length.
-The returned <code>value</code> will range from from 0 to&nbsp;0xffff.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.6</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.strparse_uint24_safe.html">fu_firmware_strparse_uint24_safe</a></h6>
-
-        <div class="docblock">
-          <p>Parses a base 16 number from a string of 6 characters in length.
-The returned <code>value</code> will range from from 0 to&nbsp;0xffffff.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.6</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.strparse_uint32_safe.html">fu_firmware_strparse_uint32_safe</a></h6>
-
-        <div class="docblock">
-          <p>Parses a base 16 number from a string of 8 characters in length.
-The returned <code>value</code> will range from from 0 to&nbsp;0xffffffff.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.6</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.strparse_uint4_safe.html">fu_firmware_strparse_uint4_safe</a></h6>
-
-        <div class="docblock">
-          <p>Parses a base 16 number from a string of 1 character in length.
-The returned <code>value</code> will range from from 0 to&nbsp;0xf.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.6</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Firmware.strparse_uint8_safe.html">fu_firmware_strparse_uint8_safe</a></h6>
-
-        <div class="docblock">
-          <p>Parses a base 16 number from a string of 2 characters in length.
-The returned <code>value</code> will range from from 0 to&nbsp;0xff.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.5.6</p></div>
-      </div>
-      
-      </div>
-    </div>
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -1105,6 +1180,10 @@ The returned <code>value</code> will range from from 0 to&nbsp;0xff.</p>
 
 
       
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -1113,10 +1192,6 @@ The returned <code>value</code> will range from from 0 to&nbsp;0xff.</p>
       
 
       
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 <li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>

@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -113,7 +113,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-device-locker.h#L25">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-device-locker.h#L25">[src]</a>
         
       </h4>
 
@@ -135,7 +135,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-device-locker.c#L163">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-device-locker.c#L162">[src]</a>
         
       </h4>
 
@@ -143,7 +143,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>Opens the device for use. When the <code>FuDeviceLocker</code> is deallocated the device
 will be closed and any error will just be directed to the console.
 This object is typically called using <code>g_autoptr()</code> but the device can also be
-manually closed using <code>g_clear_object()</code>.</p>
+manually closed using&nbsp;g_clear_object().</p>
 <p><span class="caps">NOTE</span>: If the <code>open_func</code> failed then the <code>close_func</code> will not be&nbsp;called.</p>
 <p>Think of this object as the device&nbsp;ownership.</p>
       </div>

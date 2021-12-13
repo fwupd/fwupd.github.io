@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -92,6 +92,27 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="ctor" href="ctor.Device.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Device.array_ensure_parents.html">array_ensure_parents</a>
+  
+    <a class="func" href="type_func.Device.array_from_variant.html">array_from_variant</a>
+  
+    <a class="func" href="type_func.Device.flag_from_string.html">flag_from_string</a>
+  
+    <a class="func" href="type_func.Device.flag_to_string.html">flag_to_string</a>
+  
+    <a class="func" href="type_func.Device.from_variant.html">from_variant</a>
+  
+    <a class="func" href="type_func.Device.id_is_valid.html">id_is_valid</a>
   
   </div>
 </div>
@@ -328,27 +349,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-<div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Device.array_ensure_parents.html">array_ensure_parents</a>
-  
-    <a class="func" href="type_func.Device.array_from_variant.html">array_from_variant</a>
-  
-    <a class="func" href="type_func.Device.flag_from_string.html">flag_from_string</a>
-  
-    <a class="func" href="type_func.Device.flag_to_string.html">flag_to_string</a>
-  
-    <a class="func" href="type_func.Device.from_variant.html">from_variant</a>
-  
-    <a class="func" href="type_func.Device.id_is_valid.html">id_is_valid</a>
-  
-  </div>
-</div>
-
-
-
 
 
     </nav>
@@ -369,7 +369,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupd/fwupd-device.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupd/fwupd-device.c#L19">[src]</a>
           
         </h4>
 
@@ -407,12 +407,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <ul>
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
       </div>
     </div>
+    
+
     
 
     
@@ -435,6 +437,81 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
           <div class="docblock"><p>Available since: 0.9.3</p></div>
         </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Device.array_ensure_parents.html">fwupd_device_array_ensure_parents</a></h6>
+
+        <div class="docblock">
+          <p>Sets the parent object on all devices in the array using the parent <span class="caps">ID</span>.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.3.7</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.array_from_variant.html">fwupd_device_array_from_variant</a></h6>
+
+        <div class="docblock">
+          <p>Creates an array of new devices using serialized&nbsp;data.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.2.10</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.flag_from_string.html">fwupd_device_flag_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to a enumerated device&nbsp;flag.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.flag_to_string.html">fwupd_device_flag_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a device flag to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.from_variant.html">fwupd_device_from_variant</a></h6>
+
+        <div class="docblock">
+          <p>Creates a new device using serialized&nbsp;data.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.0.0</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Device.id_is_valid.html">fwupd_device_id_is_valid</a></h6>
+
+        <div class="docblock">
+          <p>Checks the string is a valid non-partial device <span class="caps">ID</span>. It is important to note
+that the wildcard <span class="caps">ID</span> of <code>*</code> is not considered a valid <span class="caps">ID</span> in this function and
+the client must check for this manually if this should be&nbsp;allowed.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.4.1</p></div>
+      </div>
       
       </div>
     </div>
@@ -549,7 +626,7 @@ device in some&nbsp;way.</p>
         <div class="">
           <h6><a href="method.Device.get_children.html">fwupd_device_get_children</a></h6>
           <div class="docblock">
-            <p>Gets the device children. These can only be assigned using <code>fwupd_device_set_parent()</code>.</p>
+            <p>Gets the device children. These can only be assigned using&nbsp;fwupd_device_set_parent().</p>
           </div>
           <div class="docblock"><p>Available since: 1.3.7</p></div>
         </div>
@@ -1216,6 +1293,12 @@ Optionally provides additional data based upon&nbsp;flags.</p>
 
       
         
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
+        
       
 
       
@@ -1229,6 +1312,7 @@ Optionally provides additional data based upon&nbsp;flags.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -1322,6 +1406,7 @@ Optionally provides additional data based upon&nbsp;flags.</p>
         </div>
       
       </div>
+      
 
       
         
@@ -1332,6 +1417,34 @@ Optionally provides additional data based upon&nbsp;flags.</p>
     </div>
     
 
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
     
 
     
@@ -1471,87 +1584,12 @@ void
 
      
 
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Device.array_ensure_parents.html">fwupd_device_array_ensure_parents</a></h6>
-
-        <div class="docblock">
-          <p>Sets the parent object on all devices in the array using the parent <span class="caps">ID</span>.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.3.7</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.array_from_variant.html">fwupd_device_array_from_variant</a></h6>
-
-        <div class="docblock">
-          <p>Creates an array of new devices using serialized&nbsp;data.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.2.10</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.flag_from_string.html">fwupd_device_flag_from_string</a></h6>
-
-        <div class="docblock">
-          <p>Converts a string to a enumerated device&nbsp;flag.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 0.7.0</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.flag_to_string.html">fwupd_device_flag_to_string</a></h6>
-
-        <div class="docblock">
-          <p>Converts a device flag to a&nbsp;string.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 0.7.0</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.from_variant.html">fwupd_device_from_variant</a></h6>
-
-        <div class="docblock">
-          <p>Creates a new device using serialized&nbsp;data.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.0.0</p></div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.id_is_valid.html">fwupd_device_id_is_valid</a></h6>
-
-        <div class="docblock">
-          <p>Checks the string is a valid non-partial device <span class="caps">ID</span>. It is important to note
-that the wildcard <span class="caps">ID</span> of <code>*</code> is not considered a valid <span class="caps">ID</span> in this function and
-the client must check for this manually if this should be&nbsp;allowed.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.4.1</p></div>
-      </div>
-      
-      </div>
-    </div>
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -1566,6 +1604,10 @@ the client must check for this manually if this should be&nbsp;allowed.</p>
 
 
       
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -1576,10 +1618,6 @@ the client must check for this manually if this should be&nbsp;allowed.</p>
       
 
       
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 

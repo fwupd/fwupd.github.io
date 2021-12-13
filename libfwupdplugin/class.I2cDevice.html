@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -85,6 +85,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="current" href="class.I2cDevice.html#description">I2cDevice</a>
   </div>
 </div>
+
+
 
 
 
@@ -127,8 +129,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-
-
     </nav>
     
     <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-i2c-device.c#L21">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-i2c-device.c#L21">[src]</a>
           
         </h4>
 
@@ -193,16 +193,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
         
           
-          <li class="class">FwupdDevice</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a></li>
           
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
       </div>
     </div>
+    
+
+    
+
     
 
     
@@ -270,322 +274,35 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (34)</h5>
-
-          
-          <div class="docblock">
-          
-            <h6><a href="method.UdevDevice.emit_changed.html">fu_udev_device_emit_changed</a></h6>
-            <div class="docblock">
-              <p>Emits the ::changed signal for the&nbsp;object.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_bind_id.html">fu_udev_device_get_bind_id</a></h6>
-            <div class="docblock">
-              <p>Gets the device <span class="caps">ID</span> used for binding the device, e.g. <code>pci:1:2:3</code></p>
-            </div>
-            <div class="docblock"><p>Available since: 1.7.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_children_with_subsystem.html">fu_udev_device_get_children_with_subsystem</a></h6>
-            <div class="docblock">
-              <p>Get a list of devices that are children of self and have the
-provided&nbsp;subsystem.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_dev.html">fu_udev_device_get_dev</a></h6>
-            <div class="docblock">
-              <p>Gets the <code>GUdevDevice</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_device_file.html">fu_udev_device_get_device_file</a></h6>
-            <div class="docblock">
-              <p>Gets the device&nbsp;node.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.3.1</p></div>
-          
-            <h6><a href="method.UdevDevice.get_devtype.html">fu_udev_device_get_devtype</a></h6>
-            <div class="docblock">
-              <p>Returns the Udev device&nbsp;type.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.4.5</p></div>
-          
-            <h6><a href="method.UdevDevice.get_driver.html">fu_udev_device_get_driver</a></h6>
-            <div class="docblock">
-              <p>Gets the device driver, e.g. <code>psmouse</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.3</p></div>
-          
-            <h6><a href="method.UdevDevice.get_fd.html">fu_udev_device_get_fd</a></h6>
-            <div class="docblock">
-              <p>Gets the file descriptor if the device is&nbsp;open.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.3.3</p></div>
-          
-            <h6><a href="method.UdevDevice.get_model.html">fu_udev_device_get_model</a></h6>
-            <div class="docblock">
-              <p>Gets the device device&nbsp;code.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_number.html">fu_udev_device_get_number</a></h6>
-            <div class="docblock">
-              <p>Gets the device number, if&nbsp;any.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.0</p></div>
-          
-            <h6><a href="method.UdevDevice.get_parent_name.html">fu_udev_device_get_parent_name</a></h6>
-            <div class="docblock">
-              <p>Returns the name of the direct ancestor of this&nbsp;device.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.4.5</p></div>
-          
-            <h6><a href="method.UdevDevice.get_revision.html">fu_udev_device_get_revision</a></h6>
-            <div class="docblock">
-              <p>Gets the device&nbsp;revision.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_siblings_with_subsystem.html">fu_udev_device_get_siblings_with_subsystem</a></h6>
-            <div class="docblock">
-              <p>Get a list of devices that are siblings of self and have the
-provided&nbsp;subsystem.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.0</p></div>
-          
-            <h6><a href="method.UdevDevice.get_slot_depth.html">fu_udev_device_get_slot_depth</a></h6>
-            <div class="docblock">
-              <p>Determine how far up a chain a given device&nbsp;is.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.2.4</p></div>
-          
-            <h6><a href="method.UdevDevice.get_subsystem.html">fu_udev_device_get_subsystem</a></h6>
-            <div class="docblock">
-              <p>Gets the device subsystem, e.g. <code>pci</code></p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_subsystem_model.html">fu_udev_device_get_subsystem_model</a></h6>
-            <div class="docblock">
-              <p>Gets the device subsystem model&nbsp;code.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.0</p></div>
-          
-            <h6><a href="method.UdevDevice.get_subsystem_vendor.html">fu_udev_device_get_subsystem_vendor</a></h6>
-            <div class="docblock">
-              <p>Gets the device subsystem vendor&nbsp;code.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.0</p></div>
-          
-            <h6><a href="method.UdevDevice.get_sysfs_attr.html">fu_udev_device_get_sysfs_attr</a></h6>
-            <div class="docblock">
-              <p>Reads an arbitrary sysfs attribute &#8216;attr&#8217; associated with <span class="caps">UDEV</span>&nbsp;device.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.4.5</p></div>
-          
-            <h6><a href="method.UdevDevice.get_sysfs_attr_uint64.html">fu_udev_device_get_sysfs_attr_uint64</a></h6>
-            <div class="docblock">
-              <p>Reads an arbitrary sysfs attribute &#8216;attr&#8217; associated with <span class="caps">UDEV</span> device as a&nbsp;uint64.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.7.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_sysfs_path.html">fu_udev_device_get_sysfs_path</a></h6>
-            <div class="docblock">
-              <p>Gets the device sysfs path, e.g. <code>/sys/devices/pci0000:00/0000:00:14.0</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.get_vendor.html">fu_udev_device_get_vendor</a></h6>
-            <div class="docblock">
-              <p>Gets the device vendor&nbsp;code.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.UdevDevice.ioctl.html">fu_udev_device_ioctl</a></h6>
-            <div class="docblock">
-              <p>Control a device using a low-level&nbsp;request.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.3.3</p></div>
-          
-            <h6><a href="method.UdevDevice.pread.html">fu_udev_device_pread</a></h6>
-            <div class="docblock">
-              <p>Read from a file descriptor at a given&nbsp;offset.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.3.3</p></div>
+        <div class=" ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (34)</h5><div class="docblock">
           
           </div>
-          
         </div>
         
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (130)</h5>
-
-          
-          <div class="docblock">
-          
-            <h6><a href="method.Device.activate.html">fu_device_activate</a></h6>
-            <div class="docblock">
-              <p>Activates up a device, which normally means the device switches to a new
-firmware version. This should only be called when data loss cannot&nbsp;occur.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.2.6</p></div>
-          
-            <h6><a href="method.Device.add_child.html">fu_device_add_child</a></h6>
-            <div class="docblock">
-              <p>Sets any child device. An child device is logically linked to the primary
-device in some&nbsp;way.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.0.8</p></div>
-          
-            <h6><a href="method.Device.add_counterpart_guid.html">fu_device_add_counterpart_guid</a></h6>
-            <div class="docblock">
-              <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
-is converted to a <span class="caps">GUID</span> using <code>fwupd_guid_hash_string()</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.Device.add_flag.html">fu_device_add_flag</a></h6>
-            <div class="docblock">
-              <p>Adds a device flag to the&nbsp;device.</p>
-            </div>
-            <div class="docblock"><p>Available since: 0.1.0</p></div>
-          
-            <h6><a href="method.Device.add_guid.html">fu_device_add_guid</a></h6>
-            <div class="docblock">
-              <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
-is converted to a <span class="caps">GUID</span> using <code>fwupd_guid_hash_string()</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 0.7.2</p></div>
-          
-            <h6><a href="method.Device.add_guid_full.html">fu_device_add_guid_full</a></h6>
-            <div class="docblock">
-              <p>Adds a <span class="caps">GUID</span> to the device. If the <code>guid</code> argument is not a valid <span class="caps">GUID</span> then it
-is converted to a <span class="caps">GUID</span> using <code>fwupd_guid_hash_string()</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.2</p></div>
-          
-            <h6><a href="method.Device.add_instance_id.html">fu_device_add_instance_id</a></h6>
-            <div class="docblock">
-              <p>Adds an instance <span class="caps">ID</span> to the device. If the <code>instance_id</code> argument is already a
-valid <span class="caps">GUID</span> then <code>fu_device_add_guid()</code> should be used&nbsp;instead.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.2.5</p></div>
-          
-            <h6><a href="method.Device.add_instance_id_full.html">fu_device_add_instance_id_full</a></h6>
-            <div class="docblock">
-              <p>Adds an instance <span class="caps">ID</span> with all parameters&nbsp;set.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.2.9</p></div>
-          
-            <h6><a href="method.Device.add_internal_flag.html">fu_device_add_internal_flag</a></h6>
-            <div class="docblock">
-              <p>Adds a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.5</p></div>
-          
-            <h6><a href="method.Device.add_parent_guid.html">fu_device_add_parent_guid</a></h6>
-            <div class="docblock">
-              <p>Sets any parent device using a <span class="caps">GUID</span>. An parent device is logically linked to
-the primary device in some way and can be added before or after <code>self</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.0.8</p></div>
-          
-            <h6><a href="method.Device.add_parent_physical_id.html">fu_device_add_parent_physical_id</a></h6>
-            <div class="docblock">
-              <p>Sets any parent device using the physical <span class="caps">ID</span>. An parent device is logically
-linked to the primary device in some way and can be added before or after <code>self</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.2</p></div>
-          
-            <h6><a href="method.Device.add_possible_plugin.html">fu_device_add_possible_plugin</a></h6>
-            <div class="docblock">
-              <p>Adds a plugin name to the list of plugins that <em>might</em> be able to handle this
-device. This is tyically called from a quirk&nbsp;handler.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.1</p></div>
-          
-            <h6><a href="method.Device.add_private_flag.html">fu_device_add_private_flag</a></h6>
-            <div class="docblock">
-              <p>Adds a private flag that can be used by the plugin for any&nbsp;purpose.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.2</p></div>
-          
-            <h6><a href="method.Device.add_security_attrs.html">fu_device_add_security_attrs</a></h6>
-            <div class="docblock">
-              <p>Adds <span class="caps">HSI</span> security&nbsp;attributes.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.6.0</p></div>
-          
-            <h6><a href="method.Device.add_string.html">fu_device_add_string</a></h6>
-            <div class="docblock">
-              <p>Add daemon-specific device metadata to an existing&nbsp;string.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.7.1</p></div>
-          
-            <h6><a href="method.Device.attach.html">fu_device_attach</a></h6>
-            <div class="docblock">
-              <p>Attaches a device from the bootloader into application&nbsp;mode.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.0.8</p></div>
-          
-            <h6><a href="method.Device.attach_full.html">fu_device_attach_full</a></h6>
-            <div class="docblock">
-              <p>Attaches a device from the bootloader into application&nbsp;mode.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.7.0</p></div>
-          
-            <h6><a href="method.Device.bind_driver.html">fu_device_bind_driver</a></h6>
-            <div class="docblock">
-              <p>Binds a driver to the device, which normally means the kernel driver takes
-control of the&nbsp;hardware.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.0</p></div>
-          
-            <h6><a href="method.Device.cleanup.html">fu_device_cleanup</a></h6>
-            <div class="docblock">
-              <p>Cleans up a device after an update. A different plugin can handle each of
-FuDevice-&gt;<code>write_firmware()</code>, FuDevice-&gt;<code>attach()</code> and FuDevice-&gt;<code>cleanup()</code>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.3.3</p></div>
-          
-            <h6><a href="method.Device.close.html">fu_device_close</a></h6>
-            <div class="docblock">
-              <p>Closes a device, optionally running a object-specific&nbsp;vfunc.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.1.2</p></div>
-          
-            <h6><a href="method.Device.convert_instance_ids.html">fu_device_convert_instance_ids</a></h6>
-            <div class="docblock">
-              <p>Converts all the Device instance IDs added using <code>fu_device_add_instance_id()</code>
-into actual GUIDs, <strong>unless</strong> <code>FU_DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS</code> has
-been&nbsp;set.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.2.5</p></div>
-          
-            <h6><a href="method.Device.detach.html">fu_device_detach</a></h6>
-            <div class="docblock">
-              <p>Detaches a device from the application into bootloader&nbsp;mode.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.0.8</p></div>
-          
-            <h6><a href="method.Device.detach_full.html">fu_device_detach_full</a></h6>
-            <div class="docblock">
-              <p>Detaches a device from the application into bootloader&nbsp;mode.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.7.0</p></div>
+        <div class=" ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (130)</h5><div class="docblock">
           
           </div>
-          
         </div>
         
       
         
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (95)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
+        
       
+        
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
         
       
 
@@ -600,6 +317,7 @@ been&nbsp;set.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -613,110 +331,141 @@ been&nbsp;set.</p>
         </div>
       
       </div>
+      
 
       
         
         <div class="toggle-wrapper default-hide ancestor-properties">
-          <h5 style="display:block;">Properties inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (5)</h5>
-
+          <h5 style="display:block;">Properties inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (5)</h5><div class="docblock">
           
+            <h6><a href="property.UdevDevice.bind-id.html">FwupdPlugin.UdevDevice:bind-id</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.UdevDevice.device-file.html">FwupdPlugin.UdevDevice:device-file</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.UdevDevice.driver.html">FwupdPlugin.UdevDevice:driver</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.UdevDevice.subsystem.html">FwupdPlugin.UdevDevice:subsystem</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.UdevDevice.udev-device.html">FwupdPlugin.UdevDevice:udev-device</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.Device.html">FuDevice</a> (8)</h5><div class="docblock">
+          
+            <h6><a href="property.Device.backend-id.html">FwupdPlugin.Device:backend-id</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.battery-level.html">FwupdPlugin.Device:battery-level</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.battery-threshold.html">FwupdPlugin.Device:battery-threshold</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.context.html">FwupdPlugin.Device:context</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.logical-id.html">FwupdPlugin.Device:logical-id</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.parent.html">FwupdPlugin.Device:parent</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.physical-id.html">FwupdPlugin.Device:physical-id</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="property.Device.proxy.html">FwupdPlugin.Device:proxy</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (9)</h5>
           <div class="docblock">
-          
-            <h6><a href="property.UdevDevice.bind-id.html">FwupdPlugin.UdevDevice:bind-id</a></h6>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.flags.html">Fwupd.Device:flags</a></h6>
             <div class="docblock">
               No description available.
             </div>
             
-          
-            <h6><a href="property.UdevDevice.device-file.html">FwupdPlugin.UdevDevice:device-file</a></h6>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.parent.html">Fwupd.Device:parent</a></h6>
             <div class="docblock">
               No description available.
             </div>
             
-          
-            <h6><a href="property.UdevDevice.driver.html">FwupdPlugin.UdevDevice:driver</a></h6>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.protocol.html">Fwupd.Device:protocol</a></h6>
             <div class="docblock">
               No description available.
             </div>
             
-          
-            <h6><a href="property.UdevDevice.subsystem.html">FwupdPlugin.UdevDevice:subsystem</a></h6>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.status.html">Fwupd.Device:status</a></h6>
             <div class="docblock">
               No description available.
             </div>
             
-          
-            <h6><a href="property.UdevDevice.udev-device.html">FwupdPlugin.UdevDevice:udev-device</a></h6>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-error.html">Fwupd.Device:update-error</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-image.html">Fwupd.Device:update-image</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-message.html">Fwupd.Device:update-message</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-state.html">Fwupd.Device:update-state</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.version-format.html">Fwupd.Device:version-format</a></h6>
             <div class="docblock">
               No description available.
             </div>
             
           
           </div>
-          
         </div>
-        
-      
-        
-        <div class="toggle-wrapper default-hide ancestor-properties">
-          <h5 style="display:block;">Properties inherited from <a href="class.Device.html">FuDevice</a> (8)</h5>
-
-          
-          <div class="docblock">
-          
-            <h6><a href="property.Device.backend-id.html">FwupdPlugin.Device:backend-id</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.battery-level.html">FwupdPlugin.Device:battery-level</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.battery-threshold.html">FwupdPlugin.Device:battery-threshold</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.context.html">FwupdPlugin.Device:context</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.logical-id.html">FwupdPlugin.Device:logical-id</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.parent.html">FwupdPlugin.Device:parent</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.physical-id.html">FwupdPlugin.Device:physical-id</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-            <h6><a href="property.Device.proxy.html">FwupdPlugin.Device:proxy</a></h6>
-            <div class="docblock">
-              No description available.
-            </div>
-            
-          
-          </div>
-          
-        </div>
-        
-      
         
       
         
@@ -727,6 +476,72 @@ been&nbsp;set.</p>
     </div>
     
 
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="signal.UdevDevice.changed.html">FwupdPlugin.UdevDevice::changed</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.Device.html">FuDevice</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="signal.Device.child-added.html">FwupdPlugin.Device::child-added</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="signal.Device.child-removed.html">FwupdPlugin.Device::child-removed</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+            <h6><a href="signal.Device.request.html">FwupdPlugin.Device::request</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
     
 
     
@@ -778,14 +593,12 @@ been&nbsp;set.</p>
 
      
 
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -798,14 +611,14 @@ been&nbsp;set.</p>
       
 
       
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
       
 <li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
 
-
-      
 
       
 

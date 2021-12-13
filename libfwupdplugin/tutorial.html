@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -141,7 +141,7 @@ static gboolean
 fu_plugin_foo_startup(FuPlugin *plugin, GError **error)
 {
     FuPluginData *data = fu_plugin_get_data(plugin);
-    data-&gt;proxy = `create_proxy()`;
+    data-&gt;proxy = create_proxy();
     if(data-&gt;proxy == NULL) {
         g_set_error(error, FWUPD_ERROR, FWUPD_ERROR_NOT_SUPPORTED,
                     &quot;failed to create proxy&quot;);
@@ -280,7 +280,7 @@ certain threshold, or it could be as complicated as ensuring a vendor-specific
 <div class="codehilite"><pre><span></span><code>static gboolean
 fu_plugin_foo_prepare(FuPlugin *plugin, FuDevice *device, GError **error)
 {
-    if (fu_device_has_flag(device, FWUPD_DEVICE_FLAG_REQUIRE_AC &amp;&amp; !`on_ac_power()`) {
+    if (fu_device_has_flag(device, FWUPD_DEVICE_FLAG_REQUIRE_AC &amp;&amp; !on_ac_power()) {
             g_set_error_literal(error,
                                 FWUPD_ERROR,
                                 FWUPD_ERROR_AC_POWER_REQUIRED,

@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -105,7 +105,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-common.h#L232">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-common.h#L234">[src]</a>
         
       </h4>
 
@@ -126,7 +126,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-common.c#L3514">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-common.c#L3794">[src]</a>
         
       </h4>
 
@@ -134,7 +134,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>Get the byte data in the <code>GBytes</code>. This data should not be modified.
 This function will always return the same pointer for a given <code>GBytes</code>.</p>
 <p>If the size of <code>bytes</code> is zero, then <code>NULL</code> is returned and the <code>error</code> is set,
-which differs in behavior to that of <code>g_bytes_get_data()</code>.</p>
+which differs in behavior to that of&nbsp;g_bytes_get_data().</p>
 <p>This may be useful when calling <code>g_mapped_file_new()</code> on a zero-length&nbsp;file.</p>
       </div>
 
@@ -163,7 +163,7 @@ which differs in behavior to that of <code>g_bytes_get_data()</code>.</p>
           
           <tr class="arg-name">
             <td><code>bytes</code></td>
-            <td><code>GBytes*</code></td>
+            <td><a href="javascript:void(0)" data-link="struct.Bytes.html" data-namespace="GLib" class="external"><code>GBytes</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
@@ -223,7 +223,7 @@ which differs in behavior to that of <code>g_bytes_get_data()</code>.</p>
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><code>const guint8*</code></td>
+            <td><code>guint8</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>

@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.2</td></tr>
+        <tr><td><em>Version</em></td><td>1.7.3</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -254,6 +254,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><a title="Archive" class="symbol" href="class.Archive.html">Archive</a></td>
             
             <td class="docblock-summary"><p>An in-memory archive&nbsp;decompressor.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ArchiveFirmware" class="symbol" href="class.ArchiveFirmware.html">ArchiveFirmware</a></td>
+            
+            <td class="docblock-summary"><p>An archive firmware image, typically for nested firmware&nbsp;volumes.</p></td>
             
           </tr>
           
@@ -661,7 +668,7 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           <tr class="section-item">
             <td><a title="CfiDeviceCmd" class="symbol" href="enum.CfiDeviceCmd.html">CfiDeviceCmd</a></td>
             
-            <td class="docblock-summary"><p>Commands used when calling <code>fu_cfi_device_get_cmd()</code>.</p></td>
+            <td class="docblock-summary"><p>Commands used when calling&nbsp;fu_cfi_device_get_cmd().</p></td>
             
           </tr>
           
@@ -704,7 +711,7 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="PluginRule" class="symbol" href="enum.PluginRule.html">PluginRule</a></td>
             
             <td class="docblock-summary"><p>The rules used for ordering plugins.
-Plugins are expected to add rules in <code>fu_plugin_initialize()</code>.</p></td>
+Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
             
           </tr>
           
@@ -771,7 +778,7 @@ Plugins are expected to add rules in <code>fu_plugin_initialize()</code>.</p></t
           <tr class="section-item">
             <td><a title="HidDeviceFlags" class="symbol" href="flags.HidDeviceFlags.html">HidDeviceFlags</a></td>
             
-            <td class="docblock-summary"><p>Flags used when calling <code>fu_hid_device_get_report()</code> and <code>fu_hid_device_set_report()</code>.</p></td>
+            <td class="docblock-summary"><p>Flags used when calling <code>fu_hid_device_get_report()</code> and&nbsp;fu_hid_device_set_report().</p></td>
             
           </tr>
           
@@ -806,7 +813,7 @@ Plugins are expected to add rules in <code>fu_plugin_initialize()</code>.</p></t
           <tr class="section-item">
             <td><a title="UdevDeviceFlags" class="symbol" href="flags.UdevDeviceFlags.html">UdevDeviceFlags</a></td>
             
-            <td class="docblock-summary"><p>Flags used when opening the device using <code>fu_device_open()</code>.</p></td>
+            <td class="docblock-summary"><p>Flags used when opening the device using&nbsp;fu_device_open().</p></td>
             
           </tr>
           
@@ -1475,9 +1482,91 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_strtoull_full" class="symbol" href="func.common_strtoull_full.html">common_strtoull_full</a></td>
+            
+            <td class="docblock-summary"><p>Converts a string value to an integer. Values are assumed base 10, unless
+prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_strwidth" class="symbol" href="func.common_strwidth.html">common_strwidth</a></td>
             
             <td class="docblock-summary"><p>Returns the width of the string in displayed characters on the&nbsp;console.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum16" class="symbol" href="func.common_sum16.html">common_sum16</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum16_bytes" class="symbol" href="func.common_sum16_bytes.html">common_sum16_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum16w" class="symbol" href="func.common_sum16w.html">common_sum16w</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one word at a time.
+The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;2.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum16w_bytes" class="symbol" href="func.common_sum16w_bytes.html">common_sum16w_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one word at a time.
+The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;2.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum32" class="symbol" href="func.common_sum32.html">common_sum32</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum32_bytes" class="symbol" href="func.common_sum32_bytes.html">common_sum32_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum32w" class="symbol" href="func.common_sum32w.html">common_sum32w</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one dword at a time.
+The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;4.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum32w_bytes" class="symbol" href="func.common_sum32w_bytes.html">common_sum32w_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one dword at a time.
+The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;4.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum8" class="symbol" href="func.common_sum8.html">common_sum8</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_sum8_bytes" class="symbol" href="func.common_sum8_bytes.html">common_sum8_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>.</p></td>
             
           </tr>
           
@@ -2556,6 +2645,13 @@ be&nbsp;discovered.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE.html">DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE</a></td>
+            
+            <td class="docblock-summary"><p>The device is not auto&nbsp;removed.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN.html">DEVICE_INTERNAL_FLAG_NO_AUTO_REMOVE_CHILDREN</a></td>
             
             <td class="docblock-summary"><p>Do not auto-remove clildren in the device&nbsp;list.</p></td>
@@ -3208,6 +3304,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="FIRMWARE_FLAG_DEDUPE_IDX" class="symbol" href="const.FIRMWARE_FLAG_DEDUPE_IDX.html">FIRMWARE_FLAG_DEDUPE_IDX</a></td>
             
             <td class="docblock-summary"><p>Dedupe imges by <span class="caps">IDX</span>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIRMWARE_FLAG_DONE_PARSE" class="symbol" href="const.FIRMWARE_FLAG_DONE_PARSE.html">FIRMWARE_FLAG_DONE_PARSE</a></td>
+            
+            <td class="docblock-summary"><p>The firmware object has been used by&nbsp;fu_firmware_parse_full().</p></td>
             
           </tr>
           

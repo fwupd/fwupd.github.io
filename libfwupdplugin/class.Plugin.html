@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -92,6 +92,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="ctor" href="ctor.Plugin.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Plugin.guess_name_from_fn.html">guess_name_from_fn</a>
   
   </div>
 </div>
@@ -243,17 +254,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 <div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Plugin.guess_name_from_fn.html">guess_name_from_fn</a>
-  
-  </div>
-</div>
-
-
-
-<div class="section">
   <h5>Virtual methods</h5>
   <div class="links">
   
@@ -296,7 +296,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-plugin.c#L22">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-plugin.c#L22">[src]</a>
           
         </h4>
 
@@ -334,16 +334,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <ul>
         
           
-          <li class="class">FwupdPlugin</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Plugin.html" data-namespace="Fwupd">FwupdPlugin</a></li>
           
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
       </div>
     </div>
+    
+
     
 
     
@@ -366,6 +368,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
           <div class="docblock"><p>Available since: 0.8.0</p></div>
         </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Plugin.guess_name_from_fn.html">fu_plugin_guess_name_from_fn</a></h6>
+
+        <div class="docblock">
+          <p>Tries to guess the name of the plugin from a&nbsp;filename.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.0.8</p></div>
+      </div>
       
       </div>
     </div>
@@ -526,7 +551,7 @@ has already been added by a different plugin then this request will be&nbsp;igno
           <h6><a href="method.Plugin.get_devices.html">fu_plugin_get_devices</a></h6>
           <div class="docblock">
             <p>Returns all devices added by the plugin using <code>fu_plugin_device_add()</code> and
-not yet removed with <code>fu_plugin_device_remove()</code>.</p>
+not yet removed with&nbsp;fu_plugin_device_remove().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.6</p></div>
         </div>
@@ -614,7 +639,7 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         <div class="">
           <h6><a href="method.Plugin.order_compare.html">fu_plugin_order_compare</a></h6>
           <div class="docblock">
-            <p>Compares two plugins by their depsolved&nbsp;order.</p>
+            <p>Compares two plugins by their depsolved order, and then by&nbsp;name.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.8</p></div>
         </div>
@@ -831,7 +856,69 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
 
       
         
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Plugin.html" data-namespace="Fwupd">FwupdPlugin</a> (10)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.add_flag.html">fwupd_plugin_add_flag</a></h6>
+            <div class="docblock">
+              <p>Adds a specific plugin flag to the&nbsp;plugin.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.get_flags.html">fwupd_plugin_get_flags</a></h6>
+            <div class="docblock">
+              <p>Gets the plugin&nbsp;flags.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.get_name.html">fwupd_plugin_get_name</a></h6>
+            <div class="docblock">
+              <p>Gets the plugin&nbsp;name.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.has_flag.html">fwupd_plugin_has_flag</a></h6>
+            <div class="docblock">
+              <p>Finds if the plugin has a specific plugin&nbsp;flag.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.remove_flag.html">fwupd_plugin_remove_flag</a></h6>
+            <div class="docblock">
+              <p>Removes a specific plugin flag from the&nbsp;plugin.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.set_flags.html">fwupd_plugin_set_flags</a></h6>
+            <div class="docblock">
+              <p>Sets the plugin&nbsp;flags.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.set_name.html">fwupd_plugin_set_name</a></h6>
+            <div class="docblock">
+              <p>Sets the plugin&nbsp;name.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.to_json.html">fwupd_plugin_to_json</a></h6>
+            <div class="docblock">
+              <p>Adds a fwupd plugin to a <span class="caps">JSON</span>&nbsp;builder.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.to_string.html">fwupd_plugin_to_string</a></h6>
+            <div class="docblock">
+              <p>Builds a text representation of the&nbsp;object.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Plugin.to_variant.html">fwupd_plugin_to_variant</a></h6>
+            <div class="docblock">
+              <p>Serialize the plugin data omitting sensitive&nbsp;fields.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
+          
+          </div>
+        </div>
+        
       
+        
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
         
       
 
@@ -839,6 +926,40 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
     </div>
     
 
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Plugin.html" data-namespace="Fwupd">FwupdPlugin</a> (2)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Plugin.flags.html">Fwupd.Plugin:flags</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Plugin.name.html">Fwupd.Plugin:name</a></h6>
+            <div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+        
+      
+
+      
+
+    </div>
     
 
     
@@ -848,6 +969,7 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         <a href="#signals" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -899,10 +1021,23 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         </div>
       
       </div>
+      
 
       
         
       
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
         
       
 
@@ -1165,35 +1300,12 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
 
      
 
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Plugin.guess_name_from_fn.html">fu_plugin_guess_name_from_fn</a></h6>
-
-        <div class="docblock">
-          <p>Tries to guess the name of the plugin from a&nbsp;filename.</p>
-        </div>
-
-        <div class="docblock"><p>Available since: 1.0.8</p></div>
-      </div>
-      
-      </div>
-    </div>
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -1208,6 +1320,10 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
 
 
       
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -1218,10 +1334,6 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
 
 
       
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 <li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>

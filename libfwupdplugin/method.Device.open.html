@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -369,7 +369,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-device.h#L600">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-device.h#L609">[src]</a>
         
       </h4>
 
@@ -389,18 +389,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupdplugin/fu-device.c#L3967">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-device.c#L3986">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Opens a device, optionally running a object-specific&nbsp;vfunc.</p>
 <p>Plugins can call <code>fu_device_open()</code> multiple times without calling
-<code>fu_device_close()</code>, but only the first call will actually invoke the&nbsp;vfunc.</p>
+fu_device_close(), but only the first call will actually invoke the&nbsp;vfunc.</p>
 <p>It is expected that plugins issue the same number of <code>fu_device_open()</code> and
 <code>fu_device_close()</code> methods when using a specific <code>self</code>.</p>
-<p>If the <code>-&gt;</code>probe()<code>, `-&gt;`open()</code> and <code>-&gt;</code>setup()<code>` actions all complete
-successfully the internal device flag</code>FU_DEVICE_INTERNAL_FLAG_IS_OPEN` will
+<p>If the <code>-&gt;probe()</code>, <code>-&gt;open()</code> and <code>-&gt;setup()</code> actions all complete
+successfully the internal device flag <code>FU_DEVICE_INTERNAL_FLAG_IS_OPEN</code> will
 be&nbsp;set.</p>
 <p><span class="caps">NOTE</span>: It is important to still call <code>fu_device_close()</code> even if this function
 fails as the device may still be partially&nbsp;initialized.</p>

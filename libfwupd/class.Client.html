@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.2</p>
+        <p>Library Version: 1.7.3</p>
         
       </div>
       
@@ -95,6 +95,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
   </div>
 </div>
+
+
 
 
 
@@ -185,6 +187,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Client.get_history_async.html">get_history_async</a>
   
     <a class="method" href="method.Client.get_history_finish.html">get_history_finish</a>
+  
+    <a class="method" href="method.Client.get_host_bkc.html">get_host_bkc</a>
   
     <a class="method" href="method.Client.get_host_machine_id.html">get_host_machine_id</a>
   
@@ -375,6 +379,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="property" href="property.Client.daemon-version.html">daemon-version</a>
   
+    <a class="property" href="property.Client.host-bkc.html">host-bkc</a>
+  
     <a class="property" href="property.Client.host-machine-id.html">host-machine-id</a>
   
     <a class="property" href="property.Client.host-product.html">host-product</a>
@@ -419,8 +425,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-
-
 <div class="section">
   <h5>Virtual methods</h5>
   <div class="links">
@@ -460,7 +464,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.2/libfwupd/fwupd-client.c#L44">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupd/fwupd-client.c#L44">[src]</a>
           
         </h4>
 
@@ -498,12 +502,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <ul>
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
       </div>
     </div>
+    
+
     
 
     
@@ -529,6 +535,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
       </div>
     </div>
+    
+
     
 
     
@@ -561,7 +569,7 @@ firmware version. This should only be called when data loss cannot&nbsp;occur.</
         <div class="">
           <h6><a href="method.Client.activate_finish.html">fwupd_client_activate_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_activate_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_activate_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -593,7 +601,7 @@ firmware version. This should only be called when data loss cannot&nbsp;occur.</
         <div class="">
           <h6><a href="method.Client.clear_results_finish.html">fwupd_client_clear_results_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_clear_results_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_clear_results_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -646,7 +654,7 @@ should be called before this method is&nbsp;used.</p>
         <div class="">
           <h6><a href="method.Client.download_bytes_finish.html">fwupd_client_download_bytes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_download_bytes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_download_bytes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -689,7 +697,7 @@ the session is being used outside the <code>FwupdClient</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_approved_firmware_finish.html">fwupd_client_get_approved_firmware_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_approved_firmware_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_approved_firmware_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -713,7 +721,7 @@ the session is being used outside the <code>FwupdClient</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_blocked_firmware_finish.html">fwupd_client_get_blocked_firmware_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_blocked_firmware_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_blocked_firmware_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -761,7 +769,7 @@ the session is being used outside the <code>FwupdClient</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_details_bytes_finish.html">fwupd_client_get_details_bytes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_details_bytes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_details_bytes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -785,7 +793,7 @@ the session is being used outside the <code>FwupdClient</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_device_by_id_finish.html">fwupd_client_get_device_by_id_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_device_by_id_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_device_by_id_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -827,7 +835,7 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_devices_by_guid_finish.html">fwupd_client_get_devices_by_guid_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_devices_by_guid_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_devices_by_guid_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -835,7 +843,7 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_devices_finish.html">fwupd_client_get_devices_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_devices_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_devices_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -859,7 +867,7 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_downgrades_finish.html">fwupd_client_get_downgrades_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_downgrades_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_downgrades_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -883,9 +891,17 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_history_finish.html">fwupd_client_get_history_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_history_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_history_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.get_host_bkc.html">fwupd_client_get_host_bkc</a></h6>
+          <div class="docblock">
+            <p>Gets the daemon version&nbsp;number.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.3</p></div>
         </div>
       
         <div class="">
@@ -923,7 +939,7 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_host_security_attrs_finish.html">fwupd_client_get_host_security_attrs_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_host_security_attrs_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_host_security_attrs_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -947,7 +963,7 @@ devices contains this <span class="caps">GUID</span>.</p>
         <div class="">
           <h6><a href="method.Client.get_host_security_events_finish.html">fwupd_client_get_host_security_events_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_host_security_events_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_host_security_events_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.7.1</p></div>
         </div>
@@ -996,7 +1012,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_plugins_finish.html">fwupd_client_get_plugins_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_plugins_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_plugins_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1020,7 +1036,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_releases_finish.html">fwupd_client_get_releases_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_releases_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_releases_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1044,7 +1060,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_remote_by_id_finish.html">fwupd_client_get_remote_by_id_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_remote_by_id_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_remote_by_id_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1068,7 +1084,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_remotes_finish.html">fwupd_client_get_remotes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_remotes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_remotes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1092,7 +1108,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_report_metadata_finish.html">fwupd_client_get_report_metadata_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_report_metadata_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_report_metadata_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1116,7 +1132,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_results_finish.html">fwupd_client_get_results_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_results_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_results_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1156,7 +1172,7 @@ By default the value is set a new <code>GMainContext</code>.</p>
         <div class="">
           <h6><a href="method.Client.get_upgrades_finish.html">fwupd_client_get_upgrades_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_get_upgrades_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_get_upgrades_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1206,7 +1222,7 @@ version of fwupd somewhere in the provided&nbsp;string.</p>
         <div class="">
           <h6><a href="method.Client.install_bytes_finish.html">fwupd_client_install_bytes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_install_bytes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_install_bytes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1214,7 +1230,7 @@ version of fwupd somewhere in the provided&nbsp;string.</p>
         <div class="">
           <h6><a href="method.Client.install_finish.html">fwupd_client_install_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_install_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_install_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1254,7 +1270,7 @@ version of fwupd somewhere in the provided&nbsp;string.</p>
         <div class="">
           <h6><a href="method.Client.install_release_finish.html">fwupd_client_install_release_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_install_release_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_install_release_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1280,7 +1296,7 @@ The daemon will only respond to this request with proper&nbsp;permissions.</p>
         <div class="">
           <h6><a href="method.Client.modify_config_finish.html">fwupd_client_modify_config_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_modify_config_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_modify_config_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1306,7 +1322,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.modify_device_finish.html">fwupd_client_modify_device_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_modify_device_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_modify_device_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1330,7 +1346,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.modify_remote_finish.html">fwupd_client_modify_remote_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_modify_remote_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_modify_remote_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1354,7 +1370,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.refresh_remote_finish.html">fwupd_client_refresh_remote_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_refresh_remote_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_refresh_remote_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1378,7 +1394,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.self_sign_finish.html">fwupd_client_self_sign_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_self_sign_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_self_sign_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1402,7 +1418,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.set_approved_firmware_finish.html">fwupd_client_set_approved_firmware_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_set_approved_firmware_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_set_approved_firmware_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1426,7 +1442,7 @@ are settable by the client, and some may have other restrictions on <code>value<
         <div class="">
           <h6><a href="method.Client.set_blocked_firmware_finish.html">fwupd_client_set_blocked_firmware_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_set_blocked_firmware_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_set_blocked_firmware_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1454,7 +1470,7 @@ how to detach the&nbsp;hardware.</p>
         <div class="">
           <h6><a href="method.Client.set_feature_flags_finish.html">fwupd_client_set_feature_flags_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_set_feature_flags_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_set_feature_flags_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1503,7 +1519,7 @@ should contain the runtime version of fwupd somewhere in the provided&nbsp;strin
         <div class="">
           <h6><a href="method.Client.unlock_finish.html">fwupd_client_unlock_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_unlock_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_unlock_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1538,7 +1554,7 @@ and metadata signing file to be passed into the daemon to be checked and&nbsp;pa
         <div class="">
           <h6><a href="method.Client.update_metadata_bytes_finish.html">fwupd_client_update_metadata_bytes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_update_metadata_bytes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_update_metadata_bytes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1564,7 +1580,7 @@ should be called before this method is&nbsp;used.</p>
         <div class="">
           <h6><a href="method.Client.upload_bytes_finish.html">fwupd_client_upload_bytes_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_upload_bytes_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_upload_bytes_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1588,7 +1604,7 @@ should be called before this method is&nbsp;used.</p>
         <div class="">
           <h6><a href="method.Client.verify_finish.html">fwupd_client_verify_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_verify_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_verify_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1612,7 +1628,7 @@ should be called before this method is&nbsp;used.</p>
         <div class="">
           <h6><a href="method.Client.verify_update_finish.html">fwupd_client_verify_update_finish</a></h6>
           <div class="docblock">
-            <p>Gets the result of <code>fwupd_client_verify_update_async()</code>.</p>
+            <p>Gets the result of&nbsp;fwupd_client_verify_update_async().</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.0</p></div>
         </div>
@@ -1620,6 +1636,12 @@ should be called before this method is&nbsp;used.</p>
       </div>
 
       
+        
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          <div class="docblock">
+          
+          </div>
+        </div>
         
       
 
@@ -1634,6 +1656,7 @@ should be called before this method is&nbsp;used.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -1644,6 +1667,16 @@ should be called before this method is&nbsp;used.</p>
           </div>
 
           <div class="docblock"><p>Available since: 0.9.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Client.host-bkc.html">Fwupd.Client:host-bkc</a></h6>
+
+          <div class="docblock">
+            <p>The host best known&nbsp;configuration.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.7.3</p></div>
         </div>
       
         <div class="">
@@ -1727,6 +1760,7 @@ should be called before this method is&nbsp;used.</p>
         </div>
       
       </div>
+      
 
       
         
@@ -1744,6 +1778,7 @@ should be called before this method is&nbsp;used.</p>
         <a href="#signals" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -1798,8 +1833,21 @@ emitted some kind of event, e.g. a manual action is&nbsp;required.</p>
         </div>
       
       </div>
+      
 
       
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
         
       
 
@@ -2096,14 +2144,12 @@ void
 
      
 
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -2118,6 +2164,8 @@ void
 
 
       
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -2128,8 +2176,6 @@ void
       
 <li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
 
-
-      
 
       
 
