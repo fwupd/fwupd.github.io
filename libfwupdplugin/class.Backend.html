@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.3</p>
+        <p>Library Version: 1.7.5</p>
         
       </div>
       
@@ -112,6 +112,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Backend.get_name.html">get_name</a>
   
     <a class="method" href="method.Backend.lookup_by_id.html">lookup_by_id</a>
+  
+    <a class="method" href="method.Backend.registered.html">registered</a>
   
     <a class="method" href="method.Backend.set_enabled.html">set_enabled</a>
   
@@ -158,6 +160,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="vfunc.Backend.coldplug.html">coldplug</a>
   
+    <a class="method" href="vfunc.Backend.registered.html">registered</a>
+  
     <a class="method" href="vfunc.Backend.setup.html">setup</a>
   
   </div>
@@ -183,7 +187,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-backend.c#L13">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.5/libfwupdplugin/fu-backend.c#L13">[src]</a>
           
         </h4>
 
@@ -320,6 +324,15 @@ already been called then it is run before this function&nbsp;automatically.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Backend.registered.html">fu_backend_registered</a></h6>
+          <div class="docblock">
+            <p>Calls the -&gt;registered() vfunc for the backend. This allows the backend to perform shared
+backend actions on superclassed&nbsp;devices.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.4</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Backend.set_enabled.html">fu_backend_set_enabled</a></h6>
           <div class="docblock">
             <p>Sets the backend enabled&nbsp;state.</p>
@@ -340,7 +353,7 @@ function. No devices should be added or removed at this&nbsp;point.</p>
 
       
         
-        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
           <div class="docblock">
           
           </div>
@@ -366,20 +379,20 @@ function. No devices should be added or removed at this&nbsp;point.</p>
           <h6><a href="property.Backend.context.html">FwupdPlugin.Backend:context</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The <code>FuContent</code> to&nbsp;use.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 1.6.1</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.Backend.name.html">FwupdPlugin.Backend:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The backend&nbsp;name.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 1.6.1</p></div>
         </div>
       
       </div>
@@ -407,25 +420,25 @@ function. No devices should be added or removed at this&nbsp;point.</p>
         <div class="">
           <h6><a href="signal.Backend.device-added.html">FwupdPlugin.Backend::device-added</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-added signal is emitted when a device has been&nbsp;added.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 1.6.1</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Backend.device-changed.html">FwupdPlugin.Backend::device-changed</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-changed signal is emitted when a device has been&nbsp;changed.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 1.6.1</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Backend.device-removed.html">FwupdPlugin.Backend::device-removed</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-removed signal is emitted when a device has been&nbsp;removed.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 1.6.1</p></div>
         </div>
       
       </div>
@@ -470,6 +483,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     FuBackend* self,
     GError** error
   );
+  void (* registered) (
+    FuBackend* self,
+    FuDevice* device
+  );
   
 }</code></pre>
       </div>
@@ -513,6 +530,18 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <td style="vertical-align:top">No description available.</td>
         </td>
         
+        <tr>
+          <td style="vertical-align:top"><code>registered</code></td>
+          <td style="vertical-align:top"><pre><code>void (* registered) (
+    FuBackend* self,
+    FuDevice* device
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
         </table>
       </div>
       
@@ -537,6 +566,17 @@ already been called then it is run before this function&nbsp;automatically.</p>
         </div>
 
           <div class="docblock"><p>Available since: 1.6.1</p></div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-registered"><a href="vfunc.Backend.registered.html">FwupdPlugin.BackendClass.registered</a></h6>
+
+        <div class="docblock">
+          <p>Calls the -&gt;registered() vfunc for the backend. This allows the backend to perform shared
+backend actions on superclassed&nbsp;devices.</p>
+        </div>
+
+          <div class="docblock"><p>Available since: 1.7.4</p></div>
       </div>
       
       <div class="">

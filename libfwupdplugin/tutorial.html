@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.3</p>
+        <p>Library Version: 1.7.5</p>
         
       </div>
       
@@ -389,6 +389,352 @@ as well as the C++ standard library and increases the dependency&nbsp;surface.</
 <p>Most rewritten fwupd plugins at up to x10 smaller than the standalone code as they
 can take advantage of helpers provided by fwupd rather than re-implementing error
 handling, device quirking and data&nbsp;chunking.</p>
+<h2 id="general-guidelines-for-plugin-developers">General guidelines for plugin developers<a class="md-anchor" href="#general-guidelines-for-plugin-developers" title="Permanent link"></a></h2>
+<h3 id="general-considerations">General considerations<a class="md-anchor" href="#general-considerations" title="Permanent link"></a></h3>
+<p>When adding support for a new device in fwupd some things need to be
+evaluated&nbsp;beforehand:</p>
+<ul>
+<li>how the hardware is discovered, identified and&nbsp;polled.</li>
+<li>how to communicate with the device (<span class="caps">USB</span>? file&nbsp;open/read/write?)</li>
+<li>does the device need to be switched to bootloader mode to make it&nbsp;upgradable?</li>
+<li>about the format of the firmware files, do they follow any standard?
+  are they already supported in&nbsp;fwupd?</li>
+<li>about the update protocol, is it already supported in&nbsp;fwupd?</li>
+<li>Is the device composed of multiple different devices? Are those
+  devices enumerated and programmed independently or are they accessed
+  and flashed through a &#8220;root&#8221;&nbsp;device?</li>
+</ul>
+<p>In most cases, even if the features you need aren&#8217;t implemented yet,
+there&#8217;s already a plugin that does something similar and can be used as
+an example, so it&#8217;s always a good idea to read the code of the existing
+plugins to understand how they work and how to write a new one, as no
+documentation will be as complete and updated as the code
+itself. Besides, the mechanisms implemented in the plugin collection are
+very diverse and the best way of knowing what can be done is to check
+what is already been&nbsp;done.</p>
+<h3 id="leveraging-existing-fwupd-code">Leveraging existing fwupd code<a class="md-anchor" href="#leveraging-existing-fwupd-code" title="Permanent link"></a></h3>
+<p>Depending on how much of the key items for the device update (firmware
+format, update protocol, transport layer) are already supported in
+fwupd, the work needed to add support for a new device can range from
+editing a quirk file to having to fully implement new device and
+firmware types, although in most cases fwupd already implements helper
+code that can be&nbsp;extended.</p>
+<h4 id="if-the-firmware-format-update-protocol-and-device-communication-are-already-supported">If the firmware format, update protocol and device communication are already supported<a class="md-anchor" href="#if-the-firmware-format-update-protocol-and-device-communication-are-already-supported" title="Permanent link"></a></h4>
+<p>This is the simplest case, where an existing plugin fully implements the
+update process for the new device and we only have to let fwupd know
+that that plugin should be used for our device. In this case the only
+thing to do is to edit the plugin quirk file and add the device
+identifier in the format expected by the plugin together with any
+required options for it (at least a &#8220;Plugin&#8221; key to declare that this is
+the plugin to use for this device). Example:
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/vli/vli-usbhub.quirk">https://github.com/fwupd/fwupd/blob/main/plugins/vli/vli-usbhub.quirk</a></p>
+<h4 id="if-the-device-type-is-not-supported">If the device type is not supported<a class="md-anchor" href="#if-the-device-type-is-not-supported" title="Permanent link"></a></h4>
+<p>Then we have to take a look at the existing device types and check if
+there&#8217;s any of them that have similarities and which can be partially
+reused or extended for our device. If the device type is derivable and
+it can support our new device by implementing the proper vfuncs, then we
+can simply subclass it and add the required functionalities. If not,
+we&#8217;ll need to study what is the best way to reuse it for our&nbsp;needs.</p>
+<p>If a plugin already implements most of the things we need besides the
+device type, we can add our new device type to that plugin. Otherwise we
+should create a plugin that will hold the new device&nbsp;type.</p>
+<p>The core fwupd code contains some basic device types (such as
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.c">FuUdevDevice</a>, <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-usb-device.c">FuUsbDevice</a>, <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-bluez-device.c">FuBluezDevice</a>) that can be used as a base
+type for most devices in case we have to implement our own device
+access, identification and communication from&nbsp;scratch.</p>
+<p>If the device is natively visible by the <span class="caps">OS</span>, most of the time fwupd can
+detect the device connection and disconnection by listening to udev
+events, but a supported device may also be not directly accessible from
+the <span class="caps">OS</span> &#8212; for example, a composite device that contains an updatable chip
+that&#8217;s connected through <span class="caps">I2C</span> to a <span class="caps">USB</span> hub that acts as an interface. In
+that case, the device discovery and enumeration must be programmed by
+the developer, but the same device identification and management
+mechanisms apply in all cases. See the &#8220;Creating a new device type&#8221; and
+&#8220;Device identification&#8221; below for more&nbsp;details.</p>
+<h4 id="if-the-firmware-type-is-not-supported">If the firmware type is not supported<a class="md-anchor" href="#if-the-firmware-type-is-not-supported" title="Permanent link"></a></h4>
+<p>Same as with the new device type, there could be an existing firmware
+type that can be used as a base type for our new type, so first of all
+we should look for firmware types that are similar to the one we&#8217;re
+using. Then, choosing where to define the new type depends on whether
+there&#8217;s already a plugin that implements most of the functionalities we
+need or&nbsp;not.</p>
+<h3 id="example-extending-a-firmware-type">Example: extending a firmware type<a class="md-anchor" href="#example-extending-a-firmware-type" title="Permanent link"></a></h3>
+<p>Our firmware files are Intel <span class="caps">HEX</span> files that have optional
+vendor-specific sections at fixed addresses, this is not supported by
+any firmware type in fwupd out of the box but the <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-ihex-firmware.c">FuIhexFirmare</a> class
+parses and models a standard Intel <span class="caps">HEX</span> file, so we can create a subclass
+of it for our firmware type and override the parse method so that it
+calls the method from the parent class, which would parse the file, and
+then we can get the data with <code>fu_firmware_get_bytes()</code> and do the rest of
+the custom parsing. Example:
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/analogix/fu-analogix-firmware.c">https://github.com/fwupd/fwupd/blob/main/plugins/analogix/fu-analogix-firmware.c</a></p>
+<h3 id="example-extending-a-device-type">Example: extending a device type<a class="md-anchor" href="#example-extending-a-device-type" title="Permanent link"></a></h3>
+<p>Communication with our new device is carried out by doing
+read/write/ioctl operations on a device file, but using a custom
+protocol that is not supported in&nbsp;fwupd.</p>
+<p>For this type of device we can create a new type derived from
+<code>FuUdevDevice</code>, which takes care of discovering this type of devices,
+possibly using a vendor-specific protocol, as well as of opening,
+reading and writing device files, so we would only have to implement the
+protocol on top of those primitives. (Example:
+<code>fu_logitech_hidpp_runtime_bolt_poll_peripherals()</code> in
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/logitech-hidpp/fu-logitech-hidpp-runtime-bolt.c">https://github.com/fwupd/fwupd/blob/main/plugins/logitech-hidpp/fu-logitech-hidpp-runtime-bolt.c</a>)
+The process would be similar if our device was handled by a different
+backend (<span class="caps">USB</span> or&nbsp;BlueZ).</p>
+<h3 id="creating-a-new-plugin">Creating a new plugin<a class="md-anchor" href="#creating-a-new-plugin" title="Permanent link"></a></h3>
+<p>The bare minimum a plugin should have is a <code>fu_plugin_init</code> function that
+defines the plugin characteristics such as the device type and firmware
+type handled by it, the build hash and any plugin-specific quirk keys
+that can be used for the&nbsp;plugin.</p>
+<div class="codehilite"><pre><span></span><code>void
+fu_plugin_steelseries_init(FuPlugin *plugin)
+{
+    FuContext *ctx = fu_plugin_get_context(plugin);
+    fu_plugin_add_device_gtype(plugin, FU_TYPE_STEELSERIES_DEVICE);
+    fu_plugin_add_device_gtype(plugin, FU_TYPE_STEELSERIES_GAMEPAD);
+    fu_context_add_quirk_key(ctx, &quot;SteelSeriesDeviceKind&quot;);
+}
+
+void
+fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+{
+    vfuncs-&gt;build_hash = FU_BUILD_HASH;
+    vfuncs-&gt;init = fu_plugin_steelseries_init;
+}
+</code></pre></div>
+
+<h3 id="creating-a-new-device-type">Creating a new device type<a class="md-anchor" href="#creating-a-new-device-type" title="Permanent link"></a></h3>
+<p>Besides defining its attributes as a data type, a device type should
+implement at least the usual <code>init</code>, <code>finalize</code> and <code>class_init</code> functions,
+and then, depending on its parent type, which methods it overrides and
+what it does, it must implement a set of device methods. These are some
+of them, the complete list is in <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.h">libfwupdplugin/fu-device.h</a>.</p>
+<h4 id="to_string">to_string<a class="md-anchor" href="#to_string" title="Permanent link"></a></h4>
+<p>Called whenever fwupd needs a human-readable representation of the&nbsp;device.</p>
+<h4 id="probe">probe<a class="md-anchor" href="#probe" title="Permanent link"></a></h4>
+<p>The <code>probe</code> method is called the first time a device is opened, before
+actually opening it. The generic probe methods implemented in the base
+device types (such as <span class="caps">USB</span>/udev) take care of basic device identification
+and setting the non-specific parameters that don&#8217;t need the device to be
+opened or the interface claimed (vendor id, product id, guids,&nbsp;etc.).</p>
+<p>The device-specific probe method should start by calling the generic
+method upwards in the class tree and then do any other specific setup
+such as setting the appropriate device&nbsp;flags.</p>
+<h4 id="open">open<a class="md-anchor" href="#open" title="Permanent link"></a></h4>
+<p>Depending on the type of device, opening it means different things. For
+instance, opening a udev device means opening its device&nbsp;file.</p>
+<p>If there&#8217;s no interface-specific <code>open</code> method, then opening a device
+simply calls the <code>probe()</code> and <code>setup()</code> methods (the <code>open()</code> method would be
+called in between if it&nbsp;exists).</p>
+<h4 id="setup">setup<a class="md-anchor" href="#setup" title="Permanent link"></a></h4>
+<p>Sets parameters on the device object that require the device to be open
+and have the interface claimed. <span class="caps">USB</span>/udev generic devices don&#8217;t implement
+this method, this is normally implemented for each different plugin
+device type if&nbsp;needed.</p>
+<h4 id="prepare">prepare<a class="md-anchor" href="#prepare" title="Permanent link"></a></h4>
+<p>If implemented, this takes care of decompressing or parsing the firmware
+data. For example, to check if the firmware is valid, if it&#8217;s suitable
+for the device,&nbsp;etc.</p>
+<p>It takes a stream of bytes (<code>GBytes</code>) as a parameter, representing the
+raw binary firmware&nbsp;data.</p>
+<p>It should create the firmware object and call the appropriate method to
+load the firmware. Otherwise, if it&#8217;s not implemented for the specific
+device type, the generic implementation in
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">libfwupdplugin/fu-device.c</a>:<code>fu_device_prepare_firmware()</code>
+creates a firmware object loaded with a provided&nbsp;image.</p>
+<h4 id="detach">detach<a class="md-anchor" href="#detach" title="Permanent link"></a></h4>
+<p>Implemented if the device needs to be put in bootloader mode before
+updating, this does all the necessary operations to put the device in
+that mode. fwupd can handle the case where a device needs to be
+disconnected to do the mode switch if the device has the
+<code>FWUPD_DEVICE_FLAG_WAIT_FOR_REPLUG</code> flag.</p>
+<h4 id="attach">attach<a class="md-anchor" href="#attach" title="Permanent link"></a></h4>
+<p>The inverse of <code>detach()</code>, to configure the device back to application&nbsp;mode.</p>
+<h4 id="reload">reload<a class="md-anchor" href="#reload" title="Permanent link"></a></h4>
+<p>If implemented, this is called after the device update if it needs to
+perform any kind of post-update&nbsp;operation.</p>
+<h4 id="write_firmware">write_firmware<a class="md-anchor" href="#write_firmware" title="Permanent link"></a></h4>
+<p>Writes a firmware passed as a raw byte stream. The firmware parsing and
+processing is done by the firmware object, so that when this method gets
+the blob it simply has to write it to the device in the appropriate way
+following the device update&nbsp;protocol.</p>
+<h4 id="read_firmware">read_firmware<a class="md-anchor" href="#read_firmware" title="Permanent link"></a></h4>
+<p>Reads the firmware data from the device without any device-specific
+configuration or serial numbers. This is meant to retrieve the current
+firmware contents for verification purposes. The data read can then be
+output to a binary blob using <code>fu_firmware_write()</code>.</p>
+<h3 id="creating-a-new-firmware-type">Creating a new firmware type<a class="md-anchor" href="#creating-a-new-firmware-type" title="Permanent link"></a></h3>
+<p>The same way a device type implements some methods to complete its
+functionality and override certain behaviors, there&#8217;s a set of firmware
+methods that a firmware class can (or must)&nbsp;implement:</p>
+<h4 id="parse">parse<a class="md-anchor" href="#parse" title="Permanent link"></a></h4>
+<p>If implemented, it parses the firmware file passed as a byte
+sequence. If the firmware to be used contains a custom header, a
+specific structured format or multiple images embedded, this method
+should take care of processing the format and appropriately populating
+the <code>FuFirmware</code> object passed as a parameter. If not implemented, the
+whole data blob is taken as&nbsp;is.</p>
+<h4 id="write">write<a class="md-anchor" href="#write" title="Permanent link"></a></h4>
+<p>Returns a <code>FuFirmware</code> object as a byte sequence. This can be used to
+output a firmware read with <code>fu_device_read_firmware()</code> as a binary&nbsp;blob.</p>
+<h4 id="export">export<a class="md-anchor" href="#export" title="Permanent link"></a></h4>
+<p>Converts a <code>FuFirmware</code> object to an xml representation. If not
+implemented, the default implementation generates an xml representation
+containing only generic attributes and, optionally, the firmware data as
+well as the representation of children firmware&nbsp;nodes.</p>
+<p>When testing the implementation of a new firmware type, this is useful
+to show if the parsing and processing of the firmware are correct and
+can be checked&nbsp;with:</p>
+<div class="codehilite"><pre><span></span><code>fwupdtool firmware-parse --plugins &lt;plugin&gt; &lt;firmware_file&gt; &lt;firmware_type&gt;
+</code></pre></div>
+
+<h4 id="tokenize">tokenize<a class="md-anchor" href="#tokenize" title="Permanent link"></a></h4>
+<p>If implemented it tokenizes a firmware, breaking it into&nbsp;records.</p>
+<h4 id="build">build<a class="md-anchor" href="#build" title="Permanent link"></a></h4>
+<p>This is the reverse of <code>export()</code>, it builds a <code>FuFirmware</code> object from
+an xml&nbsp;representation.</p>
+<h4 id="get_checksum">get_checksum<a class="md-anchor" href="#get_checksum" title="Permanent link"></a></h4>
+<p>The default implementation returns a checksum of the payload data of a
+<code>FuFirmware</code> object. Subclass it only if the checksum of your firmware
+needs to be computed&nbsp;differently.</p>
+<h3 id="device-identification">Device identification<a class="md-anchor" href="#device-identification" title="Permanent link"></a></h3>
+<p>A device is identified in fwupd by its physical and logical ids. A
+physical id represents the electrical connection of the device to the
+system and many devices can have the same physical id. For example,
+<code>PCI_SLOT_NAME=0000:3e:00:0</code> (see
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.c">libfwupdplugin/fu-udev-device.c</a>:<code>fu_udev_device_set_physical_id()</code> for
+examples) . The logical id is used to disambiguate devices with the same
+physical id. Together they identify a device uniquely. There are many
+examples of this in the existing plugins, such as
+<code>fu_pxi_receiver_device_add_peripherals()</code> in
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/pixart-rf/fu-pxi-receiver-device.c">https://github.com/fwupd/fwupd/blob/main/plugins/pixart-rf/fu-pxi-receiver-device.c</a></p>
+<p>Besides that, each device type will have a unique instance id, which is
+a string representing the device subsystem, vendor, model and revision
+(specific details depend on the device type). This should identify a
+device type in the system, that is, a particular device type, model and
+revision by a specific vendor will have a defined instance id and two of
+the same device will have the same instance id (see
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.c">libfwupdplugin/fu-udev-device.c</a>:<code>fu_udev_device_probe()</code>
+for&nbsp;examples).</p>
+<p>One or more GUIDs are generated for a device from its identifying
+attributes, these GUIDs are then used to match a firmware metadata
+against a specific device type. See the implementation of the many
+<code>probe()</code> methods for&nbsp;examples.</p>
+<h3 id="support-for-ble-devices">Support for BLE devices<a class="md-anchor" href="#support-for-ble-devices" title="Permanent link"></a></h3>
+<p><span class="caps">BLE</span> support in fwupd on Linux is provided by BlueZ. If the device
+implements the standard <span class="caps">HID</span>-over-<span class="caps">GATT</span> <span class="caps">BLE</span> profile, then communication
+with the device can be done through the <a href="https://www.kernel.org/doc/html/latest/hid/hidraw.html">hidraw
+interface</a>. If
+the device implements a custom <span class="caps">BLE</span> profile instead, then it will have to
+be managed by the <code>FuBluezBackend</code>, which uses the BlueZ DBus interface
+to communicate with the devices. The <code>FuBluezDevice</code> type implements
+device enumeration as well as the basic primitives to read and write <span class="caps">BLE</span>
+characteristics, and can be used as the base type for a more specific
+<span class="caps">BLE</span>&nbsp;device.</p>
+<h3 id="battery-checks">Battery checks<a class="md-anchor" href="#battery-checks" title="Permanent link"></a></h3>
+<p>If the device can be updated wirelessly or if the update process doesn&#8217;t
+rely on an external power supply, the vendor might define a minimum
+operative battery level to guarantee a correct update. fwupd provides a
+simple <span class="caps">API</span> to define these requirements&nbsp;per-device.</p>
+<p><a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">fu_device_set_battery_threshold()</a>
+can be used to define the minimum battery level required to allow a
+firmware update on a device (10% by default). If the battery level is
+below that threshold, fwupd will inhibit the device to prevent the user
+from starting a firmware update. Then, the battery level of a device can
+be queried and then set with
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">fu_device_set_battery_level()</a>.</p>
+<h2 id="howtos">Howtos<a class="md-anchor" href="#howtos" title="Permanent link"></a></h2>
+<h3 id="how-to-create-a-child-device">How to create a child device<a class="md-anchor" href="#how-to-create-a-child-device" title="Permanent link"></a></h3>
+<p>fwupd devices can be hierarchically ordered to model dependent and
+composite devices such as docking stations composed of multiple
+updatable chips. When writing support for a new composite device the
+parent device should, at some point, poll the devices that &#8220;hang&#8221; from
+it and register them in fwupd. The process of polling and identifying a
+child device is totally vendor and device-specific, although the main
+requirement for it is that the child device is properly identified
+(having physical/logical and instance ids). Then,
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">fu_device_add_child()</a>
+can be used to add a new child device to an existing one. See
+<code>fu_logitech_hidpp_runtime_bolt_poll_peripherals()</code> in
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/logitech-hidpp/fu-logitech-hidpp-runtime-bolt.c">https://github.com/fwupd/fwupd/blob/main/plugins/logitech-hidpp/fu-logitech-hidpp-runtime-bolt.c</a>
+for an&nbsp;example.</p>
+<p>Note that when deploying and installing a firmware set for a composite
+device, there might be firmware dependencies between parent and child
+devices that require a specific update ordering (for instance, child
+devices first, then the parent). This can be modeled by setting an
+appropriate firmware priority in the firmware metainfo or by setting the
+<code>FWUPD_DEVICE_FLAG_INSTALL_PARENT_FIRST</code> device&nbsp;flag.</p>
+<h3 id="how-to-add-a-delay">How to add a delay<a class="md-anchor" href="#how-to-add-a-delay" title="Permanent link"></a></h3>
+<p>In certain scenarios you may need to introduce small controlled delays
+in the plugin code, for instance, to comply with a communications
+protocol or to wait for the device to be ready after a particular
+operation. In this case you can insert a delay in microseconds with
+<code>g_usleep</code> or a delay in seconds that shows a progress bar with
+<code>fu_device_sleep_with_progress</code>. Note that, in both cases, this will
+stop the application main loop during the wait, so use it only when&nbsp;necessary.</p>
+<h3 id="how-to-define-private-flags">How to define private flags<a class="md-anchor" href="#how-to-define-private-flags" title="Permanent link"></a></h3>
+<p>Besides the regular flags and internal flags that any device can have, a
+device can define private flags for specific uses. These can be enabled
+in the code as well as in quirk files, just as the rest of flags. To
+define a private&nbsp;flag:</p>
+<ol>
+<li>Define the flag value. This is normally defined as a macro that
+  expands to a binary flag, for example: <code>#define MY_PRIVATE_FLAG (1 &lt;&lt;
+  2)</code>.  Note that this will be part of the <span class="caps">ABI</span>, so it must be&nbsp;versioned</li>
+<li>Call <code>fu_device_register_private_flag</code> in the device init function
+  and assign a string identifier to the flag:
+  <code>fu_device_register_private_flag (FU_DEVICE (self), MY_PRIVATE_FLAG,
+  "myflag");</code></li>
+</ol>
+<p>You can then add it to the device programmatically with
+<code>fu_device_add_private_flag</code>, remove it with <code>fu_device_remove_private_flag</code>
+and query it with <code>fu_device_has_private_flag</code>. In a quirk file, you can
+add the flag identifier to the Flags attribute of a device (eg. <code>Flags =
+myflag,is-bootloader</code>)</p>
+<h3 id="how-to-make-fwupd-wait-for-a-device-replug">How to make fwupd wait for a device replug<a class="md-anchor" href="#how-to-make-fwupd-wait-for-a-device-replug" title="Permanent link"></a></h3>
+<p>Certain devices require a disconnection and reconnection to start the
+update process. A common example are devices that have two booting
+modes: application or runtime mode, and bootloader mode, where the
+runtime mode is the normal operation mode and the bootloader mode is
+exclusively used to update the device firmware. It&#8217;s common for these
+devices to require some operation from fwupd to switch the booting mode
+and then to need a reset to enter bootloader mode. Often, the device is
+enumerated differently in both modes, so fwupd needs to know that the
+same device will be identified differently depending on the boot&nbsp;mode.</p>
+<p>The common way to do this is to add the
+<code>FWUPD_DEVICE_FLAG_WAIT_FOR_REPLUG</code> flag in the device before its detach
+method returns. This will make fwupd wait for a predetermined amount of
+time for the device to be detected again. Then, to inform fwupd about
+the two identities of the same device, the <code>CounterpartGuid</code> key can be
+used in a device entry to match it with another defined device (example:
+<a href="https://github.com/fwupd/fwupd/blob/main/plugins/steelseries/steelseries.quirk">https://github.com/fwupd/fwupd/blob/main/plugins/steelseries/steelseries.quirk</a>).</p>
+<h3 id="inhibiting-a-device">Inhibiting a device<a class="md-anchor" href="#inhibiting-a-device" title="Permanent link"></a></h3>
+<p>If a device becomes unsuitable for an update for whatever reason (see
+&#8220;Battery checks&#8221; above for an example), a plugin can temporarily disable
+firmware updates on it by calling <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">fu_device_inhibit()</a>. The device will
+still be listed as present by <code>fwupdmgr get-devices</code>, but fwupd won&#8217;t
+allow firmware updates on it.  Device inhibition can be disabled with
+<a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">fu_device_uninhibit()</a>.</p>
+<p>Note that there might be multiple inhibits on a specific device, the
+device will only be updatable when all of them are&nbsp;removed.</p>
+<h2 id="debugging-tips">Debugging tips<a class="md-anchor" href="#debugging-tips" title="Permanent link"></a></h2>
+<p>The most important rule when debugging is using the <code>--verbose</code> flag
+when running fwupd or fwupdtool. Besides that, there are many
+environment variables that allow some debug traces to be printed
+conditionally, for example: <code>FWUPD_PROBE_VERBOSE</code>,
+<code>FU_HID_DEVICE_VERBOSE</code>, <code>FWUPD_DEVICE_LIST_VERBOSE</code> and many other
+plugin-specific&nbsp;envvars.</p>
+<h3 id="adding-debug-messages">Adding debug messages<a class="md-anchor" href="#adding-debug-messages" title="Permanent link"></a></h3>
+<p>The usual way to print a debug message is using the <code>g_debug</code> macro. Each
+relevant module will define its own <code>G_LOG_DOMAIN</code> to tag the debug traces
+accordingly. See
+<a href="https://docs.gtk.org/glib/logging.html">https://docs.gtk.org/glib/logging.html</a> and
+<a href="https://docs.gtk.org/glib/running.html">https://docs.gtk.org/glib/running.html</a> for more&nbsp;information.</p>
+<h3 id="inspecting-raw-binary-data">Inspecting raw binary data<a class="md-anchor" href="#inspecting-raw-binary-data" title="Permanent link"></a></h3>
+<p>The <code>fu_common_dump_full</code> and <code>fu_common_dump_raw</code> functions implement the
+printing of a binary buffer to the console as a stream of bytes in
+hexadecimal. See <code>libfwupdplugin/fu-common.c</code> for their definitions, you
+can find many examples of how to use them in the plugins&nbsp;code.</p>
     </div>
   </section>
 </section>

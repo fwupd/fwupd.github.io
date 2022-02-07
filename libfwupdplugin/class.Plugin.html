@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.3</p>
+        <p>Library Version: 1.7.5</p>
         
       </div>
       
@@ -223,6 +223,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.set_priority.html">set_priority</a>
   
+    <a class="method" href="method.Plugin.set_secure_config_value.html">set_secure_config_value</a>
+  
   </div>
 </div>
 
@@ -296,7 +298,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-plugin.c#L22">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.5/libfwupdplugin/fu-plugin.c#L23">[src]</a>
           
         </h4>
 
@@ -852,6 +854,15 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
           <div class="docblock"><p>Available since: 1.0.0</p></div>
         </div>
       
+        <div class="">
+          <h6><a href="method.Plugin.set_secure_config_value.html">fu_plugin_set_secure_config_value</a></h6>
+          <div class="docblock">
+            <p>Sets a plugin config file value and updates file so that non-privileged users
+cannot read&nbsp;it.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.4</p></div>
+        </div>
+      
       </div>
 
       
@@ -914,7 +925,7 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         
       
         
-        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
           <div class="docblock">
           
           </div>
@@ -941,14 +952,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
           <div class="docblock">
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Plugin.flags.html">Fwupd.Plugin:flags</a></h6>
             <div class="docblock">
-              No description available.
+              <p>The plugin&nbsp;flags.</p>
             </div>
-            
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Plugin.name.html">Fwupd.Plugin:name</a></h6>
             <div class="docblock">
-              No description available.
+              <p>The plugin&nbsp;name.</p>
             </div>
-            
+            <div class="docblock"><p>Available since: 1.5.0</p></div>
           
           </div>
         </div>
@@ -975,41 +986,43 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         <div class="">
           <h6><a href="signal.Plugin.check-supported.html">FwupdPlugin.Plugin::check-supported</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::check-supported signal is emitted when a plugin wants to ask the daemon if a
+specific device <span class="caps">GUID</span> is supported in the existing system&nbsp;metadata.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 1.0.0</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Plugin.config-changed.html">FwupdPlugin.Plugin::config-changed</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::config-changed signal is emitted when one or more config files have changed which
+may affect how the daemon should be&nbsp;run.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 1.7.0</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Plugin.device-added.html">FwupdPlugin.Plugin::device-added</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-added signal is emitted when a device has been added by the&nbsp;plugin.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 0.8.0</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Plugin.device-register.html">FwupdPlugin.Plugin::device-register</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-register signal is emitted when another plugin has added the&nbsp;device.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 0.9.7</p></div>
         </div>
       
         <div class="">
           <h6><a href="signal.Plugin.device-removed.html">FwupdPlugin.Plugin::device-removed</a></h6>
           <div class="docblock">
-            No description available.
+            <p>The ::device-removed signal is emitted when a device has been removed by the&nbsp;plugin.</p>
           </div>
-          
+          <div class="docblock"><p>Available since: 0.8.0</p></div>
         </div>
       
         <div class="">

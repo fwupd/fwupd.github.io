@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.3</p>
+        <p>Library Version: 1.7.5</p>
         
       </div>
       
@@ -423,7 +423,7 @@ This would allow subverting the Secure Boot protection, and also invalidate any 
 <li><code>not-valid</code>: could not determine&nbsp;state</li>
 <li><code>not-enabled</code>: was not&nbsp;enabled</li>
 </ul>
-<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
@@ -479,7 +479,7 @@ It forms a root-of-trust by fusing in cryptographic keys into the processor itse
 <li><code>valid</code>: error enforce policy is set to&nbsp;shutdown</li>
 <li><code>not-valid</code>: policy is&nbsp;invalid</li>
 </ul>
-<p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
+<p>To meet <span class="caps">HSI</span>-3 on systems that run this test, the result must be <code>valid</code>. <em>[v1.5.0]</em></p>
 <p><a id="org.fwupd.hsi.IntelBootguard.Otp"></a></p>
 <h3 id="intel-bootguard-otp"><a href="#org.fwupd.hsi.IntelBootguard.Otp">Intel BootGuard: OTP</a><a class="md-anchor" href="#intel-bootguard-otp" title="Permanent link"></a></h3>
 <p>BootGuard is a processor feature that prevents the machine from running firmware images not released by the system manufacturer.
@@ -539,12 +539,14 @@ The firmware should be configured to prefer using suspend to idle instead of sus
 </ul>
 <p><a id="org.fwupd.hsi.EncryptedRam"></a></p>
 <h3 id="dram-memory-encryption"><a href="#org.fwupd.hsi.EncryptedRam">DRAM memory encryption</a><a class="md-anchor" href="#dram-memory-encryption" title="Permanent link"></a></h3>
-<p><span class="caps">TME</span> (Intel) or <span class="caps">TSME</span> (<span class="caps">AMD</span>) is used by the firmware on supported SOCs to encrypt all data on external memory buses.
+<p><span class="caps">TME</span> (Intel) or <span class="caps">SME</span> (<span class="caps">AMD</span>) is used by the hardware on supported SOCs to encrypt all data on external memory buses.
 It mitigates against an attacker being able to capture memory data while the system is running or to capture memory by removing a <span class="caps">DRAM</span>&nbsp;chip.</p>
-<p><strong>Impact:</strong> A local attacker can either extract unencrypted content by attaching debug probes on the <span class="caps">DIM</span> modules, or by removing them and inserting them into a computer with a modified <span class="caps">DRAM</span>&nbsp;controller.</p>
+<p>This encryption may be activated by either transparently via firmware configuration or by code running in the Linux&nbsp;kernel.</p>
+<p><strong>Impact:</strong> A local attacker can either extract unencrypted content by attaching debug probes on the <span class="caps">DIMM</span> modules, or by removing them and inserting them into a computer with a modified <span class="caps">DRAM</span>&nbsp;controller.</p>
 <p><strong>Possible&nbsp;results:</strong></p>
 <ul>
-<li><code>enabled</code>: detected and&nbsp;enabled</li>
+<li><code>encrypted</code>: detected and&nbsp;enabled</li>
+<li><code>not-encrypted</code>: detected but&nbsp;disabled</li>
 <li><code>not-supported</code>: not&nbsp;available</li>
 </ul>
 <p>To meet <span class="caps">HSI</span>-4 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
@@ -580,7 +582,7 @@ Common implementations are Intel <span class="caps">VT</span>-d and <span class=
 <li><code>not-found</code>: hardware was not&nbsp;detected</li>
 </ul>
 <p>To meet <span class="caps">HSI</span>-2 on systems that run this test, the result must be <code>enabled</code>. <em>[v1.5.0]</em></p>
-<p><strong>Resolution:</strong> If available, turn on <span class="caps">IOMMU</span> in the system <span class="caps">BIOS</span>.</p>
+<p><strong>Resolution:</strong> If available, turn on <span class="caps">IOMMU</span> in the system <span class="caps">BIOS</span>. You may also have to use additional kernel boot parameters, for example <code>intel_iommu=on iommu=pt</code>.</p>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>

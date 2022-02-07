@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.3</p>
+        <p>Library Version: 1.7.5</p>
         
       </div>
       
@@ -135,6 +135,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Firmware.add_image.html">add_image</a>
   
+    <a class="method" href="method.Firmware.add_patch.html">add_patch</a>
+  
     <a class="method" href="method.Firmware.build.html">build</a>
   
     <a class="method" href="method.Firmware.build_from_xml.html">build_from_xml</a>
@@ -148,6 +150,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Firmware.get_alignment.html">get_alignment</a>
   
     <a class="method" href="method.Firmware.get_bytes.html">get_bytes</a>
+  
+    <a class="method" href="method.Firmware.get_bytes_with_patches.html">get_bytes_with_patches</a>
   
     <a class="method" href="method.Firmware.get_checksum.html">get_checksum</a>
   
@@ -273,7 +277,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.3/libfwupdplugin/fu-firmware.c#L15">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.5/libfwupdplugin/fu-firmware.c#L15">[src]</a>
           
         </h4>
 
@@ -527,6 +531,15 @@ The returned <code>value</code> will range from from 0 to&nbsp;0xff.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Firmware.add_patch.html">fu_firmware_add_patch</a></h6>
+          <div class="docblock">
+            <p>Adds a byte patch at a specific offset. If a patch already exists at the specified address then
+it is&nbsp;replaced.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.4</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Firmware.build.html">fu_firmware_build</a></h6>
           <div class="docblock">
             <p>Builds a firmware from an <span class="caps">XML</span> manifest. The manifest would typically have the
@@ -582,6 +595,14 @@ following&nbsp;form:</p>
             <p>Gets the firmware payload, which does not have any header or footer&nbsp;included.</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Firmware.get_bytes_with_patches.html">fu_firmware_get_bytes_with_patches</a></h6>
+          <div class="docblock">
+            <p>Gets the firmware payload, with any defined patches&nbsp;applied.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.4</p></div>
         </div>
       
         <div class="">
@@ -891,7 +912,7 @@ than <code>chunk_sz_max</code>. Use <code>fu_common_bytes_pad()</code> if paddin
 
       
         
-        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
           <div class="docblock">
           
           </div>
