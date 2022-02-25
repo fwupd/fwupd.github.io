@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.5</p>
+        <p>Library Version: 1.7.6</p>
         
       </div>
       
@@ -145,7 +145,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.5</td></tr>
+        <tr><td><em>Version</em></td><td>1.7.6</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -1098,6 +1098,14 @@ revert back to a valid firmware image if an invalid or incomplete payload was&nb
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_SIGNED_PAYLOAD" class="symbol" href="const.DEVICE_FLAG_SIGNED_PAYLOAD.html">DEVICE_FLAG_SIGNED_PAYLOAD</a></td>
+            
+            <td class="docblock-summary"><p>The firmware payload is verified on-device the payload using strong cryptography such
+as <span class="caps">RSA</span>, <span class="caps">AES</span> or <span class="caps">ECC</span>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_SKIPS_RESTART" class="symbol" href="const.DEVICE_FLAG_SKIPS_RESTART.html">DEVICE_FLAG_SKIPS_RESTART</a></td>
             
             <td class="docblock-summary"><p>The device relies upon activation or power cycle to load&nbsp;firmware.</p></td>
@@ -1124,6 +1132,13 @@ Extra metadata such as serial number can be exposed about this&nbsp;device.</p><
             
             <td class="docblock-summary"><p>The device is currently unreachable, perhaps because it is in a lower power state or is out of
 wireless&nbsp;range.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_FLAG_UNSIGNED_PAYLOAD" class="symbol" href="const.DEVICE_FLAG_UNSIGNED_PAYLOAD.html">DEVICE_FLAG_UNSIGNED_PAYLOAD</a></td>
+            
+            <td class="docblock-summary"><p>The firmware payload is unsigned and it is possible to modify and flash custom&nbsp;firmware.</p></td>
             
           </tr>
           

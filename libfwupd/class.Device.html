@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.5</p>
+        <p>Library Version: 1.7.6</p>
         
       </div>
       
@@ -135,6 +135,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.add_instance_id.html">add_instance_id</a>
   
+    <a class="method" href="method.Device.add_issue.html">add_issue</a>
+  
     <a class="method" href="method.Device.add_protocol.html">add_protocol</a>
   
     <a class="method" href="method.Device.add_release.html">add_release</a>
@@ -170,6 +172,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.get_install_duration.html">get_install_duration</a>
   
     <a class="method" href="method.Device.get_instance_ids.html">get_instance_ids</a>
+  
+    <a class="method" href="method.Device.get_issues.html">get_issues</a>
   
     <a class="method" href="method.Device.get_modified.html">get_modified</a>
   
@@ -371,7 +375,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.5/libfwupd/fwupd-device.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.7.6/libfwupd/fwupd-device.c#L19">[src]</a>
           
         </h4>
 
@@ -578,6 +582,14 @@ device in some&nbsp;way.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.add_issue.html">fwupd_device_add_issue</a></h6>
+          <div class="docblock">
+            <p>Adds an current issue to this&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.6</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.add_protocol.html">fwupd_device_add_protocol</a></h6>
           <div class="docblock">
             <p>Adds a device protocol&nbsp;name.</p>
@@ -719,6 +731,14 @@ device in some&nbsp;way.</p>
             <p>Gets the instance&nbsp;IDs.</p>
           </div>
           <div class="docblock"><p>Available since: 1.2.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_issues.html">fwupd_device_get_issues</a></h6>
+          <div class="docblock">
+            <p>Gets the list of issues currently affecting this&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.7.6</p></div>
         </div>
       
         <div class="">

@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.5</p>
+        <p>Library Version: 1.7.6</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.5</td></tr>
+        <tr><td><em>Version</em></td><td>1.7.6</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -1294,6 +1294,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_instance_id_strsafe" class="symbol" href="func.common_instance_id_strsafe.html">common_instance_id_strsafe</a></td>
+            
+            <td class="docblock-summary"><p>Sanitize the string used as part of the&nbsp;InstanceID.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_is_live_media" class="symbol" href="func.common_is_live_media.html">common_is_live_media</a></td>
             
             <td class="docblock-summary"><p>Checks if the user is running from a live media using various&nbsp;heuristics.</p></td>
@@ -1603,6 +1610,14 @@ if&nbsp;required.</p></td>
             <td><a title="common_version_ensure_semver" class="symbol" href="func.common_version_ensure_semver.html">common_version_ensure_semver</a></td>
             
             <td class="docblock-summary"><p>Builds a semver from the possibly crazy version&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_version_ensure_semver_full" class="symbol" href="func.common_version_ensure_semver_full.html">common_version_ensure_semver_full</a></td>
+            
+            <td class="docblock-summary"><p>Builds a semver from the possibly crazy version number. Depending on the <code>semver</code> value
+the string will be split and a string in the correct format will be&nbsp;returned.</p></td>
             
           </tr>
           
@@ -1933,6 +1948,13 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_add_issue" class="symbol" href="func.device_add_issue.html">device_add_issue</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_add_protocol" class="symbol" href="func.device_add_protocol.html">device_add_protocol</a></td>
             
             <td class="docblock-summary"></td>
@@ -2032,6 +2054,13 @@ then no member is&nbsp;added.</p></td>
           
           <tr class="section-item">
             <td><a title="device_get_instance_ids" class="symbol" href="func.device_get_instance_ids.html">device_get_instance_ids</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_get_issues" class="symbol" href="func.device_get_issues.html">device_get_issues</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -2659,6 +2688,13 @@ be&nbsp;discovered.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_SIGNED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_SIGNED.html">DEVICE_INTERNAL_FLAG_MD_SET_SIGNED</a></td>
+            
+            <td class="docblock-summary"><p>Set the signed/unsigned payload from the metadata if&nbsp;available.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_FLAG_MD_SET_VENDOR" class="symbol" href="const.DEVICE_INTERNAL_FLAG_MD_SET_VENDOR.html">DEVICE_INTERNAL_FLAG_MD_SET_VENDOR</a></td>
             
             <td class="docblock-summary"><p>Set the device vendor from the metadata <code>developer_name</code> if&nbsp;available.</p></td>
@@ -2697,6 +2733,13 @@ be&nbsp;discovered.</p></td>
             <td><a title="DEVICE_INTERNAL_FLAG_NO_LID_CLOSED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_LID_CLOSED.html">DEVICE_INTERNAL_FLAG_NO_LID_CLOSED</a></td>
             
             <td class="docblock-summary"><p>Do not allow updating when the laptop lid is&nbsp;closed.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_PROBE" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_PROBE.html">DEVICE_INTERNAL_FLAG_NO_PROBE</a></td>
+            
+            <td class="docblock-summary"><p>Do not probe this&nbsp;device.</p></td>
             
           </tr>
           
@@ -3682,6 +3725,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="QUIRKS_INSTALL_DURATION" class="symbol" href="const.QUIRKS_INSTALL_DURATION.html">QUIRKS_INSTALL_DURATION</a></td>
             
             <td class="docblock-summary"><p>The quirk key for the install duration in&nbsp;seconds.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_ISSUE" class="symbol" href="const.QUIRKS_ISSUE.html">QUIRKS_ISSUE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to add security issues affecting a specific&nbsp;device.</p></td>
             
           </tr>
           
