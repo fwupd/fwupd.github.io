@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.7.6</p>
+        <p>Library Version: 1.8.0</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.6</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.0</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -323,6 +323,13 @@ have to be&nbsp;continuous.</p></td>
             
             <td class="docblock-summary"><p>A context that represents the shared system state. This object is shared
 between the engine, the plugins and the&nbsp;devices.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CoswidFirmware" class="symbol" href="class.CoswidFirmware.html">CoswidFirmware</a></td>
+            
+            <td class="docblock-summary"><p>A coSWID <span class="caps">SWID</span>&nbsp;section.</p></td>
             
           </tr>
           
@@ -522,6 +529,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="UsbDevice" class="symbol" href="class.UsbDevice.html">UsbDevice</a></td>
             
             <td class="docblock-summary"><p>A <span class="caps">USB</span>&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UswidFirmware" class="symbol" href="class.UswidFirmware.html">UswidFirmware</a></td>
+            
+            <td class="docblock-summary"><p>A uSWID header with multiple optionally-compressed coSWID <span class="caps">CBOR</span>&nbsp;sections.</p></td>
             
           </tr>
           
@@ -961,6 +975,13 @@ bit position to align to. If <code>alignment</code> is zero then <code>array</co
           </tr>
           
           <tr class="section-item">
+            <td><a title="byte_array_compare" class="symbol" href="func.byte_array_compare.html">byte_array_compare</a></td>
+            
+            <td class="docblock-summary"><p>Compares two buffers for&nbsp;equality.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="byte_array_set_size" class="symbol" href="func.byte_array_set_size.html">byte_array_set_size</a></td>
             
             <td class="docblock-summary"><p>Sets the size of the GByteArray, expanding it with NULs if&nbsp;necessary.</p></td>
@@ -1343,6 +1364,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="common_read_uint24" class="symbol" href="func.common_read_uint24.html">common_read_uint24</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_read_uint32" class="symbol" href="func.common_read_uint32.html">common_read_uint32</a></td>
             
             <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
@@ -1388,6 +1416,13 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
             <td><a title="common_reset_firmware_search_path" class="symbol" href="func.common_reset_firmware_search_path.html">common_reset_firmware_search_path</a></td>
             
             <td class="docblock-summary"><p>Resets the FU_PATH_KIND_FIRMWARE_SEARCH to an empty&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_reverse_uint8" class="symbol" href="func.common_reverse_uint8.html">common_reverse_uint8</a></td>
+            
+            <td class="docblock-summary"><p>Calculates the reverse bit order for a single&nbsp;byte.</p></td>
             
           </tr>
           
@@ -1676,6 +1711,13 @@ The supported formats&nbsp;are:</p></td>
             <td><a title="common_write_uint16_safe" class="symbol" href="func.common_write_uint16_safe.html">common_write_uint16_safe</a></td>
             
             <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_write_uint24" class="symbol" href="func.common_write_uint24.html">common_write_uint24</a></td>
+            
+            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
             
           </tr>
           
@@ -3780,7 +3822,7 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           <tr class="section-item">
             <td><a title="QUIRKS_REMOVE_DELAY" class="symbol" href="const.QUIRKS_REMOVE_DELAY.html">QUIRKS_REMOVE_DELAY</a></td>
             
-            <td class="docblock-summary"><p>The quirk key for the device removal delay in&nbsp;seconds.</p></td>
+            <td class="docblock-summary"><p>The quirk key for the device removal delay in&nbsp;milliseconds.</p></td>
             
           </tr>
           

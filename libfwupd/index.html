@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.7.6</p>
+        <p>Library Version: 1.8.0</p>
         
       </div>
       
@@ -145,7 +145,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.7.6</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.0</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -869,7 +869,7 @@ the recovery key may be&nbsp;required.</p></td>
           <tr class="section-item">
             <td><a title="DEVICE_FLAG_CAN_VERIFY" class="symbol" href="const.DEVICE_FLAG_CAN_VERIFY.html">DEVICE_FLAG_CAN_VERIFY</a></td>
             
-            <td class="docblock-summary"><p>THe device checksums can be compared against&nbsp;metadata.</p></td>
+            <td class="docblock-summary"><p>The device checksums can be compared against&nbsp;metadata.</p></td>
             
           </tr>
           
@@ -1828,9 +1828,23 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="SECURITY_ATTR_ID_ACPI_DMAR" class="symbol" href="const.SECURITY_ATTR_ID_ACPI_DMAR.html">SECURITY_ATTR_ID_ACPI_DMAR</a></td>
+            <td><a title="SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION.html">SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION</a></td>
             
-            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for <span class="caps">ACPI</span> <span class="caps">DMAR</span>&nbsp;table.</p></td>
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Rollback protection of <span class="caps">AMD</span> platform&nbsp;firmware.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_AMD_SPI_REPLAY_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_AMD_SPI_REPLAY_PROTECTION.html">SECURITY_ATTR_ID_AMD_SPI_REPLAY_PROTECTION</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for <span class="caps">SPI</span> replay&nbsp;protection.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION.html">SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for <span class="caps">SPI</span> Write&nbsp;protection.</p></td>
             
           </tr>
           
@@ -1912,20 +1926,6 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="SECURITY_ATTR_ID_INTEL_DCI_ENABLED" class="symbol" href="const.SECURITY_ATTR_ID_INTEL_DCI_ENABLED.html">SECURITY_ATTR_ID_INTEL_DCI_ENABLED</a></td>
-            
-            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Intel <span class="caps">DCI</span>&nbsp;enabled.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="SECURITY_ATTR_ID_INTEL_DCI_LOCKED" class="symbol" href="const.SECURITY_ATTR_ID_INTEL_DCI_LOCKED.html">SECURITY_ATTR_ID_INTEL_DCI_LOCKED</a></td>
-            
-            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Intel <span class="caps">DCI</span>&nbsp;locked.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="SECURITY_ATTR_ID_INTEL_SMAP" class="symbol" href="const.SECURITY_ATTR_ID_INTEL_SMAP.html">SECURITY_ATTR_ID_INTEL_SMAP</a></td>
             
             <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Intel <span class="caps">SMAP</span>.</p></td>
@@ -1982,6 +1982,34 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_PLATFORM_DEBUG_ENABLED" class="symbol" href="const.SECURITY_ATTR_ID_PLATFORM_DEBUG_ENABLED.html">SECURITY_ATTR_ID_PLATFORM_DEBUG_ENABLED</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for parts with debugging capabilities&nbsp;enabled.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_PLATFORM_DEBUG_LOCKED" class="symbol" href="const.SECURITY_ATTR_ID_PLATFORM_DEBUG_LOCKED.html">SECURITY_ATTR_ID_PLATFORM_DEBUG_LOCKED</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for parts locked from&nbsp;debugging.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_PLATFORM_FUSED" class="symbol" href="const.SECURITY_ATTR_ID_PLATFORM_FUSED.html">SECURITY_ATTR_ID_PLATFORM_FUSED</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for fused&nbsp;parts.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_PREBOOT_DMA_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_PREBOOT_DMA_PROTECTION.html">SECURITY_ATTR_ID_PREBOOT_DMA_PROTECTION</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Pre-boot <span class="caps">DMA</span>&nbsp;protection.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="SECURITY_ATTR_ID_SPI_BIOSWE" class="symbol" href="const.SECURITY_ATTR_ID_SPI_BIOSWE.html">SECURITY_ATTR_ID_SPI_BIOSWE</a></td>
             
             <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Intel <span class="caps">SPI</span> <span class="caps">BIOSWE</span>&nbsp;configuration.</p></td>
@@ -2006,6 +2034,13 @@ Supported clients will display this information to a&nbsp;user.</p></td>
             <td><a title="SECURITY_ATTR_ID_SPI_SMM_BWP" class="symbol" href="const.SECURITY_ATTR_ID_SPI_SMM_BWP.html">SECURITY_ATTR_ID_SPI_SMM_BWP</a></td>
             
             <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Intel <span class="caps">SPI</span> <span class="caps">SMM</span> <span class="caps">BWP</span>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_SUPPORTED_CPU" class="symbol" href="const.SECURITY_ATTR_ID_SUPPORTED_CPU.html">SECURITY_ATTR_ID_SUPPORTED_CPU</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Supported <span class="caps">CPU</span>.</p></td>
             
           </tr>
           
