@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -88,6 +88,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Properties</h5>
   <div class="links">
+  
+    <a class="property"href="property.Client.battery-level.html">battery-level</a>
+  
+    <a class="property"href="property.Client.battery-threshold.html">battery-threshold</a>
   
     <a class="property"href="property.Client.daemon-version.html">daemon-version</a>
   
@@ -133,7 +137,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>property host-bkc: utf8 [ read ]</code></pre>
+        <pre><code>property host-bkc: utf8 [ read, write ]</code></pre>
       </div>
     </div>
 
@@ -142,7 +146,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.0/libfwupd/fwupd-client.c#L5438">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-client.c#L5547">[src]</a>
         
       </h4>
 
@@ -183,7 +187,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
       <table>
         <tr><td>Readable</td><td><b>yes</b></td></tr>
-        <tr><td>Writable</td><td><b>no</b></td></tr>
+        <tr><td>Writable</td><td><b>yes</b></td></tr>
         <tr><td>Construct</td><td><b>no</b></td></tr>
         <tr><td>Construct only</td><td><b>no</b></td></tr>
       </table>

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Device:battery-level</title>
+  <title>Fwupd.Device:battery-threshold</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -25,14 +25,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta property="og:image:width" content="256"/>
   <meta property="og:image:height" content="256"/>
   <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
-  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  <meta property="og:image:alt" content="Fwupd-2.0"/>
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Device:battery-level"/>
-  <meta property="og:description" content="Reference for property FwupdPlugin.Device:battery-level"/>
-  <meta name="twitter:title" content="FwupdPlugin.Device:battery-level"/>
-  <meta name="twitter:description" content="Reference for property FwupdPlugin.Device:battery-level"/>
+  <meta property="og:title" content="Fwupd.Device:battery-threshold"/>
+  <meta property="og:description" content="Reference for property Fwupd.Device:battery-threshold"/>
+  <meta name="twitter:title" content="Fwupd.Device:battery-threshold"/>
+  <meta name="twitter:description" content="Reference for property Fwupd.Device:battery-threshold"/>
 
 
   
@@ -45,7 +45,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <script src="urlmap_fwupdplugin.js"></script>
+  <script src="urlmap_fwupd.js"></script>
   
   
   <script src="fzy.js"></script>
@@ -72,10 +72,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </div>
       
       <div class="section namespace">
-        <h3><a href="index.html">FwupdPlugin</a></h3>
-        <p>API Version: 1.0</p>
+        <h3><a href="index.html">Fwupd</a></h3>
+        <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -89,21 +89,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Properties</h5>
   <div class="links">
   
-    <a class="property"href="property.Device.backend-id.html">backend-id</a>
+    <a class="property"href="property.Device.battery-level.html">battery-level</a>
   
-    <a class="property current"href="property.Device.battery-level.html">battery-level</a>
+    <a class="property current"href="property.Device.battery-threshold.html">battery-threshold</a>
   
-    <a class="property"href="property.Device.battery-threshold.html">battery-threshold</a>
-  
-    <a class="property"href="property.Device.context.html">context</a>
-  
-    <a class="property"href="property.Device.logical-id.html">logical-id</a>
+    <a class="property"href="property.Device.flags.html">flags</a>
   
     <a class="property"href="property.Device.parent.html">parent</a>
   
-    <a class="property"href="property.Device.physical-id.html">physical-id</a>
+    <a class="property"href="property.Device.problems.html">problems</a>
   
-    <a class="property"href="property.Device.proxy.html">proxy</a>
+    <a class="property"href="property.Device.protocol.html">protocol</a>
+  
+    <a class="property"href="property.Device.status.html">status</a>
+  
+    <a class="property"href="property.Device.update-error.html">update-error</a>
+  
+    <a class="property"href="property.Device.update-image.html">update-image</a>
+  
+    <a class="property"href="property.Device.update-message.html">update-message</a>
+  
+    <a class="property"href="property.Device.update-state.html">update-state</a>
+  
+    <a class="property"href="property.Device.version-format.html">version-format</a>
   
   </div>
 </div>
@@ -116,7 +124,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Property</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Device.html">Device</a>:battery-level</h1>
+    <h1><a href="index.html">Fwupd</a><span class="sep"></span><a href="class.Device.html">Device</a>:battery-threshold</h1>
   </header>
 
   <section>
@@ -127,7 +135,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>property battery-level: guint [ read, write ]</code></pre>
+        <pre><code>property battery-threshold: guint [ read, write ]</code></pre>
       </div>
     </div>
 
@@ -136,12 +144,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.0/libfwupdplugin/fu-device.c#L5179">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-device.c#L3526">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>The device battery level in&nbsp;percent.</p>
+        <p>The device battery threshold in&nbsp;percent.</p>
       </div>
 
       <div class="docblock">
@@ -161,9 +169,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <table>
         
-          <tr><td>Setter method</td><td><a href="method.Device.set_battery_level.html"><code>fu_device_set_battery_level()</code></a></td></tr>
+          <tr><td>Setter method</td><td><a href="method.Device.set_battery_threshold.html"><code>fwupd_device_set_battery_threshold()</code></a></td></tr>
         
-          <tr><td>Getter method</td><td><a href="method.Device.get_battery_level.html"><code>fu_device_get_battery_level()</code></a></td></tr>
+          <tr><td>Getter method</td><td><a href="method.Device.get_battery_threshold.html"><code>fwupd_device_get_battery_threshold()</code></a></td></tr>
         
         </table>
       </div>

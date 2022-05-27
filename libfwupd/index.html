@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -145,7 +145,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.0</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.1</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -320,6 +320,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
+            <td><a title="DeviceProblem" class="symbol" href="alias.DeviceProblem.html">DeviceProblem</a></td>
+            
+            <td class="docblock-summary"><p>Problems are reasons why the device is not&nbsp;updatable.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PluginFlags" class="symbol" href="alias.PluginFlags.html">PluginFlags</a></td>
             
             <td class="docblock-summary"><p>Flags used to represent plugin&nbsp;attributes.</p></td>
@@ -354,7 +361,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tr class="section-item">
             <td><a title="KeyringKind" class="symbol" href="enum.KeyringKind.html">KeyringKind</a></td>
             
-            <td class="docblock-summary"><p>The update&nbsp;state.</p></td>
+            <td class="docblock-summary"><p>Type of keyring used on a&nbsp;remote.</p></td>
             
           </tr>
           
@@ -637,7 +644,7 @@ machine-id from the&nbsp;machine-hash.</p></td>
           <tr class="section-item">
             <td><a title="feature_flag_from_string" class="symbol" href="func.feature_flag_from_string.html">feature_flag_from_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a string to a enumerated feature&nbsp;flag.</p></td>
+            <td class="docblock-summary"><p>Converts a string to an enumerated feature&nbsp;flag.</p></td>
             
           </tr>
           
@@ -717,35 +724,35 @@ differences in the <code>str</code> will produce radically different return&nbsp
           <tr class="section-item">
             <td><a title="status_to_string" class="symbol" href="func.status_to_string.html">status_to_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a enumerated status to a&nbsp;string.</p></td>
+            <td class="docblock-summary"><p>Converts an enumerated status to a&nbsp;string.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="trust_flag_from_string" class="symbol" href="func.trust_flag_from_string.html">trust_flag_from_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a string to a enumerated trust&nbsp;flag.</p></td>
+            <td class="docblock-summary"><p>Converts a string to an enumerated trust&nbsp;flag.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="trust_flag_to_string" class="symbol" href="func.trust_flag_to_string.html">trust_flag_to_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a enumerated trust flag to a&nbsp;string.</p></td>
+            <td class="docblock-summary"><p>Converts an enumerated trust flag to a&nbsp;string.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="update_state_from_string" class="symbol" href="func.update_state_from_string.html">update_state_from_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a string to a enumerated update&nbsp;state.</p></td>
+            <td class="docblock-summary"><p>Converts a string to an enumerated update&nbsp;state.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="update_state_to_string" class="symbol" href="func.update_state_to_string.html">update_state_to_string</a></td>
             
-            <td class="docblock-summary"><p>Converts a enumerated update state to a&nbsp;string.</p></td>
+            <td class="docblock-summary"><p>Converts an enumerated update state to a&nbsp;string.</p></td>
             
           </tr>
           
@@ -814,9 +821,24 @@ differences in the <code>str</code> will produce radically different return&nbsp
           <tbody>
           
           <tr class="section-item">
+            <td><a title="BATTERY_LEVEL_INVALID" class="symbol" href="const.BATTERY_LEVEL_INVALID.html">BATTERY_LEVEL_INVALID</a></td>
+            
+            <td class="docblock-summary"><p>This value signifies the battery level is either unset, or the value cannot
+be&nbsp;discovered.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DBUS_INTERFACE" class="symbol" href="const.DBUS_INTERFACE.html">DBUS_INTERFACE</a></td>
             
             <td class="docblock-summary"><p>The dbus&nbsp;interface.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DBUS_P2P_SOCKET_ADDRESS" class="symbol" href="const.DBUS_P2P_SOCKET_ADDRESS.html">DBUS_P2P_SOCKET_ADDRESS</a></td>
+            
+            <td class="docblock-summary"><p>The D-Bus socket address when using point-to-point&nbsp;connections.</p></td>
             
           </tr>
           
@@ -1209,6 +1231,55 @@ or failure can&#8217;t be&nbsp;verified.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_LID_IS_CLOSED" class="symbol" href="const.DEVICE_PROBLEM_LID_IS_CLOSED.html">DEVICE_PROBLEM_LID_IS_CLOSED</a></td>
+            
+            <td class="docblock-summary"><p>The device cannot be used while the laptop lid is&nbsp;closed.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_NONE" class="symbol" href="const.DEVICE_PROBLEM_NONE.html">DEVICE_PROBLEM_NONE</a></td>
+            
+            <td class="docblock-summary"><p>No device problems&nbsp;detected.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_POWER_TOO_LOW" class="symbol" href="const.DEVICE_PROBLEM_POWER_TOO_LOW.html">DEVICE_PROBLEM_POWER_TOO_LOW</a></td>
+            
+            <td class="docblock-summary"><p>The device battery power is too&nbsp;low.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_REQUIRE_AC_POWER" class="symbol" href="const.DEVICE_PROBLEM_REQUIRE_AC_POWER.html">DEVICE_PROBLEM_REQUIRE_AC_POWER</a></td>
+            
+            <td class="docblock-summary"><p>The device requires <span class="caps">AC</span> power to be&nbsp;connected.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW" class="symbol" href="const.DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW.html">DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW</a></td>
+            
+            <td class="docblock-summary"><p>The system power is too low to perform the&nbsp;update.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_UNREACHABLE" class="symbol" href="const.DEVICE_PROBLEM_UNREACHABLE.html">DEVICE_PROBLEM_UNREACHABLE</a></td>
+            
+            <td class="docblock-summary"><p>The device is unreachable, or out of wireless&nbsp;range.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_UPDATE_PENDING" class="symbol" href="const.DEVICE_PROBLEM_UPDATE_PENDING.html">DEVICE_PROBLEM_UPDATE_PENDING</a></td>
+            
+            <td class="docblock-summary"><p>The device is waiting for the update to be&nbsp;applied.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="MAJOR_VERSION" class="symbol" href="const.MAJOR_VERSION.html">MAJOR_VERSION</a></td>
             
             <td class="docblock-summary"><p>The compile-time major&nbsp;version.</p></td>
@@ -1422,6 +1493,22 @@ Supported clients will display this information to a&nbsp;user.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_BATTERY_LEVEL" class="symbol" href="const.RESULT_KEY_BATTERY_LEVEL.html">RESULT_KEY_BATTERY_LEVEL</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the current battery level in percent.
+Expressed from 0-100%, or 101 for invalid or&nbsp;unset.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_BATTERY_THRESHOLD" class="symbol" href="const.RESULT_KEY_BATTERY_THRESHOLD.html">RESULT_KEY_BATTERY_THRESHOLD</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the minimum battery level required to perform an update.
+Expressed from 0-100%, or 101 for invalid or&nbsp;unset.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_BRANCH" class="symbol" href="const.RESULT_KEY_BRANCH.html">RESULT_KEY_BRANCH</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;Branch.</p></td>
@@ -1628,6 +1715,13 @@ Supported clients will display this information to a&nbsp;user.</p></td>
             <td><a title="RESULT_KEY_PLUGIN" class="symbol" href="const.RESULT_KEY_PLUGIN.html">RESULT_KEY_PLUGIN</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;Plugin.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_PROBLEMS" class="symbol" href="const.RESULT_KEY_PROBLEMS.html">RESULT_KEY_PROBLEMS</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent&nbsp;problems.</p></td>
             
           </tr>
           

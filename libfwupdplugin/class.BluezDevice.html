@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -156,7 +156,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.0/libfwupdplugin/fu-bluez-device.c#L20">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-bluez-device.c#L20">[src]</a>
           
         </h4>
 
@@ -272,14 +272,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
         
         <div class=" ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (140)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (143)</h5><div class="docblock">
           
           </div>
         </div>
         
       
         
-        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (98)</h5>
+        <div class=" ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (107)</h5>
           <div class="docblock">
           
           </div>
@@ -335,20 +335,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
         
         <div class="toggle-wrapper default-hide ancestor-properties">
-          <h5 style="display:block;">Properties inherited from <a href="class.Device.html">FuDevice</a> (8)</h5><div class="docblock">
+          <h5 style="display:block;">Properties inherited from <a href="class.Device.html">FuDevice</a> (6)</h5><div class="docblock">
           
             <h6><a href="property.Device.backend-id.html">FwupdPlugin.Device:backend-id</a></h6><div class="docblock">
               <p>The device backend <span class="caps">ID</span>.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.8</p></div>
-          
-            <h6><a href="property.Device.battery-level.html">FwupdPlugin.Device:battery-level</a></h6><div class="docblock">
-              <p>The device battery level in&nbsp;percent.</p>
-            </div>
-            <div class="docblock"><p>Available since: 1.5.8</p></div>
-          
-            <h6><a href="property.Device.battery-threshold.html">FwupdPlugin.Device:battery-threshold</a></h6><div class="docblock">
-              <p>The device battery threshold in&nbsp;percent.</p>
             </div>
             <div class="docblock"><p>Available since: 1.5.8</p></div>
           
@@ -382,8 +372,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         
       
         
-        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (9)</h5>
+        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (12)</h5>
           <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.battery-level.html">Fwupd.Device:battery-level</a></h6>
+            <div class="docblock">
+              <p>The device battery level in&nbsp;percent.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.8</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.battery-threshold.html">Fwupd.Device:battery-threshold</a></h6>
+            <div class="docblock">
+              <p>The device battery threshold in&nbsp;percent.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.5.8</p></div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.flags.html">Fwupd.Device:flags</a></h6>
             <div class="docblock">
               <p>The device&nbsp;flags.</p>
@@ -394,6 +394,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
               <p>The device&nbsp;parent.</p>
             </div>
             <div class="docblock"><p>Available since: 1.0.8</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.problems.html">Fwupd.Device:problems</a></h6>
+            <div class="docblock">
+              <p>The problems with the device that the user could fix, e.g. &#8220;lid&nbsp;open&#8221;.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.8.1</p></div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.protocol.html">Fwupd.Device:protocol</a></h6>
             <div class="docblock">
               <p>The device&nbsp;protocol.</p>

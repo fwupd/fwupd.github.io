@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -203,6 +203,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.runner_get_results.html">runner_get_results</a>
   
+    <a class="method" href="method.Plugin.runner_init.html">runner_init</a>
+  
     <a class="method" href="method.Plugin.runner_prepare.html">runner_prepare</a>
   
     <a class="method" href="method.Plugin.runner_reload.html">runner_reload</a>
@@ -298,7 +300,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.0/libfwupdplugin/fu-plugin.c#L23">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-plugin.c#L23">[src]</a>
           
         </h4>
 
@@ -633,7 +635,7 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
         <div class="">
           <h6><a href="method.Plugin.open.html">fu_plugin_open</a></h6>
           <div class="docblock">
-            <p>Opens the plugin&nbsp;module.</p>
+            <p>Opens the plugin module, and calls <code>-&gt;load()</code> on&nbsp;it.</p>
           </div>
           <div class="docblock"><p>Available since: 0.8.0</p></div>
         </div>
@@ -772,6 +774,14 @@ not yet removed with&nbsp;fu_plugin_device_remove().</p>
             <p>Call into the plugin&#8217;s get results&nbsp;routine.</p>
           </div>
           <div class="docblock"><p>Available since: 0.8.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_init.html">fu_plugin_runner_init</a></h6>
+          <div class="docblock">
+            <p>Runs the init routine for the plugin, if&nbsp;enabled.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.1</p></div>
         </div>
       
         <div class="">

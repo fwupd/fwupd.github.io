@@ -75,7 +75,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.0</p>
+        <p>Library Version: 1.8.1</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.0</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.1</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -650,6 +650,20 @@ backport new versions as new hardware is&nbsp;released.</p></td>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="ArchiveCompression" class="symbol" href="enum.ArchiveCompression.html">ArchiveCompression</a></td>
+            
+            <td class="docblock-summary"><p>The archive&nbsp;compression.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ArchiveFormat" class="symbol" href="enum.ArchiveFormat.html">ArchiveFormat</a></td>
+            
+            <td class="docblock-summary"><p>The archive&nbsp;format.</p></td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="BatteryState" class="symbol" href="enum.BatteryState.html">BatteryState</a></td>
@@ -2463,14 +2477,6 @@ then no member is&nbsp;added.</p></td>
           <tbody>
           
           <tr class="section-item">
-            <td><a title="BATTERY_VALUE_INVALID" class="symbol" href="const.BATTERY_VALUE_INVALID.html">BATTERY_VALUE_INVALID</a></td>
-            
-            <td class="docblock-summary"><p>This value signifies the battery level is either unset, or the value cannot
-be&nbsp;discovered.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="BUILD_HASH" class="symbol" href="const.BUILD_HASH.html">BUILD_HASH</a></td>
             
             <td class="docblock-summary"></td>
@@ -2667,6 +2673,13 @@ be&nbsp;discovered.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_AUTO_PAUSE_POLLING" class="symbol" href="const.DEVICE_INTERNAL_AUTO_PAUSE_POLLING.html">DEVICE_INTERNAL_AUTO_PAUSE_POLLING</a></td>
+            
+            <td class="docblock-summary"><p>Pause polling when reading or writing to the&nbsp;device.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET.html">DEVICE_INTERNAL_FLAG_ATTACH_EXTRA_RESET</a></td>
             
             <td class="docblock-summary"><p>Device needs resetting twice for attach after the firmware&nbsp;update.</p></td>
@@ -2803,6 +2816,14 @@ be&nbsp;discovered.</p></td>
             <td><a title="DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED.html">DEVICE_INTERNAL_FLAG_ONLY_SUPPORTED</a></td>
             
             <td class="docblock-summary"><p>Only devices supported in the metadata will be&nbsp;opened.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_ONLY_WAIT_FOR_REPLUG" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ONLY_WAIT_FOR_REPLUG.html">DEVICE_INTERNAL_FLAG_ONLY_WAIT_FOR_REPLUG</a></td>
+            
+            <td class="docblock-summary"><p>Only use the device removal delay when explicitly waiting for a replug, rather than every time
+the device is&nbsp;removed.</p></td>
             
           </tr>
           
