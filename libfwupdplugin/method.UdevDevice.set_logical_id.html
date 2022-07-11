@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -135,15 +138,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.UdevDevice.ioctl.html">ioctl</a>
   
-    <a class="method" href="method.UdevDevice.ioctl_full.html">ioctl_full</a>
-  
     <a class="method" href="method.UdevDevice.pread.html">pread</a>
   
-    <a class="method" href="method.UdevDevice.pread_full.html">pread_full</a>
-  
     <a class="method" href="method.UdevDevice.pwrite.html">pwrite</a>
-  
-    <a class="method" href="method.UdevDevice.pwrite_full.html">pwrite_full</a>
   
     <a class="method" href="method.UdevDevice.seek.html">seek</a>
   
@@ -181,7 +178,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-udev-device.h#L93">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.h#L89">[src]</a>
         
       </h4>
 
@@ -202,7 +199,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-udev-device.c#L1132">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.c#L1221">[src]</a>
         
       </h4>
 
@@ -217,6 +214,9 @@ over <code>usb</code> for a mouse&nbsp;device.</p>
           
           
           <tr><td>Available since:</td><td>1.5.8</td></tr>
+          
+          
+          
           
           
         </table>
@@ -251,7 +251,7 @@ over <code>usb</code> for a mouse&nbsp;device.</p>
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
           
           
           <tr class="arg-name">

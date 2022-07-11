@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -117,7 +120,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-backend.h#L21">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-backend.h#L25">[src]</a>
         
       </h4>
 
@@ -136,13 +139,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-backend.c#L127">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-backend.c#L127">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Normally when calling <code>fu_backend_setup()</code> multiple times it is only actually done once.
-Calling this method causes the next requests to <code>fu_backend_setup()</code> to actually probe the&nbsp;hardware.</p>
+        <p>Normally when calling <a href="method.Backend.setup.html"><code>fu_backend_setup()</code></a> multiple times it is only actually done once.
+Calling this method causes the next requests to <a href="method.Backend.setup.html"><code>fu_backend_setup()</code></a> to actually probe the&nbsp;hardware.</p>
 <p>Only subclassed backends setting <code>can-invalidate=TRUE</code> at construction time can use this
 method, as it is not always safe to call for backends shared between multiple&nbsp;plugins.</p>
 <p>This should be done in case the backing information source has changed, for instance if

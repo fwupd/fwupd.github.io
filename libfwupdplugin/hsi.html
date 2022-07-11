@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -686,6 +689,136 @@ As those become ratified standards that are available in hardware, there are opp
 
 
     
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#other-tools"><span class="link-text">Other Tools</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#verifying-host-firmware-security"><span class="link-text">Verifying Host Firmware Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#runtime-behavior"><span class="link-text">Runtime Behavior</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#hsi0-insecure-state"><span class="link-text">HSI:0 (Insecure State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi1-critical-state"><span class="link-text">HSI:1 (Critical State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi2-risky-state"><span class="link-text">HSI:2 (Risky State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi3-protected-state"><span class="link-text">HSI:3 (Protected State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi4-secure-state"><span class="link-text">HSI:4 (Secure State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi5-secure-proven-state"><span class="link-text">HSI:5 (Secure Proven State)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hsi-runtime-suffix"><span class="link-text">HSI Runtime Suffix !</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#tests-included-in-fwupd"><span class="link-text">Tests included in fwupd</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#uefi-secureboot"><span class="link-text">UEFI SecureBoot</span></a></li>
+          
+            <li class="toc-list-item"><a href="#uefi-pk"><span class="link-text">UEFI PK</span></a></li>
+          
+            <li class="toc-list-item"><a href="#bios-write-enable-bwe"><span class="link-text">BIOS Write Enable (BWE)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#bios-lock-enable-ble"><span class="link-text">BIOS Lock Enable (BLE)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#smm-bios-write-protect-smm_bwp"><span class="link-text">SMM Bios Write Protect (SMM_BWP)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#read-only-spi-descriptor"><span class="link-text">Read-only SPI Descriptor</span></a></li>
+          
+            <li class="toc-list-item"><a href="#tpm-20-present"><span class="link-text">TPM 2.0 Present</span></a></li>
+          
+            <li class="toc-list-item"><a href="#me-not-in-manufacturing-mode"><span class="link-text">ME not in manufacturing mode</span></a></li>
+          
+            <li class="toc-list-item"><a href="#me-flash-descriptor-override"><span class="link-text">ME Flash Descriptor Override</span></a></li>
+          
+            <li class="toc-list-item"><a href="#csme-version"><span class="link-text">CSME Version</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-dci"><span class="link-text">Intel DCI</span></a></li>
+          
+            <li class="toc-list-item"><a href="#part-is-fused"><span class="link-text">Part is fused</span></a></li>
+          
+            <li class="toc-list-item"><a href="#part-is-debug-locked"><span class="link-text">Part is debug locked</span></a></li>
+          
+            <li class="toc-list-item"><a href="#empty-pcr-in-tpm"><span class="link-text">Empty PCR in TPM</span></a></li>
+          
+            <li class="toc-list-item"><a href="#pcr0-tpm-event-log-reconstruction"><span class="link-text">PCR0 TPM Event Log Reconstruction</span></a></li>
+          
+            <li class="toc-list-item"><a href="#pre-boot-dma-protection"><span class="link-text">Pre-boot DMA protection</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-bootguard-enabled"><span class="link-text">Intel BootGuard: Enabled</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-bootguard-verified"><span class="link-text">Intel BootGuard: Verified</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-bootguard-acm"><span class="link-text">Intel BootGuard: ACM</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-bootguard-policy"><span class="link-text">Intel BootGuard: Policy</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-bootguard-otp"><span class="link-text">Intel BootGuard: OTP</span></a></li>
+          
+            <li class="toc-list-item"><a href="#suspend-to-ram-disabled"><span class="link-text">Suspend to RAM disabled</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-cet-available"><span class="link-text">Intel CET: Available</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-cet-active"><span class="link-text">Intel CET: Active</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dram-memory-encryption"><span class="link-text">DRAM memory encryption</span></a></li>
+          
+            <li class="toc-list-item"><a href="#amd-rollback-protection"><span class="link-text">AMD Rollback protection</span></a></li>
+          
+            <li class="toc-list-item"><a href="#amd-spi-write-protections"><span class="link-text">AMD SPI Write protections</span></a></li>
+          
+            <li class="toc-list-item"><a href="#amd-spi-replay-protections"><span class="link-text">AMD SPI Replay protections</span></a></li>
+          
+            <li class="toc-list-item"><a href="#supervisor-mode-access-prevention"><span class="link-text">Supervisor Mode Access Prevention</span></a></li>
+          
+            <li class="toc-list-item"><a href="#kernel-dma-protection"><span class="link-text">Kernel DMA protection</span></a></li>
+          
+            <li class="toc-list-item"><a href="#suspend-to-idle"><span class="link-text">Suspend-to-Idle</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#conclusion"><span class="link-text">Conclusion</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#intentional-omissions"><span class="link-text">Intentional Omissions</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#intel-sgx"><span class="link-text">Intel SGX</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-mpx"><span class="link-text">Intel MPX</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#further-work"><span class="link-text">Further Work</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
 
     <section id="search" class="content hidden"></section>
 

@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -198,6 +201,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Client.get_host_security_events_finish.html">get_host_security_events_finish</a>
   
     <a class="method" href="method.Client.get_host_security_id.html">get_host_security_id</a>
+  
+    <a class="method" href="method.Client.get_host_vendor.html">get_host_vendor</a>
   
     <a class="method" href="method.Client.get_main_context.html">get_main_context</a>
   
@@ -381,7 +386,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-client.h#L75">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupd/fwupd-client.h#L74">[src]</a>
         
       </h4>
 
@@ -403,15 +408,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-client.c#L820">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupd/fwupd-client.c#L845">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Sets up the client ready for use. This is probably the first method you call
 when wanting to use libfwupd in an asynchronous&nbsp;manner.</p>
-<p>Other methods such as <code>fwupd_client_get_devices_async()</code> should only be called
-after <code>fwupd_client_connect_finish()</code> has been called without an&nbsp;error.</p>
+<p>Other methods such as <a href="method.Client.get_devices_async.html"><code>fwupd_client_get_devices_async()</code></a> should only be called
+after <a href="method.Client.connect_finish.html"><code>fwupd_client_connect_finish()</code></a> has been called without an&nbsp;error.</p>
       </div>
 
       <div class="docblock">
@@ -419,6 +424,9 @@ after <code>fwupd_client_connect_finish()</code> has been called without an&nbsp
           
           
           <tr><td>Available since:</td><td>1.5.0</td></tr>
+          
+          
+          
           
           
         </table>
@@ -464,7 +472,7 @@ after <code>fwupd_client_connect_finish()</code> has been called without an&nbsp
             <td><p>The function to run on&nbsp;completion.</p></td>
           </tr>
           
-          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
@@ -482,13 +490,13 @@ after <code>fwupd_client_connect_finish()</code> has been called without an&nbsp
             <td><p>The data to pass to <code>callback</code>.</p></td>
           </tr>
           
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
           
           
-          
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           

@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -147,7 +150,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.1</td></tr>
+        <tr><td><em>Version</em></td><td>main</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -178,37 +181,53 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <table>
         
+          
+        
+          
           <tr>
-            <td><strong>GObject</strong></td>
+            <td><strong>GObject</strong>&mdash;2.0</td>
             <td>The base type system library</td>
           </tr>
           <tr>
             <td></td>
             <td><a href="https://developer.gnome.org/gobject/stable/" class="external">Browse documentation</a></td>
           </tr>
+          
         
+          
           <tr>
-            <td><strong>Gio</strong></td>
+            <td><strong>Gio</strong>&mdash;2.0</td>
             <td>A modern, easy-to-use VFS API</td>
           </tr>
           <tr>
             <td></td>
             <td><a href="https://developer.gnome.org/gio/stable/" class="external">Browse documentation</a></td>
           </tr>
+          
         
+          
+        
+          
           <tr>
-            <td><strong>Fwupd</strong></td>
+            <td><strong>Fwupd</strong>&mdash;2.0</td>
             <td>Firmware update daemon client library</td>
           </tr>
           <tr>
             <td></td>
             <td><a href="../libfwupd/index.html" class="external">Browse documentation</a></td>
           </tr>
+          
+        
+          
+        
+          
         
         </table>
       </div>
     </div>
   </section>
+  
+
   
 
   
@@ -364,7 +383,7 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           <tr class="section-item">
             <td><a title="EfiFirmwareFile" class="symbol" href="class.EfiFirmwareFile.html">EfiFirmwareFile</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>A <span class="caps">UEFI</span>&nbsp;file.</p></td>
             
           </tr>
           
@@ -378,7 +397,7 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           <tr class="section-item">
             <td><a title="EfiFirmwareSection" class="symbol" href="class.EfiFirmwareSection.html">EfiFirmwareSection</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>A <span class="caps">UEFI</span> firmware&nbsp;section.</p></td>
             
           </tr>
           
@@ -404,9 +423,30 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="FdtFirmware" class="symbol" href="class.FdtFirmware.html">FdtFirmware</a></td>
+            
+            <td class="docblock-summary"><p>A Flattened DeviceTree firmware&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FdtImage" class="symbol" href="class.FdtImage.html">FdtImage</a></td>
+            
+            <td class="docblock-summary"><p>A Flattened DeviceTree firmware&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="Firmware" class="symbol" href="class.Firmware.html">Firmware</a></td>
             
             <td class="docblock-summary"><p>A firmware file which can have children which represent the images&nbsp;within.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FitFirmware" class="symbol" href="class.FitFirmware.html">FitFirmware</a></td>
+            
+            <td class="docblock-summary"><p>A Flat Image&nbsp;Tree.</p></td>
             
           </tr>
           
@@ -455,7 +495,23 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
           <tr class="section-item">
             <td><a title="IfdImage" class="symbol" href="class.IfdImage.html">IfdImage</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>An Intel Flash Descriptor image, e.g. <span class="caps">BIOS</span>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfwiCpdFirmware" class="symbol" href="class.IfwiCpdFirmware.html">IfwiCpdFirmware</a></td>
+            
+            <td class="docblock-summary"><p>An Intel Code Partition Directory (aka <span class="caps">CPD</span>) can be found in <span class="caps">IFWI</span> (Integrated Firmware Image)
+firmware blobs which are used in various Intel products using an <span class="caps">IPU</span> (Infrastructure Processing&nbsp;Unit).</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IfwiFptFirmware" class="symbol" href="class.IfwiFptFirmware.html">IfwiFptFirmware</a></td>
+            
+            <td class="docblock-summary"><p>An Intel Flash Program Tool (aka <span class="caps">FPT</span>) header can be found in <span class="caps">IFWI</span> (Integrated Firmware Image)
+firmware blobs which are used in various Intel products using an <span class="caps">IPU</span> (Infrastructure Processing&nbsp;Unit).</p></td>
             
           </tr>
           
@@ -470,6 +526,27 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
             <td><a title="IOChannel" class="symbol" href="class.IOChannel.html">IOChannel</a></td>
             
             <td class="docblock-summary"><p>A bidirectional <span class="caps">IO</span> channel which can be read from and written&nbsp;to.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="LinearFirmware" class="symbol" href="class.LinearFirmware.html">LinearFirmware</a></td>
+            
+            <td class="docblock-summary"><p>A firmware made up of concatenated blobs of a different firmware&nbsp;type.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="MeiDevice" class="symbol" href="class.MeiDevice.html">MeiDevice</a></td>
+            
+            <td class="docblock-summary"><p>The Intel proprietary Management Engine&nbsp;Interface.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OpromFirmware" class="symbol" href="class.OpromFirmware.html">OpromFirmware</a></td>
+            
+            <td class="docblock-summary"><p>An OptionROM can be found in nearly every <span class="caps">PCI</span> device. Multiple OptionROM images may be&nbsp;appended.</p></td>
             
           </tr>
           
@@ -724,7 +801,7 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           <tr class="section-item">
             <td><a title="IfdRegion" class="symbol" href="enum.IfdRegion.html">IfdRegion</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <span class="caps">IFD</span>&nbsp;region.</p></td>
             
           </tr>
           
@@ -783,13 +860,6 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           <tbody>
           
           <tr class="section-item">
-            <td><a title="AppFlags" class="symbol" href="flags.AppFlags.html">AppFlags</a></td>
-            
-            <td class="docblock-summary"><p>The flags to use when loading an&nbsp;application.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="ArchiveFlags" class="symbol" href="flags.ArchiveFlags.html">ArchiveFlags</a></td>
             
             <td class="docblock-summary"><p>The flags to use when loading the&nbsp;archive.</p></td>
@@ -820,7 +890,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           <tr class="section-item">
             <td><a title="IfdAccess" class="symbol" href="flags.IfdAccess.html">IfdAccess</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The flags to use for <span class="caps">IFD</span> access&nbsp;permissions.</p></td>
             
           </tr>
           
@@ -879,13 +949,6 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="CommonStrsplitFunc" class="symbol" href="callback.CommonStrsplitFunc.html">CommonStrsplitFunc</a></td>
-            
-            <td class="docblock-summary"><p>The <code>fu_common_strnsplit_full()</code> iteration&nbsp;callback.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="ContextLookupIter" class="symbol" href="callback.ContextLookupIter.html">ContextLookupIter</a></td>
             
             <td class="docblock-summary"><p>The context lookup iteration&nbsp;callback.</p></td>
@@ -907,16 +970,16 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="OutputHandler" class="symbol" href="callback.OutputHandler.html">OutputHandler</a></td>
+            <td><a title="QuirksIter" class="symbol" href="callback.QuirksIter.html">QuirksIter</a></td>
             
-            <td class="docblock-summary"><p>The process spawn iteration&nbsp;callback.</p></td>
+            <td class="docblock-summary"><p>The quirks iteration&nbsp;callback.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="QuirksIter" class="symbol" href="callback.QuirksIter.html">QuirksIter</a></td>
+            <td><a title="StrsplitFunc" class="symbol" href="callback.StrsplitFunc.html">StrsplitFunc</a></td>
             
-            <td class="docblock-summary"><p>The quirks iteration&nbsp;callback.</p></td>
+            <td class="docblock-summary"><p>The <code>fu_strsplit_full()</code> iteration&nbsp;callback.</p></td>
             
           </tr>
           
@@ -998,14 +1061,43 @@ bit position to align to. If <code>alignment</code> is zero then <code>array</co
           <tr class="section-item">
             <td><a title="byte_array_set_size" class="symbol" href="func.byte_array_set_size.html">byte_array_set_size</a></td>
             
-            <td class="docblock-summary"><p>Sets the size of the GByteArray, expanding it with NULs if&nbsp;necessary.</p></td>
+            <td class="docblock-summary"><p>Sets the size of the GByteArray, expanding with <code>data</code> as&nbsp;required.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="byte_array_set_size_full" class="symbol" href="func.byte_array_set_size_full.html">byte_array_set_size_full</a></td>
+            <td><a title="bytes_align" class="symbol" href="func.bytes_align.html">bytes_align</a></td>
             
-            <td class="docblock-summary"><p>Sets the size of the GByteArray, expanding with <code>data</code> as&nbsp;required.</p></td>
+            <td class="docblock-summary"><p>Aligns a block of memory to <code>blksize</code> using the <code>padval</code> value; if
+the block is already aligned then the original <code>bytes</code> is&nbsp;returned.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_compare" class="symbol" href="func.bytes_compare.html">bytes_compare</a></td>
+            
+            <td class="docblock-summary"><p>Compares the buffers for&nbsp;equality.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_get_contents" class="symbol" href="func.bytes_get_contents.html">bytes_get_contents</a></td>
+            
+            <td class="docblock-summary"><p>Reads a blob of data from a&nbsp;file.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_get_contents_fd" class="symbol" href="func.bytes_get_contents_fd.html">bytes_get_contents_fd</a></td>
+            
+            <td class="docblock-summary"><p>Reads a blob from a specific file&nbsp;descriptor.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_get_contents_stream" class="symbol" href="func.bytes_get_contents_stream.html">bytes_get_contents_stream</a></td>
+            
+            <td class="docblock-summary"><p>Reads a blob from a specific input&nbsp;stream.</p></td>
             
           </tr>
           
@@ -1014,6 +1106,34 @@ bit position to align to. If <code>alignment</code> is zero then <code>array</co
             
             <td class="docblock-summary"><p>Get the byte data in the <code>GBytes</code>. This data should not be modified.
 This function will always return the same pointer for a given <code>GBytes</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_is_empty" class="symbol" href="func.bytes_is_empty.html">bytes_is_empty</a></td>
+            
+            <td class="docblock-summary"><p>Checks if a byte array are just empty (0xff)&nbsp;bytes.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_new_offset" class="symbol" href="func.bytes_new_offset.html">bytes_new_offset</a></td>
+            
+            <td class="docblock-summary"><p>Creates a <code>GBytes</code> which is a subsection of another <code>GBytes</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_pad" class="symbol" href="func.bytes_pad.html">bytes_pad</a></td>
+            
+            <td class="docblock-summary"><p>Pads a GBytes to a minimum <code>sz</code> with <code>0xff</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="bytes_set_contents" class="symbol" href="func.bytes_set_contents.html">bytes_set_contents</a></td>
+            
+            <td class="docblock-summary"><p>Writes a blob of data to a filename, creating the parent directories as&nbsp;required.</p></td>
             
           </tr>
           
@@ -1047,241 +1167,10 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_bytes_align" class="symbol" href="func.common_bytes_align.html">common_bytes_align</a></td>
-            
-            <td class="docblock-summary"><p>Aligns a block of memory to <code>blksize</code> using the <code>padval</code> value; if
-the block is already aligned then the original <code>bytes</code> is&nbsp;returned.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_bytes_compare" class="symbol" href="func.common_bytes_compare.html">common_bytes_compare</a></td>
-            
-            <td class="docblock-summary"><p>Compares the buffers for&nbsp;equality.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_bytes_compare_raw" class="symbol" href="func.common_bytes_compare_raw.html">common_bytes_compare_raw</a></td>
-            
-            <td class="docblock-summary"><p>Compares the buffers for&nbsp;equality.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_bytes_is_empty" class="symbol" href="func.common_bytes_is_empty.html">common_bytes_is_empty</a></td>
-            
-            <td class="docblock-summary"><p>Checks if a byte array are just empty (0xff)&nbsp;bytes.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_bytes_new_offset" class="symbol" href="func.common_bytes_new_offset.html">common_bytes_new_offset</a></td>
-            
-            <td class="docblock-summary"><p>Creates a <code>GBytes</code> which is a subsection of another <code>GBytes</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_bytes_pad" class="symbol" href="func.common_bytes_pad.html">common_bytes_pad</a></td>
-            
-            <td class="docblock-summary"><p>Pads a GBytes to a minimum <code>sz</code> with <code>0xff</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_cab_build_silo" class="symbol" href="func.common_cab_build_silo.html">common_cab_build_silo</a></td>
-            
-            <td class="docblock-summary"><p>Create an AppStream silo from a cabinet&nbsp;archive.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="common_check_full_disk_encryption" class="symbol" href="func.common_check_full_disk_encryption.html">common_check_full_disk_encryption</a></td>
             
             <td class="docblock-summary"><p>Checks that all <span class="caps">FDE</span> volumes are not going to be affected by a firmware update. If unsure,
 return with failure and let the user&nbsp;decide.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_check_kernel_version" class="symbol" href="func.common_check_kernel_version.html">common_check_kernel_version</a></td>
-            
-            <td class="docblock-summary"><p>Determines if the system is running at least a certain required kernel&nbsp;version.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_cpuid" class="symbol" href="func.common_cpuid.html">common_cpuid</a></td>
-            
-            <td class="docblock-summary"><p>Calls <span class="caps">CPUID</span> and returns the registers for the given&nbsp;leaf.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc16" class="symbol" href="func.common_crc16.html">common_crc16</a></td>
-            
-            <td class="docblock-summary"><p>Returns the <span class="caps">CRC</span>-16-<span class="caps">IBM</span> cyclic redundancy value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc16_full" class="symbol" href="func.common_crc16_full.html">common_crc16_full</a></td>
-            
-            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc32" class="symbol" href="func.common_crc32.html">common_crc32</a></td>
-            
-            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc32_full" class="symbol" href="func.common_crc32_full.html">common_crc32_full</a></td>
-            
-            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc8" class="symbol" href="func.common_crc8.html">common_crc8</a></td>
-            
-            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_crc8_full" class="symbol" href="func.common_crc8_full.html">common_crc8_full</a></td>
-            
-            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_dump_bytes" class="symbol" href="func.common_dump_bytes.html">common_dump_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Dumps a byte buffer to the&nbsp;screen.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_dump_full" class="symbol" href="func.common_dump_full.html">common_dump_full</a></td>
-            
-            <td class="docblock-summary"><p>Dumps a raw buffer to the&nbsp;screen.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_dump_raw" class="symbol" href="func.common_dump_raw.html">common_dump_raw</a></td>
-            
-            <td class="docblock-summary"><p>Dumps a raw buffer to the&nbsp;screen.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_error_array_get_best" class="symbol" href="func.common_error_array_get_best.html">common_error_array_get_best</a></td>
-            
-            <td class="docblock-summary"><p>Finds the &#8216;best&#8217; error to show the user from a array of errors, creating a
-completely bespoke error where&nbsp;required.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_extract_archive" class="symbol" href="func.common_extract_archive.html">common_extract_archive</a></td>
-            
-            <td class="docblock-summary"><p>Extracts an archive to a&nbsp;directory.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_filename_glob" class="symbol" href="func.common_filename_glob.html">common_filename_glob</a></td>
-            
-            <td class="docblock-summary"><p>Returns all the filenames that match a specific glob pattern.
-Any results are sorted. No matching files will set <code>error</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_find_program_in_path" class="symbol" href="func.common_find_program_in_path.html">common_find_program_in_path</a></td>
-            
-            <td class="docblock-summary"><p>Looks for a program in the <span class="caps">PATH</span>&nbsp;variable.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_firmware_builder" class="symbol" href="func.common_firmware_builder.html">common_firmware_builder</a></td>
-            
-            <td class="docblock-summary"><p>Builds a firmware file using tools from the host session in a bubblewrap
-jail. Several things happen during&nbsp;build:</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_fnmatch" class="symbol" href="func.common_fnmatch.html">common_fnmatch</a></td>
-            
-            <td class="docblock-summary"><p>Matches a string against a glob&nbsp;pattern.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_contents_bytes" class="symbol" href="func.common_get_contents_bytes.html">common_get_contents_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Reads a blob of data from a&nbsp;file.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_contents_fd" class="symbol" href="func.common_get_contents_fd.html">common_get_contents_fd</a></td>
-            
-            <td class="docblock-summary"><p>Reads a blob from a specific file&nbsp;descriptor.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_contents_stream" class="symbol" href="func.common_get_contents_stream.html">common_get_contents_stream</a></td>
-            
-            <td class="docblock-summary"><p>Reads a blob from a specific input&nbsp;stream.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_cpu_vendor" class="symbol" href="func.common_get_cpu_vendor.html">common_get_cpu_vendor</a></td>
-            
-            <td class="docblock-summary"><p>Uses <span class="caps">CPUID</span> to discover the <span class="caps">CPU</span>&nbsp;vendor.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_esp_default" class="symbol" href="func.common_get_esp_default.html">common_get_esp_default</a></td>
-            
-            <td class="docblock-summary"><p>Gets the platform default <span class="caps">ESP</span>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_esp_for_path" class="symbol" href="func.common_get_esp_for_path.html">common_get_esp_for_path</a></td>
-            
-            <td class="docblock-summary"><p>Gets the platform <span class="caps">ESP</span> using a <span class="caps">UNIX</span> or UDisks&nbsp;path.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_files_recursive" class="symbol" href="func.common_get_files_recursive.html">common_get_files_recursive</a></td>
-            
-            <td class="docblock-summary"><p>Returns every file found under <code>directory</code>, and any subdirectory.
-If any path under <code>directory</code> cannot be accessed due to permissions an error
-will be&nbsp;returned.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_firmware_search_path" class="symbol" href="func.common_get_firmware_search_path.html">common_get_firmware_search_path</a></td>
-            
-            <td class="docblock-summary"><p>Reads the FU_PATH_KIND_FIRMWARE_SEARCH and
-returns its&nbsp;contents.</p></td>
             
           </tr>
           
@@ -1293,45 +1182,9 @@ returns its&nbsp;contents.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_get_path" class="symbol" href="func.common_get_path.html">common_get_path</a></td>
-            
-            <td class="docblock-summary"><p>Gets a fwupd-specific system path. These can be overridden with various
-environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_volume_by_device" class="symbol" href="func.common_get_volume_by_device.html">common_get_volume_by_device</a></td>
-            
-            <td class="docblock-summary"><p>Finds the first volume from the specified&nbsp;device.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_volume_by_devnum" class="symbol" href="func.common_get_volume_by_devnum.html">common_get_volume_by_devnum</a></td>
-            
-            <td class="docblock-summary"><p>Finds the first volume from the specified&nbsp;device.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_get_volumes_by_kind" class="symbol" href="func.common_get_volumes_by_kind.html">common_get_volumes_by_kind</a></td>
-            
-            <td class="docblock-summary"><p>Finds all volumes of a specific partition&nbsp;type.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="common_guid_is_plausible" class="symbol" href="func.common_guid_is_plausible.html">common_guid_is_plausible</a></td>
             
             <td class="docblock-summary"><p>Checks whether a chunk of memory looks like it could be a <span class="caps">GUID</span>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_instance_id_strsafe" class="symbol" href="func.common_instance_id_strsafe.html">common_instance_id_strsafe</a></td>
-            
-            <td class="docblock-summary"><p>Sanitize the string used as part of the&nbsp;InstanceID.</p></td>
             
           </tr>
           
@@ -1343,430 +1196,79 @@ environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_kernel_locked_down" class="symbol" href="func.common_kernel_locked_down.html">common_kernel_locked_down</a></td>
+            <td><a title="cpu_get_vendor" class="symbol" href="func.cpu_get_vendor.html">cpu_get_vendor</a></td>
             
-            <td class="docblock-summary"><p>Determines if kernel lockdown in&nbsp;effect.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_mkdir" class="symbol" href="func.common_mkdir.html">common_mkdir</a></td>
-            
-            <td class="docblock-summary"><p>Creates any required directories, including any parent&nbsp;directories.</p></td>
+            <td class="docblock-summary"><p>Uses <span class="caps">CPUID</span> to discover the <span class="caps">CPU</span>&nbsp;vendor.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_mkdir_parent" class="symbol" href="func.common_mkdir_parent.html">common_mkdir_parent</a></td>
+            <td><a title="cpuid" class="symbol" href="func.cpuid.html">cpuid</a></td>
             
-            <td class="docblock-summary"><p>Creates any required directories, including any parent&nbsp;directories.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_read_uint16" class="symbol" href="func.common_read_uint16.html">common_read_uint16</a></td>
-            
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            <td class="docblock-summary"><p>Calls <span class="caps">CPUID</span> and returns the registers for the given&nbsp;leaf.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_read_uint16_safe" class="symbol" href="func.common_read_uint16_safe.html">common_read_uint16_safe</a></td>
+            <td><a title="crc16" class="symbol" href="func.crc16.html">crc16</a></td>
             
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_read_uint24" class="symbol" href="func.common_read_uint24.html">common_read_uint24</a></td>
-            
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            <td class="docblock-summary"><p>Returns the <span class="caps">CRC</span>-16-<span class="caps">IBM</span> cyclic redundancy value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_read_uint32" class="symbol" href="func.common_read_uint32.html">common_read_uint32</a></td>
+            <td><a title="crc16_full" class="symbol" href="func.crc16_full.html">crc16_full</a></td>
             
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_read_uint32_safe" class="symbol" href="func.common_read_uint32_safe.html">common_read_uint32_safe</a></td>
-            
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_read_uint64" class="symbol" href="func.common_read_uint64.html">common_read_uint64</a></td>
+            <td><a title="crc32" class="symbol" href="func.crc32.html">crc32</a></td>
             
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_read_uint64_safe" class="symbol" href="func.common_read_uint64_safe.html">common_read_uint64_safe</a></td>
-            
-            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_read_uint8_safe" class="symbol" href="func.common_read_uint8_safe.html">common_read_uint8_safe</a></td>
+            <td><a title="crc32_full" class="symbol" href="func.crc32_full.html">crc32_full</a></td>
             
-            <td class="docblock-summary"><p>Read a value from a buffer in a safe&nbsp;way.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_realpath" class="symbol" href="func.common_realpath.html">common_realpath</a></td>
-            
-            <td class="docblock-summary"><p>Finds the canonicalized absolute filename for a&nbsp;path.</p></td>
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_reset_firmware_search_path" class="symbol" href="func.common_reset_firmware_search_path.html">common_reset_firmware_search_path</a></td>
+            <td><a title="crc8" class="symbol" href="func.crc8.html">crc8</a></td>
             
-            <td class="docblock-summary"><p>Resets the FU_PATH_KIND_FIRMWARE_SEARCH to an empty&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_reverse_uint8" class="symbol" href="func.common_reverse_uint8.html">common_reverse_uint8</a></td>
-            
-            <td class="docblock-summary"><p>Calculates the reverse bit order for a single&nbsp;byte.</p></td>
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_rmtree" class="symbol" href="func.common_rmtree.html">common_rmtree</a></td>
+            <td><a title="crc8_full" class="symbol" href="func.crc8_full.html">crc8_full</a></td>
             
-            <td class="docblock-summary"><p>Recursively removes a&nbsp;directory.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_set_contents_bytes" class="symbol" href="func.common_set_contents_bytes.html">common_set_contents_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Writes a blob of data to a filename, creating the parent directories as&nbsp;required.</p></td>
+            <td class="docblock-summary"><p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_set_firmware_search_path" class="symbol" href="func.common_set_firmware_search_path.html">common_set_firmware_search_path</a></td>
+            <td><a title="dump_bytes" class="symbol" href="func.dump_bytes.html">dump_bytes</a></td>
             
-            <td class="docblock-summary"><p>Writes path to the&nbsp;FU_PATH_KIND_FIRMWARE_SEARCH.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_spawn_sync" class="symbol" href="func.common_spawn_sync.html">common_spawn_sync</a></td>
-            
-            <td class="docblock-summary"><p>Runs a subprocess and waits for it to exit. Any output on standard out or
-standard error will be forwarded to <code>handler_cb</code> as whole&nbsp;lines.</p></td>
+            <td class="docblock-summary"><p>Dumps a byte buffer to the&nbsp;screen.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_string_append_kb" class="symbol" href="func.common_string_append_kb.html">common_string_append_kb</a></td>
+            <td><a title="dump_full" class="symbol" href="func.dump_full.html">dump_full</a></td>
             
-            <td class="docblock-summary"><p>Appends a key and boolean value to a&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_string_append_ku" class="symbol" href="func.common_string_append_ku.html">common_string_append_ku</a></td>
-            
-            <td class="docblock-summary"><p>Appends a key and unsigned integer to a&nbsp;string.</p></td>
+            <td class="docblock-summary"><p>Dumps a raw buffer to the&nbsp;screen.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="common_string_append_kv" class="symbol" href="func.common_string_append_kv.html">common_string_append_kv</a></td>
+            <td><a title="dump_raw" class="symbol" href="func.dump_raw.html">dump_raw</a></td>
             
-            <td class="docblock-summary"><p>Appends a key and string value to a&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_string_append_kx" class="symbol" href="func.common_string_append_kx.html">common_string_append_kx</a></td>
-            
-            <td class="docblock-summary"><p>Appends a key and hex integer to a&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_string_replace" class="symbol" href="func.common_string_replace.html">common_string_replace</a></td>
-            
-            <td class="docblock-summary"><p>Performs multiple search and replace operations on the given&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strjoin_array" class="symbol" href="func.common_strjoin_array.html">common_strjoin_array</a></td>
-            
-            <td class="docblock-summary"><p>Joins an array of strings together to form one long string, with the optional
-separator inserted between each of&nbsp;them.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strnsplit" class="symbol" href="func.common_strnsplit.html">common_strnsplit</a></td>
-            
-            <td class="docblock-summary"><p>Splits a string into a maximum of <code>max_tokens</code> pieces, using the given
-delimiter. If <code>max_tokens</code> is reached, the remainder of string is appended
-to the last&nbsp;token.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strnsplit_full" class="symbol" href="func.common_strnsplit_full.html">common_strnsplit_full</a></td>
-            
-            <td class="docblock-summary"><p>Splits the string, calling the given function for each
-of the tokens found. If any <code>callback</code> returns <code>FALSE</code> scanning is&nbsp;aborted.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strsafe" class="symbol" href="func.common_strsafe.html">common_strsafe</a></td>
-            
-            <td class="docblock-summary"><p>Converts a string into something that can be safely&nbsp;printed.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strstrip" class="symbol" href="func.common_strstrip.html">common_strstrip</a></td>
-            
-            <td class="docblock-summary"><p>Removes leading and trailing whitespace from a constant&nbsp;string.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strtoull" class="symbol" href="func.common_strtoull.html">common_strtoull</a></td>
-            
-            <td class="docblock-summary"><p>Converts a string value to an integer. Values are assumed base 10, unless
-prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strtoull_full" class="symbol" href="func.common_strtoull_full.html">common_strtoull_full</a></td>
-            
-            <td class="docblock-summary"><p>Converts a string value to an integer. Values are assumed base 10, unless
-prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_strwidth" class="symbol" href="func.common_strwidth.html">common_strwidth</a></td>
-            
-            <td class="docblock-summary"><p>Returns the width of the string in displayed characters on the&nbsp;console.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum16" class="symbol" href="func.common_sum16.html">common_sum16</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum16_bytes" class="symbol" href="func.common_sum16_bytes.html">common_sum16_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum16w" class="symbol" href="func.common_sum16w.html">common_sum16w</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one word at a time.
-The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;2.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum16w_bytes" class="symbol" href="func.common_sum16w_bytes.html">common_sum16w_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one word at a time.
-The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;2.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum32" class="symbol" href="func.common_sum32.html">common_sum32</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum32_bytes" class="symbol" href="func.common_sum32_bytes.html">common_sum32_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum32w" class="symbol" href="func.common_sum32w.html">common_sum32w</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one dword at a time.
-The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;4.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum32w_bytes" class="symbol" href="func.common_sum32w_bytes.html">common_sum32w_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one dword at a time.
-The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;4.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum8" class="symbol" href="func.common_sum8.html">common_sum8</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_sum8_bytes" class="symbol" href="func.common_sum8_bytes.html">common_sum8_bytes</a></td>
-            
-            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_uri_get_scheme" class="symbol" href="func.common_uri_get_scheme.html">common_uri_get_scheme</a></td>
-            
-            <td class="docblock-summary"><p>Returns the <span class="caps">USI</span> scheme for the given <span class="caps">URI</span>.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_vercmp_full" class="symbol" href="func.common_vercmp_full.html">common_vercmp_full</a></td>
-            
-            <td class="docblock-summary"><p>Compares version numbers for sorting taking into account the version format
-if&nbsp;required.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_ensure_semver" class="symbol" href="func.common_version_ensure_semver.html">common_version_ensure_semver</a></td>
-            
-            <td class="docblock-summary"><p>Builds a semver from the possibly crazy version&nbsp;number.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_ensure_semver_full" class="symbol" href="func.common_version_ensure_semver_full.html">common_version_ensure_semver_full</a></td>
-            
-            <td class="docblock-summary"><p>Builds a semver from the possibly crazy version number. Depending on the <code>semver</code> value
-the string will be split and a string in the correct format will be&nbsp;returned.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_from_uint16" class="symbol" href="func.common_version_from_uint16.html">common_version_from_uint16</a></td>
-            
-            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 16 bit&nbsp;number.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_from_uint32" class="symbol" href="func.common_version_from_uint32.html">common_version_from_uint32</a></td>
-            
-            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 32 bit&nbsp;number.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_from_uint64" class="symbol" href="func.common_version_from_uint64.html">common_version_from_uint64</a></td>
-            
-            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 64 bit&nbsp;number.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_guess_format" class="symbol" href="func.common_version_guess_format.html">common_version_guess_format</a></td>
-            
-            <td class="docblock-summary"><p>Guesses the version format from the version number. This is only a heuristic
-and plugins and components should explicitly set the version format whenever&nbsp;possible.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_parse_from_format" class="symbol" href="func.common_version_parse_from_format.html">common_version_parse_from_format</a></td>
-            
-            <td class="docblock-summary"><p>Returns a dotted decimal version string from a version string using <code>fmt</code>.
-The supported formats&nbsp;are:</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_version_verify_format" class="symbol" href="func.common_version_verify_format.html">common_version_verify_format</a></td>
-            
-            <td class="docblock-summary"><p>Verifies if a version matches the input&nbsp;format.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint16" class="symbol" href="func.common_write_uint16.html">common_write_uint16</a></td>
-            
-            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint16_safe" class="symbol" href="func.common_write_uint16_safe.html">common_write_uint16_safe</a></td>
-            
-            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint24" class="symbol" href="func.common_write_uint24.html">common_write_uint24</a></td>
-            
-            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint32" class="symbol" href="func.common_write_uint32.html">common_write_uint32</a></td>
-            
-            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint32_safe" class="symbol" href="func.common_write_uint32_safe.html">common_write_uint32_safe</a></td>
-            
-            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint64" class="symbol" href="func.common_write_uint64.html">common_write_uint64</a></td>
-            
-            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint64_safe" class="symbol" href="func.common_write_uint64_safe.html">common_write_uint64_safe</a></td>
-            
-            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="common_write_uint8_safe" class="symbol" href="func.common_write_uint8_safe.html">common_write_uint8_safe</a></td>
-            
-            <td class="docblock-summary"><p>Write a value to a buffer in a safe&nbsp;way.</p></td>
+            <td class="docblock-summary"><p>Dumps a raw buffer to the&nbsp;screen.</p></td>
             
           </tr>
           
@@ -1829,13 +1331,6 @@ no names matching the <span class="caps">GUID</span>.</p></td>
           
           <tr class="section-item">
             <td><a title="efivar_secure_boot_enabled" class="symbol" href="func.efivar_secure_boot_enabled.html">efivar_secure_boot_enabled</a></td>
-            
-            <td class="docblock-summary"><p>Determines if secure boot was&nbsp;enabled.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="efivar_secure_boot_enabled_full" class="symbol" href="func.efivar_secure_boot_enabled_full.html">efivar_secure_boot_enabled_full</a></td>
             
             <td class="docblock-summary"><p>Determines if secure boot was&nbsp;enabled.</p></td>
             
@@ -1906,9 +1401,52 @@ kernel as some (hopefully small) variables are hidden from&nbsp;userspace.</p></
           </tr>
           
           <tr class="section-item">
+            <td><a title="kernel_check_version" class="symbol" href="func.kernel_check_version.html">kernel_check_version</a></td>
+            
+            <td class="docblock-summary"><p>Determines if the system is running at least a certain required kernel&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_get_firmware_search_path" class="symbol" href="func.kernel_get_firmware_search_path.html">kernel_get_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Reads the FU_PATH_KIND_FIRMWARE_SEARCH and
+returns its&nbsp;contents.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_locked_down" class="symbol" href="func.kernel_locked_down.html">kernel_locked_down</a></td>
+            
+            <td class="docblock-summary"><p>Determines if kernel lockdown in&nbsp;effect.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_reset_firmware_search_path" class="symbol" href="func.kernel_reset_firmware_search_path.html">kernel_reset_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Resets the FU_PATH_KIND_FIRMWARE_SEARCH to an empty&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_set_firmware_search_path" class="symbol" href="func.kernel_set_firmware_search_path.html">kernel_set_firmware_search_path</a></td>
+            
+            <td class="docblock-summary"><p>Writes path to the&nbsp;FU_PATH_KIND_FIRMWARE_SEARCH.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="lid_state_to_string" class="symbol" href="func.lid_state_to_string.html">lid_state_to_string</a></td>
             
             <td class="docblock-summary"><p>Converts an enumerated type to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memcmp_safe" class="symbol" href="func.memcmp_safe.html">memcmp_safe</a></td>
+            
+            <td class="docblock-summary"><p>Compares the buffers for&nbsp;equality.</p></td>
             
           </tr>
           
@@ -1935,9 +1473,411 @@ of both the destination and the source allows us to check for buffer&nbsp;overfl
           </tr>
           
           <tr class="section-item">
+            <td><a title="memread_uint16" class="symbol" href="func.memread_uint16.html">memread_uint16</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint16_safe" class="symbol" href="func.memread_uint16_safe.html">memread_uint16_safe</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint24" class="symbol" href="func.memread_uint24.html">memread_uint24</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint32" class="symbol" href="func.memread_uint32.html">memread_uint32</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint32_safe" class="symbol" href="func.memread_uint32_safe.html">memread_uint32_safe</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint64" class="symbol" href="func.memread_uint64.html">memread_uint64</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint64_safe" class="symbol" href="func.memread_uint64_safe.html">memread_uint64_safe</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memread_uint8_safe" class="symbol" href="func.memread_uint8_safe.html">memread_uint8_safe</a></td>
+            
+            <td class="docblock-summary"><p>Read a value from a buffer in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint16" class="symbol" href="func.memwrite_uint16.html">memwrite_uint16</a></td>
+            
+            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint16_safe" class="symbol" href="func.memwrite_uint16_safe.html">memwrite_uint16_safe</a></td>
+            
+            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint24" class="symbol" href="func.memwrite_uint24.html">memwrite_uint24</a></td>
+            
+            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint32" class="symbol" href="func.memwrite_uint32.html">memwrite_uint32</a></td>
+            
+            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint32_safe" class="symbol" href="func.memwrite_uint32_safe.html">memwrite_uint32_safe</a></td>
+            
+            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint64" class="symbol" href="func.memwrite_uint64.html">memwrite_uint64</a></td>
+            
+            <td class="docblock-summary"><p>Writes a value to a buffer using a specified&nbsp;endian.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint64_safe" class="symbol" href="func.memwrite_uint64_safe.html">memwrite_uint64_safe</a></td>
+            
+            <td class="docblock-summary"><p>Write a value to a buffer using a specified endian in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="memwrite_uint8_safe" class="symbol" href="func.memwrite_uint8_safe.html">memwrite_uint8_safe</a></td>
+            
+            <td class="docblock-summary"><p>Write a value to a buffer in a safe&nbsp;way.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_find_program" class="symbol" href="func.path_find_program.html">path_find_program</a></td>
+            
+            <td class="docblock-summary"><p>Looks for a program in the <span class="caps">PATH</span>&nbsp;variable.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_fnmatch" class="symbol" href="func.path_fnmatch.html">path_fnmatch</a></td>
+            
+            <td class="docblock-summary"><p>Matches a string against a glob&nbsp;pattern.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_from_kind" class="symbol" href="func.path_from_kind.html">path_from_kind</a></td>
+            
+            <td class="docblock-summary"><p>Gets a fwupd-specific system path. These can be overridden with various
+environment variables, for instance <code>FWUPD_DATADIR</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_get_files" class="symbol" href="func.path_get_files.html">path_get_files</a></td>
+            
+            <td class="docblock-summary"><p>Returns every file found under <code>directory</code>, and any subdirectory.
+If any path under <code>directory</code> cannot be accessed due to permissions an error
+will be&nbsp;returned.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_glob" class="symbol" href="func.path_glob.html">path_glob</a></td>
+            
+            <td class="docblock-summary"><p>Returns all the filenames that match a specific glob pattern.
+Any results are sorted. No matching files will set <code>error</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_mkdir" class="symbol" href="func.path_mkdir.html">path_mkdir</a></td>
+            
+            <td class="docblock-summary"><p>Creates any required directories, including any parent&nbsp;directories.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_mkdir_parent" class="symbol" href="func.path_mkdir_parent.html">path_mkdir_parent</a></td>
+            
+            <td class="docblock-summary"><p>Creates any required directories, including any parent&nbsp;directories.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_rmtree" class="symbol" href="func.path_rmtree.html">path_rmtree</a></td>
+            
+            <td class="docblock-summary"><p>Recursively removes a&nbsp;directory.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="string_append" class="symbol" href="func.string_append.html">string_append</a></td>
+            
+            <td class="docblock-summary"><p>Appends a key and string value to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="string_append_kb" class="symbol" href="func.string_append_kb.html">string_append_kb</a></td>
+            
+            <td class="docblock-summary"><p>Appends a key and boolean value to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="string_append_ku" class="symbol" href="func.string_append_ku.html">string_append_ku</a></td>
+            
+            <td class="docblock-summary"><p>Appends a key and unsigned integer to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="string_append_kx" class="symbol" href="func.string_append_kx.html">string_append_kx</a></td>
+            
+            <td class="docblock-summary"><p>Appends a key and hex integer to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="string_replace" class="symbol" href="func.string_replace.html">string_replace</a></td>
+            
+            <td class="docblock-summary"><p>Performs multiple search and replace operations on the given&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strjoin" class="symbol" href="func.strjoin.html">strjoin</a></td>
+            
+            <td class="docblock-summary"><p>Joins an array of strings together to form one long string, with the optional
+separator inserted between each of&nbsp;them.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strsafe" class="symbol" href="func.strsafe.html">strsafe</a></td>
+            
+            <td class="docblock-summary"><p>Converts a string into something that can be safely&nbsp;printed.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strsplit" class="symbol" href="func.strsplit.html">strsplit</a></td>
+            
+            <td class="docblock-summary"><p>Splits a string into a maximum of <code>max_tokens</code> pieces, using the given
+delimiter. If <code>max_tokens</code> is reached, the remainder of string is appended
+to the last&nbsp;token.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strsplit_full" class="symbol" href="func.strsplit_full.html">strsplit_full</a></td>
+            
+            <td class="docblock-summary"><p>Splits the string, calling the given function for each
+of the tokens found. If any <code>callback</code> returns <code>FALSE</code> scanning is&nbsp;aborted.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strstrip" class="symbol" href="func.strstrip.html">strstrip</a></td>
+            
+            <td class="docblock-summary"><p>Removes leading and trailing whitespace from a constant&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strtobool" class="symbol" href="func.strtobool.html">strtobool</a></td>
+            
+            <td class="docblock-summary"><p>Converts a string value to a boolean. Only <code>true</code> and <code>false</code> are accepted&nbsp;values.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strtoull" class="symbol" href="func.strtoull.html">strtoull</a></td>
+            
+            <td class="docblock-summary"><p>Converts a string value to an integer. Values are assumed base 10, unless
+prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strwidth" class="symbol" href="func.strwidth.html">strwidth</a></td>
+            
+            <td class="docblock-summary"><p>Returns the width of the string in displayed characters on the&nbsp;console.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum16" class="symbol" href="func.sum16.html">sum16</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum16_bytes" class="symbol" href="func.sum16_bytes.html">sum16_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum16w" class="symbol" href="func.sum16w.html">sum16w</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one word at a time.
+The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;2.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum16w_bytes" class="symbol" href="func.sum16w_bytes.html">sum16w_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one word at a time.
+The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;2.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum32" class="symbol" href="func.sum32.html">sum32</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum32_bytes" class="symbol" href="func.sum32_bytes.html">sum32_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one byte at a&nbsp;time.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum32w" class="symbol" href="func.sum32w.html">sum32w</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one dword at a time.
+The caller must ensure that <code>bufsz</code> is a multiple of&nbsp;4.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum32w_bytes" class="symbol" href="func.sum32w_bytes.html">sum32w_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>, adding them one dword at a time.
+The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;4.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum8" class="symbol" href="func.sum8.html">sum8</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>buf</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="sum8_bytes" class="symbol" href="func.sum8_bytes.html">sum8_bytes</a></td>
+            
+            <td class="docblock-summary"><p>Returns the arithmetic sum of all bytes in <code>blob</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_compare" class="symbol" href="func.version_compare.html">version_compare</a></td>
+            
+            <td class="docblock-summary"><p>Compares version numbers for sorting taking into account the version format
+if&nbsp;required.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_ensure_semver" class="symbol" href="func.version_ensure_semver.html">version_ensure_semver</a></td>
+            
+            <td class="docblock-summary"><p>Builds a semver from the possibly crazy version number. Depending on the <code>semver</code> value
+the string will be split and a string in the correct format will be&nbsp;returned.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_from_uint16" class="symbol" href="func.version_from_uint16.html">version_from_uint16</a></td>
+            
+            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 16 bit&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_from_uint32" class="symbol" href="func.version_from_uint32.html">version_from_uint32</a></td>
+            
+            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 32 bit&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_from_uint64" class="symbol" href="func.version_from_uint64.html">version_from_uint64</a></td>
+            
+            <td class="docblock-summary"><p>Returns a dotted decimal version string from a 64 bit&nbsp;number.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_guess_format" class="symbol" href="func.version_guess_format.html">version_guess_format</a></td>
+            
+            <td class="docblock-summary"><p>Guesses the version format from the version number. This is only a heuristic
+and plugins and components should explicitly set the version format whenever&nbsp;possible.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_parse_from_format" class="symbol" href="func.version_parse_from_format.html">version_parse_from_format</a></td>
+            
+            <td class="docblock-summary"><p>Returns a dotted decimal version string from a version string using <code>fmt</code>.
+The supported formats&nbsp;are:</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="version_string" class="symbol" href="func.version_string.html">version_string</a></td>
             
             <td class="docblock-summary"><p>Gets the libfwupdplugin installed runtime&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="version_verify_format" class="symbol" href="func.version_verify_format.html">version_verify_format</a></td>
+            
+            <td class="docblock-summary"><p>Verifies if a version matches the input&nbsp;format.</p></td>
             
           </tr>
           
@@ -3470,6 +3410,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="FIRMWARE_FLAG_HAS_STORED_SIZE" class="symbol" href="const.FIRMWARE_FLAG_HAS_STORED_SIZE.html">FIRMWARE_FLAG_HAS_STORED_SIZE</a></td>
+            
+            <td class="docblock-summary"><p>Encodes the image size in the&nbsp;firmware.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="FIRMWARE_FLAG_HAS_VID_PID" class="symbol" href="const.FIRMWARE_FLAG_HAS_VID_PID.html">FIRMWARE_FLAG_HAS_VID_PID</a></td>
             
             <td class="docblock-summary"><p>Has a vendor or product <span class="caps">ID</span> in the&nbsp;firmware.</p></td>
@@ -3501,6 +3448,91 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="FIRMWARE_ID_SIGNATURE" class="symbol" href="const.FIRMWARE_ID_SIGNATURE.html">FIRMWARE_ID_SIGNATURE</a></td>
             
             <td class="docblock-summary"><p>The usual firmware <span class="caps">ID</span> string for the&nbsp;signature.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_ALGO" class="symbol" href="const.FIT_FIRMWARE_ATTR_ALGO.html">FIT_FIRMWARE_ATTR_ALGO</a></td>
+            
+            <td class="docblock-summary"><p>The checksum algorithm for the <span class="caps">FIT</span> image, typically a string, e.g. <code>crc32</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_COMPATIBLE" class="symbol" href="const.FIT_FIRMWARE_ATTR_COMPATIBLE.html">FIT_FIRMWARE_ATTR_COMPATIBLE</a></td>
+            
+            <td class="docblock-summary"><p>The compatible metadata for the <span class="caps">FIT</span> image, typically a string list, e.g.
+<code>pine64,rockpro64-v2.1:pine64,rockpro64</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_DATA" class="symbol" href="const.FIT_FIRMWARE_ATTR_DATA.html">FIT_FIRMWARE_ATTR_DATA</a></td>
+            
+            <td class="docblock-summary"><p>The raw data for the <span class="caps">FIT</span> image, typically a&nbsp;blob.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_DATA_OFFSET" class="symbol" href="const.FIT_FIRMWARE_ATTR_DATA_OFFSET.html">FIT_FIRMWARE_ATTR_DATA_OFFSET</a></td>
+            
+            <td class="docblock-summary"><p>The external data offset after the <span class="caps">FIT</span> image, typically a&nbsp;uint32.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_DATA_SIZE" class="symbol" href="const.FIT_FIRMWARE_ATTR_DATA_SIZE.html">FIT_FIRMWARE_ATTR_DATA_SIZE</a></td>
+            
+            <td class="docblock-summary"><p>The data size of the external image, typically a&nbsp;uint32.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_SKIP_OFFSET" class="symbol" href="const.FIT_FIRMWARE_ATTR_SKIP_OFFSET.html">FIT_FIRMWARE_ATTR_SKIP_OFFSET</a></td>
+            
+            <td class="docblock-summary"><p>The offset to skip when writing the <span class="caps">FIT</span> image, typically a&nbsp;uint32.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_STORE_OFFSET" class="symbol" href="const.FIT_FIRMWARE_ATTR_STORE_OFFSET.html">FIT_FIRMWARE_ATTR_STORE_OFFSET</a></td>
+            
+            <td class="docblock-summary"><p>The store offset for the <span class="caps">FIT</span> image, typically a&nbsp;uint32.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_TIMESTAMP" class="symbol" href="const.FIT_FIRMWARE_ATTR_TIMESTAMP.html">FIT_FIRMWARE_ATTR_TIMESTAMP</a></td>
+            
+            <td class="docblock-summary"><p>The creation timestamp of <span class="caps">FIT</span> image, typically a&nbsp;uint32.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_VALUE" class="symbol" href="const.FIT_FIRMWARE_ATTR_VALUE.html">FIT_FIRMWARE_ATTR_VALUE</a></td>
+            
+            <td class="docblock-summary"><p>The value of the checksum, which is typically a&nbsp;blob.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ATTR_VERSION" class="symbol" href="const.FIT_FIRMWARE_ATTR_VERSION.html">FIT_FIRMWARE_ATTR_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>The version of the <span class="caps">FIT</span> image, typically a string, e.g. <code>1.2.3</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ID_CONFIGURATIONS" class="symbol" href="const.FIT_FIRMWARE_ID_CONFIGURATIONS.html">FIT_FIRMWARE_ID_CONFIGURATIONS</a></td>
+            
+            <td class="docblock-summary"><p>The usual firmware <span class="caps">ID</span> string for the&nbsp;configurations.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIT_FIRMWARE_ID_IMAGES" class="symbol" href="const.FIT_FIRMWARE_ID_IMAGES.html">FIT_FIRMWARE_ID_IMAGES</a></td>
+            
+            <td class="docblock-summary"><p>The usual firmware <span class="caps">ID</span> string for the&nbsp;images.</p></td>
             
           </tr>
           
@@ -3603,6 +3635,62 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="IFWI_CPD_FIRMWARE_IDX_MANIFEST" class="symbol" href="const.IFWI_CPD_FIRMWARE_IDX_MANIFEST.html">IFWI_CPD_FIRMWARE_IDX_MANIFEST</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> manifest&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_CPD_FIRMWARE_IDX_METADATA" class="symbol" href="const.IFWI_CPD_FIRMWARE_IDX_METADATA.html">IFWI_CPD_FIRMWARE_IDX_METADATA</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> metadata&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_CPD_FIRMWARE_IDX_MODULEDATA_IDX" class="symbol" href="const.IFWI_CPD_FIRMWARE_IDX_MODULEDATA_IDX.html">IFWI_CPD_FIRMWARE_IDX_MODULEDATA_IDX</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> module data&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_FPT_FIRMWARE_IDX_CKSM" class="symbol" href="const.IFWI_FPT_FIRMWARE_IDX_CKSM.html">IFWI_FPT_FIRMWARE_IDX_CKSM</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> checksum&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_FPT_FIRMWARE_IDX_FWIM" class="symbol" href="const.IFWI_FPT_FIRMWARE_IDX_FWIM.html">IFWI_FPT_FIRMWARE_IDX_FWIM</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> firmware&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_FPT_FIRMWARE_IDX_IMGI" class="symbol" href="const.IFWI_FPT_FIRMWARE_IDX_IMGI.html">IFWI_FPT_FIRMWARE_IDX_IMGI</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> image&nbsp;instance.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_FPT_FIRMWARE_IDX_INFO" class="symbol" href="const.IFWI_FPT_FIRMWARE_IDX_INFO.html">IFWI_FPT_FIRMWARE_IDX_INFO</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> info&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IFWI_FPT_FIRMWARE_IDX_SDTA" class="symbol" href="const.IFWI_FPT_FIRMWARE_IDX_SDTA.html">IFWI_FPT_FIRMWARE_IDX_SDTA</a></td>
+            
+            <td class="docblock-summary"><p>The index for the <span class="caps">IFWI</span> firmware data&nbsp;image.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="IHEX_FIRMWARE_RECORD_TYPE_DATA" class="symbol" href="const.IHEX_FIRMWARE_RECORD_TYPE_DATA.html">IHEX_FIRMWARE_RECORD_TYPE_DATA</a></td>
             
             <td class="docblock-summary"></td>
@@ -3673,6 +3761,34 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="OPROM_FIRMWARE_COMPRESSION_TYPE_NONE" class="symbol" href="const.OPROM_FIRMWARE_COMPRESSION_TYPE_NONE.html">OPROM_FIRMWARE_COMPRESSION_TYPE_NONE</a></td>
+            
+            <td class="docblock-summary"><p>No&nbsp;compression.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OPROM_FIRMWARE_MACHINE_TYPE_X64" class="symbol" href="const.OPROM_FIRMWARE_MACHINE_TYPE_X64.html">OPROM_FIRMWARE_MACHINE_TYPE_X64</a></td>
+            
+            <td class="docblock-summary"><p><span class="caps">AMD64</span> machine&nbsp;type.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV" class="symbol" href="const.OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV.html">OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV</a></td>
+            
+            <td class="docblock-summary"><p><span class="caps">EFI</span>&nbsp;boot.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PROGRESS_FLAG_CHILD_FINISHED" class="symbol" href="const.PROGRESS_FLAG_CHILD_FINISHED.html">PROGRESS_FLAG_CHILD_FINISHED</a></td>
+            
+            <td class="docblock-summary"><p>The child completed all the expected&nbsp;steps.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PROGRESS_FLAG_GUESSED" class="symbol" href="const.PROGRESS_FLAG_GUESSED.html">PROGRESS_FLAG_GUESSED</a></td>
             
             <td class="docblock-summary"><p>The steps have not been measured on real hardware and have been&nbsp;guessed.</p></td>
@@ -3683,6 +3799,13 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="PROGRESS_FLAG_NO_PROFILE" class="symbol" href="const.PROGRESS_FLAG_NO_PROFILE.html">PROGRESS_FLAG_NO_PROFILE</a></td>
             
             <td class="docblock-summary"><p>The steps cannot be accurate enough for a profile&nbsp;result.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PROGRESS_FLAG_NO_TRACEBACK" class="symbol" href="const.PROGRESS_FLAG_NO_TRACEBACK.html">PROGRESS_FLAG_NO_TRACEBACK</a></td>
+            
+            <td class="docblock-summary"><p>The steps should not be shown in the&nbsp;traceback.</p></td>
             
           </tr>
           
@@ -3704,6 +3827,97 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
             <td><a title="QUIRKS_BRANCH" class="symbol" href="const.QUIRKS_BRANCH.html">QUIRKS_BRANCH</a></td>
             
             <td class="docblock-summary"><p>The quirk key for the firmware&nbsp;branch.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_BLOCK_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_BLOCK_SIZE.html">QUIRKS_CFI_DEVICE_BLOCK_SIZE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> block&nbsp;size.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE.html">QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> block erase&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE.html">QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> chip erase&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_PAGE_PROG" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_PAGE_PROG.html">QUIRKS_CFI_DEVICE_CMD_PAGE_PROG</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> page program&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_DATA" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_DATA.html">QUIRKS_CFI_DEVICE_CMD_READ_DATA</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> read data&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_ID" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_ID.html">QUIRKS_CFI_DEVICE_CMD_READ_ID</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span>&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ.html">QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span>&nbsp;size.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_STATUS" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_STATUS.html">QUIRKS_CFI_DEVICE_CMD_READ_STATUS</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> read status&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE.html">QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> sector erase&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_WRITE_EN" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_WRITE_EN.html">QUIRKS_CFI_DEVICE_CMD_WRITE_EN</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> write en&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS.html">QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> write status&nbsp;command.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_PAGE_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_PAGE_SIZE.html">QUIRKS_CFI_DEVICE_PAGE_SIZE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> page&nbsp;size.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_CFI_DEVICE_SECTOR_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_SECTOR_SIZE.html">QUIRKS_CFI_DEVICE_SECTOR_SIZE</a></td>
+            
+            <td class="docblock-summary"><p>The quirk key to set the <span class="caps">CFI</span> sector&nbsp;size.</p></td>
             
           </tr>
           

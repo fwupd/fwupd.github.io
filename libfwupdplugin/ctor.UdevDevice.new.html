@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -90,8 +93,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="method current" href="ctor.UdevDevice.new.html">new</a>
-  
-    <a class="method" href="ctor.UdevDevice.new_with_context.html">new_with_context</a>
   
   </div>
 </div>
@@ -113,13 +114,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-udev-device.h#L55">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.h#L53">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="n">FuUdevDevice</span><span class="o">*</span><span class="w"></span>
 <span class="n">fu_udev_device_new</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">FuContext</span><span class="o">*</span><span class="w"> </span><span class="n">ctx</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GObject</span><span class="o">*</span><span class="w"> </span><span class="n">udev_device</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -132,7 +134,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-udev-device.c#L2226">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-udev-device.c#L2232">[src]</a>
         
       </h4>
 
@@ -144,7 +146,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table>
           
           
-          <tr><td>Available since:</td><td>1.1.2</td></tr>
+          <tr><td>Available since:</td><td>1.8.2</td></tr>
+          
           
           
         </table>
@@ -162,6 +165,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
       <div class="docblock">
         <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>ctx</code></td>
+            <td><a href="class.Context.html"><code>FuContext</code></a></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>FuContext</code>.</p></td>
+          </tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
           
           <tr class="arg-name">
             <td><code>udev_device</code></td>

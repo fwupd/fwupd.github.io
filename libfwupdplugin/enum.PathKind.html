@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -118,7 +121,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-common.h#L51">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-path.h#L11">[src]</a>
         
       </h4>
 
@@ -151,129 +154,129 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         </tr>
       
         <tr>
-          <td><code title="Value: 0">FU_PATH_KIND_CACHEDIR_PKG</code></td>
+          <td><a id="cachedir_pkg" href="#cachedir_pkg"><code title="Value: 0">FU_PATH_KIND_CACHEDIR_PKG</code></a></td>
           <td><p>The cache directory (<span class="caps">IE</span>&nbsp;/var/cache/fwupd)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 1">FU_PATH_KIND_DATADIR_PKG</code></td>
+          <td><a id="datadir_pkg" href="#datadir_pkg"><code title="Value: 1">FU_PATH_KIND_DATADIR_PKG</code></a></td>
           <td><p>The non-volatile data store (<span class="caps">IE</span>&nbsp;/usr/share/fwupd)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 2">FU_PATH_KIND_EFIAPPDIR</code></td>
+          <td><a id="efiappdir" href="#efiappdir"><code title="Value: 2">FU_PATH_KIND_EFIAPPDIR</code></a></td>
           <td><p>The location to store <span class="caps">EFI</span> apps before install (<span class="caps">IE</span>&nbsp;/usr/libexec/fwupd/efi)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 3">FU_PATH_KIND_LOCALSTATEDIR</code></td>
+          <td><a id="localstatedir" href="#localstatedir"><code title="Value: 3">FU_PATH_KIND_LOCALSTATEDIR</code></a></td>
           <td><p>The local state directory (<span class="caps">IE</span>&nbsp;/var)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 4">FU_PATH_KIND_LOCALSTATEDIR_PKG</code></td>
+          <td><a id="localstatedir_pkg" href="#localstatedir_pkg"><code title="Value: 4">FU_PATH_KIND_LOCALSTATEDIR_PKG</code></a></td>
           <td><p>The local state directory for the package (<span class="caps">IE</span>&nbsp;/var/lib/fwupd)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 5">FU_PATH_KIND_PLUGINDIR_PKG</code></td>
+          <td><a id="plugindir_pkg" href="#plugindir_pkg"><code title="Value: 5">FU_PATH_KIND_PLUGINDIR_PKG</code></a></td>
           <td><p>The location to look for plugins for package (<span class="caps">IE</span>&nbsp;/usr/lib/[triplet]/fwupd-plugins-3)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 6">FU_PATH_KIND_SYSCONFDIR</code></td>
+          <td><a id="sysconfdir" href="#sysconfdir"><code title="Value: 6">FU_PATH_KIND_SYSCONFDIR</code></a></td>
           <td><p>The configuration location (<span class="caps">IE</span>&nbsp;/etc)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 7">FU_PATH_KIND_SYSCONFDIR_PKG</code></td>
+          <td><a id="sysconfdir_pkg" href="#sysconfdir_pkg"><code title="Value: 7">FU_PATH_KIND_SYSCONFDIR_PKG</code></a></td>
           <td><p>The package configuration location (<span class="caps">IE</span>&nbsp;/etc/fwupd)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 8">FU_PATH_KIND_SYSFSDIR_FW</code></td>
+          <td><a id="sysfsdir_fw" href="#sysfsdir_fw"><code title="Value: 8">FU_PATH_KIND_SYSFSDIR_FW</code></a></td>
           <td><p>The sysfs firmware location (<span class="caps">IE</span>&nbsp;/sys/firmware)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 9">FU_PATH_KIND_SYSFSDIR_DRIVERS</code></td>
+          <td><a id="sysfsdir_drivers" href="#sysfsdir_drivers"><code title="Value: 9">FU_PATH_KIND_SYSFSDIR_DRIVERS</code></a></td>
           <td><p>The platform sysfs directory (<span class="caps">IE</span>&nbsp;/sys/bus/platform/drivers)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 10">FU_PATH_KIND_SYSFSDIR_TPM</code></td>
+          <td><a id="sysfsdir_tpm" href="#sysfsdir_tpm"><code title="Value: 10">FU_PATH_KIND_SYSFSDIR_TPM</code></a></td>
           <td><p>The <span class="caps">TPM</span> sysfs directory (<span class="caps">IE</span>&nbsp;/sys/class/tpm)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 11">FU_PATH_KIND_PROCFS</code></td>
+          <td><a id="procfs" href="#procfs"><code title="Value: 11">FU_PATH_KIND_PROCFS</code></a></td>
           <td><p>The procfs location (<span class="caps">IE</span>&nbsp;/proc)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 12">FU_PATH_KIND_POLKIT_ACTIONS</code></td>
+          <td><a id="polkit_actions" href="#polkit_actions"><code title="Value: 12">FU_PATH_KIND_POLKIT_ACTIONS</code></a></td>
           <td><p>The directory for policy kit actions (<span class="caps">IE</span>&nbsp;/usr/share/polkit-1/actions/)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 13">FU_PATH_KIND_OFFLINE_TRIGGER</code></td>
+          <td><a id="offline_trigger" href="#offline_trigger"><code title="Value: 13">FU_PATH_KIND_OFFLINE_TRIGGER</code></a></td>
           <td><p>The file for the offline trigger (<span class="caps">IE</span>&nbsp;/system-update)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 14">FU_PATH_KIND_SYSFSDIR_SECURITY</code></td>
+          <td><a id="sysfsdir_security" href="#sysfsdir_security"><code title="Value: 14">FU_PATH_KIND_SYSFSDIR_SECURITY</code></a></td>
           <td><p>The sysfs security location (<span class="caps">IE</span>&nbsp;/sys/kernel/security)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 15">FU_PATH_KIND_ACPI_TABLES</code></td>
+          <td><a id="acpi_tables" href="#acpi_tables"><code title="Value: 15">FU_PATH_KIND_ACPI_TABLES</code></a></td>
           <td><p>The location of the <span class="caps">ACPI</span>&nbsp;tables.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 16">FU_PATH_KIND_LOCKDIR</code></td>
+          <td><a id="lockdir" href="#lockdir"><code title="Value: 16">FU_PATH_KIND_LOCKDIR</code></a></td>
           <td><p>The lock directory (<span class="caps">IE</span> /run/lock)
 <code>FU_PATH_KIND_SYSFSDIR_FW_ATTRIB</code>    The firmware attributes directory (<span class="caps">IE</span>&nbsp;/sys/class/firmware-attributes)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 17">FU_PATH_KIND_SYSFSDIR_FW_ATTRIB</code></td>
+          <td><a id="sysfsdir_fw_attrib" href="#sysfsdir_fw_attrib"><code title="Value: 17">FU_PATH_KIND_SYSFSDIR_FW_ATTRIB</code></a></td>
           <td>No description available.</td>
         </tr>
       
         <tr>
-          <td><code title="Value: 18">FU_PATH_KIND_FIRMWARE_SEARCH</code></td>
+          <td><a id="firmware_search" href="#firmware_search"><code title="Value: 18">FU_PATH_KIND_FIRMWARE_SEARCH</code></a></td>
           <td><p>The path to configure the kernel policy for runtime loading
 other than /lib/firmware (<span class="caps">IE</span>&nbsp;/sys/module/firmware_class/parameters/path)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 19">FU_PATH_KIND_DATADIR_QUIRKS</code></td>
+          <td><a id="datadir_quirks" href="#datadir_quirks"><code title="Value: 19">FU_PATH_KIND_DATADIR_QUIRKS</code></a></td>
           <td><p>The quirks data store (<span class="caps">IE</span>&nbsp;/usr/share/fwupd/quirks.d)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 20">FU_PATH_KIND_LOCALSTATEDIR_QUIRKS</code></td>
+          <td><a id="localstatedir_quirks" href="#localstatedir_quirks"><code title="Value: 20">FU_PATH_KIND_LOCALSTATEDIR_QUIRKS</code></a></td>
           <td><p>The local state directory for quirks (<span class="caps">IE</span>&nbsp;/var/lib/fwupd/quirks.d)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 21">FU_PATH_KIND_LOCALSTATEDIR_METADATA</code></td>
+          <td><a id="localstatedir_metadata" href="#localstatedir_metadata"><code title="Value: 21">FU_PATH_KIND_LOCALSTATEDIR_METADATA</code></a></td>
           <td><p>The local state directory for metadata (<span class="caps">IE</span>&nbsp;/var/lib/fwupd/metadata)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 22">FU_PATH_KIND_LOCALSTATEDIR_REMOTES</code></td>
+          <td><a id="localstatedir_remotes" href="#localstatedir_remotes"><code title="Value: 22">FU_PATH_KIND_LOCALSTATEDIR_REMOTES</code></a></td>
           <td><p>The local state directory for remotes (<span class="caps">IE</span>&nbsp;/var/lib/fwupd/remotes.d)</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 23">FU_PATH_KIND_WIN32_BASEDIR</code></td>
+          <td><a id="win32_basedir" href="#win32_basedir"><code title="Value: 23">FU_PATH_KIND_WIN32_BASEDIR</code></a></td>
           <td><p>The root of the install directory on&nbsp;Windows.</p></td>
         </tr>
       
         <tr>
-          <td><code title="Value: 24">FU_PATH_KIND_LOCALCONFDIR_PKG</code></td>
+          <td><a id="localconfdir_pkg" href="#localconfdir_pkg"><code title="Value: 24">FU_PATH_KIND_LOCALCONFDIR_PKG</code></a></td>
           <td><p>The package configuration override (<span class="caps">IE</span>&nbsp;/var/etc/fwupd)</p></td>
         </tr>
       
@@ -295,6 +298,9 @@ other than /lib/firmware (<span class="caps">IE</span>&nbsp;/sys/module/firmware
     <p id="toc-title">Content</p>
     <ul class="toc-list">
       <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      <li class="toc-list-item"><a href="#members"><span class="link-text">Members</span></a></li>
+      
+
       
 
     </ul>

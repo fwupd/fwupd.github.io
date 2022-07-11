@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -107,6 +110,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.SecurityAttr.get_created.html">get_created</a>
   
+    <a class="method" href="method.SecurityAttr.get_description.html">get_description</a>
+  
     <a class="method" href="method.SecurityAttr.get_flags.html">get_flags</a>
   
     <a class="method" href="method.SecurityAttr.get_guids.html">get_guids</a>
@@ -125,6 +130,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.SecurityAttr.get_result_fallback.html">get_result_fallback</a>
   
+    <a class="method" href="method.SecurityAttr.get_title.html">get_title</a>
+  
     <a class="method" href="method.SecurityAttr.get_url.html">get_url</a>
   
     <a class="method" href="method.SecurityAttr.has_flag.html">has_flag</a>
@@ -137,6 +144,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.SecurityAttr.set_created.html">set_created</a>
   
+    <a class="method" href="method.SecurityAttr.set_description.html">set_description</a>
+  
     <a class="method" href="method.SecurityAttr.set_flags.html">set_flags</a>
   
     <a class="method" href="method.SecurityAttr.set_level.html">set_level</a>
@@ -148,6 +157,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.SecurityAttr.set_result.html">set_result</a>
   
     <a class="method" href="method.SecurityAttr.set_result_fallback.html">set_result_fallback</a>
+  
+    <a class="method" href="method.SecurityAttr.set_title.html">set_title</a>
   
     <a class="method" href="method.SecurityAttr.set_url.html">set_url</a>
   
@@ -177,7 +188,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-security-attr.h#L162">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupd/fwupd-security-attr.h#L170">[src]</a>
         
       </h4>
 
@@ -197,7 +208,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupd/fwupd-security-attr.c#L316">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupd/fwupd-security-attr.c#L318">[src]</a>
         
       </h4>
 
@@ -211,6 +222,9 @@ result&nbsp;decided.</p>
           
           
           <tr><td>Available since:</td><td>1.7.0</td></tr>
+          
+          
+          
           
           
         </table>
@@ -245,7 +259,7 @@ result&nbsp;decided.</p>
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          
+          <tr><td>&nbsp;</td><td>Each element is a NUL terminated UTF-8 string.</td></tr>
           
           
         </table>

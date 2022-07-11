@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -123,7 +126,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-firmware-common.h#L30">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-firmware-common.h#L30">[src]</a>
         
       </h4>
 
@@ -146,7 +149,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-firmware-common.c#L163">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-firmware-common.c#L165">[src]</a>
         
       </h4>
 
@@ -194,7 +197,7 @@ The returned <code>value</code> will range from from 0 to&nbsp;0xffffff.</p>
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
           
           <tr class="arg-name">
             <td><code>datasz</code></td>
@@ -242,12 +245,12 @@ The returned <code>value</code> will range from from 0 to&nbsp;0xffffff.</p>
           </tr>
           <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
-          <tr><td>&nbsp;</td><td>The argument can be set to <code>NULL</code>.</td></tr>
           
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: full">The called function takes ownership of the data, and is responsible for freeing it.</td></tr>
+          
+          
           
           
           

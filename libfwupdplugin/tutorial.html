@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -138,7 +141,7 @@ fu_plugin_foo_destroy(FuPlugin *plugin)
 }
 
 static gboolean
-fu_plugin_foo_startup(FuPlugin *plugin, GError **error)
+fu_plugin_foo_startup(FuPlugin *plugin, FuProgress *progress, GError **error)
 {
     FuPluginData *data = fu_plugin_get_data(plugin);
     data-&gt;proxy = create_proxy();
@@ -171,7 +174,7 @@ The example here is all hardcoded, and a true plugin would have to
 derive the details about the <code>FuDevice</code> from the hardware, for example reading
 data from <code>sysfs</code> or <code>/dev</code>.</p>
 <div class="codehilite"><pre><span></span><code>static gboolean
-fu_plugin_foo_coldplug(FuPlugin *plugin, GError **error)
+fu_plugin_foo_coldplug(FuPlugin *plugin, FuProgress *progress, GError **error)
 {
     g_autoptr(FuDevice) dev = NULL;
     fu_device_set_id(dev, &quot;dummy-1:2:3&quot;);
@@ -562,6 +565,46 @@ following the device update&nbsp;protocol.</p>
 configuration or serial numbers. This is meant to retrieve the current
 firmware contents for verification purposes. The data read can then be
 output to a binary blob using <code>fu_firmware_write()</code>.</p>
+<h4 id="set_progress">set_progress<a class="md-anchor" href="#set_progress" title="Permanent link"></a></h4>
+<p>Informs the daemon of the expected duration percentages for the different
+phases of update. The daemon runs the <code>-&gt;detach()</code>, <code>-&gt;write_firmware()</code>,
+<code>-&gt;attach()</code> and <code>-&gt;reload()</code> phases as part of the engine during the firmware
+update (rather than being done by plugin-specific code) and so this vfunc
+informs the daemon how to scale the progress output&nbsp;accordingly.</p>
+<p>For instance, if your update takes 2 seconds to detach into bootloader mode,
+10 seconds to write the firmware, 7 seconds to attach back into runtime mode
+(which includes the time required for <span class="caps">USB</span> enumeration) and then 1 second to
+read the new firmware version you would&nbsp;use:</p>
+<div class="codehilite"><pre><span></span><code>fu_progress_set_id(progress, G_STRLOC);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 10, &quot;detach&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_WRITE, 45, &quot;write&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 40, &quot;attach&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_BUSY, 5, &quot;reload&quot;);
+</code></pre></div>
+
+<p>If however your device does not require <code>-&gt;detach()</code> or <code>-&gt;attach()</code>, and
+<code>-&gt;reload()</code> is instantaneous, you still however need to include 4&nbsp;steps:</p>
+<div class="codehilite"><pre><span></span><code>fu_progress_set_id(progress, G_STRLOC);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 0, &quot;detach&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_WRITE, 100, &quot;write&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 0, &quot;attach&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_BUSY, 0, &quot;reload&quot;);
+</code></pre></div>
+
+<p>If the device has multiple phases that occur when actually in the write phase
+then it is perfectly okay to split up the <code>FuProgress</code> steps in the
+<code>-&gt;write_firmware()</code> vfunc further. For&nbsp;instance:</p>
+<div class="codehilite"><pre><span></span><code>fu_progress_set_id(progress, G_STRLOC);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 5, &quot;wait-for-idle&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_WRITE, 90, &quot;write&quot;);
+fu_progress_add_step(progress, FWUPD_STATUS_DEVICE_RESTART, 5, &quot;reset&quot;);
+</code></pre></div>
+
+<p>It should be noted that actions that are required to be done <em>before</em> the update
+should be added as a <code>-&gt;prepare()</code> vfunc, and those to be done after in the <code>-&gt;cleanup()</code>
+as the daemon will then recover the hardware if the update fails. For instance,
+putting the device back into a <em>normal runtime power saving</em> state should always
+be done during&nbsp;cleanup.</p>
 <h3 id="creating-a-new-firmware-type">Creating a new firmware type<a class="md-anchor" href="#creating-a-new-firmware-type" title="Permanent link"></a></h3>
 <p>The same way a device type implements some methods to complete its
 functionality and override certain behaviors, there&#8217;s a set of firmware
@@ -730,7 +773,7 @@ accordingly. See
 <a href="https://docs.gtk.org/glib/logging.html">https://docs.gtk.org/glib/logging.html</a> and
 <a href="https://docs.gtk.org/glib/running.html">https://docs.gtk.org/glib/running.html</a> for more&nbsp;information.</p>
 <h3 id="inspecting-raw-binary-data">Inspecting raw binary data<a class="md-anchor" href="#inspecting-raw-binary-data" title="Permanent link"></a></h3>
-<p>The <code>fu_common_dump_full</code> and <code>fu_common_dump_raw</code> functions implement the
+<p>The <code>fu_dump_full</code> and <code>fu_dump_raw</code> functions implement the
 printing of a binary buffer to the console as a stream of bytes in
 hexadecimal. See <code>libfwupdplugin/fu-common.c</code> for their definitions, you
 can find many examples of how to use them in the plugins&nbsp;code.</p>
@@ -740,6 +783,96 @@ can find many examples of how to use them in the plugins&nbsp;code.</p>
 
 
     
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#creating-an-abstract-device"><span class="link-text">Creating an abstract device</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#mechanism-plugins"><span class="link-text">Mechanism Plugins</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#policy-helpers"><span class="link-text">Policy Helpers</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#detaching-to-bootloader-mode"><span class="link-text">Detaching to bootloader mode</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#the-plugin-object-cache"><span class="link-text">The Plugin Object Cache</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#debugging-a-plugin"><span class="link-text">Debugging a Plugin</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#using-existing-code-to-develop-a-plugin"><span class="link-text">Using existing code to develop a plugin</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#general-guidelines-for-plugin-developers"><span class="link-text">General guidelines for plugin developers</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#general-considerations"><span class="link-text">General considerations</span></a></li>
+          
+            <li class="toc-list-item"><a href="#leveraging-existing-fwupd-code"><span class="link-text">Leveraging existing fwupd code</span></a></li>
+          
+            <li class="toc-list-item"><a href="#example-extending-a-firmware-type"><span class="link-text">Example: extending a firmware type</span></a></li>
+          
+            <li class="toc-list-item"><a href="#example-extending-a-device-type"><span class="link-text">Example: extending a device type</span></a></li>
+          
+            <li class="toc-list-item"><a href="#creating-a-new-plugin"><span class="link-text">Creating a new plugin</span></a></li>
+          
+            <li class="toc-list-item"><a href="#creating-a-new-device-type"><span class="link-text">Creating a new device type</span></a></li>
+          
+            <li class="toc-list-item"><a href="#creating-a-new-firmware-type"><span class="link-text">Creating a new firmware type</span></a></li>
+          
+            <li class="toc-list-item"><a href="#device-identification"><span class="link-text">Device identification</span></a></li>
+          
+            <li class="toc-list-item"><a href="#support-for-ble-devices"><span class="link-text">Support for BLE devices</span></a></li>
+          
+            <li class="toc-list-item"><a href="#battery-checks"><span class="link-text">Battery checks</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#howtos"><span class="link-text">Howtos</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#how-to-create-a-child-device"><span class="link-text">How to create a child device</span></a></li>
+          
+            <li class="toc-list-item"><a href="#how-to-add-a-delay"><span class="link-text">How to add a delay</span></a></li>
+          
+            <li class="toc-list-item"><a href="#how-to-define-private-flags"><span class="link-text">How to define private flags</span></a></li>
+          
+            <li class="toc-list-item"><a href="#how-to-make-fwupd-wait-for-a-device-replug"><span class="link-text">How to make fwupd wait for a device replug</span></a></li>
+          
+            <li class="toc-list-item"><a href="#inhibiting-a-device"><span class="link-text">Inhibiting a device</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#debugging-tips"><span class="link-text">Debugging tips</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#adding-debug-messages"><span class="link-text">Adding debug messages</span></a></li>
+          
+            <li class="toc-list-item"><a href="#inspecting-raw-binary-data"><span class="link-text">Inspecting raw binary data</span></a></li>
+          
+          </ul>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
 
     <section id="search" class="content hidden"></section>
 

@@ -39,6 +39,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <meta name="twitter:card" content="summary"/>
 
   
+  
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.1</p>
+        <p>Library Version: main</p>
         
       </div>
       
@@ -137,6 +140,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Firmware.get_offset.html">get_offset</a>
   
+    <a class="method" href="method.Firmware.get_parent.html">get_parent</a>
+  
     <a class="method" href="method.Firmware.get_size.html">get_size</a>
   
     <a class="method" href="method.Firmware.get_version.html">get_version</a>
@@ -170,6 +175,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Firmware.set_idx.html">set_idx</a>
   
     <a class="method" href="method.Firmware.set_offset.html">set_offset</a>
+  
+    <a class="method" href="method.Firmware.set_parent.html">set_parent</a>
   
     <a class="method" href="method.Firmware.set_size.html">set_size</a>
   
@@ -207,7 +214,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-firmware.h#L270">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-firmware.h#L280">[src]</a>
         
       </h4>
 
@@ -216,8 +223,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <span class="n">fu_firmware_parse_full</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">FuFirmware</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GBytes</span><span class="o">*</span><span class="w"> </span><span class="n">fw</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">addr_start</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">addr_end</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">FwupdInstallFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
@@ -231,7 +237,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.1/libfwupdplugin/fu-firmware.c#L722">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-firmware.c#L773">[src]</a>
         
       </h4>
 
@@ -243,7 +249,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table>
           
           
-          <tr><td>Available since:</td><td>1.3.1</td></tr>
+          <tr><td>Available since:</td><td>1.8.2</td></tr>
+          
+          
+          
           
           
         </table>
@@ -281,30 +290,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           <tr class="arg-name">
-            <td><code>addr_start</code></td>
-            <td><code>guint64</code></td>
+            <td><code>offset</code></td>
+            <td><code>gsize</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Start address, useful for ignoring a&nbsp;bootloader.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>addr_end</code></td>
-            <td><code>guint64</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>End address, useful for ignoring config&nbsp;bytes.</p></td>
+            <td><p>Start offset, useful for ignoring a&nbsp;bootloader.</p></td>
           </tr>
           
           
