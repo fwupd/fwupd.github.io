@@ -1,0 +1,290 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: BIOS Settings API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: BIOS Settings API"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: BIOS Settings API"/>
+  <meta name="twitter:title" content="FwupdPlugin: BIOS Settings API"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: BIOS Settings API"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.4</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <p>fwupd 1.8.4 and later include the ability to modify <span class="caps">BIOS</span> settings on systems that support the Linux kernel&#8217;s <a href="https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-firmware-attributes">firmware-attributes <span class="caps">API</span></a>.</p>
+<p>Drivers included with the Linux kernel on supported machines will advertise all <span class="caps">BIOS</span> settings that the <span class="caps">OS</span> can change.  The fwupd daemon uses this <span class="caps">API</span> create an abstraction that fwupd clients can use to offer <span class="caps">BIOS</span> settings to change to end&nbsp;users.</p>
+<h2 id="interactive-command-line-usage">Interactive command line usage<a class="md-anchor" href="#interactive-command-line-usage" title="Permanent link"></a></h2>
+<p>Both <code>fwupdmgr</code> and <code>fwupdtool</code> have support for the fwupd <span class="caps">BIOS</span> settings <span class="caps">API</span> both for interactive use.
+Using <code>fwupdgmr</code> will require PolicyKit authentication as only authorized users can view the current <span class="caps">BIOS</span> settings.
+Using <code>fwupdtool</code> will require running the tool as root, as <code>fwupdtool</code> only works as&nbsp;root.</p>
+<h3 id="getting-available-bios-settings">Getting available BIOS settings<a class="md-anchor" href="#getting-available-bios-settings" title="Permanent link"></a></h3>
+<p>To fetch available <span class="caps">BIOS</span> settings for a&nbsp;machine:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fwupdmgr get-bios-setting</span>
+</code></pre></div>
+
+<p>This will provide a listing of all available settings.  If you would like to just see a subset of attributes, you can list them space delimited on the command line.  For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>$ fwupdmgr get-bios-setting WindowsUEFIFirmwareUpdate MmioAbove4GLimit 
+Authenticating…          <span class="o">[</span> -                                     <span class="o">]</span>
+WindowsUEFIFirmwareUpdate:
+  Setting type:         Enumeration
+  Current Value:        Enable
+  Description:          BIOS updates delivered via LVFS or Windows Update
+  Read Only:            False
+  Possible Values:
+    <span class="m">0</span>:                  Disable
+    <span class="m">1</span>:                  Enable
+
+
+MmioAbove4GLimit:
+  Setting type:         Enumeration
+  Current Value:        Auto
+  Description:          MmioAbove4GLimit
+  Read Only:            False
+  Possible Values:
+    <span class="m">0</span>:                  Auto
+    <span class="m">1</span>:                  <span class="m">40</span>
+    <span class="m">2</span>:                  <span class="m">42</span>
+    <span class="m">3</span>:                  <span class="m">44</span>
+    <span class="m">4</span>:                  <span class="m">46</span>
+    <span class="m">5</span>:                  <span class="m">48</span>
+</code></pre></div>
+
+<p>When using <span class="caps">BASH</span> as your shell, bash-completion can be used to discover <span class="caps">BIOS</span> settings. In the above example, those settings could be found from this series of tab&nbsp;actions:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo fwupdmgr get-bios-setting W
+WakeonLAN                  WakeUponAlarm              WindowsUEFIFirmwareUpdate  
+<span class="m">130</span> $ sudo fwupdmgr get-bios-setting WindowsUEFIFirmwareUpdate 
+Display all <span class="m">131</span> possibilities? <span class="o">(</span>y or n<span class="o">)</span>
+AbsolutePersistenceModule     CStateSupport                 M2Slot2Port                   PCIeSlot3Bifurcation          PXEIPV6NetworkStack           SetStrongPassword
+AccessSecuritySettings        DASHSupport                   MaxPasswordAttempts           PCIeSlot3DLFSupport           QuadM2PCIeCardFanControl      SmartUSBProtection
+AfterPowerLoss                DataScrambling                MCRUSBHeader                  PCIeSlot3LinkSpeed            RealtimeDIAG                  SMT
+AlarmDate<span class="o">(</span>MM<span class="se">\D</span>D<span class="se">\Y</span>YYY<span class="o">)</span>         DeviceGuard                   MediaCardReader               PCIeSlot3Port                 RearAudioController           SRIOVSupport
+AlarmDayofWeek                DevicePowerupDelay            MmioAbove4GLimit              PCIeSlot4Bifurcation          RearUSBPorts                  StartupSequence
+AlarmTime<span class="o">(</span>HH:MM:SS<span class="o">)</span>           DeviceResetTimeout            --no-authenticate             PCIeSlot4DLFSupport           RemoteSetSMP                  USBChargingPortInS4S5
+AllowJumperClearSVP           DIAG7SegMode                  NUMA                          PCIeSlot4LinkSpeed            RequireHDPonSystemBoot        USBPortAccess
+AMDMemoryGuard                EnhancedPowerSavingMode       NVMeRAIDMode                  PCIeSlot4Port                 RequireSVPwhenFlashing        USBTransferTimeout
+AMDSecureVirtualMachine       ErrorBootSequence             OnboardEthernetController     PCIeSlot5Bifurcation          SATAController                UserDefinedAlarmFriday
+ASPMSupport                   FanControlStepping            OptionKeysDisplay             PCIeSlot5DLFSupport           SATADrive1                    UserDefinedAlarmMonday
+AutomaticBootSequence         FrontUSBPorts                 PasswordChangeTime            PCIeSlot5LinkSpeed            SATADrive2                    UserDefinedAlarmSaturday
+BIOSPasswordAtBootDeviceList  HardDiskPre-delay             PasswordCountExceededError    PCIeSlot5Port                 SATADrive3                    UserDefinedAlarmSunday
+BIOSPasswordAtReboot          InternalUSB2Port              PatroScrub                    PCIeSlot6Bifurcation          SATADrive4                    UserDefinedAlarmThursday
+BIOSPasswordAtSystemBoot      InternalUSB3Port              PatroScrubInterval            PCIeSlot6DLFSupport           SATADrive5                    UserDefinedAlarmTime
+BootUpNumLockStatus           IOMMU                         PCIeSlot1Bifurcation          PCIeSlot6LinkSpeed            SATADrive6                    UserDefinedAlarmTuesday
+CardLocation                  --json                        PCIeSlot1DLFSupport           PCIeSlot6Port                 SATADrive6HotPlugSupport      UserDefinedAlarmWednesday
+ClearDIAGLog                  KeyboardLayout                PCIeSlot1LinkSpeed            pending_reboot                SecureBoot                    --verbose
+ConfigurationChangeDetection  M2Slot1DLFSupport             PCIeSlot1Port                 PhysicalPresenceforClear      SecureRollBackPrevention      WakeonLAN
+ConfigureSATAas               M2Slot1LinkSpeed              PCIeSlot2Bifurcation          POPChangeablebyUser           SecurityChip                  WakeUponAlarm
+CoverTamperDetected           M2Slot1Port                   PCIeSlot2DLFSupport           PostPackageRepair             SelectActiveVideo             WindowsUEFIFirmwareUpdate
+CPBMode                       M2Slot2DLFSupport             PCIeSlot2LinkSpeed            PrimaryBootSequence           SerialPort1Address            XHCIHandoff
+CPUC6Report                   M2Slot2LinkSpeed              PCIeSlot2Port                 PXEIPV4NetworkStack           SetMinimumLength              
+<span class="m">130</span> $ fwupdmgr get-bios-setting WindowsUEFIFirmwareUpdate MmioAbove4GLimit 
+</code></pre></div>
+
+<h3 id="setting-bios-settings">Setting BIOS settings<a class="md-anchor" href="#setting-bios-settings" title="Permanent link"></a></h3>
+<p>To set one or more <span class="caps">BIOS</span> settings for a&nbsp;machine:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fwupdmgr set-bios-setting SETTING VALUE</span>
+</code></pre></div>
+
+<p>For supported attributes, <code>fwupdmgr</code> will also use tab completion in <span class="caps">BASH</span> for filling out a value.
+For example to enable an enumeration&nbsp;attribute:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo fwupdmgr set-bios-setting W
+WakeonLAN                  WakeUponAlarm              WindowsUEFIFirmwareUpdate  
+<span class="m">130</span> $ sudo fwupdmgr set-bios-setting WindowsUEFIFirmwareUpdate 
+Disable  Enable   
+<span class="m">130</span> $ sudo fwupdmgr set-bios-setting WindowsUEFIFirmwareUpdate Enable
+</code></pre></div>
+
+<p>After setting an attribute you may be prompted to reboot as most settings will require a reboot to take&nbsp;effect.</p>
+<div class="codehilite"><pre><span></span><code>$ fwupdmgr set-bios-setting WakeonLAN Primary 
+Authenticating…          <span class="o">[</span>   -                                   <span class="o">]</span>
+Set BIOS setting <span class="s1">&#39;WakeonLAN&#39;</span> using <span class="s1">&#39;Primary&#39;</span>.
+
+An update requires a reboot to complete. Restart now? <span class="o">[</span>y<span class="p">|</span>N<span class="o">]</span>: 
+</code></pre></div>
+
+<p>If you would like to program multiple attributes, list them in pairs of the name of the attribute followed by the desired&nbsp;value.</p>
+<h2 id="programmatic-command-line-usage">Programmatic command line usage<a class="md-anchor" href="#programmatic-command-line-usage" title="Permanent link"></a></h2>
+<p><code>fwupdmgr</code> offers support for the fwupd <span class="caps">BIOS</span> settings <span class="caps">API</span> programmatically as well for use in scripts. To use the programmatic <span class="caps">API</span> you will add the <code>--json</code> argument to your calls. The output or input will then be expected to be <span class="caps">JSON</span>&nbsp;payloads.</p>
+<h3 id="fetching-bios-settings-programmatically">Fetching BIOS settings programmatically<a class="md-anchor" href="#fetching-bios-settings-programmatically" title="Permanent link"></a></h3>
+<p>Below is an example of fetching the <code>WakeonLAN</code> setting.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fwupdmgr get-bios-setting WakeonLAN --json</span>
+<span class="o">{</span>
+  <span class="s2">&quot;BiosSettings&quot;</span> : <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;Name&quot;</span> : <span class="s2">&quot;WakeonLAN&quot;</span>,
+      <span class="s2">&quot;Description&quot;</span> : <span class="s2">&quot;WakeonLAN&quot;</span>,
+      <span class="s2">&quot;Filename&quot;</span> : <span class="s2">&quot;/sys/class/firmware-attributes/thinklmi/attributes/WakeonLAN&quot;</span>,
+      <span class="s2">&quot;BiosSettingId&quot;</span> : <span class="s2">&quot;com.thinklmi.WakeonLAN&quot;</span>,
+      <span class="s2">&quot;BiosSettingCurrentValue&quot;</span> : <span class="s2">&quot;Primary&quot;</span>,
+      <span class="s2">&quot;BiosSettingReadOnly&quot;</span> : <span class="s2">&quot;false&quot;</span>,
+      <span class="s2">&quot;BiosSettingType&quot;</span> : <span class="m">1</span>,
+      <span class="s2">&quot;BiosSettingPossibleValues&quot;</span> : <span class="o">[</span>
+        <span class="s2">&quot;Primary&quot;</span>,
+        <span class="s2">&quot;Automatic&quot;</span>,
+        <span class="s2">&quot;Disable&quot;</span>
+      <span class="o">]</span>
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Similar to the interactive usage, if no parameters are provided all settings are fetched, and if desired multiple settings can be listed on the command&nbsp;line.</p>
+<p>Error messages won&#8217;t be emitted, you&#8217;ll have to rely on the return code to tell if this was successful.
+<em><span class="caps">NOTE</span>:</em> To debug errors, use the <code>--verbose</code> argument to see messages related to the&nbsp;error.</p>
+<h3 id="setting-bios-settings-programmatically">Setting BIOS settings programmatically<a class="md-anchor" href="#setting-bios-settings-programmatically" title="Permanent link"></a></h3>
+<p>To set <span class="caps">BIOS</span> settings, a <span class="caps">JSON</span> payload will need to be crafted in advance.  The path to this payload is used as an&nbsp;argument.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fwupdmgr set-bios-setting ~/foo.json --json</span>
+</code></pre></div>
+
+<p>An important return code to know for programmatic usage is that <em>2</em> means nothing was done because all settings are already programmed. This message will also be emitted.
+<em><span class="caps">NOTE</span>:</em> To debug errors, use the <code>--verbose</code> argument to see messages related to the&nbsp;error.</p>
+<h2 id="firmware-setting-policies">Firmware setting policies<a class="md-anchor" href="#firmware-setting-policies" title="Permanent link"></a></h2>
+<p><code>fwupd</code> has the ability to enforce the <span class="caps">BIOS</span> settings policy of a system administrator.  To use this feature, create a json payload using <code>fwupdmgr get-bios-setting --json</code> that reflects the settings you would like to see&nbsp;enforced.</p>
+<p>Then copy this payload into <code>/etc/fwupd/bios-settings.d</code> with a filename ending in <code>.json</code>.  The next time that the fwupd daemon is started (such as a system bootup) it will ensure that all <span class="caps">BIOS</span> settings are programed to your desired values.  It will also mark those settings as read-only so no fwupd clients will be able to modify&nbsp;them.</p>
+<p>This <em>does not</em> stop the kernel firmware-attributes <span class="caps">API</span> from working.  So a determined user with appropriate permissions would be able to modify settings from the kernel <span class="caps">API</span> directly, but they would be changed again on fwupd daemon&nbsp;startup.</p>
+<h2 id="settings-types">Settings types<a class="md-anchor" href="#settings-types" title="Permanent link"></a></h2>
+<p>The Linux kernel will offer the following types of <span class="caps">BIOS</span>&nbsp;settings:</p>
+<ul>
+<li>Enumeration: The setting will only accept a limiited list of possible&nbsp;values</li>
+<li>Integer: The setting will will accept a limited range of integer&nbsp;values</li>
+<li>String: The setting will accept a limited length <span class="caps">UTF</span>-8&nbsp;string</li>
+</ul>
+<p>All of those setting types are accepted by fwupd. It is expected that drivers or firmware will validate the input, but where possible fwupd will do validation of the input to give better error messages and avoid&nbsp;failures.</p>
+<p>fwupd will also do a mapping where it can accept multiple cases or synonyms for words that are obviously positive or negative.  So for example if the setting expects <code>Enabled</code> but the user passes <code>tRUE</code> fwupd will map this into <code>Enabled</code> before sending it to the driver and the driver sending it to the&nbsp;firmware.</p>
+<h2 id="libfwupd">libfwupd<a class="md-anchor" href="#libfwupd" title="Permanent link"></a></h2>
+<p><code>fwupdmgr</code> internally uses <code>FwupdClient</code> to manage <span class="caps">BIOS</span> settings.  Any other clients that are interested in managing <span class="caps">BIOS</span> settings can use this library as well. A sample python application is included in the <code>contrib/</code> directory in the fwupd source&nbsp;tree.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#interactive-command-line-usage"><span class="link-text">Interactive command line usage</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#getting-available-bios-settings"><span class="link-text">Getting available BIOS settings</span></a></li>
+          
+            <li class="toc-list-item"><a href="#setting-bios-settings"><span class="link-text">Setting BIOS settings</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#programmatic-command-line-usage"><span class="link-text">Programmatic command line usage</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#fetching-bios-settings-programmatically"><span class="link-text">Fetching BIOS settings programmatically</span></a></li>
+          
+            <li class="toc-list-item"><a href="#setting-bios-settings-programmatically"><span class="link-text">Setting BIOS settings programmatically</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-setting-policies"><span class="link-text">Firmware setting policies</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#settings-types"><span class="link-text">Settings types</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#libfwupd"><span class="link-text">libfwupd</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
