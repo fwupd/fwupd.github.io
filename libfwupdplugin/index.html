@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.4</p>
+        <p>Library Version: 1.8.5</p>
         
       </div>
       
@@ -149,7 +149,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.4</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.5</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -245,6 +245,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <li><a href="tutorial.html">Plugin Tutorial</a></li>
         
           <li><a href="hsi.html">Host Security ID Specification</a></li>
+        
+          <li><a href="ds20.html">Unknown document</a></li>
         
           <li><a href="bios-settings.html">BIOS Settings API</a></li>
         
@@ -531,6 +533,20 @@ firmware blobs which are used in various Intel products using an <span class="ca
           </tr>
           
           <tr class="section-item">
+            <td><a title="IntelThunderboltFirmware" class="symbol" href="class.IntelThunderboltFirmware.html">IntelThunderboltFirmware</a></td>
+            
+            <td class="docblock-summary"><p>The Non-Volatile-Memory file-format specification. This is what you would find as the update&nbsp;payload.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IntelThunderboltNvm" class="symbol" href="class.IntelThunderboltNvm.html">IntelThunderboltNvm</a></td>
+            
+            <td class="docblock-summary"><p>The Non-Volatile-Memory device specification. This is what you would find on the device <span class="caps">SPI</span>&nbsp;chip.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="IOChannel" class="symbol" href="class.IOChannel.html">IOChannel</a></td>
             
             <td class="docblock-summary"><p>A bidirectional <span class="caps">IO</span> channel which can be read from and written&nbsp;to.</p></td>
@@ -625,6 +641,27 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="UsbDeviceDs20" class="symbol" href="class.UsbDeviceDs20.html">UsbDeviceDs20</a></td>
+            
+            <td class="docblock-summary"><p>A <span class="caps">USB</span> <span class="caps">DS20</span> <span class="caps">BOS</span>&nbsp;descriptor.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UsbDeviceFwDs20" class="symbol" href="class.UsbDeviceFwDs20.html">UsbDeviceFwDs20</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UsbDeviceMsDs20" class="symbol" href="class.UsbDeviceMsDs20.html">UsbDeviceMsDs20</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="UswidFirmware" class="symbol" href="class.UswidFirmware.html">UswidFirmware</a></td>
             
             <td class="docblock-summary"><p>A uSWID header with multiple optionally-compressed coSWID <span class="caps">CBOR</span>&nbsp;sections.</p></td>
@@ -691,6 +728,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           <tbody>
           
           <tr class="section-item">
+            <td><a title="ContextFlags" class="symbol" href="alias.ContextFlags.html">ContextFlags</a></td>
+            
+            <td class="docblock-summary"><p>The context&nbsp;flags.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DeviceInternalFlags" class="symbol" href="alias.DeviceInternalFlags.html">DeviceInternalFlags</a></td>
             
             <td class="docblock-summary"><p>The device internal&nbsp;flags.</p></td>
@@ -754,6 +798,20 @@ backport new versions as new hardware is&nbsp;released.</p></td>
             <td><a title="ArchiveFormat" class="symbol" href="enum.ArchiveFormat.html">ArchiveFormat</a></td>
             
             <td class="docblock-summary"><p>The archive&nbsp;format.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="BackendLoadFlags" class="symbol" href="enum.BackendLoadFlags.html">BackendLoadFlags</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="BackendSaveFlags" class="symbol" href="enum.BackendSaveFlags.html">BackendSaveFlags</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           
@@ -1419,6 +1477,13 @@ kernel as some (hopefully small) variables are hidden from&nbsp;userspace.</p></
             <td><a title="kernel_check_version" class="symbol" href="func.kernel_check_version.html">kernel_check_version</a></td>
             
             <td class="docblock-summary"><p>Determines if the system is running at least a certain required kernel&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_get_cmdline" class="symbol" href="func.kernel_get_cmdline.html">kernel_get_cmdline</a></td>
+            
+            <td class="docblock-summary"><p>Loads all the kernel /proc/cmdline key/values into a hash&nbsp;table.</p></td>
             
           </tr>
           
@@ -2631,6 +2696,20 @@ then no member is&nbsp;added.</p></td>
             <td><a title="CFU_DEVICE_STATUS_SWAP_PENDING" class="symbol" href="const.CFU_DEVICE_STATUS_SWAP_PENDING.html">CFU_DEVICE_STATUS_SWAP_PENDING</a></td>
             
             <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CONTEXT_FLAG_NONE" class="symbol" href="const.CONTEXT_FLAG_NONE.html">CONTEXT_FLAG_NONE</a></td>
+            
+            <td class="docblock-summary"><p>No flags&nbsp;set.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CONTEXT_FLAG_SAVE_EVENTS" class="symbol" href="const.CONTEXT_FLAG_SAVE_EVENTS.html">CONTEXT_FLAG_SAVE_EVENTS</a></td>
+            
+            <td class="docblock-summary"><p>Save events so that they can be replayed to emulate&nbsp;devices.</p></td>
             
           </tr>
           
@@ -4177,14 +4256,14 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p></td>
           <tr class="section-item">
             <td><a title="VOLUME_KIND_BDP" class="symbol" href="const.VOLUME_KIND_BDP.html">VOLUME_KIND_BDP</a></td>
             
-            <td class="docblock-summary"><p>The <span class="caps">GUID</span> for the <span class="caps">BDP</span>.</p></td>
+            <td class="docblock-summary"><p>The <span class="caps">GUID</span> for the <span class="caps">BDP</span>, see:&nbsp;https://en.wikipedia.org/wiki/Microsoft_basic_data_partition.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="VOLUME_KIND_ESP" class="symbol" href="const.VOLUME_KIND_ESP.html">VOLUME_KIND_ESP</a></td>
             
-            <td class="docblock-summary"><p>The <span class="caps">GUID</span> for the <span class="caps">ESP</span>.</p></td>
+            <td class="docblock-summary"><p>The <span class="caps">GUID</span> for the <span class="caps">ESP</span>, see:&nbsp;https://en.wikipedia.org/wiki/EFI_system_partition.</p></td>
             
           </tr>
           

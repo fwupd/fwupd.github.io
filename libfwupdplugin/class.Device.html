@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.4</p>
+        <p>Library Version: 1.8.5</p>
         
       </div>
       
@@ -118,6 +118,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="method" href="method.Device.activate.html">activate</a>
+  
+    <a class="method" href="method.Device.add_backend_tag.html">add_backend_tag</a>
   
     <a class="method" href="method.Device.add_child.html">add_child</a>
   
@@ -197,6 +199,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_backend_id.html">get_backend_id</a>
   
+    <a class="method" href="method.Device.get_backend_tags.html">get_backend_tags</a>
+  
     <a class="method" href="method.Device.get_battery_level.html">get_battery_level</a>
   
     <a class="method" href="method.Device.get_battery_threshold.html">get_battery_threshold</a>
@@ -260,6 +264,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.get_root.html">get_root</a>
   
     <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
+  
+    <a class="method" href="method.Device.has_backend_tag.html">has_backend_tag</a>
   
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
@@ -385,6 +391,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
   
+    <a class="method" href="method.Device.set_quirk_kv.html">set_quirk_kv</a>
+  
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
   
     <a class="method" href="method.Device.set_update_state.html">set_update_state</a>
@@ -419,6 +427,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="property" href="property.Device.backend-id.html">backend-id</a>
+  
+    <a class="property" href="property.Device.backend-tags.html">backend-tags</a>
   
     <a class="property" href="property.Device.context.html">context</a>
   
@@ -472,7 +482,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.4/libfwupdplugin/fu-device.c#L28">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-device.c#L28">[src]</a>
           
         </h4>
 
@@ -613,6 +623,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 firmware version. This should only be called when data loss cannot&nbsp;occur.</p>
           </div>
           <div class="docblock"><p>Available since: 1.2.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_backend_tag.html">fu_device_add_backend_tag</a></h6>
+          <div class="docblock">
+            <p>Adds a backend tag, which allows the backend to identify the specific device for a specific
+phase. For instance, there might be a pre-update runtime, a bootloader and a post-update runtime
+and allowing tags to be saved to the backend object allows us to identify each version of
+the same physical&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
         </div>
       
         <div class="">
@@ -952,6 +973,14 @@ physical <span class="caps">ID</span> as this may be the same&nbsp;value.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_backend_tags.html">fu_device_get_backend_tags</a></h6>
+          <div class="docblock">
+            <p>Gets any backend&nbsp;tags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_battery_level.html">fu_device_get_battery_level</a></h6>
           <div class="docblock">
             <p>Returns the battery&nbsp;level.</p>
@@ -1219,6 +1248,14 @@ device and this may be reflected in client&nbsp;tools.</p>
             <p>Gets the specialized type of the&nbsp;device.</p>
           </div>
           <div class="docblock"><p>Available since: 1.3.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_backend_tag.html">fu_device_has_backend_tag</a></h6>
+          <div class="docblock">
+            <p>Finds if the backend tag already&nbsp;exists.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
         </div>
       
         <div class="">
@@ -1751,6 +1788,14 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
         </div>
       
         <div class="">
+          <h6><a href="method.Device.set_quirk_kv.html">fu_device_set_quirk_kv</a></h6>
+          <div class="docblock">
+            <p>Sets a specific quirk on the&nbsp;device.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.set_remove_delay.html">fu_device_set_remove_delay</a></h6>
           <div class="docblock">
             <p>Sets the amount of time a device is allowed to return in bootloader&nbsp;mode.</p>
@@ -1898,6 +1943,16 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
           <div class="docblock">
             <p>The device backend <span class="caps">ID</span>.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.5.8</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.backend-tags.html">FwupdPlugin.Device:backend-tags</a></h6>
+
+          <div class="docblock">
+            <p>The device tags used for backend&nbsp;identification.</p>
           </div>
 
           <div class="docblock"><p>Available since: 1.5.8</p></div>

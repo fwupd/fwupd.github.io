@@ -1,0 +1,240 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.5</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h1 id="fwupd-bos-ds20-specification">fwupd BOS DS20 Specification<a class="md-anchor" href="#fwupd-bos-ds20-specification" title="Permanent link"></a></h1>
+<h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>When <code>fwupd</code> starts it enumerates all <span class="caps">PCI</span> and <span class="caps">USB</span> hardware and generates <em>Instance IDs</em> based on the reported vendor and product so that it can match the device to a plugin.
+The plugin knows how to communicate with the device (for instance using vendor-specific <span class="caps">USB</span> control transfers) and also knows how to parse the firmware and deliver it to the&nbsp;device.</p>
+<p>Before a vendor can ship a firmware on the <span class="caps">LVFS</span> to a machine using Linux (or ChromeOS) the fwupd package often must be updated so that it knows what plugin to use for that specific device.
+At this point other overridden <a href="https://fwupd.github.io/libfwupdplugin/class.Quirks.html">quirk data</a> can also be set. For instance, the icon, long summary or even per-plugin flags that change device behavior.
+For example <code>colorhug.quirk</code>:</p>
+<div class="codehilite"><pre><span></span><code>[USB\VID_273F&amp;PID_1001]
+Plugin = colorhug
+Flags = self-recovery
+Icon = colorimeter-colorhug
+</code></pre></div>
+
+<p>Updating the fwupd binary package might take anywhere from a few weeks to several years due to various Linux distribution policies.
+Clearly this isn&#8217;t good when the majority of firmware updates are distributed to address security&nbsp;issues.</p>
+<p>One suggestion would be to put this quirk information into the existing update metadata provided by the configured remote, but this has several&nbsp;problems:</p>
+<ul>
+<li>The daemon needs to <em>enumerate</em> hardware that does not have updates on the main <span class="caps">LVFS</span>&nbsp;remote.</li>
+<li>A <em>lot</em> of machines using fwupd have never connected to the internet and we still want to enumerate hardware for audit and verification&nbsp;purposes.</li>
+<li>Re-enumerating all physical hardware (to get the latest quirks) when updating the metadata is not&nbsp;straightforward.</li>
+<li>The <span class="caps">VID</span>/<span class="caps">PID</span> is not necessarily the information that the plugin matches to assign the firmware stream, and so this would have to be a separate facet of metadata &#8212; which may have to include quirks&nbsp;too.</li>
+</ul>
+<p>Matching devices to plugins should be thought of as <em>orthogonal</em> to matching firmware to devices.
+To simplify deployment it should be possible to allow the device itself to specify the plugin to use and optionally additional quirk&nbsp;data.</p>
+<h2 id="specification">Specification<a class="md-anchor" href="#specification" title="Permanent link"></a></h2>
+<p>Devices that implement a fwupd <span class="caps">BOS</span> <span class="caps">DS20</span> descriptor can be updated without always needing to update the runtime version of fwupd for updated quirk entries, assuming the device is updatable by the existing vendor&nbsp;plugin.</p>
+<p><span class="caps">USB</span> devices can create a new platform device capability <span class="caps">BOS</span> <em>“Binary Object Store”</em> descriptor with <code>bDevCapabilityType=0x05</code> and a fwupd-specific <span class="caps">UUID</span>, specifically <code>010aec63-f574-52cd-9dda-2852550d94f0</code>.
+This <span class="caps">UUID</span> is generated type-5 <span class="caps">SHA</span>-1 hash of the word <code>fwupd</code> using a <span class="caps">DNS</span> namespace.
+Using this custom <span class="caps">UUID</span> will ensure that Microsoft Windows does not try to parse the capability descriptor as a <em>Microsoft <span class="caps">OS</span> 2.0 descriptor set</em>.</p>
+<h2 id="implementation">Implementation<a class="md-anchor" href="#implementation" title="Permanent link"></a></h2>
+<p>Create a <span class="caps">BOS</span> <span class="caps">DS20</span> descriptor such&nbsp;as:</p>
+<div class="codehilite"><pre><span></span><code>1C 10 05 00 63 ec 0a 01 74 f5 cd 52 9d da 28 52 55 0d 94 f0 05 08 01 00 20 00 2a 00
+├┘ ├┘ ├┘ ├┘ └─────────────┬───────────────────────────────┘ └─┬───────┘ └─┬─┘ ├┘ ├┘
+│  │  │  │                └─PlatformCapabilityUUID            │   wLength─┘   │  │
+│  │  │  └─bReserved                                dwVersion─┘   bVendorCode─┘  │
+│  │  └────bDevCapability                                         bAltEnumCmd────┘
+│  └───────bDescriptorType
+└──────────bLength
+</code></pre></div>
+
+<p>The <code>dwVersion</code> encoded here is fwupd <code>1.8.5</code>, which is also the first version that supports <span class="caps">BOS</span> <span class="caps">DS20</span>&nbsp;descriptors.</p>
+<p>The <span class="caps">BOS</span> descriptors are sorted by the requester and can appear in any order.
+The descriptor with the highest <code>dwVersion</code> that is not newer than the current running daemon version is used.
+This means that <code>dwVersion</code> is effectively the minimum version of fwupd that should read the descriptor.
+This allows devices to set different quirks depending on the fwupd version, although in practice this should not be required.
+A suitable bVendorCode should be chosen that is not used for existing device&nbsp;operation.</p>
+<ul>
+<li>The <code>dwVersion</code> parameter <strong>must</strong> be larger than <code>0x00010805</code>, i.e.&nbsp;1.8.5.</li>
+<li>The <code>bAltEnumCmd</code> parameter <strong>must</strong> be&nbsp;zero.</li>
+<li>The <code>PlatformCapabilityUUID</code> <strong>must</strong> be <code>010aec63-f574-52cd-9dda-2852550d94f0</code>.</li>
+</ul>
+<p>Then allow the device to reply to a <span class="caps">USB</span> control request with the following&nbsp;parameters:</p>
+<div class="codehilite"><pre><span></span><code>transfer-direction: device-to-host
+request-type: vendor
+recipient: device
+bRequest: {value of bVendorCode in the BOS descriptor}
+wValue: 0x00
+wIndex: 0x07
+wLength: {value of wLength in the BOS descriptor}
+</code></pre></div>
+
+<p>The device should return something&nbsp;like:</p>
+<div class="codehilite"><pre><span></span><code>50 6c 75 67 69 6e 3d 64 66 75 0a 49 63 6f 6e 3d 63 6f 6d 70 75 74 65 72 0a 00 00 00 00 00 00 00
+</code></pre></div>
+
+<p>&#8230;which is the <span class="caps">UTF</span>-8 quirk data,&nbsp;e.g.</p>
+<div class="codehilite"><pre><span></span><code>Plugin=dfu
+Icon=computer
+</code></pre></div>
+
+<p>The <span class="caps">UTF</span>-8 quirk data must <strong>not</strong> contain Windows <em><span class="caps">CRLF</span>-style</em> line&nbsp;endings.</p>
+<h2 id="workflow">Workflow<a class="md-anchor" href="#workflow" title="Permanent link"></a></h2>
+<p>To generate the fwupd <span class="caps">DS20</span> descriptor save a file such as <code>fw-ds20.builder.xml</code>:</p>
+<div class="codehilite"><pre><span></span><code>&lt;firmware gtype=&quot;FuUsbDeviceFwDs20&quot;&gt;
+  &lt;idx&gt;42&lt;/idx&gt;   &lt;!-- bVendorCode --&gt;
+  &lt;size&gt;32&lt;/size&gt; &lt;!-- wLength --&gt;
+&lt;/firmware&gt;
+</code></pre></div>
+
+<p>Then run <code>fwupdtool firmware-build fw-ds20.builder.xml fw-ds20.bin</code>.</p>
+<p>To generate the control transfer response, save a file such as <code>fw-ds20.quirk</code>:</p>
+<div class="codehilite"><pre><span></span><code>[USB\VID_273F&amp;PID_1004]
+Plugin = dfu
+Icon = computer
+</code></pre></div>
+
+<p>Then run <code>contrib/generate-ds20.py fw-ds20.quirk --bufsz 32</code>.
+The maximum buffer size is typically hardcoded for the device and may be specified in a microcontroller&nbsp;datasheet.</p>
+<h2 id="prior-art">Prior Art<a class="md-anchor" href="#prior-art" title="Permanent link"></a></h2>
+<h3 id="hardcoded-class-subclass">Hardcoded Class &amp; Subclass<a class="md-anchor" href="#hardcoded-class-subclass" title="Permanent link"></a></h3>
+<p>The fwupd project already support two plugins that use the <span class="caps">USB</span> class code, rather than the exact instance <span class="caps">ID</span> with the <span class="caps">VID</span>/<span class="caps">PID</span>.
+For example, this <span class="caps">DFU</span> entry means <em>“match any <span class="caps">USB</span> device with class 0xFE (application specific) and subclass 0x01”</em>:</p>
+<div class="codehilite"><pre><span></span><code>[USB\CLASS_FE&amp;SUBCLASS_01]
+Plugin = dfu
+</code></pre></div>
+
+<p>These kind of devices do not need any device to plugin mapping (although, they still might need a quirk if they are non-complaint in some way, for example needing <code>Flags = detach-for-attach</code>) – but in the most cases they just&nbsp;work.</p>
+<p>The same can be done for Fastboot devices, matching class <code>0xFF</code> (vendor specific), subclass <code>0x42</code> and protocol <code>0x03</code>, although there is the same caveat for non-compliant devices that need quirk entries like <code>FastbootOperationDelay = 250</code>:</p>
+<div class="codehilite"><pre><span></span><code>[USB\CLASS_FF&amp;SUBCLASS_42&amp;PROT_03]
+Plugin = fastboot
+</code></pre></div>
+
+<h4 id="microsoft-os-descriptors-10">Microsoft OS Descriptors 1.0<a class="md-anchor" href="#microsoft-os-descriptors-10" title="Permanent link"></a></h4>
+<p>The <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification">Microsoft <span class="caps">OS</span> Descriptors 1.0 Specification</a> defines a device-specific variable-length metadata block of <code>CompatibleID</code>:<code>SubCompatibleID</code> on a string index of <code>0xEE</code> where the <code>CompatibleID</code> and <code>SubCompatibleID</code> are also both hardcoded at 8&nbsp;bytes.</p>
+<p>Using <code>FWUPDPLU</code> or <code>FWUPDFLA</code> as the <code>CompatibleID</code> would be acceptable, but we could not fit the plugin name (e.g. <code>logitech-bulkcontroller</code>) or the <span class="caps">GUID</span> (16 bytes) in an 8 byte <code>SubCompatibleID</code>.
+Some non-compliant devices also hang and stop working when probing this specific string&nbsp;index.</p>
+<h4 id="microsoft-os-descriptors-20">Microsoft OS Descriptors 2.0<a class="md-anchor" href="#microsoft-os-descriptors-20" title="Permanent link"></a></h4>
+<p>The <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification">Microsoft <span class="caps">OS</span> Descriptors 2.0 Specification</a> is more useful as it defines a new device capability that can return a variable length vendor-defined section of data, using a <span class="caps">UUID</span> as a key.
+Using the <code>BOS</code> <em>“Binary Object Store”</em> descriptor is only available for devices using <span class="caps">USB</span> specification version 2.1 and newer.
+The <span class="caps">BOS</span> descriptor is used for Wireless <span class="caps">USB</span> details, <span class="caps">USB</span> 2.0 extensions, SuperSpeed <span class="caps">USB</span> connection details and a Container <span class="caps">ID</span>.</p>
+<p>The <span class="caps">BOS</span> descriptor does give the <span class="caps">OS</span> the ability to parse the platform capability, which is <code>bDevCapabilityType=0x05</code>. For <span class="caps">UUID</span> <code>D8DD60DF-4589-4CC7-9CD2-659D9E648A9F</code> this is identified as a structured blob of data Microsoft Windows uses for the suspend mode of the&nbsp;device.</p>
+<p>Creating a new <code>bDevCapabilityType</code> would allow vendors to store a binary blob (e.g. <code>Plugin=foobarbaz\nFlags=QuirkValueHere\n</code>) but that would be out-of-specification and difficult to&nbsp;implement.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+        
+        <li class="toc-list-item"><a href="#specification"><span class="link-text">Specification</span></a></li>
+        
+        <li class="toc-list-item"><a href="#implementation"><span class="link-text">Implementation</span></a></li>
+        
+        <li class="toc-list-item"><a href="#workflow"><span class="link-text">Workflow</span></a></li>
+        
+        <li class="toc-list-item"><a href="#prior-art"><span class="link-text">Prior Art</span></a></li>
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

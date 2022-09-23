@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.4</p>
+        <p>Library Version: 1.8.5</p>
         
       </div>
       
@@ -117,9 +117,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Backend.invalidate.html">invalidate</a>
   
+    <a class="method" href="method.Backend.load.html">load</a>
+  
     <a class="method" href="method.Backend.lookup_by_id.html">lookup_by_id</a>
   
     <a class="method" href="method.Backend.registered.html">registered</a>
+  
+    <a class="method" href="method.Backend.save.html">save</a>
   
     <a class="method" href="method.Backend.set_enabled.html">set_enabled</a>
   
@@ -170,7 +174,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="vfunc.Backend.invalidate.html">invalidate</a>
   
+    <a class="method" href="vfunc.Backend.load.html">load</a>
+  
     <a class="method" href="vfunc.Backend.registered.html">registered</a>
+  
+    <a class="method" href="vfunc.Backend.save.html">save</a>
   
     <a class="method" href="vfunc.Backend.setup.html">setup</a>
   
@@ -199,7 +207,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.4/libfwupdplugin/fu-backend.c#L14">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-backend.c#L14">[src]</a>
           
         </h4>
 
@@ -345,6 +353,14 @@ Calling this method causes the next requests to <code>fu_backend_setup()</code> 
         </div>
       
         <div class="">
+          <h6><a href="method.Backend.load.html">fu_backend_load</a></h6>
+          <div class="docblock">
+            <p>Loads the backend from a <span class="caps">JSON</span>&nbsp;object.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Backend.lookup_by_id.html">fu_backend_lookup_by_id</a></h6>
           <div class="docblock">
             <p>Gets a device previously added by the&nbsp;backend.</p>
@@ -359,6 +375,14 @@ Calling this method causes the next requests to <code>fu_backend_setup()</code> 
 backend actions on superclassed&nbsp;devices.</p>
           </div>
           <div class="docblock"><p>Available since: 1.7.4</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Backend.save.html">fu_backend_save</a></h6>
+          <div class="docblock">
+            <p>Saves the backend to a <span class="caps">JSON</span>&nbsp;builder.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
         </div>
       
         <div class="">
@@ -540,6 +564,20 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     guint indent,
     GString* str
   );
+  gboolean (* load) (
+    FuBackend* self,
+    JsonObject* json_object,
+    const gchar* tag,
+    FuBackendLoadFlags flags,
+    GError** error
+  );
+  gboolean (* save) (
+    FuBackend* self,
+    JsonBuilder* json_builder,
+    const gchar* tag,
+    FuBackendSaveFlags flags,
+    GError** error
+  );
   
 }</code></pre>
       </div>
@@ -621,6 +659,36 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <td style="vertical-align:top">No description available.</td>
         </td>
         
+        <tr>
+          <td style="vertical-align:top"><code>load</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* load) (
+    FuBackend* self,
+    JsonObject* json_object,
+    const gchar* tag,
+    FuBackendLoadFlags flags,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>save</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* save) (
+    FuBackend* self,
+    JsonBuilder* json_builder,
+    const gchar* tag,
+    FuBackendSaveFlags flags,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
         </table>
       </div>
       
@@ -659,6 +727,16 @@ Calling this method causes the next requests to <code>fu_backend_setup()</code> 
       </div>
       
       <div class="">
+        <h6 id="vfunc-load"><a href="vfunc.Backend.load.html">FwupdPlugin.BackendClass.load</a></h6>
+
+        <div class="docblock">
+          <p>Loads the backend from a <span class="caps">JSON</span>&nbsp;object.</p>
+        </div>
+
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
+      </div>
+      
+      <div class="">
         <h6 id="vfunc-registered"><a href="vfunc.Backend.registered.html">FwupdPlugin.BackendClass.registered</a></h6>
 
         <div class="docblock">
@@ -667,6 +745,16 @@ backend actions on superclassed&nbsp;devices.</p>
         </div>
 
           <div class="docblock"><p>Available since: 1.7.4</p></div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-save"><a href="vfunc.Backend.save.html">FwupdPlugin.BackendClass.save</a></h6>
+
+        <div class="docblock">
+          <p>Saves the backend to a <span class="caps">JSON</span>&nbsp;builder.</p>
+        </div>
+
+          <div class="docblock"><p>Available since: 1.8.5</p></div>
       </div>
       
       <div class="">
