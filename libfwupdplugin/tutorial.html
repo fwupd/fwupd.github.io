@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.5</p>
+        <p>Library Version: 1.8.6</p>
         
       </div>
       
@@ -91,7 +91,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <section>
     <div class="docblock">
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
-<p>At the heart of fwupd is a plugin loader that gets run at startup, when devices
+<p>At the heart of fwupd are plugins that gets run at startup, when devices
 get hotplugged and when updates are done.
 The idea is we have lots of small plugins that each do one thing, and are
 ordered by dependencies against each other at runtime.
@@ -102,49 +102,47 @@ big changes all over the source&nbsp;tree.</p>
 <li><strong>Mechanism</strong>: Upload binary data into a specific hardware&nbsp;device.</li>
 <li><strong>Policy</strong>: Control the system when updates are happening, e.g. preventing the
               user from&nbsp;powering-off.</li>
-<li><strong>Helpers</strong>: Providing more metadata about devices, for instance&nbsp;handling</li>
-<li>device&nbsp;quirks.</li>
+<li><strong>Helpers</strong>: Providing more metadata about devices, for instance handling device&nbsp;quirks.</li>
 </ul>
-<p>In general, building things out-of-tree isn&#8217;t something that we think is a very
-good idea; the <span class="caps">API</span> and <span class="caps">ABI</span> <em>internal</em> to fwupd is still changing and there&#8217;s a
-huge benefit to getting plugins upstream where they can undergo review and be
-ported as the <span class="caps">API</span> adapts.
-For this reason we don&#8217;t install the plugin headers onto the system, although
-you can of course just install the <code>.so</code> binary file&nbsp;manually.</p>
 <p>A plugin only needs to define the vfuncs that are required, and the plugin name
-is taken automatically from the suffix of the <code>.so</code> file.</p>
-<div class="codehilite"><pre><span></span><code>/*
- * Copyright (C) 2017 Richard Hughes &lt;richard@hughsie.com&gt;
+is taken automatically from the&nbsp;GType.</p>
+<div class="codehilite"><pre><span></span><code>/* fu-foo-plugin.h
+ *
+ * Copyright (C) 2022 Richard Hughes &lt;richard@hughsie.com&gt;
  *
  * SPDX-License-Identifier: LGPL-2.1+
  */
 
+#pragma once
+
 #include &lt;fwupdplugin.h&gt;
 
-struct FuPluginData {
+G_DECLARE_FINAL_TYPE(FuFooPlugin, fu_foo_plugin, FU, FOO_PLUGIN, FuPlugin)
+
+/* fu-foo-plugin.c
+ *
+ * Copyright (C) Richard Hughes &lt;richard@hughsie.com&gt;
+ *
+ * SPDX-License-Identifier: LGPL-2.1+
+ */
+
+#include &quot;config.h&quot;
+
+#include &quot;fu-foo-plugin.h&quot;
+
+struct _FuFooPlugin {
+    FuPlugin parent_instance;
     gpointer proxy;
 };
 
-static void
-fu_plugin_foo_init(FuPlugin *plugin)
-{
-    fu_plugin_add_rule(plugin, FU_PLUGIN_RULE_RUN_BEFORE, &quot;dfu&quot;);
-    fu_plugin_alloc_data(plugin, sizeof(FuPluginData));
-}
-
-static void
-fu_plugin_foo_destroy(FuPlugin *plugin)
-{
-    FuPluginData *data = fu_plugin_get_data(plugin);
-    destroy_proxy(data-&gt;proxy);
-}
+G_DEFINE_TYPE(FuFooPlugin, fu_foo_plugin, FU_TYPE_PLUGIN)
 
 static gboolean
-fu_plugin_foo_startup(FuPlugin *plugin, FuProgress *progress, GError **error)
+fu_foo_plugin_startup(FuPlugin *plugin, FuProgress *progress, GError **error)
 {
     FuPluginData *data = fu_plugin_get_data(plugin);
-    data-&gt;proxy = create_proxy();
-    if(data-&gt;proxy == NULL) {
+    self-&gt;proxy = create_proxy();
+    if(self-&gt;proxy == NULL) {
         g_set_error(error, FWUPD_ERROR, FWUPD_ERROR_NOT_SUPPORTED,
                     &quot;failed to create proxy&quot;);
         return FALSE;
@@ -152,13 +150,36 @@ fu_plugin_foo_startup(FuPlugin *plugin, FuProgress *progress, GError **error)
     return TRUE;
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_init(FuFooPlugin *self)
 {
-    vfuncs-&gt;build_hash = FU_BUILD_HASH;
-    vfuncs-&gt;init = fu_plugin_foo_init;
-    vfuncs-&gt;destroy = fu_plugin_foo_destroy;
-    vfuncs-&gt;startup = fu_plugin_foo_startup;
+}
+
+static void
+fu_foo_constructed(GObject *obj)
+{
+    FuPlugin *plugin = FU_PLUGIN(obj);
+    FuContext *ctx = fu_plugin_get_context(plugin);
+    fu_plugin_add_rule(plugin, FU_PLUGIN_RULE_RUN_BEFORE, &quot;dfu&quot;);
+}
+
+static void
+fu_foo_finalize(GObject *obj)
+{
+    FuFooPlugin *self = FU_FOO_PLUGIN(obj);
+    destroy_proxy(self-&gt;proxy);
+    G_OBJECT_CLASS(fu_foo_plugin_parent_class)-&gt;finalize(obj);
+}
+
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
+{
+    FuPluginClass *plugin_class = FU_PLUGIN_CLASS(klass);
+    GObjectClass *object_class = G_OBJECT_CLASS(klass);
+
+    object_class-&gt;constructed = fu_foo_constructed;
+    object_class-&gt;finalize = fu_foo_finalize;
+    plugin_class-&gt;startup = fu_foo_plugin_startup;
 }
 </code></pre></div>
 
@@ -173,7 +194,7 @@ The example here is all hardcoded, and a true plugin would have to
 derive the details about the <code>FuDevice</code> from the hardware, for example reading
 data from <code>sysfs</code> or <code>/dev</code>.</p>
 <div class="codehilite"><pre><span></span><code>static gboolean
-fu_plugin_foo_coldplug(FuPlugin *plugin, FuProgress *progress, GError **error)
+fu_foo_plugin_coldplug(FuPlugin *plugin, FuProgress *progress, GError **error)
 {
     g_autoptr(FuDevice) dev = NULL;
     fu_device_set_id(dev, &quot;dummy-1:2:3&quot;);
@@ -187,11 +208,11 @@ fu_plugin_foo_coldplug(FuPlugin *plugin, FuProgress *progress, GError **error)
     return TRUE;
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
 {
     …
-    vfuncs-&gt;coldplug = fu_plugin_foo_coldplug;
+    plugin_class-&gt;coldplug = fu_foo_plugin_coldplug;
     …
 }
 </code></pre></div>
@@ -246,7 +267,7 @@ ask the daemon to update the device with a suitable <code>.cab</code> file.
 When this is done the daemon checks the update for compatibility with the device,
 and then calls the vfuncs to update the&nbsp;device.</p>
 <div class="codehilite"><pre><span></span><code>static gboolean
-fu_plugin_foo_write_firmware(FuPlugin *plugin,
+fu_foo_plugin_write_firmware(FuPlugin *plugin,
                              FuDevice *dev,
                              GBytes *blob_fw,
                              FuProgress *progress,
@@ -259,11 +280,11 @@ fu_plugin_foo_write_firmware(FuPlugin *plugin,
     return TRUE;
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
 {
     …
-    vfuncs-&gt;write_firmware = fu_plugin_foo_write_firmware;
+    plugin_class-&gt;write_firmware = fu_foo_plugin_write_firmware;
     …
 }
 </code></pre></div>
@@ -280,7 +301,7 @@ This could be something as simple as checking the system battery level is over a
 certain threshold, or it could be as complicated as ensuring a vendor-specific
 <span class="caps">GPIO</span> is asserted when specific types of hardware are&nbsp;updated.</p>
 <div class="codehilite"><pre><span></span><code>static gboolean
-fu_plugin_foo_prepare(FuPlugin *plugin, FuDevice *device, GError **error)
+fu_foo_plugin_prepare(FuPlugin *plugin, FuDevice *device, GError **error)
 {
     if (fu_device_has_flag(device, FWUPD_DEVICE_FLAG_REQUIRE_AC &amp;&amp; !on_ac_power()) {
             g_set_error_literal(error,
@@ -294,18 +315,18 @@ fu_plugin_foo_prepare(FuPlugin *plugin, FuDevice *device, GError **error)
 }
 
 static gboolean
-fu_plugin_foo_cleanup(FuPlugin *plugin, FuDevice *device, GError **error)
+fu_foo_plugin_cleanup(FuPlugin *plugin, FuDevice *device, GError **error)
 {
     return g_file_set_contents(&quot;/var/lib/fwupd/something&quot;,
                                fu_device_get_id(device), -1, error);
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
 {
     …
-    vfuncs-&gt;prepare = fu_plugin_foo_prepare;
-    vfuncs-&gt;cleanup = fu_plugin_foo_cleanup;
+    plugin_class-&gt;prepare = fu_foo_plugin_prepare;
+    plugin_class-&gt;cleanup = fu_foo_plugin_cleanup;
     …
 }
 </code></pre></div>
@@ -325,7 +346,7 @@ version from the&nbsp;hardware.</p>
 handle the device <span class="caps">ID</span>, although the registered plugin can change during the
 attach and detach&nbsp;phases.</p>
 <div class="codehilite"><pre><span></span><code>static gboolean
-fu_plugin_foo_detach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
+fu_foo_plugin_detach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
 {
     if (hardware_in_bootloader)
         return TRUE;
@@ -333,7 +354,7 @@ fu_plugin_foo_detach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, G
 }
 
 static gboolean
-fu_plugin_foo_attach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
+fu_foo_plugin_attach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, GError **error)
 {
     if (!hardware_in_bootloader)
         return TRUE;
@@ -341,7 +362,7 @@ fu_plugin_foo_attach(FuPlugin *plugin, FuDevice *device, FuProgress *progress, G
 }
 
 static gboolean
-fu_plugin_foo_reload(FuPlugin *plugin, FuDevice *device, GError **error)
+fu_foo_plugin_reload(FuPlugin *plugin, FuDevice *device, GError **error)
 {
     g_autofree gchar *version = _get_version(plugin, device, error);
     if (version == NULL)
@@ -350,13 +371,13 @@ fu_plugin_foo_reload(FuPlugin *plugin, FuDevice *device, GError **error)
     return TRUE;
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
 {
     …
-    vfuncs-&gt;detach = fu_plugin_foo_detach;
-    vfuncs-&gt;attach = fu_plugin_foo_attach;
-    vfuncs-&gt;reload = fu_plugin_foo_reload;
+    plugin_class-&gt;detach = fu_foo_plugin_detach;
+    plugin_class-&gt;attach = fu_foo_plugin_attach;
+    plugin_class-&gt;reload = fu_foo_plugin_reload;
     …
 }
 </code></pre></div>
@@ -484,23 +505,23 @@ protocol on top of those primitives. (Example:
 The process would be similar if our device was handled by a different
 backend (<span class="caps">USB</span> or&nbsp;BlueZ).</p>
 <h3 id="creating-a-new-plugin">Creating a new plugin<a class="md-anchor" href="#creating-a-new-plugin" title="Permanent link"></a></h3>
-<p>The bare minimum a plugin should have is a <code>fu_plugin_init</code> function that
+<p>The bare minimum a plugin should have is a <code>constructed</code> function that
 defines the plugin characteristics such as the device type and firmware
 type handled by it, the build hash and any plugin-specific quirk keys
 that can be used for the&nbsp;plugin.</p>
-<div class="codehilite"><pre><span></span><code>void
-fu_plugin_steelseries_init(FuPlugin *plugin)
+<div class="codehilite"><pre><span></span><code>static void
+fu_foo_plugin_constructed(GObject *obj)
 {
+    FuPlugin *plugin = FU_PLUGIN(obj);
     FuContext *ctx = fu_plugin_get_context(plugin);
     fu_plugin_add_device_gtype(plugin, FU_TYPE_STEELSERIES_MOUSE);
     fu_plugin_add_device_gtype(plugin, FU_TYPE_STEELSERIES_GAMEPAD);
 }
 
-void
-fu_plugin_init_vfuncs(FuPluginVfuncs *vfuncs)
+static void
+fu_foo_plugin_class_init(FuFooPluginClass *klass)
 {
-    vfuncs-&gt;build_hash = FU_BUILD_HASH;
-    vfuncs-&gt;init = fu_plugin_steelseries_init;
+    plugin_class-&gt;init = fu_foo_plugin_constructed;
 }
 </code></pre></div>
 

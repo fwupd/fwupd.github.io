@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.5</p>
+        <p>Library Version: 1.8.6</p>
         
       </div>
       
@@ -104,6 +104,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Functions</h5>
   <div class="links">
   
+    <a class="func" href="type_func.Request.flag_from_string.html">flag_from_string</a>
+  
+    <a class="func" href="type_func.Request.flag_to_string.html">flag_to_string</a>
+  
     <a class="func" href="type_func.Request.from_variant.html">from_variant</a>
   
     <a class="func" href="type_func.Request.kind_from_string.html">kind_from_string</a>
@@ -119,9 +123,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
+    <a class="method" href="method.Request.add_flag.html">add_flag</a>
+  
     <a class="method" href="method.Request.get_created.html">get_created</a>
   
     <a class="method" href="method.Request.get_device_id.html">get_device_id</a>
+  
+    <a class="method" href="method.Request.get_flags.html">get_flags</a>
   
     <a class="method" href="method.Request.get_id.html">get_id</a>
   
@@ -131,9 +139,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Request.get_message.html">get_message</a>
   
+    <a class="method" href="method.Request.has_flag.html">has_flag</a>
+  
+    <a class="method" href="method.Request.remove_flag.html">remove_flag</a>
+  
     <a class="method" href="method.Request.set_created.html">set_created</a>
   
     <a class="method" href="method.Request.set_device_id.html">set_device_id</a>
+  
+    <a class="method" href="method.Request.set_flags.html">set_flags</a>
   
     <a class="method" href="method.Request.set_id.html">set_id</a>
   
@@ -157,6 +171,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="property" href="property.Request.device-id.html">device-id</a>
+  
+    <a class="property" href="property.Request.flags.html">flags</a>
   
     <a class="property" href="property.Request.id.html">id</a>
   
@@ -195,7 +211,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupd/fwupd-request.c#L13">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupd/fwupd-request.c#L13">[src]</a>
           
         </h4>
 
@@ -278,6 +294,26 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
       
       <div class="">
+        <h6><a href="type_func.Request.flag_from_string.html">fwupd_request_flag_from_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts a string to an enumerated request&nbsp;flag.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.8.6</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Request.flag_to_string.html">fwupd_request_flag_to_string</a></h6>
+
+        <div class="docblock">
+          <p>Converts an enumerated request flag to a&nbsp;string.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 1.8.6</p></div>
+      </div>
+      
+      <div class="">
         <h6><a href="type_func.Request.from_variant.html">fwupd_request_from_variant</a></h6>
 
         <div class="docblock">
@@ -321,6 +357,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
       
         <div class="">
+          <h6><a href="method.Request.add_flag.html">fwupd_request_add_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a specific flag to the&nbsp;request.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Request.get_created.html">fwupd_request_get_created</a></h6>
           <div class="docblock">
             <p>Gets when the request was&nbsp;created.</p>
@@ -334,6 +378,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <p>Gets the device_id that created the&nbsp;request.</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.get_flags.html">fwupd_request_get_flags</a></h6>
+          <div class="docblock">
+            <p>Gets the request&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
         </div>
       
         <div class="">
@@ -369,6 +421,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         </div>
       
         <div class="">
+          <h6><a href="method.Request.has_flag.html">fwupd_request_has_flag</a></h6>
+          <div class="docblock">
+            <p>Finds if the request has a specific&nbsp;flag.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.remove_flag.html">fwupd_request_remove_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a specific flag from the&nbsp;request.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Request.set_created.html">fwupd_request_set_created</a></h6>
           <div class="docblock">
             <p>Sets when the request was&nbsp;created.</p>
@@ -382,6 +450,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <p>Sets the device_id that created the&nbsp;request.</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Request.set_flags.html">fwupd_request_set_flags</a></h6>
+          <div class="docblock">
+            <p>Sets the request&nbsp;flags.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
         </div>
       
         <div class="">
@@ -470,6 +546,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </div>
 
           <div class="docblock"><p>Available since: 1.8.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Request.flags.html">Fwupd.Request:flags</a></h6>
+
+          <div class="docblock">
+            <p>The flags for the&nbsp;request.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
         </div>
       
         <div class="">

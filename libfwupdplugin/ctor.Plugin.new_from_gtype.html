@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Volume.new_esp_default</title>
+  <title>FwupdPlugin.Plugin.new_from_gtype</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Volume.new_esp_default"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.Volume.new_esp_default"/>
-  <meta name="twitter:title" content="FwupdPlugin.Volume.new_esp_default"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Volume.new_esp_default"/>
+  <meta property="og:title" content="FwupdPlugin.Plugin.new_from_gtype"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.Plugin.new_from_gtype"/>
+  <meta name="twitter:title" content="FwupdPlugin.Plugin.new_from_gtype"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Plugin.new_from_gtype"/>
 
 
   
@@ -77,27 +77,23 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.5</p>
+        <p>Library Version: 1.8.6</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Volume.html">Volume</a>
+    <a href="class.Plugin.html">Plugin</a>
   </div>
 </div>
 <div class="section">
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="method" href="ctor.Volume.new_by_device.html">new_by_device</a>
+    <a class="method" href="ctor.Plugin.new.html">new</a>
   
-    <a class="method" href="ctor.Volume.new_by_devnum.html">new_by_devnum</a>
-  
-    <a class="method current" href="ctor.Volume.new_esp_default.html">new_esp_default</a>
-  
-    <a class="method" href="ctor.Volume.new_esp_for_path.html">new_esp_for_path</a>
+    <a class="method current" href="ctor.Plugin.new_from_gtype.html">new_from_gtype</a>
   
   </div>
 </div>
@@ -110,7 +106,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Constructor</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Volume.html">Volume</a><span class="sep"></span>new_esp_default</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Plugin.html">Plugin</a><span class="sep"></span>new_from_gtype</h1>
   </header>
 
   <section>
@@ -119,15 +115,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-volume.h#L66">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupdplugin/fu-plugin-private.h#L16">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">FuVolume</span><span class="o">*</span><span class="w"></span>
-<span class="n">fu_volume_new_esp_default</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="kt">void</span><span class="w"></span>
-<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">FuPlugin</span><span class="o">*</span><span class="w"></span>
+<span class="n">fu_plugin_new_from_gtype</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">GType</span><span class="w"> </span><span class="n">gtype</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">FuContext</span><span class="o">*</span><span class="w"> </span><span class="n">ctx</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -139,20 +135,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-volume.c#L646">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupdplugin/fu-plugin.c#L2851">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Gets the platform default <span class="caps">ESP</span>.</p>
-<p><span class="caps">NOTE</span>: This has been deprecated, please use <code>fu_context_get_esp_volumes()</code> instead.</p>
+        <p>Creates a new <code>FuPlugin</code>.</p>
       </div>
 
       <div class="docblock">
         <table>
           
           
-          <tr><td>Available since:</td><td>1.8.2</td></tr>
+          <tr><td>Available since:</td><td>1.8.6</td></tr>
           
           
           
@@ -162,6 +157,56 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>gtype</code></td>
+            <td><code>GType</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>GType</code>, possibly even <code>G_TYPE_PLUGIN</code></p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>ctx</code></td>
+            <td><a href="class.Context.html"><code>FuContext</code></a></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>FuContext</code>.</p></td>
+          </tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
 
     
@@ -175,11 +220,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><a href="class.Volume.html"><code>FuVolume</code></a></td>
+            <td><a href="class.Plugin.html"><code>FuPlugin</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A volume, or <code>NULL</code> if the <span class="caps">ESP</span> was not&nbsp;found.</p></td>
+            <td>No description available.</td>
           </tr>
           
           

@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.5</p>
+        <p>Library Version: 1.8.6</p>
         
       </div>
       
@@ -94,6 +94,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="ctor" href="ctor.Plugin.new.html">new</a>
+  
+    <a class="ctor" href="ctor.Plugin.new_from_gtype.html">new_from_gtype</a>
   
   </div>
 </div>
@@ -140,8 +142,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Plugin.device_register.html">device_register</a>
   
     <a class="method" href="method.Plugin.device_remove.html">device_remove</a>
-  
-    <a class="method" href="method.Plugin.get_build_hash.html">get_build_hash</a>
   
     <a class="method" href="method.Plugin.get_config_value.html">get_config_value</a>
   
@@ -223,13 +223,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Plugin.set_config_value.html">set_config_value</a>
   
+    <a class="method" href="method.Plugin.set_context.html">set_context</a>
+  
     <a class="method" href="method.Plugin.set_name.html">set_name</a>
   
     <a class="method" href="method.Plugin.set_order.html">set_order</a>
   
     <a class="method" href="method.Plugin.set_priority.html">set_priority</a>
-  
-    <a class="method" href="method.Plugin.set_secure_config_value.html">set_secure_config_value</a>
   
     <a class="method" href="method.Plugin.to_string.html">to_string</a>
   
@@ -237,6 +237,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
 
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Plugin.context.html">context</a>
+  
+  </div>
+</div>
 
 
 
@@ -267,21 +276,65 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.Plugin.check_supported.html">check_supported</a>
+    <a class="method" href="vfunc.Plugin._check_supported.html">_check_supported</a>
   
-    <a class="method" href="vfunc.Plugin.config_changed.html">config_changed</a>
+    <a class="method" href="vfunc.Plugin._config_changed.html">_config_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._device_added.html">_device_added</a>
+  
+    <a class="method" href="vfunc.Plugin._device_register.html">_device_register</a>
+  
+    <a class="method" href="vfunc.Plugin._device_removed.html">_device_removed</a>
+  
+    <a class="method" href="vfunc.Plugin._percentage_changed.html">_percentage_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._rules_changed.html">_rules_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._status_changed.html">_status_changed</a>
+  
+    <a class="method" href="vfunc.Plugin.activate.html">activate</a>
+  
+    <a class="method" href="vfunc.Plugin.add_security_attrs.html">add_security_attrs</a>
+  
+    <a class="method" href="vfunc.Plugin.attach.html">attach</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_added.html">backend_device_added</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_changed.html">backend_device_changed</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_removed.html">backend_device_removed</a>
+  
+    <a class="method" href="vfunc.Plugin.cleanup.html">cleanup</a>
+  
+    <a class="method" href="vfunc.Plugin.clear_results.html">clear_results</a>
+  
+    <a class="method" href="vfunc.Plugin.coldplug.html">coldplug</a>
+  
+    <a class="method" href="vfunc.Plugin.composite_cleanup.html">composite_cleanup</a>
+  
+    <a class="method" href="vfunc.Plugin.composite_prepare.html">composite_prepare</a>
+  
+    <a class="method" href="vfunc.Plugin.detach.html">detach</a>
   
     <a class="method" href="vfunc.Plugin.device_added.html">device_added</a>
   
-    <a class="method" href="vfunc.Plugin.device_register.html">device_register</a>
+    <a class="method" href="vfunc.Plugin.device_created.html">device_created</a>
   
-    <a class="method" href="vfunc.Plugin.device_removed.html">device_removed</a>
+    <a class="method" href="vfunc.Plugin.device_registered.html">device_registered</a>
   
-    <a class="method" href="vfunc.Plugin.percentage_changed.html">percentage_changed</a>
+    <a class="method" href="vfunc.Plugin.get_results.html">get_results</a>
   
-    <a class="method" href="vfunc.Plugin.rules_changed.html">rules_changed</a>
+    <a class="method" href="vfunc.Plugin.prepare.html">prepare</a>
   
-    <a class="method" href="vfunc.Plugin.status_changed.html">status_changed</a>
+    <a class="method" href="vfunc.Plugin.startup.html">startup</a>
+  
+    <a class="method" href="vfunc.Plugin.to_string.html">to_string</a>
+  
+    <a class="method" href="vfunc.Plugin.unlock.html">unlock</a>
+  
+    <a class="method" href="vfunc.Plugin.verify.html">verify</a>
+  
+    <a class="method" href="vfunc.Plugin.write_firmware.html">write_firmware</a>
   
   </div>
 </div>
@@ -306,7 +359,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-plugin.c#L29">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupdplugin/fu-plugin.c#L29">[src]</a>
           
         </h4>
 
@@ -377,6 +430,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </div>
 
           <div class="docblock"><p>Available since: 0.8.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="ctor.Plugin.new_from_gtype.html">fu_plugin_new_from_gtype</a></h6>
+
+          <div class="docblock">
+            <p>Creates a new <code>FuPlugin</code>.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
         </div>
       
       </div>
@@ -522,14 +585,6 @@ has already been added by a different plugin then this request will be&nbsp;igno
             <p>Asks the daemon to remove a device from the exported&nbsp;list.</p>
           </div>
           <div class="docblock"><p>Available since: 0.8.0</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.get_build_hash.html">fu_plugin_get_build_hash</a></h6>
-          <div class="docblock">
-            <p>Gets the build hash a plugin was generated&nbsp;with.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.2.4</p></div>
         </div>
       
         <div class="">
@@ -785,7 +840,7 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         <div class="">
           <h6><a href="method.Plugin.runner_init.html">fu_plugin_runner_init</a></h6>
           <div class="docblock">
-            <p>Runs the init routine for the plugin, if&nbsp;enabled.</p>
+            <p>Runs the constructed routine for the plugin, if&nbsp;enabled.</p>
           </div>
           <div class="docblock"><p>Available since: 1.8.1</p></div>
         </div>
@@ -855,6 +910,14 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.set_context.html">fu_plugin_set_context</a></h6>
+          <div class="docblock">
+            <p>Sets the context for this&nbsp;plugin.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.set_name.html">fu_plugin_set_name</a></h6>
           <div class="docblock">
             <p>Sets the plugin&nbsp;name.</p>
@@ -876,15 +939,6 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
             <p>Sets the plugin priority, where higher numbers are&nbsp;better.</p>
           </div>
           <div class="docblock"><p>Available since: 1.0.0</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.set_secure_config_value.html">fu_plugin_set_secure_config_value</a></h6>
-          <div class="docblock">
-            <p>Sets a plugin config file value and updates file so that non-privileged users
-cannot read&nbsp;it.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.7.4</p></div>
         </div>
       
         <div class="">
@@ -980,6 +1034,20 @@ cannot read&nbsp;it.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Plugin.context.html">FwupdPlugin.Plugin:context</a></h6>
+
+          <div class="docblock">
+            <p>The <code>FuContext</code> to&nbsp;use.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.8.6</p></div>
+        </div>
+      
+      </div>
       
 
       
@@ -1105,35 +1173,163 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
         <pre><code>struct FwupdPluginPluginClass {
   FwupdPluginClass parent_class;
+  void (* _device_added) (
+    FuPlugin* self,
+    FuDevice* device
+  );
+  void (* _device_removed) (
+    FuPlugin* self,
+    FuDevice* device
+  );
+  void (* _status_changed) (
+    FuPlugin* self,
+    FwupdStatus status
+  );
+  void (* _percentage_changed) (
+    FuPlugin* self,
+    guint percentage
+  );
+  void (* _device_register) (
+    FuPlugin* self,
+    FuDevice* device
+  );
+  gboolean (* _check_supported) (
+    FuPlugin* self,
+    const gchar* guid
+  );
+  void (* _rules_changed) (
+    FuPlugin* self
+  );
+  void (* _config_changed) (
+    FuPlugin* self
+  );
+  void (* constructed) (
+    GObject* obj
+  );
+  void (* finalize) (
+    GObject* obj
+  );
+  gboolean (* startup) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  );
+  gboolean (* coldplug) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  );
+  gboolean (* device_created) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
+  );
+  void (* device_registered) (
+    FuPlugin* self,
+    FuDevice* device
+  );
   void (* device_added) (
     FuPlugin* self,
     FuDevice* device
   );
-  void (* device_removed) (
+  gboolean (* verify) (
     FuPlugin* self,
-    FuDevice* device
+    FuDevice* device,
+    FuProgress* progress,
+    FuPluginVerifyFlags flags,
+    GError** error
   );
-  void (* status_changed) (
+  gboolean (* get_results) (
     FuPlugin* self,
-    FwupdStatus status
+    FuDevice* device,
+    GError** error
   );
-  void (* percentage_changed) (
+  gboolean (* clear_results) (
     FuPlugin* self,
-    guint percentage
+    FuDevice* device,
+    GError** error
   );
-  void (* device_register) (
+  gboolean (* backend_device_added) (
     FuPlugin* self,
-    FuDevice* device
+    FuDevice* device,
+    GError** error
   );
-  gboolean (* check_supported) (
+  gboolean (* backend_device_changed) (
     FuPlugin* self,
-    const gchar* guid
+    FuDevice* device,
+    GError** error
   );
-  void (* rules_changed) (
-    FuPlugin* self
+  gboolean (* backend_device_removed) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
   );
-  void (* config_changed) (
-    FuPlugin* self
+  void (* add_security_attrs) (
+    FuPlugin* self,
+    FuSecurityAttrs* attrs
+  );
+  gboolean (* write_firmware) (
+    FuPlugin* self,
+    FuDevice* device,
+    GBytes* blob_fw,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  );
+  gboolean (* unlock) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
+  );
+  gboolean (* activate) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  );
+  gboolean (* attach) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  );
+  gboolean (* detach) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  );
+  gboolean (* prepare) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  );
+  gboolean (* cleanup) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  );
+  gboolean (* composite_prepare) (
+    FuPlugin* self,
+    GPtrArray* devices,
+    GError** error
+  );
+  gboolean (* composite_cleanup) (
+    FuPlugin* self,
+    GPtrArray* devices,
+    GError** error
+  );
+  void (* load) (
+    FuContext* ctx
+  );
+  void (* to_string) (
+    FuPlugin* self,
+    guint idt,
+    GString* str
   );
   
 }</code></pre>
@@ -1155,6 +1351,173 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
+          <td style="vertical-align:top"><code>_device_added</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _device_added) (
+    FuPlugin* self,
+    FuDevice* device
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_device_removed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _device_removed) (
+    FuPlugin* self,
+    FuDevice* device
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_status_changed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _status_changed) (
+    FuPlugin* self,
+    FwupdStatus status
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_percentage_changed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _percentage_changed) (
+    FuPlugin* self,
+    guint percentage
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_device_register</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _device_register) (
+    FuPlugin* self,
+    FuDevice* device
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_check_supported</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* _check_supported) (
+    FuPlugin* self,
+    const gchar* guid
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_rules_changed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _rules_changed) (
+    FuPlugin* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>_config_changed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* _config_changed) (
+    FuPlugin* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>constructed</code></td>
+          <td style="vertical-align:top"><pre><code>void (* constructed) (
+    GObject* obj
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>finalize</code></td>
+          <td style="vertical-align:top"><pre><code>void (* finalize) (
+    GObject* obj
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>startup</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* startup) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>coldplug</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* coldplug) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>device_created</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* device_created) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>device_registered</code></td>
+          <td style="vertical-align:top"><pre><code>void (* device_registered) (
+    FuPlugin* self,
+    FuDevice* device
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
           <td style="vertical-align:top"><code>device_added</code></td>
           <td style="vertical-align:top"><pre><code>void (* device_added) (
     FuPlugin* self,
@@ -1167,10 +1530,13 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>device_removed</code></td>
-          <td style="vertical-align:top"><pre><code>void (* device_removed) (
+          <td style="vertical-align:top"><code>verify</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* verify) (
     FuPlugin* self,
-    FuDevice* device
+    FuDevice* device,
+    FuProgress* progress,
+    FuPluginVerifyFlags flags,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1179,10 +1545,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>status_changed</code></td>
-          <td style="vertical-align:top"><pre><code>void (* status_changed) (
+          <td style="vertical-align:top"><code>get_results</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* get_results) (
     FuPlugin* self,
-    FwupdStatus status
+    FuDevice* device,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1191,10 +1558,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>percentage_changed</code></td>
-          <td style="vertical-align:top"><pre><code>void (* percentage_changed) (
+          <td style="vertical-align:top"><code>clear_results</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* clear_results) (
     FuPlugin* self,
-    guint percentage
+    FuDevice* device,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1203,10 +1571,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>device_register</code></td>
-          <td style="vertical-align:top"><pre><code>void (* device_register) (
+          <td style="vertical-align:top"><code>backend_device_added</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* backend_device_added) (
     FuPlugin* self,
-    FuDevice* device
+    FuDevice* device,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1215,10 +1584,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>check_supported</code></td>
-          <td style="vertical-align:top"><pre><code>gboolean (* check_supported) (
+          <td style="vertical-align:top"><code>backend_device_changed</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* backend_device_changed) (
     FuPlugin* self,
-    const gchar* guid
+    FuDevice* device,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1227,9 +1597,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>rules_changed</code></td>
-          <td style="vertical-align:top"><pre><code>void (* rules_changed) (
-    FuPlugin* self
+          <td style="vertical-align:top"><code>backend_device_removed</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* backend_device_removed) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
   )</code></pre></td>
         </tr>
         <tr>
@@ -1238,9 +1610,161 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>config_changed</code></td>
-          <td style="vertical-align:top"><pre><code>void (* config_changed) (
-    FuPlugin* self
+          <td style="vertical-align:top"><code>add_security_attrs</code></td>
+          <td style="vertical-align:top"><pre><code>void (* add_security_attrs) (
+    FuPlugin* self,
+    FuSecurityAttrs* attrs
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>write_firmware</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* write_firmware) (
+    FuPlugin* self,
+    FuDevice* device,
+    GBytes* blob_fw,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>unlock</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* unlock) (
+    FuPlugin* self,
+    FuDevice* device,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>activate</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* activate) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>attach</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* attach) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>detach</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* detach) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>prepare</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* prepare) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>cleanup</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* cleanup) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>composite_prepare</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* composite_prepare) (
+    FuPlugin* self,
+    GPtrArray* devices,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>composite_cleanup</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* composite_cleanup) (
+    FuPlugin* self,
+    GPtrArray* devices,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>load</code></td>
+          <td style="vertical-align:top"><pre><code>void (* load) (
+    FuContext* ctx
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>to_string</code></td>
+          <td style="vertical-align:top"><pre><code>void (* to_string) (
+    FuPlugin* self,
+    guint idt,
+    GString* str
   )</code></pre></td>
         </tr>
         <tr>
@@ -1264,7 +1788,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
       
       <div class="">
-        <h6 id="vfunc-check_supported"><a href="vfunc.Plugin.check_supported.html">FwupdPlugin.PluginClass.check_supported</a></h6>
+        <h6 id="vfunc-_check_supported"><a href="vfunc.Plugin._check_supported.html">FwupdPlugin.PluginClass._check_supported</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1274,7 +1798,187 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-config_changed"><a href="vfunc.Plugin.config_changed.html">FwupdPlugin.PluginClass.config_changed</a></h6>
+        <h6 id="vfunc-_config_changed"><a href="vfunc.Plugin._config_changed.html">FwupdPlugin.PluginClass._config_changed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_device_added"><a href="vfunc.Plugin._device_added.html">FwupdPlugin.PluginClass._device_added</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_device_register"><a href="vfunc.Plugin._device_register.html">FwupdPlugin.PluginClass._device_register</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_device_removed"><a href="vfunc.Plugin._device_removed.html">FwupdPlugin.PluginClass._device_removed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_percentage_changed"><a href="vfunc.Plugin._percentage_changed.html">FwupdPlugin.PluginClass._percentage_changed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_rules_changed"><a href="vfunc.Plugin._rules_changed.html">FwupdPlugin.PluginClass._rules_changed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-_status_changed"><a href="vfunc.Plugin._status_changed.html">FwupdPlugin.PluginClass._status_changed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-activate"><a href="vfunc.Plugin.activate.html">FwupdPlugin.PluginClass.activate</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-add_security_attrs"><a href="vfunc.Plugin.add_security_attrs.html">FwupdPlugin.PluginClass.add_security_attrs</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-attach"><a href="vfunc.Plugin.attach.html">FwupdPlugin.PluginClass.attach</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-backend_device_added"><a href="vfunc.Plugin.backend_device_added.html">FwupdPlugin.PluginClass.backend_device_added</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-backend_device_changed"><a href="vfunc.Plugin.backend_device_changed.html">FwupdPlugin.PluginClass.backend_device_changed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-backend_device_removed"><a href="vfunc.Plugin.backend_device_removed.html">FwupdPlugin.PluginClass.backend_device_removed</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-cleanup"><a href="vfunc.Plugin.cleanup.html">FwupdPlugin.PluginClass.cleanup</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-clear_results"><a href="vfunc.Plugin.clear_results.html">FwupdPlugin.PluginClass.clear_results</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-coldplug"><a href="vfunc.Plugin.coldplug.html">FwupdPlugin.PluginClass.coldplug</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-composite_cleanup"><a href="vfunc.Plugin.composite_cleanup.html">FwupdPlugin.PluginClass.composite_cleanup</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-composite_prepare"><a href="vfunc.Plugin.composite_prepare.html">FwupdPlugin.PluginClass.composite_prepare</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-detach"><a href="vfunc.Plugin.detach.html">FwupdPlugin.PluginClass.detach</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1294,17 +1998,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-device_register"><a href="vfunc.Plugin.device_register.html">FwupdPlugin.PluginClass.device_register</a></h6>
-
-        <div class="docblock">
-          <p>Registers the device with other plugins so they can set&nbsp;metadata.</p>
-        </div>
-
-          <div class="docblock"><p>Available since: 0.9.7</p></div>
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-device_removed"><a href="vfunc.Plugin.device_removed.html">FwupdPlugin.PluginClass.device_removed</a></h6>
+        <h6 id="vfunc-device_created"><a href="vfunc.Plugin.device_created.html">FwupdPlugin.PluginClass.device_created</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1314,7 +2008,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-percentage_changed"><a href="vfunc.Plugin.percentage_changed.html">FwupdPlugin.PluginClass.percentage_changed</a></h6>
+        <h6 id="vfunc-device_registered"><a href="vfunc.Plugin.device_registered.html">FwupdPlugin.PluginClass.device_registered</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1324,7 +2018,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-rules_changed"><a href="vfunc.Plugin.rules_changed.html">FwupdPlugin.PluginClass.rules_changed</a></h6>
+        <h6 id="vfunc-get_results"><a href="vfunc.Plugin.get_results.html">FwupdPlugin.PluginClass.get_results</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1334,7 +2028,57 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-status_changed"><a href="vfunc.Plugin.status_changed.html">FwupdPlugin.PluginClass.status_changed</a></h6>
+        <h6 id="vfunc-prepare"><a href="vfunc.Plugin.prepare.html">FwupdPlugin.PluginClass.prepare</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-startup"><a href="vfunc.Plugin.startup.html">FwupdPlugin.PluginClass.startup</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-to_string"><a href="vfunc.Plugin.to_string.html">FwupdPlugin.PluginClass.to_string</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-unlock"><a href="vfunc.Plugin.unlock.html">FwupdPlugin.PluginClass.unlock</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-verify"><a href="vfunc.Plugin.verify.html">FwupdPlugin.PluginClass.verify</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-write_firmware"><a href="vfunc.Plugin.write_firmware.html">FwupdPlugin.PluginClass.write_firmware</a></h6>
 
         <div class="docblock">
           No description available.
@@ -1378,6 +2122,8 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
 
 
       
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
 
       
 <li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Plugin.percentage_changed</title>
+  <title>FwupdPlugin.Plugin.add_security_attrs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Plugin.percentage_changed"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.Plugin.percentage_changed"/>
-  <meta name="twitter:title" content="FwupdPlugin.Plugin.percentage_changed"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Plugin.percentage_changed"/>
+  <meta property="og:title" content="FwupdPlugin.Plugin.add_security_attrs"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.Plugin.add_security_attrs"/>
+  <meta name="twitter:title" content="FwupdPlugin.Plugin.add_security_attrs"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Plugin.add_security_attrs"/>
 
 
   
@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.5</p>
+        <p>Library Version: 1.8.6</p>
         
       </div>
       
@@ -91,21 +91,65 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.Plugin.check_supported.html">check_supported</a>
+    <a class="method" href="vfunc.Plugin._check_supported.html">_check_supported</a>
   
-    <a class="method" href="vfunc.Plugin.config_changed.html">config_changed</a>
+    <a class="method" href="vfunc.Plugin._config_changed.html">_config_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._device_added.html">_device_added</a>
+  
+    <a class="method" href="vfunc.Plugin._device_register.html">_device_register</a>
+  
+    <a class="method" href="vfunc.Plugin._device_removed.html">_device_removed</a>
+  
+    <a class="method" href="vfunc.Plugin._percentage_changed.html">_percentage_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._rules_changed.html">_rules_changed</a>
+  
+    <a class="method" href="vfunc.Plugin._status_changed.html">_status_changed</a>
+  
+    <a class="method" href="vfunc.Plugin.activate.html">activate</a>
+  
+    <a class="method current" href="vfunc.Plugin.add_security_attrs.html">add_security_attrs</a>
+  
+    <a class="method" href="vfunc.Plugin.attach.html">attach</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_added.html">backend_device_added</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_changed.html">backend_device_changed</a>
+  
+    <a class="method" href="vfunc.Plugin.backend_device_removed.html">backend_device_removed</a>
+  
+    <a class="method" href="vfunc.Plugin.cleanup.html">cleanup</a>
+  
+    <a class="method" href="vfunc.Plugin.clear_results.html">clear_results</a>
+  
+    <a class="method" href="vfunc.Plugin.coldplug.html">coldplug</a>
+  
+    <a class="method" href="vfunc.Plugin.composite_cleanup.html">composite_cleanup</a>
+  
+    <a class="method" href="vfunc.Plugin.composite_prepare.html">composite_prepare</a>
+  
+    <a class="method" href="vfunc.Plugin.detach.html">detach</a>
   
     <a class="method" href="vfunc.Plugin.device_added.html">device_added</a>
   
-    <a class="method" href="vfunc.Plugin.device_register.html">device_register</a>
+    <a class="method" href="vfunc.Plugin.device_created.html">device_created</a>
   
-    <a class="method" href="vfunc.Plugin.device_removed.html">device_removed</a>
+    <a class="method" href="vfunc.Plugin.device_registered.html">device_registered</a>
   
-    <a class="method current" href="vfunc.Plugin.percentage_changed.html">percentage_changed</a>
+    <a class="method" href="vfunc.Plugin.get_results.html">get_results</a>
   
-    <a class="method" href="vfunc.Plugin.rules_changed.html">rules_changed</a>
+    <a class="method" href="vfunc.Plugin.prepare.html">prepare</a>
   
-    <a class="method" href="vfunc.Plugin.status_changed.html">status_changed</a>
+    <a class="method" href="vfunc.Plugin.startup.html">startup</a>
+  
+    <a class="method" href="vfunc.Plugin.to_string.html">to_string</a>
+  
+    <a class="method" href="vfunc.Plugin.unlock.html">unlock</a>
+  
+    <a class="method" href="vfunc.Plugin.verify.html">verify</a>
+  
+    <a class="method" href="vfunc.Plugin.write_firmware.html">write_firmware</a>
   
   </div>
 </div>
@@ -118,7 +162,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Virtual Method</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Plugin.html">Plugin</a><span class="sep"></span>percentage_changed</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Plugin.html">Plugin</a><span class="sep"></span>add_security_attrs</h1>
   </header>
 
   <section>
@@ -127,15 +171,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.5/libfwupdplugin/fu-plugin.h#L54">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupdplugin/fu-plugin.h#L228">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">percentage_changed</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="n">add_security_attrs</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">FuPlugin</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">percentage</span><span class="w"></span>
+<span class="w">  </span><span class="n">FuSecurityAttrs</span><span class="o">*</span><span class="w"> </span><span class="n">attrs</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -175,8 +219,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>percentage</code></td>
-            <td><code>guint</code></td>
+            <td><code>attrs</code></td>
+            <td><a href="class.SecurityAttrs.html"><code>FuSecurityAttrs</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
@@ -189,7 +233,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           
