@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.6</p>
+        <p>Library Version: 1.8.7</p>
         
       </div>
       
@@ -98,6 +98,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="method" href="method.MeiDevice.connect.html">connect</a>
+  
+    <a class="method" href="method.MeiDevice.get_fw_status.html">get_fw_status</a>
+  
+    <a class="method" href="method.MeiDevice.get_fw_ver.html">get_fw_ver</a>
   
     <a class="method" href="method.MeiDevice.get_max_msg_length.html">get_max_msg_length</a>
   
@@ -138,7 +142,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.6/libfwupdplugin/fu-mei-device.c#L36">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.7/libfwupdplugin/fu-mei-device.c#L37">[src]</a>
           
         </h4>
 
@@ -216,9 +220,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <div class="">
           <h6><a href="method.MeiDevice.connect.html">fu_mei_device_connect</a></h6>
           <div class="docblock">
-            <p>Connects to the <span class="caps">MEI</span> device for a specific <span class="caps">GUID</span>.</p>
+            <p>Connects to the <span class="caps">MEI</span>&nbsp;device.</p>
           </div>
           <div class="docblock"><p>Available since: 1.8.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MeiDevice.get_fw_status.html">fu_mei_device_get_fw_status</a></h6>
+          <div class="docblock">
+            <p>Gets the firmware status for a specific&nbsp;index.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.7</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MeiDevice.get_fw_ver.html">fu_mei_device_get_fw_ver</a></h6>
+          <div class="docblock">
+            <p>Gets the firmware version for a specific&nbsp;index.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.7</p></div>
         </div>
       
         <div class="">
@@ -258,7 +278,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (33)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.UdevDevice.html">FuUdevDevice</a> (35)</h5><div class="docblock">
           
             <div class="docblock">
               <p>Please see&nbsp;<a href="class.UdevDevice.html#methods">FuUdevDevice</a>&nbsp;for a full list of methods.</em></p>
@@ -281,7 +301,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (109)</h5>
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (110)</h5>
           <div class="docblock">
           
             <div class="docblock">
