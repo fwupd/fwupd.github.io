@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.7</p>
+        <p>Library Version: 1.8.8</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.7</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.8</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -293,6 +293,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><a title="Remote" class="symbol" href="class.Remote.html">Remote</a></td>
             
             <td class="docblock-summary"><p>A source of metadata that provides&nbsp;firmware.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="Report" class="symbol" href="class.Report.html">Report</a></td>
+            
+            <td class="docblock-summary"><p>A firmware report from a&nbsp;vendor.</p></td>
             
           </tr>
           
@@ -663,7 +670,7 @@ machine-id from the&nbsp;machine-hash.</p></td>
           <tr class="section-item">
             <td><a title="error_quark" class="symbol" href="func.error_quark.html">error_quark</a></td>
             
-            <td class="docblock-summary"><p>The error quark for <code>FwupdError</code>.</p></td>
+            <td class="docblock-summary"><p>An error&nbsp;quark.</p></td>
             
           </tr>
           
@@ -692,6 +699,13 @@ machine-id from the&nbsp;machine-hash.</p></td>
             <td><a title="get_os_release" class="symbol" href="func.get_os_release.html">get_os_release</a></td>
             
             <td class="docblock-summary"><p>Loads information from the system os-release&nbsp;file.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="get_os_release_full" class="symbol" href="func.get_os_release_full.html">get_os_release_full</a></td>
+            
+            <td class="docblock-summary"><p>Loads information from a defined system os-release&nbsp;file.</p></td>
             
           </tr>
           
@@ -1796,6 +1810,34 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p></t
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_DEVICE_NAME" class="symbol" href="const.RESULT_KEY_DEVICE_NAME.html">RESULT_KEY_DEVICE_NAME</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the device&nbsp;name.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_DISTRO_ID" class="symbol" href="const.RESULT_KEY_DISTRO_ID.html">RESULT_KEY_DISTRO_ID</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the distribution <span class="caps">ID</span>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_DISTRO_VARIANT" class="symbol" href="const.RESULT_KEY_DISTRO_VARIANT.html">RESULT_KEY_DISTRO_VARIANT</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the distribution&nbsp;variant.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_DISTRO_VERSION" class="symbol" href="const.RESULT_KEY_DISTRO_VERSION.html">RESULT_KEY_DISTRO_VERSION</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the distribution&nbsp;version.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_FILENAME" class="symbol" href="const.RESULT_KEY_FILENAME.html">RESULT_KEY_FILENAME</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;Filename.</p></td>
@@ -1971,6 +2013,13 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p></t
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_REPORTS" class="symbol" href="const.RESULT_KEY_REPORTS.html">RESULT_KEY_REPORTS</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent an array of&nbsp;reports.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_REQUEST_KIND" class="symbol" href="const.RESULT_KEY_REQUEST_KIND.html">RESULT_KEY_REQUEST_KIND</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;RequestKind.</p></td>
@@ -2132,6 +2181,13 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p></t
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_VERSION_OLD" class="symbol" href="const.RESULT_KEY_VERSION_OLD.html">RESULT_KEY_VERSION_OLD</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent the old version&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_VERSION_RAW" class="symbol" href="const.RESULT_KEY_VERSION_RAW.html">RESULT_KEY_VERSION_RAW</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;VersionRaw.</p></td>
@@ -2156,6 +2212,13 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p></t
             <td><a title="SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION.html">SECURITY_ATTR_ID_AMD_SPI_WRITE_PROTECTION</a></td>
             
             <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for <span class="caps">SPI</span> Write&nbsp;protection.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_BIOS_ROLLBACK_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_BIOS_ROLLBACK_PROTECTION.html">SECURITY_ATTR_ID_BIOS_ROLLBACK_PROTECTION</a></td>
+            
+            <td class="docblock-summary"><p>Host Security <span class="caps">ID</span> attribute for Rollback protection of <span class="caps">BIOS</span>&nbsp;firmware.</p></td>
             
           </tr>
           

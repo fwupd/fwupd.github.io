@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.7</p>
+        <p>Library Version: 1.8.8</p>
         
       </div>
       
@@ -197,8 +197,8 @@ There are currently no tests implemented for <span class="caps">HSI</span>:5 and
 <p>The set of tests is currently x86 <span class="caps">UEFI</span>-centric, but will be expanded in the future for various <span class="caps">ARM</span> or <span class="caps">RISC</span>-V firmware protections as required.
 Where the requirement is architecture or processor specific it has been&nbsp;noted.</p>
 <p><a id="org.fwupd.hsi.Amd.PlatformRollbackProtection"></a></p>
-<h3 id="amd-rollback-protection"><a href="#org.fwupd.hsi.Amd.PlatformRollbackProtection">AMD Rollback protection</a><a class="md-anchor" href="#amd-rollback-protection" title="Permanent link"></a></h3>
-<p><span class="caps">AMD</span> SOCs include the ability to prevent a rollback attack by a rollback protection feature on the&nbsp;firmware.</p>
+<h3 id="amd-secure-processor-rollback-protection"><a href="#org.fwupd.hsi.Amd.PlatformRollbackProtection">AMD Secure Processor Rollback protection</a><a class="md-anchor" href="#amd-secure-processor-rollback-protection" title="Permanent link"></a></h3>
+<p><span class="caps">AMD</span> SOCs include the ability to prevent a rollback attack by a rollback protection feature on the secure&nbsp;processor.</p>
 <p>This feature prevents an attacker from loading an older firmware onto the part after a security vulnerability has been&nbsp;fixed.</p>
 <p><strong>Impact:</strong></p>
 <p>SOCs without this feature may be attacked by an attacker installing an older firmware that takes advantage of a well-known&nbsp;vulnerability.</p>
@@ -207,7 +207,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>not-enabled</code>: rollback protection disabled&nbsp;(failure)</li>
 <li><code>enabled</code>: rollback protection enabled&nbsp;(success)</li>
 </ul>
-<p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v1.8.0]</em></p>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-4 on systems that run this test. <em>[v1.8.0]</em></p>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://www.psacertified.org/blog/anti-rollback-explained/">Rollback&nbsp;protection</a></li>
@@ -234,6 +234,21 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>enabled</code>: <span class="caps">SPI</span> protections enabled&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-3 on systems that run this test. <em>[v1.8.0]</em></p>
+<p><a id="org.fwupd.hsi.Bios.RollbackProtection"></a></p>
+<h3 id="bios-firmware-rollback-protection"><a href="#org.fwupd.hsi.Bios.RollbackProtection">BIOS Firmware Rollback protection</a><a class="md-anchor" href="#bios-firmware-rollback-protection" title="Permanent link"></a></h3>
+<p>Some OEMs include an optional firmware protection feature in their <span class="caps">BIOS</span> that would prevent installation of older firmware that may have security&nbsp;vulnerabilities.</p>
+<p><strong>Impact:</strong></p>
+<p>Firmware without this feature enabled may be attacked by an attacker installing an older firmware that takes advantage of a well-known&nbsp;vulnerability.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-enabled</code>: rollback protection disabled&nbsp;(failure)</li>
+<li><code>enabled</code>: rollback protection enabled&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v1.8.8]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://www.psacertified.org/blog/anti-rollback-explained/">Rollback&nbsp;protection</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.EncryptedRam"></a></p>
 <h3 id="dram-memory-encryption"><a href="#org.fwupd.hsi.EncryptedRam">DRAM memory encryption</a><a class="md-anchor" href="#dram-memory-encryption" title="Permanent link"></a></h3>
 <p><span class="caps">TME</span> (Intel) or <span class="caps">SME</span> (<span class="caps">AMD</span>) is used by the hardware on supported SOCs to encrypt all data on external memory&nbsp;buses.</p>
@@ -409,8 +424,8 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>tainted</code>: the kernel is untrusted, perhaps because a proprietary module was loaded&nbsp;(failure)</li>
 <li><code>not-tainted</code>: the kernel is trusted&nbsp;(success)</li>
 </ul>
-<p><a id="org.fwupd.hsi.Mei.BootGuardPlatformKey"></a></p>
-<h3 id="me-bootguard-platform-key"><a href="#org.fwupd.hsi.Mei.BootGuardPlatformKey">ME BootGuard Platform Key</a><a class="md-anchor" href="#me-bootguard-platform-key" title="Permanent link"></a></h3>
+<p><a id="org.fwupd.hsi.Mei.KeyManifest"></a></p>
+<h3 id="me-bootguard-platform-key"><a href="#org.fwupd.hsi.Mei.KeyManifest">ME BootGuard Platform Key</a><a class="md-anchor" href="#me-bootguard-platform-key" title="Permanent link"></a></h3>
 <p>The BootGuard Platform Key is fused into the <span class="caps">CPU</span> <span class="caps">PCH</span> during manufacturing by the <span class="caps">OEM</span>.</p>
 <p>At bootup, an authenticated code module computes a hash of the Platform Key and and compares it with the one stored in field-programmable&nbsp;fuses.</p>
 <p>If the key matches the <span class="caps">ACM</span> will pass control to the firmware, otherwise the boot process will&nbsp;stop.</p>
@@ -849,11 +864,13 @@ As those become ratified standards that are available in hardware, there are opp
           
           <ul class="toc-list">
           
-            <li class="toc-list-item"><a href="#amd-rollback-protection"><span class="link-text">AMD Rollback protection</span></a></li>
+            <li class="toc-list-item"><a href="#amd-secure-processor-rollback-protection"><span class="link-text">AMD Secure Processor Rollback protection</span></a></li>
           
             <li class="toc-list-item"><a href="#amd-spi-write-protections"><span class="link-text">AMD SPI Write protections</span></a></li>
           
             <li class="toc-list-item"><a href="#amd-spi-replay-protections"><span class="link-text">AMD SPI Replay protections</span></a></li>
+          
+            <li class="toc-list-item"><a href="#bios-firmware-rollback-protection"><span class="link-text">BIOS Firmware Rollback protection</span></a></li>
           
             <li class="toc-list-item"><a href="#dram-memory-encryption"><span class="link-text">DRAM memory encryption</span></a></li>
           

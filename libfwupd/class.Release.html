@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.7</p>
+        <p>Library Version: 1.8.8</p>
         
       </div>
       
@@ -139,6 +139,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Release.add_metadata_item.html">add_metadata_item</a>
   
+    <a class="method" href="method.Release.add_report.html">add_report</a>
+  
     <a class="method" href="method.Release.add_tag.html">add_tag</a>
   
     <a class="method" href="method.Release.get_appstream_id.html">get_appstream_id</a>
@@ -187,6 +189,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Release.get_remote_id.html">get_remote_id</a>
   
+    <a class="method" href="method.Release.get_reports.html">get_reports</a>
+  
     <a class="method" href="method.Release.get_size.html">get_size</a>
   
     <a class="method" href="method.Release.get_source_url.html">get_source_url</a>
@@ -216,6 +220,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Release.has_flag.html">has_flag</a>
   
     <a class="method" href="method.Release.has_tag.html">has_tag</a>
+  
+    <a class="method" href="method.Release.incorporate.html">incorporate</a>
   
     <a class="method" href="method.Release.remove_flag.html">remove_flag</a>
   
@@ -319,7 +325,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.7/libfwupd/fwupd-release.c#L17">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.8/libfwupd/fwupd-release.c#L18">[src]</a>
           
         </h4>
 
@@ -533,6 +539,14 @@ ordered by their&nbsp;version.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Release.add_report.html">fwupd_release_add_report</a></h6>
+          <div class="docblock">
+            <p>Adds a report for this&nbsp;release.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.8</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Release.add_tag.html">fwupd_release_add_tag</a></h6>
           <div class="docblock">
             <p>Adds a specific release&nbsp;tag.</p>
@@ -725,6 +739,14 @@ ordered by their&nbsp;version.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Release.get_reports.html">fwupd_release_get_reports</a></h6>
+          <div class="docblock">
+            <p>Gets all the reports for this&nbsp;release.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.8</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Release.get_size.html">fwupd_release_get_size</a></h6>
           <div class="docblock">
             <p>Gets the update&nbsp;size.</p>
@@ -842,6 +864,14 @@ ordered by their&nbsp;version.</p>
             <p>Finds out if the release has a specific&nbsp;tag.</p>
           </div>
           <div class="docblock"><p>Available since: 1.7.3</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Release.incorporate.html">fwupd_release_incorporate</a></h6>
+          <div class="docblock">
+            <p>Copy all properties from the donor&nbsp;object.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.8</p></div>
         </div>
       
         <div class="">
