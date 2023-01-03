@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Progress.status_changed</title>
+  <title>FwupdPlugin.byte_array_to_string</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Progress.status_changed"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.Progress.status_changed"/>
-  <meta name="twitter:title" content="FwupdPlugin.Progress.status_changed"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Progress.status_changed"/>
+  <meta property="og:title" content="FwupdPlugin.byte_array_to_string"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.byte_array_to_string"/>
+  <meta name="twitter:title" content="FwupdPlugin.byte_array_to_string"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.byte_array_to_string"/>
 
 
   
@@ -77,26 +77,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.8</p>
+        <p>Library Version: 1.8.9</p>
         
       </div>
       
+
 <div class="section">
-  <h5>Type</h5>
+  <h5>Functions</h5>
   <div class="links">
-    <a href="class.Progress.html">Progress</a>
-  </div>
-</div>
-<div class="section">
-  <h5>Virtual methods</h5>
-  <div class="links">
-  
-    <a class="method" href="vfunc.Progress.percentage_changed.html">percentage_changed</a>
-  
-    <a class="method current" href="vfunc.Progress.status_changed.html">status_changed</a>
   
   </div>
 </div>
+
 
     </nav>
     
@@ -105,25 +97,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Virtual Method</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Progress.html">Progress</a><span class="sep"></span>status_changed</h1>
+    <h3>Function </h3>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span>byte_array_to_string</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration">
+      <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.8/libfwupdplugin/fu-progress.h#L19">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-byte-array.h#L12">[src]</a>
         
       </h4>
 
-      <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">status_changed</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">FuProgress</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">FwupdStatus</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+      <div class="docblock">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gchar</span><span class="o">*</span><span class="w"></span>
+<span class="n">fu_byte_array_to_string</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">GByteArray</span><span class="o">*</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -131,18 +122,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description">
+      <h4 id="description" style="display:flex;">
         Description
         <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-byte-array.c#L15">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        No description available.
+        <p>Converts the byte array to a lowercase hex&nbsp;string.</p>
       </div>
 
       <div class="docblock">
         <table>
+          
+          
+          <tr><td>Available since:</td><td>1.8.9</td></tr>
+          
+          
           
           
           
@@ -163,12 +161,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>status</code></td>
-            <td><a href="javascript:void(0)" data-link="enum.Status.html" data-namespace="Fwupd" class="external"><code>FwupdStatus</code></a></td>
+            <td><code>array</code></td>
+            <td>An array of&nbsp;<code>guint8</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td>No description available.</td>
+            <td><p>A <code>GByteArray</code>.</p></td>
           </tr>
           
           
@@ -177,7 +175,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           
@@ -187,7 +185,32 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 
     
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
 
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gchar*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A string, which may be zero&nbsp;length.</p></td>
+          </tr>
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the function takes ownership of the data, and is responsible for freeing it.</td></tr>
+          
+          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
+        </table>
+      </div>
+    </div>
+    
   </section>
 </section>
 

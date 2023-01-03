@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.8</p>
+        <p>Library Version: 1.8.9</p>
         
       </div>
       
@@ -395,7 +395,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>enabled</code>: <span class="caps">IOMMU</span> hardware detected and enabled&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v1.5.0]</em></p>
-<p><strong>Resolution:</strong> If available, turn on <span class="caps">IOMMU</span> in the system <span class="caps">BIOS</span>. You may also have to use additional kernel boot parameters, for example <code>intel_iommu=on iommu=pt</code>.</p>
+<p><strong>Resolution:</strong> If available, turn on <span class="caps">IOMMU</span> in the system <span class="caps">BIOS</span>. You may also have to use additional kernel boot parameters, for example <code>iommu=force</code>.</p>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit"><span class="caps">IOMMU</span> Wikipedia&nbsp;Page</a></li>
@@ -427,7 +427,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p><a id="org.fwupd.hsi.Mei.KeyManifest"></a></p>
 <h3 id="me-bootguard-platform-key"><a href="#org.fwupd.hsi.Mei.KeyManifest">ME BootGuard Platform Key</a><a class="md-anchor" href="#me-bootguard-platform-key" title="Permanent link"></a></h3>
 <p>The BootGuard Platform Key is fused into the <span class="caps">CPU</span> <span class="caps">PCH</span> during manufacturing by the <span class="caps">OEM</span>.</p>
-<p>At bootup, an authenticated code module computes a hash of the Platform Key and and compares it with the one stored in field-programmable&nbsp;fuses.</p>
+<p>At bootup, an authenticated code module computes a hash of the Platform Key and compares it with the one stored in field-programmable&nbsp;fuses.</p>
 <p>If the key matches the <span class="caps">ACM</span> will pass control to the firmware, otherwise the boot process will&nbsp;stop.</p>
 <p>In 2022 a number of Platform <strong>secret</strong> Keys were leaked by Lenovo and confirmed by&nbsp;Intel.</p>
 <p><strong>Impact:</strong></p>
@@ -536,7 +536,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p>If using a debug unlocked part, the platform&#8217;s overall security will be decreased as an attacker may have elevated access to registers and memory within the system and can potentially enable persistent&nbsp;backdoors.</p>
 <p><strong>Possible&nbsp;results:</strong></p>
 <ul>
-<li><code>not-locked</code>: device is not not locked&nbsp;(failure)</li>
+<li><code>not-locked</code>: device is not locked&nbsp;(failure)</li>
 <li><code>locked</code>: device is locked&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v1.8.0]</em></p>
@@ -798,8 +798,8 @@ Several attributes may be dependent upon the kernel performing measurements and 
 In some cases security level measurements will only be possible on systems with a newer&nbsp;kernel.</p>
 <p>The long term goal is to increase the <code>HSI:x</code> level of systems being sold to consumers.
 By making some of the <code>HSI:x</code> attributes part of the <span class="caps">LVFS</span> uploaded report we can allow users to compare vendors and models before purchasing&nbsp;hardware.</p>
-<p><a id="ommissions"></a></p>
-<h2 id="intentional-omissions"><a href="#ommissions">Intentional Omissions</a><a class="md-anchor" href="#intentional-omissions" title="Permanent link"></a></h2>
+<p><a id="omissions"></a></p>
+<h2 id="intentional-omissions"><a href="#omissions">Intentional Omissions</a><a class="md-anchor" href="#intentional-omissions" title="Permanent link"></a></h2>
 <h3 id="intel-sgx">Intel SGX<a class="md-anchor" href="#intel-sgx" title="Permanent link"></a></h3>
 <p>This is not widely used as it has several high severity security&nbsp;issues.</p>
 <h3 id="intel-mpx">Intel MPX<a class="md-anchor" href="#intel-mpx" title="Permanent link"></a></h3>
