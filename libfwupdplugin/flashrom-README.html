@@ -1,0 +1,198 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Flashrom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Flashrom"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Flashrom"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Flashrom"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Flashrom"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin uses <code>libflashrom</code> to update the system firmware.  It can be used
+to update <span class="caps">BIOS</span> or <span class="caps">ME</span> regions of the flash.  Device for <span class="caps">ME</span> region is created
+only if &#8220;Intel <span class="caps">SPI</span>&#8221; plugin indicates that such a region exists, which makes
+&#8220;Intel <span class="caps">SPI</span>&#8221; a dependency of this plugin for doing <span class="caps">ME</span>&nbsp;updates.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file format, which is typically the raw input for an
+<span class="caps">EEPROM</span>&nbsp;programmer.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>org.flashrom</code></li>
+</ul>
+<h2 id="coreboot-version-string">Coreboot Version String<a class="md-anchor" href="#coreboot-version-string" title="Permanent link"></a></h2>
+<p>The coreboot version string can have an optional prefix (see below).
+After the optional prefix the <em>major</em>, <em>minor</em> string follows and finally
+the <em>build string</em>, containing the exact commit and repository state,&nbsp;follows.</p>
+<p>For example <code>4.10-989-gc8a4e4b9c5-dirty</code></p>
+<h3 id="exception-on-lenovo-devices">Exception on Lenovo devices<a class="md-anchor" href="#exception-on-lenovo-devices" title="Permanent link"></a></h3>
+<p>The thinkpad_acpi kernel module requires a specific pattern in the <span class="caps">DMI</span> version
+string. To satisfy those requirements coreboot adds the CBETxxxx prefix to the
+<span class="caps">DMI</span> version string on all Lenovo&nbsp;devices.</p>
+<p>For example <code>CBET4000 4.10-989-gc8a4e4b9c5-dirty</code></p>
+<p>The coreboot <span class="caps">DMI</span> version string always starts with <code>CBET</code>.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>Internal device uses hardware <span class="caps">ID</span> values which are derived from <span class="caps">SMBIOS</span>.</p>
+<ul>
+<li>HardwareID-3</li>
+<li>HardwareID-4</li>
+<li>HardwareID-5</li>
+<li>HardwareID-6</li>
+<li>HardwareID-10</li>
+</ul>
+<p>They should match the values provided by <code>fwupdtool hwids</code> or the
+<code>ComputerHardwareIds.exe</code> Windows&nbsp;utility.</p>
+<p>One more <span class="caps">GUID</span> has the following&nbsp;form:</p>
+<ul>
+<li><code>FLASHROM\VENDOR_{manufacturer}&amp;PRODUCT_{product}&amp;REGION_{ifd_region_name}</code></li>
+</ul>
+<p>Its purpose is to target specific regions of the flash as defined by <span class="caps">IFD</span> (Intel
+<span class="caps">SPI</span> Flash Descriptor),&nbsp;examples:</p>
+<ul>
+<li><code>FLASHROM\VENDOR_Notebook&amp;PRODUCT_NS50MU&amp;REGION_BIOS</code></li>
+<li><code>FLASHROM\VENDOR_Notebook&amp;PRODUCT_NS50MU&amp;REGION_ME</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed to the <span class="caps">SPI</span> chip when the machine is in normal runtime
+mode, but it is only used when the device is&nbsp;rebooted.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">BIOS</span> vendor, for example <code>DMI:Google</code></p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires access to all interfaces that <code>libflashrom</code> has been compiled for.
+This typically is <code>/sys/bus/spi</code> but there may be other interfaces as&nbsp;well.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#coreboot-version-string"><span class="link-text">Coreboot Version String</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#exception-on-lenovo-devices"><span class="link-text">Exception on Lenovo devices</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

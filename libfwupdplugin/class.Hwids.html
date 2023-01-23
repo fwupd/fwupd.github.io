@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -89,15 +89,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
 
-<div class="section">
-  <h5>Constructors</h5>
-  <div class="links">
-  
-    <a class="ctor" href="ctor.Hwids.new.html">new</a>
-  
-  </div>
-</div>
-
 
 
 
@@ -106,7 +97,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.Hwids.add_smbios_override.html">add_smbios_override</a>
+    <a class="method" href="method.Hwids.add_guid.html">add_guid</a>
+  
+    <a class="method" href="method.Hwids.add_value.html">add_value</a>
   
     <a class="method" href="method.Hwids.get_guid.html">get_guid</a>
   
@@ -121,8 +114,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Hwids.get_value.html">get_value</a>
   
     <a class="method" href="method.Hwids.has_guid.html">has_guid</a>
-  
-    <a class="method" href="method.Hwids.setup.html">setup</a>
   
   </div>
 </div>
@@ -155,7 +146,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-hwids.c#L22">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-hwids.c#L22">[src]</a>
           
         </h4>
 
@@ -208,27 +199,6 @@ will match that of <code>ComputerHardwareIds.exe</code>.</p>
     
 
     
-    <div class="toggle-wrapper constructors">
-      <h4 id="constructors">
-        Constructors
-        <a href="#constructors" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-        <div class="">
-          <h6><a href="ctor.Hwids.new.html">fu_hwids_new</a></h6>
-
-          <div class="docblock">
-            <p>Creates a new <code>FuHwids</code>.</p>
-          </div>
-
-          <div class="docblock"><p>Available since: 0.9.3</p></div>
-        </div>
-      
-      </div>
-    </div>
-    
 
     
 
@@ -242,11 +212,19 @@ will match that of <code>ComputerHardwareIds.exe</code>.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.Hwids.add_smbios_override.html">fu_hwids_add_smbios_override</a></h6>
+          <h6><a href="method.Hwids.add_guid.html">fu_hwids_add_guid</a></h6>
           <div class="docblock">
-            <p>Sets <span class="caps">SMBIOS</span> override values so you can emulate another&nbsp;system.</p>
+            <p>Adds a <span class="caps">HWID</span> <span class="caps">GUID</span>&nbsp;value.</p>
           </div>
-          <div class="docblock"><p>Available since: 1.5.6</p></div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Hwids.add_value.html">fu_hwids_add_value</a></h6>
+          <div class="docblock">
+            <p>Sets override values so you can emulate another&nbsp;system.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">
@@ -302,14 +280,6 @@ for&nbsp;display.</p>
           <h6><a href="method.Hwids.has_guid.html">fu_hwids_has_guid</a></h6>
           <div class="docblock">
             <p>Finds out if a hardware <span class="caps">GUID</span>&nbsp;exists.</p>
-          </div>
-          <div class="docblock"><p>Available since: 0.9.3</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Hwids.setup.html">fu_hwids_setup</a></h6>
-          <div class="docblock">
-            <p>Reads all the <span class="caps">SMBIOS</span> values from the&nbsp;hardware.</p>
           </div>
           <div class="docblock"><p>Available since: 0.9.3</p></div>
         </div>
@@ -422,8 +392,6 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
       
       
-<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
-
 
       
 

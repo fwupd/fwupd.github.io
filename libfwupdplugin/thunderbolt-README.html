@@ -1,0 +1,224 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Thunderbolt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Thunderbolt"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Thunderbolt"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Thunderbolt"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Thunderbolt"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Thunderbolt™ is the brand name of a hardware interface developed by Intel that
+allows the connection of external peripherals to a computer.
+Versions 1 and 2 use the same connector as Mini DisplayPort (<span class="caps">MDP</span>), whereas
+version 3 uses <span class="caps">USB</span>&nbsp;Type-C.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file format, with vendor specific&nbsp;header.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.intel.thunderbolt</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use a custom <span class="caps">GUID</span> generation scheme.
+When the device is in &#8220;safe mode&#8221; the <span class="caps">GUID</span> is hardcoded&nbsp;using:</p>
+<ul>
+<li><code>TBT-safemode</code></li>
+</ul>
+<p>&#8230; and when in runtime mode the <span class="caps">GUID</span>&nbsp;is:</p>
+<ul>
+<li><code>TBT-$(vid)$(pid)-native</code> when native, and <code>TBT-$(vid)$(pid)</code> otherwise.</li>
+</ul>
+<p>Additionally for host system thunderbolt controllers another <span class="caps">GUID</span> is added
+containing the domain designation of the controller.  This is intended to be
+used for systems with multiple host controllers to disambiguate between&nbsp;controllers.</p>
+<ul>
+<li><code>TBT-$(vid)$(pid)-native-controller$(num)</code></li>
+</ul>
+<p>For retimers the only <span class="caps">GUID</span> created is as&nbsp;follows:</p>
+<ul>
+<li><code>TBT-$(vid)$(pid)-retimer$index</code></li>
+</ul>
+<p>The retimer index is oriented around the physical connection within
+the machine.  It is important as multiple controllers may otherwise
+identify&nbsp;identically.</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>For most devices the firmware is written to the device at runtime and the
+update is applied immediately. Once complete the controller may reboot
+which may cause all connected <span class="caps">USB</span> and <span class="caps">TBT</span> devices to be&nbsp;reenumerated.</p>
+<p>For some devices and circumstances (such as the Dell <span class="caps">WD19</span> with a new enough
+kernel) the device will remain functional for the duration of the update.
+The update will complete on&nbsp;unplug.</p>
+<p>If a user sets <code>DelayedActivation</code> configuration option then the update will
+be staged but not completed until <code>activate</code> is separately called such as at
+logout or&nbsp;shutdown.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the udev vendor, for example set to <code>TBT:0x$(vid)</code></p>
+<h2 id="runtime-power-management">Runtime Power Management<a class="md-anchor" href="#runtime-power-management" title="Permanent link"></a></h2>
+<p>Thunderbolt controllers are slightly unusual in that they power down completely
+when no thunderbolt devices are detected. This poses a problem for fwupd as
+it can&#8217;t coldplug devices to see if there are firmware updates available, and
+also can&#8217;t ensure the controller stays awake during a firmware&nbsp;upgrade.</p>
+<p>On Dell hardware the <code>Thunderbolt::CanForcePower</code> metadata value is set as the
+system can force the thunderbolt controller on during coldplug or during the
+firmware update process. This is typically done calling a <span class="caps">SMI</span> or <span class="caps">ACPI</span> method
+which asserts the <span class="caps">GPIO</span> for the duration of the&nbsp;request.</p>
+<p>On non-Dell hardware you will have to insert a Thunderbolt device (e.g. a dock)
+into the laptop to be able to update the controller&nbsp;itself.</p>
+<h2 id="safe-mode">Safe Mode<a class="md-anchor" href="#safe-mode" title="Permanent link"></a></h2>
+<p>Thunderbolt hardware is also slightly unusual in that it goes into &#8220;safe mode&#8221;
+whenever it encounters a critical firmware error, for instance if an update
+failed to be completed. In this safe mode you cannot query the controller vendor
+or model and therefore the thunderbolt plugin cannot add the correct <span class="caps">GUID</span> used
+to match it to the correct&nbsp;firmware.</p>
+<p>In this case the metadata value <code>Thunderbolt::IsSafeMode</code> is set which would
+allow a different plugin to add the correct <span class="caps">GUID</span> based on some out-of-band
+device discovery. At the moment this only happens on Dell&nbsp;hardware.</p>
+<h2 id="guid-generation-for-lvfs">GUID generation for LVFS<a class="md-anchor" href="#guid-generation-for-lvfs" title="Permanent link"></a></h2>
+<p>The <span class="caps">GUID</span> for the controller, which must appear in the metadata when uploading an
+<span class="caps">NVM</span> to <span class="caps">LVFS</span>, can be generated by a tool like <code>appstream-util</code> (with
+<code>generate-guid</code> command) or by Python (with
+<code>uuid.uuid5(uuid.NAMESPACE_DNS, 'string')</code>).</p>
+<p>The format of the string used as input is &#8220;<span class="caps">TBT</span>-vvvvdddd&#8221;, where vvvvv is the
+vendor <span class="caps">ID</span> and dddd is the device <span class="caps">ID</span>, both in hex, as appear in the controller&#8217;s
+<span class="caps">DROM</span> and exposed in the relevant sysfs&nbsp;attributes.</p>
+<p>If the controller is in native enumeration mode, the string &#8220;-native&#8221; is added
+at the end so the format is &#8220;<span class="caps">TBT</span>-vvvvdddd-native&#8221;.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/sys/bus/thunderbolt</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#runtime-power-management"><span class="link-text">Runtime Power Management</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#safe-mode"><span class="link-text">Safe Mode</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation-for-lvfs"><span class="link-text">GUID generation for LVFS</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

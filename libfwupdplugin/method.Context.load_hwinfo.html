@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -117,7 +117,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.get_bios_settings.html">get_bios_settings</a>
   
+    <a class="method" href="method.Context.get_chassis_kind.html">get_chassis_kind</a>
+  
     <a class="method" href="method.Context.get_esp_volumes.html">get_esp_volumes</a>
+  
+    <a class="method" href="method.Context.get_fdt.html">get_fdt</a>
   
     <a class="method" href="method.Context.get_firmware_gtype_by_id.html">get_firmware_gtype_by_id</a>
   
@@ -129,7 +133,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.get_hwid_value.html">get_hwid_value</a>
   
+    <a class="method" href="method.Context.get_hwids.html">get_hwids</a>
+  
     <a class="method" href="method.Context.get_lid_state.html">get_lid_state</a>
+  
+    <a class="method" href="method.Context.get_smbios.html">get_smbios</a>
   
     <a class="method" href="method.Context.get_smbios_data.html">get_smbios_data</a>
   
@@ -155,6 +163,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.reload_bios_settings.html">reload_bios_settings</a>
   
+    <a class="method" href="method.Context.remove_flag.html">remove_flag</a>
+  
     <a class="method" href="method.Context.security_changed.html">security_changed</a>
   
     <a class="method" href="method.Context.set_battery_level.html">set_battery_level</a>
@@ -162,6 +172,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Context.set_battery_state.html">set_battery_state</a>
   
     <a class="method" href="method.Context.set_battery_threshold.html">set_battery_threshold</a>
+  
+    <a class="method" href="method.Context.set_chassis_kind.html">set_chassis_kind</a>
   
     <a class="method" href="method.Context.set_compile_versions.html">set_compile_versions</a>
   
@@ -189,14 +201,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-context-private.h#L19">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context-private.h#L29">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
 <span class="n">fu_context_load_hwinfo</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">FuContext</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
+<span class="w">  </span><span class="n">FuContext</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">FuContextHwidFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -209,7 +222,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-context.c#L621">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context.c#L770">[src]</a>
         
       </h4>
 
@@ -221,7 +234,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table>
           
           
-          <tr><td>Available since:</td><td>1.6.0</td></tr>
+          <tr><td>Available since:</td><td>1.8.10</td></tr>
           
           
           
@@ -233,6 +246,47 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>flags</code></td>
+            <td><a href="flags.ContextHwidFlags.html"><code>FuContextHwidFlags</code></a></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>FuContextHwidFlags</code>, e.g. <code>FU_CONTEXT_HWID_FLAG_LOAD_SMBIOS</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>error</code></td>
+            <td><code>GError **</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
     
 
     

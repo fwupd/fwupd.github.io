@@ -1,0 +1,157 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: TPM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: TPM"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: TPM"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: TPM"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: TPM"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This allows enumerating Trusted Platform Modules, also known as &#8220;<span class="caps">TPM</span>&#8221; devices,
+although it does not allow the user to update the firmware on&nbsp;them.</p>
+<p>The <span class="caps">TPM</span> Event Log records which events are registered for the <span class="caps">PCR0</span> hash, which
+may help in explaining why <span class="caps">PCR0</span> values are differing for some&nbsp;firmware.</p>
+<p>The device exposed is not upgradable in any way and is just for debugging.
+The created device will be a child device of the system <span class="caps">TPM</span> device, which may
+or may not be&nbsp;upgradable.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use custom&nbsp;GUIDs:</p>
+<ul>
+<li><code>TPM\VEN_$(manufacturer)&amp;DEV_$(type)</code></li>
+<li><code>TPM\VEN_$(manufacturer)&amp;MOD_$(vendor-string)</code></li>
+<li><code>TPM\VEN_$(manufacturer)&amp;DEV_$(type)_VER_$(family)</code>,</li>
+<li><code>TPM\VEN_$(manufacturer)&amp;MOD_$(vendor-string)_VER_$(family)</code></li>
+</ul>
+<p>&#8230;where <code>family</code> is either <code>2.0</code> or <code>1.2</code></p>
+<p>Example GUIDs from a real system containing a <span class="caps">TPM</span> from&nbsp;Intel:</p>
+<div class="codehilite"><pre><span></span><code>  Guid:                 34801700-3a50-5b05-820c-fe14580e4c2d &lt;- TPM\VEN_INTC&amp;DEV_0000
+  Guid:                 03f304f4-223e-54f4-b2c1-c3cf3b5817c6 &lt;- TPM\VEN_INTC&amp;DEV_0000&amp;VER_2.0
+</code></pre></div>
+
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The device is not upgradable and thus requires no vendor <span class="caps">ID</span>&nbsp;set.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin uses the tpm2-tss library to access the <span class="caps">TPM</span>.  It requires access to <code>/sys/class/tpm</code>
+and optionally requires read only access to <code>/sys/kernel/security/tpm0/binary_bios_measurements</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

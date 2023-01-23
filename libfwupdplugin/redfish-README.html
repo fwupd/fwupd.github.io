@@ -1,0 +1,227 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Redfish</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Redfish"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Redfish"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Redfish"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Redfish"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Redfish is an open industry standard specification and schema that helps enable
+simple and secure management of modern scalable platform&nbsp;hardware.</p>
+<p>By specifying a RESTful interface and utilizing <span class="caps">JSON</span> and OData, Redfish helps
+customers integrate solutions within their existing tool&nbsp;chains.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>org.dmtf.redfish</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the provided <span class="caps">GUID</span> provided in the <code>SoftwareId</code> property
+without modification if it is a valid <span class="caps">GUID</span>. If the property is not a <span class="caps">GUID</span> then
+the vendor instance <span class="caps">ID</span> is used&nbsp;instead:</p>
+<ul>
+<li><code>REDFISH\\VENDOR_${RedfishManufacturer}&amp;SOFTWAREID_${RedfishSoftwareId}</code></li>
+</ul>
+<p>Additionally, this Instance <span class="caps">ID</span> is added for quirk and parent&nbsp;matching:</p>
+<ul>
+<li><code>REDFISH\VENDOR_${RedfishManufacturer}&amp;ID_${RedfishId}</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware will be deployed as appropriate. The Redfish <span class="caps">API</span> does not specify
+when the firmware will actually be written to the <span class="caps">SPI</span>&nbsp;device.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>No vendor <span class="caps">ID</span> is set as there is no vendor field in the&nbsp;schema.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="redfishresetpredelay">RedfishResetPreDelay<a class="md-anchor" href="#redfishresetpredelay" title="Permanent link"></a></h3>
+<p>Delay in ms to use before querying the manager after a cleanup reset, default&nbsp;0ms.</p>
+<p>Since:&nbsp;1.8.0</p>
+<h3 id="redfishresetpostdelay">RedfishResetPostDelay<a class="md-anchor" href="#redfishresetpostdelay" title="Permanent link"></a></h3>
+<p>Delay in ms to use before querying /redfish/v1/UpdateService after a cleanup reset,
+default&nbsp;0ms.</p>
+<p>Since:&nbsp;1.8.0</p>
+<h2 id="setting-service-ip-manually">Setting Service IP Manually<a class="md-anchor" href="#setting-service-ip-manually" title="Permanent link"></a></h2>
+<p>The service <span class="caps">IP</span> may not be automatically discoverable due to the absence of
+Type 42 entry in <span class="caps">SMBIOS</span>. In this case, you have to specify the service <span class="caps">IP</span>
+to RedfishUri in&nbsp;/etc/fwupd/redfish.conf</p>
+<p>Take <span class="caps">HPE</span> Gen10 for example, the service <span class="caps">IP</span> can be found with the following&nbsp;command:</p>
+<div class="codehilite"><pre><span></span><code>ilorest --nologo list --selector<span class="o">=</span>EthernetInterface. -j
+</code></pre></div>
+
+<p>This command lists all network interfaces, and the Redfish service <span class="caps">IP</span> belongs
+to one of &#8220;Manager Network&#8221; Interfaces. For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;@odata.context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/redfish/v1/$metadata#EthernetInterface.EthernetInterface&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;@odata.id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/redfish/v1/Managers/1/EthernetInterfaces/1/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;@odata.type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#EthernetInterface.v1_0_3.EthernetInterface&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Configuration of this Manager Network Interface&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;HostName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myredfish&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;IPv4Addresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;SubnetMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;255.255.255.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;AddressOrigin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DHCP&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Gateway&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.0.133&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="err">...</span><span class="w"></span>
+</code></pre></div>
+
+<p>In this example, the service <span class="caps">IP</span> is&nbsp;&#8220;192.168.0.133&#8221;.</p>
+<p>Since the conventional <span class="caps">HTTP</span> port is 80 and <span class="caps">HTTPS</span> port is 443, we can set
+RedfishUri to either &#8220;http://192.168.0.133:80&#8221; or &#8220;https://192.168.0.133:443&#8221;
+and verify the uri&nbsp;with</p>
+<div class="codehilite"><pre><span></span><code>curl http://192.168.0.133:80/redfish/v1/
+</code></pre></div>
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><code>curl -k https://192.168.0.133:443/redfish/v1/
+</code></pre></div>
+
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This requires <span class="caps">HTTP</span> access to a given <span class="caps">URL</span>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#redfishresetpredelay"><span class="link-text">RedfishResetPreDelay</span></a></li>
+          
+            <li class="toc-list-item"><a href="#redfishresetpostdelay"><span class="link-text">RedfishResetPostDelay</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#setting-service-ip-manually"><span class="link-text">Setting Service IP Manually</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

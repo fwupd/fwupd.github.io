@@ -1,0 +1,280 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Genesys Logic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Genesys Logic"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Genesys Logic"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Genesys Logic"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Genesys Logic"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows updating the Genesys Logic <span class="caps">USB</span> Hub&nbsp;devices.</p>
+<ul>
+<li><span class="caps">GL3521</span></li>
+<li><span class="caps">GL3523</span></li>
+<li><span class="caps">GL3590</span></li>
+</ul>
+<p>Additionally, this plugin allows updating the MStar Semiconductor Scaler connected via an I²C&nbsp;bus.</p>
+<ul>
+<li><span class="caps">TSUM</span>&nbsp;G</li>
+</ul>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archives and extract the firmware blob in an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>com.genesys.usbhub</code></li>
+<li><code>com.mstarsemi.scaler</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values for the <span class="caps">USB</span> Hub,&nbsp;e.g.</p>
+<ul>
+<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_05E3&amp;PID_0610</code></li>
+<li><span class="caps">HP</span> <span class="caps">USB</span>-C Controller: <code>USB\VID_03F0&amp;PID_0610</code></li>
+</ul>
+<p>Additionally, some customized instance IDs are added.&nbsp;e.g.</p>
+<ul>
+<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;IC_352330&amp;BONDING_0F</code></li>
+<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;VENDOR_GENESYSLOGIC&amp;IC_352330&amp;BONDING_0F&amp;PORTNUM_23&amp;VENDORSUP_C09B5DD3-1A23-51D2-995A-F7366AAB3CA4</code></li>
+<li><span class="caps">HP</span> M24fd <span class="caps">USB</span>-C Hub: <code>USB\VID_03F0&amp;PID_0610&amp;PUBKEY_AB859399-95B8-5817-B521-9AD8CC7F5BD6</code></li>
+<li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Hub: <code>USB\VID_03F0&amp;PID_0610&amp;PUBKEY_6BE97D77-C2BA-5AA2-B7DF-B9B318BEC2B5</code></li>
+</ul>
+<p>These devices also use custom <span class="caps">GUID</span> values for the Scaler,&nbsp;e.g.</p>
+<ul>
+<li><span class="caps">HP</span> M24fd <span class="caps">USB</span>-C Monitor: <code>GENESYS_SCALER\MSTAR_TSUM_G&amp;PUBKEY_B335BDCE-7073-5D0E-9BD3-9B69C1A6899F&amp;PANELREV_RIM101</code></li>
+<li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Monitor: <code>GENESYS_SCALER\MSTAR_TSUM_G&amp;PUBKEY_847A3650-8648-586B-83C8-8B53714F37E3&amp;PANELREV_RIM101</code></li>
+</ul>
+<p>The Public Key is product-specific and is required to identify the&nbsp;product.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="has-mstar-scaler">has-mstar-scaler<a class="md-anchor" href="#has-mstar-scaler" title="Permanent link"></a></h3>
+<p><span class="caps">USB</span> Hub has a MStar Semiconductor Scaler attached via&nbsp;I²C.</p>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="has-public-key">has-public-key<a class="md-anchor" href="#has-public-key" title="Permanent link"></a></h3>
+<p>Device has a public-key appended to&nbsp;firmware.</p>
+<p>Since&nbsp;1.8.0</p>
+<h3 id="genesysusbhubswitchrequest">GenesysUsbhubSwitchRequest<a class="md-anchor" href="#genesysusbhubswitchrequest" title="Permanent link"></a></h3>
+<p><span class="caps">USB</span> Hub Switch Request&nbsp;value.</p>
+<ul>
+<li><span class="caps">HP</span> Mxfd <span class="caps">FHD</span> Monitors: <code>0xA1</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysusbhubreadrequest">GenesysUsbhubReadRequest<a class="md-anchor" href="#genesysusbhubreadrequest" title="Permanent link"></a></h3>
+<p><span class="caps">USB</span> Hub Read Request&nbsp;value.</p>
+<ul>
+<li><span class="caps">HP</span> Mxfd <span class="caps">FHD</span> Monitors: <code>0xA2</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysusbhubwriterequest">GenesysUsbhubWriteRequest<a class="md-anchor" href="#genesysusbhubwriterequest" title="Permanent link"></a></h3>
+<p><span class="caps">USB</span> Hub Write Request&nbsp;value.</p>
+<ul>
+<li><span class="caps">HP</span> Mxfd <span class="caps">FHD</span> Monitors: <code>0xA3</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="use-i2c-ch0">use-i2c-ch0<a class="md-anchor" href="#use-i2c-ch0" title="Permanent link"></a></h3>
+<p>Scalar uses I²C channel&nbsp;0.</p>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="pause-r2-cpu">pause-r2-cpu<a class="md-anchor" href="#pause-r2-cpu" title="Permanent link"></a></h3>
+<p>Scalar pause R2 <span class="caps">CPU</span>.</p>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysscalerdevicetransfersize">GenesysScalerDeviceTransferSize<a class="md-anchor" href="#genesysscalerdevicetransfersize" title="Permanent link"></a></h3>
+<p>Scaler Block size to use for&nbsp;transfers.</p>
+<ul>
+<li>MStar Semiconductor <span class="caps">TSUM</span> G: <code>0x40</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysscalergpiooutputregister">GenesysScalerGpioOutputRegister<a class="md-anchor" href="#genesysscalergpiooutputregister" title="Permanent link"></a></h3>
+<p>Scaler <span class="caps">GPIO</span> Output Register&nbsp;value.</p>
+<ul>
+<li>MStar Semiconductor <span class="caps">TSUM</span> G: <code>0x0426</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysscalergpioenableregister">GenesysScalerGpioEnableRegister<a class="md-anchor" href="#genesysscalergpioenableregister" title="Permanent link"></a></h3>
+<p>Scaler <span class="caps">GPIO</span> Enable Register&nbsp;value.</p>
+<ul>
+<li>MStar Semiconductor <span class="caps">TSUM</span> G: <code>0x0428</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysscalergpiovalue">GenesysScalerGpioValue<a class="md-anchor" href="#genesysscalergpiovalue" title="Permanent link"></a></h3>
+<p>Scaler <span class="caps">GPIO</span>&nbsp;value.</p>
+<ul>
+<li>MStar Semiconductor <span class="caps">TSUM</span> G: <code>0x01</code></li>
+</ul>
+<p>Since&nbsp;1.7.6.</p>
+<h3 id="genesysscalercfiflashid">GenesysScalerCfiFlashId<a class="md-anchor" href="#genesysscalercfiflashid" title="Permanent link"></a></h3>
+<p><span class="caps">CFI</span> Flash&nbsp;Id.</p>
+<ul>
+<li><span class="caps">HP</span> M24fd <span class="caps">USB</span>-C Monitor: <code>0xC22016</code></li>
+<li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Monitor: <code>0xC84016</code></li>
+</ul>
+<p>Since&nbsp;1.8.2.</p>
+<h2 id="runtime-requirement">Runtime Requirement<a class="md-anchor" href="#runtime-requirement" title="Permanent link"></a></h2>
+<p>The <span class="caps">USB</span> Hub devices and its attached Scaler require libgusb version <a href="https://github.com/hughsie/libgusb/commit/4e118c154dde70e196c4381bd97790a9413c3552">0.3.8</a> or later to be&nbsp;detected.</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The devices are independently updated at runtime using <span class="caps">USB</span> control&nbsp;transfers.</p>
+<p>The firmware is deployed when the device is in normal runtime mode, and the device will reset when the new firmware has been&nbsp;written.</p>
+<p>The <span class="caps">HP</span> Mxfd <span class="caps">FHD</span> Monitors must be connected to host via the <span class="caps">USB</span>-C cable to apply an update. The devices remain functional during the update; the Scaler update is ~10 minute&nbsp;long.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, for example set to <code>USB:0x03F0</code> for <span class="caps">HP</span>.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#has-mstar-scaler"><span class="link-text">has-mstar-scaler</span></a></li>
+          
+            <li class="toc-list-item"><a href="#has-public-key"><span class="link-text">has-public-key</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysusbhubswitchrequest"><span class="link-text">GenesysUsbhubSwitchRequest</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysusbhubreadrequest"><span class="link-text">GenesysUsbhubReadRequest</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysusbhubwriterequest"><span class="link-text">GenesysUsbhubWriteRequest</span></a></li>
+          
+            <li class="toc-list-item"><a href="#use-i2c-ch0"><span class="link-text">use-i2c-ch0</span></a></li>
+          
+            <li class="toc-list-item"><a href="#pause-r2-cpu"><span class="link-text">pause-r2-cpu</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysscalerdevicetransfersize"><span class="link-text">GenesysScalerDeviceTransferSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysscalergpiooutputregister"><span class="link-text">GenesysScalerGpioOutputRegister</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysscalergpioenableregister"><span class="link-text">GenesysScalerGpioEnableRegister</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysscalergpiovalue"><span class="link-text">GenesysScalerGpioValue</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysscalercfiflashid"><span class="link-text">GenesysScalerCfiFlashId</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#runtime-requirement"><span class="link-text">Runtime Requirement</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Dell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Dell"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Dell"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This allows installing Dell capsules that are not part of the <span class="caps">ESRT</span>&nbsp;table.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices uses custom GUIDs for Dell-specific&nbsp;hardware.</p>
+<ul>
+<li>Thunderbolt devices: <code>TBT-0x00d4u$(system-id)</code></li>
+<li><span class="caps">TPM</span> devices <code>$(system-id)-$(mode)</code>, where <code>mode</code> is either <code>2.0</code> or <code>1.2</code></li>
+</ul>
+<p>In both cases the <code>system-id</code> is derived from the <span class="caps">SMBIOS</span> Product <span class="caps">SKU</span>&nbsp;property.</p>
+<p><span class="caps">TPM</span> GUIDs are also built using the <span class="caps">TSS</span> properties
+<code>TPM2_PT_FAMILY_INDICATOR</code>, <code>TPM2_PT_MANUFACTURER</code>, and <code>TPM2_PT_VENDOR_STRING_*</code>
+These are built hierarchically with more parts for each <span class="caps">GUID</span>:</p>
+<ul>
+<li><code>DELL-TPM-$FAMILY-$MANUFACTURER-$VENDOR_STRING_1</code></li>
+<li><code>DELL-TPM-$FAMILY-$MANUFACTURER-$VENDOR_STRING_1$VENDOR_STRING_2</code></li>
+<li><code>DELL-TPM-$FAMILY-$MANUFACTURER-$VENDOR_STRING_1$VENDOR_STRING_2$VENDOR_STRING_3</code></li>
+<li><code>DELL-TPM-$FAMILY-$MANUFACTURER-$VENDOR_STRING_1$VENDOR_STRING_2$VENDOR_STRING_3$VENDOR_STRING_4</code></li>
+</ul>
+<p>If there are non-<span class="caps">ASCII</span> values in any vendor string or any vendor is missing that octet will be&nbsp;skipped.</p>
+<p>Example resultant GUIDs from a real system containing a <span class="caps">TPM</span> from&nbsp;Nuvoton:</p>
+<div class="codehilite"><pre><span></span><code>  Guid:                 7d65b10b-bb24-552d-ade5-590b3b278188 &lt;- DELL-TPM-2.0-NTC-NPCT
+  Guid:                 6f5ddd3a-8339-5b2a-b9a6-cf3b92f6c86d &lt;- DELL-TPM-2.0-NTC-NPCT75x
+  Guid:                 fe462d4a-e48f-5069-9172-47330fc5e838 &lt;- DELL-TPM-2.0-NTC-NPCT75xrls
+</code></pre></div>
+
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is hardcoded to <code>TPM:DELL</code>.</p>
+<h2 id="build-requirements">Build Requirements<a class="md-anchor" href="#build-requirements" title="Permanent link"></a></h2>
+<p>For Dell support you will need libsmbios_c version 2.4.0 or&nbsp;later.</p>
+<ul>
+<li><a href="https://github.com/dell/libsmbios">source</a></li>
+<li><a href="https://github.com/dell/libsmbios/releases">binaries</a></li>
+</ul>
+<p>If you don&#8217;t want or need this functionality you can use the
+<code>-Dplugin_dell=disabled</code> option.</p>
+<h2 id="devices-powered-by-the-dell-plugin">Devices powered by the Dell Plugin<a class="md-anchor" href="#devices-powered-by-the-dell-plugin" title="Permanent link"></a></h2>
+<p>The Dell plugin creates device nodes for <span class="caps">PC</span>&#8217;s that have switchable TPMs as
+well as the Type-C docks (<span class="caps">WD15</span>/<span class="caps">TB16</span>).</p>
+<p>These device nodes can be flashed using <span class="caps">UEFI</span> capsule but don&#8217;t
+use the <span class="caps">ESRT</span> table to communicate device status or version&nbsp;information.</p>
+<p>This is intentional behavior because more complicated decisions need to be made
+on the <span class="caps">OS</span> side to determine if the devices should be offered to&nbsp;flash.</p>
+<h2 id="switchable-tpm-devices">Switchable TPM Devices<a class="md-anchor" href="#switchable-tpm-devices" title="Permanent link"></a></h2>
+<p>Machines with switchable TPMs can operate in both <span class="caps">TPM</span> 1.2 and <span class="caps">TPM</span> 2.0 modes.
+Switching modes will require flashing an alternative firmware and clearing the
+contents of the <span class="caps">TPM</span>.</p>
+<p>Machines that offer this functionality will display two devices in
+<code>fwupdmgr get-devices</code> output.</p>
+<p>Example (from a <em>Precision 5510</em>):</p>
+<div class="codehilite"><pre><span></span><code>Precision 5510 TPM 1.2
+  Guid:                 b2088ba1-51ae-514e-8f0a-64756c6e4ffc
+  DeviceID:             DELL-b2088ba1-51ae-514e-8f0a-64756c6e4ffclu
+  Plugin:               dell
+  Flags:                internal|allow-offline|require-ac
+  Version:              5.81.0.0
+  Created:              2016-07-19
+
+Precision 5510 TPM 2.0
+  Guid:                 475d9bbd-1b7a-554e-8ca7-54985174a962
+  DeviceID:             DELL-475d9bbd-1b7a-554e-8ca7-54985174a962lu
+  Plugin:               dell
+  Flags:                internal|require-ac|locked
+  Created:              2016-07-19
+</code></pre></div>
+
+<p>In this example, the <span class="caps">TPM</span> is currently operating in <strong><span class="caps">TPM</span> 1.2 mode</strong>.  Any
+firmware updates posted to <em><span class="caps">LVFS</span></em> for <span class="caps">TPM</span> 1.2 mode will be&nbsp;applied.</p>
+<h3 id="switching-tpm-modes">Switching TPM Modes<a class="md-anchor" href="#switching-tpm-modes" title="Permanent link"></a></h3>
+<p>In order to be offered to switch the <span class="caps">TPM</span> to <strong><span class="caps">TPM</span> 2.0 mode</strong>, the virtual device
+representing the <em><span class="caps">TPM</span> 2.0 mode</em> will need to be&nbsp;unlocked.</p>
+<p><code># fwupdmgr unlock DELL-475d9bbd-1b7a-554e-8ca7-54985174a962lu</code></p>
+<p>If the <span class="caps">TPM</span> is currently <em>owned</em>, an error will be displayed such as this&nbsp;one:</p>
+<p><span class="caps">ERROR</span>: Precision 5510 <span class="caps">TPM</span> 1.2 is currently <span class="caps">OWNED</span>. Ownership must be removed to switch&nbsp;modes.</p>
+<p><span class="caps">TPM</span> Ownership can be cleared from within the <span class="caps">BIOS</span> setup&nbsp;menus.</p>
+<p>If the unlock process was successful, then the devices will be&nbsp;modified:</p>
+<div class="codehilite"><pre><span></span><code>Precision 5510 TPM 1.2
+  Guid:                 b2088ba1-51ae-514e-8f0a-64756c6e4ffc
+  DeviceID:             DELL-b2088ba1-51ae-514e-8f0a-64756c6e4ffclu
+  Plugin:               dell
+  Flags:                internal|require-ac
+  Version:              5.81.0.0
+  Created:              2016-07-19
+
+Precision 5510 TPM 2.0
+  Guid:                 475d9bbd-1b7a-554e-8ca7-54985174a962
+  DeviceID:             DELL-475d9bbd-1b7a-554e-8ca7-54985174a962lu
+  Plugin:               dell
+  Flags:                internal|allow-offline|require-ac
+  Version:              0.0.0.0
+  Created:              2016-07-19
+  Modified:             2016-07-19
+</code></pre></div>
+
+<p>Now the firmware for <span class="caps">TPM</span> 2.0 mode can be pulled down from <span class="caps">LVFS</span> and&nbsp;flashed:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fwupdmgr update</span>
+</code></pre></div>
+
+<p>Upon the next reboot, the new <span class="caps">TPM</span> firmware will be flashed.  If the firmware is
+<em>not offered from <span class="caps">LVFS</span></em>, then switching modes may not work on this&nbsp;machine.</p>
+<p>After updating the output from <code># fwupdmgr get-devices</code>  will reflect the
+new&nbsp;mode.</p>
+<div class="codehilite"><pre><span></span><code>Precision 5510 TPM 2.0
+  Guid:                 475d9bbd-1b7a-554e-8ca7-54985174a962
+  DeviceID:             DELL-475d9bbd-1b7a-554e-8ca7-54985174a962lu
+  Plugin:               dell
+  Flags:                internal|allow-offline|require-ac
+  Version:              1.3.0.1
+  Created:              2016-07-20
+
+Precision 5510 TPM 1.2
+  Guid:                 b2088ba1-51ae-514e-8f0a-64756c6e4ffc
+  DeviceID:             DELL-b2088ba1-51ae-514e-8f0a-64756c6e4ffclu
+  Plugin:               dell
+  Flags:                internal|require-ac|locked
+  Created:              2016-07-20
+</code></pre></div>
+
+<p>Keep in mind that <strong><span class="caps">TPM</span> 1.2</strong> and <strong><span class="caps">TPM</span> 2.0</strong> will require different userspace&nbsp;tools.</p>
+<h2 id="dock-devices">Dock Devices<a class="md-anchor" href="#dock-devices" title="Permanent link"></a></h2>
+<p>The <em><span class="caps">TB16</span></em> and <em><span class="caps">WD15</span></em> have a variety of updatable components.  Each component
+will create a virtual device in <code># fwupdmgr get-devices</code></p>
+<p>For example the <span class="caps">WD15</span> will display these&nbsp;components:</p>
+<div class="codehilite"><pre><span></span><code>Dell WD15 Port Controller 1
+  Guid:                 8ba2b709-6f97-47fc-b7e7-6a87b578fe25
+  DeviceID:             DELL-8ba2b709-6f97-47fc-b7e7-6a87b578fe25lu
+  Plugin:               dell
+  Flags:                allow-offline|require-ac
+  Version:              0.1.1.8
+  Created:              2016-07-19
+
+Dell WD15
+  Guid:                 e7ca1f36-bf73-4574-afe6-a4ccacabf479
+  DeviceID:             DELL-e7ca1f36-bf73-4574-afe6-a4ccacabf479lu
+  Plugin:               dell
+  Flags:                allow-offline|require-ac
+  Version:              0.0.0.67
+  Created:              2016-07-19
+</code></pre></div>
+
+<p>Components that can be updated via <span class="caps">UEFI</span> capsule will have the <code>allow-offline</code> moniker&nbsp;applied.</p>
+<p>These updates can be performed the standard method of using <code>fwupdmgr update</code>.</p>
+<p>Some components are updatable via other plugins in fwupd such as multi stream
+transport hub (<span class="caps">MST</span>) and thunderbolt <span class="caps">NVM</span>.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/wmi/dell-smbios</code> and <code>/sys/bus/platform/devices/dcdbas</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#build-requirements"><span class="link-text">Build Requirements</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#devices-powered-by-the-dell-plugin"><span class="link-text">Devices powered by the Dell Plugin</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#switchable-tpm-devices"><span class="link-text">Switchable TPM Devices</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#switching-tpm-modes"><span class="link-text">Switching TPM Modes</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#dock-devices"><span class="link-text">Dock Devices</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

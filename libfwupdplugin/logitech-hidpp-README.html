@@ -1,0 +1,260 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Logitech HID++</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Logitech HID++"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Logitech HID++"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Logitech HID++"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Logitech HID++"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin can flash the firmware&nbsp;on:</p>
+<ul>
+<li>Logitech Unifying <span class="caps">USB</span> receivers, both the Nordic (U0007) device and the
+   Texas Instruments (U0008)&nbsp;versions</li>
+<li>Logitech Bolt <span class="caps">USB</span>&nbsp;receivers</li>
+<li>Unifying peripherals through the Unifying&nbsp;receiver</li>
+<li>Peripherals through the Bolt receiver and directly through <span class="caps">BLE</span></li>
+</ul>
+<p>This plugin will not work with the different &#8220;Nano&#8221; <span class="caps">USB</span> receiver (U0010) as it does
+not use the Unifying&nbsp;protocol.</p>
+<p>Some bootloader protocol information was taken from the <a href="https://www.mousejack.com/">Mousejack</a> project,
+specifically logitech-usb-restore.py and unifying.py. Other documentation was
+supplied by&nbsp;Logitech.</p>
+<p>Additional constants were taken from the <a href="Solaar">https://pwr-Solaar.github.io/Solaar/</a>&nbsp;project.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+a vendor-specific format that appears to be a subset of the Intel <span class="caps">HEX</span>&nbsp;format.</p>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>com.logitech.unifying</code></li>
+<li><code>com.logitech.unifyingsigned</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>The Unifying receivers and peripherals use the standard <span class="caps">USB</span>
+DeviceInstanceId values when in <span class="caps">DFU</span>&nbsp;mode:</p>
+<ul>
+<li><code>USB\VID_046D&amp;PID_AAAA&amp;REV_0001</code></li>
+<li><code>USB\VID_046D&amp;PID_AAAA</code></li>
+<li><code>USB\VID_046D</code></li>
+</ul>
+<p>When in runtime mode, the <span class="caps">HID</span> raw DeviceInstanceId values are&nbsp;used:</p>
+<ul>
+<li><code>HIDRAW\VEN_046D&amp;MOD_B33B405B0000</code></li>
+<li><code>HIDRAW\VEN_046D&amp;MOD_B33B405B0000&amp;ENT_05</code></li>
+<li><code>HIDRAW\VEN_046D&amp;DEV_C52B</code></li>
+<li><code>HIDRAW\VEN_046D&amp;DEV_C52B&amp;ENT_05</code></li>
+<li><code>HIDRAW\VEN_046D</code></li>
+</ul>
+<p>One additional legacy instance <span class="caps">ID</span> is added for&nbsp;peripherals:</p>
+<ul>
+<li><code>UFY\VID_046D&amp;PID_C52B</code></li>
+</ul>
+<p>The Bolt <span class="caps">USB</span> receiver and peripherals use <span class="caps">HID</span> raw DeviceInstanceId values
+regardless of their mode. This might change once these devices are
+handled by the Logitech Linux driver instead of by the generic hid&nbsp;driver.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the vendor <span class="caps">ID</span>, in this instance set to <code>USB:0x046D</code>
+in bootloader and <code>HIDRAW:0x046D</code> in runtime&nbsp;mode.</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>Due to the variety of devices supported and the differences in how
+they&#8217;re enumerated, the update behavior is slightly different between&nbsp;them.</p>
+<p>In all cases, the devices have to be put in bootloader mode to run the
+<span class="caps">DFU</span> process. While in bootloader mode, the user won&#8217;t be able to use the
+device. For receivers, that also means that while they&#8217;re in bootloader
+mode, the peripherals paired to them won&#8217;t work during the&nbsp;update.</p>
+<p>A Unifying receiver presents in runtime mode, but on detach re-enumerates with a
+different <span class="caps">USB</span> <span class="caps">PID</span> in a bootloader mode. On attach the device again re-enumerates
+back to the runtime&nbsp;mode.</p>
+<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
+the bootloader and runtime modes are treated as the same&nbsp;device.</p>
+<p>The Bolt receiver enumerates as a hidraw device both in runtime and
+bootloader mode, but with different <span class="caps">HIDRAW</span>&nbsp;devIDs.</p>
+<p>Peripherals paired to a receiver are enumerated as separate hidraw
+devices but those device files can&#8217;t be used for <span class="caps">DFU</span>. Instead, all the
+<span class="caps">DFU</span>-related messages need to be piped through the hidraw device file of
+the receiver. They are polled and queried by the receiver and listed as
+its children. Note that this will likely change once the Logitech Linux
+driver supports Bolt&nbsp;devices.</p>
+<p>Bolt peripherals directly connected to the host through <span class="caps">BLE</span> are
+enumerated as individual hidraw devices and can be upgraded through
+their hidraw device&nbsp;files.</p>
+<h2 id="design-notes">Design Notes<a class="md-anchor" href="#design-notes" title="Permanent link"></a></h2>
+<p>When a <span class="caps">USB</span> receiver is detected in bootloader mode we detach the hidraw driver from
+the kernel and use raw control transfers. This ensures that we don&#8217;t accidentally
+corrupt the uploading firmware. For application firmware we use hidraw which
+means the hardware keeps working while probing, and also allows us to detect
+paired&nbsp;devices.</p>
+<h3 id="how-the-code-is-organized">How the code is organized<a class="md-anchor" href="#how-the-code-is-organized" title="Permanent link"></a></h3>
+<p>Here&#8217;s how the different devices are handled in the&nbsp;plugin:</p>
+<ul>
+<li>Unifying receiver in runtime mode: FuLogitechHidPpRuntimeUnifying&nbsp;(fu-logitech-hidpp-runtime-unifying.c)</li>
+<li>Unifying receiver in bootloader&nbsp;mode:</li>
+<li>Nordic chipset: FuLogitechHidPpBootloaderNordic&nbsp;(fu-logitech-hidpp-bootloader-nordic.c)</li>
+<li><span class="caps">TI</span> chipset: FuLogitechHidPpBootloaderTexas&nbsp;(fu-logitech-hidpp-bootloader-texas.c)</li>
+<li>Bolt receiver in runtime mode: FuLogitechHidPpRuntimeBolt&nbsp;(fu-logitech-hidpp-runtime-bolt.c)</li>
+<li>Bolt receiver in bootloader mode and all peripherals:
+    FuLogitechHidPpDevice&nbsp;(fu-logitech-hidpp-device.c)</li>
+</ul>
+<p>FuLogitechHidPpDevice effectively handles all devices that use the
+<span class="caps">HID</span>++2.0&nbsp;protocol.</p>
+<p>Every device contains two updatable entities, the main application <span class="caps">FW</span>
+and the radio stack <span class="caps">FW</span> (SoftDevice). The latter will show up as a child
+device of the actual device and is handled by FuLogitechHidPpRadio
+(fu-logitech-hidpp-radio.c), which simply defers to the parent device
+for most&nbsp;operations.</p>
+<h3 id="plugin-specific-flags">Plugin-specific flags<a class="md-anchor" href="#plugin-specific-flags" title="Permanent link"></a></h3>
+<p>Even though the same code handles multiple different devices, there are
+some inherent differences in them that makes it necessary to handle some
+exceptional behaviors&nbsp;sometimes.</p>
+<p>In order to do that there are a few specific flags that can be used to
+tweak the plugin code for certain device&nbsp;types:</p>
+<ul>
+<li>rebind-attach: some devices will have their device file unbound and
+    re-bound after reset, so the device object can&#8217;t be simply re-probed
+    using the same file&nbsp;descriptor.</li>
+<li>force-receiver-id: this flag is used to differentiate the receiver device in
+    FuLogitechHidPpDevice, since the receiver has a specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</li>
+<li>ble: used to differentiate devices in <span class="caps">BLE</span> mode. They require all the
+    reports to be <em>long</em>.</li>
+</ul>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#design-notes"><span class="link-text">Design Notes</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#how-the-code-is-organized"><span class="link-text">How the code is organized</span></a></li>
+          
+            <li class="toc-list-item"><a href="#plugin-specific-flags"><span class="link-text">Plugin-specific flags</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

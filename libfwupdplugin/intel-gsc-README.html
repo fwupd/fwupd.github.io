@@ -1,0 +1,161 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Intel GSC — Graphics System Controller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Intel GSC — Graphics System Controller"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Intel GSC — Graphics System Controller"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Intel GSC — Graphics System Controller"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Intel GSC — Graphics System Controller"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin is used to update the Intel graphics system controller via the Intel Management&nbsp;Engine.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>There are two firmware formats in&nbsp;use:</p>
+<ul>
+<li><code>$FPT</code> with children <code>FuIfwiFptFirmware</code>, where the <code>FW_DATA_IMAGE</code> is a <code>FuIfwiCpdFirmware</code></li>
+<li>A linear array of <code>FuOpromFirmware</code> images, each with a <code>FuIfwiCpdFirmware</code></li>
+</ul>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.intel.gsc</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">PCI</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>MEI\VID_8086&amp;DEV_4905</code></li>
+</ul>
+<p>They also define custom per-part <span class="caps">PCI</span> IDs such&nbsp;as:</p>
+<ul>
+<li><code>MEI\VID_8086&amp;DEV_4905&amp;PART_FWCODE</code></li>
+<li><code>MEI\VID_8086&amp;DEV_4905&amp;PART_FWDATA</code></li>
+<li><code>MEI\VID_8086&amp;DEV_4905&amp;PART_OPROMCODE</code></li>
+<li><code>MEI\VID_8086&amp;DEV_4905&amp;PART_OPROMDATA</code></li>
+</ul>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, in this instance set to <code>MEI:0x8086</code></p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/mei*</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

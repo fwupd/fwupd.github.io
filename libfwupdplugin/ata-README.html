@@ -1,0 +1,185 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: ATA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: ATA"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: ATA"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: ATA"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: ATA"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows updating <span class="caps">ATA</span>/<span class="caps">ATAPI</span> storage hardware. Devices are enumerated
+from the block devices and if ID_ATA_DOWNLOAD_MICROCODE is supported they can
+be updated with appropriate firmware&nbsp;file.</p>
+<p>Updating <span class="caps">ATA</span> devices is more dangerous than other hardware such as <span class="caps">DFU</span> or NVMe
+and should be tested carefully with the help of the drive&nbsp;vendor.</p>
+<p>The device <span class="caps">GUID</span> is read from the trimmed model&nbsp;string.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>org.t13.ata</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These device use the Microsoft DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>IDE\VENDOR[40]REVISION[8]</code></li>
+<li><code>IDE\0VENDOR[40]</code></li>
+</ul>
+<p>See <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/install/identifiers-for-ide-devices">https://docs.microsoft.com/en-us/windows-hardware/drivers/install/identifiers-for-ide-devices</a>
+for more&nbsp;details.</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed when the device is in normal runtime mode, but it is
+only activated when the system is in the final shutdown stages. This is done to
+minimize the chance of data loss if the switch to the new firmware is not done&nbsp;correctly.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>No vendor <span class="caps">ID</span> is set as there is no vendor field in the <span class="caps">IDENTIFY</span>&nbsp;response.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="atatransferblocks">AtaTransferBlocks<a class="md-anchor" href="#atatransferblocks" title="Permanent link"></a></h3>
+<p>Blocks to transfer, or <code>0xffff</code> for&nbsp;max</p>
+<p>Since:&nbsp;1.2.4</p>
+<h3 id="atatransfermode">AtaTransferMode<a class="md-anchor" href="#atatransfermode" title="Permanent link"></a></h3>
+<p>The transfer mode, <code>0x3</code>, <code>0x7</code> or <code>0xe</code></p>
+<p>Since:&nbsp;1.2.4</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires the <code>SG_IO</code> ioctl&nbsp;interface.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#atatransferblocks"><span class="link-text">AtaTransferBlocks</span></a></li>
+          
+            <li class="toc-list-item"><a href="#atatransfermode"><span class="link-text">AtaTransferMode</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

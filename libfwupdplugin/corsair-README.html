@@ -1,0 +1,185 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Corsair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Corsair"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Corsair"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Corsair"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Corsair"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows to update firmware on Corsair mice and&nbsp;receivers:</p>
+<ul>
+<li><span class="caps">SABRE</span> <span class="caps">RGB</span> <span class="caps">PRO</span> <span class="caps">WIRELESS</span></li>
+<li><span class="caps">SLIPSTREAM</span> <span class="caps">WIRELESS</span> <span class="caps">USB</span>&nbsp;Receiver</li>
+<li><span class="caps">KATAR</span> <span class="caps">PRO</span> <span class="caps">WIRELESS</span></li>
+<li><span class="caps">KATAR</span> <span class="caps">PRO</span> <span class="caps">XT</span> Gaming&nbsp;Mouse</li>
+<li><span class="caps">SABRE</span> <span class="caps">PRO</span> Gaming&nbsp;Mouse</li>
+</ul>
+<h2 id="code-structure">Code structure<a class="md-anchor" href="#code-structure" title="Permanent link"></a></h2>
+<p>All devices handled by one object (FuCorsairDevice). Receivers with wireless-only
+devices will be shown as two entities: parent device as a receiver and wireless
+device as a child. Difference in behavior is handled by private&nbsp;flags.</p>
+<p>FuCorsairBp contains low-level protocol related routines. Device objects should
+call correct versions of these routines in order to update firmware. Correct
+routines chosen by device quirks and private&nbsp;flags.</p>
+<h2 id="wired-mice-update-behavior">Wired mice update behavior<a class="md-anchor" href="#wired-mice-update-behavior" title="Permanent link"></a></h2>
+<p>Mice and/or it&#8217;s wireless adapter must be connected to host via <span class="caps">USB</span> cable
+to apply an update. The device is switched to bootloader mode to flash
+updates, and is reset automatically to new firmware after&nbsp;flashing.</p>
+<h2 id="wireless-mice-update-behavior">Wireless mice update behavior<a class="md-anchor" href="#wireless-mice-update-behavior" title="Permanent link"></a></h2>
+<p>The receiver should be connected to host and the mouse should be turned on
+and not&nbsp;sleeping.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="corsairvendorinterfaceid">CorsairVendorInterfaceId<a class="md-anchor" href="#corsairvendorinterfaceid" title="Permanent link"></a></h3>
+<p>Some devices have non-standard <span class="caps">USB</span> interface for protocol communication.
+This quirk should be set if protocol interface is not&nbsp;1.</p>
+<p>Since:&nbsp;1.8.0</p>
+<h3 id="corsairsubdeviceid">CorsairSubdeviceId<a class="md-anchor" href="#corsairsubdeviceid" title="Permanent link"></a></h3>
+<p>Specifies <span class="caps">ID</span> of any wireless child device which can be updated. Polling will
+be turned on if a subdevice is not connected when parent is being&nbsp;probed.</p>
+<h3 id="flagslegacy-attach">Flags:legacy-attach<a class="md-anchor" href="#flagslegacy-attach" title="Permanent link"></a></h3>
+<p>This flag is used if legacy attach command should be&nbsp;used</p>
+<h3 id="flagsno-version-in-bl">Flags:no-version-in-bl<a class="md-anchor" href="#flagsno-version-in-bl" title="Permanent link"></a></h3>
+<p>This flag handles cases if device reports incorrect firmware version in bootloader&nbsp;mode.</p>
+<h3 id="flagsis-subdevice">Flags:is-subdevice<a class="md-anchor" href="#flagsis-subdevice" title="Permanent link"></a></h3>
+<p>This flag tells device that it is a child device. All subdevice behavior tweaks will be&nbsp;applied.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#code-structure"><span class="link-text">Code structure</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#wired-mice-update-behavior"><span class="link-text">Wired mice update behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#wireless-mice-update-behavior"><span class="link-text">Wireless mice update behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#corsairvendorinterfaceid"><span class="link-text">CorsairVendorInterfaceId</span></a></li>
+          
+            <li class="toc-list-item"><a href="#corsairsubdeviceid"><span class="link-text">CorsairSubdeviceId</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagslegacy-attach"><span class="link-text">Flags:legacy-attach</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-version-in-bl"><span class="link-text">Flags:no-version-in-bl</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsis-subdevice"><span class="link-text">Flags:is-subdevice</span></a></li>
+          
+          </ul>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

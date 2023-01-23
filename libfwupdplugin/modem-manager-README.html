@@ -1,0 +1,215 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: ModemManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: ModemManager"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: ModemManager"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: ModemManager"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: ModemManager"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin adds support for devices managed by&nbsp;ModemManager.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These device use the ModemManager &#8220;Firmware Device IDs&#8221; as the <span class="caps">GUID</span>,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_413C&amp;PID_81D7&amp;REV_0318&amp;CARRIER_VODAFONE</code></li>
+<li><code>USB\VID_413C&amp;PID_81D7&amp;REV_0318</code></li>
+<li><code>USB\VID_413C&amp;PID_81D7</code></li>
+<li><code>USB\VID_413C</code></li>
+<li><code>PCI\VID_105B&amp;PID_E0AB&amp;REV_0000&amp;CARRIER_VODAFONE</code></li>
+<li><code>PCI\VID_105B&amp;PID_E0AB&amp;REV_0000</code></li>
+<li><code>PCI\VID_105B&amp;PID_E0AB</code></li>
+<li><code>PCI\VID_105B</code></li>
+<li><code>PCI\VID_1EAC&amp;PID_1001</code></li>
+<li><code>PCI\VID_1EAC&amp;PID_1002</code></li>
+<li><code>PCI\VID_1EAC</code></li>
+</ul>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirk:</p>
+<h3 id="modemmanagerbranchatcommand">ModemManagerBranchAtCommand<a class="md-anchor" href="#modemmanagerbranchatcommand" title="Permanent link"></a></h3>
+<p><span class="caps">AT</span> command to execute to determine the firmware branch currently installed on the&nbsp;modem.</p>
+<p>Since:&nbsp;1.7.4</p>
+<h3 id="modemmanagerfirehoseprogfile">ModemManagerFirehoseProgFile<a class="md-anchor" href="#modemmanagerfirehoseprogfile" title="Permanent link"></a></h3>
+<p>Firehose program file to use during the switch to <span class="caps">EDL</span> (Emergency Download)&nbsp;mode.</p>
+<p>Since:&nbsp;1.8.10</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> or <span class="caps">PCI</span> vendor, for example <code>USB:0x413C</code> <code>PCI:0x105B</code></p>
+<h2 id="update-method-fastboot">Update method: fastboot<a class="md-anchor" href="#update-method-fastboot" title="Permanent link"></a></h2>
+<p>If the device supports the &#8216;fastboot&#8217; update method, it must also report which
+<span class="caps">AT</span> command should be used to trigger the modem reboot into fastboot&nbsp;mode.</p>
+<p>Once the device is in fastboot mode, the firmware upgrade process will happen
+as defined e.g. in the &#8216;flashfile.xml&#8217; file. Every file included in the <span class="caps">CAB</span> that
+is not listed in the associated &#8216;flashfile.xml&#8217; will be totally ignored during
+the fastboot upgrade&nbsp;procedure.</p>
+<p>Update Protocol: <code>com.google.fastboot</code></p>
+<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
+the fastboot and runtime modes are treated as the same&nbsp;device.</p>
+<h2 id="update-method-qmi-pdc">Update method: qmi-pdc<a class="md-anchor" href="#update-method-qmi-pdc" title="Permanent link"></a></h2>
+<p>If the device supports the &#8216;qmi-pdc&#8217; update method, the contents of the <span class="caps">CAB</span>
+file should include files named as &#8216;mcfg.*.mbn&#8217; which will be treated as <span class="caps">MCFG</span>
+configuration files to download into the device using the Persistent Device
+Configuration <span class="caps">QMI</span>&nbsp;service.</p>
+<p>If a device supports both &#8216;fastboot&#8217; and &#8216;qmi-pdc&#8217; methods, the fastboot
+operation will always be run before the <span class="caps">QMI</span> operation, so that e.g. the full
+partition where the <span class="caps">MCFG</span> files are stored can be wiped out before installing
+the new&nbsp;ones.</p>
+<p>Update protocol: <code>com.qualcomm.qmi_pdc</code></p>
+<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
+the fastboot and runtime modes are treated as the same&nbsp;device.</p>
+<h2 id="update-method-mbim-qdu">Update method: mbim-qdu<a class="md-anchor" href="#update-method-mbim-qdu" title="Permanent link"></a></h2>
+<p>If the device supports the &#8216;mbim-qdu&#8217; update method, the contents of the <span class="caps">CAB</span>
+file should include a package named as &#8216;Firmware_*.7z&#8217; which is a compressed
+ota.bin file that will be downloaded to the ota partition of the&nbsp;device.</p>
+<p>Update protocol: <code>com.qualcomm.mbim_qdu</code></p>
+<h2 id="update-method-firehose">Update method: firehose<a class="md-anchor" href="#update-method-firehose" title="Permanent link"></a></h2>
+<p>If the device supports the &#8216;firehose&#8217; update method, it should have <span class="caps">QCDM</span> port
+exposed and the contents of the <span class="caps">CAB</span> file should contain &#8216;firehose-rawprogram.xml&#8217;.
+The device is then switched to the emergency download mode (<span class="caps">EDL</span>) and flashed
+with files described in&nbsp;&#8216;firehose-rawprogram.xml&#8217;.</p>
+<p>Update protocol: <code>com.qualcomm.firehose</code></p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code> and <code>/dev/bus/pci</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#modemmanagerbranchatcommand"><span class="link-text">ModemManagerBranchAtCommand</span></a></li>
+          
+            <li class="toc-list-item"><a href="#modemmanagerfirehoseprogfile"><span class="link-text">ModemManagerFirehoseProgFile</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-method-fastboot"><span class="link-text">Update method: fastboot</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-method-qmi-pdc"><span class="link-text">Update method: qmi-pdc</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-method-mbim-qdu"><span class="link-text">Update method: mbim-qdu</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-method-firehose"><span class="link-text">Update method: firehose</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: CCGX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: CCGX"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: CCGX"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: CCGX"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: CCGX"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin can flash firmware on Infineon (previously Cypress) CCGx <span class="caps">USB</span>-C
+controller family of devices used in&nbsp;docks.</p>
+<h2 id="supported-protocols">Supported Protocols<a class="md-anchor" href="#supported-protocols" title="Permanent link"></a></h2>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>com.cypress.ccgx</code> (deprecated)</li>
+<li><code>com.cypress.ccgx.dmc</code> (deprecated)</li>
+<li><code>com.infineon.ccgx</code></li>
+<li><code>com.infineon.ccgx.dmc</code></li>
+</ul>
+<h2 id="device-flash">Device Flash<a class="md-anchor" href="#device-flash" title="Permanent link"></a></h2>
+<p>There are four kinds of flash layout. Single image firmware is not currently
+supported in this&nbsp;plugin.</p>
+<h3 id="symmetric-firmware">Symmetric Firmware<a class="md-anchor" href="#symmetric-firmware" title="Permanent link"></a></h3>
+<p>In symmetric firmware topology, <span class="caps">FW1</span> and <span class="caps">FW2</span> are both primary (main) firmware
+with identical sizes and functionality. We can only update <span class="caps">FW1</span> from <span class="caps">FW2</span> or <span class="caps">FW2</span>
+from <span class="caps">FW1</span>. This does mean we need to update just one time as booting from either
+firmware slot gives a fully functional&nbsp;device.</p>
+<p>After updating the &#8220;other&#8221; firmware we can just use <code>CY_PD_DEVICE_RESET_CMD_SIG</code>
+to reboot into the new firmware, and no further action is&nbsp;required.</p>
+<h3 id="asymmetric-firmware">Asymmetric Firmware<a class="md-anchor" href="#asymmetric-firmware" title="Permanent link"></a></h3>
+<p>In asymmetric firmware topology, <span class="caps">FW1</span> is backup and <span class="caps">FW2</span> is primary (main)
+firmware with different firmware sizes. The backup firmware may not support all
+dock&nbsp;functionality.</p>
+<p>To update primary, we thus need to update&nbsp;twice:</p>
+<p>Case 1: <span class="caps">FW2</span> is&nbsp;running</p>
+<ul>
+<li>Update <span class="caps">FW1</span> -&gt; Jump to backup <span class="caps">FW</span> <code>CY_PD_JUMP_TO_ALT_FW_CMD_SIG</code> -&gt;&nbsp;reboot</li>
+<li>Update <span class="caps">FW2</span> -&gt; Reset device <code>CY_PD_DEVICE_RESET_CMD_SIG</code> -&gt; reboot -&gt; <span class="caps">FW2</span></li>
+</ul>
+<p>Case 2: <span class="caps">FW1</span> is running (recovery&nbsp;case)</p>
+<ul>
+<li>Update <span class="caps">FW2</span> -&gt;  Reset device <code>CY_PD_DEVICE_RESET_CMD_SIG</code> -&gt; reboot -&gt; <span class="caps">FW2</span></li>
+</ul>
+<p>The <code>CY_PD_JUMP_TO_ALT_FW_CMD_SIG</code> command is allowed only in asymmetric <span class="caps">FW</span>, but
+<code>CY_PD_DEVICE_RESET_CMD_SIG</code> is allowed in both asymmetric <span class="caps">FW</span> and symmetric <span class="caps">FW</span>.</p>
+<h3 id="dmcdock-management-controller-composite-firmware">DMC(Dock Management Controller) Composite Firmware<a class="md-anchor" href="#dmcdock-management-controller-composite-firmware" title="Permanent link"></a></h3>
+<p>In composite firmware topology, a single firmware image contains metadata and
+firmware images of multiple devices including <span class="caps">DMC</span> itself in a dock&nbsp;system.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>There are two kinds of firmware&nbsp;format.</p>
+<h3 id="cyacd-firmware-format">Cyacd firmware format<a class="md-anchor" href="#cyacd-firmware-format" title="Permanent link"></a></h3>
+<p>The daemon will decompress the cabinet archive and extract several firmware
+blobs in cyacd file format. See <a href="https://community.cypress.com/docs/DOC-10562">https://community.cypress.com/docs/<span class="caps">DOC</span>-10562</a>
+for more&nbsp;details.</p>
+<h3 id="dmc-composite-firmware-format">DMC composite firmware format<a class="md-anchor" href="#dmc-composite-firmware-format" title="Permanent link"></a></h3>
+<p>The daemon will decompress the cabinet archive and extract several firmware
+blobs in a combined image file format. See 4.4.1 Single Composite
+(Combined) Dock Image at <a href="https://www.cypress.com/file/387471/download">https://www.cypress.com/file/387471/download</a>
+for more&nbsp;details.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1234&amp;PID_5678</code></li>
+</ul>
+<p>Devices also have additional instance IDs which corresponds to the silicon <span class="caps">ID</span>,
+application <span class="caps">ID</span> and device mode,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1234&amp;PID_5678&amp;SID_9ABC</code></li>
+<li><code>USB\VID_1234&amp;PID_5678&amp;SID_9ABC&amp;APP_DEF1</code></li>
+<li><code>USB\VID_1234&amp;PID_5678&amp;SID_9ABC&amp;APP_DEF1&amp;MODE_FW2</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The device usually presents in runtime <span class="caps">HID</span> mode, but on detach re-enumerates
+with with a <span class="caps">DMC</span> or <span class="caps">HPI</span> interface. On attach the device again re-enumerates
+back to the runtime <span class="caps">HID</span>&nbsp;mode.</p>
+<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
+the <span class="caps">DMC</span>/<span class="caps">HPI</span> and runtime modes are treated as the same&nbsp;device.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, for example set to <code>USB:0x04B4</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="ccgxdmctriggercode">CcgxDmcTriggerCode<a class="md-anchor" href="#ccgxdmctriggercode" title="Permanent link"></a></h3>
+<p><span class="caps">DMC</span> devices need a specified trigger code to request the device to update
+the firmware and the trigger code depends on the&nbsp;devices.</p>
+<p>Since:&nbsp;1.8.0</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#supported-protocols"><span class="link-text">Supported Protocols</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#device-flash"><span class="link-text">Device Flash</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#symmetric-firmware"><span class="link-text">Symmetric Firmware</span></a></li>
+          
+            <li class="toc-list-item"><a href="#asymmetric-firmware"><span class="link-text">Asymmetric Firmware</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dmcdock-management-controller-composite-firmware"><span class="link-text">DMC(Dock Management Controller) Composite Firmware</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#cyacd-firmware-format"><span class="link-text">Cyacd firmware format</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dmc-composite-firmware-format"><span class="link-text">DMC composite firmware format</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#ccgxdmctriggercode"><span class="link-text">CcgxDmcTriggerCode</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

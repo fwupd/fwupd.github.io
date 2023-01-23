@@ -1,0 +1,190 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: SuperIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: SuperIO"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: SuperIO"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: SuperIO"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: SuperIO"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin enumerates the various <span class="caps">ITE85</span>* SuperIO embedded controller ICs found
+in many laptops. Vendors wanting to expose the SuperIO functionality will need
+to add a HwId quirk entry to <code>superio.quirk</code>.</p>
+<p>See <a href="https://en.wikipedia.org/wiki/Super_I/O">the Wikipedia page</a> for more
+details about SuperIO and what the <span class="caps">EC</span> actually&nbsp;does.</p>
+<p>Other useful&nbsp;links:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/system76/ecflash/master/ec.py">https://raw.githubusercontent.com/system76/ecflash/master/ec.py</a></li>
+<li><a href="https://github.com/system76/firmware-update/tree/master/src">https://github.com/system76/firmware-update/tree/master/src</a></li>
+<li><a href="https://github.com/coreboot/coreboot/blob/master/util/superiotool/superiotool.h">https://github.com/coreboot/coreboot/blob/master/util/superiotool/superiotool.h</a></li>
+<li><a href="https://github.com/flashrom/flashrom/blob/master/it85spi.c">https://github.com/flashrom/flashrom/blob/master/it85spi.c</a></li>
+<li><a href="http://wiki.laptop.org/go/Ec_specification">http://wiki.laptop.org/go/Ec_specification</a></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use a custom <span class="caps">GUID</span> generated using the SuperIO chipset&nbsp;name:</p>
+<ul>
+<li><code>SuperIO-$(chipset)</code>, for example <code>SuperIO-IT8512</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed when the device is in normal runtime mode, but it is
+only activated on machine reboot. The firmware write is normally scheduled to be
+done very early in the boot process to minimize the chance the <span class="caps">EC</span> chip locking
+up if the user is actually using the keyboard&nbsp;controller.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the baseboard vendor, for example <code>DMI:Star Labs</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="superiocontrolport">SuperioControlPort<a class="md-anchor" href="#superiocontrolport" title="Permanent link"></a></h3>
+<p>Control (status/command) port number, e.g. <code>0x66</code></p>
+<p>Since:&nbsp;1.6.2</p>
+<h3 id="superiodataport">SuperioDataPort<a class="md-anchor" href="#superiodataport" title="Permanent link"></a></h3>
+<p>Data port number, e.g. <code>0x62</code></p>
+<p>Since:&nbsp;1.6.2</p>
+<h3 id="superioautoloadaction">SuperioAutoloadAction<a class="md-anchor" href="#superioautoloadaction" title="Permanent link"></a></h3>
+<p>Autoload action, specified by <span class="caps">ITE</span>: <code>none</code>, <code>disable</code>, <code>on</code>, <code>off</code></p>
+<p>Since:&nbsp;1.6.2</p>
+<h3 id="superiotimeout">SuperioTimeout<a class="md-anchor" href="#superiotimeout" title="Permanent link"></a></h3>
+<p>Maximum wait time in ms (default value is <code>250</code>)</p>
+<p>Since:&nbsp;1.6.2</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires access to raw system memory via <code>inb</code>/<code>outb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#superiocontrolport"><span class="link-text">SuperioControlPort</span></a></li>
+          
+            <li class="toc-list-item"><a href="#superiodataport"><span class="link-text">SuperioDataPort</span></a></li>
+          
+            <li class="toc-list-item"><a href="#superioautoloadaction"><span class="link-text">SuperioAutoloadAction</span></a></li>
+          
+            <li class="toc-list-item"><a href="#superiotimeout"><span class="link-text">SuperioTimeout</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: VBE — Verified Boot for Embedded</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: VBE — Verified Boot for Embedded"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: VBE — Verified Boot for Embedded"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: VBE — Verified Boot for Embedded"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: VBE — Verified Boot for Embedded"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin is used for boards which use the <span class="caps">VBE</span> system. This allows the
+platform to be updated from user&nbsp;space.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>Firmware updates are held within a <span class="caps">CAB</span> file, a Windows format which allows
+files to be collected and compressed, similar to a tar file. The <span class="caps">CAB</span> file can be
+created using the <code>gcab</code> tool, as shown in the <span class="caps">VBE</span> <code>example</code> directory.</p>
+<p>Inside the <span class="caps">CAB</span> file is the firmware itself, in Flat Image Tree (<span class="caps">FIT</span>) format.
+This is typically called <code>firmware.fit</code> and can be created by the <code>mkimage</code> tool,
+or using device tree tools such as <code>dtc</code> and <code>fdtput</code>.</p>
+<p>The <span class="caps">FIT</span> supports multiple configuration, each of which is intended to update a
+particular board type. This allows the same firmware update to be used for a
+number of related boards, including sharing certain images, at the expense of
+increasing the update&nbsp;size.</p>
+<p>A typical <span class="caps">FIT</span> file looks like&nbsp;this:</p>
+<div class="codehilite"><pre><span></span><code>/ {
+    timestamp = &lt;0x62a74c6c&gt;;
+    description = &quot;Firmware image with one or more FDT blobs&quot;;
+    creator = &quot;U-Boot mkimage 2021.01+dfsg-3ubuntu0~20.04.4&quot;;
+    #address-cells = &lt;0x00000001&gt;;
+    images {
+        firmware-1 {
+            description = &quot;v1.2.4&quot;;
+            type = &quot;firmware&quot;;
+            arch = &quot;arm64&quot;;
+            os = &quot;u-boot&quot;;
+            compression = &quot;none&quot;;
+            store-offset = &lt;0x10000&gt;;
+            data = &lt;...&gt;;
+            hash-1 {
+                value = &lt;0xa738ea1c&gt;;
+                algo = &quot;crc32&quot;;
+            };
+        };
+    };
+    configurations {
+        default = &quot;conf-1&quot;;
+        conf-1 {
+            version = &quot;1.2.4&quot;;
+            compatible = &quot;pine64,rockpro64-v2.1&quot;, &quot;pine64,rockpro64&quot;;
+            firmware = &quot;firmware-1&quot;;
+        };
+    };
+};
+</code></pre></div>
+
+<p>Each configuration includes the version of the update, the board(s) it is
+compatible with and a list of firmware &#8216;images&#8217; in the <code>firmware</code> property.
+The <code>compatible</code> property is optional in the case where there is only one
+configuration that applies to all boards that receive this&nbsp;update.</p>
+<p>The images themselves are in a separate <code>images</code> node. Each image includes
+various fields to indicate its type as well as option hashes. The <code>data</code>
+property contains the actual firmware&nbsp;data.</p>
+<p>Multiple images can be including in each configuration, but each must have a
+different <code>store-offset</code> property, indicating the offset from the start of the
+firmware region where this particular image is kept. The default store offset
+is zero, which is typically suitable if there is only one&nbsp;image.</p>
+<p>It is common to use an &#8216;external&#8217; <span class="caps">FIT</span>, meaning that the <code>data</code> property is
+omitted and the data is placed in the same file after the <span class="caps">FIT</span> itself. In this
+case <code>data-offset</code> and <code>data-size</code> allow the data to be relocated. The data is
+stored started at the next 32-bit aligned file position after the <span class="caps">FIT</span>. The
+<code>mkimage</code> tool allows converting a <span class="caps">FIT</span> to an external <span class="caps">FIT</span>, with the <code>-E</code> flag.</p>
+<p>See the <code>plugins/vbe/example</code> directory for an example of building a firmware&nbsp;update.</p>
+<h2 id="operation">Operation<a class="md-anchor" href="#operation" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract the firmware blob,
+then write it to storage. The firmware will be used on the next reboot, so no
+changes to firmware happen until there is a&nbsp;reboot.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>org.vbe</code></li>
+</ul>
+<h2 id="board-information">Board information<a class="md-anchor" href="#board-information" title="Permanent link"></a></h2>
+<p><span class="caps">VBE</span> requires the board firmware to provide information about the firmware within
+the device tree passed to the Operating&nbsp;System.</p>
+<p>For systems without device tree, currently the only option is to install a file
+for use by fwupd, typically in <code>/var/lib/fwupd/vbe/system.dtb</code>.</p>
+<p>In either case, there must be one or more nodes with the required information.
+The format depends on which <span class="caps">VBE</span> method is used, but the information must be in
+a subnode of <code>chosen/fwupd</code>. Here is an&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>/ {
+ compatible = &quot;pine64,rockpro64-v2.1&quot;;
+ chosen {
+  fwupd {
+   firmware {
+    compatible = &quot;fwupd,vbe-simple&quot;;
+    cur-version = &quot;1.2.3&quot;;
+    storage = &quot;/tmp/testfw&quot;;
+    area-start = &lt;0x100000&gt;;
+    area-size = &lt;0x100000&gt;;
+    skip-offset = &lt;0x8000&gt;;
+    part-uuid = &quot;62db0ccf-03&quot;;
+    part-id = &quot;3&quot;;
+   };
+  };
+ };
+};
+</code></pre></div>
+
+<p>The first compatible string indicates the board type. Typically it is a single
+string, but a list is also supported. <span class="caps">VBE</span> matches the string(s) here against
+those in the update itself, using the configuration which has the earliest match
+(within the list) to the board&#8217;s compatible string(s). Since more specific
+boards are at the start of the compatible string, this allows for one
+configuration to have an update for a specific board, while another provides an
+update for all other&nbsp;boards.</p>
+<p>The compatible string of the firmware update indicates the <span class="caps">VBE</span> method that is
+being used. It must have <code>fwupd</code> as the manufacturer and the model must start
+with <code>vbe-</code>.</p>
+<p>Other properties within the node are determined by that method, but some are
+common to&nbsp;all:</p>
+<ul>
+<li><code>compatible</code> - indicates the <span class="caps">VBE</span> method to use, in the form <code>fwupd,&lt;method&gt;</code>.</li>
+<li><code>cur-version</code> - indicates the version that is currently installed, if this is
+  known by the firmware. Note that fwupd keeps its own information about the
+  installed version, so this is not needed by fwupd itself. But it can be useful
+  for other&nbsp;utilities.</li>
+</ul>
+<h2 id="important-files">Important files<a class="md-anchor" href="#important-files" title="Permanent link"></a></h2>
+<ul>
+<li><code>/var/lib/fwupd/vbe/system.dtb</code> - this file holds the system
+  information. It overrides the system device tree if any, meaning that the
+  system device tree is ignored if this file is preset. For systems that don&#8217;t
+  support device tree (e.g <span class="caps">ACPI</span> systems), this file is needed for <span class="caps">VBE</span> to&nbsp;work</li>
+</ul>
+<h2 id="available-vbe-methods">Available VBE methods<a class="md-anchor" href="#available-vbe-methods" title="Permanent link"></a></h2>
+<p>Note that all <span class="caps">VBE</span> methods must subclass <code>FuVbeDevice</code> since it provides access to
+the device tree and the <span class="caps">VBE</span> directory, among other&nbsp;things.</p>
+<p>At present only one method is&nbsp;available:</p>
+<ul>
+<li><code>fwupd,vbe-simple</code> - writes a single copy of the firmware to&nbsp;media</li>
+</ul>
+<h3 id="vbe-simple">vbe-simple<a class="md-anchor" href="#vbe-simple" title="Permanent link"></a></h3>
+<p>With this, only a single copy of the firmware is available so if the write
+fails, the board may not boot. This is implemented in the <code>vbe-simple.c</code> file and
+has the device <span class="caps">GUID</span> <code>ea1b96eb-a430-4033-8708-498b6d98178b</code> within&nbsp;fwupd.</p>
+<p>Properties for this method&nbsp;are:</p>
+<ul>
+<li><code>compatible</code> - must be <code>fwupd,vbe-simple</code></li>
+<li><code>storage</code> - device to store firmware in. Two options are supported: a full path
+   such as <code>/dev/mmcblk1</code> or a device number, like <code>mmc1</code>. Note that only mmc
+   is currently&nbsp;supported.</li>
+<li><code>area-start</code> - start offset in bytes of the firmware area within the&nbsp;storage</li>
+<li><code>area-size</code> - size in bytes of the firmware area within the&nbsp;storage</li>
+<li><code>skip-offset</code> - offset to preserve at the start of the firmware area. This
+   means that the first part of the image is ignored, with just the latter part
+   being written. For example, if this is 0x200 then the first 512 bytes of the
+   image (which must be present in the image) are skipped and the bytes after
+   that are written to the store&nbsp;offset.</li>
+<li><code>part-uuid</code> - the <span class="caps">UUID</span> of the partition containing the fwupd state. This is not
+   used by fwupd at present but may allow the bootloader to check the fwupd
+   state on&nbsp;boot</li>
+<li><code>part-id</code> - the partition number containing the fwupd state. This is not
+   used by fwupd at present but may allow the bootloader to check the fwupd
+   state on&nbsp;boot</li>
+</ul>
+<h2 id="finding-out-more">Finding out more<a class="md-anchor" href="#finding-out-more" title="Permanent link"></a></h2>
+<p>You can use the U-Boot mailing list or <code>u-boot</code> <span class="caps">IRC</span> on <code>libera.chat</code> to ask
+questions specific to <span class="caps">VBE</span> and&nbsp;firmware.</p>
+<h2 id="sending-patches">Sending patches<a class="md-anchor" href="#sending-patches" title="Permanent link"></a></h2>
+<p>Use the <a href="https://fwupd.org/lvfs/docs/developers">fwupd developer site</a> to find
+information about downloading the code, submitting bugs/feature requests and
+sending&nbsp;patches.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>This does not update <span class="caps">USB</span> devices and thus requires no vendor <span class="caps">ID</span>&nbsp;set.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires access to system firmware, e.g. via a file or an eMMC&nbsp;device.</p>
+<h2 id="documentation">Documentation<a class="md-anchor" href="#documentation" title="Permanent link"></a></h2>
+<p>The following documents may help in understanding <span class="caps">VBE</span>:</p>
+<ul>
+<li><a href="https://docs.google.com/document/d/e/2PACX-1vQjXLPWMIyVktaTMf8edHZYDrEvMYD_iNzIj1FgPmKF37fpglAC47Tt5cvPBC5fvTdoK-GA5Zv1wifo/pub"><span class="caps">VBE</span></a></li>
+<li><a href="https://docs.google.com/document/d/e/2PACX-1vR0OzhuyRJQ8kdeOibS3xB1rVFy3J4M_QKTM5-3vPIBNcdvR0W8EXu9ymG-yWfqthzWoM4JUNhqwydN/pub"><span class="caps">VBE</span>&nbsp;Bootflows</a></li>
+<li><a href="https://docs.google.com/document/d/e/2PACX-1vTnlIL17vVbl6TVoTHWYMED0bme7oHHNk-g5VGxblbPiKIdGDALE1HKId8Go5f0g1eziLsv4h9bocbk/pub"><span class="caps">VBE</span> Firmware&nbsp;update</a></li>
+<li><a href="https://github.com/u-boot/u-boot/blob/master/doc/uImage.FIT/source_file_format.txt"><span class="caps">FIT</span></a></li>
+<li><a href="https://u-boot.readthedocs.io/en/latest/develop/bootstd.html">U-Boot Standard&nbsp;boot</a></li>
+</ul>
+<h2 id="useful-information">Useful information<a class="md-anchor" href="#useful-information" title="Permanent link"></a></h2>
+<p>For development you may find the following&nbsp;useful.</p>
+<p>To set up the vbe&nbsp;directory:</p>
+<div class="codehilite"><pre><span></span><code>    mkdir /var/lib/fwupd/vbe
+    chmod a+rwx /var/lib/fwupd/vbe
+    dtc /path/to/fwupd/plugins/vbe/example/test.dts -o <span class="se">\</span>
+       /var/lib/fwupd/vbe/system.dtb
+</code></pre></div>
+
+<p>To build the&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>   sudo apt install appstream-util u-boot-tools
+   <span class="nb">cd</span> /path/to/fwupd/plugins/vbe/example
+   dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>update.bin <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+   ./build.sh
+</code></pre></div>
+
+<p>To install the cab on your development&nbsp;computer:</p>
+<div class="codehilite"><pre><span></span><code>   <span class="c1"># Set up the test file</span>
+   dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/tmp/testfw <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">3</span>
+
+   sudo build/src/fwupdtool install plugins/vbe/example/Vbe-Board-1.2.4.cab <span class="se">\</span>
+      bb3b05a8-ebef-11ec-be98-d3a15278be95
+</code></pre></div>
+
+<p>To dump out the&nbsp;firmware:</p>
+<div class="codehilite"><pre><span></span><code>   sudo rm fw.bin<span class="p">;</span> sudo build/src/fwupdtool firmware-dump fw.bin <span class="se">\</span>
+      bb3b05a8-ebef-11ec-be98-d3a15278be95
+</code></pre></div>
+
+<h2 id="to-do">To do<a class="md-anchor" href="#to-do" title="Permanent link"></a></h2>
+<p>Add an update method that actually supports verified boot, including maintaining
+update state. The update happens in two passes, the first installing firmware
+in the &#8216;B&#8217; slot and the second writing it to the &#8216;A&#8217; slot, to avoid bricking the
+device in the event of a write failure or non-functional&nbsp;firmware.</p>
+<p>Figure out how to select the right update for a board out of many that might be
+on <span class="caps">LVFS</span>. At present the selection mechanism only works within the <span class="caps">FIT</span>
+configuration. This probably needs to use the <code>&lt;firmware type="flashed"&gt;</code> piece
+of the xml file to specify an identifier for the family of boards supported by
+the&nbsp;update.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#operation"><span class="link-text">Operation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#board-information"><span class="link-text">Board information</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#important-files"><span class="link-text">Important files</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#available-vbe-methods"><span class="link-text">Available VBE methods</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#vbe-simple"><span class="link-text">vbe-simple</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#finding-out-more"><span class="link-text">Finding out more</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#sending-patches"><span class="link-text">Sending patches</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#documentation"><span class="link-text">Documentation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#useful-information"><span class="link-text">Useful information</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#to-do"><span class="link-text">To do</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

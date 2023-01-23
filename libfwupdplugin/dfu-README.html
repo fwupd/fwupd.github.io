@@ -1,0 +1,226 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: DFU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: DFU"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: DFU"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: DFU"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: DFU"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Device Firmware Update is a standard that allows <span class="caps">USB</span> devices to be easily and
+safely updated by any operating&nbsp;system.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+<span class="caps">DFU</span> or DfuSe file&nbsp;format.</p>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>org.usb.dfu</code></li>
+<li><code>com.st.dfuse</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_273F&amp;PID_1003&amp;REV_0001</code></li>
+<li><code>USB\VID_273F&amp;PID_1003</code></li>
+<li><code>USB\VID_273F</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>A <span class="caps">DFU</span> device usually presents in runtime mode (with optional <span class="caps">DFU</span> runtime), but
+on detach re-enumerates with an additional required <span class="caps">DFU</span> descriptor. On attach
+the device again re-enumerates back to the runtime&nbsp;mode.</p>
+<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
+the bootloader and runtime modes are treated as the same&nbsp;device.</p>
+<h2 id="implementation-notes">Implementation Notes<a class="md-anchor" href="#implementation-notes" title="Permanent link"></a></h2>
+<p>The runtime mode is just as important as the <span class="caps">DFU</span> mode from the point of view of
+fwupd and should be included if firmware updates are to &#8220;just work&#8221;. Without a
+<span class="caps">DFU</span> runtime interface we can match the device with <code>Flags = no-dfu-runtime</code> but
+will need a suitably new fwupd version before the device is&nbsp;recognized.</p>
+<p>The <span class="caps">USB</span> interface revision (<code>REV</code>) is used as the <span class="caps">BCD</span> version number, as <span class="caps">DFU</span> has
+no way of representing a firmware version number. A new firmware version should
+always increment the <span class="caps">USB</span> <span class="caps">REV</span> of the <em>runtime</em> interface as fwupd will <strong>not</strong> switch
+the device into <em><span class="caps">DFU</span> mode</em> during enumeration to read the version number.
+The version number of the <span class="caps">DFU</span> mode should represent the <em>bootloader version</em> and
+this should not change as the firmware is&nbsp;updated.</p>
+<p>The runtime <span class="caps">USB</span> interface should have a unique vendor <span class="caps">ID</span> and product <span class="caps">ID</span> for the
+specific firmware stream. A different version of software should have a unique
+<span class="caps">VID</span>/<span class="caps">PID</span> <span class="caps">USB</span> descriptor pair. The microcontroller example <span class="caps">VID</span>/<span class="caps">PID</span> should <strong>never</strong>
+be used in the runtime mode otherwise fwupd would not know what firmware to&nbsp;match.</p>
+<p>Ideally, the bootloader should also have a unique <span class="caps">USB</span> vendor <span class="caps">ID</span> and product <span class="caps">ID</span>.
+This allows fwupd to more easily recognize the runtime interface <em>going away</em> and
+the <span class="caps">DFU</span> interface <em>coming back</em>. If the <span class="caps">VID</span>/<span class="caps">PID</span> is the same in runtime and <span class="caps">DFU</span>
+modes then the quirk <code>Flags = no-pid-change</code> is&nbsp;required.</p>
+<p>If the bootloader <span class="caps">VID</span>/<span class="caps">PID</span> is not customized (as might be the default for the supplied
+<span class="caps">MCU</span>) then fwupd can match the runtime <span class="caps">VID</span>/<span class="caps">PID</span> to the bootloader <span class="caps">VID</span>/<span class="caps">PID</span>. Where this
+fails is when the device is <em>stuck</em> in the <span class="caps">DFU</span> mode, perhaps because the user removed
+the <span class="caps">USB</span> cable before the device had completed updating.
+With a unique <span class="caps">VID</span>/<span class="caps">PID</span> fwupd can <em>recover</em> the device stuck in <span class="caps">DFU</span> mode, reflashing the
+device with the latest matching firmware and then attaching it back into runtime&nbsp;mode.</p>
+<p>Using a <em>generic</em> <span class="caps">VID</span>/<span class="caps">PID</span> for the bootloader means fwupd does not know how to recover
+the device back into runtime mode as the client does not know what firmware to choose
+and the user is forced to either <span class="caps">RMA</span> the device, or to download the correct file manually
+from the vendor vebsite and use low-level commands like <code>sudo fwupdtool install-blob</code>.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, for example <code>USB:0x0A12</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="dfuflags">DfuFlags<a class="md-anchor" href="#dfuflags" title="Permanent link"></a></h3>
+<p>Optional quirks for a <span class="caps">DFU</span> device which doesn&#8217;t follow the <span class="caps">DFU</span> 1.0 or 1.1&nbsp;specification.</p>
+<p>Since:&nbsp;1.0.1</p>
+<h3 id="dfuforceversion">DfuForceVersion<a class="md-anchor" href="#dfuforceversion" title="Permanent link"></a></h3>
+<p>Forces a specific <span class="caps">DFU</span> version for the hardware device. This is required if the device does not set, or sets incorrectly, items in the <span class="caps">DFU</span> functional descriptor.
+If set to 0000 then the <span class="caps">DFU</span> functionality is&nbsp;disabled.</p>
+<p>Since:&nbsp;1.0.1</p>
+<h3 id="dfuforcetimeout">DfuForceTimeout<a class="md-anchor" href="#dfuforcetimeout" title="Permanent link"></a></h3>
+<p>Forces a specific device timeout, in&nbsp;ms.</p>
+<p>Since:&nbsp;1.4.0</p>
+<h3 id="dfuforcetransfersize">DfuForceTransferSize<a class="md-anchor" href="#dfuforcetransfersize" title="Permanent link"></a></h3>
+<p>Forces a target transfer size, in&nbsp;bytes.</p>
+<p>Since:&nbsp;1.5.6</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#implementation-notes"><span class="link-text">Implementation Notes</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#dfuflags"><span class="link-text">DfuFlags</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dfuforceversion"><span class="link-text">DfuForceVersion</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dfuforcetimeout"><span class="link-text">DfuForceTimeout</span></a></li>
+          
+            <li class="toc-list-item"><a href="#dfuforcetransfersize"><span class="link-text">DfuForceTransferSize</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

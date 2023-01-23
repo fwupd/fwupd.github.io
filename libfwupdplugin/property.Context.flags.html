@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Hwids.new</title>
+  <title>FwupdPlugin.Context:flags</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Hwids.new"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.Hwids.new"/>
-  <meta name="twitter:title" content="FwupdPlugin.Hwids.new"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Hwids.new"/>
+  <meta property="og:title" content="FwupdPlugin.Context:flags"/>
+  <meta property="og:description" content="Reference for property FwupdPlugin.Context:flags"/>
+  <meta name="twitter:title" content="FwupdPlugin.Context:flags"/>
+  <meta name="twitter:description" content="Reference for property FwupdPlugin.Context:flags"/>
 
 
   
@@ -77,21 +77,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Hwids.html">Hwids</a>
+    <a href="class.Context.html">Context</a>
   </div>
 </div>
 <div class="section">
-  <h5>Constructors</h5>
+  <h5>Properties</h5>
   <div class="links">
   
-    <a class="method current" href="ctor.Hwids.new.html">new</a>
+    <a class="property"href="property.Context.battery-level.html">battery-level</a>
+  
+    <a class="property"href="property.Context.battery-state.html">battery-state</a>
+  
+    <a class="property"href="property.Context.battery-threshold.html">battery-threshold</a>
+  
+    <a class="property current"href="property.Context.flags.html">flags</a>
+  
+    <a class="property"href="property.Context.lid-state.html">lid-state</a>
   
   </div>
 </div>
@@ -103,49 +111,43 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Constructor</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Hwids.html">Hwids</a><span class="sep"></span>new</h1>
+    <h3>Property</h3>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Context.html">Context</a>:flags</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration" style="display:flex;">
+      <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
-        
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-hwids.h#L121">[src]</a>
-        
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">FuHwids</span><span class="o">*</span><span class="w"></span>
-<span class="n">fu_hwids_new</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="kt">void</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-</pre></div>
-</code></pre>
+        <pre><code>property flags: guint64 [ read, write ]</code></pre>
       </div>
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description" style="display:flex;">
+      <h4 id="description">
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-hwids.c#L570">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context.c#L1400">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Creates a new <code>FuHwids</code>.</p>
+        <p>The context&nbsp;flags.</p>
       </div>
 
       <div class="docblock">
         <table>
+          <tr><td>Type:</td>
+            <td><code>guint64</code></td>
+          </tr>
           
           
-          <tr><td>Available since:</td><td>0.9.3</td></tr>
-          
+          <tr><td>Available since:</td><td>1.8.10</td></tr>
           
           
         </table>
@@ -154,35 +156,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
-    
-
-    
-    <div class="return-value toggle-wrapper">
-      <h4 id="return-value">
-        Return value
-        <a href="#return-value" class="anchor"></a>
+    <div class="flags toggle-wrapper">
+      <h4 id="flags">
+        Flags
+        <a href="#flags" class="anchor"></a>
       </h4>
 
       <div class="docblock">
-        <table class="returns">
-          <tr class="arg-name">
-            <td>Returns:</td>
-            <td><a href="class.Hwids.html"><code>FuHwids</code></a></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td>No description available.</td>
-          </tr>
-          
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the function takes ownership of the data, and is responsible for freeing it.</td></tr>
-          
-          
-        </table>
+      <table>
+        <tr><td>Readable</td><td><b>yes</b></td></tr>
+        <tr><td>Writable</td><td><b>yes</b></td></tr>
+        <tr><td>Construct</td><td><b>no</b></td></tr>
+        <tr><td>Construct only</td><td><b>no</b></td></tr>
+      </table>
       </div>
     </div>
-    
+
   </section>
 </section>
 

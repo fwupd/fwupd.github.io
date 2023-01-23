@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -132,7 +132,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.get_bios_settings.html">get_bios_settings</a>
   
+    <a class="method" href="method.Context.get_chassis_kind.html">get_chassis_kind</a>
+  
     <a class="method" href="method.Context.get_esp_volumes.html">get_esp_volumes</a>
+  
+    <a class="method" href="method.Context.get_fdt.html">get_fdt</a>
   
     <a class="method" href="method.Context.get_firmware_gtype_by_id.html">get_firmware_gtype_by_id</a>
   
@@ -144,7 +148,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.get_hwid_value.html">get_hwid_value</a>
   
+    <a class="method" href="method.Context.get_hwids.html">get_hwids</a>
+  
     <a class="method" href="method.Context.get_lid_state.html">get_lid_state</a>
+  
+    <a class="method" href="method.Context.get_smbios.html">get_smbios</a>
   
     <a class="method" href="method.Context.get_smbios_data.html">get_smbios_data</a>
   
@@ -170,6 +178,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.reload_bios_settings.html">reload_bios_settings</a>
   
+    <a class="method" href="method.Context.remove_flag.html">remove_flag</a>
+  
     <a class="method" href="method.Context.security_changed.html">security_changed</a>
   
     <a class="method" href="method.Context.set_battery_level.html">set_battery_level</a>
@@ -177,6 +187,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Context.set_battery_state.html">set_battery_state</a>
   
     <a class="method" href="method.Context.set_battery_threshold.html">set_battery_threshold</a>
+  
+    <a class="method" href="method.Context.set_chassis_kind.html">set_chassis_kind</a>
   
     <a class="method" href="method.Context.set_compile_versions.html">set_compile_versions</a>
   
@@ -198,6 +210,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="property" href="property.Context.battery-state.html">battery-state</a>
   
     <a class="property" href="property.Context.battery-threshold.html">battery-threshold</a>
+  
+    <a class="property" href="property.Context.flags.html">flags</a>
   
     <a class="property" href="property.Context.lid-state.html">lid-state</a>
   
@@ -248,7 +262,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-context.c#L17">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context.c#L19">[src]</a>
           
         </h4>
 
@@ -439,11 +453,27 @@ using the plugin name, where&nbsp;possible.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Context.get_chassis_kind.html">fu_context_get_chassis_kind</a></h6>
+          <div class="docblock">
+            <p>Gets the chassis kind, if&nbsp;known.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Context.get_esp_volumes.html">fu_context_get_esp_volumes</a></h6>
           <div class="docblock">
             <p>Finds all volumes that could be an <span class="caps">ESP</span>.</p>
           </div>
           <div class="docblock"><p>Available since: 1.8.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Context.get_fdt.html">fu_context_get_fdt</a></h6>
+          <div class="docblock">
+            <p>Gets and parses the system <span class="caps">FDT</span>, aka. the Flat Device&nbsp;Tree.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">
@@ -490,11 +520,27 @@ for&nbsp;display.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Context.get_hwids.html">fu_context_get_hwids</a></h6>
+          <div class="docblock">
+            <p>Gets the HWIDs&nbsp;store.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Context.get_lid_state.html">fu_context_get_lid_state</a></h6>
           <div class="docblock">
             <p>Gets the laptop lid state, if&nbsp;applicable.</p>
           </div>
           <div class="docblock"><p>Available since: 1.7.4</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Context.get_smbios.html">fu_context_get_smbios</a></h6>
+          <div class="docblock">
+            <p>Gets the <span class="caps">SMBIOS</span>&nbsp;store.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">
@@ -558,7 +604,7 @@ for&nbsp;display.</p>
           <div class="docblock">
             <p>Loads all hardware information parts of the&nbsp;context.</p>
           </div>
-          <div class="docblock"><p>Available since: 1.6.0</p></div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">
@@ -594,6 +640,14 @@ for&nbsp;display.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Context.remove_flag.html">fu_context_remove_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a specific flag from the&nbsp;context.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Context.security_changed.html">fu_context_security_changed</a></h6>
           <div class="docblock">
             <p>Informs the daemon that the <span class="caps">HSI</span> state may have&nbsp;changed.</p>
@@ -623,6 +677,14 @@ for&nbsp;display.</p>
             <p>Sets the system battery threshold in&nbsp;percent.</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Context.set_chassis_kind.html">fu_context_set_chassis_kind</a></h6>
+          <div class="docblock">
+            <p>Sets the chassis&nbsp;kind.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">
@@ -707,6 +769,16 @@ for&nbsp;display.</p>
           </div>
 
           <div class="docblock"><p>Available since: 1.6.0</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Context.flags.html">FwupdPlugin.Context:flags</a></h6>
+
+          <div class="docblock">
+            <p>The context&nbsp;flags.</p>
+          </div>
+
+          <div class="docblock"><p>Available since: 1.8.10</p></div>
         </div>
       
         <div class="">

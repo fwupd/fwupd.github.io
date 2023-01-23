@@ -1,0 +1,205 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: SteelSeries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: SteelSeries"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: SteelSeries"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: SteelSeries"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: SteelSeries"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows to update firmware on SteelSeries&nbsp;gamepads:</p>
+<ul>
+<li>Stratus&nbsp;Duo</li>
+<li>Stratus Duo <span class="caps">USB</span> wireless&nbsp;adapter</li>
+<li>Stratus+</li>
+<li>Aerox 3&nbsp;Wireless</li>
+<li>Rival 3&nbsp;Wireless</li>
+</ul>
+<p>SteelSeries Rival 100 gaming mice support is limited by getting the correct
+version number. These mice have updatable firmware but so far no updates are
+available from the&nbsp;vendor.</p>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>com.steelseries.fizz</code></li>
+<li><code>com.steelseries.gamepad</code></li>
+<li><code>com.steelseries.sonic</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1038&amp;PID_1702&amp;REV_0001</code></li>
+<li><code>USB\VID_1038&amp;PID_1702</code></li>
+<li><code>USB\VID_1038</code></li>
+</ul>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsis-receiver">Flags:is-receiver<a class="md-anchor" href="#flagsis-receiver" title="Permanent link"></a></h3>
+<p>The device is a <span class="caps">USB</span>&nbsp;receiver.</p>
+<p>Since&nbsp;1.8.1</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<h3 id="gamepad">Gamepad<a class="md-anchor" href="#gamepad" title="Permanent link"></a></h3>
+<p>Gamepad and/or its wireless adapter must be connected to host via <span class="caps">USB</span> cable
+to apply an update. The device is switched to bootloader mode to flash
+updates, and is reset automatically to new firmware after&nbsp;flashing.</p>
+<h3 id="mice">Mice<a class="md-anchor" href="#mice" title="Permanent link"></a></h3>
+<p>The device is not upgradable and thus requires no vendor <span class="caps">ID</span>&nbsp;set.</p>
+<h3 id="wireless-mice">Wireless Mice<a class="md-anchor" href="#wireless-mice" title="Permanent link"></a></h3>
+<h3 id="rival-3-wireless">Rival 3 Wireless<a class="md-anchor" href="#rival-3-wireless" title="Permanent link"></a></h3>
+<p>The mouse switch button underneath must be set to 2.4G, and its 2.4G <span class="caps">USB</span>
+Wireless adapter must be connected to&nbsp;host.</p>
+<h3 id="aerox-3-wireless">Aerox 3 Wireless<a class="md-anchor" href="#aerox-3-wireless" title="Permanent link"></a></h3>
+<p>The mouse switch button underneath must be set to 2.4G, and its 2.4G <span class="caps">USB</span>
+Wireless adapter must be connected to host; or the mouse must be connected to
+host via the <span class="caps">USB</span>-A to <span class="caps">USB</span>-C&nbsp;cable.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x1038</code></p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsis-receiver"><span class="link-text">Flags:is-receiver</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#gamepad"><span class="link-text">Gamepad</span></a></li>
+          
+            <li class="toc-list-item"><a href="#mice"><span class="link-text">Mice</span></a></li>
+          
+            <li class="toc-list-item"><a href="#wireless-mice"><span class="link-text">Wireless Mice</span></a></li>
+          
+            <li class="toc-list-item"><a href="#rival-3-wireless"><span class="link-text">Rival 3 Wireless</span></a></li>
+          
+            <li class="toc-list-item"><a href="#aerox-3-wireless"><span class="link-text">Aerox 3 Wireless</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

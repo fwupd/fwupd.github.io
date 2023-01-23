@@ -1,0 +1,181 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: UF2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: UF2"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: UF2"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: UF2"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: UF2"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows the user to update any supported <span class="caps">UF2</span> Device by writing
+firmware onto a mass storage&nbsp;device.</p>
+<p>A <span class="caps">UF2</span> device exposes a <span class="caps">VFAT</span> block device which has a virtual file
+<code>INFO_UF2.TXT</code> where metadata can be read from. It may also have a the
+current firmware exported as a file <code>CURRENT.UF2</code> which is in a 512
+byte-block <span class="caps">UF2</span>&nbsp;format.</p>
+<p>Writing any file to the <span class="caps">MSD</span> will cause the firmware to be written.
+Sometimes the device will restart and the volume will be unmounted and then
+mounted again. In some cases the volume may not “come back” until the user
+manually puts the device back in programming&nbsp;mode.</p>
+<p>Match the block devices using the <span class="caps">VID</span>, <span class="caps">PID</span> and <span class="caps">UUID</span>, and then create a
+<span class="caps">UF2</span> device which can be used to flash&nbsp;firmware.</p>
+<p>Note: We only read metadata from allow-listed IDs to avoid causing regressions
+on non-<span class="caps">UF2</span> volumes. To get the <span class="caps">UUID</span> you can use commands&nbsp;like:</p>
+<div class="codehilite"><pre><span></span><code>udisksctl info -b /dev/sda1
+</code></pre></div>
+
+<p>The <span class="caps">UF2</span> format is specified <a href="https://github.com/Microsoft/uf2&gt;">here</a>.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+the <span class="caps">UF2</span> file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.microsoft.uf2</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1234&amp;PID_5678</code></li>
+<li><code>USB\VID_1234&amp;PID_5678&amp;UUID_E478-FA50</code></li>
+</ul>
+<p>Additionally, the <span class="caps">UF2</span> Board-<span class="caps">ID</span> and Family-<span class="caps">ID</span> may be&nbsp;added:</p>
+<ul>
+<li><code>UF2\BOARD_{Board-ID}</code></li>
+<li><code>UF2\FAMILY_{Family-ID}</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed when the device is inserted, and the firmware will
+typically be written as the file is&nbsp;copied.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span>&nbsp;vendor.</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires permission to mount, write a file and unmount the mass
+storage&nbsp;device.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

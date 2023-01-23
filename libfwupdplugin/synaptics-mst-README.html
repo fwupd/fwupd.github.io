@@ -1,0 +1,221 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Synaptics MST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Synaptics MST"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Synaptics MST"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Synaptics MST"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Synaptics MST"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin supports querying and flashing Synaptics <span class="caps">MST</span> hubs used in Dell systems
+and&nbsp;docks.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.synaptics.mst</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
+<ul>
+<li><code>MST-$(board-ID)</code></li>
+<li><code>MST-$(device_kind)-$(chip-ID)-$(board-ID)</code></li>
+<li><code>MST-$(device_kind)-$(board-ID)</code></li>
+<li><code>MST-$(device_kind)</code></li>
+</ul>
+<p>Please refer to the plugin source for more details about how the <span class="caps">GUID</span> is
+constructed for specific&nbsp;hardware.</p>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed when the device is in normal runtime mode, and the
+device will reset when the new firmware has been written. On some hardware the
+<span class="caps">MST</span> device may not enumerate if there is no monitor actually plugged&nbsp;in.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for example set to <code>DRM_DP_AUX_DEV:0x$(vid)</code></p>
+<h2 id="requirements">Requirements<a class="md-anchor" href="#requirements" title="Permanent link"></a></h2>
+<h3 id="kernel-dp-aux-interface">(Kernel) DP Aux Interface<a class="md-anchor" href="#kernel-dp-aux-interface" title="Permanent link"></a></h3>
+<p>Kernel 4.6 introduced an <span class="caps">DRM</span> <span class="caps">DP</span> Aux interface for manipulation of the registers
+needed to access an <span class="caps">MST</span> hub.
+This patch can be backported to earlier kernels:
+<a href="https://github.com/torvalds/linux/commit/e94cb37b34eb8a88fe847438dba55c3f18bf024a">https://github.com/torvalds/linux/commit/e94cb37b34eb8a88fe847438dba55c3f18bf024a</a></p>
+<h2 id="usage">Usage<a class="md-anchor" href="#usage" title="Permanent link"></a></h2>
+<p>Supported devices will be displayed in <code># fwupdmgr get-devices</code> output.</p>
+<p>Here is an example output from a Dell <span class="caps">WD15</span>&nbsp;dock:</p>
+<div class="codehilite"><pre><span></span><code>Dell WD15/TB16 wired Dock Synaptics VMM3332
+  Guid:                 653cd006-5433-57db-8632-0413af4d3fcc
+  DeviceID:             MST-1-1-0-0
+  Plugin:               synaptics_mst
+  Flags:                allow-online
+  Version:              3.10.002
+  Created:              2017-01-13
+  Modified:             2017-01-13
+  Trusted:              none
+</code></pre></div>
+
+<p>Payloads can be flashed just like any other plugin from <span class="caps">LVFS</span>.</p>
+<h2 id="supported-devices">Supported devices<a class="md-anchor" href="#supported-devices" title="Permanent link"></a></h2>
+<p>Not all Dell systems or accessories contain <span class="caps">MST</span> hubs.
+Here is a sample list of systems known to support them&nbsp;however:</p>
+<ul>
+<li>Dell <span class="caps">WD15</span>&nbsp;dock</li>
+<li>Dell <span class="caps">TB16</span>&nbsp;dock</li>
+<li>Dell <span class="caps">TB18DC</span></li>
+<li>Latitude&nbsp;E5570</li>
+<li>Latitude&nbsp;E5470</li>
+<li>Latitude&nbsp;E5270</li>
+<li>Latitude&nbsp;E7470</li>
+<li>Latitude&nbsp;E7270</li>
+<li>Latitude&nbsp;E7450</li>
+<li>Latitude&nbsp;E7250</li>
+<li>Latitude&nbsp;E5550</li>
+<li>Latitude&nbsp;E5450</li>
+<li>Latitude&nbsp;E5250</li>
+<li>Latitude Rugged&nbsp;5414</li>
+<li>Latitude Rugged&nbsp;7214</li>
+<li>Latitude Rugged&nbsp;7414</li>
+</ul>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/drm_dp_aux*</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#requirements"><span class="link-text">Requirements</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#kernel-dp-aux-interface"><span class="link-text">(Kernel) DP Aux Interface</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#usage"><span class="link-text">Usage</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#supported-devices"><span class="link-text">Supported devices</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

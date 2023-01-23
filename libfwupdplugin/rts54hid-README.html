@@ -1,0 +1,190 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: RTS54HID</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: RTS54HID"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: RTS54HID"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: RTS54HID"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: RTS54HID"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin allows the user to update any supported hub and attached downstream
+ICs using a custom <span class="caps">HID</span>-based flashing protocol. It does not support any RTS54xx
+device using the <span class="caps">HUB</span> update&nbsp;protocol.</p>
+<p>Other devices connected to the RTS54HIDxx using <span class="caps">I2C</span> will be supported&nbsp;soon.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.realtek.rts54</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_0BDA&amp;PID_1100&amp;REV_0001</code></li>
+<li><code>USB\VID_0BDA&amp;PID_1100</code></li>
+<li><code>USB\VID_0BDA</code></li>
+</ul>
+<p>Child I²C devices are created using the device number as a suffix, for&nbsp;instance:</p>
+<ul>
+<li><code>USB\VID_0BDA&amp;PID_1100&amp;I2C_01</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The firmware is deployed when the device is in normal runtime mode, and the
+device will reset when the new firmware has been&nbsp;written.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x0BDA</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="rts54targetaddr">Rts54TargetAddr<a class="md-anchor" href="#rts54targetaddr" title="Permanent link"></a></h3>
+<p>The target address of a child&nbsp;module.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="rts54i2cspeed">Rts54I2cSpeed<a class="md-anchor" href="#rts54i2cspeed" title="Permanent link"></a></h3>
+<p>The <span class="caps">I2C</span> speed to operate at (0, 1,&nbsp;2).</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="rts54registeraddrlen">Rts54RegisterAddrLen<a class="md-anchor" href="#rts54registeraddrlen" title="Permanent link"></a></h3>
+<p>The <span class="caps">I2C</span> register address length of&nbsp;commands.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#rts54targetaddr"><span class="link-text">Rts54TargetAddr</span></a></li>
+          
+            <li class="toc-list-item"><a href="#rts54i2cspeed"><span class="link-text">Rts54I2cSpeed</span></a></li>
+          
+            <li class="toc-list-item"><a href="#rts54registeraddrlen"><span class="link-text">Rts54RegisterAddrLen</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

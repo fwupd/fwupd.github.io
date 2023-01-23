@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Hwids.setup</title>
+  <title>FwupdPlugin.Hwids.add_guid</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="FwupdPlugin.Hwids.setup"/>
-  <meta priority="og:description" content="Reference for FwupdPlugin.Hwids.setup"/>
-  <meta name="twitter:title" content="FwupdPlugin.Hwids.setup"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Hwids.setup"/>
+  <meta priority="og:title" content="FwupdPlugin.Hwids.add_guid"/>
+  <meta priority="og:description" content="Reference for FwupdPlugin.Hwids.add_guid"/>
+  <meta name="twitter:title" content="FwupdPlugin.Hwids.add_guid"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Hwids.add_guid"/>
 
 
   
@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -91,7 +91,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.Hwids.add_smbios_override.html">add_smbios_override</a>
+    <a class="method current" href="method.Hwids.add_guid.html">add_guid</a>
+  
+    <a class="method" href="method.Hwids.add_value.html">add_value</a>
   
     <a class="method" href="method.Hwids.get_guid.html">get_guid</a>
   
@@ -107,8 +109,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Hwids.has_guid.html">has_guid</a>
   
-    <a class="method current" href="method.Hwids.setup.html">setup</a>
-  
   </div>
 </div>
 
@@ -120,7 +120,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Hwids.html">Hwids</a><span class="sep"></span>setup</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Hwids.html">Hwids</a><span class="sep"></span>add_guid</h1>
   </header>
 
   <section>
@@ -129,16 +129,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-hwids.h#L141">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-hwids.h#L137">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">fu_hwids_setup</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">fu_hwids_add_guid</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">FuHwids</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">FuSmbios</span><span class="o">*</span><span class="w"> </span><span class="n">smbios</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">guid</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -150,19 +149,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.9/libfwupdplugin/fu-hwids.c#L390">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-hwids.c#L343">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Reads all the <span class="caps">SMBIOS</span> values from the&nbsp;hardware.</p>
+        <p>Adds a <span class="caps">HWID</span> <span class="caps">GUID</span>&nbsp;value.</p>
       </div>
 
       <div class="docblock">
         <table>
           
           
-          <tr><td>Available since:</td><td>0.9.3</td></tr>
+          <tr><td>Available since:</td><td>1.8.10</td></tr>
           
           
           
@@ -185,64 +184,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>smbios</code></td>
-            <td><a href="class.Smbios.html"><code>FuSmbios</code></a></td>
+            <td><code>guid</code></td>
+            <td><code>const gchar*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A <code>FuSmbios</code>.</p></td>
+            <td><p>A <span class="caps">GUID</span>.</p></td>
           </tr>
           
-          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
           
           
           
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
           
-          
-          
-          <tr class="arg-name">
-            <td><code>error</code></td>
-            <td><code>GError **</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
-          </tr>
           
         </table>
       </div>
     </div>
     
 
-    
-    <div class="return-value toggle-wrapper">
-      <h4 id="return-value">
-        Return value
-        <a href="#return-value" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-        <table class="returns">
-          <tr class="arg-name">
-            <td>Returns:</td>
-            <td><code>gboolean</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p><code>TRUE</code> for&nbsp;success.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-        </table>
-      </div>
-    </div>
     
 
   </section>

@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -211,7 +211,13 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://www.psacertified.org/blog/anti-rollback-explained/">Rollback&nbsp;protection</a></li>
+<li><a href="https://www.amd.com/en/technologies/pro-security"><span class="caps">AMD</span> Secure&nbsp;Processor</a></li>
+<li><a href="https://forums.lenovo.com/t5/Fedora/AMD-Rollback-protection-not-detected-by-fwupd-on-T14-G3-AMD/m-p/5182708?page=1#5810366">Loading <span class="caps">OS</span> Optimized Defaults on Lenovo&nbsp;systems</a></li>
 </ul>
+<p><strong>More&nbsp;information:</strong></p>
+<p>This particular check is not for the Microsoft Pluton Security processor which is present on some&nbsp;chips.</p>
+<p>End users are not able to directly modify rollback protection, this is controlled by the&nbsp;manufacturer.</p>
+<p>On Lenovo systems it has been reported that if this is disabled it may potentially be enabled by loading &#8216;<span class="caps">OS</span> Optimized Defaults&#8217; in <span class="caps">BIOS</span>&nbsp;setup.</p>
 <p><a id="org.fwupd.hsi.Amd.SpiReplayProtection"></a></p>
 <h3 id="amd-spi-write-protections"><a href="#org.fwupd.hsi.Amd.SpiReplayProtection">AMD SPI Write protections</a><a class="md-anchor" href="#amd-spi-write-protections" title="Permanent link"></a></h3>
 <p>SOCs may enforce control of the <span class="caps">SPI</span> bus to prevent writes other than by verified&nbsp;entities.</p>
@@ -658,6 +664,11 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>valid</code>: the <span class="caps">CPU</span> platform is supported and has <span class="caps">HSI</span> tests&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v1.8.0]</em></p>
+<p><strong>More&nbsp;information:</strong></p>
+<p>On <span class="caps">AMD</span> APUs or CPUs this information is reported on kernel 5.19 or later via the <code>ccp</code> kernel&nbsp;module. </p>
+<p>If the kernel module is enabled but is not being auto-loaded, this is a kernel bug and should be reported to kernel&nbsp;bugzilla. </p>
+<p>If the kernel module has loaded but you still don&#8217;t have data this is <span class="caps">NOT</span> a fwupd bug. You will have to&nbsp;contact </p>
+<p>your motherboard or system manufacturer to enable reporting this&nbsp;information.</p>
 <p><a id="org.fwupd.hsi.SuspendToIdle"></a></p>
 <h3 id="suspend-to-idle"><a href="#org.fwupd.hsi.SuspendToIdle">Suspend-to-Idle</a><a class="md-anchor" href="#suspend-to-idle" title="Permanent link"></a></h3>
 <p>The platform should be set up with Suspend-to-Idle as the default S3 sleep&nbsp;state.</p>

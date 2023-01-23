@@ -1,0 +1,218 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: VIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: VIA"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: VIA"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: VIA"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: VIA"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>This plugin is used to update <span class="caps">USB</span> hubs from <span class="caps">VIA</span>.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+an undisclosed binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.vli.i2c</code></li>
+<li><code>com.vli.pd</code></li>
+<li><code>com.vli.usbhub</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;REV_0001</code></li>
+<li><code>USB\VID_17EF&amp;PID_3083</code></li>
+<li><code>USB\VID_17EF</code></li>
+</ul>
+<p>All <span class="caps">VLI</span> devices also use custom <span class="caps">GUID</span> values for the device type,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;DEV_VL812B3</code></li>
+</ul>
+<p>These devices also use custom <span class="caps">GUID</span> values for the <span class="caps">SPI</span> flash configuration,&nbsp;e.g.</p>
+<ul>
+<li><code>CFI\FLASHID_37303840</code></li>
+<li><code>CFI\FLASHID_3730</code></li>
+<li><code>CFI\FLASHID_37</code></li>
+</ul>
+<p>Optional <span class="caps">PD</span> child devices sharing the <span class="caps">SPI</span> flash use two extra GUIDs,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;DEV_VL102</code></li>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;APP_26</code></li>
+</ul>
+<p>Optional I²C child devices use just one extra <span class="caps">GUID</span>,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;I2C_MSP430</code></li>
+<li><code>USB\VID_17EF&amp;PID_3083&amp;I2C_PS186</code></li>
+</ul>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, for example set to <code>USB:0x2109</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="vlidevicekind">VliDeviceKind<a class="md-anchor" href="#vlidevicekind" title="Permanent link"></a></h3>
+<p>Device kind, e.g. <code>VL102</code>.</p>
+<p>Since:&nbsp;1.3.7</p>
+<h3 id="vlispiautodetect">VliSpiAutoDetect<a class="md-anchor" href="#vlispiautodetect" title="Permanent link"></a></h3>
+<p><span class="caps">SPI</span> autodetect (default&nbsp;0x1).</p>
+<p>Since:&nbsp;1.3.7</p>
+<h3 id="cfidevicecmdreadid">CfiDeviceCmdReadId<a class="md-anchor" href="#cfidevicecmdreadid" title="Permanent link"></a></h3>
+<p>Flash command to read the <span class="caps">ID</span>.</p>
+<p>Since:&nbsp;1.3.3</p>
+<h3 id="cfidevicecmdreadidsz">CfiDeviceCmdReadIdSz<a class="md-anchor" href="#cfidevicecmdreadidsz" title="Permanent link"></a></h3>
+<p>Size of the ReadId&nbsp;response.</p>
+<p>The <code>CfiDeviceCmdReadId</code> and <code>CfiDeviceCmdReadIdSz</code> quirks have to be assigned to the device
+instance attribute, rather then the flash part as the <span class="caps">ID</span> is required to query
+the other flash chip parameters. For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>[USB\VID_2109&amp;PID_0210]
+Plugin = vli
+GType = FuVliUsbhubDevice
+CfiDeviceCmdReadId = 0xf8
+CfiDeviceCmdReadIdSz = 4
+
+# W3IRDFLASHxxx
+[CFI\\FLASHID_37303840]
+CfiDeviceCmdChipErase = 0xc7
+CfiDeviceCmdSectorErase = 0x20
+</code></pre></div>
+
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#vlidevicekind"><span class="link-text">VliDeviceKind</span></a></li>
+          
+            <li class="toc-list-item"><a href="#vlispiautodetect"><span class="link-text">VliSpiAutoDetect</span></a></li>
+          
+            <li class="toc-list-item"><a href="#cfidevicecmdreadid"><span class="link-text">CfiDeviceCmdReadId</span></a></li>
+          
+            <li class="toc-list-item"><a href="#cfidevicecmdreadidsz"><span class="link-text">CfiDeviceCmdReadIdSz</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

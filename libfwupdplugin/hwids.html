@@ -1,0 +1,198 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Hardware IDs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Hardware IDs"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Hardware IDs"/>
+  <meta name="twitter:title" content="FwupdPlugin: Hardware IDs"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Hardware IDs"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Hardware IDs are used by fwupd to identify specific hardware.
+This is useful as the device-specific identifiers may be the same for different firmware streams.
+Each hardware <span class="caps">ID</span> has varying levels of specificity for the hardware, for instance matching only the
+system <span class="caps">OEM</span>, or matching up to 8 fields including the system <span class="caps">BIOS</span>&nbsp;version.</p>
+<p>For instance, Dell and Lenovo might ship a wireless broadband modem with the same chip vendor and
+product IDs of <code>USB\VID_0BDA&amp;PID_5850</code> and although the two OEMs share the same internal device,
+the firmware may be different.
+To cover this case fwupd allows adding <code>hardware</code> requirements that mean we can deploy firmware that
+targets <code>USB\VID_0BDA&amp;PID_5850</code>, but <em>only for Dell</em> or <em>only for Lenovo</em>&nbsp;systems.</p>
+<p>Microsoft calls these values &#8220;CHIDs&#8221; and they are generated on Windows from the <span class="caps">SBMIOS</span> tables using <code>ComputerHardwareIds.exe</code>
+binary which can be found <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/computerhardwareids">here</a>.
+The list of CHIDs used in Microsoft Windows&nbsp;is:</p>
+<div class="codehilite"><pre><span></span><code>HardwareID-0  ← Manufacturer + Family + Product Name + SKU Number + BIOS Vendor + BIOS Version + BIOS Major Release + BIOS Minor Release
+HardwareID-1  ← Manufacturer + Family + Product Name + BIOS Vendor + BIOS Version + BIOS Major Release + BIOS Minor Release
+HardwareID-2  ← Manufacturer + Product Name + BIOS Vendor + BIOS Version + BIOS Major Release + BIOS Minor Release
+HardwareID-3  ← Manufacturer + Family + ProductName + SKU Number + Baseboard_Manufacturer + Baseboard_Product
+HardwareID-4  ← Manufacturer + Family + ProductName + SKU Number
+HardwareID-5  ← Manufacturer + Family + ProductName
+HardwareID-6  ← Manufacturer + SKU Number + Baseboard_Manufacturer + Baseboard_Product
+HardwareID-7  ← Manufacturer + SKU Number
+HardwareID-8  ← Manufacturer + ProductName + Baseboard_Manufacturer + Baseboard_Product
+HardwareID-9  ← Manufacturer + ProductName
+HardwareID-10 ← Manufacturer + Family + Baseboard_Manufacturer + Baseboard_Product
+HardwareID-11 ← Manufacturer + Family
+HardwareID-12 ← Manufacturer + Enclosure Type
+HardwareID-13 ← Manufacturer + Baseboard_Manufacturer + Baseboard_Product
+HardwareID-14 ← Manufacturer
+</code></pre></div>
+
+<p>On Windows, CHIDs are generated from the <span class="caps">ASCII</span> representation of <span class="caps">SMBIOS</span> strings, and on Linux the same
+mechanism is used. Additionally, on Linux, the Device Tree, <span class="caps">DMI</span> and <code>kenv</code> data sources
+are used to construct emulations of the Microsoft&nbsp;CHIDs.</p>
+<p>When installing firmware and drivers in Windows vendors <em>already use</em> the generated HardwareID GUIDs
+that match <span class="caps">SMBIOS</span> keys like the <span class="caps">BIOS</span> vendor and the product <span class="caps">SKU</span>.</p>
+<p>Both <code>fwupdtool hwids</code> and <code>ComputerHardwareIds.exe</code> only compute results that have the necessary
+data values available.
+If a data field is missing, then any related CHIDs are not generated.
+For example, if the <span class="caps">SKU</span> field is missing, then <code>HardwareID</code> 0, 3, 4 6 and 7 will not be available for
+that particular&nbsp;system.</p>
+<h2 id="implementation">Implementation<a class="md-anchor" href="#implementation" title="Permanent link"></a></h2>
+<p>Users with versions of fwupd newer than 1.1.1 can run <code>sudo fwupdtool hwids</code>. For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: GJET75WW (2.25 )
+Manufacturer: LENOVO
+Family: ThinkPad T440s
+ProductName: 20ARS19C0C
+ProductSku: LENOVO_MT_20AR_BU_Think_FM_ThinkPad T440s
+EnclosureKind: 10
+BaseboardManufacturer: LENOVO
+BaseboardProduct: 20ARS19C0C
+
+Hardware IDs
+------------
+{c4159f74-3d2c-526f-b6d1-fe24a2fbc881}   &lt;- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ff66cb74-5f5d-5669-875a-8a8f97be22c1}   &lt;- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{2e4dad4e-27a0-5de0-8e92-f395fc3fa5ba}   &lt;- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{3faec92a-3ae3-5744-be88-495e90a7d541}   &lt;- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{660ccba8-1b78-5a33-80e6-9fb8354ee873}   &lt;- Manufacturer + Family + ProductName + ProductSku
+{8dc9b7c5-f5d5-5850-9ab3-bd6f0549d814}   &lt;- Manufacturer + Family + ProductName
+{178cd22d-ad9f-562d-ae0a-34009822cdbe}   &lt;- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{da1da9b6-62f5-5f22-8aaa-14db7eeda2a4}   &lt;- Manufacturer + ProductSku
+{059eb22d-6dc7-59af-abd3-94bbe017f67c}   &lt;- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{0cf8618d-9eff-537c-9f35-46861406eb9c}   &lt;- Manufacturer + ProductName
+{f4275c1f-6130-5191-845c-3426247eb6a1}   &lt;- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{db73af4c-4612-50f7-b8a7-787cf4871847}   &lt;- Manufacturer + Family
+{5e820764-888e-529d-a6f9-dfd12bacb160}   &lt;- Manufacturer + EnclosureKind
+{f8e1de5f-b68c-5f52-9d1a-f1ba52f1f773}   &lt;- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   &lt;- Manufacturer
+</code></pre></div>
+
+<p>Which matches the output of <code>ComputerHardwareIds.exe</code> on the same&nbsp;hardware.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#implementation"><span class="link-text">Implementation</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

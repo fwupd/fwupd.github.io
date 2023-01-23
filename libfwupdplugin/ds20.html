@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
+  <title>FwupdPlugin &ndash; 1.0: BOS DS20 Specification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
-  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta property="og:title" content="FwupdPlugin: BOS DS20 Specification"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: BOS DS20 Specification"/>
+  <meta name="twitter:title" content="FwupdPlugin: BOS DS20 Specification"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: BOS DS20 Specification"/>
 
 
   
@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.9</p>
+        <p>Library Version: 1.8.10</p>
         
       </div>
       
@@ -90,8 +90,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <section>
     <div class="docblock">
-    <h1 id="fwupd-bos-ds20-specification">fwupd BOS DS20 Specification<a class="md-anchor" href="#fwupd-bos-ds20-specification" title="Permanent link"></a></h1>
-<h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>When <code>fwupd</code> starts it enumerates all <span class="caps">PCI</span> and <span class="caps">USB</span> hardware and generates <em>Instance IDs</em> based on the reported vendor and product so that it can match the device to a plugin.
 The plugin knows how to communicate with the device (for instance using vendor-specific <span class="caps">USB</span> control transfers) and also knows how to parse the firmware and deliver it to the&nbsp;device.</p>
 <p>Before a vendor can ship a firmware on the <span class="caps">LVFS</span> to a machine using Linux (or ChromeOS) the fwupd package often must be updated so that it knows what plugin to use for that specific device.
@@ -215,14 +214,25 @@ The <span class="caps">BOS</span> descriptor is used for Wireless <span class="c
       
         
         <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#specification"><span class="link-text">Specification</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#implementation"><span class="link-text">Implementation</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#workflow"><span class="link-text">Workflow</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#prior-art"><span class="link-text">Prior Art</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#hardcoded-class-subclass"><span class="link-text">Hardcoded Class &amp;amp; Subclass</span></a></li>
+          
+          </ul>
+          
         
       
     </ul>

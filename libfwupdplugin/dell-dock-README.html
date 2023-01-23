@@ -1,0 +1,266 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Dell USB-C Dock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Plugin: Dell USB-C Dock"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell USB-C Dock"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Dell USB-C Dock"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell USB-C Dock"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.10</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="dell-system">Dell System<a class="md-anchor" href="#dell-system" title="Permanent link"></a></h2>
+<p>Unlike previous Dell <span class="caps">USB</span>-C devices, a Dell system is not needed for&nbsp;updating.</p>
+<h2 id="components">Components<a class="md-anchor" href="#components" title="Permanent link"></a></h2>
+<p>The device contains components the following directly updatable&nbsp;components:</p>
+<ul>
+<li><span class="caps">USB</span>&nbsp;hubs</li>
+<li><span class="caps">MST</span>&nbsp;controller</li>
+<li>Thunderbolt&nbsp;controller</li>
+<li>Embedded&nbsp;controller</li>
+</ul>
+<p>This plugin is used to perform the update on the <span class="caps">USB</span> hubs as well as the Dell
+Embedded controller.  The <span class="caps">USB</span> hubs are updated directly over a <span class="caps">USB</span> <span class="caps">HID</span> endpoint
+while the embedded controller is updated using an <span class="caps">I2C</span> over <span class="caps">HID</span>&nbsp;interface.</p>
+<p>The fwupd thunderbolt plugin is used for updating the Titan Ridge&nbsp;controller.</p>
+<p>The <span class="caps">MST</span> controller is updated through either the <span class="caps">DP</span> Aux interface
+(SynapticsMST plugin) or <span class="caps">I2C</span> over <span class="caps">HID</span> interface provided by this&nbsp;plugin.</p>
+<h2 id="device-topology">Device topology<a class="md-anchor" href="#device-topology" title="Permanent link"></a></h2>
+<p>When this plugin is used, devices present in other plugins may be shown in
+the topology of this dock.  This is intentional as this plugin works together
+with those plugins to manage the flashing of all&nbsp;components.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract several firmware
+blobs with an unspecified binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.dell.dock</code></li>
+<li><code>com.synaptics.mst</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use several different generation schemes,&nbsp;e.g.</p>
+<ul>
+<li><span class="caps">USB</span> Hub1: <code>USB\VID_413C&amp;PID_B06F&amp;hub</code></li>
+<li><span class="caps">USB</span> Hub2: <code>USB\VID_413C&amp;PID_B06E&amp;hub</code></li>
+<li>Embedded Controller: <code>USB\VID_413C&amp;PID_B06E&amp;hub&amp;embedded</code></li>
+<li>Update Level: <code>USB\VID_413C&amp;PID_B06E&amp;hub&amp;status</code></li>
+<li><span class="caps">MST</span> Hub: <code>MST-panamera-vmm5331-259</code></li>
+<li>Thunderbolt Controller: <code>TBT-00d4b070</code></li>
+<li><span class="caps">USB4</span> Controller: <code>TBT-00d4b071</code></li>
+</ul>
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>All devices will be updated the next time the usb-c plug from the dock is unplugged from the&nbsp;host.</p>
+<h3 id="usb4-controller">USB4 Controller<a class="md-anchor" href="#usb4-controller" title="Permanent link"></a></h3>
+<p>This device will be probed by <code>dell-dock</code> plugin over the <span class="caps">USB</span> interface, additionally will be probed by <code>thunderbolt</code> plugin if thunderbolt hardware is enabled at the host. The primary plugin has been chosen to <code>dell-dock</code> for broader supoprt, the device introduced by <code>thunderbolt</code> plugin will be default inhibited, before fwupd version 1.8.2 (include), <code>Update Error</code> will be seen which is&nbsp;expected.</p>
+<div class="codehilite"><pre><span></span><code>USB4 controller <span class="k">in</span> Dell dock:
+    Device ID:        ce501f4b2e03e819c525bb9354aa88c03db4f11e
+    Summary:          USB4 controller
+    Current version:  <span class="m">36</span>.00
+    Vendor:           Dell Inc. <span class="o">(</span>THUNDERBOLT:0x00D4, TBT:0x00D4<span class="o">)</span>
+    Install Duration: <span class="m">46</span> seconds
+    Update Error:     firmware update inhibited by <span class="o">[</span>dell_dock<span class="o">]</span> plugin
+    GUIDs:            4fb9d92e-2b96-51a7-9ed5-3db156dfcf12 ← THUNDERBOLT<span class="se">\V</span>EN_00D4<span class="p">&amp;</span>DEV_B071
+                      bd79ce60-525b-5f39-a3f6-c98c495039ff ← TBT-00d4b071
+                      03f008d5-d06a-5d2e-89ca-61f12a8dbf73 ← TBT-00d4b071-controller0-3
+    Device Flags:     • System requires external power <span class="nb">source</span>
+                      • Device stages updates
+                      • Updatable
+                      • Signed Payload
+</code></pre></div>
+
+<p>After version 1.8.2, the device introduced by <code>thunderbolt</code> plugin will be default hidden, so only the primary plugin will be seen on the device&nbsp;view.</p>
+<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x413C</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="delldockunlocktarget">DellDockUnlockTarget<a class="md-anchor" href="#delldockunlocktarget" title="Permanent link"></a></h3>
+<p>The <span class="caps">EC</span> argument needed for unlocking certain device&nbsp;usage.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockblobmajoroffset">DellDockBlobMajorOffset<a class="md-anchor" href="#delldockblobmajoroffset" title="Permanent link"></a></h3>
+<p>The offset of the major version number in a&nbsp;payload.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockblobminoroffset">DellDockBlobMinorOffset<a class="md-anchor" href="#delldockblobminoroffset" title="Permanent link"></a></h3>
+<p>The offset of the minor version number in a&nbsp;payload</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockblobbuildoffset">DellDockBlobBuildOffset<a class="md-anchor" href="#delldockblobbuildoffset" title="Permanent link"></a></h3>
+<p>The offset of the build version number in a&nbsp;payload</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockblobversionoffset">DellDockBlobVersionOffset<a class="md-anchor" href="#delldockblobversionoffset" title="Permanent link"></a></h3>
+<p>The offset of the <span class="caps">ASCII</span> representation of a version string in a&nbsp;payload.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockboardmin">DellDockBoardMin<a class="md-anchor" href="#delldockboardmin" title="Permanent link"></a></h3>
+<p>The minimum board revision required to safely operate the&nbsp;plugin.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockversionlowest">DellDockVersionLowest<a class="md-anchor" href="#delldockversionlowest" title="Permanent link"></a></h3>
+<p>The minimum component version required to safely operate the&nbsp;plugin.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockboard">DellDockBoard*<a class="md-anchor" href="#delldockboard" title="Permanent link"></a></h3>
+<p>The board description of a board&nbsp;revision.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h3 id="delldockinstalldurationi2c">DellDockInstallDurationI2C<a class="md-anchor" href="#delldockinstalldurationi2c" title="Permanent link"></a></h3>
+<p>The duration of time required to install a payload via <span class="caps">I2C</span>.</p>
+<p>Since:&nbsp;1.1.3</p>
+<h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
+<p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#dell-system"><span class="link-text">Dell System</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#components"><span class="link-text">Components</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#device-topology"><span class="link-text">Device topology</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#usb4-controller"><span class="link-text">USB4 Controller</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#delldockunlocktarget"><span class="link-text">DellDockUnlockTarget</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockblobmajoroffset"><span class="link-text">DellDockBlobMajorOffset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockblobminoroffset"><span class="link-text">DellDockBlobMinorOffset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockblobbuildoffset"><span class="link-text">DellDockBlobBuildOffset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockblobversionoffset"><span class="link-text">DellDockBlobVersionOffset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockboardmin"><span class="link-text">DellDockBoardMin</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockversionlowest"><span class="link-text">DellDockVersionLowest</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockboard"><span class="link-text">DellDockBoard*</span></a></li>
+          
+            <li class="toc-list-item"><a href="#delldockinstalldurationi2c"><span class="link-text">DellDockInstallDurationI2C</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
