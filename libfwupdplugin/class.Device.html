@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -118,8 +118,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="method" href="method.Device.activate.html">activate</a>
-  
-    <a class="method" href="method.Device.add_backend_tag.html">add_backend_tag</a>
   
     <a class="method" href="method.Device.add_child.html">add_child</a>
   
@@ -199,8 +197,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_backend_id.html">get_backend_id</a>
   
-    <a class="method" href="method.Device.get_backend_tags.html">get_backend_tags</a>
-  
     <a class="method" href="method.Device.get_battery_level.html">get_battery_level</a>
   
     <a class="method" href="method.Device.get_battery_threshold.html">get_battery_threshold</a>
@@ -265,8 +261,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.get_update_request_id.html">get_update_request_id</a>
   
-    <a class="method" href="method.Device.has_backend_tag.html">has_backend_tag</a>
-  
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
     <a class="method" href="method.Device.has_inhibit.html">has_inhibit</a>
@@ -278,6 +272,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Device.has_parent_physical_id.html">has_parent_physical_id</a>
   
     <a class="method" href="method.Device.has_private_flag.html">has_private_flag</a>
+  
+    <a class="method" href="method.Device.has_problem.html">has_problem</a>
   
     <a class="method" href="method.Device.incorporate.html">incorporate</a>
   
@@ -417,6 +413,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Device.setup.html">setup</a>
   
+    <a class="method" href="method.Device.sleep.html">sleep</a>
+  
+    <a class="method" href="method.Device.sleep_full.html">sleep_full</a>
+  
     <a class="method" href="method.Device.to_string.html">to_string</a>
   
     <a class="method" href="method.Device.unbind_driver.html">unbind_driver</a>
@@ -435,8 +435,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <div class="links">
   
     <a class="property" href="property.Device.backend-id.html">backend-id</a>
-  
-    <a class="property" href="property.Device.backend-tags.html">backend-tags</a>
   
     <a class="property" href="property.Device.context.html">context</a>
   
@@ -490,7 +488,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-device.c#L30">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.11/libfwupdplugin/fu-device.c#L30">[src]</a>
           
         </h4>
 
@@ -631,17 +629,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 firmware version. This should only be called when data loss cannot&nbsp;occur.</p>
           </div>
           <div class="docblock"><p>Available since: 1.2.6</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.add_backend_tag.html">fu_device_add_backend_tag</a></h6>
-          <div class="docblock">
-            <p>Adds a backend tag, which allows the backend to identify the specific device for a specific
-phase. For instance, there might be a pre-update runtime, a bootloader and a post-update runtime
-and allowing tags to be saved to the backend object allows us to identify each version of
-the same physical&nbsp;device.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.8.5</p></div>
         </div>
       
         <div class="">
@@ -981,14 +968,6 @@ physical <span class="caps">ID</span> as this may be the same&nbsp;value.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.get_backend_tags.html">fu_device_get_backend_tags</a></h6>
-          <div class="docblock">
-            <p>Gets any backend&nbsp;tags.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.8.5</p></div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.get_battery_level.html">fu_device_get_battery_level</a></h6>
           <div class="docblock">
             <p>Returns the battery&nbsp;level.</p>
@@ -1259,14 +1238,6 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.has_backend_tag.html">fu_device_has_backend_tag</a></h6>
-          <div class="docblock">
-            <p>Finds if the backend tag already&nbsp;exists.</p>
-          </div>
-          <div class="docblock"><p>Available since: 1.8.5</p></div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.has_guid.html">fu_device_has_guid</a></h6>
           <div class="docblock">
             <p>Finds out if the device has a specific <span class="caps">GUID</span>.</p>
@@ -1312,6 +1283,14 @@ device and this may be reflected in client&nbsp;tools.</p>
             <p>Tests for a private flag that can be used by the plugin for any&nbsp;purpose.</p>
           </div>
           <div class="docblock"><p>Available since: 1.6.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_problem.html">fu_device_has_problem</a></h6>
+          <div class="docblock">
+            <p>Query if a device has a specific&nbsp;problem.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
         </div>
       
         <div class="">
@@ -1902,6 +1881,22 @@ If the device is not compatible then an error should be&nbsp;returned.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.sleep.html">fu_device_sleep</a></h6>
+          <div class="docblock">
+            <p>Delays program execution up to 100 seconds, unless the device is emulated where no delays is&nbsp;performed.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.sleep_full.html">fu_device_sleep_full</a></h6>
+          <div class="docblock">
+            <p>Delays program execution up to 1000 seconds, unless the device is emulated where no delays is&nbsp;performed.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.to_string.html">fu_device_to_string</a></h6>
           <div class="docblock">
             <p>This allows us to easily print the device, the release and the
@@ -1940,7 +1935,7 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (110)</h5>
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (112)</h5>
           <div class="docblock">
           
             <div class="docblock">
@@ -1983,16 +1978,6 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
           <div class="docblock">
             <p>The device backend <span class="caps">ID</span>.</p>
-          </div>
-
-          <div class="docblock"><p>Available since: 1.5.8</p></div>
-        </div>
-      
-        <div class="">
-          <h6><a href="property.Device.backend-tags.html">FwupdPlugin.Device:backend-tags</a></h6>
-
-          <div class="docblock">
-            <p>The device tags used for backend&nbsp;identification.</p>
           </div>
 
           <div class="docblock"><p>Available since: 1.5.8</p></div>
@@ -2053,7 +2038,7 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (12)</h5>
+        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (13)</h5>
           <div class="docblock">
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.battery-level.html">Fwupd.Device:battery-level</a></h6>
             <div class="docblock">
@@ -2075,6 +2060,11 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
               <p>The device&nbsp;parent.</p>
             </div>
             <div class="docblock"><p>Available since: 1.0.8</p></div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.percentage.html">Fwupd.Device:percentage</a></h6>
+            <div class="docblock">
+              <p>The current device&nbsp;percentage.</p>
+            </div>
+            <div class="docblock"><p>Available since: 1.8.11</p></div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.problems.html">Fwupd.Device:problems</a></h6>
             <div class="docblock">
               <p>The problems with the device that the user could fix, e.g. &#8220;lid&nbsp;open&#8221;.</p>

@@ -1,0 +1,214 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Signing Test Firmware Payloads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Signing Test Firmware Payloads"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Signing Test Firmware Payloads"/>
+  <meta name="twitter:title" content="FwupdPlugin: Signing Test Firmware Payloads"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Signing Test Firmware Payloads"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.11</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>In the normal vendor update flow, firmware is optionally signed and encrypted by the vendor, and
+then uploaded to the <span class="caps">LVFS</span> wrapped in a cabinet archive with a small <span class="caps">XML</span> metadata file to describe
+how the firmware should be matched to&nbsp;hardware.</p>
+<p>Upon uploading, the <span class="caps">LVFS</span> signs the firmware and metadata <span class="caps">XML</span> contained in the archive and adds it to
+a <code>.jcat</code> file also included in the image.
+The original firmware is never modified, which is why the <a href="https://github.com/hughsie/libjcat">Jcat</a>
+file exists as both a detached checksum (<span class="caps">SHA</span>-1, <span class="caps">SHA</span>-256 and <span class="caps">SHA</span>-512) and a detached signature.
+The <span class="caps">LVFS</span> can add either <span class="caps">GPG</span> or <span class="caps">PKCS</span>#7 signatures in the Jcat file, and currently does <em>both</em> for
+maxmum compatibility with how client systems have been&nbsp;configured.</p>
+<p>The keys in <code>/etc/pki/fwupd</code> and <code>/etc/pki/fwupd-metadata</code> are used for per-system trust and are
+currently used for &#8220;did the firmware update <em>come from</em> somewhere I trust&#8221; rather than &#8220;verify the
+vendor signed the update&#8221; &#8212; on the logic the &#8220;signed the update&#8221; is probably already covered by
+a signature on the payload that the device verifies.
+Notably, The <span class="caps">LVFS</span> both verifies the vendor <span class="caps">OEM</span> → <span class="caps">ODM</span> → <span class="caps">IHV</span> relationships and assigns restrictions
+on what devices each legal entity can upload&nbsp;for.</p>
+<p>There&#8217;s no way to separate the keys so that you could say &#8220;only use this certificate for
+per-system-trust when the <span class="caps">DMI</span> vendor of the device is Dell&#8221; and there&#8217;s no way to do key rotation
+or revocation.
+The trusted certificate mechanism was not really designed for any keys except the static <span class="caps">LVFS</span>.</p>
+<p>If the intent is to use a test key to sign the firmware files and get installed purely offline with
+an unmodified fwupd package (without uploading to the <span class="caps">LVFS</span>) then the following instructions can be
+modified to&nbsp;suit.</p>
+<p>First, lets verify that an existing firmware binary and metainfo file without a Jcat signature
+refuses to install when packaged into a cabinet&nbsp;archive:</p>
+<div class="codehilite"><pre><span></span><code>$ gcab -c firmware.cab firmware.bin firmware.metainfo.xml 
+$ fwupdmgr install firmware.cab --allow-reinstall
+Decompressing…           [ -                                     ]
+firmware signature missing or not trusted; set OnlyTrusted=false in /etc/fwupd/daemon.conf ONLY if you are a firmware developer
+</code></pre></div>
+
+<p>Let&#8217;s download a script that can generate some test certificates &#8212; feel free to copy the commands
+used and of course you need to modify the details of both the <span class="caps">CA</span> and user&nbsp;certificate.</p>
+<p>Please do not use the unmodified <code>ACME-CA.pem</code> or <code>rhughes_signed.pem</code> files for signing any cabinet
+archives you&#8217;re going to redistribute anywhere (even internally), otherwise it is going to be very
+confusing to debug <em>which</em> <code>rhughes_signed.pem</code> is being&nbsp;used.</p>
+<div class="codehilite"><pre><span></span><code>$ wget https://raw.githubusercontent.com/hughsie/libjcat/main/contrib/build-certs.py
+$ python ./build-certs.py 
+Signing certificate...
+$ ls ACME* rhughes*
+ACME-CA.key  ACME-CA.pem  rhughes.csr  rhughes.key  rhughes.pem  rhughes_signed.pem
+</code></pre></div>
+
+<p>We now have a <span class="caps">CA</span> key from <span class="caps">ACME</span>, and a user key signed by the <span class="caps">CA</span> key, along with a <span class="caps">CSR</span> and the two
+private&nbsp;keys.</p>
+<p>Lets now use the signed user key to create a Jcat file and also add a <span class="caps">SHA256</span>&nbsp;checksum:</p>
+<div class="codehilite"><pre><span></span><code>$ jcat-tool --appstream-id com.redhat.rhughes sign firmware.jcat firmware.bin rhughes_signed.pem rhughes.key
+$ jcat-tool self-sign firmware.jcat firmware.bin --kind sha256
+$ jcat-tool info firmware.jcat 
+JcatFile:
+  Version:               0.1
+  JcatItem:
+    ID:                  firmware.bin
+    JcatBlob:
+      Kind:              pkcs7
+      Flags:             is-utf8
+      AppstreamId:       com.redhat.rhughes
+      Timestamp:         2023-02-22T10:24:25Z
+      Size:              0xdcc
+      Data:              -----BEGIN PKCS7-----
+                         MIIKCwYJKoZIhvcNAQcCoIIJ/DCCCfgCAQExDTALBglghkgBZQMEAgEwCwYJKoZI
+...
+                         ysAcwqcDY7+k9TWB8V2MeZCHg6/aF4Oj3R16Nvag3w==
+                         -----END PKCS7-----
+
+    JcatBlob:
+      Kind:              sha256
+      Flags:             is-utf8
+      Timestamp:         2023-02-22T10:30:19Z
+      Size:              0x40
+      Data:              fce1847b0599bb19cd913d02268f15107691a79221ce16822b4c931cd1bda2c5
+</code></pre></div>
+
+<p>We can then create the new firmware archive, this time with the self-signed Jcat file as&nbsp;well.</p>
+<div class="codehilite"><pre><span></span><code>gcab -c firmware.cab firmware.bin firmware.metainfo.xml firmware.jcat
+</code></pre></div>
+
+<p>Now we need to install the <strong><span class="caps">CA</span></strong> certificate to the system-wide system store.
+If fwupd is running in a prefix then you need to use that instead, e.g. <code>/home/emily/root/etc/pki/fwupd/</code>.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo cp ACME-CA.pem /etc/pki/fwupd/
+[sudo] password for emily: foobarbaz
+</code></pre></div>
+
+<p>Then, the firmware should install <strong>without</strong> needing to change <code>OnlyTrusted</code> in <code>daemon.conf</code>.</p>
+<div class="codehilite"><pre><span></span><code>$ fwupdmgr install firmware.cab --allow-reinstall
+Writing…                 [***************************************]
+Successfully installed firmware
+</code></pre></div>
+
+<p>Vendors are allowed to sign the Jcat with their own user certificate if desired, although please
+note that maintaining a certificate authority is a serious business including HSMs, time-limited
+and <em>revokable</em> user-certificates &#8212; and typically lots of legal&nbsp;paperwork.</p>
+<p>Shipping the custom vendor <span class="caps">CA</span> certificate in the fwupd project is <strong>not possible</strong>, or a good idea,
+secure or practical &#8212; or how fwupd and <span class="caps">LVFS</span> were designed to be used. So please do not&nbsp;ask.</p>
+<p>That said, if a vendor included the <code>.jcat</code> in the firmware cabinet archive, the <span class="caps">LVFS</span> will
+<strong>append</strong> its own signature rather than replace it &#8212; which may make testing the archive&nbsp;easier.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

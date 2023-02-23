@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -118,6 +118,36 @@ for&nbsp;details.</p>
 <ul>
 <li><code>org.uefi.capsule</code></li>
 </ul>
+<h2 id="version-format">Version Format<a class="md-anchor" href="#version-format" title="Permanent link"></a></h2>
+<p>The <span class="caps">ESRT</span> table is the way the firmware tells fwupd about what devices are updatable. Unfortunately
+the information it contains is&nbsp;minimal:</p>
+<ul>
+<li><span class="caps">GUID</span> of the&nbsp;sub-component</li>
+<li>Enumerated result of the last&nbsp;update</li>
+<li>Firmware version as a <strong>32 bit unsigned&nbsp;number</strong></li>
+</ul>
+<p>By default, we show the <span class="caps">ESRT</span> devices as decimal or hexadecimal numbers as different vendors format
+the number in different ways. When fwupd gets information about how to format the <em>raw</em> version
+is converts the number into a more familiar&nbsp;form.</p>
+<p>When the hardware <span class="caps">GUID</span> is static, a quirk may be appropriate, for&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>[28108d08-5027-42c2-a5b8-92d6ede9b97b]
+VersionFormat = quad
+</code></pre></div>
+
+<p>As the <span class="caps">GUID</span> may be model specific, the daemon also reads the metadata and copies the version format
+from that. This means that <code>fwupdmgr get-devices</code> may return the <span class="caps">UEFI</span> device as a number initially,
+then once <code>fwupdmgr refresh</code> has completed it may start showing the exact same device as <code>A.B.C.D</code>,
+aka <code>quad</code> format.</p>
+<p>The two main formats used by vendors are <code>triplet</code>, <code>quad</code> and <code>dell-bios</code>.</p>
+<div class="codehilite"><pre><span></span><code>0xAABBCCDD -&gt; 0xAA.0xBB.0xCCCC is `triplet`, used for Lenovo
+0xAABBCCDD -&gt; 0xAA.0xBB.0xCC.0xDD is `quad`, used for HP
+0xAABBCCDD -&gt; 0xBB.0xCC.0xDD is `dell-bios`, used for Dell
+</code></pre></div>
+
+<p>There are more details about firmware version formats and a full list of all the different allowed
+values on the <a href="https://lvfs.readthedocs.io/en/latest/metainfo.html#version-format"><span class="caps">LVFS</span></a>.</p>
+<p><span class="caps">NOTE</span>: Firmware can require either the <code>quad</code> or <code>triplet</code> string version format, but it may be more
+portable to depend on the number &#8212; which will also work if the metadata has not been refreshed&nbsp;yet.</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <h3 id="capsule-update-on-disk">Capsule update on-disk<a class="md-anchor" href="#capsule-update-on-disk" title="Permanent link"></a></h3>
 <p>Described in  <a href="https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf"><span class="caps">UEFI</span> specification</a>
@@ -125,10 +155,6 @@ for&nbsp;details.</p>
 <p>If the firmware supports this, it will be the preferred method of updating on
 aarch64 platforms. You can explicitly disable it by by modifying
 <em>DisableCapsuleUpdateOnDisk</em> in <code>/etc/fwupd/uefi_capsule.conf</code>.</p>
-<p>Several models with Insyde firmware have been released where <code>OsIndications</code>
-advertises support for CoD, but it simply <em>does not work</em>. For this reasons
-the CoD support is only available by opt-in for x86_64 devices, and can be
-specified using the <code>uefi-allow-cod</code> plugin flag for the appropriate&nbsp;HwID.</p>
 <p>The spec expects runtime <em>SetVariable</em> to be available in order to enable this
 feature, we need to set <code>EFI_OS_INDICATIONS_FILE_CAPSULE_DELIVERY_SUPPORTED</code>
 in <em>OsIndications</em> variable to trigger processing of submitted capsule on next
@@ -195,6 +221,9 @@ option <em>EspLocation</em> in <code>/etc/fwupd/daemon.conf</code>.</p>
           
         
         <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#version-format"><span class="link-text">Version Format</span></a></li>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>

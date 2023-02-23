@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.10</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.11</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -1000,6 +1000,20 @@ as A/B partitions for&nbsp;updates.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_EMULATED" class="symbol" href="const.DEVICE_FLAG_EMULATED.html">DEVICE_FLAG_EMULATED</a></td>
+            
+            <td class="docblock-summary"><p>The device is emulated and should not be recorded by the&nbsp;backend.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_FLAG_EMULATION_TAG" class="symbol" href="const.DEVICE_FLAG_EMULATION_TAG.html">DEVICE_FLAG_EMULATION_TAG</a></td>
+            
+            <td class="docblock-summary"><p>The device should be recorded by the backend, allowing&nbsp;emulation.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_END_OF_LIFE" class="symbol" href="const.DEVICE_FLAG_END_OF_LIFE.html">DEVICE_FLAG_END_OF_LIFE</a></td>
             
             <td class="docblock-summary"><p>The device is no longer supported by the original hardware vendor as it is considered
@@ -1362,6 +1376,13 @@ or failure can&#8217;t be&nbsp;verified.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_SYSTEM_INHIBIT" class="symbol" href="const.DEVICE_PROBLEM_SYSTEM_INHIBIT.html">DEVICE_PROBLEM_SYSTEM_INHIBIT</a></td>
+            
+            <td class="docblock-summary"><p>The device cannot be updated due to a system-wide&nbsp;inhibit.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW" class="symbol" href="const.DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW.html">DEVICE_PROBLEM_SYSTEM_POWER_TOO_LOW</a></td>
             
             <td class="docblock-summary"><p>The system power is too low to perform the&nbsp;update.</p></td>
@@ -1372,6 +1393,13 @@ or failure can&#8217;t be&nbsp;verified.</p></td>
             <td><a title="DEVICE_PROBLEM_UNREACHABLE" class="symbol" href="const.DEVICE_PROBLEM_UNREACHABLE.html">DEVICE_PROBLEM_UNREACHABLE</a></td>
             
             <td class="docblock-summary"><p>The device is unreachable, or out of wireless&nbsp;range.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_UPDATE_IN_PROGRESS" class="symbol" href="const.DEVICE_PROBLEM_UPDATE_IN_PROGRESS.html">DEVICE_PROBLEM_UPDATE_IN_PROGRESS</a></td>
+            
+            <td class="docblock-summary"><p>The device cannot be updated as it is already being&nbsp;updated.</p></td>
             
           </tr>
           
@@ -1654,6 +1682,14 @@ Supported clients will display this information to a&nbsp;user.</p></td>
             
             <td class="docblock-summary"><p>The user needs to remove the device to complete the update, e.g.
 &#8220;The update will continue when the device <span class="caps">USB</span> cable has been&nbsp;unplugged.&#8221;</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="REQUEST_ID_REPLUG_INSTALL" class="symbol" href="const.REQUEST_ID_REPLUG_INSTALL.html">REQUEST_ID_REPLUG_INSTALL</a></td>
+            
+            <td class="docblock-summary"><p>Show the user a message to replug the device and then install the firmware, e.g.
+&#8220;Unplug and replug the device, then install the&nbsp;firmware.&#8221;</p></td>
             
           </tr>
           
@@ -1975,6 +2011,13 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p></t
             <td><a title="RESULT_KEY_PARENT_DEVICE_ID" class="symbol" href="const.RESULT_KEY_PARENT_DEVICE_ID.html">RESULT_KEY_PARENT_DEVICE_ID</a></td>
             
             <td class="docblock-summary"><p>Result key to represent&nbsp;ParentDeviceId.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_PERCENTAGE" class="symbol" href="const.RESULT_KEY_PERCENTAGE.html">RESULT_KEY_PERCENTAGE</a></td>
+            
+            <td class="docblock-summary"><p>Result key to represent progress percentage, typically installation or&nbsp;verification.</p></td>
             
           </tr>
           

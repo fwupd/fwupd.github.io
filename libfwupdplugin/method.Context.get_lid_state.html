@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -107,8 +107,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.get_battery_level.html">get_battery_level</a>
   
-    <a class="method" href="method.Context.get_battery_state.html">get_battery_state</a>
-  
     <a class="method" href="method.Context.get_battery_threshold.html">get_battery_threshold</a>
   
     <a class="method" href="method.Context.get_bios_setting.html">get_bios_setting</a>
@@ -136,6 +134,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Context.get_hwids.html">get_hwids</a>
   
     <a class="method current" href="method.Context.get_lid_state.html">get_lid_state</a>
+  
+    <a class="method" href="method.Context.get_power_state.html">get_power_state</a>
   
     <a class="method" href="method.Context.get_smbios.html">get_smbios</a>
   
@@ -169,8 +169,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Context.set_battery_level.html">set_battery_level</a>
   
-    <a class="method" href="method.Context.set_battery_state.html">set_battery_state</a>
-  
     <a class="method" href="method.Context.set_battery_threshold.html">set_battery_threshold</a>
   
     <a class="method" href="method.Context.set_chassis_kind.html">set_chassis_kind</a>
@@ -178,6 +176,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Context.set_compile_versions.html">set_compile_versions</a>
   
     <a class="method" href="method.Context.set_lid_state.html">set_lid_state</a>
+  
+    <a class="method" href="method.Context.set_power_state.html">set_power_state</a>
   
     <a class="method" href="method.Context.set_runtime_versions.html">set_runtime_versions</a>
   
@@ -201,7 +201,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context.h#L110">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.11/libfwupdplugin/fu-context.h#L119">[src]</a>
         
       </h4>
 
@@ -220,7 +220,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupdplugin/fu-context.c#L963">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.11/libfwupdplugin/fu-context.c#L948">[src]</a>
         
       </h4>
 
@@ -269,7 +269,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A battery state, e.g. <code>FU_LID_STATE_CLOSED</code>.</p></td>
+            <td><p>A lid state, e.g. <code>FU_LID_STATE_CLOSED</code>.</p></td>
           </tr>
           
           

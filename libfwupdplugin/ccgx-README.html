@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -130,6 +130,33 @@ dock&nbsp;functionality.</p>
 <h3 id="dmcdock-management-controller-composite-firmware">DMC(Dock Management Controller) Composite Firmware<a class="md-anchor" href="#dmcdock-management-controller-composite-firmware" title="Permanent link"></a></h3>
 <p>In composite firmware topology, a single firmware image contains metadata and
 firmware images of multiple devices including <span class="caps">DMC</span> itself in a dock&nbsp;system.</p>
+<h3 id="dmc-factory-mode">DMC Factory Mode<a class="md-anchor" href="#dmc-factory-mode" title="Permanent link"></a></h3>
+<p>Dock Management Controller devices have a <em>composite version</em> that is used to
+describe the dock hardware as a whole, rather than enumerating and updating
+each sub-component separately.
+When OEMs have not followed the <span class="caps">IHV</span>-approved factory assembly process, the
+composite number is unset and fwupd would display <code>0.0.0.0</code> in the <span class="caps">GUI</span> and
+on the command&nbsp;line.</p>
+<p>In fwupd &gt;= 1.8.11 we detect if the device is in <em>factory mode</em> and set the
+version number to <code>0.0.0.1</code>.
+When the device is in factory mode any valid upgrade will be allowed, which
+means the user might be prompted to “update to” the same current version
+installed on the dock.
+For millions of devices this is both a waste of time, resources, and also
+would inconvenience the user with an additional process for no&nbsp;reason.</p>
+<p>For devices that have been shipped in factory mode, but would like to avoid
+the update from <code>0.0.0.1</code> to the original version on the <span class="caps">LVFS</span>, can add a
+quirk entry which matches the <code>devx</code> subcomponent <em>base version</em>.
+In this example we match the parent <span class="caps">VID</span>, <span class="caps">PID</span>, the ComponentID and the <code>devx</code>
+base firmware version, setting the parent composite version to <code>0.0.0.15</code>.</p>
+<div class="codehilite"><pre><span></span><code>[USB\VID_2188&amp;PID_0035&amp;CID_05&amp;VER_3.3.1.69]
+CcgxDmcCompositeVersion = 15
+</code></pre></div>
+
+<p>All the <code>devx</code> subcomponent versions can be shown on the console&nbsp;using:</p>
+<div class="codehilite"><pre><span></span><code>sudo fwupdtool –plugins ccgx get-devices –show-all –verbose
+</code></pre></div>
+
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>There are two kinds of firmware&nbsp;format.</p>
 <h3 id="cyacd-firmware-format">Cyacd firmware format<a class="md-anchor" href="#cyacd-firmware-format" title="Permanent link"></a></h3>
@@ -166,7 +193,15 @@ the <span class="caps">DMC</span>/<span class="caps">HPI</span> and runtime mode
 <h3 id="ccgxdmctriggercode">CcgxDmcTriggerCode<a class="md-anchor" href="#ccgxdmctriggercode" title="Permanent link"></a></h3>
 <p><span class="caps">DMC</span> devices need a specified trigger code to request the device to update
 the firmware and the trigger code depends on the&nbsp;devices.</p>
+<div class="codehilite"><pre><span></span><code>0x0: Do not update
+0x1: Update immediately
+0x2: Update after port disconnected
+</code></pre></div>
+
 <p>Since:&nbsp;1.8.0</p>
+<h3 id="ccgxdmccompositeversion">CcgxDmcCompositeVersion<a class="md-anchor" href="#ccgxdmccompositeversion" title="Permanent link"></a></h3>
+<p>Set the parent composite version, as a 32 bit&nbsp;integer.</p>
+<p>Since:&nbsp;1.8.11</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
     </div>
@@ -197,6 +232,8 @@ the firmware and the trigger code depends on the&nbsp;devices.</p>
           
             <li class="toc-list-item"><a href="#dmcdock-management-controller-composite-firmware"><span class="link-text">DMC(Dock Management Controller) Composite Firmware</span></a></li>
           
+            <li class="toc-list-item"><a href="#dmc-factory-mode"><span class="link-text">DMC Factory Mode</span></a></li>
+          
           </ul>
           
         
@@ -225,6 +262,8 @@ the firmware and the trigger code depends on the&nbsp;devices.</p>
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#ccgxdmctriggercode"><span class="link-text">CcgxDmcTriggerCode</span></a></li>
+          
+            <li class="toc-list-item"><a href="#ccgxdmccompositeversion"><span class="link-text">CcgxDmcCompositeVersion</span></a></li>
           
           </ul>
           

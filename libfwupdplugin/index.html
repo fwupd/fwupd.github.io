@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -149,7 +149,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.8.10</td></tr>
+        <tr><td><em>Version</em></td><td>1.8.11</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -252,6 +252,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         
           <li><a href="bios-settings.html">BIOS Settings API</a></li>
         
+          <li><a href="only-trusted.html">Signing Test Firmware Payloads</a></li>
+        
           <li><a href="uefi-capsule-README.html">Plugin: UEFI Capsule</a></li>
         
           <li><a href="acpi-dmar-README.html">Plugin: ACPI DMAR — DMA Protection</a></li>
@@ -263,6 +265,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <li><a href="acpi-phat-README.html">Plugin: ACPI PHAT — Platform Health Assessment Table</a></li>
         
           <li><a href="amd-pmc-README.html">Plugin: AMD PMC</a></li>
+        
+          <li><a href="amd-gpu-README.html">Plugin: AMDGPU</a></li>
         
           <li><a href="analogix-README.html">Plugin: Analogix</a></li>
         
@@ -465,6 +469,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tbody>
           
           <tr class="section-item">
+            <td><a title="AcpiTable" class="symbol" href="class.AcpiTable.html">AcpiTable</a></td>
+            
+            <td class="docblock-summary"><p>An generic <span class="caps">ACPI</span>&nbsp;table.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="Archive" class="symbol" href="class.Archive.html">Archive</a></td>
             
             <td class="docblock-summary"><p>An in-memory archive&nbsp;decompressor.</p></td>
@@ -565,6 +576,13 @@ between the engine, the plugins and the&nbsp;devices.</p></td>
             <td><a title="DeviceLocker" class="symbol" href="class.DeviceLocker.html">DeviceLocker</a></td>
             
             <td class="docblock-summary"><p>Easily close a shared resource (such as a device) when an object goes out of&nbsp;scope.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DeviceProgress" class="symbol" href="class.DeviceProgress.html">DeviceProgress</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           
@@ -1016,13 +1034,6 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           </tr>
           
           <tr class="section-item">
-            <td><a title="BatteryState" class="symbol" href="enum.BatteryState.html">BatteryState</a></td>
-            
-            <td class="docblock-summary"><p>The device battery&nbsp;state.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="CabinetExportFlags" class="symbol" href="enum.CabinetExportFlags.html">CabinetExportFlags</a></td>
             
             <td class="docblock-summary"><p>The flags to use when exporting the&nbsp;archive.</p></td>
@@ -1093,6 +1104,13 @@ backport new versions as new hardware is&nbsp;released.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="PciBaseCls" class="symbol" href="enum.PciBaseCls.html">PciBaseCls</a></td>
+            
+            <td class="docblock-summary"><p><span class="caps">PCI</span> base class types returned by&nbsp;fu_udev_device_get_cls().</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="PluginRule" class="symbol" href="enum.PluginRule.html">PluginRule</a></td>
             
             <td class="docblock-summary"><p>The rules used for ordering plugins.
@@ -1104,6 +1122,13 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
             <td><a title="PluginVerifyFlags" class="symbol" href="enum.PluginVerifyFlags.html">PluginVerifyFlags</a></td>
             
             <td class="docblock-summary"><p>Flags used when verifying, currently&nbsp;unused.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PowerState" class="symbol" href="enum.PowerState.html">PowerState</a></td>
+            
+            <td class="docblock-summary"><p>The system power&nbsp;state.</p></td>
             
           </tr>
           
@@ -1280,13 +1305,6 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p></td>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
-          
-          <tr class="section-item">
-            <td><a title="battery_state_to_string" class="symbol" href="func.battery_state_to_string.html">battery_state_to_string</a></td>
-            
-            <td class="docblock-summary"><p>Converts an enumerated type to a&nbsp;string.</p></td>
-            
-          </tr>
           
           <tr class="section-item">
             <td><a title="byte_array_align_up" class="symbol" href="func.byte_array_align_up.html">byte_array_align_up</a></td>
@@ -1946,6 +1964,27 @@ Any results are sorted. No matching files will set <code>error</code>.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="power_state_is_ac" class="symbol" href="func.power_state_is_ac.html">power_state_is_ac</a></td>
+            
+            <td class="docblock-summary"><p>Determines if the power state can be considered &#8220;on <span class="caps">AC</span>&nbsp;power&#8221;.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="power_state_to_string" class="symbol" href="func.power_state_to_string.html">power_state_to_string</a></td>
+            
+            <td class="docblock-summary"><p>Converts an enumerated type to a&nbsp;string.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strdup" class="symbol" href="func.strdup.html">strdup</a></td>
+            
+            <td class="docblock-summary"><p>Copies a string from a buffer of a specified size up to (but not including) <code>NUL</code>.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="string_append" class="symbol" href="func.string_append.html">string_append</a></td>
             
             <td class="docblock-summary"><p>Appends a key and string value to a&nbsp;string.</p></td>
@@ -2385,6 +2424,13 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_get_percentage" class="symbol" href="func.device_get_percentage.html">device_get_percentage</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_get_plugin" class="symbol" href="func.device_get_plugin.html">device_get_plugin</a></td>
             
             <td class="docblock-summary"></td>
@@ -2407,6 +2453,13 @@ then no member is&nbsp;added.</p></td>
           
           <tr class="section-item">
             <td><a title="device_get_serial" class="symbol" href="func.device_get_serial.html">device_get_serial</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_get_status" class="symbol" href="func.device_get_status.html">device_get_status</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -2609,6 +2662,13 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_set_percentage" class="symbol" href="func.device_set_percentage.html">device_set_percentage</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_set_plugin" class="symbol" href="func.device_set_plugin.html">device_set_plugin</a></td>
             
             <td class="docblock-summary"></td>
@@ -2617,6 +2677,13 @@ then no member is&nbsp;added.</p></td>
           
           <tr class="section-item">
             <td><a title="device_set_serial" class="symbol" href="func.device_set_serial.html">device_set_serial</a></td>
+            
+            <td class="docblock-summary"></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_set_status" class="symbol" href="func.device_set_status.html">device_set_status</a></td>
             
             <td class="docblock-summary"></td>
             
@@ -2942,6 +3009,13 @@ then no member is&nbsp;added.</p></td>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CONTEXT_FLAG_SYSTEM_INHIBIT" class="symbol" href="const.CONTEXT_FLAG_SYSTEM_INHIBIT.html">CONTEXT_FLAG_SYSTEM_INHIBIT</a></td>
+            
+            <td class="docblock-summary"><p>All devices are not updatable due to a system-wide&nbsp;inhibit.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_AUTO_PAUSE_POLLING" class="symbol" href="const.DEVICE_INTERNAL_AUTO_PAUSE_POLLING.html">DEVICE_INTERNAL_AUTO_PAUSE_POLLING</a></td>
             
             <td class="docblock-summary"><p>Pause polling when reading or writing to the&nbsp;device.</p></td>
@@ -2966,6 +3040,14 @@ then no member is&nbsp;added.</p></td>
             <td><a title="DEVICE_INTERNAL_FLAG_ENSURE_SEMVER" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ENSURE_SEMVER.html">DEVICE_INTERNAL_FLAG_ENSURE_SEMVER</a></td>
             
             <td class="docblock-summary"><p>Ensure the version is a valid semantic version, e.g. numbers separated with&nbsp;dots.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_IGNORE_SYSTEM_POWER" class="symbol" href="const.DEVICE_INTERNAL_FLAG_IGNORE_SYSTEM_POWER.html">DEVICE_INTERNAL_FLAG_IGNORE_SYSTEM_POWER</a></td>
+            
+            <td class="docblock-summary"><p>Allow updating firmware when the system power is otherwise too low.
+This is only really useful when updating the system battery&nbsp;firmware.</p></td>
             
           </tr>
           
@@ -4486,6 +4568,13 @@ This is useful for firmware that always has an <em>unparsed</em> variable-length
             <td><a title="SMBIOS_STRUCTURE_TYPE_SYSTEM" class="symbol" href="const.SMBIOS_STRUCTURE_TYPE_SYSTEM.html">SMBIOS_STRUCTURE_TYPE_SYSTEM</a></td>
             
             <td class="docblock-summary"><p>The <span class="caps">SMBIOS</span> structure type for the system as a&nbsp;whole.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="USB_DEVICE_EMULATION_TAG" class="symbol" href="const.USB_DEVICE_EMULATION_TAG.html">USB_DEVICE_EMULATION_TAG</a></td>
+            
+            <td class="docblock-summary"></td>
             
           </tr>
           

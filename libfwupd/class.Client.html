@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.8.10</p>
+        <p>Library Version: 1.8.11</p>
         
       </div>
       
@@ -135,6 +135,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Client.download_bytes_finish.html">download_bytes_finish</a>
   
     <a class="method" href="method.Client.download_file.html">download_file</a>
+  
+    <a class="method" href="method.Client.emulation_load.html">emulation_load</a>
+  
+    <a class="method" href="method.Client.emulation_load_async.html">emulation_load_async</a>
+  
+    <a class="method" href="method.Client.emulation_load_finish.html">emulation_load_finish</a>
+  
+    <a class="method" href="method.Client.emulation_save.html">emulation_save</a>
+  
+    <a class="method" href="method.Client.emulation_save_async.html">emulation_save_async</a>
+  
+    <a class="method" href="method.Client.emulation_save_finish.html">emulation_save_finish</a>
   
     <a class="method" href="method.Client.ensure_networking.html">ensure_networking</a>
   
@@ -278,6 +290,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Client.get_user_agent.html">get_user_agent</a>
   
+    <a class="method" href="method.Client.inhibit.html">inhibit</a>
+  
+    <a class="method" href="method.Client.inhibit_async.html">inhibit_async</a>
+  
+    <a class="method" href="method.Client.inhibit_finish.html">inhibit_finish</a>
+  
     <a class="method" href="method.Client.install.html">install</a>
   
     <a class="method" href="method.Client.install_async.html">install_async</a>
@@ -324,6 +342,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Client.modify_remote_finish.html">modify_remote_finish</a>
   
+    <a class="method" href="method.Client.quit.html">quit</a>
+  
+    <a class="method" href="method.Client.quit_async.html">quit_async</a>
+  
+    <a class="method" href="method.Client.quit_finish.html">quit_finish</a>
+  
     <a class="method" href="method.Client.refresh_remote.html">refresh_remote</a>
   
     <a class="method" href="method.Client.refresh_remote_async.html">refresh_remote_async</a>
@@ -348,6 +372,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Client.set_blocked_firmware_finish.html">set_blocked_firmware_finish</a>
   
+    <a class="method" href="method.Client.set_daemon_version.html">set_daemon_version</a>
+  
     <a class="method" href="method.Client.set_feature_flags.html">set_feature_flags</a>
   
     <a class="method" href="method.Client.set_feature_flags_async.html">set_feature_flags_async</a>
@@ -359,6 +385,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.Client.set_user_agent.html">set_user_agent</a>
   
     <a class="method" href="method.Client.set_user_agent_for_package.html">set_user_agent_for_package</a>
+  
+    <a class="method" href="method.Client.uninhibit.html">uninhibit</a>
+  
+    <a class="method" href="method.Client.uninhibit_async.html">uninhibit_async</a>
+  
+    <a class="method" href="method.Client.uninhibit_finish.html">uninhibit_finish</a>
   
     <a class="method" href="method.Client.unlock.html">unlock</a>
   
@@ -496,7 +528,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.10/libfwupd/fwupd-client.c#L44">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.8.11/libfwupd/fwupd-client.c#L43">[src]</a>
           
         </h4>
 
@@ -706,6 +738,60 @@ should be called before this method is&nbsp;used.</p>
 should be called before this method is&nbsp;used.</p>
           </div>
           <div class="docblock"><p>Available since: 1.5.2</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_load.html">fwupd_client_emulation_load</a></h6>
+          <div class="docblock">
+            <p>Loads an emulated device into the daemon backend that has the phases set by the <span class="caps">JSON</span> data,
+for instance, having one <span class="caps">USB</span> device emulated for the bootloader and another emulated for the
+runtime&nbsp;interface.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_load_async.html">fwupd_client_emulation_load_async</a></h6>
+          <div class="docblock">
+            <p>Loads an emulated device into the daemon backend that has the phases set by the <span class="caps">JSON</span> data,
+for instance, having one <span class="caps">USB</span> device emulated for the bootloader and another emulated for the
+runtime&nbsp;interface.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_load_finish.html">fwupd_client_emulation_load_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_emulation_load_async()</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_save.html">fwupd_client_emulation_save</a></h6>
+          <div class="docblock">
+            <p>Gets the captured data from all filtered devices for all recorded phases. The data is returned
+in a <span class="caps">ZIP</span> archive of <span class="caps">JSON</span>&nbsp;output.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_save_async.html">fwupd_client_emulation_save_async</a></h6>
+          <div class="docblock">
+            <p>Gets the captured data from all filtered devices for all recorded phases. The data is returned
+in a <span class="caps">ZIP</span> archive of <span class="caps">JSON</span>&nbsp;output.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.emulation_save_finish.html">fwupd_client_emulation_save_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_emulation_save_async()</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
         </div>
       
         <div class="">
@@ -1284,6 +1370,32 @@ version of fwupd somewhere in the provided&nbsp;string.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Client.inhibit.html">fwupd_client_inhibit</a></h6>
+          <div class="docblock">
+            <p>Marks all devices as unavailable for update. Update is only available if there is no other
+inhibit imposed by other applications or by the system (e.g. low power&nbsp;state).</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.inhibit_async.html">fwupd_client_inhibit_async</a></h6>
+          <div class="docblock">
+            <p>Marks all devices as unavailable for update. Update is only available if there is no other
+inhibit imposed by other applications or by the system (e.g. low power&nbsp;state).</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.inhibit_finish.html">fwupd_client_inhibit_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_inhibit_async()</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Client.install.html">fwupd_client_install</a></h6>
           <div class="docblock">
             <p>Install a file onto a specific&nbsp;device.</p>
@@ -1474,6 +1586,30 @@ are settable by the client, and some may have other restrictions on <code>value<
         </div>
       
         <div class="">
+          <h6><a href="method.Client.quit.html">fwupd_client_quit</a></h6>
+          <div class="docblock">
+            <p>Asks the daemon to quit. This can only be called by the root&nbsp;user.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.quit_async.html">fwupd_client_quit_async</a></h6>
+          <div class="docblock">
+            <p>Asks the daemon to quit. This can only be called by the root&nbsp;user.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.quit_finish.html">fwupd_client_quit_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_quit_async()</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Client.refresh_remote.html">fwupd_client_refresh_remote</a></h6>
           <div class="docblock">
             <p>Refreshes a remote by downloading new&nbsp;metadata.</p>
@@ -1570,6 +1706,14 @@ are settable by the client, and some may have other restrictions on <code>value<
         </div>
       
         <div class="">
+          <h6><a href="method.Client.set_daemon_version.html">fwupd_client_set_daemon_version</a></h6>
+          <div class="docblock">
+            <p>Sets the daemon version&nbsp;number.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Client.set_feature_flags.html">fwupd_client_set_feature_flags</a></h6>
           <div class="docblock">
             <p>Sets the features the client supports. This allows firmware to depend on
@@ -1620,6 +1764,30 @@ should contain the runtime version of fwupd somewhere in the provided&nbsp;strin
             <p>Builds a user-agent to use for the&nbsp;download.</p>
           </div>
           <div class="docblock"><p>Available since: 1.4.5</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.uninhibit.html">fwupd_client_uninhibit</a></h6>
+          <div class="docblock">
+            <p>Removes the inhibit token added by the&nbsp;application.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.uninhibit_async.html">fwupd_client_uninhibit_async</a></h6>
+          <div class="docblock">
+            <p>Removes the inhibit token added by the&nbsp;application.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.uninhibit_finish.html">fwupd_client_uninhibit_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_uninhibit_async()</code>.</p>
+          </div>
+          <div class="docblock"><p>Available since: 1.8.11</p></div>
         </div>
       
         <div class="">
