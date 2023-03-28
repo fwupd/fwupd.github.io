@@ -1,0 +1,217 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.8.13</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h1 id="best-known-configuration">Best Known Configuration<a class="md-anchor" href="#best-known-configuration" title="Permanent link"></a></h1>
+<h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Component <code>&lt;tag&gt;</code>s are used both by OEMs and by customers to identify a <em>known-working</em> (or
+commercially supported) set of firmware on the&nbsp;machine.</p>
+<p>This allows two&nbsp;things:</p>
+<ul>
+<li>Factory recovery where a system in the field has been&nbsp;upgraded</li>
+<li>Ensuring a consistent set of vendor-tested firmware for a specific&nbsp;workload</li>
+</ul>
+<p>The tags are either assigned in the firmware cabinet archive (the <code>.metainfo.xml</code> file) or added
+post-upload on the <span class="caps">LVFS</span> and are then included in the public AppStream metadata.
+A single firmware can be marked with multiple tags, and tags can be duplicated for different
+firmwares.
+This would allow an <span class="caps">OEM</span> to say <em>this set of firmware has been tested as a set for workload A,
+and this other set of firmware has been tested for workload B</em> which is fairly typical for
+enterprise&nbsp;deployments.</p>
+<h2 id="lvfs">LVFS<a class="md-anchor" href="#lvfs" title="Permanent link"></a></h2>
+<p>The <span class="caps">LVFS</span> added support for “vendor-defined” component <code>&lt;tag&gt;</code>s in 2021, which are also supported in
+fwupd since version 1.7.3.
+These tags are typically used by OEMs to identify a manifest of firmware for a specific machine <span class="caps">SKU</span>.
+This is opt-in for each vendor, and so if you are a vendor reading this and want to use this feature,
+let us know by <a href="https://gitlab.com/fwupd/lvfs-website/-/issues">opening an issue</a>.</p>
+<h2 id="client">Client<a class="md-anchor" href="#client" title="Permanent link"></a></h2>
+<p>When provisioning the client machine, we can set the <span class="caps">BKC</span> by setting <code>HostBkc=vendor-2021q1</code> in
+<code>/etc/fwupd/daemon.conf</code>.
+Then any invocation of <code>fwupdmgr sync-bkc</code> will install or downgrade firmware on all compatible
+devices (<span class="caps">UEFI</span>, <span class="caps">RAID</span>, network adapter, <span class="amp">&amp;</span> <span class="caps">SAS</span> <span class="caps">HBA</span> etc.) to make the system match a compatible&nbsp;set.</p>
+<p>Updating or downgrading firmware away from the <em>Best Known Configuration</em> is allowed, but the <span class="caps">UI</span>
+shows a warning.
+Using <code>fwupdmgr sync-bkc</code> will undo any manual changes and bring the machine back to the <span class="caps">BKC</span>.</p>
+<h2 id="local-metadata">Local metadata<a class="md-anchor" href="#local-metadata" title="Permanent link"></a></h2>
+<p>To define a locally defined <span class="caps">BKC</span>, extra metadata is read from the <code>/usr/share/fwupd/local.d</code> and
+<code>/var/lib/fwupd/local.d</code> directories. For&nbsp;instance:</p>
+<p>For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;
+&lt;components origin=&quot;mycompanyname&quot;&gt;
+  &lt;component merge=&quot;append&quot;&gt;
+    &lt;provides&gt;
+      &lt;firmware&gt;3ef35d3b-ceeb-5e27-8c0a-ac25f90367ab&lt;/firmware&gt;
+      &lt;firmware&gt;2ef35d3b-ceeb-5e27-8c0a-ac25f90367ac&lt;/firmware&gt;
+      &lt;firmware&gt;1ef35d3b-ceeb-5e27-8c0a-ac25f90367ad&lt;/firmware&gt;
+    &lt;/provides&gt;
+    &lt;releases&gt;
+      &lt;release version=&quot;225.53.1649&quot;/&gt;
+      &lt;release version=&quot;224.48.1605&quot;/&gt;
+    &lt;/releases&gt;
+    &lt;tags&gt;
+      &lt;tag&gt;mycompanyname-2022q1&lt;/tag&gt;
+    &lt;/tags&gt;
+  &lt;/component&gt;
+&lt;/components&gt;
+</code></pre></div>
+
+<p>This then appears when getting the releases for that specific <span class="caps">GUID</span>:</p>
+<div class="codehilite"><pre><span></span><code>fwupdmgr get-releases --json 3ef35d3b-ceeb-5e27-8c0a-ac25f90367ab
+{
+  &quot;Releases&quot; : [
+    {
+      ...
+      &quot;Version&quot; : &quot;225.53.1649&quot;,
+      &quot;Tags&quot; : [
+        &quot;mycompanyname-2022q1&quot;
+      ],
+      ...
+    },
+    {
+      ...
+      &quot;Version&quot; : &quot;224.48.1605&quot;,
+      &quot;Tags&quot; : [
+        &quot;mycompanyname-2022q1&quot;
+      ],
+      ...
+    },
+    {
+      ...
+      &quot;Version&quot; : &quot;224.45.1389&quot;,
+      ...
+    }
+  ]
+}
+</code></pre></div>
+
+<p>..and can be synced on the command&nbsp;line:</p>
+<div class="codehilite"><pre><span></span><code>$ fwupdmgr sync-bkc
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ Downgrade System Firmware from 225.52.1521 to 225.53.1649?                   ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ This release sets the number of HBAs supported by the system to 1024.        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+Perform operation? [Y|n]:
+</code></pre></div>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+        
+        <li class="toc-list-item"><a href="#lvfs"><span class="link-text">LVFS</span></a></li>
+        
+        <li class="toc-list-item"><a href="#client"><span class="link-text">Client</span></a></li>
+        
+        <li class="toc-list-item"><a href="#local-metadata"><span class="link-text">Local metadata</span></a></li>
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.12</p>
+        <p>Library Version: 1.8.13</p>
         
       </div>
       
@@ -104,11 +104,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 7    D7/22   SO/2    DIN
 </code></pre></div>
 
+<p><span class="caps">IMPORTANT</span> <span class="caps">NOTE</span>:</p>
+<p>You must perform the 3.3V signal output modification if you are using the <span class="caps">CH341A</span> with 3.3V <span class="caps">SPI</span>
+chips. The <span class="caps">CH341A</span> has a design flaw that outputs 5V on the <span class="caps">MISO</span> and <span class="caps">MOSI</span> pins even when <span class="caps">VCC</span> is 3V
+which will almost certainly be out-of-specification for the device you are trying to&nbsp;program.</p>
+<p><img alt="CH341A Signal Output Modification" src="ch341a-vmod.png" /></p>
+<p>See <a href="https://www.chucknemeth.com/usb-devices/ch341a/3v-ch341a-mod">this guide</a> for more&nbsp;details.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob of unspecified&nbsp;format.</p>
 <p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
 <ul>
-<li><code>com.winchiphead.ch341a</code></li>
+<li><code>org.jedec.cfi</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>

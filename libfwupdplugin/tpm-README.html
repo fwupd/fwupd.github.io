@@ -77,7 +77,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.8.12</p>
+        <p>Library Version: 1.8.13</p>
         
       </div>
       
@@ -95,9 +95,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 although it does not allow the user to update the firmware on&nbsp;them.</p>
 <p>The <span class="caps">TPM</span> Event Log records which events are registered for the <span class="caps">PCR0</span> hash, which
 may help in explaining why <span class="caps">PCR0</span> values are differing for some&nbsp;firmware.</p>
-<p>The device exposed is not upgradable in any way and is just for debugging.
-The created device will be a child device of the system <span class="caps">TPM</span> device, which may
-or may not be&nbsp;upgradable.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>The daemon will decompress the cabinet archive and extract a firmware blob in
+a packed binary file&nbsp;format.</p>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>org.trustedcomputinggroup.tpm2</code></li>
+</ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use custom&nbsp;GUIDs:</p>
 <ul>
@@ -112,8 +116,18 @@ or may not be&nbsp;upgradable.</p>
   Guid:                 03f304f4-223e-54f4-b2c1-c3cf3b5817c6 &lt;- TPM\VEN_INTC&amp;DEV_0000&amp;VER_2.0
 </code></pre></div>
 
+<h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The plugin detects if the <span class="caps">TPM</span> device is updatable (if the commands <code>FieldUpgradeStart</code> and
+<code>FieldUpgradeData</code> are implemented) and provides stub functionality to read and write the firmware.
+Nearly all TPMs in the wild have this behavior disabled, and are instead updated using
+vendor-specific commands used from a <span class="caps">UEFI</span> UpdateCapsule and with an <span class="caps">OEM</span>-provided <span class="caps">ESRT</span>&nbsp;entry.</p>
+<p>If a vendor wanted to use the plugin code provided here they would still need to tell us how to
+set up the correct <code>keyHandle</code> for <code>FieldUpgradeStart</code> and how to handle&nbsp;authorization.</p>
+<p>We do not know of any vendor that does <span class="caps">TPM</span> updates using the standardized <span class="caps">API</span>, and so the code
+provided here is more of a <em>this is how it should be implemented</em> rather than with any expectation
+it is actually going to just&nbsp;work.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
-<p>The device is not upgradable and thus requires no vendor <span class="caps">ID</span>&nbsp;set.</p>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">TPM</span> vendor, e.g. <code>TPM:STM</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin uses the tpm2-tss library to access the <span class="caps">TPM</span>.  It requires access to <code>/sys/class/tpm</code>
 and optionally requires read only access to <code>/sys/kernel/security/tpm0/binary_bios_measurements</code>.</p>
@@ -132,7 +146,13 @@ and optionally requires read only access to <code>/sys/kernel/security/tpm0/bina
         <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
           
         
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
         <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
