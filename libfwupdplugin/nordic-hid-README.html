@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -128,7 +128,9 @@ To ensure compatibility with firmware updates that were released before introduc
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
 <h3 id="nordichidbootloader">NordicHidBootloader<a class="md-anchor" href="#nordichidbootloader" title="Permanent link"></a></h3>
-<p>Explicitly set the expected bootloader type: &#8220;B0&#8221;, &#8220;<span class="caps">MCUBOOT</span>&#8221; or &#8220;<span class="caps">MCUBOOT</span>+<span class="caps">XIP</span>&#8221;.
+<p>Explicitly set the expected bootloader type.
+Only the <code>B0</code> bootloader can be set by the quirk file.
+Other values can only be provided by device.
 This quirk must be set for devices without support of <code>bootloader variant</code> <span class="caps">DFU</span>&nbsp;option.</p>
 <h3 id="nordichidgeneration">NordicHidGeneration<a class="md-anchor" href="#nordichidgeneration" title="Permanent link"></a></h3>
 <p>Explicitly set the expected generation.

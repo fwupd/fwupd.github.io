@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -833,12 +833,17 @@ struct ExampleHdr {
 }
 
 #[derive(ToString, FromString)]
+#[repr(u8)] // optional, and only required if using the enum as a struct item type
 enum ExampleFamily {
     Unknown,
     Sps,
     Txe = 0x5,
     Me,
     Csme,
+}
+struct ExamplePacket {
+    family: ExampleFamily,
+    data: [u8; 254],
 }
 </code></pre></div>
 
@@ -851,6 +856,7 @@ enum ExampleFamily {
 <li><code>u64be</code>:  big endian <code>guint64</code></li>
 <li><code>char</code>: a <code>NUL</code>-terminated&nbsp;string</li>
 <li><code>Guid</code>: a <span class="caps">GUID</span></li>
+<li>Any <code>enum</code> created in the <code>.rs</code> file with <code>#[repr(type)]</code></li>
 </ul>
 <p>Arrays of types are also allowed, with the format <code>[type; multiple]</code>, for&nbsp;example:</p>
 <ul>
@@ -906,7 +912,7 @@ existing plugin&nbsp;code.</p>
 #define FU_STRUCT_EXAMPLE_OFFSET_FLAGS 0x17
 </code></pre></div>
 
-<p>Any elements defined as a typed array (e.g. <code>8u16</code>) will also have the element
+<p>Any elements defined as a typed array (e.g. <code>[u8; 16]</code>) will also have the element
 size defined in&nbsp;bytes:</p>
 <div class="codehilite"><pre><span></span><code>#define FU_STRUCT_EXAMPLE_SIZE_MAGIC 0x10
 </code></pre></div>

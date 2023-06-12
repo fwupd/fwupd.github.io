@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -106,13 +106,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.SecurityAttrs.calculate_hsi.html">calculate_hsi</a>
   
+    <a class="method" href="method.SecurityAttrs.compare.html">compare</a>
+  
     <a class="method" href="method.SecurityAttrs.depsolve.html">depsolve</a>
+  
+    <a class="method" href="method.SecurityAttrs.equal.html">equal</a>
+  
+    <a class="method" href="method.SecurityAttrs.from_json.html">from_json</a>
   
     <a class="method" href="method.SecurityAttrs.get_all.html">get_all</a>
   
     <a class="method" href="method.SecurityAttrs.get_by_appstream_id.html">get_by_appstream_id</a>
   
     <a class="method" href="method.SecurityAttrs.remove_all.html">remove_all</a>
+  
+    <a class="method" href="method.SecurityAttrs.to_json_string.html">to_json_string</a>
   
     <a class="method" href="method.SecurityAttrs.to_variant.html">to_variant</a>
   
@@ -154,7 +162,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.1/libfwupdplugin/fu-security-attrs.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-security-attrs.c#L19">[src]</a>
           
         </h4>
 
@@ -266,6 +274,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         </div>
       
         <div class="">
+          <h6><a href="method.SecurityAttrs.compare.html">fu_security_attrs_compare</a></h6>
+          <div class="docblock">
+            <p>Compares the two objects, returning the&nbsp;differences.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.SecurityAttrs.depsolve.html">fu_security_attrs_depsolve</a></h6>
           <div class="docblock">
             <p>Marks any attributes with <code>FWUPD_SECURITY_ATTR_FLAG_OBSOLETED</code> that have been
@@ -273,6 +291,27 @@ defined as obsoleted by other&nbsp;attributes.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.5.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttrs.equal.html">fu_security_attrs_equal</a></h6>
+          <div class="docblock">
+            <p>Tests the objects for equality. Only the AppStream <span class="caps">ID</span> results are compared, extra metadata
+is&nbsp;ignored.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttrs.from_json.html">fu_security_attrs_from_json</a></h6>
+          <div class="docblock">
+            <p>Imports a <span class="caps">JSON</span>&nbsp;node.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.2</span></p>
           </div>
         </div>
       
@@ -303,6 +342,23 @@ defined as obsoleted by other&nbsp;attributes.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.5.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttrs.to_json_string.html">fu_security_attrs_to_json_string</a></h6>
+          <div class="docblock">
+            <p>Convert security attribute to <span class="caps">JSON</span> string. e.g.:
+   {
+     &#8220;SecurityAttributes&#8221;: [
+       {
+         &#8220;name&#8221;: &#8220;aaa&#8221;,
+         &#8220;value&#8221;: &#8220;bbb&#8221;
+       }
+     ]&nbsp;}</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.2</span></p>
           </div>
         </div>
       

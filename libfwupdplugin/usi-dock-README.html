@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -105,6 +105,7 @@ is provided by the <span class="caps">DMC</span>&nbsp;bcdDevice.</p>
 <ul>
 <li><code>USB\VID_17EF&amp;PID_7226&amp;CID_TBT4</code></li>
 <li><code>USB\VID_17EF&amp;PID_7226&amp;CID_USB3</code></li>
+<li><code>USB\VID_17EF&amp;PID_7226&amp;CID_40B0&amp;DMCVER_10.10</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The device usually presents in runtime mode, but on detach re-enumerates with
@@ -112,6 +113,14 @@ the same <span class="caps">USB</span> <span class="caps">PID</span> in an unloc
 back to the runtime locked&nbsp;mode.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span>&nbsp;vendor.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsverfmt-hp"><code>Flags=verfmt-hp</code><a class="md-anchor" href="#flagsverfmt-hp" title="Permanent link"></a></h3>
+<p>Use the <span class="caps">HP</span>-style <code>quad</code> version&nbsp;format.</p>
+<p>Since:&nbsp;1.7.4</p>
+<h3 id="flagsset-chip-type"><code>Flags=set-chip-type</code><a class="md-anchor" href="#flagsset-chip-type" title="Permanent link"></a></h3>
+<p>Workaround a provisioning problem by setting the chip type when the new update has&nbsp;completed.</p>
+<p>Since:&nbsp;1.9.2</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -138,6 +147,17 @@ back to the runtime locked&nbsp;mode.</p>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsverfmt-hp"><span class="link-text">Flags=verfmt-hp</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsset-chip-type"><span class="link-text">Flags=set-chip-type</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

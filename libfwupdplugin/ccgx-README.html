@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -94,9 +94,7 @@ controller family of devices used in&nbsp;docks.</p>
 <p>This plugin supports the following protocol&nbsp;IDs:</p>
 <ul>
 <li><code>com.cypress.ccgx</code> (deprecated)</li>
-<li><code>com.cypress.ccgx.dmc</code> (deprecated)</li>
 <li><code>com.infineon.ccgx</code></li>
-<li><code>com.infineon.ccgx.dmc</code></li>
 </ul>
 <h2 id="device-flash">Device Flash<a class="md-anchor" href="#device-flash" title="Permanent link"></a></h2>
 <p>There are four kinds of flash layout. Single image firmware is not currently
@@ -124,46 +122,10 @@ dock&nbsp;functionality.</p>
 </ul>
 <p>The <code>CY_PD_JUMP_TO_ALT_FW_CMD_SIG</code> command is allowed only in asymmetric <span class="caps">FW</span>, but
 <code>CY_PD_DEVICE_RESET_CMD_SIG</code> is allowed in both asymmetric <span class="caps">FW</span> and symmetric <span class="caps">FW</span>.</p>
-<h3 id="dmcdock-management-controller-composite-firmware">DMC(Dock Management Controller) Composite Firmware<a class="md-anchor" href="#dmcdock-management-controller-composite-firmware" title="Permanent link"></a></h3>
-<p>In composite firmware topology, a single firmware image contains metadata and
-firmware images of multiple devices including <span class="caps">DMC</span> itself in a dock&nbsp;system.</p>
-<h3 id="dmc-factory-mode">DMC Factory Mode<a class="md-anchor" href="#dmc-factory-mode" title="Permanent link"></a></h3>
-<p>Dock Management Controller devices have a <em>composite version</em> that is used to
-describe the dock hardware as a whole, rather than enumerating and updating
-each sub-component separately.
-When OEMs have not followed the <span class="caps">IHV</span>-approved factory assembly process, the
-composite number is unset and fwupd would display <code>0.0.0.0</code> in the <span class="caps">GUI</span> and
-on the command&nbsp;line.</p>
-<p>In fwupd &gt;= 1.8.11 we detect if the device is in <em>factory mode</em> and set the
-version number to <code>0.0.0.1</code>.
-When the device is in factory mode any valid upgrade will be allowed, which
-means the user might be prompted to “update to” the same current version
-installed on the dock.
-For millions of devices this is both a waste of time, resources, and also
-would inconvenience the user with an additional process for no&nbsp;reason.</p>
-<p>For devices that have been shipped in factory mode, but would like to avoid
-the update from <code>0.0.0.1</code> to the original version on the <span class="caps">LVFS</span>, can add a
-quirk entry which matches the <code>devx</code> subcomponent <em>base version</em>.
-In this example we match the parent <span class="caps">VID</span>, <span class="caps">PID</span>, the ComponentID and the <code>devx</code>
-base firmware version, setting the parent composite version to <code>0.0.0.15</code>.</p>
-<div class="codehilite"><pre><span></span><code>[USB\VID_2188&amp;PID_0035&amp;CID_05&amp;VER_3.3.1.69]
-CcgxDmcCompositeVersion = 15
-</code></pre></div>
-
-<p>All the <code>devx</code> subcomponent versions can be shown on the console&nbsp;using:</p>
-<div class="codehilite"><pre><span></span><code>sudo fwupdtool –plugins ccgx get-devices –show-all –verbose
-</code></pre></div>
-
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
-<p>There are two kinds of firmware&nbsp;format.</p>
 <h3 id="cyacd-firmware-format">Cyacd firmware format<a class="md-anchor" href="#cyacd-firmware-format" title="Permanent link"></a></h3>
 <p>The daemon will decompress the cabinet archive and extract several firmware
 blobs in cyacd file format. See <a href="https://community.cypress.com/docs/DOC-10562">https://community.cypress.com/docs/<span class="caps">DOC</span>-10562</a>
-for more&nbsp;details.</p>
-<h3 id="dmc-composite-firmware-format">DMC composite firmware format<a class="md-anchor" href="#dmc-composite-firmware-format" title="Permanent link"></a></h3>
-<p>The daemon will decompress the cabinet archive and extract several firmware
-blobs in a combined image file format. See 4.4.1 Single Composite
-(Combined) Dock Image at <a href="https://www.cypress.com/file/387471/download">https://www.cypress.com/file/387471/download</a>
 for more&nbsp;details.</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
@@ -179,26 +141,29 @@ application <span class="caps">ID</span> and device mode,&nbsp;e.g.</p>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The device usually presents in runtime <span class="caps">HID</span> mode, but on detach re-enumerates
-with with a <span class="caps">DMC</span> or <span class="caps">HPI</span> interface. On attach the device again re-enumerates
-back to the runtime <span class="caps">HID</span>&nbsp;mode.</p>
+with with the <span class="caps">HPI</span> interface. On attach the device again re-enumerates back to the runtime <span class="caps">HID</span>&nbsp;mode.</p>
 <p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
-the <span class="caps">DMC</span>/<span class="caps">HPI</span> and runtime modes are treated as the same&nbsp;device.</p>
+the <span class="caps">HPI</span> and runtime modes are treated as the same&nbsp;device.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, for example set to <code>USB:0x04B4</code></p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
-<h3 id="ccgxdmctriggercode">CcgxDmcTriggerCode<a class="md-anchor" href="#ccgxdmctriggercode" title="Permanent link"></a></h3>
-<p><span class="caps">DMC</span> devices need a specified trigger code to request the device to update
-the firmware and the trigger code depends on the&nbsp;devices.</p>
-<div class="codehilite"><pre><span></span><code>0x0: Do not update
-0x1: Update immediately
-0x2: Update after port disconnected
-</code></pre></div>
-
-<p>Since:&nbsp;1.8.0</p>
-<h3 id="ccgxdmccompositeversion">CcgxDmcCompositeVersion<a class="md-anchor" href="#ccgxdmccompositeversion" title="Permanent link"></a></h3>
-<p>Set the parent composite version, as a 32 bit&nbsp;integer.</p>
-<p>Since:&nbsp;1.8.11</p>
+<h3 id="ccgxflashrowsize">CcgxFlashRowSize<a class="md-anchor" href="#ccgxflashrowsize" title="Permanent link"></a></h3>
+<p>Set the size of the flash row in bytes, as a 32 bit&nbsp;integer.</p>
+<p>Since:&nbsp;1.4.0</p>
+<h3 id="ccgxflashsize">CcgxFlashSize<a class="md-anchor" href="#ccgxflashsize" title="Permanent link"></a></h3>
+<p>Set the maximum flash size, as a 32 bit&nbsp;integer.</p>
+<p>Since:&nbsp;1.4.0</p>
+<h3 id="ccgximagekind">CcgxImageKind<a class="md-anchor" href="#ccgximagekind" title="Permanent link"></a></h3>
+<p>Set the image kind from one&nbsp;of:</p>
+<ul>
+<li><code>unknown</code></li>
+<li><code>single</code></li>
+<li><code>dual-symmetric</code></li>
+<li><code>dual-asymmetric</code></li>
+<li><code>dual-asymmetric-variable</code></li>
+</ul>
+<p>Since:&nbsp;1.4.0</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -229,10 +194,6 @@ the firmware and the trigger code depends on the&nbsp;devices.</p>
           
             <li class="toc-list-item"><a href="#asymmetric-firmware"><span class="link-text">Asymmetric Firmware</span></a></li>
           
-            <li class="toc-list-item"><a href="#dmcdock-management-controller-composite-firmware"><span class="link-text">DMC(Dock Management Controller) Composite Firmware</span></a></li>
-          
-            <li class="toc-list-item"><a href="#dmc-factory-mode"><span class="link-text">DMC Factory Mode</span></a></li>
-          
           </ul>
           
         
@@ -241,8 +202,6 @@ the firmware and the trigger code depends on the&nbsp;devices.</p>
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#cyacd-firmware-format"><span class="link-text">Cyacd firmware format</span></a></li>
-          
-            <li class="toc-list-item"><a href="#dmc-composite-firmware-format"><span class="link-text">DMC composite firmware format</span></a></li>
           
           </ul>
           
@@ -260,9 +219,11 @@ the firmware and the trigger code depends on the&nbsp;devices.</p>
           
           <ul class="toc-list">
           
-            <li class="toc-list-item"><a href="#ccgxdmctriggercode"><span class="link-text">CcgxDmcTriggerCode</span></a></li>
+            <li class="toc-list-item"><a href="#ccgxflashrowsize"><span class="link-text">CcgxFlashRowSize</span></a></li>
           
-            <li class="toc-list-item"><a href="#ccgxdmccompositeversion"><span class="link-text">CcgxDmcCompositeVersion</span></a></li>
+            <li class="toc-list-item"><a href="#ccgxflashsize"><span class="link-text">CcgxFlashSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#ccgximagekind"><span class="link-text">CcgxImageKind</span></a></li>
           
           </ul>
           

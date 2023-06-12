@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.1</p>
+        <p>Library Version: 1.9.2</p>
         
       </div>
       
@@ -168,19 +168,19 @@ paired&nbsp;devices.</p>
 <h3 id="how-the-code-is-organized">How the code is organized<a class="md-anchor" href="#how-the-code-is-organized" title="Permanent link"></a></h3>
 <p>Here&#8217;s how the different devices are handled in the&nbsp;plugin:</p>
 <ul>
-<li>Unifying receiver in runtime mode: FuLogitechHidPpRuntimeUnifying&nbsp;(fu-logitech-hidpp-runtime-unifying.c)</li>
+<li>Unifying receiver in runtime mode: FuLogitechHidppRuntimeUnifying&nbsp;(fu-logitech-hidpp-runtime-unifying.c)</li>
 <li>Unifying receiver in bootloader&nbsp;mode:</li>
-<li>Nordic chipset: FuLogitechHidPpBootloaderNordic&nbsp;(fu-logitech-hidpp-bootloader-nordic.c)</li>
-<li><span class="caps">TI</span> chipset: FuLogitechHidPpBootloaderTexas&nbsp;(fu-logitech-hidpp-bootloader-texas.c)</li>
-<li>Bolt receiver in runtime mode: FuLogitechHidPpRuntimeBolt&nbsp;(fu-logitech-hidpp-runtime-bolt.c)</li>
+<li>Nordic chipset: FuLogitechHidppBootloaderNordic&nbsp;(fu-logitech-hidpp-bootloader-nordic.c)</li>
+<li><span class="caps">TI</span> chipset: FuLogitechHidppBootloaderTexas&nbsp;(fu-logitech-hidpp-bootloader-texas.c)</li>
+<li>Bolt receiver in runtime mode: FuLogitechHidppRuntimeBolt&nbsp;(fu-logitech-hidpp-runtime-bolt.c)</li>
 <li>Bolt receiver in bootloader mode and all peripherals:
-    FuLogitechHidPpDevice&nbsp;(fu-logitech-hidpp-device.c)</li>
+    FuLogitechHidppDevice&nbsp;(fu-logitech-hidpp-device.c)</li>
 </ul>
-<p>FuLogitechHidPpDevice effectively handles all devices that use the
+<p>FuLogitechHidppDevice effectively handles all devices that use the
 <span class="caps">HID</span>++2.0&nbsp;protocol.</p>
 <p>Every device contains two updatable entities, the main application <span class="caps">FW</span>
 and the radio stack <span class="caps">FW</span> (SoftDevice). The latter will show up as a child
-device of the actual device and is handled by FuLogitechHidPpRadio
+device of the actual device and is handled by FuLogitechHidppRadio
 (fu-logitech-hidpp-radio.c), which simply defers to the parent device
 for most&nbsp;operations.</p>
 <h3 id="plugin-specific-flags">Plugin-specific flags<a class="md-anchor" href="#plugin-specific-flags" title="Permanent link"></a></h3>
@@ -194,7 +194,7 @@ tweak the plugin code for certain device&nbsp;types:</p>
     re-bound after reset, so the device object can&#8217;t be simply re-probed
     using the same file&nbsp;descriptor.</li>
 <li>force-receiver-id: this flag is used to differentiate the receiver device in
-    FuLogitechHidPpDevice, since the receiver has a specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</li>
+    FuLogitechHidppDevice, since the receiver has a specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</li>
 <li>ble: used to differentiate devices in <span class="caps">BLE</span> mode. They require all the
     reports to be <em>long</em>.</li>
 </ul>
