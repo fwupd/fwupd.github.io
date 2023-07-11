@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -107,7 +107,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-mem.h#L14">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupdplugin/fu-mem.h#L14">[src]</a>
         
       </h4>
 
@@ -115,9 +115,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">fu_memcmp_safe</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">buf1</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">bufsz1</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">buf1_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">buf1_offset</span><span class="p">,</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">buf2</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">bufsz2</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">buf2_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">buf2_offset</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">n</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -130,7 +133,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-mem.c#L249">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupdplugin/fu-mem.c#L250">[src]</a>
         
       </h4>
 
@@ -177,10 +180,27 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             </table>
           </dd>
           
-          <dt class="arg-name"><code>bufsz1</code></dt>
+          <dt class="arg-name"><code>buf1_sz</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>Sizeof <code>buf1</code></p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>buf1_offset</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p><p>Offset into <code>buf1</code></p></p>
             <table>
             
             
@@ -211,10 +231,44 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             </table>
           </dd>
           
-          <dt class="arg-name"><code>bufsz2</code></dt>
+          <dt class="arg-name"><code>buf2_sz</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>Sizeof <code>buf2</code></p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>buf2_offset</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p><p>Offset into <code>buf1</code></p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>n</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p><p>Number of bytes to compare from <code>buf1</code>+<code>buf1_offset</code> from.</p></p>
             <table>
             
             

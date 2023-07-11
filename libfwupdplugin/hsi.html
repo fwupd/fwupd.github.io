@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -793,6 +793,21 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Trusted_Platform_Module"><span class="caps">TPM</span> Wikipedia&nbsp;Page</a></li>
 </ul>
+<p><a id="org.fwupd.hsi.Uefi.BootserviceVars"></a></p>
+<h3 id="uefi-bootservice-variables"><a href="#org.fwupd.hsi.Uefi.BootserviceVars">UEFI BootService Variables</a><a class="md-anchor" href="#uefi-bootservice-variables" title="Permanent link"></a></h3>
+<p><span class="caps">UEFI</span> boot service variables should not be readable from runtime&nbsp;mode.</p>
+<p><strong>Impact:</strong></p>
+<p>It is possible to read security-sensitive data that should not be readable by the runtime&nbsp;mode.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-locked</code>: bootservice-only data is readable in runtime mode&nbsp;(failure)</li>
+<li><code>locked</code>: bootservice-only data is not visible&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v1.9.3]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://uefi.org/specs/UEFI/2.10/07_Services_Boot_Services.html"><span class="caps">UEFI</span>&nbsp;Specification</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.Uefi.Pk"></a></p>
 <h3 id="uefi-pk"><a href="#org.fwupd.hsi.Uefi.Pk">UEFI PK</a><a class="md-anchor" href="#uefi-pk" title="Permanent link"></a></h3>
 <p><span class="caps">UEFI</span> defines a platform key for the&nbsp;system.</p>
@@ -977,6 +992,8 @@ As those become ratified standards that are available in hardware, there are opp
             <li class="toc-list-item"><a href="#pcr0-tpm-event-log-reconstruction"><span class="link-text">PCR0 TPM Event Log Reconstruction</span></a></li>
           
             <li class="toc-list-item"><a href="#tpm-20-present"><span class="link-text">TPM 2.0 Present</span></a></li>
+          
+            <li class="toc-list-item"><a href="#uefi-bootservice-variables"><span class="link-text">UEFI BootService Variables</span></a></li>
           
             <li class="toc-list-item"><a href="#uefi-pk"><span class="link-text">UEFI PK</span></a></li>
           

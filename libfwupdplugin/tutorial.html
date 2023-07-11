@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -827,7 +827,7 @@ rustc</em>, so small differences may be&nbsp;noticeable.</p>
 struct ExampleHdr {
     magic: Guid,
     hdrver: u8,
-    hdrsz: u16le: default=$struct_size,
+    hdrsz: u16le = $struct_size,
     payloadsz: u32le,
     flags: u8,
 }
@@ -842,7 +842,7 @@ enum ExampleFamily {
     Csme,
 }
 struct ExamplePacket {
-    family: ExampleFamily,
+    family: ExampleFamily = Csme,
     data: [u8; 254],
 }
 </code></pre></div>
@@ -857,12 +857,13 @@ struct ExamplePacket {
 <li><code>char</code>: a <code>NUL</code>-terminated&nbsp;string</li>
 <li><code>Guid</code>: a <span class="caps">GUID</span></li>
 <li>Any <code>enum</code> created in the <code>.rs</code> file with <code>#[repr(type)]</code></li>
+<li>Any <code>struct</code> previously created in the <code>.rs</code> file</li>
 </ul>
 <p>Arrays of types are also allowed, with the format <code>[type; multiple]</code>, for&nbsp;example:</p>
 <ul>
 <li><code>buf: [u8; 12]</code> for a C array of <code>guint8 buf[12] = {0};</code></li>
 <li><code>val: [u64be; 7]</code>  for a C array of <code>guint64 val[7] = {0};</code></li>
-<li><code>str: [char; 4]: default="ABCD"</code> for a C array of <code>gchar buf[4] = {'A','B','C','D'};</code>
+<li><code>str: [char; 4] = "ABCD"</code> for a C array of <code>gchar buf[4] = {'A','B','C','D'};</code>
   &#8212; <span class="caps">NOTE</span>: <code>fu_struct_example_get_str()</code> would return a <code>NUL</code>-terminated string of <code>ABCD\0</code>.</li>
 </ul>
 <p>Additionally, default or constant values can be&nbsp;auto-populated:</p>
@@ -871,12 +872,12 @@ struct ExamplePacket {
 <li><code>$struct_offset</code>: the internal offset in the&nbsp;struct</li>
 <li>string values, specified <strong>without</strong> double or single&nbsp;quotes</li>
 <li>integer values, specified with a <code>0x</code> prefix for base-16 and with no prefix for&nbsp;base-10</li>
+<li>previously specified <code>enum</code> values</li>
 </ul>
 <p>Per-field metadata can also be defined, such&nbsp;as:</p>
 <ul>
-<li><code>default</code>: set as the default&nbsp;value</li>
-<li><code>constant</code>: set as the default, and is <strong>also</strong> verified during&nbsp;unpacking.</li>
-<li><code>padding</code>: initialize with a padding byte, typically <code>0xFF</code></li>
+<li><code>=</code>: set as the default value, or for <code>u8</code> arrays initialize with a padding&nbsp;byte</li>
+<li><code>==</code>: set as the default, and is <strong>also</strong> verified during&nbsp;unpacking.</li>
 </ul>
 <p>Default values and padding will be used when creating a new structure,
 for instance using <code>fu_struct_example_new()</code>.</p>
@@ -931,6 +932,7 @@ They are verified during <code>_validate()</code> and <code>_parse()</code> howe
 <p>There are traits that control the generation of enum code. These&nbsp;include:</p>
 <ul>
 <li><code>ToString</code>: for <code>fu_example_family_to_string()</code>, needed to create&nbsp;output</li>
+<li><code>ToBitString</code>: for <code>fu_example_family_to_string()</code>, needed to create output for&nbsp;bitfields</li>
 <li><code>FromString</code>: for <code>fu_example_family_from_string()</code>, needed to parse&nbsp;input</li>
 </ul>
 <p><strong><span class="caps">NOTE</span>:</strong> Enums are defined as a native unsigned type, and should not be copied by

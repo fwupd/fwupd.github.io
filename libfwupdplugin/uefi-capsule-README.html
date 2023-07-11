@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -191,6 +191,11 @@ support on the device by using the <code>unlock</code> command.</p>
 other cases the mount point of the <span class="caps">ESP</span> needs to be manually specified using the
 option <em>EspLocation</em> in <code>/etc/fwupd/fwupd.conf</code>.</p>
 <p>Setting an invalid directory will disable the fwupd&nbsp;plugin.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagscod-indexed-filename"><code>Flags=cod-indexed-filename</code><a class="md-anchor" href="#flagscod-indexed-filename" title="Permanent link"></a></h3>
+<p>Use a Capsule-on-Disk filename of <code>CapsuleUpdateFileXXXX.bin</code> rather than including the <span class="caps">ESRT</span> <span class="caps">GUID</span>.
+This alternative format may be needed for some early InsydeH2O&nbsp;firmwares.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin&nbsp;requires:</p>
 <ul>
@@ -247,6 +252,15 @@ option <em>EspLocation</em> in <code>/etc/fwupd/fwupd.conf</code>.</p>
           
         
         <li class="toc-list-item"><a href="#custom-efi-system-partition-esp"><span class="link-text">Custom EFI System Partition (ESP)</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagscod-indexed-filename"><span class="link-text">Flags=cod-indexed-filename</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

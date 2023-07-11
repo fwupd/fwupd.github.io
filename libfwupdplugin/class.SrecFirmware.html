@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -101,6 +101,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method" href="method.SrecFirmware.get_records.html">get_records</a>
+  
+    <a class="method" href="method.SrecFirmware.set_addr_max.html">set_addr_max</a>
+  
+    <a class="method" href="method.SrecFirmware.set_addr_min.html">set_addr_min</a>
   
   </div>
 </div>
@@ -140,7 +144,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-srec-firmware.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupdplugin/fu-srec-firmware.c#L19">[src]</a>
           
         </h4>
 
@@ -236,12 +240,32 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </div>
         </div>
       
+        <div class="">
+          <h6><a href="method.SrecFirmware.set_addr_max.html">fu_srec_firmware_set_addr_max</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum address allowed. This may be useful to ignore a&nbsp;signature.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SrecFirmware.set_addr_min.html">fu_srec_firmware_set_addr_min</a></h6>
+          <div class="docblock">
+            <p>Sets the minimum address allowed. This may be useful to ignore a bootloader&nbsp;section.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
+          </div>
+        </div>
+      
       </div>
 
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Firmware.html">FuFirmware</a> (52)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.Firmware.html">FuFirmware</a> (57)</h5><div class="docblock">
           
             <div class="docblock">
               <p>Please see&nbsp;<a href="class.Firmware.html#methods">FuFirmware</a>&nbsp;for a full list of methods.</em></p>

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -171,21 +171,28 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
   These are only required when the <span class="caps">SMBIOS</span> or Device Tree data is invalid, missing, or to simulate running on another system.
   Empty values should be used to populate blank entries or add values to populate specific&nbsp;entries.</p>
 <p><strong>TrustedReports={{FU_DAEMON_CONFIG_DEFAULT_TRUSTED_REPORTS}}</strong></p>
-<p>Vendor reports matching these expressions will have releases marked as <code>trusted-report</code>,&nbsp;e.g.</p>
+<p>Vendor reports matching these expressions will have releases marked as <code>trusted-report</code>.
+  Each <em><span class="caps">OR</span></em> section is delimited by a <code>;</code> and each <em><span class="caps">AND</span></em> section delimited by <code>&amp;</code>,&nbsp;e.g.</p>
 <ul>
-<li>
-<p><code>DistroId=chromeos</code></p>
-</li>
-<li>
-<p><code>DistroId=fedora&amp;VendorId=19</code></p>
-</li>
-<li>
-<p><code>DistroId=fedora&amp;VendorId=$OEM</code></p>
-</li>
-<li>
-<p><code>DistroId=fedora;DistroId=rhel&amp;DistroVersion=9</code></p>
-</li>
+<li><code>DistroId=chromeos</code></li>
 </ul>
+<p>Any report uploaded from ChromeOS is&nbsp;trusted.</p>
+<ul>
+<li><code>DistroId=chromeos&amp;RemoteId=lvfs</code></li>
+</ul>
+<p>Any report found in the <code>lvfs</code> remote uploaded from a ChromeOS machine is&nbsp;trusted.</p>
+<ul>
+<li><code>DistroId=fedora&amp;VendorId=19</code></li>
+</ul>
+<p>Any report uploaded from Fedora 19 is&nbsp;trusted.</p>
+<ul>
+<li><code>DistroId=fedora&amp;VendorId=$OEM</code></li>
+</ul>
+<p>Any report uploaded from Fedora by the hardware <span class="caps">OEM</span> is&nbsp;trusted.</p>
+<ul>
+<li><code>DistroId=fedora;DistroId=rhel&amp;DistroVersion=9</code></li>
+</ul>
+<p>Any report uploaded from Fedora (any version) or from <span class="caps">RHEL</span> 9 is&nbsp;trusted.</p>
 <p><span class="caps">NOTE</span>: a <code>VendorId</code> of <code>$OEM</code> represents the <span class="caps">OEM</span> vendor <span class="caps">ID</span> of the vendor that owns the firmware,
   for example, where Lenovo <span class="caps">QA</span> has generated a signed report for a Lenovo&nbsp;laptop.</p>
 <p>There are also three os-release values available, <code>$ID</code>, <code>$VERSION_ID</code> and <code>$VARIANT_ID</code>, which

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -131,6 +131,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Firmware.add_image.html">add_image</a>
   
+    <a class="method" href="method.Firmware.add_image_full.html">add_image_full</a>
+  
     <a class="method" href="method.Firmware.add_patch.html">add_patch</a>
   
     <a class="method" href="method.Firmware.build.html">build</a>
@@ -163,6 +165,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Firmware.get_image_by_checksum.html">get_image_by_checksum</a>
   
+    <a class="method" href="method.Firmware.get_image_by_gtype.html">get_image_by_gtype</a>
+  
+    <a class="method" href="method.Firmware.get_image_by_gtype_bytes.html">get_image_by_gtype_bytes</a>
+  
     <a class="method" href="method.Firmware.get_image_by_id.html">get_image_by_id</a>
   
     <a class="method" href="method.Firmware.get_image_by_id_bytes.html">get_image_by_id_bytes</a>
@@ -172,6 +178,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Firmware.get_image_by_idx_bytes.html">get_image_by_idx_bytes</a>
   
     <a class="method" href="method.Firmware.get_images.html">get_images</a>
+  
+    <a class="method" href="method.Firmware.get_images_max.html">get_images_max</a>
   
     <a class="method" href="method.Firmware.get_offset.html">get_offset</a>
   
@@ -208,6 +216,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Firmware.set_id.html">set_id</a>
   
     <a class="method" href="method.Firmware.set_idx.html">set_idx</a>
+  
+    <a class="method" href="method.Firmware.set_images_max.html">set_images_max</a>
   
     <a class="method" href="method.Firmware.set_offset.html">set_offset</a>
   
@@ -299,7 +309,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-firmware.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupdplugin/fu-firmware.c#L19">[src]</a>
           
         </h4>
 
@@ -358,6 +368,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li class="class"><a href="class.CoswidFirmware.html" title="CoswidFirmware">FuCoswidFirmware</a></li>
         
+          <li class="class"><a href="class.CsvEntry.html" title="CsvEntry">FuCsvEntry</a></li>
+        
+          <li class="class"><a href="class.CsvFirmware.html" title="CsvFirmware">FuCsvFirmware</a></li>
+        
           <li class="class"><a href="class.DfuFirmware.html" title="DfuFirmware">FuDfuFirmware</a></li>
         
           <li class="class"><a href="class.EfiFirmwareFile.html" title="EfiFirmwareFile">FuEfiFirmwareFile</a></li>
@@ -368,9 +382,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li class="class"><a href="class.EfiFirmwareVolume.html" title="EfiFirmwareVolume">FuEfiFirmwareVolume</a></li>
         
+          <li class="class"><a href="class.EfiLoadOption.html" title="EfiLoadOption">FuEfiLoadOption</a></li>
+        
           <li class="class"><a href="class.EfiSignature.html" title="EfiSignature">FuEfiSignature</a></li>
         
           <li class="class"><a href="class.EfiSignatureList.html" title="EfiSignatureList">FuEfiSignatureList</a></li>
+        
+          <li class="class"><a href="class.ElfFirmware.html" title="ElfFirmware">FuElfFirmware</a></li>
         
           <li class="class"><a href="class.FdtFirmware.html" title="FdtFirmware">FuFdtFirmware</a></li>
         
@@ -395,6 +413,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li class="class"><a href="class.OpromFirmware.html" title="OpromFirmware">FuOpromFirmware</a></li>
         
           <li class="class"><a href="class.PefileFirmware.html" title="PefileFirmware">FuPefileFirmware</a></li>
+        
+          <li class="class"><a href="class.SbatlevelSection.html" title="SbatlevelSection">FuSbatlevelSection</a></li>
         
           <li class="class"><a href="class.Smbios.html" title="Smbios">FuSmbios</a></li>
         
@@ -581,6 +601,17 @@ The returned <code>value</code> will range from 0 to&nbsp;0xff.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Firmware.add_image_full.html">fu_firmware_add_image_full</a></h6>
+          <div class="docblock">
+            <p>Adds an image to the firmware. This method will fail if the number of images would be
+above the limit set by&nbsp;fu_firmware_set_images_max().</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Firmware.add_patch.html">fu_firmware_add_patch</a></h6>
           <div class="docblock">
             <p>Adds a byte patch at a specific offset. If a patch already exists at the specified address then
@@ -745,6 +776,26 @@ based on the length of the input&nbsp;string.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Firmware.get_image_by_gtype.html">fu_firmware_get_image_by_gtype</a></h6>
+          <div class="docblock">
+            <p>Gets the firmware image using the image <code>GType</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Firmware.get_image_by_gtype_bytes.html">fu_firmware_get_image_by_gtype_bytes</a></h6>
+          <div class="docblock">
+            <p>Gets the firmware image bytes using the image <code>GType</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Firmware.get_image_by_id.html">fu_firmware_get_image_by_id</a></h6>
           <div class="docblock">
             <p>Gets the firmware image using the image <span class="caps">ID</span>.</p>
@@ -791,6 +842,16 @@ based on the length of the input&nbsp;string.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.3.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Firmware.get_images_max.html">fu_firmware_get_images_max</a></h6>
+          <div class="docblock">
+            <p>Gets the maximum number of images this container can&nbsp;hold.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
           </div>
         </div>
       
@@ -974,6 +1035,16 @@ used when building firmware with <code>&lt;version_raw&gt;0x123456&lt;/version_r
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Firmware.set_images_max.html">fu_firmware_set_images_max</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum number of images this container can&nbsp;hold.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
           </div>
         </div>
       

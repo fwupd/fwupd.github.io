@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -112,6 +112,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method" href="method.Plugin.add_device_gtype.html">add_device_gtype</a>
+  
+    <a class="method" href="method.Plugin.add_device_udev_subsystem.html">add_device_udev_subsystem</a>
   
     <a class="method" href="method.Plugin.add_firmware_gtype.html">add_firmware_gtype</a>
   
@@ -356,7 +358,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.2/libfwupdplugin/fu-plugin.c#L28">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupdplugin/fu-plugin.c#L28">[src]</a>
           
         </h4>
 
@@ -480,6 +482,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.add_device_udev_subsystem.html">fu_plugin_add_device_udev_subsystem</a></h6>
+          <div class="docblock">
+            <p>Add this plugin as a possible handler of devices with this udev subsystem.
+Use <code>fu_plugin_add_udev_subsystem()</code> if you just want to ensure the subsystem is&nbsp;watched.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.3</span></p>
           </div>
         </div>
       

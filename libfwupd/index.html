@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.2</p>
+        <p>Library Version: 1.9.3</p>
         
       </div>
       
@@ -144,7 +144,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.2</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.3</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -1509,6 +1509,16 @@ or when the device is unplugged with some&nbsp;devices.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_FLAG_ONLY_EXPLICIT_UPDATES" class="symbol" href="const.DEVICE_FLAG_ONLY_EXPLICIT_UPDATES.html">DEVICE_FLAG_ONLY_EXPLICIT_UPDATES</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device should stay on one firmware version unless the new version is explicitly&nbsp;specified.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_FLAG_ONLY_OFFLINE" class="symbol" href="const.DEVICE_FLAG_ONLY_OFFLINE.html">DEVICE_FLAG_ONLY_OFFLINE</a></td>
             
             <td class="docblock-summary">
@@ -1945,6 +1955,17 @@ Supported clients will display this information to a&nbsp;user.</p>
             
             <td class="docblock-summary">
             <p>The plugins discovered that the <span class="caps">EFI</span> system partition was not found.
+Supported clients will display this information to a&nbsp;user.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PLUGIN_FLAG_ESP_NOT_VALID" class="symbol" href="const.PLUGIN_FLAG_ESP_NOT_VALID.html">PLUGIN_FLAG_ESP_NOT_VALID</a></td>
+            
+            <td class="docblock-summary">
+            <p>The plugins discovered that the <span class="caps">EFI</span> system partition may not be valid.
 Supported clients will display this information to a&nbsp;user.</p>
             <p></p>
             </td>
@@ -2624,6 +2645,16 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
             
             <td class="docblock-summary">
             <p>Result key to represent the fallback&nbsp;HsiResult.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_HSI_RESULT_SUCCESS" class="symbol" href="const.RESULT_KEY_HSI_RESULT_SUCCESS.html">RESULT_KEY_HSI_RESULT_SUCCESS</a></td>
+            
+            <td class="docblock-summary">
+            <p>Result key to represent the desired&nbsp;HsiResult.</p>
             <p></p>
             </td>
             
@@ -3454,6 +3485,16 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
             
             <td class="docblock-summary">
             <p>Host Security <span class="caps">ID</span> attribute for <span class="caps">TPM</span>&nbsp;2.0</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_UEFI_BOOTSERVICE_VARS" class="symbol" href="const.SECURITY_ATTR_ID_UEFI_BOOTSERVICE_VARS.html">SECURITY_ATTR_ID_UEFI_BOOTSERVICE_VARS</a></td>
+            
+            <td class="docblock-summary">
+            <p>Host Security <span class="caps">ID</span> attribute indicating if Bootservice-only variables are&nbsp;hidden.</p>
             <p></p>
             </td>
             
