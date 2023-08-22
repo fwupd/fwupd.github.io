@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -100,6 +100,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="func" href="type_func.Remote.array_from_variant.html">array_from_variant</a>
   
+    <a class="func" href="type_func.Remote.flag_from_string.html">flag_from_string</a>
+  
+    <a class="func" href="type_func.Remote.flag_to_string.html">flag_to_string</a>
+  
     <a class="func" href="type_func.Remote.from_variant.html">from_variant</a>
   
     <a class="func" href="type_func.Remote.kind_from_string.html">kind_from_string</a>
@@ -114,6 +118,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Instance methods</h5>
   <div class="links">
+  
+    <a class="method" href="method.Remote.add_flag.html">add_flag</a>
   
     <a class="method" href="method.Remote.build_firmware_uri.html">build_firmware_uri</a>
   
@@ -131,6 +137,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_checksum.html">get_checksum</a>
   
+    <a class="method" href="method.Remote.get_checksum_metadata.html">get_checksum_metadata</a>
+  
     <a class="method" href="method.Remote.get_enabled.html">get_enabled</a>
   
     <a class="method" href="method.Remote.get_filename_cache.html">get_filename_cache</a>
@@ -140,6 +148,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Remote.get_filename_source.html">get_filename_source</a>
   
     <a class="method" href="method.Remote.get_firmware_base_uri.html">get_firmware_base_uri</a>
+  
+    <a class="method" href="method.Remote.get_flags.html">get_flags</a>
   
     <a class="method" href="method.Remote.get_id.html">get_id</a>
   
@@ -159,6 +169,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_priority.html">get_priority</a>
   
+    <a class="method" href="method.Remote.get_refresh_interval.html">get_refresh_interval</a>
+  
     <a class="method" href="method.Remote.get_remotes_dir.html">get_remotes_dir</a>
   
     <a class="method" href="method.Remote.get_report_uri.html">get_report_uri</a>
@@ -169,11 +181,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_username.html">get_username</a>
   
+    <a class="method" href="method.Remote.has_flag.html">has_flag</a>
+  
     <a class="method" href="method.Remote.load_from_filename.html">load_from_filename</a>
   
     <a class="method" href="method.Remote.load_signature.html">load_signature</a>
   
     <a class="method" href="method.Remote.load_signature_bytes.html">load_signature_bytes</a>
+  
+    <a class="method" href="method.Remote.needs_refresh.html">needs_refresh</a>
+  
+    <a class="method" href="method.Remote.remove_flag.html">remove_flag</a>
   
     <a class="method" href="method.Remote.save_to_filename.html">save_to_filename</a>
   
@@ -186,6 +204,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Remote.set_filename_cache.html">set_filename_cache</a>
   
     <a class="method" href="method.Remote.set_filename_source.html">set_filename_source</a>
+  
+    <a class="method" href="method.Remote.set_flags.html">set_flags</a>
   
     <a class="method" href="method.Remote.set_id.html">set_id</a>
   
@@ -223,6 +243,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="property" href="property.Remote.automatic-security-reports.html">automatic-security-reports</a>
   
     <a class="property" href="property.Remote.enabled.html">enabled</a>
+  
+    <a class="property" href="property.Remote.flags.html">flags</a>
   
     <a class="property" href="property.Remote.id.html">id</a>
   
@@ -262,7 +284,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupd/fwupd-remote.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.4/libfwupd/fwupd-remote.c#L19">[src]</a>
           
         </h4>
 
@@ -355,6 +377,26 @@ over <span class="caps">HTTP</span> or <span class="caps">IPFS</span>).</p>
       </div>
       
       <div class="">
+        <h6><a href="type_func.Remote.flag_from_string.html">fwupd_remote_flag_from_string</a></h6>
+        <div class="docblock">
+          <p>Converts a string to an enumerated&nbsp;flag.</p>
+        </div>
+        <div class="docblock">
+          <p><span class="emblem available">since: 1.9.4</span></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Remote.flag_to_string.html">fwupd_remote_flag_to_string</a></h6>
+        <div class="docblock">
+          <p>Returns the printable string for the&nbsp;flag.</p>
+        </div>
+        <div class="docblock">
+          <p><span class="emblem available">since: 1.9.4</span></p>
+        </div>
+      </div>
+      
+      <div class="">
         <h6><a href="type_func.Remote.from_variant.html">fwupd_remote_from_variant</a></h6>
         <div class="docblock">
           <p>Creates a new remote using serialized&nbsp;data.</p>
@@ -396,6 +438,16 @@ over <span class="caps">HTTP</span> or <span class="caps">IPFS</span>).</p>
       </h4>
 
       <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Remote.add_flag.html">fwupd_remote_add_flag</a></h6>
+          <div class="docblock">
+            <p>Adds a specific attribute flag to the&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
       
         <div class="">
           <h6><a href="method.Remote.build_firmware_uri.html">fwupd_remote_build_firmware_uri</a></h6>
@@ -472,10 +524,20 @@ of a approved&nbsp;checksums.</p>
         <div class="">
           <h6><a href="method.Remote.get_checksum.html">fwupd_remote_get_checksum</a></h6>
           <div class="docblock">
-            <p>Gets the remote&nbsp;checksum.</p>
+            <p>Gets the remote signature&nbsp;checksum.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Remote.get_checksum_metadata.html">fwupd_remote_get_checksum_metadata</a></h6>
+          <div class="docblock">
+            <p>Gets the remote metadata&nbsp;checksum.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
           </div>
         </div>
       
@@ -526,6 +588,16 @@ of a approved&nbsp;checksums.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.7</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Remote.get_flags.html">fwupd_remote_get_flags</a></h6>
+          <div class="docblock">
+            <p>Gets the self&nbsp;flags.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
           </div>
         </div>
       
@@ -620,6 +692,16 @@ of a approved&nbsp;checksums.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.get_refresh_interval.html">fwupd_remote_get_refresh_interval</a></h6>
+          <div class="docblock">
+            <p>Sets the plugin refresh interval in&nbsp;seconds.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.get_remotes_dir.html">fwupd_remote_get_remotes_dir</a></h6>
           <div class="docblock">
             <p>Gets the base directory for storing remote&nbsp;metadata.</p>
@@ -670,6 +752,16 @@ of a approved&nbsp;checksums.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.has_flag.html">fwupd_remote_has_flag</a></h6>
+          <div class="docblock">
+            <p>Finds if the remote has a specific&nbsp;flag.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.load_from_filename.html">fwupd_remote_load_from_filename</a></h6>
           <div class="docblock">
             <p>Loads metadata about the remote from a keyfile.
@@ -701,6 +793,26 @@ This can be called zero or multiple times for each&nbsp;remote.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.needs_refresh.html">fwupd_remote_needs_refresh</a></h6>
+          <div class="docblock">
+            <p>Gets if the metadata remote needs&nbsp;re-downloading.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Remote.remove_flag.html">fwupd_remote_remove_flag</a></h6>
+          <div class="docblock">
+            <p>Removes a specific attribute flag from the&nbsp;remote.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.save_to_filename.html">fwupd_remote_save_to_filename</a></h6>
           <div class="docblock">
             <p>Saves metadata about the remote to a&nbsp;keyfile.</p>
@@ -723,7 +835,7 @@ This can be called zero or multiple times for each&nbsp;remote.</p>
         <div class="">
           <h6><a href="method.Remote.set_checksum.html">fwupd_remote_set_checksum</a></h6>
           <div class="docblock">
-            <p>Sets the remote checksum, typically only useful in the self&nbsp;tests.</p>
+            <p>Sets the remote signature checksum, typically only useful in the self&nbsp;tests.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.8.2</span></p>
@@ -757,6 +869,16 @@ This can be called zero or multiple times for each&nbsp;remote.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Remote.set_flags.html">fwupd_remote_set_flags</a></h6>
+          <div class="docblock">
+            <p>Sets the attribute&nbsp;flags.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
           </div>
         </div>
       
@@ -929,6 +1051,16 @@ list of approved&nbsp;firmware.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Remote.flags.html">Fwupd.Remote:flags</a></h6>
+          <div class="docblock">
+            <p>The remote&nbsp;flags.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
           </div>
         </div>
       

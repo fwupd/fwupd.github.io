@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -167,6 +167,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.BiosSetting.to_variant.html">to_variant</a>
   
+    <a class="method" href="method.BiosSetting.write_value.html">write_value</a>
+  
   </div>
 </div>
 
@@ -177,6 +179,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
 
 
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.BiosSetting.write_value.html">write_value</a>
+  
+  </div>
+</div>
 
 
 
@@ -205,7 +216,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.3/libfwupd/fwupd-bios-setting.c#L14">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.4/libfwupd/fwupd-bios-setting.c#L14">[src]</a>
           
         </h4>
 
@@ -611,6 +622,16 @@ length for string&nbsp;attributes.</p>
           </div>
         </div>
       
+        <div class="">
+          <h6><a href="method.BiosSetting.write_value.html">fwupd_bios_setting_write_value</a></h6>
+          <div class="docblock">
+            <p>Writes a new value into the setting if it is different from the current&nbsp;value.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.4</span></p>
+          </div>
+        </div>
+      
       </div>
 
       
@@ -675,8 +696,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
         <pre><code>struct FwupdBiosSettingClass {
   GObjectClass parent_class;
-  void (* _fwupd_reserved1) (
-void
+  gboolean (* write_value) (
+    FwupdBiosSetting* self,
+    const gchar* value,
+    GError** error
   );
   void (* _fwupd_reserved2) (
 void
@@ -713,8 +736,10 @@ void
           <dt><code>parent_class: GObjectClass</code></dt>
           <dd>No description available.</dd>
         
-          <dt><code>_fwupd_reserved1: void (* _fwupd_reserved1) (
-void
+          <dt><code>write_value: gboolean (* write_value) (
+    FwupdBiosSetting* self,
+    const gchar* value,
+    GError** error
   )</code></dt>
           <dd>No description available.</dd>
         
@@ -755,6 +780,27 @@ void
     
 
     
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-write_value"><a href="vfunc.BiosSetting.write_value.html">Fwupd.BiosSettingClass.write_value</a></h6>
+        <div class="docblock">
+          <p>Writes a new value into the setting if it is different from the current&nbsp;value.</p>
+        </div>
+        <div class="docblock">
+          <p><span class="emblem available">since: 1.9.4</span></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
 
     
 
@@ -793,6 +839,8 @@ void
       
 
       
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
 
     </ul>
   </nav>

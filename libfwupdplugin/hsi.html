@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -389,6 +389,23 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 </ul>
 <p><strong>Hardware&nbsp;requirements:</strong></p>
 <p>This attribute will only be available when using Intel&nbsp;CPUs.</p>
+<p><a id="org.fwupd.hsi.IntelGds"></a></p>
+<h3 id="intel-gds-mitigation"><a href="#org.fwupd.hsi.IntelGds">Intel GDS Mitigation</a><a class="md-anchor" href="#intel-gds-mitigation" title="Permanent link"></a></h3>
+<p><span class="caps">CPU</span> Microcode must be updated to mitigate against an information-disclosure security issue called Gather Data&nbsp;Sampling.</p>
+<p><strong>Impact:</strong></p>
+<p>Firmware without this feature enabled allow an attacker to exfiltrate secrets by running a malicious program or&nbsp;script.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-valid</code>: microcode is not new enough to support required mitigations&nbsp;(failure)</li>
+<li><code>not-enabled</code>: mitigation is not enabled&nbsp;(failure)</li>
+<li><code>not-locked</code>: mitigation is not locked&nbsp;(failure)</li>
+<li><code>enabled</code>: microcode mitigation is supported, enabled and locked&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v1.9.4]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/gather-data-sampling.html">Gather Data&nbsp;Sampling</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.IntelSmap"></a></p>
 <h3 id="intel-smap"><a href="#org.fwupd.hsi.IntelSmap">Intel SMAP</a><a class="md-anchor" href="#intel-smap" title="Permanent link"></a></h3>
 <p>Without Supervisor Mode Access Prevention, the supervisor code usually has full read and write access to user-space memory&nbsp;mappings.</p>
@@ -948,6 +965,8 @@ As those become ratified standards that are available in hardware, there are opp
             <li class="toc-list-item"><a href="#intel-cet-active"><span class="link-text">Intel CET: Active</span></a></li>
           
             <li class="toc-list-item"><a href="#intel-cet-available"><span class="link-text">Intel CET: Available</span></a></li>
+          
+            <li class="toc-list-item"><a href="#intel-gds-mitigation"><span class="link-text">Intel GDS Mitigation</span></a></li>
           
             <li class="toc-list-item"><a href="#intel-smap"><span class="link-text">Intel SMAP</span></a></li>
           

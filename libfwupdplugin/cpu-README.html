@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -98,6 +98,14 @@ the physical <span class="caps">CPU</span> at fwupd&nbsp;startup.</p>
 <li><code>CPUID\PRO_0&amp;FAM_06&amp;MOD_0E</code></li>
 <li><code>CPUID\PRO_0&amp;FAM_06&amp;MOD_0E&amp;STP_3</code></li>
 </ul>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="cpumitigationsrequired">CpuMitigationsRequired<a class="md-anchor" href="#cpumitigationsrequired" title="Permanent link"></a></h3>
+<p>Mitigations required for this specific <span class="caps">CPU</span>. Valid values&nbsp;are:</p>
+<ul>
+<li><code>gds</code></li>
+</ul>
+<p>Since:&nbsp;1.9.4</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires no extra&nbsp;access.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -118,6 +126,15 @@ the physical <span class="caps">CPU</span> at fwupd&nbsp;startup.</p>
           
         
         <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#cpumitigationsrequired"><span class="link-text">CpuMitigationsRequired</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -182,6 +182,47 @@ blobs with an unspecified binary file&nbsp;format.</p>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.2.0</code>.</p>
+<h2 id="data-flow">Data flow<a class="md-anchor" href="#data-flow" title="Permanent link"></a></h2>
+<div class="codehilite"><pre><span></span><code>  flowchart TD
+      subgraph Dell Dock
+        I2C([I2C Bus])
+        EC
+        EC_SPI[(EC\nStorage)]
+        USB1
+        USB1_SPI[(SPI)]
+        USB2
+        MST_SPI[(SPI)]
+        USB2_SPI[(SPI)]
+        MST
+        TBT(TBT/USB4)
+        TBT_SPI[(SPI)]
+      end
+      subgraph fwupd Process
+        fwupdengine(FuEngine)
+        dell_plugin(DellDock\nPlugin)
+        tbt_plugin(Thunderbolt\nPlugin)
+        usb4_plugin(USB4\nPlugin)
+      end
+      dell_plugin&lt;--hid proxy--&gt;I2C
+      tbt_plugin&lt;--thunderbolt--&gt;TBT
+      usb4_plugin&lt;--hid--&gt;TBT
+      fwupdengine --- dell_plugin
+      fwupdengine --- tbt_plugin
+      USB1&lt;--&gt;I2C
+      USB2&lt;-.-&gt;I2C
+      EC&lt;-.-&gt;I2C
+      TBT&lt;-.-&gt;I2C
+      MST&lt;-.-&gt;I2C
+      EC&lt;-.-&gt;EC_SPI
+      USB1---USB1_SPI
+      USB2---USB2_SPI
+      MST---MST_SPI
+      TBT---TBT_SPI
+      I2C~~~EC
+      I2C~~~MST
+      I2C~~~USB1
+      I2C~~~USB2
+</code></pre></div>
     </div>
   </section>
 </section>
@@ -250,6 +291,9 @@ blobs with an unspecified binary file&nbsp;format.</p>
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#data-flow"><span class="link-text">Data flow</span></a></li>
           
         
       

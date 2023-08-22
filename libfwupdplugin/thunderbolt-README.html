@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -173,6 +173,25 @@ at the end so the format is &#8220;<span class="caps">TBT</span>-vvvvdddd-native
 <p>This plugin requires read/write access to <code>/sys/bus/thunderbolt</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>0.8.0</code>.</p>
+<h2 id="data-flow">Data Flow<a class="md-anchor" href="#data-flow" title="Permanent link"></a></h2>
+<div class="codehilite"><pre><span></span><code>  flowchart LR
+      subgraph Thunderbolt Controller
+        controller(TBT/USB4)
+        TBT_SPI[(SPI)]
+      end
+      subgraph Kernel
+        thunderbolt(Thunderbolt\ndriver)
+      end
+      subgraph fwupd Process
+        fwupdengine(FuEngine)
+        tbt_plugin(Thunderbolt\nPlugin)
+      end
+      fwupdengine--&gt;tbt_plugin
+      tbt_plugin&lt;--sysfs--&gt;thunderbolt
+      thunderbolt&lt;--mailbox--&gt;controller
+      controller---TBT_SPI
+      thunderbolt~~~controller
+</code></pre></div>
     </div>
   </section>
 </section>
@@ -222,6 +241,9 @@ at the end so the format is &#8220;<span class="caps">TBT</span>-vvvvdddd-native
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#data-flow"><span class="link-text">Data Flow</span></a></li>
           
         
       

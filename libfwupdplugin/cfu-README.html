@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.3</p>
+        <p>Library Version: 1.9.4</p>
         
       </div>
       
@@ -130,6 +130,8 @@ transfers required.
 The specification also doesn&#8217;t specify the <span class="caps">HID</span> reports to use, so it all needs to be hardcoded
 per-device unless the exact same defaults are used as in <code>CFU/Tools/ComponentFirmwareUpdateStandAloneToolSample/protocolCfgExample.cfg</code>.</p>
 <p>In fwupd these can be set as quirks in <code>cfu.quirk</code>.</p>
+<p>The included <code>https://github.com/fwupd/fwupd/blob/main/contrib/cfu-inf-to-quirk.py</code> script may be
+useful to convert an existing <code>.inf</code> file to fwupd <code>.quirk</code> format.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>Due to the one-shot way fwupd deploys firmware, the daemon only deals with one “payload” per
 update. The offer and payload currently have to be combined in an archive where they are
@@ -146,19 +148,29 @@ and the bank,&nbsp;e.g.</p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
 <h3 id="cfuversiongetreport">CfuVersionGetReport<a class="md-anchor" href="#cfuversiongetreport" title="Permanent link"></a></h3>
-<p>The <span class="caps">HID</span> report <span class="caps">ID</span> to use when parsing the response of <code>GET_FIRMWARE_VERSION</code>.</p>
+<p>The <span class="caps">HID</span> report usage to use when parsing the response of <code>GET_FIRMWARE_VERSION</code>.</p>
+<p>This usually corresponds to the <code>VersionsFeatureValueCapabilityUsageRangeMinimum</code> value
+set in the <code>.inf</code> file.</p>
 <p>Since:&nbsp;1.9.1</p>
 <h3 id="cfuoffersetreport">CfuOfferSetReport<a class="md-anchor" href="#cfuoffersetreport" title="Permanent link"></a></h3>
-<p>The <span class="caps">HID</span> report <span class="caps">ID</span> to use when sending the request for <code>FIRMWARE_UPDATE_OFFER</code>.</p>
+<p>The <span class="caps">HID</span> report usage to use when sending the request for <code>FIRMWARE_UPDATE_OFFER</code>.</p>
+<p>This usually corresponds to the <code>OfferOutputValueCapabilityUsageRangeMinimum</code> value
+set in the <code>.inf</code> file.</p>
 <p>Since:&nbsp;1.9.1</p>
 <h3 id="cfuoffergetreport">CfuOfferGetReport<a class="md-anchor" href="#cfuoffergetreport" title="Permanent link"></a></h3>
-<p>The <span class="caps">HID</span> report <span class="caps">ID</span> to use when parsing the response of <code>FIRMWARE_UPDATE_OFFER</code>.</p>
+<p>The <span class="caps">HID</span> report usage to use when parsing the response of <code>FIRMWARE_UPDATE_OFFER</code>.</p>
+<p>This usually corresponds to the <code>OfferInputValueCapabilityUsageRangeMinimum</code> value
+set in the <code>.inf</code> file.</p>
 <p>Since:&nbsp;1.9.1</p>
 <h3 id="cfucontentsetreport">CfuContentSetReport<a class="md-anchor" href="#cfucontentsetreport" title="Permanent link"></a></h3>
-<p>The <span class="caps">HID</span> report <span class="caps">ID</span> to use when sending the request for <code>FIRMWARE_UPDATE_CONTENT</code>.</p>
+<p>The <span class="caps">HID</span> report usage to use when sending the request for <code>FIRMWARE_UPDATE_CONTENT</code>.</p>
+<p>This usually corresponds to the <code>PayloadOutputValueCapabilityUsageRangeMinimum</code> value
+set in the <code>.inf</code> file.</p>
 <p>Since:&nbsp;1.9.1</p>
 <h3 id="cfucontentgetreport">CfuContentGetReport<a class="md-anchor" href="#cfucontentgetreport" title="Permanent link"></a></h3>
-<p>The <span class="caps">HID</span> report <span class="caps">ID</span> to use when parsing the response of <code>FIRMWARE_UPDATE_CONTENT</code>.</p>
+<p>The <span class="caps">HID</span> report usage to use when parsing the response of <code>FIRMWARE_UPDATE_CONTENT</code>.</p>
+<p>This usually corresponds to the <code>PayloadInputValueCapabilityUsageRangeMinimum</code> value
+set in the <code>.inf</code> file.</p>
 <p>Since:&nbsp;1.9.1</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The device has to support runtime updates and does not have a detach-into-bootloader mode &#8212; but
