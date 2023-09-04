@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.4</p>
+        <p>Library Version: 1.9.5</p>
         
       </div>
       
@@ -205,6 +205,23 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p><code>DistroId=$ID,DistroVersion=$VERSION_ID</code></p>
 </li>
 </ul>
+<p><strong>P2pPolicy={{FU_DAEMON_CONFIG_DEFAULT_P2P_POLICY}}</strong></p>
+<p>This tells the daemon what peer-to-peer policy to use. For instance, using Passim, an optional
+  local caching service. Using peer-to-peer data might reduce the amount of bandwidth used on your
+  network&nbsp;considerably.</p>
+<p>There are three possible&nbsp;values:</p>
+<ul>
+<li>
+<p><code>none</code>: Do not publish any&nbsp;files</p>
+</li>
+<li>
+<p><code>metadata</code>: Only publish shared metadata that is common to each&nbsp;machine.</p>
+</li>
+<li>
+<p><code>firmware</code>: Only publish firmware archives <strong>after the next reboot</strong> of the&nbsp;machine.</p>
+</li>
+</ul>
+<p>At some point in the future fwupd will change the default to <code>metadata,firmware</code>.</p>
 <p>{% if plugin_uefi_capsule %}
 UEFI_CAPSULE <span class="caps">PARAMETERS</span></p>
 <hr />

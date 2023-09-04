@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.4</p>
+        <p>Library Version: 1.9.5</p>
         
       </div>
       
@@ -109,14 +109,20 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values for the <span class="caps">USB</span> Hub,&nbsp;e.g.</p>
 <ul>
-<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_05E3&amp;PID_0610</code></li>
+<li>GenesysLogic <span class="caps">USB2</span>.1 Hub: <code>USB\VID_05E3&amp;PID_0610</code></li>
 <li>GenesysLogic <span class="caps">USB2</span>.1 Hub: <code>USB\VID_05E3&amp;PID_0630</code></li>
 <li><span class="caps">HP</span> <span class="caps">USB</span>-C Controller: <code>USB\VID_03F0&amp;PID_0610</code></li>
 </ul>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values for the <span class="caps">HID</span> under <span class="caps">USB</span> Hub,&nbsp;e.g.</p>
+<ul>
+<li>GenesysLogic <span class="caps">USB</span> <span class="caps">HID</span> device: <code>USB\VID_05E3&amp;PID_0102</code></li>
+<li>GenesysLogic <span class="caps">USB</span> <span class="caps">HID</span> device: <code>USB\VID_05E3&amp;PID_0155</code></li>
+</ul>
 <p>Additionally, some customized instance IDs are added.&nbsp;e.g.</p>
 <ul>
-<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;IC_352330&amp;BONDING_0F</code></li>
-<li>GenesysLogic <span class="caps">USB2</span>.0 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;VENDOR_GENESYSLOGIC&amp;IC_352330&amp;BONDING_0F&amp;PORTNUM_23&amp;VENDORSUP_C09B5DD3-1A23-51D2-995A-F7366AAB3CA4</code></li>
+<li>GenesysLogic <span class="caps">USB2</span>.1 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;IC_352330&amp;BONDING_0F</code></li>
+<li>GenesysLogic <span class="caps">USB2</span>.1 Hub: <code>USB\VID_03F0&amp;PID_0610&amp;VENDOR_GENESYSLOGIC&amp;IC_352330&amp;BONDING_0F&amp;PORTNUM_23&amp;VENDORSUP_C09B5DD3-1A23-51D2-995A-F7366AAB3CA4</code></li>
+<li>GenesysLogic <span class="caps">USB2</span>.1 Hub: <code>USB\VID_05E3&amp;PID_0630&amp;PROJECT_1885D34D-0418-5EF8-8E69-4CEF77B6B6E8</code></li>
 <li><span class="caps">HP</span> M24fd <span class="caps">USB</span>-C Hub: <code>USB\VID_03F0&amp;PID_0610&amp;PUBKEY_AB859399-95B8-5817-B521-9AD8CC7F5BD6</code></li>
 <li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Hub: <code>USB\VID_03F0&amp;PID_0610&amp;PUBKEY_6BE97D77-C2BA-5AA2-B7DF-B9B318BEC2B5</code></li>
 </ul>
