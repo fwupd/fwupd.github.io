@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Plugin: Dell ESRT</title>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: UEFI ESRT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Plugin: Dell ESRT"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell ESRT"/>
-  <meta name="twitter:title" content="FwupdPlugin: Plugin: Dell ESRT"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Dell ESRT"/>
+  <meta property="og:title" content="FwupdPlugin: Plugin: UEFI ESRT"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: UEFI ESRT"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: UEFI ESRT"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: UEFI ESRT"/>
 
 
   
@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -90,41 +90,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>This allows enabling the <span class="caps">BIOS</span> setup option for <span class="caps">UEFI</span> capsule updates without
 manually going into <span class="caps">BIOS</span>&nbsp;setup.</p>
-<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These device uses a hardcoded <span class="caps">GUID</span> of <code>2d47f29b-83a2-4f31-a2e8-63474f4d4c2e</code>.</p>
-<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
-<p>The vendor <span class="caps">ID</span> is hardcoded to <code>PCI:0x1028</code>.</p>
-<h2 id="build-requirements">Build Requirements<a class="md-anchor" href="#build-requirements" title="Permanent link"></a></h2>
-<p>For Dell support you will need libsmbios_c version 2.4.0 or&nbsp;later.</p>
-<ul>
-<li><a href="https://github.com/dell/libsmbios">source</a></li>
-<li><a href="https://github.com/dell/libsmbios/releases">binaries</a></li>
-</ul>
-<p>If you don&#8217;t want or need this functionality you can use the
-<code>-Dplugin_dell=disabled</code> option.</p>
-<h2 id="devices-powered-by-the-dell-plugin">Devices powered by the Dell Plugin<a class="md-anchor" href="#devices-powered-by-the-dell-plugin" title="Permanent link"></a></h2>
-<p>The Dell <span class="caps">ESRT</span> plugin allows the user to enable the UpdateCapsule functionality
-at runtime. A reboot will be required and the <span class="caps">BIOS</span> administrator password
-must not be&nbsp;set.</p>
-<p>Machines that offer this functionality will display an extra device in
-<code>fwupdmgr get-devices</code> output.</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span><code>UEFI dummy device
-  Guid:                 2d47f29b-83a2-4f31-a2e8-63474f4d4c2e
-  Plugin:               dell-esrt
-  Flags:                internal|updatable|locked
-  Version:              0
-  Created:              2018-06-25
-</code></pre></div>
-
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin&nbsp;requires:</p>
 <ul>
-<li>read/write access to <code>/dev/wmi/dell-smbios</code> and <code>/sys/bus/platform/devices/dcdbas</code>.</li>
-<li>read access to <code>/sys/firmware/efi/esrt</code>.</li>
+<li>read/write access to <code>/sys/class/firmware-attributes</code></li>
 </ul>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
-<p>This plugin has been available since fwupd version <code>1.1.0</code>.</p>
+<p>This plugin has been available since fwupd version <code>1.9.6</code>.</p>
     </div>
   </section>
 </section>
@@ -138,18 +110,6 @@ must not be&nbsp;set.</p>
       
         
         <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#build-requirements"><span class="link-text">Build Requirements</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#devices-powered-by-the-dell-plugin"><span class="link-text">Devices powered by the Dell Plugin</span></a></li>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

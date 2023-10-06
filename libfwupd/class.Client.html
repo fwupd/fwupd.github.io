@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -143,6 +143,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Client.emulation_save_finish.html">emulation_save_finish</a>
   
     <a class="method" href="method.Client.ensure_networking.html">ensure_networking</a>
+  
+    <a class="method" href="method.Client.fix_host_security_attr.html">fix_host_security_attr</a>
+  
+    <a class="method" href="method.Client.fix_host_security_attr_async.html">fix_host_security_attr_async</a>
+  
+    <a class="method" href="method.Client.fix_host_security_attr_finish.html">fix_host_security_attr_finish</a>
   
     <a class="method" href="method.Client.get_approved_firmware.html">get_approved_firmware</a>
   
@@ -384,6 +390,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Client.set_user_agent_for_package.html">set_user_agent_for_package</a>
   
+    <a class="method" href="method.Client.undo_host_security_attr.html">undo_host_security_attr</a>
+  
+    <a class="method" href="method.Client.undo_host_security_attr_async.html">undo_host_security_attr_async</a>
+  
+    <a class="method" href="method.Client.undo_host_security_attr_finish.html">undo_host_security_attr_finish</a>
+  
     <a class="method" href="method.Client.uninhibit.html">uninhibit</a>
   
     <a class="method" href="method.Client.uninhibit_async.html">uninhibit_async</a>
@@ -533,7 +545,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupd/fwupd-client.c#L42">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupd/fwupd-client.c#L42">[src]</a>
           
         </h4>
 
@@ -848,6 +860,36 @@ the session is being used outside the <code>FwupdClient</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.5</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.fix_host_security_attr.html">fwupd_client_fix_host_security_attr</a></h6>
+          <div class="docblock">
+            <p>Fix one specific security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.fix_host_security_attr_async.html">fwupd_client_fix_host_security_attr_async</a></h6>
+          <div class="docblock">
+            <p>Fix one specific security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.fix_host_security_attr_finish.html">fwupd_client_fix_host_security_attr_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_fix_host_security_attr_async()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       
@@ -2066,6 +2108,36 @@ should contain the runtime version of fwupd somewhere in the provided&nbsp;strin
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.5</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.undo_host_security_attr.html">fwupd_client_undo_host_security_attr</a></h6>
+          <div class="docblock">
+            <p>Revert the fix to one specific security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.undo_host_security_attr_async.html">fwupd_client_undo_host_security_attr_async</a></h6>
+          <div class="docblock">
+            <p>Reverts the fix to one specific security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Client.undo_host_security_attr_finish.html">fwupd_client_undo_host_security_attr_finish</a></h6>
+          <div class="docblock">
+            <p>Gets the result of <code>fwupd_client_undo_host_security_attr_async()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       

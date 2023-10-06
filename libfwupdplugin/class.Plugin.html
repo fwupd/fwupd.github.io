@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -199,15 +199,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.runner_device_removed.html">runner_device_removed</a>
   
+    <a class="method" href="method.Plugin.runner_fix_host_security_attr.html">runner_fix_host_security_attr</a>
+  
     <a class="method" href="method.Plugin.runner_get_results.html">runner_get_results</a>
   
     <a class="method" href="method.Plugin.runner_init.html">runner_init</a>
   
     <a class="method" href="method.Plugin.runner_prepare.html">runner_prepare</a>
   
+    <a class="method" href="method.Plugin.runner_ready.html">runner_ready</a>
+  
     <a class="method" href="method.Plugin.runner_reload.html">runner_reload</a>
   
     <a class="method" href="method.Plugin.runner_startup.html">runner_startup</a>
+  
+    <a class="method" href="method.Plugin.runner_undo_host_security_attr.html">runner_undo_host_security_attr</a>
   
     <a class="method" href="method.Plugin.runner_unlock.html">runner_unlock</a>
   
@@ -314,13 +320,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="vfunc.Plugin.device_registered.html">device_registered</a>
   
+    <a class="method" href="vfunc.Plugin.fix_host_security_attr.html">fix_host_security_attr</a>
+  
     <a class="method" href="vfunc.Plugin.get_results.html">get_results</a>
   
     <a class="method" href="vfunc.Plugin.prepare.html">prepare</a>
   
+    <a class="method" href="vfunc.Plugin.ready.html">ready</a>
+  
     <a class="method" href="vfunc.Plugin.startup.html">startup</a>
   
     <a class="method" href="vfunc.Plugin.to_string.html">to_string</a>
+  
+    <a class="method" href="vfunc.Plugin.undo_host_security_attr.html">undo_host_security_attr</a>
   
     <a class="method" href="vfunc.Plugin.unlock.html">unlock</a>
   
@@ -358,7 +370,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupdplugin/fu-plugin.c#L28">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-plugin.c#L28">[src]</a>
           
         </h4>
 
@@ -924,6 +936,16 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.runner_fix_host_security_attr.html">fu_plugin_runner_fix_host_security_attr</a></h6>
+          <div class="docblock">
+            <p>Fix the specific security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.runner_get_results.html">fu_plugin_runner_get_results</a></h6>
           <div class="docblock">
             <p>Call into the plugin&#8217;s get results&nbsp;routine.</p>
@@ -954,6 +976,16 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Plugin.runner_ready.html">fu_plugin_runner_ready</a></h6>
+          <div class="docblock">
+            <p>Runs the ready routine for the&nbsp;plugin.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.runner_reload.html">fu_plugin_runner_reload</a></h6>
           <div class="docblock">
             <p>Runs reload routine for a&nbsp;device.</p>
@@ -970,6 +1002,16 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.8.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_undo_host_security_attr.html">fu_plugin_runner_undo_host_security_attr</a></h6>
+          <div class="docblock">
+            <p>Fix the security issue of given security&nbsp;attribute.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       
@@ -1362,6 +1404,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     FuProgress* progress,
     GError** error
   );
+  gboolean (* ready) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  );
   gboolean (* coldplug) (
     FuPlugin* self,
     FuProgress* progress,
@@ -1480,6 +1527,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     guint idt,
     GString* str
   );
+  gboolean (* fix_host_security_attr) (
+    FuPlugin* self,
+    FwupdSecurityAttr* attr,
+    GError** error
+  );
+  gboolean (* undo_host_security_attr) (
+    FuPlugin* self,
+    FwupdSecurityAttr* attr,
+    GError** error
+  );
   
 }</code></pre>
       </div>
@@ -1549,6 +1606,13 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <dd>No description available.</dd>
         
           <dt><code>startup: gboolean (* startup) (
+    FuPlugin* self,
+    FuProgress* progress,
+    GError** error
+  )</code></dt>
+          <dd>No description available.</dd>
+        
+          <dt><code>ready: gboolean (* ready) (
     FuPlugin* self,
     FuProgress* progress,
     GError** error
@@ -1714,6 +1778,20 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     FuPlugin* self,
     guint idt,
     GString* str
+  )</code></dt>
+          <dd>No description available.</dd>
+        
+          <dt><code>fix_host_security_attr: gboolean (* fix_host_security_attr) (
+    FuPlugin* self,
+    FwupdSecurityAttr* attr,
+    GError** error
+  )</code></dt>
+          <dd>No description available.</dd>
+        
+          <dt><code>undo_host_security_attr: gboolean (* undo_host_security_attr) (
+    FuPlugin* self,
+    FwupdSecurityAttr* attr,
+    GError** error
   )</code></dt>
           <dd>No description available.</dd>
         
@@ -1953,6 +2031,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
+        <h6 id="vfunc-fix_host_security_attr"><a href="vfunc.Plugin.fix_host_security_attr.html">FwupdPlugin.PluginClass.fix_host_security_attr</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
         <h6 id="vfunc-get_results"><a href="vfunc.Plugin.get_results.html">FwupdPlugin.PluginClass.get_results</a></h6>
         <div class="docblock">
           No description available.
@@ -1973,6 +2061,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
+        <h6 id="vfunc-ready"><a href="vfunc.Plugin.ready.html">FwupdPlugin.PluginClass.ready</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
         <h6 id="vfunc-startup"><a href="vfunc.Plugin.startup.html">FwupdPlugin.PluginClass.startup</a></h6>
         <div class="docblock">
           No description available.
@@ -1984,6 +2082,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
       <div class="">
         <h6 id="vfunc-to_string"><a href="vfunc.Plugin.to_string.html">FwupdPlugin.PluginClass.to_string</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-undo_host_security_attr"><a href="vfunc.Plugin.undo_host_security_attr.html">FwupdPlugin.PluginClass.undo_host_security_attr</a></h6>
         <div class="docblock">
           No description available.
         </div>

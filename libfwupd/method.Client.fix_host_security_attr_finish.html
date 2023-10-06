@@ -1,0 +1,577 @@
+<!--
+SPDX-FileCopyrightText: fwupd Development Team
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fwupd.Client.fix_host_security_attr_finish</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="Fwupd-2.0"/>
+  
+
+  
+  <meta priority="og:title" content="Fwupd.Client.fix_host_security_attr_finish"/>
+  <meta priority="og:description" content="Reference for Fwupd.Client.fix_host_security_attr_finish"/>
+  <meta name="twitter:title" content="Fwupd.Client.fix_host_security_attr_finish"/>
+  <meta name="twitter:description" content="Reference for Fwupd.Client.fix_host_security_attr_finish"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupd.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Fwupd</a></h3>
+        <p>API Version: 2.0</p>
+        
+        <p>Library Version: 1.9.6</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Client.html">Client</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Client.activate.html">activate</a>
+  
+    <a class="method" href="method.Client.activate_async.html">activate_async</a>
+  
+    <a class="method" href="method.Client.activate_finish.html">activate_finish</a>
+  
+    <a class="method" href="method.Client.add_hint.html">add_hint</a>
+  
+    <a class="method" href="method.Client.clear_results.html">clear_results</a>
+  
+    <a class="method" href="method.Client.clear_results_async.html">clear_results_async</a>
+  
+    <a class="method" href="method.Client.clear_results_finish.html">clear_results_finish</a>
+  
+    <a class="method" href="method.Client.connect.html">connect</a>
+  
+    <a class="method" href="method.Client.connect_async.html">connect_async</a>
+  
+    <a class="method" href="method.Client.connect_finish.html">connect_finish</a>
+  
+    <a class="method" href="method.Client.disconnect.html">disconnect</a>
+  
+    <a class="method" href="method.Client.download_bytes.html">download_bytes</a>
+  
+    <a class="method" href="method.Client.download_bytes_async.html">download_bytes_async</a>
+  
+    <a class="method" href="method.Client.download_bytes_finish.html">download_bytes_finish</a>
+  
+    <a class="method" href="method.Client.download_file.html">download_file</a>
+  
+    <a class="method" href="method.Client.emulation_load.html">emulation_load</a>
+  
+    <a class="method" href="method.Client.emulation_load_async.html">emulation_load_async</a>
+  
+    <a class="method" href="method.Client.emulation_load_finish.html">emulation_load_finish</a>
+  
+    <a class="method" href="method.Client.emulation_save.html">emulation_save</a>
+  
+    <a class="method" href="method.Client.emulation_save_async.html">emulation_save_async</a>
+  
+    <a class="method" href="method.Client.emulation_save_finish.html">emulation_save_finish</a>
+  
+    <a class="method" href="method.Client.ensure_networking.html">ensure_networking</a>
+  
+    <a class="method" href="method.Client.fix_host_security_attr.html">fix_host_security_attr</a>
+  
+    <a class="method" href="method.Client.fix_host_security_attr_async.html">fix_host_security_attr_async</a>
+  
+    <a class="method current" href="method.Client.fix_host_security_attr_finish.html">fix_host_security_attr_finish</a>
+  
+    <a class="method" href="method.Client.get_approved_firmware.html">get_approved_firmware</a>
+  
+    <a class="method" href="method.Client.get_approved_firmware_async.html">get_approved_firmware_async</a>
+  
+    <a class="method" href="method.Client.get_approved_firmware_finish.html">get_approved_firmware_finish</a>
+  
+    <a class="method" href="method.Client.get_battery_level.html">get_battery_level</a>
+  
+    <a class="method" href="method.Client.get_battery_threshold.html">get_battery_threshold</a>
+  
+    <a class="method" href="method.Client.get_bios_settings.html">get_bios_settings</a>
+  
+    <a class="method" href="method.Client.get_bios_settings_async.html">get_bios_settings_async</a>
+  
+    <a class="method" href="method.Client.get_bios_settings_finish.html">get_bios_settings_finish</a>
+  
+    <a class="method" href="method.Client.get_blocked_firmware.html">get_blocked_firmware</a>
+  
+    <a class="method" href="method.Client.get_blocked_firmware_async.html">get_blocked_firmware_async</a>
+  
+    <a class="method" href="method.Client.get_blocked_firmware_finish.html">get_blocked_firmware_finish</a>
+  
+    <a class="method" href="method.Client.get_daemon_interactive.html">get_daemon_interactive</a>
+  
+    <a class="method" href="method.Client.get_daemon_version.html">get_daemon_version</a>
+  
+    <a class="method" href="method.Client.get_details.html">get_details</a>
+  
+    <a class="method" href="method.Client.get_details_bytes.html">get_details_bytes</a>
+  
+    <a class="method" href="method.Client.get_details_bytes_async.html">get_details_bytes_async</a>
+  
+    <a class="method" href="method.Client.get_details_bytes_finish.html">get_details_bytes_finish</a>
+  
+    <a class="method" href="method.Client.get_device_by_id.html">get_device_by_id</a>
+  
+    <a class="method" href="method.Client.get_device_by_id_async.html">get_device_by_id_async</a>
+  
+    <a class="method" href="method.Client.get_device_by_id_finish.html">get_device_by_id_finish</a>
+  
+    <a class="method" href="method.Client.get_devices.html">get_devices</a>
+  
+    <a class="method" href="method.Client.get_devices_async.html">get_devices_async</a>
+  
+    <a class="method" href="method.Client.get_devices_by_guid.html">get_devices_by_guid</a>
+  
+    <a class="method" href="method.Client.get_devices_by_guid_async.html">get_devices_by_guid_async</a>
+  
+    <a class="method" href="method.Client.get_devices_by_guid_finish.html">get_devices_by_guid_finish</a>
+  
+    <a class="method" href="method.Client.get_devices_finish.html">get_devices_finish</a>
+  
+    <a class="method" href="method.Client.get_downgrades.html">get_downgrades</a>
+  
+    <a class="method" href="method.Client.get_downgrades_async.html">get_downgrades_async</a>
+  
+    <a class="method" href="method.Client.get_downgrades_finish.html">get_downgrades_finish</a>
+  
+    <a class="method" href="method.Client.get_history.html">get_history</a>
+  
+    <a class="method" href="method.Client.get_history_async.html">get_history_async</a>
+  
+    <a class="method" href="method.Client.get_history_finish.html">get_history_finish</a>
+  
+    <a class="method" href="method.Client.get_host_bkc.html">get_host_bkc</a>
+  
+    <a class="method" href="method.Client.get_host_machine_id.html">get_host_machine_id</a>
+  
+    <a class="method" href="method.Client.get_host_product.html">get_host_product</a>
+  
+    <a class="method" href="method.Client.get_host_security_attrs.html">get_host_security_attrs</a>
+  
+    <a class="method" href="method.Client.get_host_security_attrs_async.html">get_host_security_attrs_async</a>
+  
+    <a class="method" href="method.Client.get_host_security_attrs_finish.html">get_host_security_attrs_finish</a>
+  
+    <a class="method" href="method.Client.get_host_security_events.html">get_host_security_events</a>
+  
+    <a class="method" href="method.Client.get_host_security_events_async.html">get_host_security_events_async</a>
+  
+    <a class="method" href="method.Client.get_host_security_events_finish.html">get_host_security_events_finish</a>
+  
+    <a class="method" href="method.Client.get_host_security_id.html">get_host_security_id</a>
+  
+    <a class="method" href="method.Client.get_host_vendor.html">get_host_vendor</a>
+  
+    <a class="method" href="method.Client.get_main_context.html">get_main_context</a>
+  
+    <a class="method" href="method.Client.get_only_trusted.html">get_only_trusted</a>
+  
+    <a class="method" href="method.Client.get_percentage.html">get_percentage</a>
+  
+    <a class="method" href="method.Client.get_plugins.html">get_plugins</a>
+  
+    <a class="method" href="method.Client.get_plugins_async.html">get_plugins_async</a>
+  
+    <a class="method" href="method.Client.get_plugins_finish.html">get_plugins_finish</a>
+  
+    <a class="method" href="method.Client.get_releases.html">get_releases</a>
+  
+    <a class="method" href="method.Client.get_releases_async.html">get_releases_async</a>
+  
+    <a class="method" href="method.Client.get_releases_finish.html">get_releases_finish</a>
+  
+    <a class="method" href="method.Client.get_remote_by_id.html">get_remote_by_id</a>
+  
+    <a class="method" href="method.Client.get_remote_by_id_async.html">get_remote_by_id_async</a>
+  
+    <a class="method" href="method.Client.get_remote_by_id_finish.html">get_remote_by_id_finish</a>
+  
+    <a class="method" href="method.Client.get_remotes.html">get_remotes</a>
+  
+    <a class="method" href="method.Client.get_remotes_async.html">get_remotes_async</a>
+  
+    <a class="method" href="method.Client.get_remotes_finish.html">get_remotes_finish</a>
+  
+    <a class="method" href="method.Client.get_report_metadata.html">get_report_metadata</a>
+  
+    <a class="method" href="method.Client.get_report_metadata_async.html">get_report_metadata_async</a>
+  
+    <a class="method" href="method.Client.get_report_metadata_finish.html">get_report_metadata_finish</a>
+  
+    <a class="method" href="method.Client.get_results.html">get_results</a>
+  
+    <a class="method" href="method.Client.get_results_async.html">get_results_async</a>
+  
+    <a class="method" href="method.Client.get_results_finish.html">get_results_finish</a>
+  
+    <a class="method" href="method.Client.get_status.html">get_status</a>
+  
+    <a class="method" href="method.Client.get_tainted.html">get_tainted</a>
+  
+    <a class="method" href="method.Client.get_upgrades.html">get_upgrades</a>
+  
+    <a class="method" href="method.Client.get_upgrades_async.html">get_upgrades_async</a>
+  
+    <a class="method" href="method.Client.get_upgrades_finish.html">get_upgrades_finish</a>
+  
+    <a class="method" href="method.Client.get_user_agent.html">get_user_agent</a>
+  
+    <a class="method" href="method.Client.inhibit.html">inhibit</a>
+  
+    <a class="method" href="method.Client.inhibit_async.html">inhibit_async</a>
+  
+    <a class="method" href="method.Client.inhibit_finish.html">inhibit_finish</a>
+  
+    <a class="method" href="method.Client.install.html">install</a>
+  
+    <a class="method" href="method.Client.install_async.html">install_async</a>
+  
+    <a class="method" href="method.Client.install_bytes.html">install_bytes</a>
+  
+    <a class="method" href="method.Client.install_bytes_async.html">install_bytes_async</a>
+  
+    <a class="method" href="method.Client.install_bytes_finish.html">install_bytes_finish</a>
+  
+    <a class="method" href="method.Client.install_finish.html">install_finish</a>
+  
+    <a class="method" href="method.Client.install_release.html">install_release</a>
+  
+    <a class="method" href="method.Client.install_release2.html">install_release2</a>
+  
+    <a class="method" href="method.Client.install_release2_async.html">install_release2_async</a>
+  
+    <a class="method" href="method.Client.install_release_async.html">install_release_async</a>
+  
+    <a class="method" href="method.Client.install_release_finish.html">install_release_finish</a>
+  
+    <a class="method" href="method.Client.modify_bios_setting.html">modify_bios_setting</a>
+  
+    <a class="method" href="method.Client.modify_bios_setting_async.html">modify_bios_setting_async</a>
+  
+    <a class="method" href="method.Client.modify_bios_setting_finish.html">modify_bios_setting_finish</a>
+  
+    <a class="method" href="method.Client.modify_config.html">modify_config</a>
+  
+    <a class="method" href="method.Client.modify_config_async.html">modify_config_async</a>
+  
+    <a class="method" href="method.Client.modify_config_finish.html">modify_config_finish</a>
+  
+    <a class="method" href="method.Client.modify_device.html">modify_device</a>
+  
+    <a class="method" href="method.Client.modify_device_async.html">modify_device_async</a>
+  
+    <a class="method" href="method.Client.modify_device_finish.html">modify_device_finish</a>
+  
+    <a class="method" href="method.Client.modify_remote.html">modify_remote</a>
+  
+    <a class="method" href="method.Client.modify_remote_async.html">modify_remote_async</a>
+  
+    <a class="method" href="method.Client.modify_remote_finish.html">modify_remote_finish</a>
+  
+    <a class="method" href="method.Client.quit.html">quit</a>
+  
+    <a class="method" href="method.Client.quit_async.html">quit_async</a>
+  
+    <a class="method" href="method.Client.quit_finish.html">quit_finish</a>
+  
+    <a class="method" href="method.Client.refresh_remote.html">refresh_remote</a>
+  
+    <a class="method" href="method.Client.refresh_remote2.html">refresh_remote2</a>
+  
+    <a class="method" href="method.Client.refresh_remote2_async.html">refresh_remote2_async</a>
+  
+    <a class="method" href="method.Client.refresh_remote_async.html">refresh_remote_async</a>
+  
+    <a class="method" href="method.Client.refresh_remote_finish.html">refresh_remote_finish</a>
+  
+    <a class="method" href="method.Client.self_sign.html">self_sign</a>
+  
+    <a class="method" href="method.Client.self_sign_async.html">self_sign_async</a>
+  
+    <a class="method" href="method.Client.self_sign_finish.html">self_sign_finish</a>
+  
+    <a class="method" href="method.Client.set_approved_firmware.html">set_approved_firmware</a>
+  
+    <a class="method" href="method.Client.set_approved_firmware_async.html">set_approved_firmware_async</a>
+  
+    <a class="method" href="method.Client.set_approved_firmware_finish.html">set_approved_firmware_finish</a>
+  
+    <a class="method" href="method.Client.set_blocked_firmware.html">set_blocked_firmware</a>
+  
+    <a class="method" href="method.Client.set_blocked_firmware_async.html">set_blocked_firmware_async</a>
+  
+    <a class="method" href="method.Client.set_blocked_firmware_finish.html">set_blocked_firmware_finish</a>
+  
+    <a class="method" href="method.Client.set_daemon_version.html">set_daemon_version</a>
+  
+    <a class="method" href="method.Client.set_feature_flags.html">set_feature_flags</a>
+  
+    <a class="method" href="method.Client.set_feature_flags_async.html">set_feature_flags_async</a>
+  
+    <a class="method" href="method.Client.set_feature_flags_finish.html">set_feature_flags_finish</a>
+  
+    <a class="method" href="method.Client.set_main_context.html">set_main_context</a>
+  
+    <a class="method" href="method.Client.set_user_agent.html">set_user_agent</a>
+  
+    <a class="method" href="method.Client.set_user_agent_for_package.html">set_user_agent_for_package</a>
+  
+    <a class="method" href="method.Client.undo_host_security_attr.html">undo_host_security_attr</a>
+  
+    <a class="method" href="method.Client.undo_host_security_attr_async.html">undo_host_security_attr_async</a>
+  
+    <a class="method" href="method.Client.undo_host_security_attr_finish.html">undo_host_security_attr_finish</a>
+  
+    <a class="method" href="method.Client.uninhibit.html">uninhibit</a>
+  
+    <a class="method" href="method.Client.uninhibit_async.html">uninhibit_async</a>
+  
+    <a class="method" href="method.Client.uninhibit_finish.html">uninhibit_finish</a>
+  
+    <a class="method" href="method.Client.unlock.html">unlock</a>
+  
+    <a class="method" href="method.Client.unlock_async.html">unlock_async</a>
+  
+    <a class="method" href="method.Client.unlock_finish.html">unlock_finish</a>
+  
+    <a class="method" href="method.Client.update_metadata.html">update_metadata</a>
+  
+    <a class="method" href="method.Client.update_metadata_bytes.html">update_metadata_bytes</a>
+  
+    <a class="method" href="method.Client.update_metadata_bytes_async.html">update_metadata_bytes_async</a>
+  
+    <a class="method" href="method.Client.update_metadata_bytes_finish.html">update_metadata_bytes_finish</a>
+  
+    <a class="method" href="method.Client.upload_bytes.html">upload_bytes</a>
+  
+    <a class="method" href="method.Client.upload_bytes_async.html">upload_bytes_async</a>
+  
+    <a class="method" href="method.Client.upload_bytes_finish.html">upload_bytes_finish</a>
+  
+    <a class="method" href="method.Client.verify.html">verify</a>
+  
+    <a class="method" href="method.Client.verify_async.html">verify_async</a>
+  
+    <a class="method" href="method.Client.verify_finish.html">verify_finish</a>
+  
+    <a class="method" href="method.Client.verify_update.html">verify_update</a>
+  
+    <a class="method" href="method.Client.verify_update_async.html">verify_update_async</a>
+  
+    <a class="method" href="method.Client.verify_update_finish.html">verify_update_finish</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2023.1</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Fwupd</a><span class="sep"></span><a href="class.Client.html">Client</a><span class="sep"></span>fix_host_security_attr_finish</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p><span class="emblem available">since: 1.9.6</span></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupd/fwupd-client.h#L450">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
+<span class="n">fwupd_client_fix_host_security_attr_finish</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">FwupdClient</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GAsyncResult</span><span class="o">*</span><span class="w"> </span><span class="n">res</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupd/fwupd-client.c#L6021">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Gets the result of <a href="method.Client.fix_host_security_attr_async.html"><code>fwupd_client_fix_host_security_attr_async()</code></a>.</p>
+      </div>
+
+      <div class="docblock">
+        
+        <p>Available since: 1.9.6</p>
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <dl class="arguments">
+          
+          <dt class="arg-name"><code>res</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="iface.AsyncResult.html" data-namespace="Gio" class="external"><code>GAsyncResult</code></a></p>
+            <p><p>The asynchronous&nbsp;result.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+            
+            </table>
+          </dd>
+          
+
+          
+          <dt class="arg-name"><code>error</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-namespace="GLib" data-link="struct.Error.html" class="external"><code>GError **</code></a></p>
+            <p>The return location for <a href="https://docs.gtk.org/glib/error-reporting.html#rules-for-use-of-gerror">a recoverable error</a>.</p>
+            <table>
+              <tr><td>The argument can be <code>NULL</code>.</td></tr>
+              <tr><td>If the return location is not <code>NULL</code>, then you must initialize it to a <code>NULL</code> <code>GError*</code>.</td></tr>
+              <tr><td>The argument will left initialized to <code>NULL</code> by the method if there are no errors.</td></tr>
+              <tr><td>In case of error, the argument will be set to a newly allocated <code>GError</code>; the caller will take ownership of the data, and be responsible for freeing it.</td></tr>
+            </table>
+          </dd>
+          
+        </dl>
+      </div>
+    </div>
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
+            <p><p><code>TRUE</code> for&nbsp;success.</p></p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

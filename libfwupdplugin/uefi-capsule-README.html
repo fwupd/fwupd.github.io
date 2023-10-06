@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -179,12 +179,6 @@ system device the <code>main-system-firmware</code> <span class="caps">GUID</spa
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">BIOS</span> vendor, for example <code>DMI:LENOVO</code> for all
 devices that are not marked as supporting Firmware Management Protocol. For <span class="caps">FMP</span>
 device no vendor <span class="caps">ID</span> is&nbsp;set.</p>
-<h2 id="uefi-unlock-support">UEFI Unlock Support<a class="md-anchor" href="#uefi-unlock-support" title="Permanent link"></a></h2>
-<p>On some Dell systems it is possible to turn on and off <span class="caps">UEFI</span> capsule
-support from within the <span class="caps">BIOS</span>.  This functionality can also be adjusted
-from within the <span class="caps">OS</span> by fwupd. This requires compiling with libsmbios&nbsp;support.</p>
-<p>When fwupd has been compiled with this support you will be able to enable <span class="caps">UEFI</span>
-support on the device by using the <code>unlock</code> command.</p>
 <h2 id="custom-efi-system-partition-esp">Custom EFI System Partition (ESP)<a class="md-anchor" href="#custom-efi-system-partition-esp" title="Permanent link"></a></h2>
 <p>Since version 1.1.0 fwupd will autodetect the <span class="caps">ESP</span> if it is mounted on
 <code>/boot/efi</code>, <code>/boot</code>, or <code>/efi</code>, and UDisks is available on the system. In
@@ -246,9 +240,6 @@ This alternative format may be needed for some early InsydeH2O&nbsp;firmwares.</
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#uefi-unlock-support"><span class="link-text">UEFI Unlock Support</span></a></li>
           
         
         <li class="toc-list-item"><a href="#custom-efi-system-partition-esp"><span class="link-text">Custom EFI System Partition (ESP)</span></a></li>

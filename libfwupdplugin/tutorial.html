@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -861,7 +861,7 @@ struct ExamplePacket {
 </ul>
 <p>Arrays of types are also allowed, with the format <code>[type; multiple]</code>, for&nbsp;example:</p>
 <ul>
-<li><code>buf: [u8; 12]</code> for a C array of <code>guint8 buf[12] = {0};</code></li>
+<li><code>buf: [u8; 3] = 0x123456</code> for a C array of <code>guint8 buf[3] = {0x12, 0x34, 0x56};</code></li>
 <li><code>val: [u64be; 7]</code>  for a C array of <code>guint64 val[7] = {0};</code></li>
 <li><code>str: [char; 4] = "ABCD"</code> for a C array of <code>gchar buf[4] = {'A','B','C','D'};</code>
   &#8212; <span class="caps">NOTE</span>: <code>fu_struct_example_get_str()</code> would return a <code>NUL</code>-terminated string of <code>ABCD\0</code>.</li>

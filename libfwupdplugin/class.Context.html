@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -127,6 +127,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Context.get_chassis_kind.html">get_chassis_kind</a>
   
     <a class="method" href="method.Context.get_config.html">get_config</a>
+  
+    <a class="method" href="method.Context.get_display_state.html">get_display_state</a>
   
     <a class="method" href="method.Context.get_esp_volumes.html">get_esp_volumes</a>
   
@@ -190,6 +192,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Context.set_compile_versions.html">set_compile_versions</a>
   
+    <a class="method" href="method.Context.set_display_state.html">set_display_state</a>
+  
     <a class="method" href="method.Context.set_lid_state.html">set_lid_state</a>
   
     <a class="method" href="method.Context.set_power_state.html">set_power_state</a>
@@ -208,6 +212,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="property" href="property.Context.battery-level.html">battery-level</a>
   
     <a class="property" href="property.Context.battery-threshold.html">battery-threshold</a>
+  
+    <a class="property" href="property.Context.display-state.html">display-state</a>
   
     <a class="property" href="property.Context.flags.html">flags</a>
   
@@ -269,7 +275,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupdplugin/fu-context.c#L20">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-context.c#L20">[src]</a>
           
         </h4>
 
@@ -490,6 +496,16 @@ using the plugin name, where&nbsp;possible.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.9.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Context.get_display_state.html">fu_context_get_display_state</a></h6>
+          <div class="docblock">
+            <p>Gets the display state, if&nbsp;applicable.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       
@@ -807,6 +823,16 @@ for&nbsp;display.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Context.set_display_state.html">fu_context_set_display_state</a></h6>
+          <div class="docblock">
+            <p>Sets the display state, if&nbsp;applicable.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Context.set_lid_state.html">fu_context_set_lid_state</a></h6>
           <div class="docblock">
             <p>Sets the laptop lid state, if&nbsp;applicable.</p>
@@ -883,6 +909,16 @@ for&nbsp;display.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Context.display-state.html">FwupdPlugin.Context:display-state</a></h6>
+          <div class="docblock">
+            <p>The display&nbsp;state.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       

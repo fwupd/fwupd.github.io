@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -183,6 +183,16 @@ and <em>revokable</em> user-certificates &#8212; and typically lots of legal&nbs
 secure or practical &#8212; or how fwupd and <span class="caps">LVFS</span> were designed to be used. So please do not&nbsp;ask.</p>
 <p>That said, if a vendor included the <code>.jcat</code> in the firmware cabinet archive, the <span class="caps">LVFS</span> will
 <strong>append</strong> its own signature rather than replace it &#8212; which may make testing the archive&nbsp;easier.</p>
+<h2 id="debugging">Debugging<a class="md-anchor" href="#debugging" title="Permanent link"></a></h2>
+<p>Using <code>sudo fwupdtool get-details firmware.cab --verbose --verbose</code> should indicate why the
+certificate isn&#8217;t being trusted,&nbsp;e.g.</p>
+<div class="codehilite"><pre><span></span><code>FuCabinet            processing file: firmware.metainfo.xml
+FuCabinet            processing release: 1.2.3
+FuCabinet            failed to verify payload firmware.bin: checksums were required, but none supplied
+</code></pre></div>
+
+<p>This indicates that the <code>jcat-tool self-sign firmware.jcat firmware.bin --kind sha256</code> step was
+missed as the JCat file does not have any supported&nbsp;checksums.</p>
     </div>
   </section>
 </section>
@@ -194,6 +204,12 @@ secure or practical &#8212; or how fwupd and <span class="caps">LVFS</span> were
     <p id="toc-title">Content</p>
     <ul class="toc-list">
       
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#debugging"><span class="link-text">Debugging</span></a></li>
+          
         
       
     </ul>

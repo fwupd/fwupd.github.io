@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -88,11 +88,52 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <div class="docblock">
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
-<p>This plugin reports the vbios version of <span class="caps">APU</span> devices supported by&nbsp;amdgpu.</p>
+<p>This plugin reports the vbios version of <span class="caps">APU</span> devices supported by amdgpu and supports
+flashing the <span class="caps">IFWI</span> of some dGPU&nbsp;devices.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
-<p>This plugin requires read only access to attributes located within <code>/sys/bus/pci/drivers/*/amdgpu</code>.</p>
+<p>This plugin requires R/W access to sysfs files located within <code>/sys/bus/pci/drivers/*/amdgpu</code>.
+This plugin requires ioctl access to <code>DRM_IOCTL_AMDGPU_INFO</code>.</p>
+<h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
+<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<ul>
+<li><code>com.amd.pspvbflash</code></li>
+</ul>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>The plugin will use standard <span class="caps">PCI</span> GUIDs, but also generate an <span class="caps">AMD</span> <span class="caps">GPU</span> specific <span class="caps">GUID</span>
+with the part number: <code>AMD\$PART_NUMBER</code></p>
+<h2 id="update-behavior">Update behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
+<p>The dGPU will boot into the new firmware when the system is rebooted.
+The dGPU contains two partitions, and the update will be applied to the inactive
+partition. If the active partition becomes corrupted for any reason the dGPU may
+revert back to an older firmware present on the inactive&nbsp;partition.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
-<p>This plugin has been available since fwupd version <code>1.8.11</code>.</p>
+<p>This plugin has been available since fwupd version <code>1.8.11</code>.
+Update functionality has been available since fwupd version <code>1.9.6</code>.</p>
+<h2 id="threat-model">Threat Model<a class="md-anchor" href="#threat-model" title="Permanent link"></a></h2>
+<p>The plugin runs within the privileged fwupd process.  The plugin doesn&#8217;t directly
+interface with the hardware, but rather interfaces with the kernel driver which
+interfaces with the&nbsp;hardware.</p>
+<div class="codehilite"><pre><span></span><code>  flowchart LR
+      subgraph dGPU
+        PSP
+        SPI[(SPI)]
+      end
+      subgraph fwupd Process
+        fwupdengine(FuEngine)
+        plugin(AmdGpu\nPlugin)
+      end
+      subgraph Linux Kernel
+       kernel(amdgpu driver)
+      end
+      PSP &lt;-.-&gt;SPI
+      kernel&lt;--&quot;mailbox&quot;--&gt;PSP
+      plugin--&quot;psp_vbflash\nsysfs&quot;--&gt;kernel
+      plugin&lt;--&quot;psp_vbflash_status\nsysfs&quot;--&gt;kernel
+      plugin&lt;--&quot;DRM_IOCTL_AMDGPU_INFO()&quot;--&gt;kernel
+      fwupdengine -.- plugin
+      PSP ~~~ kernel
+      kernel ~~~ fwupdengine
+</code></pre></div>
     </div>
   </section>
 </section>
@@ -111,7 +152,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
           
         
+        <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update behavior</span></a></li>
+          
+        
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#threat-model"><span class="link-text">Threat Model</span></a></li>
           
         
       

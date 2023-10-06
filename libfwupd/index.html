@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -144,7 +144,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.5</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.6</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -775,6 +775,16 @@ machine-id from the&nbsp;machine-hash.</p>
             <td class="docblock-summary">
             <p>Guesses the checksum kind based on the length of the&nbsp;hash.</p>
             <p><span class="emblem available">since: 0.9.3</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="checksum_type_to_string_display" class="symbol" href="func.checksum_type_to_string_display.html">checksum_type_to_string_display</a></td>
+            
+            <td class="docblock-summary">
+            <p>Formats a checksum type for&nbsp;display.</p>
+            <p><span class="emblem available">since: 1.9.6</span></p>
             </td>
             
           </tr>
@@ -1767,6 +1777,16 @@ or failure can&#8217;t be&nbsp;verified.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_PROBLEM_DISPLAY_REQUIRED" class="symbol" href="const.DEVICE_PROBLEM_DISPLAY_REQUIRED.html">DEVICE_PROBLEM_DISPLAY_REQUIRED</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device cannot be used while there are no displays plugged&nbsp;in.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_PROBLEM_IN_USE" class="symbol" href="const.DEVICE_PROBLEM_IN_USE.html">DEVICE_PROBLEM_IN_USE</a></td>
             
             <td class="docblock-summary">
@@ -2061,6 +2081,16 @@ This typically happens with plugins designed for a specific platform design
             
             <td class="docblock-summary">
             <p>No plugin flags are&nbsp;set.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="PLUGIN_FLAG_READY" class="symbol" href="const.PLUGIN_FLAG_READY.html">PLUGIN_FLAG_READY</a></td>
+            
+            <td class="docblock-summary">
+            <p>The plugin is ready for use and all devices have been&nbsp;coldplugged.</p>
             <p></p>
             </td>
             
@@ -2721,6 +2751,26 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="RESULT_KEY_KERNEL_CURRENT_VALUE" class="symbol" href="const.RESULT_KEY_KERNEL_CURRENT_VALUE.html">RESULT_KEY_KERNEL_CURRENT_VALUE</a></td>
+            
+            <td class="docblock-summary">
+            <p>Result key to represent the current kernel&nbsp;setting.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_KERNEL_TARGET_VALUE" class="symbol" href="const.RESULT_KEY_KERNEL_TARGET_VALUE.html">RESULT_KEY_KERNEL_TARGET_VALUE</a></td>
+            
+            <td class="docblock-summary">
+            <p>Result key to represent the target kernel&nbsp;setting.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_LICENSE" class="symbol" href="const.RESULT_KEY_LICENSE.html">RESULT_KEY_LICENSE</a></td>
             
             <td class="docblock-summary">
@@ -3145,6 +3195,16 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
             
             <td class="docblock-summary">
             <p>Host Security <span class="caps">ID</span> attribute for <span class="caps">SPI</span> Write&nbsp;protection.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_BIOS_CAPSULE_UPDATES" class="symbol" href="const.SECURITY_ATTR_ID_BIOS_CAPSULE_UPDATES.html">SECURITY_ATTR_ID_BIOS_CAPSULE_UPDATES</a></td>
+            
+            <td class="docblock-summary">
+            <p>Host Security <span class="caps">ID</span> attribute indicating Capsule updates are supported by the <span class="caps">BIOS</span>.</p>
             <p></p>
             </td>
             

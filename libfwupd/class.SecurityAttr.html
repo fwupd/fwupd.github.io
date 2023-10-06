@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -151,6 +151,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.SecurityAttr.get_guids.html">get_guids</a>
   
+    <a class="method" href="method.SecurityAttr.get_kernel_current_value.html">get_kernel_current_value</a>
+  
+    <a class="method" href="method.SecurityAttr.get_kernel_target_value.html">get_kernel_target_value</a>
+  
     <a class="method" href="method.SecurityAttr.get_level.html">get_level</a>
   
     <a class="method" href="method.SecurityAttr.get_metadata.html">get_metadata</a>
@@ -192,6 +196,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.SecurityAttr.set_description.html">set_description</a>
   
     <a class="method" href="method.SecurityAttr.set_flags.html">set_flags</a>
+  
+    <a class="method" href="method.SecurityAttr.set_kernel_current_value.html">set_kernel_current_value</a>
+  
+    <a class="method" href="method.SecurityAttr.set_kernel_target_value.html">set_kernel_target_value</a>
   
     <a class="method" href="method.SecurityAttr.set_level.html">set_level</a>
   
@@ -253,7 +261,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupd/fwupd-security-attr.c#L17">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupd/fwupd-security-attr.c#L17">[src]</a>
           
         </h4>
 
@@ -571,6 +579,26 @@ a security&nbsp;requirement.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.SecurityAttr.get_kernel_current_value.html">fwupd_security_attr_get_kernel_current_value</a></h6>
+          <div class="docblock">
+            <p>Gets the current value of the <span class="caps">BIOS</span> setting that can be&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttr.get_kernel_target_value.html">fwupd_security_attr_get_kernel_target_value</a></h6>
+          <div class="docblock">
+            <p>Gets the target value of the kernel setting that can be&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.SecurityAttr.get_level.html">fwupd_security_attr_get_level</a></h6>
           <div class="docblock">
             <p>Gets the <span class="caps">HSI</span>&nbsp;level.</p>
@@ -779,6 +807,26 @@ contribute to the calculated <span class="caps">HSI</span> value or be visible i
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.5.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttr.set_kernel_current_value.html">fwupd_security_attr_set_kernel_current_value</a></h6>
+          <div class="docblock">
+            <p>Sets the current value of the <span class="caps">BIOS</span> setting that can be&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.SecurityAttr.set_kernel_target_value.html">fwupd_security_attr_set_kernel_target_value</a></h6>
+          <div class="docblock">
+            <p>Sets the target value of the kernel setting that can be&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.6</span></p>
           </div>
         </div>
       

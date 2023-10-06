@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -146,7 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.5</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.6</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -303,8 +303,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="dell-dock-README.html">Plugin: Dell USB-C Dock</a></li>
         
-          <li><a href="dell-esrt-README.html">Plugin: Dell ESRT</a></li>
-        
           <li><a href="dfu-README.html">Plugin: DFU</a></li>
         
           <li><a href="dfu-csr-README.html">Plugin: DFU CSR — Cambridge Silicon Radio</a></li>
@@ -357,6 +355,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="lenovo-thinklmi-README.html">Plugin: Lenovo ThinkLMI</a></li>
         
+          <li><a href="linux-display-README.html">Plugin: Linux Display</a></li>
+        
           <li><a href="linux-lockdown-README.html">Plugin: Linux Kernel Lockdown</a></li>
         
           <li><a href="linux-sleep-README.html">Plugin: Linux Kernel Sleep</a></li>
@@ -374,6 +374,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="logitech-scribe-README.html">Plugin: Logitech Scribe</a></li>
         
           <li><a href="logitech-tap-README.html">Plugin: Logitech Tap — Video Collaboration</a></li>
+        
+          <li><a href="mediatek-scaler-README.html">Plugin: Mediatek Display Controller</a></li>
         
           <li><a href="modem-manager-README.html">Plugin: ModemManager</a></li>
         
@@ -440,6 +442,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="tpm-README.html">Plugin: TPM</a></li>
         
           <li><a href="uefi-dbx-README.html">Plugin: UEFI dbx</a></li>
+        
+          <li><a href="uefi-esrt-README.html">Plugin: UEFI ESRT</a></li>
         
           <li><a href="uefi-pk-README.html">Plugin: UEFI PK</a></li>
         
@@ -599,6 +603,16 @@ have to be&nbsp;continuous.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="ChunkArray" class="symbol" href="class.ChunkArray.html">ChunkArray</a></td>
+            
+            <td class="docblock-summary">
+            <p>Create chunked data with address and index as&nbsp;required.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="Config" class="symbol" href="class.Config.html">Config</a></td>
             
             <td class="docblock-summary">
@@ -694,6 +708,16 @@ between the engine, the plugins and the&nbsp;devices.</p>
             
             <td class="docblock-summary">
             <p>A DfuSe firmware&nbsp;image.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="Edid" class="symbol" href="class.Edid.html">Edid</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -1403,6 +1427,16 @@ backport new versions as new hardware is&nbsp;released.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CoswidHashAlg" class="symbol" href="enum.CoswidHashAlg.html">CoswidHashAlg</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="CoswidLinkRel" class="symbol" href="enum.CoswidLinkRel.html">CoswidLinkRel</a></td>
             
             <td class="docblock-summary">
@@ -1437,6 +1471,26 @@ backport new versions as new hardware is&nbsp;released.</p>
             
             <td class="docblock-summary">
             <p>The <span class="caps">CPU</span>&nbsp;vendor.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DisplayState" class="symbol" href="enum.DisplayState.html">DisplayState</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device lid&nbsp;state.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EdidDescriptorTag" class="symbol" href="enum.EdidDescriptorTag.html">EdidDescriptorTag</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -2020,6 +2074,16 @@ bit position to align to. If <code>alignment</code> is zero then <code>array</co
           </tr>
           
           <tr class="section-item">
+            <td><a title="byte_array_from_string" class="symbol" href="func.byte_array_from_string.html">byte_array_from_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts a lowercase hex string to a byte&nbsp;array.</p>
+            <p><span class="emblem available">since: 1.9.6</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="byte_array_set_size" class="symbol" href="func.byte_array_set_size.html">byte_array_set_size</a></td>
             
             <td class="docblock-summary">
@@ -2234,6 +2298,26 @@ return with failure and let the user&nbsp;decide.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="coswid_hash_alg_from_string" class="symbol" href="func.coswid_hash_alg_from_string.html">coswid_hash_alg_from_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_hash_alg_to_string" class="symbol" href="func.coswid_hash_alg_to_string.html">coswid_hash_alg_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="coswid_link_rel_from_string" class="symbol" href="func.coswid_link_rel_from_string.html">coswid_link_rel_from_string</a></td>
             
             <td class="docblock-summary">
@@ -2369,6 +2453,16 @@ return with failure and let the user&nbsp;decide.</p>
             <td class="docblock-summary">
             <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
             <p><span class="emblem available">since: 1.8.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="display_state_to_string" class="symbol" href="func.display_state_to_string.html">display_state_to_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts an enumerated type to a&nbsp;string.</p>
+            <p><span class="emblem available">since: 1.9.6</span></p>
             </td>
             
           </tr>
@@ -2676,6 +2770,26 @@ kernel as some (hopefully small) variables are hidden from&nbsp;userspace.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="kernel_add_cmdline_arg" class="symbol" href="func.kernel_add_cmdline_arg.html">kernel_add_cmdline_arg</a></td>
+            
+            <td class="docblock-summary">
+            <p>Add a kernel command line&nbsp;argument.</p>
+            <p><span class="emblem available">since: 1.9.5</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_check_cmdline_mutable" class="symbol" href="func.kernel_check_cmdline_mutable.html">kernel_check_cmdline_mutable</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="kernel_check_version" class="symbol" href="func.kernel_check_version.html">kernel_check_version</a></td>
             
             <td class="docblock-summary">
@@ -2690,6 +2804,16 @@ kernel as some (hopefully small) variables are hidden from&nbsp;userspace.</p>
             
             <td class="docblock-summary">
             <p>Loads all the kernel /proc/cmdline key/values into a hash&nbsp;table.</p>
+            <p><span class="emblem available">since: 1.8.5</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_get_config" class="symbol" href="func.kernel_get_config.html">kernel_get_config</a></td>
+            
+            <td class="docblock-summary">
+            <p>Loads all the kernel options into a hash table. Commented out options are not&nbsp;included.</p>
             <p><span class="emblem available">since: 1.8.5</span></p>
             </td>
             
@@ -2722,6 +2846,26 @@ returns its&nbsp;contents.</p>
             <td class="docblock-summary">
             <p>Parses all the kernel key/values into a hash table, respecting double quotes when&nbsp;required.</p>
             <p><span class="emblem available">since: 1.9.1</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_parse_config" class="symbol" href="func.kernel_parse_config.html">kernel_parse_config</a></td>
+            
+            <td class="docblock-summary">
+            <p>Parses all the kernel options into a hash table. Commented out options are not&nbsp;included.</p>
+            <p><span class="emblem available">since: 1.9.6</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="kernel_remove_cmdline_arg" class="symbol" href="func.kernel_remove_cmdline_arg.html">kernel_remove_cmdline_arg</a></td>
+            
+            <td class="docblock-summary">
+            <p>Remove a kernel command line&nbsp;argument.</p>
+            <p><span class="emblem available">since: 1.9.5</span></p>
             </td>
             
           </tr>
@@ -4210,6 +4354,306 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_ds20_validate" class="symbol" href="func.struct_ds20_validate.html">struct_ds20_validate</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_get_data" class="symbol" href="func.struct_edid_descriptor_get_data.html">struct_edid_descriptor_get_data</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_get_kind" class="symbol" href="func.struct_edid_descriptor_get_kind.html">struct_edid_descriptor_get_kind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_get_subkind" class="symbol" href="func.struct_edid_descriptor_get_subkind.html">struct_edid_descriptor_get_subkind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_get_tag" class="symbol" href="func.struct_edid_descriptor_get_tag.html">struct_edid_descriptor_get_tag</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_new" class="symbol" href="func.struct_edid_descriptor_new.html">struct_edid_descriptor_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_parse" class="symbol" href="func.struct_edid_descriptor_parse.html">struct_edid_descriptor_parse</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_set_data" class="symbol" href="func.struct_edid_descriptor_set_data.html">struct_edid_descriptor_set_data</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_set_kind" class="symbol" href="func.struct_edid_descriptor_set_kind.html">struct_edid_descriptor_set_kind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_set_subkind" class="symbol" href="func.struct_edid_descriptor_set_subkind.html">struct_edid_descriptor_set_subkind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_descriptor_set_tag" class="symbol" href="func.struct_edid_descriptor_set_tag.html">struct_edid_descriptor_set_tag</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_checksum" class="symbol" href="func.struct_edid_get_checksum.html">struct_edid_get_checksum</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_data_blocks" class="symbol" href="func.struct_edid_get_data_blocks.html">struct_edid_get_data_blocks</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_extension_block_count" class="symbol" href="func.struct_edid_get_extension_block_count.html">struct_edid_get_extension_block_count</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_manufacturer_name" class="symbol" href="func.struct_edid_get_manufacturer_name.html">struct_edid_get_manufacturer_name</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_product_code" class="symbol" href="func.struct_edid_get_product_code.html">struct_edid_get_product_code</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_revision_number" class="symbol" href="func.struct_edid_get_revision_number.html">struct_edid_get_revision_number</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_serial_number" class="symbol" href="func.struct_edid_get_serial_number.html">struct_edid_get_serial_number</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_week_of_manufacture" class="symbol" href="func.struct_edid_get_week_of_manufacture.html">struct_edid_get_week_of_manufacture</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_get_year_of_manufacture" class="symbol" href="func.struct_edid_get_year_of_manufacture.html">struct_edid_get_year_of_manufacture</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_new" class="symbol" href="func.struct_edid_new.html">struct_edid_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_parse" class="symbol" href="func.struct_edid_parse.html">struct_edid_parse</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_checksum" class="symbol" href="func.struct_edid_set_checksum.html">struct_edid_set_checksum</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_data_blocks" class="symbol" href="func.struct_edid_set_data_blocks.html">struct_edid_set_data_blocks</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_extension_block_count" class="symbol" href="func.struct_edid_set_extension_block_count.html">struct_edid_set_extension_block_count</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_manufacturer_name" class="symbol" href="func.struct_edid_set_manufacturer_name.html">struct_edid_set_manufacturer_name</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_product_code" class="symbol" href="func.struct_edid_set_product_code.html">struct_edid_set_product_code</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_revision_number" class="symbol" href="func.struct_edid_set_revision_number.html">struct_edid_set_revision_number</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_serial_number" class="symbol" href="func.struct_edid_set_serial_number.html">struct_edid_set_serial_number</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_week_of_manufacture" class="symbol" href="func.struct_edid_set_week_of_manufacture.html">struct_edid_set_week_of_manufacture</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_edid_set_year_of_manufacture" class="symbol" href="func.struct_edid_set_year_of_manufacture.html">struct_edid_set_year_of_manufacture</a></td>
             
             <td class="docblock-summary">
             
@@ -9885,6 +10329,16 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_DISPLAY_REQUIRED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_DISPLAY_REQUIRED.html">DEVICE_INTERNAL_FLAG_DISPLAY_REQUIRED</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device requires a display to be plugged&nbsp;in.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_FLAG_ENSURE_SEMVER" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ENSURE_SEMVER.html">DEVICE_INTERNAL_FLAG_ENSURE_SEMVER</a></td>
             
             <td class="docblock-summary">
@@ -11695,7 +12149,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_ACQUIESCE_DELAY" class="symbol" href="const.QUIRKS_ACQUIESCE_DELAY.html">QUIRKS_ACQUIESCE_DELAY</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the device removal delay in&nbsp;milliseconds.</p>
+            <p>The quirk key for the device removal delay in milliseconds, e.g. <code>2500</code>.</p>
             <p></p>
             </td>
             
@@ -11705,7 +12159,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_BATTERY_THRESHOLD" class="symbol" href="const.QUIRKS_BATTERY_THRESHOLD.html">QUIRKS_BATTERY_THRESHOLD</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the battery threshold in&nbsp;percent.</p>
+            <p>The quirk key for the battery threshold in percent, e.g. <code>80</code>.</p>
             <p></p>
             </td>
             
@@ -11725,7 +12179,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_BLOCK_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_BLOCK_SIZE.html">QUIRKS_CFI_DEVICE_BLOCK_SIZE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> block&nbsp;size.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> block size, e.g. <code>0x100</code>.</p>
             <p></p>
             </td>
             
@@ -11735,7 +12189,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE.html">QUIRKS_CFI_DEVICE_CMD_BLOCK_ERASE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> block erase&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> block erase command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11745,7 +12199,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE.html">QUIRKS_CFI_DEVICE_CMD_CHIP_ERASE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> chip erase&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> chip erase command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11755,7 +12209,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_PAGE_PROG" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_PAGE_PROG.html">QUIRKS_CFI_DEVICE_CMD_PAGE_PROG</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> page program&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> page program command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11765,7 +12219,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_DATA" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_DATA.html">QUIRKS_CFI_DEVICE_CMD_READ_DATA</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> read data&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> read data command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11775,7 +12229,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_ID" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_ID.html">QUIRKS_CFI_DEVICE_CMD_READ_ID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span>&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span> command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11785,7 +12239,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ.html">QUIRKS_CFI_DEVICE_CMD_READ_ID_SZ</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span>&nbsp;size.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> read <span class="caps">ID</span> size, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11795,7 +12249,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_READ_STATUS" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_READ_STATUS.html">QUIRKS_CFI_DEVICE_CMD_READ_STATUS</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> read status&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> read status command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11805,7 +12259,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE.html">QUIRKS_CFI_DEVICE_CMD_SECTOR_ERASE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> sector erase&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> sector erase command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11815,7 +12269,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_WRITE_EN" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_WRITE_EN.html">QUIRKS_CFI_DEVICE_CMD_WRITE_EN</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> write en&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> write en command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11825,7 +12279,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS" class="symbol" href="const.QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS.html">QUIRKS_CFI_DEVICE_CMD_WRITE_STATUS</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> write status&nbsp;command.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> write status command, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11835,7 +12289,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_PAGE_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_PAGE_SIZE.html">QUIRKS_CFI_DEVICE_PAGE_SIZE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> page&nbsp;size.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> page size, e.g. <code>0xF8</code>.</p>
             <p></p>
             </td>
             
@@ -11845,7 +12299,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CFI_DEVICE_SECTOR_SIZE" class="symbol" href="const.QUIRKS_CFI_DEVICE_SECTOR_SIZE.html">QUIRKS_CFI_DEVICE_SECTOR_SIZE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to set the <span class="caps">CFI</span> sector&nbsp;size.</p>
+            <p>The quirk key to set the <span class="caps">CFI</span> sector size, e.g. <code>0x100</code>.</p>
             <p></p>
             </td>
             
@@ -11855,7 +12309,8 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_CHILDREN" class="symbol" href="const.QUIRKS_CHILDREN.html">QUIRKS_CHILDREN</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the children. This should contain the custom&nbsp;GType.</p>
+            <p>The quirk key for the children. This should contain the custom GType, e.g.
+<code>FuRts54xxDeviceUSB\VID_0763&amp;PID_2806&amp;I2C_01</code>.</p>
             <p></p>
             </td>
             
@@ -11865,7 +12320,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_COUNTERPART_GUID" class="symbol" href="const.QUIRKS_COUNTERPART_GUID.html">QUIRKS_COUNTERPART_GUID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the counterpart <span class="caps">GUID</span>.</p>
+            <p>The quirk key for the counterpart <span class="caps">GUID</span>, e.g. <code>537f7800-8529-5656-b2fa-b0901fe91696</code>.</p>
             <p></p>
             </td>
             
@@ -11875,7 +12330,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_FIRMWARE_GTYPE" class="symbol" href="const.QUIRKS_FIRMWARE_GTYPE.html">QUIRKS_FIRMWARE_GTYPE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the custom firmware&nbsp;GType.</p>
+            <p>The quirk key for the custom firmware GType, e.g. <code>FuUswidFirmware</code>.</p>
             <p></p>
             </td>
             
@@ -11885,7 +12340,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_FIRMWARE_SIZE" class="symbol" href="const.QUIRKS_FIRMWARE_SIZE.html">QUIRKS_FIRMWARE_SIZE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the exact required firmware size in&nbsp;bytes.</p>
+            <p>The quirk key for the exact required firmware size in bytes, e.g. <code>1024</code>.</p>
             <p></p>
             </td>
             
@@ -11895,7 +12350,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_FIRMWARE_SIZE_MAX" class="symbol" href="const.QUIRKS_FIRMWARE_SIZE_MAX.html">QUIRKS_FIRMWARE_SIZE_MAX</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the maximum firmware size in&nbsp;bytes.</p>
+            <p>The quirk key for the maximum firmware size in bytes, e.g. <code>1024</code>.</p>
             <p></p>
             </td>
             
@@ -11905,7 +12360,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_FIRMWARE_SIZE_MIN" class="symbol" href="const.QUIRKS_FIRMWARE_SIZE_MIN.html">QUIRKS_FIRMWARE_SIZE_MIN</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the minimum firmware size in&nbsp;bytes.</p>
+            <p>The quirk key for the minimum firmware size in bytes, e.g. <code>512</code>.</p>
             <p></p>
             </td>
             
@@ -11915,7 +12370,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_FLAGS" class="symbol" href="const.QUIRKS_FLAGS.html">QUIRKS_FLAGS</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the public&nbsp;flags.</p>
+            <p>The quirk key for either for public, internal or private flags, e.g. <code>is-bootloader</code>.</p>
             <p></p>
             </td>
             
@@ -11925,7 +12380,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_GTYPE" class="symbol" href="const.QUIRKS_GTYPE.html">QUIRKS_GTYPE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the custom&nbsp;GType.</p>
+            <p>The quirk key for the custom GType, e.g. <code>FuCcgxHidDevice</code>.</p>
             <p></p>
             </td>
             
@@ -11935,7 +12390,17 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_GUID" class="symbol" href="const.QUIRKS_GUID.html">QUIRKS_GUID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the <span class="caps">GUID</span>.</p>
+            <p>The quirk key for the <span class="caps">GUID</span>, e.g. <code>537f7800-8529-5656-b2fa-b0901fe91696</code>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_GUID_QUIRK" class="symbol" href="const.QUIRKS_GUID_QUIRK.html">QUIRKS_GUID_QUIRK</a></td>
+            
+            <td class="docblock-summary">
+            <p>The quirk key for the <span class="caps">GUID</span>, only used for quirk matching, e.g. <code>SYNAPTICS_CAPE\CX31993</code>.</p>
             <p></p>
             </td>
             
@@ -11945,7 +12410,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_ICON" class="symbol" href="const.QUIRKS_ICON.html">QUIRKS_ICON</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the&nbsp;icon.</p>
+            <p>The quirk key for the icon, e.g. <code>media-removable</code>.</p>
             <p></p>
             </td>
             
@@ -11955,7 +12420,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_INHIBIT" class="symbol" href="const.QUIRKS_INHIBIT.html">QUIRKS_INHIBIT</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to inhibit the <span class="caps">UPDATABLE</span> flag and to set an update&nbsp;error.</p>
+            <p>The quirk key to inhibit the <span class="caps">UPDATABLE</span> flag and to set an update error, e.g. <code>In safe mode</code>.</p>
             <p></p>
             </td>
             
@@ -11965,7 +12430,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_INSTALL_DURATION" class="symbol" href="const.QUIRKS_INSTALL_DURATION.html">QUIRKS_INSTALL_DURATION</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the install duration in&nbsp;seconds.</p>
+            <p>The quirk key for the install duration in seconds, e.g. <code>60</code>.</p>
             <p></p>
             </td>
             
@@ -11975,7 +12440,8 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_ISSUE" class="symbol" href="const.QUIRKS_ISSUE.html">QUIRKS_ISSUE</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key to add security issues affecting a specific&nbsp;device.</p>
+            <p>The quirk key to add security issues affecting a specific device, e.g.
+<code>https://www.pugetsystems.com/support/guides/critical-samsung-ssd-firmware-update/</code>.</p>
             <p></p>
             </td>
             
@@ -11985,7 +12451,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_NAME" class="symbol" href="const.QUIRKS_NAME.html">QUIRKS_NAME</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the&nbsp;name.</p>
+            <p>The quirk key for the name, e.g. <code>ColorHug</code>.</p>
             <p></p>
             </td>
             
@@ -11995,7 +12461,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_PARENT_GUID" class="symbol" href="const.QUIRKS_PARENT_GUID.html">QUIRKS_PARENT_GUID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the parent <span class="caps">GUID</span>.</p>
+            <p>The quirk key for the parent <span class="caps">GUID</span>, e.g. <code>537f7800-8529-5656-b2fa-b0901fe91696</code>.</p>
             <p></p>
             </td>
             
@@ -12005,7 +12471,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_PLUGIN" class="symbol" href="const.QUIRKS_PLUGIN.html">QUIRKS_PLUGIN</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the plugin&nbsp;name.</p>
+            <p>The quirk key for the plugin name, e.g. <code>csr</code>.</p>
             <p></p>
             </td>
             
@@ -12015,7 +12481,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_PRIORITY" class="symbol" href="const.QUIRKS_PRIORITY.html">QUIRKS_PRIORITY</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the device&nbsp;priority.</p>
+            <p>The quirk key for the device priority, e.g. <code>2</code>.</p>
             <p></p>
             </td>
             
@@ -12035,7 +12501,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_PROXY_GUID" class="symbol" href="const.QUIRKS_PROXY_GUID.html">QUIRKS_PROXY_GUID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the proxy <span class="caps">GUID</span>.</p>
+            <p>The quirk key for the proxy <span class="caps">GUID</span>, e.g. <code>537f7800-8529-5656-b2fa-b0901fe91696</code>.</p>
             <p></p>
             </td>
             
@@ -12045,7 +12511,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_REMOVE_DELAY" class="symbol" href="const.QUIRKS_REMOVE_DELAY.html">QUIRKS_REMOVE_DELAY</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the device removal delay in&nbsp;milliseconds.</p>
+            <p>The quirk key for the device removal delay in milliseconds, e.g. <code>2500</code>.</p>
             <p></p>
             </td>
             
@@ -12055,7 +12521,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_SUMMARY" class="symbol" href="const.QUIRKS_SUMMARY.html">QUIRKS_SUMMARY</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the&nbsp;summary.</p>
+            <p>The quirk key for the summary, e.g. <code>An open source display colorimeter</code>.</p>
             <p></p>
             </td>
             
@@ -12085,7 +12551,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_VENDOR" class="symbol" href="const.QUIRKS_VENDOR.html">QUIRKS_VENDOR</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the vendor&nbsp;name.</p>
+            <p>The quirk key for the vendor name, e.g. <code>Hughski Limited</code>.</p>
             <p></p>
             </td>
             
@@ -12095,7 +12561,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_VENDOR_ID" class="symbol" href="const.QUIRKS_VENDOR_ID.html">QUIRKS_VENDOR_ID</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the vendor <span class="caps">ID</span>.</p>
+            <p>The quirk key for the vendor <span class="caps">ID</span>, e.g. <code>USB:0x123A</code>.</p>
             <p></p>
             </td>
             
@@ -12105,7 +12571,7 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             <td><a title="QUIRKS_VERSION" class="symbol" href="const.QUIRKS_VERSION.html">QUIRKS_VERSION</a></td>
             
             <td class="docblock-summary">
-            <p>The quirk key for the&nbsp;version.</p>
+            <p>The quirk key for the version, e.g. <code>1.2.3</code>.</p>
             <p></p>
             </td>
             
@@ -12793,6 +13259,246 @@ This should be used when there is no valid signature or <span class="caps">CRC</
           
           <tr class="section-item">
             <td><a title="STRUCT_DS20_SIZE_GUID" class="symbol" href="const.STRUCT_DS20_SIZE_GUID.html">STRUCT_DS20_SIZE_GUID</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DEFAULT_EDID_VERSION_NUMBER" class="symbol" href="const.STRUCT_EDID_DEFAULT_EDID_VERSION_NUMBER.html">STRUCT_EDID_DEFAULT_EDID_VERSION_NUMBER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DEFAULT_HEADER" class="symbol" href="const.STRUCT_EDID_DEFAULT_HEADER.html">STRUCT_EDID_DEFAULT_HEADER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DEFAULT_REVISION_NUMBER" class="symbol" href="const.STRUCT_EDID_DEFAULT_REVISION_NUMBER.html">STRUCT_EDID_DEFAULT_REVISION_NUMBER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_OFFSET_DATA" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_OFFSET_DATA.html">STRUCT_EDID_DESCRIPTOR_OFFSET_DATA</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_OFFSET_KIND" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_OFFSET_KIND.html">STRUCT_EDID_DESCRIPTOR_OFFSET_KIND</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_OFFSET_SUBKIND" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_OFFSET_SUBKIND.html">STRUCT_EDID_DESCRIPTOR_OFFSET_SUBKIND</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_OFFSET_TAG" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_OFFSET_TAG.html">STRUCT_EDID_DESCRIPTOR_OFFSET_TAG</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_SIZE" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_SIZE.html">STRUCT_EDID_DESCRIPTOR_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_DESCRIPTOR_SIZE_DATA" class="symbol" href="const.STRUCT_EDID_DESCRIPTOR_SIZE_DATA.html">STRUCT_EDID_DESCRIPTOR_SIZE_DATA</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_CHECKSUM" class="symbol" href="const.STRUCT_EDID_OFFSET_CHECKSUM.html">STRUCT_EDID_OFFSET_CHECKSUM</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_DATA_BLOCKS" class="symbol" href="const.STRUCT_EDID_OFFSET_DATA_BLOCKS.html">STRUCT_EDID_OFFSET_DATA_BLOCKS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_EDID_VERSION_NUMBER" class="symbol" href="const.STRUCT_EDID_OFFSET_EDID_VERSION_NUMBER.html">STRUCT_EDID_OFFSET_EDID_VERSION_NUMBER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_EXTENSION_BLOCK_COUNT" class="symbol" href="const.STRUCT_EDID_OFFSET_EXTENSION_BLOCK_COUNT.html">STRUCT_EDID_OFFSET_EXTENSION_BLOCK_COUNT</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_HEADER" class="symbol" href="const.STRUCT_EDID_OFFSET_HEADER.html">STRUCT_EDID_OFFSET_HEADER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_MANUFACTURER_NAME" class="symbol" href="const.STRUCT_EDID_OFFSET_MANUFACTURER_NAME.html">STRUCT_EDID_OFFSET_MANUFACTURER_NAME</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_PRODUCT_CODE" class="symbol" href="const.STRUCT_EDID_OFFSET_PRODUCT_CODE.html">STRUCT_EDID_OFFSET_PRODUCT_CODE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_REVISION_NUMBER" class="symbol" href="const.STRUCT_EDID_OFFSET_REVISION_NUMBER.html">STRUCT_EDID_OFFSET_REVISION_NUMBER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_SERIAL_NUMBER" class="symbol" href="const.STRUCT_EDID_OFFSET_SERIAL_NUMBER.html">STRUCT_EDID_OFFSET_SERIAL_NUMBER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_WEEK_OF_MANUFACTURE" class="symbol" href="const.STRUCT_EDID_OFFSET_WEEK_OF_MANUFACTURE.html">STRUCT_EDID_OFFSET_WEEK_OF_MANUFACTURE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_OFFSET_YEAR_OF_MANUFACTURE" class="symbol" href="const.STRUCT_EDID_OFFSET_YEAR_OF_MANUFACTURE.html">STRUCT_EDID_OFFSET_YEAR_OF_MANUFACTURE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_SIZE" class="symbol" href="const.STRUCT_EDID_SIZE.html">STRUCT_EDID_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_SIZE_DATA_BLOCKS" class="symbol" href="const.STRUCT_EDID_SIZE_DATA_BLOCKS.html">STRUCT_EDID_SIZE_DATA_BLOCKS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_SIZE_HEADER" class="symbol" href="const.STRUCT_EDID_SIZE_HEADER.html">STRUCT_EDID_SIZE_HEADER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_EDID_SIZE_MANUFACTURER_NAME" class="symbol" href="const.STRUCT_EDID_SIZE_MANUFACTURER_NAME.html">STRUCT_EDID_SIZE_MANUFACTURER_NAME</a></td>
             
             <td class="docblock-summary">
             

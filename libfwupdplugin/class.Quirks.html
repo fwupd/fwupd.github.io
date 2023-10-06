@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -146,7 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupdplugin/fu-quirks.c#L24">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-quirks.c#L24">[src]</a>
           
         </h4>
 
@@ -171,6 +171,20 @@ an existing) file in a .d director with a simple format and the hardware will
 magically start working. This assumes no new quirks are required, as this would
 obviously need code changes, but allows us to get most existing devices working
 in an easy way without the user compiling&nbsp;anything.</p>
+<p>Plugins may add support for additional quirks that are relevant only for those plugins,
+and should be documented in the per-plugin <code>README.md</code> files.</p>
+<p>You can add quirk files in <code>/usr/share/fwupd/quirks.d</code> or <code>/var/lib/fwupd/quirks.d/</code>.</p>
+<p>Here is an example as seen in the <span class="caps">CSR</span>&nbsp;plugin:</p>
+<div class="codehilite"><pre><span></span><code>[USB\VID_0A12&amp;PID_1337]
+Plugin = dfu_csr
+Name = H05
+Summary = Bluetooth Headphones
+Icon = audio-headphones
+Vendor = AIAIAI
+[USB\VID_0A12&amp;PID_1337&amp;REV_2520]
+Version = 1.2
+</code></pre></div>
+
 <p>See also: <a href="class.Device.html"><code>FuDevice</code></a>, <a href="class.Plugin.html"><code>FuPlugin</code></a></p>
         </div>
 

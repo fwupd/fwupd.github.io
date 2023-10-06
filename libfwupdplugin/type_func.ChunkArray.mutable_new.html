@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.Chunk.array_new_from_bytes</title>
+  <title>FwupdPlugin.ChunkArray.mutable_new</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.Chunk.array_new_from_bytes"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.Chunk.array_new_from_bytes"/>
-  <meta name="twitter:title" content="FwupdPlugin.Chunk.array_new_from_bytes"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.Chunk.array_new_from_bytes"/>
+  <meta property="og:title" content="FwupdPlugin.ChunkArray.mutable_new"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.ChunkArray.mutable_new"/>
+  <meta name="twitter:title" content="FwupdPlugin.ChunkArray.mutable_new"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.ChunkArray.mutable_new"/>
 
 
   
@@ -71,27 +71,25 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Chunk.html">Chunk</a>
+    <a href="class.ChunkArray.html">ChunkArray</a>
   </div>
 </div>
 <div class="section">
   <h5>Functions</h5>
   <div class="links">
   
-    <a class="method" href="type_func.Chunk.array_mutable_new.html">array_mutable_new</a>
+    <a class="method current" href="type_func.ChunkArray.mutable_new.html">mutable_new</a>
   
-    <a class="method" href="type_func.Chunk.array_new.html">array_new</a>
+    <a class="method" href="type_func.ChunkArray.new.html">new</a>
   
-    <a class="method current" href="type_func.Chunk.array_new_from_bytes.html">array_new_from_bytes</a>
-  
-    <a class="method" href="type_func.Chunk.array_to_string.html">array_to_string</a>
+    <a class="method" href="type_func.ChunkArray.to_string.html">to_string</a>
   
   </div>
 </div>
@@ -107,26 +105,27 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Function</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Chunk.html">Chunk</a><span class="sep"></span>array_new_from_bytes</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.ChunkArray.html">ChunkArray</a><span class="sep"></span>mutable_new</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.1.2</span></p>
+      <p><span class="emblem available">since: 1.5.6</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupdplugin/fu-chunk.h#L60">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-chunk.h#L54">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="n">GPtrArray</span><span class="o">*</span>
-<span class="n">fu_chunk_array_new_from_bytes</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">GBytes</span><span class="o">*</span><span class="w"> </span><span class="n">blob</span><span class="p">,</span>
+<span class="n">fu_chunk_array_mutable_new</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">data_sz</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">addr_start</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">page_sz</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">packet_sz</span>
@@ -141,18 +140,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupdplugin/fu-chunk.c#L481">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-chunk.c#L360">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Chunks a linear blob of memory into packets, ensuring each packet does not
+        <p>Chunks a mutable blob of memory into packets, ensuring each packet does not
 cross a package boundary and is less that a specific transfer&nbsp;size.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 1.1.2</p>
+        <p>Available since: 1.5.6</p>
         
         
         
@@ -172,10 +171,10 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>blob</code></dt>
+          <dt class="arg-name"><code>data</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.Bytes.html" data-namespace="GLib" class="external"><code>GBytes</code></a></p>
-            <p><p>Data.</p></p>
+            <p><em>Type:</em>&nbsp;<code>guint8*</code></p>
+            <p><p>A mutable blob of&nbsp;memory.</p></p>
             <table>
             
             
@@ -185,6 +184,23 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
             
             
             <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>data_sz</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><p>Size of <code>data_sz</code>.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
             
             </table>
           </dd>

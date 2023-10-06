@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.5</p>
+        <p>Library Version: 1.9.6</p>
         
       </div>
       
@@ -121,7 +121,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.5/libfwupd/fwupd-security-attr.h#L30">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupd/fwupd-security-attr.h#L30">[src]</a>
         
       </h4>
 
@@ -199,6 +199,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <tr>
           <td><a id="action_config_os" href="#action_config_os"><code title="Value: 8192">FWUPD_SECURITY_ATTR_FLAG_ACTION_CONFIG_OS</code></a></td>
           <td><p>Failure may be fixed by changing <span class="caps">OS</span>&nbsp;config.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="can_fix" href="#can_fix"><code title="Value: 16384">FWUPD_SECURITY_ATTR_FLAG_CAN_FIX</code></a></td>
+          <td><p>The failure can be automatically&nbsp;fixed.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="can_undo" href="#can_undo"><code title="Value: 32768">FWUPD_SECURITY_ATTR_FLAG_CAN_UNDO</code></a></td>
+          <td><p>The fix can be automatically&nbsp;reverted.</p></td>
         </tr>
       
       </table>
