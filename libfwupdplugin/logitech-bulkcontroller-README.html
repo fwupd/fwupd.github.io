@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -105,16 +105,57 @@ a packed binary file&nbsp;format.</p>
 </ul>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagscheck-buffer-size"><code>Flags=check-buffer-size</code><a class="md-anchor" href="#flagscheck-buffer-size" title="Permanent link"></a></h3>
+<p>Query the device at startup to see if we can use a larger buffer&nbsp;size.</p>
+<p>Since:&nbsp;1.9.7</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The peripheral firmware is deployed when the device is in normal runtime mode,
 and the device will reset when the new firmware has been&nbsp;written.</p>
 <h2 id="design-notes">Design Notes<a class="md-anchor" href="#design-notes" title="Permanent link"></a></h2>
+<p>There are two protocols in use, <code>LogitechBulkcontrollerSendSync</code> and <code>LogitechBulkcontrollerSendUpd</code>
+which correspond to the two different bulk&nbsp;endpoints.</p>
+<p>The &#8220;Sync&#8221; interface accepts protobuf-formatted binary data as described in <code>proto/</code>, encapsulated
+further in a <code>LogitechBulkcontrollerSendSyncReq</code> and returned as a <code>LogitechBulkcontrollerSendSyncRes</code>.</p>
+<p>The sequence IDs seem to be used to allow parallel queries, although in practice some of the IDs
+are hardcoded to zero even when setting them in the&nbsp;request.</p>
+<p>There seems to be two possible flows when writing using the bulk &#8220;Sync&#8221;&nbsp;interface:</p>
+<div class="codehilite"><pre><span></span><code>    sequenceDiagram
+      Host-&gt;&gt;+Device: Write
+      Device--&gt;&gt;-Host: Ack (Write)
+      Host-&gt;&gt;+Device: Uninit
+      Device--&gt;&gt;-Host: Ack (Uninit)
+      Device-&gt;&gt;+Host: Read
+      Host--&gt;&gt;-Device: Ack (Read)
+      Device-&gt;&gt;+Host: Uninit
+      Host--&gt;&gt;-Device: Ack (Uninit)
+</code></pre></div>
+
+<p>or&#8230;</p>
+<div class="codehilite"><pre><span></span><code>    sequenceDiagram
+      Host-&gt;&gt;+Device: Write
+      Device--&gt;&gt;-Host: Ack (Write)
+      Host-&gt;&gt;+Device: Uninit
+      Device-&gt;&gt;+Host: Read
+      Device--&gt;&gt;-Host: Ack (Uninit)
+      Host--&gt;&gt;-Device: Ack (Read)
+      Device-&gt;&gt;+Host: Uninit
+      Host--&gt;&gt;-Device: Ack (Uninit)
+</code></pre></div>
+
+<p>Additionally, the device seems to force re-enumeration at random times, presumably restarting due
+to a protocol error or interface&nbsp;timeout.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x046D</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.7.0</code>.</p>
+<h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
+<p>Anyone can submit a pull request to modify this plugin, but the following people should be
+consulted before making major or functional&nbsp;changes:</p>
+<ul>
+<li>Sanjay Sheth: <code>vcdmp</code></li>
+</ul>
     </div>
   </section>
 </section>
@@ -138,6 +179,12 @@ and the device will reset when the new firmware has been&nbsp;written.</p>
         
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
           
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagscheck-buffer-size"><span class="link-text">Flags=check-buffer-size</span></a></li>
+          
+          </ul>
+          
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
           
@@ -152,6 +199,9 @@ and the device will reset when the new firmware has been&nbsp;written.</p>
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#owners"><span class="link-text">Owners</span></a></li>
           
         
       

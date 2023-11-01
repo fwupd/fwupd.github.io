@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -92,6 +92,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 connected using I²C and not <span class="caps">USB</span>.</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>The <span class="caps">HID</span> DeviceInstanceId values are used, e.g. <code>HIDRAW\VEN_056A&amp;DEV_4875</code>.</p>
+<p>To recover panels that have been flashed with the wrong firmware version, the panel may have a
+parent device with <span class="caps">GUID</span> constructed from the <span class="caps">EDID</span>, e.g. <code>DRM\VEN_BOE&amp;DEV_086E</code>.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 Intel <span class="caps">HEX</span> file&nbsp;format.</p>
@@ -122,6 +124,12 @@ the bootloader and runtime modes are treated as the same&nbsp;device.</p>
 <p>This plugin requires ioctl <code>HIDIOCSFEATURE</code> access.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.2.4</code>.</p>
+<h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
+<p>Anyone can submit a pull request to modify this plugin, but the following people should be
+consulted before making major or functional&nbsp;changes:</p>
+<ul>
+<li>Tatsunosuke Tobita: <code>flying</code>-elephant</li>
+</ul>
     </div>
   </section>
 </section>
@@ -166,6 +174,9 @@ the bootloader and runtime modes are treated as the same&nbsp;device.</p>
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#owners"><span class="link-text">Owners</span></a></li>
           
         
       

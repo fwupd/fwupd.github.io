@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -109,6 +109,11 @@ It uses the kernel <span class="caps">MMC</span> <span class="caps">API</span> f
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, but it is
 only activated when the device is&nbsp;rebooted.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="emmcblocksize">EmmcBlockSize<a class="md-anchor" href="#emmcblocksize" title="Permanent link"></a></h3>
+<p>The block size used for Emmc&nbsp;writes</p>
+<p>Since:&nbsp;1.9.7</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">EMMC</span> vendor, for example set to <code>EMMC:{$manfid}</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -137,6 +142,15 @@ only activated when the device is&nbsp;rebooted.</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#emmcblocksize"><span class="link-text">EmmcBlockSize</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

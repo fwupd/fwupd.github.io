@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -187,6 +187,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Firmware.get_size.html">get_size</a>
   
+    <a class="method" href="method.Firmware.get_size_max.html">get_size_max</a>
+  
     <a class="method" href="method.Firmware.get_version.html">get_version</a>
   
     <a class="method" href="method.Firmware.get_version_raw.html">get_version_raw</a>
@@ -224,6 +226,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Firmware.set_parent.html">set_parent</a>
   
     <a class="method" href="method.Firmware.set_size.html">set_size</a>
+  
+    <a class="method" href="method.Firmware.set_size_max.html">set_size_max</a>
   
     <a class="method" href="method.Firmware.set_version.html">set_version</a>
   
@@ -309,7 +313,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.6/libfwupdplugin/fu-firmware.c#L19">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.7/libfwupdplugin/fu-firmware.c#L19">[src]</a>
           
         </h4>
 
@@ -361,6 +365,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li class="class"><a href="class.AcpiTable.html" title="AcpiTable">FuAcpiTable</a></li>
         
           <li class="class"><a href="class.ArchiveFirmware.html" title="ArchiveFirmware">FuArchiveFirmware</a></li>
+        
+          <li class="class"><a href="class.CabFirmware.html" title="CabFirmware">FuCabFirmware</a></li>
+        
+          <li class="class"><a href="class.CabImage.html" title="CabImage">FuCabImage</a></li>
         
           <li class="class"><a href="class.CfuOffer.html" title="CfuOffer">FuCfuOffer</a></li>
         
@@ -893,6 +901,16 @@ data from&nbsp;fu_firmware_write().</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Firmware.get_size_max.html">fu_firmware_get_size_max</a></h6>
+          <div class="docblock">
+            <p>Gets the maximum size of the image allowed during&nbsp;parsing.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.7</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Firmware.get_version.html">fu_firmware_get_version</a></h6>
           <div class="docblock">
             <p>Gets an optional version that represents the&nbsp;firmware.</p>
@@ -1082,6 +1100,18 @@ data from&nbsp;fu_firmware_write().</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Firmware.set_size_max.html">fu_firmware_set_size_max</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum size of the image allowed during parsing.
+Implementations should query <code>fu_firmware_get_size_max()</code> during parsing when adding images to
+ensure the limit is not&nbsp;exceeded.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.7</span></p>
           </div>
         </div>
       

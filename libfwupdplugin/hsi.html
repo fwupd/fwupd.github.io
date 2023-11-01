@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -184,17 +184,12 @@ There are currently no tests implemented for <span class="caps">HSI</span>:5 and
 <h2 id="low-security-level"><a href="#low-security-level">Low Security Level</a><a class="md-anchor" href="#low-security-level" title="Permanent link"></a></h2>
 <p>A safe baseline for security should be <span class="caps">HSI</span>-1. If your system isn&#8217;t at least meeting this criteria, you should adjust firmware setup options, contact your manufacturer or replace the&nbsp;hardware.</p>
 <p>The command line tool <code>fwupdmgr security</code> included with fwupd 1.8.4 or later will make individual recommendations on what you can do for individual test failures.  <span class="caps">GUI</span> tools built against <code>libfwupd</code> 1.8.4 or later may also make these recommendation as&nbsp;well.</p>
-<p><a id="not-enough-info"></a></p>
-<h2 id="not-enough-information"><a href="#not-enough-info">Not enough information</a><a class="md-anchor" href="#not-enough-information" title="Permanent link"></a></h2>
-<p><span class="caps">HSI</span> calculations require that the <span class="caps">SOC</span>, firmware, and kernel provide enough data to the fwupd daemon about the state of the system.  If any <span class="caps">HSI</span> test that runs on the system declares it&#8217;s <em>missing data</em> then the client will show a message like&nbsp;this:</p>
-<p><strong>Not enough data was provided to make an <span class="caps">HSI</span>&nbsp;calculation.</strong></p>
-<p>The <span class="caps">HSI</span> level will also be set to <code>INVALID</code> indicating&nbsp;this.</p>
 <p><a id="tests"></a></p>
 <h2 id="tests-included-in-fwupd"><a href="#tests">Tests included in fwupd</a><a class="md-anchor" href="#tests-included-in-fwupd" title="Permanent link"></a></h2>
 <p>The set of tests is currently x86 <span class="caps">UEFI</span>-centric, but will be expanded in the future for various <span class="caps">ARM</span> or <span class="caps">RISC</span>-V firmware protections as required.
 Where the requirement is architecture or processor specific it has been&nbsp;noted.</p>
-<p><a id="org.fwupd.hsi.Amd.PlatformRollbackProtection"></a></p>
-<h3 id="amd-secure-processor-rollback-protection"><a href="#org.fwupd.hsi.Amd.PlatformRollbackProtection">AMD Secure Processor Rollback protection</a><a class="md-anchor" href="#amd-secure-processor-rollback-protection" title="Permanent link"></a></h3>
+<p><a id="org.fwupd.hsi.Amd.RollbackProtection"></a></p>
+<h3 id="amd-secure-processor-rollback-protection"><a href="#org.fwupd.hsi.Amd.RollbackProtection">AMD Secure Processor Rollback protection</a><a class="md-anchor" href="#amd-secure-processor-rollback-protection" title="Permanent link"></a></h3>
 <p><span class="caps">AMD</span> SOCs include the ability to prevent a rollback attack by a rollback protection feature on the secure&nbsp;processor.</p>
 <p>This feature prevents an attacker from loading an older firmware onto the part after a security vulnerability has been&nbsp;fixed.</p>
 <p><strong>Impact:</strong></p>
@@ -933,9 +928,6 @@ As those become ratified standards that are available in hardware, there are opp
           
         
         <li class="toc-list-item"><a href="#low-security-level"><span class="link-text">Low Security Level</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#not-enough-information"><span class="link-text">Not enough information</span></a></li>
           
         
         <li class="toc-list-item"><a href="#tests-included-in-fwupd"><span class="link-text">Tests included in fwupd</span></a></li>

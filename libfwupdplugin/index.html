@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -146,7 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.6</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.7</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -371,6 +371,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="logitech-bulkcontroller-README.html">Plugin: Logitech Bulk Controller — Video Collaboration</a></li>
         
+          <li><a href="logitech-rallysystem-README.html">Plugin: Logitech Rally System</a></li>
+        
           <li><a href="logitech-scribe-README.html">Plugin: Logitech Scribe</a></li>
         
           <li><a href="logitech-tap-README.html">Plugin: Logitech Tap — Video Collaboration</a></li>
@@ -548,10 +550,20 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="Cabinet" class="symbol" href="class.Cabinet.html">Cabinet</a></td>
+            <td><a title="CabFirmware" class="symbol" href="class.CabFirmware.html">CabFirmware</a></td>
             
             <td class="docblock-summary">
-            <p>Cabinet archive parser and&nbsp;writer.</p>
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CabImage" class="symbol" href="class.CabImage.html">CabImage</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -708,6 +720,16 @@ between the engine, the plugins and the&nbsp;devices.</p>
             
             <td class="docblock-summary">
             <p>A DfuSe firmware&nbsp;image.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DrmDevice" class="symbol" href="class.DrmDevice.html">DrmDevice</a></td>
+            
+            <td class="docblock-summary">
+            <p>A <span class="caps">DRM</span>&nbsp;device.</p>
             <p></p>
             </td>
             
@@ -1367,30 +1389,20 @@ backport new versions as new hardware is&nbsp;released.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="CabinetExportFlags" class="symbol" href="enum.CabinetExportFlags.html">CabinetExportFlags</a></td>
+            <td><a title="CabCompression" class="symbol" href="enum.CabCompression.html">CabCompression</a></td>
             
             <td class="docblock-summary">
-            <p>The flags to use when exporting the&nbsp;archive.</p>
+            
             <p></p>
             </td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="CabinetParseFlags" class="symbol" href="enum.CabinetParseFlags.html">CabinetParseFlags</a></td>
+            <td><a title="CabFileAttribute" class="symbol" href="enum.CabFileAttribute.html">CabFileAttribute</a></td>
             
             <td class="docblock-summary">
-            <p>The flags to use when loading the&nbsp;cabinet.</p>
-            <p></p>
-            </td>
             
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="CabinetSignFlags" class="symbol" href="enum.CabinetSignFlags.html">CabinetSignFlags</a></td>
-            
-            <td class="docblock-summary">
-            <p>The flags to use when signing the&nbsp;archive.</p>
             <p></p>
             </td>
             
@@ -2216,6 +2228,16 @@ This function will always return the same pointer for a given <code>GBytes</code
           </tr>
           
           <tr class="section-item">
+            <td><a title="cab_compression_to_string" class="symbol" href="func.cab_compression_to_string.html">cab_compression_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_align_up" class="symbol" href="func.common_align_up.html">common_align_up</a></td>
             
             <td class="docblock-summary">
@@ -2253,6 +2275,16 @@ return with failure and let the user&nbsp;decide.</p>
             <td class="docblock-summary">
             <p>Returns the size of physical&nbsp;memory.</p>
             <p><span class="emblem available">since: 1.5.6</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="common_get_olson_timezone_id" class="symbol" href="func.common_get_olson_timezone_id.html">common_get_olson_timezone_id</a></td>
+            
+            <td class="docblock-summary">
+            <p>Gets the system Olson timezone <span class="caps">ID</span>, as used in the <span class="caps">CLDR</span> and <span class="caps">ICU</span>&nbsp;specifications.</p>
+            <p><span class="emblem available">since: 1.9.7</span></p>
             </td>
             
           </tr>
@@ -3352,6 +3384,17 @@ of the tokens found. If any <code>callback</code> returns <code>FALSE</code> sca
           </tr>
           
           <tr class="section-item">
+            <td><a title="strtoll" class="symbol" href="func.strtoll.html">strtoll</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts a string value to an integer. Values are assumed base 10, unless
+prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
+            <p><span class="emblem available">since: 1.9.7</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="strtoull" class="symbol" href="func.strtoull.html">strtoull</a></td>
             
             <td class="docblock-summary">
@@ -3523,7 +3566,547 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_acpi_table_validate" class="symbol" href="func.struct_acpi_table_validate.html">struct_acpi_table_validate</a></td>
+            <td><a title="struct_cab_data_get_checksum" class="symbol" href="func.struct_cab_data_get_checksum.html">struct_cab_data_get_checksum</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_get_comp" class="symbol" href="func.struct_cab_data_get_comp.html">struct_cab_data_get_comp</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_get_uncomp" class="symbol" href="func.struct_cab_data_get_uncomp.html">struct_cab_data_get_uncomp</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_new" class="symbol" href="func.struct_cab_data_new.html">struct_cab_data_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_parse_bytes" class="symbol" href="func.struct_cab_data_parse_bytes.html">struct_cab_data_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_set_checksum" class="symbol" href="func.struct_cab_data_set_checksum.html">struct_cab_data_set_checksum</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_set_comp" class="symbol" href="func.struct_cab_data_set_comp.html">struct_cab_data_set_comp</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_data_set_uncomp" class="symbol" href="func.struct_cab_data_set_uncomp.html">struct_cab_data_set_uncomp</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_date" class="symbol" href="func.struct_cab_file_get_date.html">struct_cab_file_get_date</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_fattr" class="symbol" href="func.struct_cab_file_get_fattr.html">struct_cab_file_get_fattr</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_index" class="symbol" href="func.struct_cab_file_get_index.html">struct_cab_file_get_index</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_time" class="symbol" href="func.struct_cab_file_get_time.html">struct_cab_file_get_time</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_uoffset" class="symbol" href="func.struct_cab_file_get_uoffset.html">struct_cab_file_get_uoffset</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_get_usize" class="symbol" href="func.struct_cab_file_get_usize.html">struct_cab_file_get_usize</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_new" class="symbol" href="func.struct_cab_file_new.html">struct_cab_file_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_parse_bytes" class="symbol" href="func.struct_cab_file_parse_bytes.html">struct_cab_file_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_date" class="symbol" href="func.struct_cab_file_set_date.html">struct_cab_file_set_date</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_fattr" class="symbol" href="func.struct_cab_file_set_fattr.html">struct_cab_file_set_fattr</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_index" class="symbol" href="func.struct_cab_file_set_index.html">struct_cab_file_set_index</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_time" class="symbol" href="func.struct_cab_file_set_time.html">struct_cab_file_set_time</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_uoffset" class="symbol" href="func.struct_cab_file_set_uoffset.html">struct_cab_file_set_uoffset</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_file_set_usize" class="symbol" href="func.struct_cab_file_set_usize.html">struct_cab_file_set_usize</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_get_compression" class="symbol" href="func.struct_cab_folder_get_compression.html">struct_cab_folder_get_compression</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_get_ndatab" class="symbol" href="func.struct_cab_folder_get_ndatab.html">struct_cab_folder_get_ndatab</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_get_offset" class="symbol" href="func.struct_cab_folder_get_offset.html">struct_cab_folder_get_offset</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_new" class="symbol" href="func.struct_cab_folder_new.html">struct_cab_folder_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_parse_bytes" class="symbol" href="func.struct_cab_folder_parse_bytes.html">struct_cab_folder_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_set_compression" class="symbol" href="func.struct_cab_folder_set_compression.html">struct_cab_folder_set_compression</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_set_ndatab" class="symbol" href="func.struct_cab_folder_set_ndatab.html">struct_cab_folder_set_ndatab</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_folder_set_offset" class="symbol" href="func.struct_cab_folder_set_offset.html">struct_cab_folder_set_offset</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_flags" class="symbol" href="func.struct_cab_header_get_flags.html">struct_cab_header_get_flags</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_idx_cabinet" class="symbol" href="func.struct_cab_header_get_idx_cabinet.html">struct_cab_header_get_idx_cabinet</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_nr_files" class="symbol" href="func.struct_cab_header_get_nr_files.html">struct_cab_header_get_nr_files</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_nr_folders" class="symbol" href="func.struct_cab_header_get_nr_folders.html">struct_cab_header_get_nr_folders</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_off_cffile" class="symbol" href="func.struct_cab_header_get_off_cffile.html">struct_cab_header_get_off_cffile</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_set_id" class="symbol" href="func.struct_cab_header_get_set_id.html">struct_cab_header_get_set_id</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_get_size" class="symbol" href="func.struct_cab_header_get_size.html">struct_cab_header_get_size</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_new" class="symbol" href="func.struct_cab_header_new.html">struct_cab_header_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_parse_bytes" class="symbol" href="func.struct_cab_header_parse_bytes.html">struct_cab_header_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_get_rsvd_block" class="symbol" href="func.struct_cab_header_reserve_get_rsvd_block.html">struct_cab_header_reserve_get_rsvd_block</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_get_rsvd_folder" class="symbol" href="func.struct_cab_header_reserve_get_rsvd_folder.html">struct_cab_header_reserve_get_rsvd_folder</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_get_rsvd_hdr" class="symbol" href="func.struct_cab_header_reserve_get_rsvd_hdr.html">struct_cab_header_reserve_get_rsvd_hdr</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_new" class="symbol" href="func.struct_cab_header_reserve_new.html">struct_cab_header_reserve_new</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_parse_bytes" class="symbol" href="func.struct_cab_header_reserve_parse_bytes.html">struct_cab_header_reserve_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_set_rsvd_block" class="symbol" href="func.struct_cab_header_reserve_set_rsvd_block.html">struct_cab_header_reserve_set_rsvd_block</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_set_rsvd_folder" class="symbol" href="func.struct_cab_header_reserve_set_rsvd_folder.html">struct_cab_header_reserve_set_rsvd_folder</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_reserve_set_rsvd_hdr" class="symbol" href="func.struct_cab_header_reserve_set_rsvd_hdr.html">struct_cab_header_reserve_set_rsvd_hdr</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_flags" class="symbol" href="func.struct_cab_header_set_flags.html">struct_cab_header_set_flags</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_idx_cabinet" class="symbol" href="func.struct_cab_header_set_idx_cabinet.html">struct_cab_header_set_idx_cabinet</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_nr_files" class="symbol" href="func.struct_cab_header_set_nr_files.html">struct_cab_header_set_nr_files</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_nr_folders" class="symbol" href="func.struct_cab_header_set_nr_folders.html">struct_cab_header_set_nr_folders</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_off_cffile" class="symbol" href="func.struct_cab_header_set_off_cffile.html">struct_cab_header_set_off_cffile</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_set_id" class="symbol" href="func.struct_cab_header_set_set_id.html">struct_cab_header_set_set_id</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_set_size" class="symbol" href="func.struct_cab_header_set_size.html">struct_cab_header_set_size</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_cab_header_validate_bytes" class="symbol" href="func.struct_cab_header_validate_bytes.html">struct_cab_header_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -3633,7 +4216,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_cfu_offer_parse" class="symbol" href="func.struct_cfu_offer_parse.html">struct_cfu_offer_parse</a></td>
+            <td><a title="struct_cfu_offer_parse_bytes" class="symbol" href="func.struct_cfu_offer_parse_bytes.html">struct_cfu_offer_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -3733,16 +4316,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_cfu_offer_validate" class="symbol" href="func.struct_cfu_offer_validate.html">struct_cfu_offer_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_cfu_payload_get_addr" class="symbol" href="func.struct_cfu_payload_get_addr.html">struct_cfu_payload_get_addr</a></td>
             
             <td class="docblock-summary">
@@ -3773,7 +4346,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_cfu_payload_parse" class="symbol" href="func.struct_cfu_payload_parse.html">struct_cfu_payload_parse</a></td>
+            <td><a title="struct_cfu_payload_parse_bytes" class="symbol" href="func.struct_cfu_payload_parse_bytes.html">struct_cfu_payload_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -3794,16 +4367,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_cfu_payload_set_size" class="symbol" href="func.struct_cfu_payload_set_size.html">struct_cfu_payload_set_size</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_cfu_payload_validate" class="symbol" href="func.struct_cfu_payload_validate.html">struct_cfu_payload_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -3953,7 +4516,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_dfu_ftr_validate" class="symbol" href="func.struct_dfu_ftr_validate.html">struct_dfu_ftr_validate</a></td>
+            <td><a title="struct_dfu_ftr_validate_bytes" class="symbol" href="func.struct_dfu_ftr_validate_bytes.html">struct_dfu_ftr_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4063,7 +4626,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_dfuse_hdr_parse" class="symbol" href="func.struct_dfuse_hdr_parse.html">struct_dfuse_hdr_parse</a></td>
+            <td><a title="struct_dfuse_hdr_parse_bytes" class="symbol" href="func.struct_dfuse_hdr_parse_bytes.html">struct_dfuse_hdr_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4093,7 +4656,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_dfuse_hdr_validate" class="symbol" href="func.struct_dfuse_hdr_validate.html">struct_dfuse_hdr_validate</a></td>
+            <td><a title="struct_dfuse_hdr_validate_bytes" class="symbol" href="func.struct_dfuse_hdr_validate_bytes.html">struct_dfuse_hdr_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4163,7 +4726,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_dfuse_image_parse" class="symbol" href="func.struct_dfuse_image_parse.html">struct_dfuse_image_parse</a></td>
+            <td><a title="struct_dfuse_image_parse_bytes" class="symbol" href="func.struct_dfuse_image_parse_bytes.html">struct_dfuse_image_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4293,7 +4856,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ds20_parse" class="symbol" href="func.struct_ds20_parse.html">struct_ds20_parse</a></td>
+            <td><a title="struct_ds20_parse_bytes" class="symbol" href="func.struct_ds20_parse_bytes.html">struct_ds20_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4353,16 +4916,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ds20_validate" class="symbol" href="func.struct_ds20_validate.html">struct_ds20_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_edid_descriptor_get_data" class="symbol" href="func.struct_edid_descriptor_get_data.html">struct_edid_descriptor_get_data</a></td>
             
             <td class="docblock-summary">
@@ -4413,7 +4966,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_edid_descriptor_parse" class="symbol" href="func.struct_edid_descriptor_parse.html">struct_edid_descriptor_parse</a></td>
+            <td><a title="struct_edid_descriptor_parse_bytes" class="symbol" href="func.struct_edid_descriptor_parse_bytes.html">struct_edid_descriptor_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4563,7 +5116,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_edid_parse" class="symbol" href="func.struct_edid_parse.html">struct_edid_parse</a></td>
+            <td><a title="struct_edid_parse_bytes" class="symbol" href="func.struct_edid_parse_bytes.html">struct_edid_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4703,7 +5256,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_device_path_parse" class="symbol" href="func.struct_efi_device_path_parse.html">struct_efi_device_path_parse</a></td>
+            <td><a title="struct_efi_device_path_parse_bytes" class="symbol" href="func.struct_efi_device_path_parse_bytes.html">struct_efi_device_path_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4813,7 +5366,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_file_parse" class="symbol" href="func.struct_efi_file_parse.html">struct_efi_file_parse</a></td>
+            <td><a title="struct_efi_file_parse_bytes" class="symbol" href="func.struct_efi_file_parse_bytes.html">struct_efi_file_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -4973,7 +5526,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_hard_drive_device_path_parse" class="symbol" href="func.struct_efi_hard_drive_device_path_parse.html">struct_efi_hard_drive_device_path_parse</a></td>
+            <td><a title="struct_efi_hard_drive_device_path_parse_bytes" class="symbol" href="func.struct_efi_hard_drive_device_path_parse_bytes.html">struct_efi_hard_drive_device_path_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5083,7 +5636,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_load_option_parse" class="symbol" href="func.struct_efi_load_option_parse.html">struct_efi_load_option_parse</a></td>
+            <td><a title="struct_efi_load_option_parse_bytes" class="symbol" href="func.struct_efi_load_option_parse_bytes.html">struct_efi_load_option_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5173,7 +5726,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_section_guid_defined_parse" class="symbol" href="func.struct_efi_section_guid_defined_parse.html">struct_efi_section_guid_defined_parse</a></td>
+            <td><a title="struct_efi_section_guid_defined_parse_bytes" class="symbol" href="func.struct_efi_section_guid_defined_parse_bytes.html">struct_efi_section_guid_defined_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5233,7 +5786,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_section_parse" class="symbol" href="func.struct_efi_section_parse.html">struct_efi_section_parse</a></td>
+            <td><a title="struct_efi_section_parse_bytes" class="symbol" href="func.struct_efi_section_parse_bytes.html">struct_efi_section_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5413,7 +5966,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_volume_block_map_parse" class="symbol" href="func.struct_efi_volume_block_map_parse.html">struct_efi_volume_block_map_parse</a></td>
+            <td><a title="struct_efi_volume_block_map_parse_bytes" class="symbol" href="func.struct_efi_volume_block_map_parse_bytes.html">struct_efi_volume_block_map_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5533,7 +6086,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_volume_parse" class="symbol" href="func.struct_efi_volume_parse.html">struct_efi_volume_parse</a></td>
+            <td><a title="struct_efi_volume_parse_bytes" class="symbol" href="func.struct_efi_volume_parse_bytes.html">struct_efi_volume_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5613,7 +6166,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_efi_volume_validate" class="symbol" href="func.struct_efi_volume_validate.html">struct_efi_volume_validate</a></td>
+            <td><a title="struct_efi_volume_validate_bytes" class="symbol" href="func.struct_efi_volume_validate_bytes.html">struct_efi_volume_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5763,7 +6316,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_elf_file_header64le_parse" class="symbol" href="func.struct_elf_file_header64le_parse.html">struct_elf_file_header64le_parse</a></td>
+            <td><a title="struct_elf_file_header64le_parse_bytes" class="symbol" href="func.struct_elf_file_header64le_parse_bytes.html">struct_elf_file_header64le_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5773,7 +6326,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_elf_file_header64le_validate" class="symbol" href="func.struct_elf_file_header64le_validate.html">struct_elf_file_header64le_validate</a></td>
+            <td><a title="struct_elf_file_header64le_validate_bytes" class="symbol" href="func.struct_elf_file_header64le_validate_bytes.html">struct_elf_file_header64le_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5863,7 +6416,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_elf_program_header64le_parse" class="symbol" href="func.struct_elf_program_header64le_parse.html">struct_elf_program_header64le_parse</a></td>
+            <td><a title="struct_elf_program_header64le_parse_bytes" class="symbol" href="func.struct_elf_program_header64le_parse_bytes.html">struct_elf_program_header64le_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -5973,7 +6526,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_elf_section_header64le_parse" class="symbol" href="func.struct_elf_section_header64le_parse.html">struct_elf_section_header64le_parse</a></td>
+            <td><a title="struct_elf_section_header64le_parse_bytes" class="symbol" href="func.struct_elf_section_header64le_parse_bytes.html">struct_elf_section_header64le_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6083,7 +6636,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fdt_parse" class="symbol" href="func.struct_fdt_parse.html">struct_fdt_parse</a></td>
+            <td><a title="struct_fdt_parse_bytes" class="symbol" href="func.struct_fdt_parse_bytes.html">struct_fdt_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6153,16 +6706,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fdt_prop_validate" class="symbol" href="func.struct_fdt_prop_validate.html">struct_fdt_prop_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_fdt_reserve_entry_get_address" class="symbol" href="func.struct_fdt_reserve_entry_get_address.html">struct_fdt_reserve_entry_get_address</a></td>
             
             <td class="docblock-summary">
@@ -6193,7 +6736,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fdt_reserve_entry_parse" class="symbol" href="func.struct_fdt_reserve_entry_parse.html">struct_fdt_reserve_entry_parse</a></td>
+            <td><a title="struct_fdt_reserve_entry_parse_bytes" class="symbol" href="func.struct_fdt_reserve_entry_parse_bytes.html">struct_fdt_reserve_entry_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6214,16 +6757,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_fdt_reserve_entry_set_size" class="symbol" href="func.struct_fdt_reserve_entry_set_size.html">struct_fdt_reserve_entry_set_size</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_fdt_reserve_entry_validate" class="symbol" href="func.struct_fdt_reserve_entry_validate.html">struct_fdt_reserve_entry_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -6323,7 +6856,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fdt_validate" class="symbol" href="func.struct_fdt_validate.html">struct_fdt_validate</a></td>
+            <td><a title="struct_fdt_validate_bytes" class="symbol" href="func.struct_fdt_validate_bytes.html">struct_fdt_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6383,7 +6916,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fmap_area_parse" class="symbol" href="func.struct_fmap_area_parse.html">struct_fmap_area_parse</a></td>
+            <td><a title="struct_fmap_area_parse_bytes" class="symbol" href="func.struct_fmap_area_parse_bytes.html">struct_fmap_area_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6424,16 +6957,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_fmap_area_set_size" class="symbol" href="func.struct_fmap_area_set_size.html">struct_fmap_area_set_size</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_fmap_area_validate" class="symbol" href="func.struct_fmap_area_validate.html">struct_fmap_area_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -6513,7 +7036,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fmap_parse" class="symbol" href="func.struct_fmap_parse.html">struct_fmap_parse</a></td>
+            <td><a title="struct_fmap_parse_bytes" class="symbol" href="func.struct_fmap_parse_bytes.html">struct_fmap_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6583,7 +7106,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_fmap_validate" class="symbol" href="func.struct_fmap_validate.html">struct_fmap_validate</a></td>
+            <td><a title="struct_fmap_validate_bytes" class="symbol" href="func.struct_fmap_validate_bytes.html">struct_fmap_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6633,7 +7156,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_entry_parse" class="symbol" href="func.struct_ifwi_cpd_entry_parse.html">struct_ifwi_cpd_entry_parse</a></td>
+            <td><a title="struct_ifwi_cpd_entry_parse_bytes" class="symbol" href="func.struct_ifwi_cpd_entry_parse_bytes.html">struct_ifwi_cpd_entry_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6664,16 +7187,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_ifwi_cpd_entry_set_offset" class="symbol" href="func.struct_ifwi_cpd_entry_set_offset.html">struct_ifwi_cpd_entry_set_offset</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_entry_validate" class="symbol" href="func.struct_ifwi_cpd_entry_validate.html">struct_ifwi_cpd_entry_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -6783,7 +7296,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_manifest_ext_parse" class="symbol" href="func.struct_ifwi_cpd_manifest_ext_parse.html">struct_ifwi_cpd_manifest_ext_parse</a></td>
+            <td><a title="struct_ifwi_cpd_manifest_ext_parse_bytes" class="symbol" href="func.struct_ifwi_cpd_manifest_ext_parse_bytes.html">struct_ifwi_cpd_manifest_ext_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -6804,16 +7317,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_ifwi_cpd_manifest_ext_set_extension_type" class="symbol" href="func.struct_ifwi_cpd_manifest_ext_set_extension_type.html">struct_ifwi_cpd_manifest_ext_set_extension_type</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_manifest_ext_validate" class="symbol" href="func.struct_ifwi_cpd_manifest_ext_validate.html">struct_ifwi_cpd_manifest_ext_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -6943,7 +7446,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_manifest_parse" class="symbol" href="func.struct_ifwi_cpd_manifest_parse.html">struct_ifwi_cpd_manifest_parse</a></td>
+            <td><a title="struct_ifwi_cpd_manifest_parse_bytes" class="symbol" href="func.struct_ifwi_cpd_manifest_parse_bytes.html">struct_ifwi_cpd_manifest_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7063,16 +7566,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_manifest_validate" class="symbol" href="func.struct_ifwi_cpd_manifest_validate.html">struct_ifwi_cpd_manifest_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_ifwi_cpd_new" class="symbol" href="func.struct_ifwi_cpd_new.html">struct_ifwi_cpd_new</a></td>
             
             <td class="docblock-summary">
@@ -7083,7 +7576,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_parse" class="symbol" href="func.struct_ifwi_cpd_parse.html">struct_ifwi_cpd_parse</a></td>
+            <td><a title="struct_ifwi_cpd_parse_bytes" class="symbol" href="func.struct_ifwi_cpd_parse_bytes.html">struct_ifwi_cpd_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7163,7 +7656,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_cpd_validate" class="symbol" href="func.struct_ifwi_cpd_validate.html">struct_ifwi_cpd_validate</a></td>
+            <td><a title="struct_ifwi_cpd_validate_bytes" class="symbol" href="func.struct_ifwi_cpd_validate_bytes.html">struct_ifwi_cpd_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7223,7 +7716,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_fpt_entry_parse" class="symbol" href="func.struct_ifwi_fpt_entry_parse.html">struct_ifwi_fpt_entry_parse</a></td>
+            <td><a title="struct_ifwi_fpt_entry_parse_bytes" class="symbol" href="func.struct_ifwi_fpt_entry_parse_bytes.html">struct_ifwi_fpt_entry_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7264,16 +7757,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_ifwi_fpt_entry_set_partition_type" class="symbol" href="func.struct_ifwi_fpt_entry_set_partition_type.html">struct_ifwi_fpt_entry_set_partition_type</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_ifwi_fpt_entry_validate" class="symbol" href="func.struct_ifwi_fpt_entry_validate.html">struct_ifwi_fpt_entry_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -7413,7 +7896,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_fpt_parse" class="symbol" href="func.struct_ifwi_fpt_parse.html">struct_ifwi_fpt_parse</a></td>
+            <td><a title="struct_ifwi_fpt_parse_bytes" class="symbol" href="func.struct_ifwi_fpt_parse_bytes.html">struct_ifwi_fpt_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7543,7 +8026,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ifwi_fpt_validate" class="symbol" href="func.struct_ifwi_fpt_validate.html">struct_ifwi_fpt_validate</a></td>
+            <td><a title="struct_ifwi_fpt_validate_bytes" class="symbol" href="func.struct_ifwi_fpt_validate_bytes.html">struct_ifwi_fpt_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7583,7 +8066,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_ms_ds20_parse" class="symbol" href="func.struct_ms_ds20_parse.html">struct_ms_ds20_parse</a></td>
+            <td><a title="struct_ms_ds20_parse_bytes" class="symbol" href="func.struct_ms_ds20_parse_bytes.html">struct_ms_ds20_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7604,16 +8087,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_ms_ds20_set_type" class="symbol" href="func.struct_ms_ds20_set_type.html">struct_ms_ds20_set_type</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_ms_ds20_validate" class="symbol" href="func.struct_ms_ds20_validate.html">struct_ms_ds20_validate</a></td>
             
             <td class="docblock-summary">
             
@@ -7713,7 +8186,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_oprom_parse" class="symbol" href="func.struct_oprom_parse.html">struct_oprom_parse</a></td>
+            <td><a title="struct_oprom_parse_bytes" class="symbol" href="func.struct_oprom_parse_bytes.html">struct_oprom_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -7863,7 +8336,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_oprom_pci_parse" class="symbol" href="func.struct_oprom_pci_parse.html">struct_oprom_pci_parse</a></td>
+            <td><a title="struct_oprom_pci_parse_bytes" class="symbol" href="func.struct_oprom_pci_parse_bytes.html">struct_oprom_pci_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8003,16 +8476,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_oprom_pci_validate" class="symbol" href="func.struct_oprom_pci_validate.html">struct_oprom_pci_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_oprom_set_compression_type" class="symbol" href="func.struct_oprom_set_compression_type.html">struct_oprom_set_compression_type</a></td>
             
             <td class="docblock-summary">
@@ -8093,7 +8556,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_oprom_validate" class="symbol" href="func.struct_oprom_validate.html">struct_oprom_validate</a></td>
+            <td><a title="struct_oprom_validate_bytes" class="symbol" href="func.struct_oprom_validate_bytes.html">struct_oprom_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8163,7 +8626,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_pe_coff_file_header_parse" class="symbol" href="func.struct_pe_coff_file_header_parse.html">struct_pe_coff_file_header_parse</a></td>
+            <td><a title="struct_pe_coff_file_header_parse_bytes" class="symbol" href="func.struct_pe_coff_file_header_parse_bytes.html">struct_pe_coff_file_header_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8323,7 +8786,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_pe_coff_optional_header64_parse" class="symbol" href="func.struct_pe_coff_optional_header64_parse.html">struct_pe_coff_optional_header64_parse</a></td>
+            <td><a title="struct_pe_coff_optional_header64_parse_bytes" class="symbol" href="func.struct_pe_coff_optional_header64_parse_bytes.html">struct_pe_coff_optional_header64_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8393,7 +8856,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_pe_coff_section_parse" class="symbol" href="func.struct_pe_coff_section_parse.html">struct_pe_coff_section_parse</a></td>
+            <td><a title="struct_pe_coff_section_parse_bytes" class="symbol" href="func.struct_pe_coff_section_parse_bytes.html">struct_pe_coff_section_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8413,7 +8876,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_pe_dos_header_parse" class="symbol" href="func.struct_pe_dos_header_parse.html">struct_pe_dos_header_parse</a></td>
+            <td><a title="struct_pe_dos_header_parse_bytes" class="symbol" href="func.struct_pe_dos_header_parse_bytes.html">struct_pe_dos_header_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8423,7 +8886,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_pe_dos_header_validate" class="symbol" href="func.struct_pe_dos_header_validate.html">struct_pe_dos_header_validate</a></td>
+            <td><a title="struct_pe_dos_header_validate_bytes" class="symbol" href="func.struct_pe_dos_header_validate_bytes.html">struct_pe_dos_header_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8453,17 +8916,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_sbat_level_section_header_parse" class="symbol" href="func.struct_sbat_level_section_header_parse.html">struct_sbat_level_section_header_parse</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="struct_sbat_level_section_header_validate" class="symbol" href="func.struct_sbat_level_section_header_validate.html">struct_sbat_level_section_header_validate</a></td>
+            <td><a title="struct_sbat_level_section_header_parse_bytes" class="symbol" href="func.struct_sbat_level_section_header_parse_bytes.html">struct_sbat_level_section_header_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -8753,16 +9206,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_smbios_ep32_validate" class="symbol" href="func.struct_smbios_ep32_validate.html">struct_smbios_ep32_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_smbios_ep64_get_anchor_str" class="symbol" href="func.struct_smbios_ep64_get_anchor_str.html">struct_smbios_ep64_get_anchor_str</a></td>
             
             <td class="docblock-summary">
@@ -8983,16 +9426,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_smbios_ep64_validate" class="symbol" href="func.struct_smbios_ep64_validate.html">struct_smbios_ep64_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_smbios_structure_get_handle" class="symbol" href="func.struct_smbios_structure_get_handle.html">struct_smbios_structure_get_handle</a></td>
             
             <td class="docblock-summary">
@@ -9073,16 +9506,6 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_smbios_structure_validate" class="symbol" href="func.struct_smbios_structure_validate.html">struct_smbios_structure_validate</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="struct_uswid_get_flags" class="symbol" href="func.struct_uswid_get_flags.html">struct_uswid_get_flags</a></td>
             
             <td class="docblock-summary">
@@ -9133,7 +9556,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_uswid_parse" class="symbol" href="func.struct_uswid_parse.html">struct_uswid_parse</a></td>
+            <td><a title="struct_uswid_parse_bytes" class="symbol" href="func.struct_uswid_parse_bytes.html">struct_uswid_parse_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -9183,7 +9606,7 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="struct_uswid_validate" class="symbol" href="func.struct_uswid_validate.html">struct_uswid_validate</a></td>
+            <td><a title="struct_uswid_validate_bytes" class="symbol" href="func.struct_uswid_validate_bytes.html">struct_uswid_validate_bytes</a></td>
             
             <td class="docblock-summary">
             
@@ -10615,6 +11038,16 @@ the device is&nbsp;removed.</p>
             
             <td class="docblock-summary">
             <p>The device is not connected and is probably awaiting&nbsp;replug.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_UPDATE_PENDING" class="symbol" href="const.DEVICE_INTERNAL_FLAG_UPDATE_PENDING.html">DEVICE_INTERNAL_FLAG_UPDATE_PENDING</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device has an update that is waiting to be&nbsp;applied.</p>
             <p></p>
             </td>
             
@@ -12739,6 +13172,356 @@ This should be used when there is no valid signature or <span class="caps">CRC</
           
           <tr class="section-item">
             <td><a title="STRUCT_ACPI_TABLE_SIZE_SIGNATURE" class="symbol" href="const.STRUCT_ACPI_TABLE_SIZE_SIGNATURE.html">STRUCT_ACPI_TABLE_SIZE_SIGNATURE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_DATA_OFFSET_CHECKSUM" class="symbol" href="const.STRUCT_CAB_DATA_OFFSET_CHECKSUM.html">STRUCT_CAB_DATA_OFFSET_CHECKSUM</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_DATA_OFFSET_COMP" class="symbol" href="const.STRUCT_CAB_DATA_OFFSET_COMP.html">STRUCT_CAB_DATA_OFFSET_COMP</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_DATA_OFFSET_UNCOMP" class="symbol" href="const.STRUCT_CAB_DATA_OFFSET_UNCOMP.html">STRUCT_CAB_DATA_OFFSET_UNCOMP</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_DATA_SIZE" class="symbol" href="const.STRUCT_CAB_DATA_SIZE.html">STRUCT_CAB_DATA_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_DATE" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_DATE.html">STRUCT_CAB_FILE_OFFSET_DATE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_FATTR" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_FATTR.html">STRUCT_CAB_FILE_OFFSET_FATTR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_INDEX" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_INDEX.html">STRUCT_CAB_FILE_OFFSET_INDEX</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_TIME" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_TIME.html">STRUCT_CAB_FILE_OFFSET_TIME</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_UOFFSET" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_UOFFSET.html">STRUCT_CAB_FILE_OFFSET_UOFFSET</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_OFFSET_USIZE" class="symbol" href="const.STRUCT_CAB_FILE_OFFSET_USIZE.html">STRUCT_CAB_FILE_OFFSET_USIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FILE_SIZE" class="symbol" href="const.STRUCT_CAB_FILE_SIZE.html">STRUCT_CAB_FILE_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FOLDER_OFFSET_COMPRESSION" class="symbol" href="const.STRUCT_CAB_FOLDER_OFFSET_COMPRESSION.html">STRUCT_CAB_FOLDER_OFFSET_COMPRESSION</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FOLDER_OFFSET_NDATAB" class="symbol" href="const.STRUCT_CAB_FOLDER_OFFSET_NDATAB.html">STRUCT_CAB_FOLDER_OFFSET_NDATAB</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FOLDER_OFFSET_OFFSET" class="symbol" href="const.STRUCT_CAB_FOLDER_OFFSET_OFFSET.html">STRUCT_CAB_FOLDER_OFFSET_OFFSET</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_FOLDER_SIZE" class="symbol" href="const.STRUCT_CAB_FOLDER_SIZE.html">STRUCT_CAB_FOLDER_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_DEFAULT_NR_FOLDERS" class="symbol" href="const.STRUCT_CAB_HEADER_DEFAULT_NR_FOLDERS.html">STRUCT_CAB_HEADER_DEFAULT_NR_FOLDERS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_DEFAULT_SIGNATURE" class="symbol" href="const.STRUCT_CAB_HEADER_DEFAULT_SIGNATURE.html">STRUCT_CAB_HEADER_DEFAULT_SIGNATURE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_DEFAULT_VERSION_MAJOR" class="symbol" href="const.STRUCT_CAB_HEADER_DEFAULT_VERSION_MAJOR.html">STRUCT_CAB_HEADER_DEFAULT_VERSION_MAJOR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_DEFAULT_VERSION_MINOR" class="symbol" href="const.STRUCT_CAB_HEADER_DEFAULT_VERSION_MINOR.html">STRUCT_CAB_HEADER_DEFAULT_VERSION_MINOR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_FLAGS" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_FLAGS.html">STRUCT_CAB_HEADER_OFFSET_FLAGS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_IDX_CABINET" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_IDX_CABINET.html">STRUCT_CAB_HEADER_OFFSET_IDX_CABINET</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_NR_FILES" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_NR_FILES.html">STRUCT_CAB_HEADER_OFFSET_NR_FILES</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_NR_FOLDERS" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_NR_FOLDERS.html">STRUCT_CAB_HEADER_OFFSET_NR_FOLDERS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_OFF_CFFILE" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_OFF_CFFILE.html">STRUCT_CAB_HEADER_OFFSET_OFF_CFFILE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_SET_ID" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_SET_ID.html">STRUCT_CAB_HEADER_OFFSET_SET_ID</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_SIGNATURE" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_SIGNATURE.html">STRUCT_CAB_HEADER_OFFSET_SIGNATURE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_SIZE" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_SIZE.html">STRUCT_CAB_HEADER_OFFSET_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_VERSION_MAJOR" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_VERSION_MAJOR.html">STRUCT_CAB_HEADER_OFFSET_VERSION_MAJOR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_OFFSET_VERSION_MINOR" class="symbol" href="const.STRUCT_CAB_HEADER_OFFSET_VERSION_MINOR.html">STRUCT_CAB_HEADER_OFFSET_VERSION_MINOR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_BLOCK" class="symbol" href="const.STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_BLOCK.html">STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_BLOCK</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_FOLDER" class="symbol" href="const.STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_FOLDER.html">STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_FOLDER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_HDR" class="symbol" href="const.STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_HDR.html">STRUCT_CAB_HEADER_RESERVE_OFFSET_RSVD_HDR</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_RESERVE_SIZE" class="symbol" href="const.STRUCT_CAB_HEADER_RESERVE_SIZE.html">STRUCT_CAB_HEADER_RESERVE_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_SIZE" class="symbol" href="const.STRUCT_CAB_HEADER_SIZE.html">STRUCT_CAB_HEADER_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_CAB_HEADER_SIZE_SIGNATURE" class="symbol" href="const.STRUCT_CAB_HEADER_SIZE_SIGNATURE.html">STRUCT_CAB_HEADER_SIZE_SIGNATURE</a></td>
             
             <td class="docblock-summary">
             

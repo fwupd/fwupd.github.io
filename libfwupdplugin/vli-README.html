@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.6</p>
+        <p>Library Version: 1.9.7</p>
         
       </div>
       
@@ -155,10 +155,30 @@ CfiDeviceCmdChipErase = 0xc7
 CfiDeviceCmdSectorErase = 0x20
 </code></pre></div>
 
+<h3 id="flagsattach-with-gpiob">Flags:attach-with-gpiob<a class="md-anchor" href="#flagsattach-with-gpiob" title="Permanent link"></a></h3>
+<p>This flag is used if device needs <span class="caps">GPIO</span>-B to reset the&nbsp;device.</p>
+<h3 id="flagsunlock-legacy813">Flags:unlock-legacy813<a class="md-anchor" href="#flagsunlock-legacy813" title="Permanent link"></a></h3>
+<p>This flag is used for unlocking <span class="caps">VL813</span> with a custom <span class="caps">VDR</span>&nbsp;request.</p>
+<h3 id="flagshas-shared-spi-pd">Flags:has-shared-spi-pd<a class="md-anchor" href="#flagshas-shared-spi-pd" title="Permanent link"></a></h3>
+<p>This flag is used for devices that share <span class="caps">SPI</span> with the <span class="caps">PD</span>&nbsp;device.</p>
+<h3 id="flagshas-msp430">Flags:has-msp430<a class="md-anchor" href="#flagshas-msp430" title="Permanent link"></a></h3>
+<p>This flag is used if device has a <span class="caps">MSP430</span> attached via&nbsp;I²C.</p>
+<h3 id="flagshas-rtd21xx">Flags:has-rtd21xx<a class="md-anchor" href="#flagshas-rtd21xx" title="Permanent link"></a></h3>
+<p>This flag is used if device has a <span class="caps">RTD21XX</span> attached via&nbsp;I²C.</p>
+<h3 id="flagshas-i2c-ps186">Flags:has-i2c-ps186<a class="md-anchor" href="#flagshas-i2c-ps186" title="Permanent link"></a></h3>
+<p>This flag is used if device has a <span class="caps">PS186</span> attached via&nbsp;I²C.</p>
+<h3 id="flagsskips-rom">Flags:skips-rom<a class="md-anchor" href="#flagsskips-rom" title="Permanent link"></a></h3>
+<p>This flag handles cases to update in firmware mode, skips <span class="caps">ROM</span> mode&nbsp;entirely.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.3.3</code>.</p>
+<h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
+<p>Anyone can submit a pull request to modify this plugin, but the following people should be
+consulted before making major or functional&nbsp;changes:</p>
+<ul>
+<li>Emily Miller: <code>memily</code></li>
+</ul>
     </div>
   </section>
 </section>
@@ -195,6 +215,20 @@ CfiDeviceCmdSectorErase = 0x20
           
             <li class="toc-list-item"><a href="#cfidevicecmdreadidsz"><span class="link-text">CfiDeviceCmdReadIdSz</span></a></li>
           
+            <li class="toc-list-item"><a href="#flagsattach-with-gpiob"><span class="link-text">Flags:attach-with-gpiob</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsunlock-legacy813"><span class="link-text">Flags:unlock-legacy813</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagshas-shared-spi-pd"><span class="link-text">Flags:has-shared-spi-pd</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagshas-msp430"><span class="link-text">Flags:has-msp430</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagshas-rtd21xx"><span class="link-text">Flags:has-rtd21xx</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagshas-i2c-ps186"><span class="link-text">Flags:has-i2c-ps186</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsskips-rom"><span class="link-text">Flags:skips-rom</span></a></li>
+          
           </ul>
           
         
@@ -202,6 +236,9 @@ CfiDeviceCmdSectorErase = 0x20
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#owners"><span class="link-text">Owners</span></a></li>
           
         
       
