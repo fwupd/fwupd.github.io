@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -98,7 +98,11 @@ an unspecified binary file format, with vendor specific&nbsp;header.</p>
 <li><code>com.intel.thunderbolt</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These devices use a custom generation scheme, which is quite intentionally identical to thunderbolt&nbsp;plugin:</p>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values for the <span class="caps">USB</span> Hub,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_8087&amp;PID_0B40</code> (quirk-only)</li>
+</ul>
+<p>These devices also use a custom InstanceId, which is quite intentionally identical to thunderbolt&nbsp;plugin:</p>
 <ul>
 <li><code>TBT-{nvm_vendor_id}{nvm_product_id}</code></li>
 </ul>

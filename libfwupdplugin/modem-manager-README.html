@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -92,17 +92,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These device use the ModemManager &#8220;Firmware Device IDs&#8221; as the <span class="caps">GUID</span>,&nbsp;e.g.</p>
 <ul>
-<li><code>USB\VID_413C&amp;PID_81D7&amp;REV_0318&amp;CARRIER_VODAFONE</code></li>
+<li><code>USB\VID_413C&amp;PID_81D7&amp;REV_0318&amp;CARRIER_VODAFONE</code> (only if not using <code>Flags=use-branch</code>)</li>
 <li><code>USB\VID_413C&amp;PID_81D7&amp;REV_0318</code></li>
 <li><code>USB\VID_413C&amp;PID_81D7</code></li>
-<li><code>USB\VID_413C</code></li>
-<li><code>PCI\VID_105B&amp;PID_E0AB&amp;REV_0000&amp;CARRIER_VODAFONE</code></li>
+<li><code>PCI\VID_105B&amp;PID_E0AB&amp;REV_0000&amp;CARRIER_VODAFONE</code> (only if not using <code>Flags=use-branch</code>)</li>
 <li><code>PCI\VID_105B&amp;PID_E0AB&amp;REV_0000</code></li>
 <li><code>PCI\VID_105B&amp;PID_E0AB</code></li>
-<li><code>PCI\VID_105B</code></li>
-<li><code>PCI\VID_1EAC&amp;PID_1001</code></li>
-<li><code>PCI\VID_1EAC&amp;PID_1002</code></li>
-<li><code>PCI\VID_1EAC</code></li>
 </ul>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirk:</p>
@@ -112,6 +107,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <h3 id="modemmanagerfirehoseprogfile">ModemManagerFirehoseProgFile<a class="md-anchor" href="#modemmanagerfirehoseprogfile" title="Permanent link"></a></h3>
 <p>Firehose program file to use during the switch to <span class="caps">EDL</span> (Emergency Download)&nbsp;mode.</p>
 <p>Since:&nbsp;1.8.10</p>
+<h3 id="flagsuse-branch">Flags=use-branch<a class="md-anchor" href="#flagsuse-branch" title="Permanent link"></a></h3>
+<p>Use the carrier (e.g. <code>VODAFONE</code>) as the device branch name so that <code>fwupdmgr sync</code> can downgrade
+the firmware as&nbsp;required.</p>
+<p>This is now the recommended mode for all modem devices with a carrier-specific firmware image,
+although it requires that the firmware branch is also set in the firmware&nbsp;metadata.</p>
+<p>Since:&nbsp;1.9.8</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> or <span class="caps">PCI</span> vendor, for example <code>USB:0x413C</code> <code>PCI:0x105B</code></p>
 <h2 id="update-method-fastboot">Update method: fastboot<a class="md-anchor" href="#update-method-fastboot" title="Permanent link"></a></h2>
@@ -182,6 +183,8 @@ consulted before making major or functional&nbsp;changes:</p>
             <li class="toc-list-item"><a href="#modemmanagerbranchatcommand"><span class="link-text">ModemManagerBranchAtCommand</span></a></li>
           
             <li class="toc-list-item"><a href="#modemmanagerfirehoseprogfile"><span class="link-text">ModemManagerFirehoseProgFile</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-branch"><span class="link-text">Flags=use-branch</span></a></li>
           
           </ul>
           

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -128,7 +128,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.7/libfwupdplugin/fu-io-channel.h#L70">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.8/libfwupdplugin/fu-io-channel.h#L70">[src]</a>
         
       </h4>
 
@@ -136,7 +136,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">GBytes</span><span class="o">*</span>
 <span class="n">fu_io_channel_read_bytes</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuIOChannel</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gssize</span><span class="w"> </span><span class="n">max_size</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gssize</span><span class="w"> </span><span class="n">count</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">,</span>
 <span class="w">  </span><span class="n">FuIOChannelFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
@@ -151,7 +151,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.7/libfwupdplugin/fu-io-channel.c#L257">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.8/libfwupdplugin/fu-io-channel.c#L260">[src]</a>
         
       </h4>
 
@@ -181,10 +181,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>max_size</code></dt>
+          <dt class="arg-name"><code>count</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gssize</code></p>
-            <p><p>Maximum size of the returned blob, or -1 for no&nbsp;limit.</p></p>
+            <p><p>Number of bytes to read, or -1 for no&nbsp;limit.</p></p>
             <table>
             
             
@@ -262,7 +262,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.Bytes.html" data-namespace="GLib" class="external"><code>GBytes</code></a></p>
-            <p><p>A <code>GBytes</code>, or <code>NULL</code> for&nbsp;error.</p></p>
+            <p><p>A <code>GBytes</code> (which may be bigger than <code>count</code>), or <code>NULL</code> for&nbsp;error.</p></p>
           </div>
           <div>
             <table>

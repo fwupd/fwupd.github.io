@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -146,7 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.7</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.8</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -352,6 +352,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="jabra-README.html">Plugin: Jabra</a></li>
         
           <li><a href="jabra-gnp-README.html">Unknown document</a></li>
+        
+          <li><a href="kinetic-dp-README.html">Plugin: Kinetic DP</a></li>
         
           <li><a href="lenovo-thinklmi-README.html">Plugin: Lenovo ThinkLMI</a></li>
         
@@ -720,6 +722,16 @@ between the engine, the plugins and the&nbsp;devices.</p>
             
             <td class="docblock-summary">
             <p>A DfuSe firmware&nbsp;image.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DpauxDevice" class="symbol" href="class.DpauxDevice.html">DpauxDevice</a></td>
+            
+            <td class="docblock-summary">
+            <p>A Display Port <span class="caps">AUX</span>&nbsp;device.</p>
             <p></p>
             </td>
             
@@ -1774,6 +1786,26 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             
             <td class="docblock-summary">
             <p>The system chassis&nbsp;kind.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UswidHeaderFlag" class="symbol" href="enum.UswidHeaderFlag.html">UswidHeaderFlag</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UswidPayloadCompression" class="symbol" href="enum.UswidPayloadCompression.html">UswidPayloadCompression</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -4787,6 +4819,56 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_dfuse_image_validate" class="symbol" href="func.struct_dfuse_image_validate.html">struct_dfuse_image_validate</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_dpaux_dpcd_get_dev_id" class="symbol" href="func.struct_dpaux_dpcd_get_dev_id.html">struct_dpaux_dpcd_get_dev_id</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_dpaux_dpcd_get_fw_ver" class="symbol" href="func.struct_dpaux_dpcd_get_fw_ver.html">struct_dpaux_dpcd_get_fw_ver</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_dpaux_dpcd_get_hw_rev" class="symbol" href="func.struct_dpaux_dpcd_get_hw_rev.html">struct_dpaux_dpcd_get_hw_rev</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_dpaux_dpcd_get_ieee_oui" class="symbol" href="func.struct_dpaux_dpcd_get_ieee_oui.html">struct_dpaux_dpcd_get_ieee_oui</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_dpaux_dpcd_parse" class="symbol" href="func.struct_dpaux_dpcd_parse.html">struct_dpaux_dpcd_parse</a></td>
             
             <td class="docblock-summary">
             
@@ -9506,6 +9588,16 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="struct_uswid_get_compression" class="symbol" href="func.struct_uswid_get_compression.html">struct_uswid_get_compression</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="struct_uswid_get_flags" class="symbol" href="func.struct_uswid_get_flags.html">struct_uswid_get_flags</a></td>
             
             <td class="docblock-summary">
@@ -9557,6 +9649,16 @@ prefixed with &#8220;0x&#8221; where they are parsed as base&nbsp;16.</p>
           
           <tr class="section-item">
             <td><a title="struct_uswid_parse_bytes" class="symbol" href="func.struct_uswid_parse_bytes.html">struct_uswid_parse_bytes</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="struct_uswid_set_compression" class="symbol" href="func.struct_uswid_set_compression.html">struct_uswid_set_compression</a></td>
             
             <td class="docblock-summary">
             
@@ -9725,6 +9827,26 @@ The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;
             <td class="docblock-summary">
             <p>Returns the arithmetic sum of all bytes in <code>blob</code>.</p>
             <p><span class="emblem available">since: 1.8.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="uswid_payload_compression_from_string" class="symbol" href="func.uswid_payload_compression_from_string.html">uswid_payload_compression_from_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="uswid_payload_compression_to_string" class="symbol" href="func.uswid_payload_compression_to_string.html">uswid_payload_compression_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
             </td>
             
           </tr>
@@ -10594,16 +10716,6 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="device_set_version_raw" class="symbol" href="func.device_set_version_raw.html">device_set_version_raw</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="IFD_FREG_BASE" class="symbol" href="func.IFD_FREG_BASE.html">IFD_FREG_BASE</a></td>
             
             <td class="docblock-summary">
@@ -10756,6 +10868,16 @@ then no member is&nbsp;added.</p>
             
             <td class="docblock-summary">
             <p>The device requires a display to be plugged&nbsp;in.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_ENFORCE_REQUIRES" class="symbol" href="const.DEVICE_INTERNAL_FLAG_ENFORCE_REQUIRES.html">DEVICE_INTERNAL_FLAG_ENFORCE_REQUIRES</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device uses a generic instance <span class="caps">ID</span> and firmware requires a parent, child, sibling or <span class="caps">CHID</span>&nbsp;requirement.</p>
             <p></p>
             </td>
             
@@ -10933,6 +11055,16 @@ This is only really useful when updating the system battery&nbsp;firmware.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NO_GENERIC_GUIDS" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_GENERIC_GUIDS.html">DEVICE_INTERNAL_FLAG_NO_GENERIC_GUIDS</a></td>
+            
+            <td class="docblock-summary">
+            <p>Do not add generic GUIDs from outside the&nbsp;plugin.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_INTERNAL_FLAG_NO_LID_CLOSED" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NO_LID_CLOSED.html">DEVICE_INTERNAL_FLAG_NO_LID_CLOSED</a></td>
             
             <td class="docblock-summary">
@@ -10967,6 +11099,16 @@ This is only really useful when updating the system battery&nbsp;firmware.</p>
             
             <td class="docblock-summary">
             <p>Do not attempt to read the device serial&nbsp;number.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST.html">DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device uses a non-generic request that cannot be&nbsp;localized.</p>
             <p></p>
             </td>
             
@@ -11210,6 +11352,66 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
             
             <td class="docblock-summary">
             <p>Unknown version of the <span class="caps">DFU</span> standard in <span class="caps">BCD</span>&nbsp;format.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_BRANCH_DEVICE" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_BRANCH_DEVICE.html">DPAUX_DEVICE_DPCD_OFFSET_BRANCH_DEVICE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_LINK_CONFIGURATION" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_LINK_CONFIGURATION.html">DPAUX_DEVICE_DPCD_OFFSET_LINK_CONFIGURATION</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_LINK_SINK_STATUS" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_LINK_SINK_STATUS.html">DPAUX_DEVICE_DPCD_OFFSET_LINK_SINK_STATUS</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_RECEIVER_CAPABILITY" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_RECEIVER_CAPABILITY.html">DPAUX_DEVICE_DPCD_OFFSET_RECEIVER_CAPABILITY</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_SINK_DEVICE" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_SINK_DEVICE.html">DPAUX_DEVICE_DPCD_OFFSET_SINK_DEVICE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DPAUX_DEVICE_DPCD_OFFSET_SOURCE_DEVICE" class="symbol" href="const.DPAUX_DEVICE_DPCD_OFFSET_SOURCE_DEVICE.html">DPAUX_DEVICE_DPCD_OFFSET_SOURCE_DEVICE</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -13972,6 +14174,66 @@ This should be used when there is no valid signature or <span class="caps">CRC</
           
           <tr class="section-item">
             <td><a title="STRUCT_DFUSE_IMAGE_SIZE_TARGET_NAME" class="symbol" href="const.STRUCT_DFUSE_IMAGE_SIZE_TARGET_NAME.html">STRUCT_DFUSE_IMAGE_SIZE_TARGET_NAME</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_OFFSET_DEV_ID" class="symbol" href="const.STRUCT_DPAUX_DPCD_OFFSET_DEV_ID.html">STRUCT_DPAUX_DPCD_OFFSET_DEV_ID</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_OFFSET_FW_VER" class="symbol" href="const.STRUCT_DPAUX_DPCD_OFFSET_FW_VER.html">STRUCT_DPAUX_DPCD_OFFSET_FW_VER</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_OFFSET_HW_REV" class="symbol" href="const.STRUCT_DPAUX_DPCD_OFFSET_HW_REV.html">STRUCT_DPAUX_DPCD_OFFSET_HW_REV</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_OFFSET_IEEE_OUI" class="symbol" href="const.STRUCT_DPAUX_DPCD_OFFSET_IEEE_OUI.html">STRUCT_DPAUX_DPCD_OFFSET_IEEE_OUI</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_SIZE" class="symbol" href="const.STRUCT_DPAUX_DPCD_SIZE.html">STRUCT_DPAUX_DPCD_SIZE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_DPAUX_DPCD_SIZE_DEV_ID" class="symbol" href="const.STRUCT_DPAUX_DPCD_SIZE_DEV_ID.html">STRUCT_DPAUX_DPCD_SIZE_DEV_ID</a></td>
             
             <td class="docblock-summary">
             
@@ -17512,6 +17774,16 @@ This should be used when there is no valid signature or <span class="caps">CRC</
           
           <tr class="section-item">
             <td><a title="STRUCT_USWID_DEFAULT_HDRSZ" class="symbol" href="const.STRUCT_USWID_DEFAULT_HDRSZ.html">STRUCT_USWID_DEFAULT_HDRSZ</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STRUCT_USWID_OFFSET_COMPRESSION" class="symbol" href="const.STRUCT_USWID_OFFSET_COMPRESSION.html">STRUCT_USWID_OFFSET_COMPRESSION</a></td>
             
             <td class="docblock-summary">
             

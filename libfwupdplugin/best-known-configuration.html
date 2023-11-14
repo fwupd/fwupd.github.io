@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -110,12 +110,14 @@ This is opt-in for each vendor, and so if you are a vendor reading this and want
 let us know by <a href="https://gitlab.com/fwupd/lvfs-website/-/issues">opening an issue</a>.</p>
 <h2 id="client">Client<a class="md-anchor" href="#client" title="Permanent link"></a></h2>
 <p>When provisioning the client machine, we can set the <span class="caps">BKC</span> by setting <code>HostBkc=vendor-2021q1</code> in
-<code>/etc/fwupd/fwupd.conf</code>.
-Then any invocation of <code>fwupdmgr sync-bkc</code> will install or downgrade firmware on all compatible
-devices (<span class="caps">UEFI</span>, <span class="caps">RAID</span>, network adapter, <span class="amp">&amp;</span> <span class="caps">SAS</span> <span class="caps">HBA</span> etc.) to make the system match a compatible&nbsp;set.</p>
-<p>Updating or downgrading firmware away from the <em>Best Known Configuration</em> is allowed, but the <span class="caps">UI</span>
-shows a warning.
-Using <code>fwupdmgr sync-bkc</code> will undo any manual changes and bring the machine back to the <span class="caps">BKC</span>.</p>
+<code>/etc/fwupd/fwupd.conf</code>.</p>
+<p>Any invocation of <code>fwupdmgr sync</code> will install or downgrade firmware on all compatible devices
+(e.g. <span class="caps">UEFI</span>, <span class="caps">RAID</span>, network adapter, <span class="amp">&amp;</span> <span class="caps">SAS</span> <span class="caps">HBA</span>) to make the system match a compatible set.
+The <code>fwupdmgr sync</code> command will also ensure that firmware is installed that matches the device
+branch, if the device has one&nbsp;assigned.</p>
+<p>Updating or downgrading firmware away from the <em>Best Known Configuration</em> or to different branches
+is allowed, but the <span class="caps">UI</span> shows a warning.
+Using <code>fwupdmgr sync</code> will undo any manual changes and bring the machine back to the <span class="caps">BKC</span>.</p>
 <h2 id="local-metadata">Local metadata<a class="md-anchor" href="#local-metadata" title="Permanent link"></a></h2>
 <p>To define a locally defined <span class="caps">BKC</span>, extra metadata is read from the <code>/usr/share/fwupd/local.d</code> and
 <code>/var/lib/fwupd/local.d</code> directories. For&nbsp;instance:</p>
@@ -169,7 +171,7 @@ Using <code>fwupdmgr sync-bkc</code> will undo any manual changes and bring the 
 </code></pre></div>
 
 <p>..and can be synced on the command&nbsp;line:</p>
-<div class="codehilite"><pre><span></span><code>$ fwupdmgr sync-bkc
+<div class="codehilite"><pre><span></span><code>$ fwupdmgr sync
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║ Downgrade System Firmware from 225.52.1521 to 225.53.1649?                   ║
 ╠══════════════════════════════════════════════════════════════════════════════╣

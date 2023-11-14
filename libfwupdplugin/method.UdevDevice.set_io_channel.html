@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.UdevDevice.set_fd</title>
+  <title>FwupdPlugin.UdevDevice.set_io_channel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta priority="og:title" content="FwupdPlugin.UdevDevice.set_fd"/>
-  <meta priority="og:description" content="Reference for FwupdPlugin.UdevDevice.set_fd"/>
-  <meta name="twitter:title" content="FwupdPlugin.UdevDevice.set_fd"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.UdevDevice.set_fd"/>
+  <meta priority="og:title" content="FwupdPlugin.UdevDevice.set_io_channel"/>
+  <meta priority="og:description" content="Reference for FwupdPlugin.UdevDevice.set_io_channel"/>
+  <meta name="twitter:title" content="FwupdPlugin.UdevDevice.set_io_channel"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.UdevDevice.set_io_channel"/>
 
 
   
@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -103,7 +103,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.UdevDevice.get_driver.html">get_driver</a>
   
-    <a class="method" href="method.UdevDevice.get_fd.html">get_fd</a>
+    <a class="method" href="method.UdevDevice.get_io_channel.html">get_io_channel</a>
   
     <a class="method" href="method.UdevDevice.get_model.html">get_model</a>
   
@@ -149,9 +149,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.UdevDevice.set_device_file.html">set_device_file</a>
   
-    <a class="method current" href="method.UdevDevice.set_fd.html">set_fd</a>
-  
     <a class="method" href="method.UdevDevice.set_flags.html">set_flags</a>
+  
+    <a class="method current" href="method.UdevDevice.set_io_channel.html">set_io_channel</a>
   
     <a class="method" href="method.UdevDevice.set_logical_id.html">set_logical_id</a>
   
@@ -173,12 +173,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.UdevDevice.html">UdevDevice</a><span class="sep"></span>set_fd</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.UdevDevice.html">UdevDevice</a><span class="sep"></span>set_io_channel</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.3.3</span></p>
+      <p><span class="emblem available">since: 1.9.8</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -186,15 +186,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.7/libfwupdplugin/fu-udev-device.h#L160">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.8/libfwupdplugin/fu-udev-device-private.h#L14">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">fu_udev_device_set_fd</span><span class="w"> </span><span class="p">(</span>
+<span class="n">fu_udev_device_set_io_channel</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuUdevDevice</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gint</span><span class="w"> </span><span class="n">fd</span>
+<span class="w">  </span><span class="n">FuIOChannel</span><span class="o">*</span><span class="w"> </span><span class="n">io_channel</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -206,18 +206,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.7/libfwupdplugin/fu-udev-device.c#L1434">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.8/libfwupdplugin/fu-udev-device.c#L1504">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Replace the file descriptor to use when the device has already been opened.
-This object will automatically <code>close()</code> <code>fd</code> when <code>fu_device_close()</code> is&nbsp;called.</p>
+        <p>Replace the <span class="caps">IO</span> channel to use when the device has already been opened.
+This object will automatically unref <code>io_channel</code> when <code>fu_device_close()</code> is&nbsp;called.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 1.3.3</p>
+        <p>Available since: 1.9.8</p>
         
         
         
@@ -237,10 +237,10 @@ This object will automatically <code>close()</code> <code>fd</code> when <code>f
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>fd</code></dt>
+          <dt class="arg-name"><code>io_channel</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>gint</code></p>
-            <p><p>A valid file&nbsp;descriptor.</p></p>
+            <p><em>Type:</em>&nbsp;<a href="class.IOChannel.html"><code>FuIOChannel</code></a></p>
+            <p><p>A <code>FuIOChannel</code>.</p></p>
             <table>
             
             
@@ -249,7 +249,7 @@ This object will automatically <code>close()</code> <code>fd</code> when <code>f
             
             
             
-            
+            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
             
             </table>
           </dd>

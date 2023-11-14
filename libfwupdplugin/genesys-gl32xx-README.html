@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.7</p>
+        <p>Library Version: 1.9.8</p>
         
       </div>
       
@@ -97,15 +97,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard <span class="caps">UDEV</span> DeviceInstanceId values,&nbsp;e.g.</p>
 <ul>
-<li><code>BLOCK\VEN_05E3&amp;DEV_XXXX</code></li>
+<li><code>BLOCK\VEN_05E3&amp;DEV_XXXX</code> (quirk-only)</li>
 </ul>
 <p>These devices also use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
 <ul>
-<li><code>BLOCK\VEN_05E3&amp;DEV_XXXX&amp;VER_YY</code></li>
+<li><code>BLOCK\VEN_05E3&amp;DEV_XXXX&amp;VER_YY</code> (quirk-only)</li>
 </ul>
-<p>Additional <span class="caps">GUID</span> values based on customer <span class="caps">ID</span> read from the device,&nbsp;e.g.</p>
+<p>Additional <span class="caps">GUID</span> value based on firmware version stream and customer <span class="caps">ID</span> read from the device,&nbsp;e.g.</p>
 <ul>
-<li><code>BLOCK\VEN_05E3&amp;DEV_XXXX&amp;CID_ZZZZZZZZ</code></li>
 <li><code>BLOCK\VEN_05E3&amp;DEV_XXXX&amp;VER_YY&amp;CID_ZZZZZZZZ</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
