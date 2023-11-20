@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.8</p>
+        <p>Library Version: 1.9.9</p>
         
       </div>
       
@@ -168,6 +168,10 @@ CfiDeviceCmdSectorErase = 0x20
 <p>This flag is used if device has a <span class="caps">PS186</span> attached via&nbsp;I²C.</p>
 <h3 id="flagsskips-rom">Flags:skips-rom<a class="md-anchor" href="#flagsskips-rom" title="Permanent link"></a></h3>
 <p>This flag handles cases to update in firmware mode, skips <span class="caps">ROM</span> mode&nbsp;entirely.</p>
+<h3 id="flagsattach-with-usb">Flags:attach-with-usb<a class="md-anchor" href="#flagsattach-with-usb" title="Permanent link"></a></h3>
+<p>This flag is used if device needs unplug <span class="amp">&amp;</span> re-plug usb cable to reset the&nbsp;device.</p>
+<h3 id="flagsattach-with-power">Flags:attach-with-power<a class="md-anchor" href="#flagsattach-with-power" title="Permanent link"></a></h3>
+<p>This flag is used if device needs unplug <span class="amp">&amp;</span> re-plug power cord to reset the&nbsp;device.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -227,6 +231,10 @@ consulted before making major or functional&nbsp;changes:</p>
             <li class="toc-list-item"><a href="#flagshas-i2c-ps186"><span class="link-text">Flags:has-i2c-ps186</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsskips-rom"><span class="link-text">Flags:skips-rom</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsattach-with-usb"><span class="link-text">Flags:attach-with-usb</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsattach-with-power"><span class="link-text">Flags:attach-with-power</span></a></li>
           
           </ul>
           

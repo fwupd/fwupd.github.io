@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.8</p>
+        <p>Library Version: 1.9.9</p>
         
       </div>
       
@@ -99,8 +99,9 @@ an unspecified binary file&nbsp;format.</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
 <ul>
-<li><code>MST\VEN_60AD&amp;DEV_KT50X0</code></li>
-<li><code>MST\VEN_60AD&amp;FAM_JAGUAR</code> (only-quirk)</li>
+<li><code>MST\VEN_60AD&amp;DEV_${dev_id}&amp;CID_${customer_id}&amp;CHW_${customer_board}</code></li>
+<li><code>MST\VEN_60AD&amp;DEV_${dev_id}&amp;CID_${customer_id}</code> (only-quirk)</li>
+<li><code>MST\VEN_60AD&amp;FAM_${family_id}</code> (only-quirk)</li>
 </ul>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for example set to <code>DRM_DP_AUX_DEV:0x$(vid)</code></p>

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.8</p>
+        <p>Library Version: 1.9.9</p>
         
       </div>
       
@@ -113,6 +113,12 @@ device will reset when the new firmware has been written. On some hardware the
 <span class="caps">MST</span> device may not enumerate if there is no monitor actually plugged&nbsp;in.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for example set to <code>DRM_DP_AUX_DEV:0x$(vid)</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsignore-board-id">Flags:ignore-board-id<a class="md-anchor" href="#flagsignore-board-id" title="Permanent link"></a></h3>
+<p>Ignore board <span class="caps">ID</span> firmware&nbsp;mismatch.</p>
+<h3 id="flagsscan-cascade">Flags:scan-cascade<a class="md-anchor" href="#flagsscan-cascade" title="Permanent link"></a></h3>
+<p>Scan <span class="caps">MST</span> controllers for remote cascade&nbsp;devices.</p>
 <h2 id="requirements">Requirements<a class="md-anchor" href="#requirements" title="Permanent link"></a></h2>
 <h3 id="kernel-dp-aux-interface">(Kernel) DP Aux Interface<a class="md-anchor" href="#kernel-dp-aux-interface" title="Permanent link"></a></h3>
 <p>Kernel 4.6 introduced an <span class="caps">DRM</span> <span class="caps">DP</span> Aux interface for manipulation of the registers
@@ -209,6 +215,17 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsignore-board-id"><span class="link-text">Flags:ignore-board-id</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsscan-cascade"><span class="link-text">Flags:scan-cascade</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#requirements"><span class="link-text">Requirements</span></a></li>
