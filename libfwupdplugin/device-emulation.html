@@ -1,0 +1,254 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Device Emulation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Device Emulation"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Device Emulation"/>
+  <meta name="twitter:title" content="FwupdPlugin: Device Emulation"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Device Emulation"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: main</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>Using device-tests, fwupd can prevent regressions by updating and downgrading firmware on real
+hardware. However, much past a few dozen devices this does not scale, either by time, or because
+real devices need plugging in and out. We can unit test the plugin internals, but this does not
+actually test devices being attached, removed, and being&nbsp;updated.</p>
+<p>By recording the backend devices we can build a &#8220;history&#8221; in GUsb of what control, interrupt and
+bulk transfers were sent to, and received from the device. By dumping these we can &#8220;replay&#8221; the
+update without the physical hardware&nbsp;connected.</p>
+<p>There are some problems that make this emulation slightly harder than the naive&nbsp;implementation:</p>
+<ul>
+<li>Devices are sometimes detached into a different &#8220;bootloader&#8221; device with a new <span class="caps">VID</span>:<span class="caps">PID</span></li>
+<li>Devices might be &#8220;composite&#8221; and actually be multiple logical devices in one physical&nbsp;device</li>
+<li>Devices might not be 100% deterimistic, e.g. queries might be processed&nbsp;out-of-order</li>
+</ul>
+<p>For people to generate and consume emulated devices, we do need to make the process easy to
+understand, and also easy to use. Some key points that we think are important, is the ability&nbsp;to:</p>
+<ul>
+<li>Dump the device of an unmodified running&nbsp;daemon.</li>
+<li>Filter to multiple or single devices, to avoid storing data for unrelated parts of the&nbsp;system.</li>
+<li>Load an emulated device into an unmodified running&nbsp;daemon.</li>
+</ul>
+<p>Because we do not want to modify the daemon, we think it makes sense to <em>load</em> and <em>save</em> emulation
+state over D-Bus. Each phase can be controlled, which makes it easy to view, and edit, the recorded
+emulation&nbsp;data.</p>
+<p>For instance, calling <code>fwupdmgr emulation-tag</code> would ask the end user to choose a device to start
+<em>recording</em> so that subsequent re-plugs are available to save.
+As the device state may not be persistent we save the device-should-be-recorded metadata in the
+pending database like we would do for a successful firmware&nbsp;update.</p>
+<p>To demo this, something like this could be&nbsp;done:</p>
+<div class="codehilite"><pre><span></span><code># connect ColorHug2
+fwupdmgr modify-config AllowEmulation true
+fwupdmgr emulation-tag b0a78eb71f4eeea7df8fb114522556ba8ce22074
+# or, using the GUID
+# fwupdmgr emulation-tag 2082b5e0-7a64-478a-b1b2-e3404fab6dad
+# remove and re-insert ColorHug2
+fwupdmgr get-devices --filter emulation-tag
+fwupdmgr download https://fwupd.org/downloads/170f2c19f17b7819644d3fcc7617621cc3350a04-hughski-colorhug2-2.0.6.cab
+fwupdmgr install e5* --allow-reinstall
+fwupdmgr emulation-save colorhug.zip
+# remove ColorHug2
+fwupdmgr emulation-load colorhug.zip
+fwupdmgr get-devices --filter emulated
+fwupdmgr install e5* --allow-reinstall
+fwupdmgr modify-config AllowEmulation false
+</code></pre></div>
+
+<h2 id="device-tests">Device Tests<a class="md-anchor" href="#device-tests" title="Permanent link"></a></h2>
+<p>The <code>emulation-url</code> string parameter can be specified in the <code>steps</code> section of a specific device
+test. This causes the front end to load the emulation data before running the specific&nbsp;step.</p>
+<p>Device tests without emulation data will be&nbsp;skipped.</p>
+<p>For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code>fwupdmgr device-emulate ../data/device-tests/hughski-colorhug2.json
+Decompressing…           [***************************************]
+Waiting…                 [***************************************]
+Hughski ColorHug2: OK!
+Decompressing…           [***************************************]
+Waiting…                 [***************************************]
+Hughski ColorHug2: OK!
+</code></pre></div>
+
+<h2 id="pcap-file-conversion">Pcap file conversion<a class="md-anchor" href="#pcap-file-conversion" title="Permanent link"></a></h2>
+<p>Emulation can also be used during the development phase of the plugin if the hardware is not
+available or to reduce the number of write cycles on the device and the testing time. But this
+requires a way to create the emulation file while fwupd does not yet support the&nbsp;hardware.</p>
+<p>This can be done by converting a pcap file generated using WireShark, on Windows or Linux, while
+performing the device firmware update process using the official update program. The saved pcap
+file should contain all the events of the device plugin before the update starts until it&nbsp;ends.</p>
+<p>Since the pcap file contains the firmware uploaded to the device, it is closely related to the
+firmware file and both the pcap and firmware files must be provided to the plugin&nbsp;developer.</p>
+<h3 id="record-usb-events-to-pcap-file">Record USB events to pcap file<a class="md-anchor" href="#record-usb-events-to-pcap-file" title="Permanent link"></a></h3>
+<h4 id="linux-setup">Linux setup<a class="md-anchor" href="#linux-setup" title="Permanent link"></a></h4>
+<p>Check if you belong to the wireshark group&nbsp;with:</p>
+<div class="codehilite"><pre><span></span><code>groups $USER
+</code></pre></div>
+
+<p>To add yourself to the wireshark group, run the below command, then logout and&nbsp;login:</p>
+<div class="codehilite"><pre><span></span><code>sudo usermod -a -G wireshark $USER
+</code></pre></div>
+
+<p>Depending on the distribution used, you may have to load the USBmon kernel module&nbsp;using:</p>
+<div class="codehilite"><pre><span></span><code>sudo modprobe usbmon
+</code></pre></div>
+
+<p>You may also need to adjust the permissions with which usbmon instances are&nbsp;created:</p>
+<div class="codehilite"><pre><span></span><code>echo &#39;SUBSYSTEM==&quot;usbmon&quot;, GROUP=&quot;wireshark&quot;, MODE=&quot;640&quot;&#39; | sudo tee /etc/udev/rules.d/50-accessible-usbmon.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+</code></pre></div>
+
+<p>If USBmon is builtin, you may need to&nbsp;reboot.</p>
+<h3 id="wireshark-record-of-usb-events">WireShark record of USB events<a class="md-anchor" href="#wireshark-record-of-usb-events" title="Permanent link"></a></h3>
+<p>Start WireShark and open <em>Capture→Options…</em> menu (or Ctrl+K). This brings up the <em>Capture Interfaces</em>
+window then select the <span class="caps">USB</span> interface to record&nbsp;packets:</p>
+<ul>
+<li>USBPcap[x] on&nbsp;Windows,</li>
+<li>usbmon[x] on Linux, usbmon0 interface can be used to capture packets on all&nbsp;buses.</li>
+</ul>
+<p>When recording firmware update that uses big packets, it may be relevant to increase the packet snaplen
+by double clicking on the value in the <em>Snaplen</em> column of the selected interface and changing the&nbsp;value.</p>
+<p>Click on the <em>Start</em> button then plugin the device to record and start the firmware update process.
+Once done, save the <span class="caps">USB</span> packets from WireShark to a pcap&nbsp;file.</p>
+<h3 id="convert-pcap-file-to-emulation-file">Convert pcap file to emulation file<a class="md-anchor" href="#convert-pcap-file-to-emulation-file" title="Permanent link"></a></h3>
+<p>To convert this file, the <code>contrib/pcap2emulation.py</code> tool is used to generate a json file for each
+series of <span class="caps">USB</span> events between the &#8220;<span class="caps">GET</span> <span class="caps">DESCRIPTOR</span> <span class="caps">DEVICE</span>&#8221; events, limited to a set of VendorIDs (and
+if necessary ProductIDs).
+Depending on the device there should be 2 (setup.json and reload.json) or 3 (setup.json,
+install.json and reload.json) phase files, which are zipped in the emulation&nbsp;file.</p>
+<p>For&nbsp;example:</p>
+<div class="codehilite"><pre><span></span><code># convert the pcap file for the CalDigit dock with VendorID and ProductID 0451:ace1
+contrib/pcap2emulation.py CalDigit.pcapng /tmp/caldigit 0451:ace1
+# this will generate /tmp/caldigit.zip
+# the new emulation file can be used for emulation
+fwupdmgr modify-config AllowEmulation true
+fwupdmgr emulation-load /tmp/caldigit.zip
+fwupdmgr get-devices --filter emulated
+fwupdmgr modify-config AllowEmulation false
+</code></pre></div>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#device-tests"><span class="link-text">Device Tests</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#pcap-file-conversion"><span class="link-text">Pcap file conversion</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#record-usb-events-to-pcap-file"><span class="link-text">Record USB events to pcap file</span></a></li>
+          
+            <li class="toc-list-item"><a href="#wireshark-record-of-usb-events"><span class="link-text">WireShark record of USB events</span></a></li>
+          
+            <li class="toc-list-item"><a href="#convert-pcap-file-to-emulation-file"><span class="link-text">Convert pcap file to emulation file</span></a></li>
+          
+          </ul>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
