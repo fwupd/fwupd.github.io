@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.9</p>
+        <p>Library Version: 1.9.10</p>
         
       </div>
       
@@ -146,7 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>1.9.9</td></tr>
+        <tr><td><em>Version</em></td><td>1.9.10</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -242,6 +242,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="tutorial.html">Plugin Tutorial</a></li>
         
           <li><a href="hsi.html">Host Security ID Specification</a></li>
+        
+          <li><a href="device-emulation.html">Device Emulation</a></li>
         
           <li><a href="ds20.html">BOS DS20 Specification</a></li>
         
@@ -1332,16 +1334,6 @@ backport new versions as new hardware is&nbsp;released.</p>
             
           </tr>
           
-          <tr class="section-item">
-            <td><a title="ProgressFlags" class="symbol" href="alias.ProgressFlags.html">ProgressFlags</a></td>
-            
-            <td class="docblock-summary">
-            <p>The progress internal&nbsp;flags.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
           </tbody>
         </table>
       </div>
@@ -1364,7 +1356,7 @@ backport new versions as new hardware is&nbsp;released.</p>
             <td><a title="ArchiveCompression" class="symbol" href="enum.ArchiveCompression.html">ArchiveCompression</a></td>
             
             <td class="docblock-summary">
-            <p>The archive&nbsp;compression.</p>
+            
             <p></p>
             </td>
             
@@ -1374,7 +1366,7 @@ backport new versions as new hardware is&nbsp;released.</p>
             <td><a title="ArchiveFormat" class="symbol" href="enum.ArchiveFormat.html">ArchiveFormat</a></td>
             
             <td class="docblock-summary">
-            <p>The archive&nbsp;format.</p>
+            
             <p></p>
             </td>
             
@@ -1894,6 +1886,16 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             
             <td class="docblock-summary">
             <p>The flags used when reading data from the <span class="caps">TTY</span>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ProgressFlag" class="symbol" href="flags.ProgressFlag.html">ProgressFlag</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -3358,6 +3360,16 @@ Any results are sorted. No matching files will set <code>error</code>.</p>
             <p>Joins an array of strings together to form one long string, with the optional
 separator inserted between each of&nbsp;them.</p>
             <p><span class="emblem available">since: 1.8.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strpassmask" class="symbol" href="func.strpassmask.html">strpassmask</a></td>
+            
+            <td class="docblock-summary">
+            <p>Hides password strings encoded in <span class="caps">HTTP</span>&nbsp;requests.</p>
+            <p><span class="emblem available">since: 1.9.10</span></p>
             </td>
             
           </tr>
@@ -10106,6 +10118,16 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_add_request_flag" class="symbol" href="func.device_add_request_flag.html">device_add_request_flag</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_add_vendor_id" class="symbol" href="func.device_add_vendor_id.html">device_add_vendor_id</a></td>
             
             <td class="docblock-summary">
@@ -10526,6 +10548,16 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_has_request_flag" class="symbol" href="func.device_has_request_flag.html">device_has_request_flag</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_has_vendor_id" class="symbol" href="func.device_has_vendor_id.html">device_has_vendor_id</a></td>
             
             <td class="docblock-summary">
@@ -10794,6 +10826,16 @@ then no member is&nbsp;added.</p>
           <tbody>
           
           <tr class="section-item">
+            <td><a title="CONTEXT_FLAG_LOADED_HWINFO" class="symbol" href="const.CONTEXT_FLAG_LOADED_HWINFO.html">CONTEXT_FLAG_LOADED_HWINFO</a></td>
+            
+            <td class="docblock-summary">
+            <p>Hardware information has been loaded with a call to&nbsp;fu_context_load_hwinfo().</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="CONTEXT_FLAG_NONE" class="symbol" href="const.CONTEXT_FLAG_NONE.html">CONTEXT_FLAG_NONE</a></td>
             
             <td class="docblock-summary">
@@ -10888,6 +10930,46 @@ then no member is&nbsp;added.</p>
             
             <td class="docblock-summary">
             <p>Ensure the version is a valid semantic version, e.g. numbers separated with&nbsp;dots.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_HOST_CPU" class="symbol" href="const.DEVICE_INTERNAL_FLAG_HOST_CPU.html">DEVICE_INTERNAL_FLAG_HOST_CPU</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device represents the main <span class="caps">CPU</span>&nbsp;device.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_HOST_CPU_CHILD" class="symbol" href="const.DEVICE_INTERNAL_FLAG_HOST_CPU_CHILD.html">DEVICE_INTERNAL_FLAG_HOST_CPU_CHILD</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device should be a child of the main <span class="caps">CPU</span>&nbsp;device.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_HOST_FIRMWARE" class="symbol" href="const.DEVICE_INTERNAL_FLAG_HOST_FIRMWARE.html">DEVICE_INTERNAL_FLAG_HOST_FIRMWARE</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device represents the main system host&nbsp;firmware.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_INTERNAL_FLAG_HOST_FIRMWARE_CHILD" class="symbol" href="const.DEVICE_INTERNAL_FLAG_HOST_FIRMWARE_CHILD.html">DEVICE_INTERNAL_FLAG_HOST_FIRMWARE_CHILD</a></td>
+            
+            <td class="docblock-summary">
+            <p>The device should be a child of the main system host firmware&nbsp;device.</p>
             <p></p>
             </td>
             
@@ -11099,16 +11181,6 @@ This is only really useful when updating the system battery&nbsp;firmware.</p>
             
             <td class="docblock-summary">
             <p>Do not attempt to read the device serial&nbsp;number.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST" class="symbol" href="const.DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST.html">DEVICE_INTERNAL_FLAG_NON_GENERIC_REQUEST</a></td>
-            
-            <td class="docblock-summary">
-            <p>The device uses a non-generic request that cannot be&nbsp;localized.</p>
             <p></p>
             </td>
             
@@ -12725,56 +12797,6 @@ This should be used when there is no valid signature or <span class="caps">CRC</
             
             <td class="docblock-summary">
             <p><span class="caps">EFI</span>&nbsp;boot.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="PROGRESS_FLAG_CHILD_FINISHED" class="symbol" href="const.PROGRESS_FLAG_CHILD_FINISHED.html">PROGRESS_FLAG_CHILD_FINISHED</a></td>
-            
-            <td class="docblock-summary">
-            <p>The child completed all the expected&nbsp;steps.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="PROGRESS_FLAG_GUESSED" class="symbol" href="const.PROGRESS_FLAG_GUESSED.html">PROGRESS_FLAG_GUESSED</a></td>
-            
-            <td class="docblock-summary">
-            <p>The steps have not been measured on real hardware and have been&nbsp;guessed.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="PROGRESS_FLAG_NO_PROFILE" class="symbol" href="const.PROGRESS_FLAG_NO_PROFILE.html">PROGRESS_FLAG_NO_PROFILE</a></td>
-            
-            <td class="docblock-summary">
-            <p>The steps cannot be accurate enough for a profile&nbsp;result.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="PROGRESS_FLAG_NO_TRACEBACK" class="symbol" href="const.PROGRESS_FLAG_NO_TRACEBACK.html">PROGRESS_FLAG_NO_TRACEBACK</a></td>
-            
-            <td class="docblock-summary">
-            <p>The steps should not be shown in the&nbsp;traceback.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="PROGRESS_FLAG_NONE" class="symbol" href="const.PROGRESS_FLAG_NONE.html">PROGRESS_FLAG_NONE</a></td>
-            
-            <td class="docblock-summary">
-            <p>No flags&nbsp;set.</p>
             <p></p>
             </td>
             

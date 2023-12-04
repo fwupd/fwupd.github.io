@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.9</p>
+        <p>Library Version: 1.9.10</p>
         
       </div>
       
@@ -172,7 +172,7 @@ system has been restarted and the <code>fwupd*.efi</code> binary has been run. T
 this fwupd sets up the <span class="caps">EFI</span> <code>BootNext</code> variable, creating the new boot entry if&nbsp;required.</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the <span class="caps">UEFI</span> <span class="caps">GUID</span> as provided in the <span class="caps">ESRT</span>. Additionally, for the
-system device the <code>main-system-firmware</code> <span class="caps">GUID</span> is also&nbsp;added.</p>
+system device the <code>main-system-firmware</code> internal flag is also&nbsp;added.</p>
 <p>For compatibility with Windows 10, the plugin also adds GUIDs of the form
 <code>UEFI\RES_{$(esrt)}</code>.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>

@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 1.9.9</p>
+        <p>Library Version: 1.9.10</p>
         
       </div>
       
@@ -109,13 +109,16 @@ the <code>Hardware Version</code>. The hardware version is read from the&nbsp;de
 <ul>
 <li><code>DISPLAY\VID_1028&amp;PID_0C88&amp;HWVER_2.1.2.1</code></li>
 <li><code>DISPLAY\VID_1028&amp;PID_0C8A&amp;HWVER_2.1.2.1</code></li>
+<li><code>PCI\VID_1028&amp;PID_0C8A</code> (only-quirks)</li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, and the
 device will reset when the new firmware has been written. On some hardware the
 <span class="caps">MST</span> device may not enumerate if there is no monitor actually plugged&nbsp;in.</p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
-<p>This plugin does not use&nbsp;quirks.</p>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsprobe-vcp">Flags:probe-vcp<a class="md-anchor" href="#flagsprobe-vcp" title="Permanent link"></a></h3>
+<p>This flag is used if the <span class="caps">VCP</span> should be&nbsp;probed.</p>
 <h2 id="vendor-id-security">Vendor ID security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for instance <code>PCI:0x1028</code> on Dell&nbsp;systems.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -156,6 +159,12 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsprobe-vcp"><span class="link-text">Flags:probe-vcp</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID security</span></a></li>
