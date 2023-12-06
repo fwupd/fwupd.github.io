@@ -1,0 +1,135 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin &ndash; 1.0: Supermicro BMC License</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta property="og:title" content="FwupdPlugin: Supermicro BMC License"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Supermicro BMC License"/>
+  <meta name="twitter:title" content="FwupdPlugin: Supermicro BMC License"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Supermicro BMC License"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 1.9.11</p>
+        
+      </div>
+      
+      
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <section>
+    <div class="docblock">
+    <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
+<p>While all newer (some X10, all X11 and H12 series) mainboard for Supermicro
+support Redfish some features are only available after buying them as
+additional feature. One of those are applying <span class="caps">BIOS</span> and <span class="caps">BMC</span> firmware&nbsp;updates.</p>
+<h2 id="details">Details<a class="md-anchor" href="#details" title="Permanent link"></a></h2>
+<p>If you want to update your Supermicro board via redfish using fwupd you will
+need either the <a href="https://store.supermicro.com/out-of-band-sft-oob-lic.html"><span class="caps">SFT</span>-<span class="caps">OOB</span>-<span class="caps">LIC</span></a> or the <a href="https://store.supermicro.com/supermicro-server-manager-dcms-license-key-sft-dcms-single.html"><span class="caps">SFT</span>-<span class="caps">DCMS</span>-Single</a>&nbsp;license.</p>
+<p>The license can be installed via redfish by POSTing it to
+<code>/redfish/v1/Managers/1/LicenseManager/ActivateLicense</code>, using the web
+interface or using the <code>contrib/upload-smc-license.py</code> If the license is not
+installed fwupd will add the FWUPD_DEVICE_PROBLEM_MISSING_LICENSE flag to the&nbsp;device.</p>
+    </div>
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      
+        
+        <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#details"><span class="link-text">Details</span></a></li>
+          
+        
+      
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
