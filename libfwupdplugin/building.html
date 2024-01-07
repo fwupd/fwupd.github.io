@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Unknown document</title>
+  <title>FwupdPlugin &ndash; 1.0: Building &amp; Debugging fwupd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Unknown document"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
-  <meta name="twitter:title" content="FwupdPlugin: Unknown document"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Unknown document"/>
+  <meta property="og:title" content="FwupdPlugin: Building &amp; Debugging fwupd"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Building &amp; Debugging fwupd"/>
+  <meta name="twitter:title" content="FwupdPlugin: Building &amp; Debugging fwupd"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Building &amp; Debugging fwupd"/>
 
 
   
@@ -87,15 +87,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   
   <h4 id="title" style="display:flex;">
-    Unknown document
+    Building &amp; Debugging fwupd
     <a href="#title" class="anchor"></a>
     
   </h4>
   
   <section>
     <div class="docblock">
-    <h1 id="building-fwupd">Building fwupd<a class="md-anchor" href="#building-fwupd" title="Permanent link"></a></h1>
-<p>These instructons below can either be used by the silicon vendor, or the consulting company to debug existing and new plugins. Sometimes new hardware is only supported in the development version of fwupd which may not even be available as a Snap or Flatpak&nbsp;yet.</p>
+    <p>These instructons below can either be used by the silicon vendor, or the consulting company to debug existing and new plugins. Sometimes new hardware is only supported in the development version of fwupd which may not even be available as a Snap or Flatpak&nbsp;yet.</p>
 <h2 id="prerequisites">Prerequisites<a class="md-anchor" href="#prerequisites" title="Permanent link"></a></h2>
 <ul>
 <li>
@@ -105,7 +104,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>Working access to the&nbsp;internet</p>
 </li>
 <li>
-<p>A user account (we’ll use emily as the example here) with administrator&nbsp;permissions</p>
+<p>A user account (we’ll use <code>u</code> as the example here) with administrator&nbsp;permissions</p>
 </li>
 </ul>
 <h2 id="setup-fwupd-development-environment">Setup fwupd development environment<a class="md-anchor" href="#setup-fwupd-development-environment" title="Permanent link"></a></h2>
@@ -147,7 +146,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fwupd
 <p><strong>fwupdtool</strong>: The debugging tool developers use to find problems and to run new code, as&nbsp;root</p>
 </li>
 </ol>
-<p>The <code>fwupdtool</code> binary does most of the things that <code>fwupdmgr</code> does, but without talking to the system fwupd instance. It is a lot easier to run <code>fwupdtool</code> with just one plugin (e.g. <code>--plugin-whitelist vli</code>) than running the daemon and all the plugins. You might have to wait 5 seconds and then read thousands of lines of debugging to see the <code>printf()</code> you added in a new plugin with the daemon, but with <code>fwupdtool --plugin-whitelist vli --verbose get-devices</code> it’ll be in a few lines, and&nbsp;instant.</p>
+<p>The <code>fwupdtool</code> binary does most of the things that <code>fwupdmgr</code> does, but without talking to the system fwupd instance. It is a lot easier to run <code>fwupdtool</code> with just one plugin (e.g. <code>--plugins vli</code>) than running the daemon and all the plugins. You might have to wait 5 seconds and then read thousands of lines of debugging to see the <code>printf()</code> you added in a new plugin with the daemon, but with <code>fwupdtool --plugins vli --verbose get-devices</code> it’ll be in a few lines, and&nbsp;instant.</p>
 <p>Within the development environment wrappers have been setup to allow launching <code>fwupd</code>, <code>fwupdtool</code> or <code>fwupdmgr</code> very similar to a host&nbsp;system.</p>
 <p>There are 3 main differences to&nbsp;note:</p>
 <ol>
@@ -193,7 +192,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fwupd
 
 <p>Using fwupdtool raw firmware blob (i.e. not the cabinet archive with metadata) can be installed on the device&nbsp;using:</p>
 <div class="codehilite"><pre><span></span><code>fwupdtool<span class="w"> </span>--verbose<span class="w"> </span>--plugins<span class="w"> </span>vli<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>install-blob<span class="w"> </span>/home/emily/the-firmware.bin<span class="w"> </span>73ef80b60058b4f18549921520bfd94eaf18710a
+<span class="w"> </span>install-blob<span class="w"> </span>/home/u/the-firmware.bin<span class="w"> </span>73ef80b60058b4f18549921520bfd94eaf18710a
 </code></pre></div>
 
 <h2 id="firmware-parsing">Firmware Parsing<a class="md-anchor" href="#firmware-parsing" title="Permanent link"></a></h2>
@@ -262,20 +261,28 @@ Listening<span class="w"> </span>on<span class="w"> </span>port<span class="w"> 
       
         
         <li class="toc-list-item"><a href="#prerequisites"><span class="link-text">Prerequisites</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#setup-fwupd-development-environment"><span class="link-text">Setup fwupd development environment</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#building"><span class="link-text">Building</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#running-binaries"><span class="link-text">Running binaries</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#using-fwupdtool"><span class="link-text">Using fwupdtool</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#firmware-parsing"><span class="link-text">Firmware Parsing</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#using-fwupdmgr"><span class="link-text">Using fwupdmgr</span></a></li>
+          
         
         <li class="toc-list-item"><a href="#debugging-fwupd"><span class="link-text">Debugging fwupd</span></a></li>
+          
         
       
     </ul>
