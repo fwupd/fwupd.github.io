@@ -99,7 +99,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 hardware. However, much past a few dozen devices this does not scale, either by time, or because
 real devices need plugging in and out. We can unit test the plugin internals, but this does not
 actually test devices being attached, removed, and being&nbsp;updated.</p>
-<p>By recording the backend devices we can build a &#8220;history&#8221; in GUsb of what control, interrupt and
+<p>By recording the backend devices we can build a &#8220;history&#8221; what <span class="caps">USB</span> control, interrupt and
 bulk transfers were sent to, and received from the device. By dumping these we can &#8220;replay&#8221; the
 update without the physical hardware&nbsp;connected.</p>
 <p>There are some problems that make this emulation slightly harder than the naive&nbsp;implementation:</p>
@@ -154,6 +154,9 @@ Waiting…                 [***************************************]
 Hughski ColorHug2: OK!
 </code></pre></div>
 
+<p>For devices that cannot be hotplugged, the <code>fwupd.conf</code> config option <code>EmulatedDevices</code> option
+can be used, by specifying the device IDs of the device that should be monitored.
+When adding modifying <code>EmulatedDevices</code> the daemon must be restarted for it to take&nbsp;effect.</p>
 <h2 id="pcap-file-conversion">Pcap file conversion<a class="md-anchor" href="#pcap-file-conversion" title="Permanent link"></a></h2>
 <p>Emulation can also be used during the development phase of the plugin if the hardware is not
 available or to reduce the number of write cycles on the device and the testing time. But this

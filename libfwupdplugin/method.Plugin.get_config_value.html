@@ -121,6 +121,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.get_data.html">get_data</a>
   
+    <a class="method" href="method.Plugin.get_device_gtype_default.html">get_device_gtype_default</a>
+  
     <a class="method" href="method.Plugin.get_devices.html">get_devices</a>
   
     <a class="method" href="method.Plugin.get_name.html">get_name</a>
@@ -133,8 +135,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.get_rules.html">get_rules</a>
   
-    <a class="method" href="method.Plugin.has_rule.html">has_rule</a>
-  
     <a class="method" href="method.Plugin.is_open.html">is_open</a>
   
     <a class="method" href="method.Plugin.name_compare.html">name_compare</a>
@@ -142,6 +142,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Plugin.open.html">open</a>
   
     <a class="method" href="method.Plugin.order_compare.html">order_compare</a>
+  
+    <a class="method" href="method.Plugin.reset_config_values.html">reset_config_values</a>
   
     <a class="method" href="method.Plugin.runner_activate.html">runner_activate</a>
   
@@ -179,6 +181,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.runner_init.html">runner_init</a>
   
+    <a class="method" href="method.Plugin.runner_modify_config.html">runner_modify_config</a>
+  
     <a class="method" href="method.Plugin.runner_prepare.html">runner_prepare</a>
   
     <a class="method" href="method.Plugin.runner_ready.html">runner_ready</a>
@@ -199,9 +203,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.security_attr_new.html">security_attr_new</a>
   
+    <a class="method" href="method.Plugin.set_config_default.html">set_config_default</a>
+  
     <a class="method" href="method.Plugin.set_config_value.html">set_config_value</a>
   
     <a class="method" href="method.Plugin.set_context.html">set_context</a>
+  
+    <a class="method" href="method.Plugin.set_device_gtype_default.html">set_device_gtype_default</a>
   
     <a class="method" href="method.Plugin.set_name.html">set_name</a>
   
@@ -238,7 +246,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-plugin.h#L505">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-plugin.h#L517">[src]</a>
         
       </h4>
 
@@ -246,8 +254,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">gchar</span><span class="o">*</span>
 <span class="n">fu_plugin_get_config_value</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuPlugin</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">key</span><span class="p">,</span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">value_default</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">key</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -259,7 +266,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-plugin.c#L2509">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-plugin.c#L2582">[src]</a>
         
       </h4>
 
@@ -293,23 +300,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>const gchar*</code></p>
             <p><p>A settings&nbsp;key.</p></p>
-            <table>
-            
-            
-            
-            
-            
-            
-            
-            <tr><td title="transfer: none">The data is owned by the caller of the method.</td></tr>
-            <tr><td>The value is a NUL terminated UTF-8 string.</td></tr>
-            </table>
-          </dd>
-          
-          <dt class="arg-name"><code>value_default</code></dt>
-          <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>const gchar*</code></p>
-            <p><p>The default value of the key if not&nbsp;found.</p></p>
             <table>
             
             

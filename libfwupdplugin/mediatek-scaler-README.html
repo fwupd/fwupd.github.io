@@ -111,23 +111,61 @@ device flash that is not currently&nbsp;running.</p>
 <li><code>com.mediatek.scaler</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>Devices use instance <span class="caps">ID</span> and the ingredients are vary according to fwupd&nbsp;version.</p>
+<h3 id="fwupd-196">fwupd 1.9.6<a class="md-anchor" href="#fwupd-196" title="Permanent link"></a></h3>
 <p>Devices use instance <span class="caps">ID</span> that is composed of <code>Subsystem ID</code>, <code>Subsystem Model</code>, and
 the <code>Hardware Version</code>. The hardware version is read from the&nbsp;device.</p>
 <ul>
-<li><code>DISPLAY\VID_1028&amp;PID_0C88&amp;HWVER_2.1.2.1</code></li>
-<li><code>DISPLAY\VID_1028&amp;PID_0C8A&amp;HWVER_2.1.2.1</code></li>
+<li><code>DISPLAY\VID_1028&amp;PID_0C88&amp;HWVER_2.1.2.1</code> (metadata)</li>
+<li><code>DISPLAY\VID_1028&amp;PID_0C8A&amp;HWVER_2.1.2.1</code> (metadata)</li>
+</ul>
+<h3 id="fwupd-1910">fwupd 1.9.10<a class="md-anchor" href="#fwupd-1910" title="Permanent link"></a></h3>
+<p>The <span class="caps">DDC</span>/<span class="caps">CI</span> commands used to test the target device have been restricted to run on
+specific hardware only. Typically by adding a quirk file to match the system <code>VID</code>
+and <code>PID</code> from the <code>PCI</code> bus.</p>
+<ul>
+<li><code>DISPLAY\VID_1028&amp;PID_0C88&amp;HWVER_2.1.2.1</code> (metadata)</li>
+<li><code>DISPLAY\VID_1028&amp;PID_0C8A&amp;HWVER_2.1.2.1</code> (metadata)</li>
+<li><code>PCI\VID_1028&amp;PID_0C88</code> (only-quirks)</li>
 <li><code>PCI\VID_1028&amp;PID_0C8A</code> (only-quirks)</li>
 </ul>
+<h3 id="fwupd-200">fwupd 2.0.0<a class="md-anchor" href="#fwupd-200" title="Permanent link"></a></h3>
+<p>The enumeration of <code>i2c</code> devices has been centralized to daemon libfwupdplugin and
+declared as a <code>proxy</code> device for the <code>drm</code> subsystem device. The instance <span class="caps">ID</span> will
+be composed of <code>VEN</code>, <code>DEV</code> and the <code>HWVER</code>.</p>
+<p>The instance <span class="caps">ID</span> <code>VEN</code> is equivalent to the <code>mfg id</code> in device <code>EDID</code> while <code>DEV</code> is
+the <code>product code</code>.</p>
+<ul>
+<li><code>DRM\VEN_DEL&amp;DEV_4340&amp;HWVER_2.1.2.1</code> (quirks and&nbsp;metadata)</li>
+<li><code>DRM\VEN_DEL&amp;DEV_7430&amp;HWVER_3.1.5.1</code> (quirks and&nbsp;metadata)</li>
+</ul>
+<p>Example below for the information in <span class="caps">EDID</span>:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ddcutil
+$<span class="w"> </span>sudo<span class="w"> </span>ddcutil<span class="w"> </span>detect
+Display<span class="w"> </span><span class="m">1</span>
+<span class="w">   </span>I2C<span class="w"> </span>bus:<span class="w">  </span>/dev/i2c-14
+<span class="w">   </span>DRM<span class="w"> </span>connector:<span class="w">           </span>card1-DP-2
+<span class="w">   </span>EDID<span class="w"> </span>synopsis:
+<span class="w">      </span>Mfg<span class="w"> </span>id:<span class="w">               </span>DEL<span class="w"> </span>-<span class="w"> </span>Dell<span class="w"> </span>Inc.
+<span class="w">      </span>Model:<span class="w">                </span>OptiPlex<span class="w"> </span>AIO
+<span class="w">      </span>Product<span class="w"> </span>code:<span class="w">         </span><span class="m">17216</span><span class="w">  </span><span class="o">(</span>0x4340<span class="o">)</span>
+<span class="w">      </span>Serial<span class="w"> </span>number:
+<span class="w">      </span>Binary<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span><span class="m">1145581640</span><span class="w"> </span><span class="o">(</span>0x44483048<span class="o">)</span>
+<span class="w">      </span>Manufacture<span class="w"> </span>year:<span class="w">     </span><span class="m">2023</span>,<span class="w">  </span>Week:<span class="w"> </span><span class="m">30</span>
+<span class="w">   </span>VCP<span class="w"> </span>version:<span class="w">         </span><span class="m">2</span>.1
+</code></pre></div>
+
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, and the
 device will reset when the new firmware has been written. On some hardware the
-<span class="caps">MST</span> device may not enumerate if there is no monitor actually plugged&nbsp;in.</p>
-<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
-<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
-<h3 id="flagsprobe-vcp">Flags:probe-vcp<a class="md-anchor" href="#flagsprobe-vcp" title="Permanent link"></a></h3>
-<p>This flag is used if the <span class="caps">VCP</span> should be&nbsp;probed.</p>
+<span class="caps">DRM</span> device may not enumerate if there is no monitor actually plugged&nbsp;in.</p>
 <h2 id="vendor-id-security">Vendor ID security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for instance <code>PCI:0x1028</code> on Dell&nbsp;systems.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="bank2-only"><code>bank2-only</code><a class="md-anchor" href="#bank2-only" title="Permanent link"></a></h3>
+<p>Install firmware to bank 2&nbsp;only.</p>
+<p>Since:&nbsp;2.0.0</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires access to i2c buses associated with the specified
 DisplayPort aux channel, for instance <code>/dev/i2c-5</code> and <code>/dev/drm_dp_aux3</code>. Note that
@@ -161,20 +199,30 @@ consulted before making major or functional&nbsp;changes:</p>
         
         <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
           
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#fwupd-196"><span class="link-text">fwupd 1.9.6</span></a></li>
+          
+            <li class="toc-list-item"><a href="#fwupd-1910"><span class="link-text">fwupd 1.9.10</span></a></li>
+          
+            <li class="toc-list-item"><a href="#fwupd-200"><span class="link-text">fwupd 2.0.0</span></a></li>
+          
+          </ul>
+          
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID security</span></a></li>
           
         
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
           
           <ul class="toc-list">
           
-            <li class="toc-list-item"><a href="#flagsprobe-vcp"><span class="link-text">Flags:probe-vcp</span></a></li>
+            <li class="toc-list-item"><a href="#bank2-only"><span class="link-text">bank2-only</span></a></li>
           
           </ul>
-          
-        
-        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID security</span></a></li>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

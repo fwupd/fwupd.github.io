@@ -110,6 +110,11 @@ corresponding Jabra Link&nbsp;connectors.</p>
 <p>The device is updated at runtime using <span class="caps">USB</span> control and interrupt&nbsp;transfers.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x0B0E</code></p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="jabragnpaddress">JabraGnpAddress<a class="md-anchor" href="#jabragnpaddress" title="Permanent link"></a></h3>
+<p>Address to use, defaulting to <code>0x08</code>.</p>
+<p>Since:&nbsp;1.9.20</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -139,6 +144,8 @@ consulted before making major or functional&nbsp;changes:</p>
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>
         

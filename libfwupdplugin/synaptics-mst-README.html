@@ -105,7 +105,14 @@ an unspecified binary file&nbsp;format.</p>
 <li><code>com.synaptics.mst</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These devices use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
+<p>These devices use the standard <span class="caps">DPAUX</span> <span class="caps">GUID</span> values,&nbsp;e.g.</p>
+<ul>
+<li><code>DPAUX\OUI_0090CC24</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;HWREV_10</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;HWREV_10&amp;DEVID_SYNAB2</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;DEVID_SYNAB2</code> (only-quirk)</li>
+</ul>
+<p>These devices also use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
 <ul>
 <li><code>MST-$(board-ID)</code></li>
 <li><code>MST-$(device_kind)-$(chip-ID)-$(board-ID)</code></li>
@@ -122,6 +129,8 @@ device will reset when the new firmware has been written. On some hardware the
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, for example set to <code>DRM_DP_AUX_DEV:0x$(vid)</code></p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="synapticsmstdevicekind">SynapticsMstDeviceKind<a class="md-anchor" href="#synapticsmstdevicekind" title="Permanent link"></a></h3>
+<p>The comma-seporated kind of device, e.g. <code>system</code> or <code>wd15,tb16,tb18</code></p>
 <h3 id="flagsmanual-restart-required">Flags:manual-restart-required<a class="md-anchor" href="#flagsmanual-restart-required" title="Permanent link"></a></h3>
 <p>The device must be restarted manually after the update has&nbsp;completed.</p>
 <h3 id="flagsignore-board-id">Flags:ignore-board-id<a class="md-anchor" href="#flagsignore-board-id" title="Permanent link"></a></h3>
@@ -227,6 +236,8 @@ consulted before making major or functional&nbsp;changes:</p>
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
           
           <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#synapticsmstdevicekind"><span class="link-text">SynapticsMstDeviceKind</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsmanual-restart-required"><span class="link-text">Flags:manual-restart-required</span></a></li>
           

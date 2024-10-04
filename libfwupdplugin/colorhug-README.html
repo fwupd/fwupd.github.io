@@ -118,6 +118,9 @@ different <span class="caps">USB</span> <span class="caps">PID</span> in a bootl
 back to the runtime&nbsp;mode.</p>
 <p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
 the bootloader and runtime modes are treated as the same&nbsp;device.</p>
+<h3 id="flagshalfsize"><code>Flags=halfsize</code><a class="md-anchor" href="#flagshalfsize" title="Permanent link"></a></h3>
+<p>Some devices have a compact memory layout and the application code starts&nbsp;earlier.</p>
+<p>Since:&nbsp;1.0.3</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x273F</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -152,6 +155,12 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagshalfsize"><span class="link-text">Flags=halfsize</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

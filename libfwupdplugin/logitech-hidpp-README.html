@@ -187,21 +187,31 @@ and the radio stack <span class="caps">FW</span> (SoftDevice). The latter will s
 device of the actual device and is handled by FuLogitechHidppRadio
 (fu-logitech-hidpp-radio.c), which simply defers to the parent device
 for most&nbsp;operations.</p>
-<h3 id="plugin-specific-flags">Plugin-specific flags<a class="md-anchor" href="#plugin-specific-flags" title="Permanent link"></a></h3>
+<h3 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h3>
 <p>Even though the same code handles multiple different devices, there are
 some inherent differences in them that makes it necessary to handle some
 exceptional behaviors&nbsp;sometimes.</p>
-<p>In order to do that there are a few specific flags that can be used to
-tweak the plugin code for certain device&nbsp;types:</p>
-<ul>
-<li>rebind-attach: some devices will have their device file unbound and
-    re-bound after reset, so the device object can&#8217;t be simply re-probed
-    using the same file&nbsp;descriptor.</li>
-<li>force-receiver-id: this flag is used to differentiate the receiver device in
-    FuLogitechHidppDevice, since the receiver has a specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</li>
-<li>ble: used to differentiate devices in <span class="caps">BLE</span> mode. They require all the
-    reports to be <em>long</em>.</li>
-</ul>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsrebind-attach"><code>Flags=rebind-attach</code><a class="md-anchor" href="#flagsrebind-attach" title="Permanent link"></a></h3>
+<p>Some devices will have their device file unbound and re-bound after reset, so the device object
+can&#8217;t be simply re-probed using the same file&nbsp;descriptor.</p>
+<p>Since:&nbsp;1.7.0</p>
+<h3 id="flagsforce-receiver-id"><code>Flags=force-receiver-id</code><a class="md-anchor" href="#flagsforce-receiver-id" title="Permanent link"></a></h3>
+<p>Used to differentiate the receiver device in FuLogitechHidppDevice, since the receiver has a
+specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</p>
+<p>Since:&nbsp;1.7.0</p>
+<h3 id="flagsble"><code>Flags=ble</code><a class="md-anchor" href="#flagsble" title="Permanent link"></a></h3>
+<p>Differentiate devices in <span class="caps">BLE</span> mode. They require all the reports to be <em>long</em>.</p>
+<p>Since:&nbsp;1.7.0</p>
+<h3 id="flagsis-signed"><code>Flags=is-signed</code><a class="md-anchor" href="#flagsis-signed" title="Permanent link"></a></h3>
+<p>Device requires signed&nbsp;firmware.</p>
+<p>Since:&nbsp;1.7.0</p>
+<h3 id="flagsno-request-required"><code>Flags=no-request-required</code><a class="md-anchor" href="#flagsno-request-required" title="Permanent link"></a></h3>
+<p>No user-action is required for detach and&nbsp;attach.</p>
+<p>Since:&nbsp;1.7.0</p>
+<h3 id="flagsadd-radio"><code>Flags=add-radio</code><a class="md-anchor" href="#flagsadd-radio" title="Permanent link"></a></h3>
+<p>The device should add a softdevice (index 0x5), typically a&nbsp;radio.</p>
+<p>Since:&nbsp;1.7.0</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -239,7 +249,19 @@ tweak the plugin code for certain device&nbsp;types:</p>
           
             <li class="toc-list-item"><a href="#how-the-code-is-organized"><span class="link-text">How the code is organized</span></a></li>
           
-            <li class="toc-list-item"><a href="#plugin-specific-flags"><span class="link-text">Plugin-specific flags</span></a></li>
+            <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsrebind-attach"><span class="link-text">Flags=rebind-attach</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsforce-receiver-id"><span class="link-text">Flags=force-receiver-id</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsble"><span class="link-text">Flags=ble</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsis-signed"><span class="link-text">Flags=is-signed</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-request-required"><span class="link-text">Flags=no-request-required</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsadd-radio"><span class="link-text">Flags=add-radio</span></a></li>
           
           </ul>
           

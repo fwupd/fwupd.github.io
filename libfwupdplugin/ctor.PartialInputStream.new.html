@@ -122,7 +122,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="n">fu_partial_input_stream_new</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">GInputStream</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">size</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -134,7 +135,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-partial-input-stream.c#L123">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-partial-input-stream.c#L145">[src]</a>
         
       </h4>
 
@@ -215,6 +216,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           
 
           
+          <dt class="arg-name"><code>error</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-namespace="GLib" data-link="struct.Error.html" class="external"><code>GError **</code></a></p>
+            <p>The return location for <a href="https://docs.gtk.org/glib/error-reporting.html#rules-for-use-of-gerror">a recoverable error</a>.</p>
+            <table>
+              <tr><td>The argument can be <code>NULL</code>.</td></tr>
+              <tr><td>If the return location is not <code>NULL</code>, then you must initialize it to a <code>NULL</code> <code>GError*</code>.</td></tr>
+              <tr><td>The argument will be left initialized to <code>NULL</code> by the constructor if there are no errors.</td></tr>
+              <tr><td>In case of error, the argument will be set to a newly allocated <code>GError</code>; the caller will take ownership of the data, and be responsible for freeing it.</td></tr>
+            </table>
+          </dd>
+          
         </dl>
       </div>
     </div>
@@ -231,7 +244,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="class.InputStream.html" data-namespace="Gio" class="external"><code>GInputStream</code></a></p>
-            <p><p>A <code>FuPartialInputStream</code>.</p></p>
+            <p><p>A <code>FuPartialInputStream</code>, or <code>NULL</code> on&nbsp;error.</p></p>
           </div>
           <div>
             <table>

@@ -124,6 +124,12 @@ it then enumerates with a <span class="caps">HID</span> descriptor. On attach th
 runtime mode which <em>may</em> mean the device &#8220;goes&nbsp;away&#8221;.</p>
 <p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
 the bootloader and runtime modes are treated as the same&nbsp;device.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsrequire-delay"><code>Flags=require-delay</code><a class="md-anchor" href="#flagsrequire-delay" title="Permanent link"></a></h3>
+<p>Respect the write timeout value when performing actions.
+This is sometimes set to a huge amount of time, and so is not used by&nbsp;default.</p>
+<p>Since:&nbsp;1.0.3</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x0A12</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -152,6 +158,15 @@ the bootloader and runtime modes are treated as the same&nbsp;device.</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsrequire-delay"><span class="link-text">Flags=require-delay</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

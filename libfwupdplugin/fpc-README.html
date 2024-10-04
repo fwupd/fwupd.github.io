@@ -111,6 +111,16 @@ a packed binary file&nbsp;format.</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, and the
 device will reset when the new firmware has been&nbsp;written.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsmoh-device"><code>Flags=moh-device</code><a class="md-anchor" href="#flagsmoh-device" title="Permanent link"></a></h3>
+<p>Device is a <span class="caps">MOH</span>&nbsp;device</p>
+<h3 id="flagsrts"><code>Flags=rts</code><a class="md-anchor" href="#flagsrts" title="Permanent link"></a></h3>
+<p>Device is a <span class="caps">RTS</span>&nbsp;device.</p>
+<h3 id="flagslegacy-dfu"><code>Flags=legacy-dfu</code><a class="md-anchor" href="#flagslegacy-dfu" title="Permanent link"></a></h3>
+<p>Device supports legacy <span class="caps">DFU</span>&nbsp;mode.</p>
+<h3 id="flagslenfy"><code>Flags=lenfy</code><a class="md-anchor" href="#flagslenfy" title="Permanent link"></a></h3>
+<p>Device is a <span class="caps">LENFY</span> <span class="caps">MOH</span>&nbsp;device.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x10A5</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -145,6 +155,21 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsmoh-device"><span class="link-text">Flags=moh-device</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsrts"><span class="link-text">Flags=rts</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagslegacy-dfu"><span class="link-text">Flags=legacy-dfu</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagslenfy"><span class="link-text">Flags=lenfy</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

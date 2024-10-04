@@ -97,7 +97,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <h2 id="name">NAME<a class="md-anchor" href="#name" title="Permanent link"></a></h2>
 <p><strong>fwupd-remotes.d</strong> — remotes used for the fwupd&nbsp;daemon.</p>
 <h2 id="synopsis">SYNOPSIS<a class="md-anchor" href="#synopsis" title="Permanent link"></a></h2>
-<p>The <code>/home/supermario/src/fwupd/venv/bin/../dist/etc/fwupd/remotes.d</code> and <code>/home/supermario/src/fwupd/venv/bin/../dist/var/fwupd/remotes.d</code> directories are
+<p>The <code>/github/workspace/dist/etc/fwupd/remotes.d</code> and <code>/github/workspace/dist/var/fwupd/remotes.d</code> directories are
 used to read information about remote metadata sources.
 The complete description of the file format and possible parameters are documented here for
 reference&nbsp;purposes.</p>
@@ -126,15 +126,6 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
   are available for each device. This value can be modified using <code>fwupdmgr enable-remote</code>.</p>
 <p><strong>Title=</strong></p>
 <p>The single line description to show in any <span class="caps">UI</span>&nbsp;tools.</p>
-<p><strong>Keyring=jcat</strong></p>
-<p>The signing scheme to use when downloading and verifying the metadata.
-  The options are <code>jcat</code>, <code>gpg</code>, <code>pkcs</code>, and <code>none</code>.</p>
-<p><strong><span class="caps">NOTE</span>:</strong> Using <code>Keyring=none</code> is only designed when local firmware installed to an immutable
-  location, and should not be used when the metadata could be written by an untrusted&nbsp;user.</p>
-<p><strong><span class="caps">NOTE</span>:</strong> Using <code>Keyring=jcat</code> is usually a better choice than <code>Keyring=gpg</code> or <code>Keyring=pkcs</code>
-  as deployments may disable either <span class="caps">PKCS</span>#7 or <span class="caps">GPG</span> support. Using <code>Keyring=jcat</code> means it works in
-  both cases, and JCat also provides other benefits like desynchronized <span class="caps">CDN</span> mitigation and multiple
-  types of&nbsp;checksum.</p>
 <p><strong>MetadataURI=</strong></p>
 <p>The <span class="caps">URL</span> of AppStream metadata to download and use. This should have a suffix of <code>.xml.gz</code> for
   legacy metadata and <code>.xml.xz</code> for the more modern format.
@@ -148,8 +139,6 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p><strong>AutomaticReports=false</strong></p>
 <p>If <code>true</code>, automatically sent success reports for firmware obtained from this remote after the
   firmware update has&nbsp;completed.</p>
-<p><strong>SecurityReportURI=</strong></p>
-<p>The endpoint to use for sending <span class="caps">HSI</span> platform security reports, or blank to disable this&nbsp;feature.</p>
 <p><strong>AutomaticSecurityReports=false</strong></p>
 <p>If <code>true</code>, automatically sent <span class="caps">HSI</span> platform security reports when running <code>fwupdmgr security</code>.</p>
 <p><strong>OrderBefore=</strong></p>
@@ -169,7 +158,7 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
   or <code>0</code> to re-download every&nbsp;time.</p>
 <h2 id="notes">NOTES<a class="md-anchor" href="#notes" title="Permanent link"></a></h2>
 <p>The basename of the path without the extension is used for the remote <span class="caps">ID</span>.
-For instance, the <code>/home/supermario/src/fwupd/venv/bin/../dist/etc/fwupd/remotes.d/lvfs.conf</code> remote file will have <span class="caps">ID</span> of <code>lvfs</code>.</p>
+For instance, the <code>/github/workspace/dist/etc/fwupd/remotes.d/lvfs.conf</code> remote file will have <span class="caps">ID</span> of <code>lvfs</code>.</p>
 <h2 id="see-also">SEE ALSO<a class="md-anchor" href="#see-also" title="Permanent link"></a></h2>
 <p><a href="./fwupd.conf.html"><code>fwupd.conf(5)</code></a></p>
     </div>

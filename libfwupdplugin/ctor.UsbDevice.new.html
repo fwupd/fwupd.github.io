@@ -106,14 +106,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.8.2</span></p>
+      <p><span class="emblem available">since: 2.0.0</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-usb-device.h#L30">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-usb-device-private.h#L16">[src]</a>
         
       </h4>
 
@@ -121,7 +121,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">FuUsbDevice</span><span class="o">*</span>
 <span class="n">fu_usb_device_new</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuContext</span><span class="o">*</span><span class="w"> </span><span class="n">ctx</span><span class="p">,</span>
-<span class="w">  </span><span class="n">GUsbDevice</span><span class="o">*</span><span class="w"> </span><span class="n">usb_device</span>
+<span class="w">  </span><span class="n">libusb_device</span><span class="o">*</span><span class="w"> </span><span class="n">usb_device</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -133,7 +133,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-usb-device.c#L1032">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-usb-device.c#L2940">[src]</a>
         
       </h4>
 
@@ -143,9 +143,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         
-        <p>Available since: 1.8.2</p>
+        <p>Available since: 2.0.0</p>
         
-        
+        <p>This method is not directly available to language bindings.</p>
       </div>
 
       
@@ -180,8 +180,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           
           <dt class="arg-name"><code>usb_device</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="class.Device.html" data-namespace="GUsb" class="external"><code>GUsbDevice</code></a></p>
-            <p><p>A <span class="caps">USB</span>&nbsp;device.</p></p>
+            <p><em>Type:</em>&nbsp;<code>libusb_device*</code></p>
+            <p><p>A&nbsp;#libusb_device.</p></p>
             <table>
             
             

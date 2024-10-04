@@ -85,11 +85,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Properties</h5>
   <div class="links">
   
+    <a class="property"href="property.Device.backend.html">backend</a>
+  
     <a class="property"href="property.Device.backend-id.html">backend-id</a>
   
     <a class="property"href="property.Device.context.html">context</a>
   
-    <a class="property"href="property.Device.internal-flags.html">internal-flags</a>
+    <a class="property"href="property.Device.equivalent-id.html">equivalent-id</a>
   
     <a class="property"href="property.Device.logical-id.html">logical-id</a>
   
@@ -97,9 +99,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="property"href="property.Device.physical-id.html">physical-id</a>
   
+    <a class="property"href="property.Device.pid.html">pid</a>
+  
     <a class="property current"href="property.Device.private-flags.html">private-flags</a>
   
     <a class="property"href="property.Device.proxy.html">proxy</a>
+  
+    <a class="property"href="property.Device.update-image.html">update-image</a>
+  
+    <a class="property"href="property.Device.update-message.html">update-message</a>
+  
+    <a class="property"href="property.Device.vid.html">vid</a>
   
   </div>
 </div>
@@ -129,7 +139,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>property private-flags: guint64 [ read, write ]</code></pre>
+        <pre><code>property private-flags: guint64 [ read ]</code></pre>
       </div>
     </div>
 
@@ -138,7 +148,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.c#L6573">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.c#L7317">[src]</a>
         
       </h4>
 
@@ -165,10 +175,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <tr><td>Default value</td><td>0</td></tr>
         
-          <tr><td>Getter method</td><td><a href="method.Device.get_private_flags.html"><code>fu_device_get_private_flags()</code></a></td></tr>
-        
-          <tr><td>Setter method</td><td><a href="method.Device.set_private_flags.html"><code>fu_device_set_private_flags()</code></a></td></tr>
-        
         </table>
       </div>
       
@@ -183,7 +189,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
       <table>
         <tr><td>Readable</td><td><b>yes</b></td></tr>
-        <tr><td>Writable</td><td><b>yes</b></td></tr>
+        <tr><td>Writable</td><td><b>no</b></td></tr>
         <tr><td>Construct</td><td><b>no</b></td></tr>
         <tr><td>Construct only</td><td><b>no</b></td></tr>
       </table>

@@ -129,6 +129,10 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fwupd
 <div class="codehilite"><pre><span></span><code>build-fwupd
 </code></pre></div>
 
+<p>To run the project test suite a script is&nbsp;included:</p>
+<div class="codehilite"><pre><span></span><code>test-fwupd
+</code></pre></div>
+
 <p>If you want to leave the development environment at any time you can&nbsp;run:</p>
 <div class="codehilite"><pre><span></span><code>deactivate
 </code></pre></div>
@@ -161,7 +165,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fwupd
 <div class="codehilite"><pre><span></span><code>fwupd
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>fwupdgmr<span class="w"> </span>get-devices
+<div class="codehilite"><pre><span></span><code>fwupdmgr<span class="w"> </span>get-devices
 </code></pre></div>
 
 <h2 id="using-fwupdtool">Using fwupdtool<a class="md-anchor" href="#using-fwupdtool" title="Permanent link"></a></h2>
@@ -232,22 +236,37 @@ PID:<span class="w">                     </span>0x105
 </code></pre></div>
 
 <p>This will send the firmware archive from the locally built <code>fwupdmgr</code> to the locally built daemon using a file descriptor, which will call the new plugin code with the firmware blob in the archive. The daemon terminal will also show lots of useful debugging during this&nbsp;process.</p>
-<h2 id="debugging-fwupd">Debugging fwupd<a class="md-anchor" href="#debugging-fwupd" title="Permanent link"></a></h2>
-<p>When setup using the virtualenv all 3 binaries have the ability be launched with a debugger attached as a <strong>user</strong> by using <code>DEBUG=1</code> in the&nbsp;environment.</p>
+<h2 id="using-visual-studio-code-to-build-and-test">Using Visual Studio code to build and test<a class="md-anchor" href="#using-visual-studio-code-to-build-and-test" title="Permanent link"></a></h2>
+<p>During build time a set of tasks will have been created for use with Visual Studio&nbsp;Code.</p>
+<p>The default build task which is triggered by using <em>ctrl-shift-b</em> will build the project with default settings.
+The default test task can be triggered from the command palette to run the test suite.
+Open the command palette with <em>ctrl-shift-p</em> and type <strong>Run test task</strong> and hit enter. This will launch the daemon in a terminal window.
+<img src="test_task.png" width="286" alt="test task screenshot"></p>
+<h2 id="using-visual-studio-code-to-debug">Using Visual Studio Code to debug<a class="md-anchor" href="#using-visual-studio-code-to-debug" title="Permanent link"></a></h2>
+<p>The <a href="https://code.visualstudio.com/Docs/editor/debugging">debugger</a> that is part of <a href="https://code.visualstudio.com/">Visual Studio Code</a> is really helpful for debugging issues.
+During build time a set of launch targets will have been created for use with Visual Studio Code.
+All 3 binaries have the ability be launched with a debugger attached as a <strong>user</strong> by using <code>DEBUG=1</code> in the&nbsp;environment.</p>
+<h3 id="debugging-fwupdtool-and-fwupdmgr">debugging <code>fwupdtool</code> and <code>fwupdmgr</code><a class="md-anchor" href="#debugging-fwupdtool-and-fwupdmgr" title="Permanent link"></a></h3>
 <p>For example to debug <code>fwupdtool</code> you would launch it like&nbsp;this:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">(</span>fwupd<span class="o">)</span><span class="w"> </span>u@fedora:~/fwupd$<span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>fwupdtool<span class="w"> </span>get-devices
 Process<span class="w"> </span>/home/u/fwupd/venv/bin/../dist/bin/fwupdtool<span class="w"> </span>created<span class="p">;</span><span class="w"> </span><span class="nv">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">595311</span>
 Listening<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">9091</span>
 </code></pre></div>
 
-<p>Then the process will wait for a debugger to be attached to <code>localhost:9091</code>.</p>
-<p>One example is using the <a href="https://code.visualstudio.com/Docs/editor/debugging">debugger</a> that is part of <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</p>
+<p>This will configure <code>gdbserver</code> to listen on a local port waiting for a debugger to&nbsp;connect.</p>
 <p>Launch vscode in the same directory as the Git checkout. After it&#8217;s launched, set a source&nbsp;breakpoint.</p>
-<p><img src="debug_breakpoint.png" width="720"></p>
+<p><img src="debug_breakpoint.png" width="720" alt="debug breakpoint screenshot"></p>
 <p>Then use the run and debug button (or <em>ctrl-shift-d</em>) to open up the debugger. From the debugger choose the tool to&nbsp;use.</p>
-<p><img src="debug_tool_selector.png" width="720"></p>
+<p><img src="debug_tool_selector.png" width="720" alt="debug tool selector screenshot"></p>
 <p>Press the green start button (or use <em>F5</em>) to start debugging. The debugger will attach to the process you launched and stop where you left&nbsp;off.</p>
 <p><img alt="debugger attached" src="debug_attached.png" /></p>
+<h3 id="debugging-fwupd-daemon">debugging fwupd (daemon)<a class="md-anchor" href="#debugging-fwupd-daemon" title="Permanent link"></a></h3>
+<p>For debugging the daemon, a helper task is also included to launch the daemon with the <code>DEBUG</code> environment variable set within&nbsp;vscode.</p>
+<p>Open the command palette with <em>ctrl-shift-p</em> and type <strong>Run task</strong> and hit enter. Select the <code>gdbserver-fwupd</code> task.
+This will launch the daemon in a terminal window.
+<img src="debug_task.png" width="186" alt="debug task screenshot"></p>
+<p>Then use the run and debug button (or <em>ctrl-shift-d</em>) to open up the debugger. From the debugger choose <code>gdbserver (fwupd)</code>.</p>
+<p><img src="debug_tool_selector.png" width="720" alt="debug tool selector screenshot"></p>
     </div>
   </section>
 </section>
@@ -281,7 +300,18 @@ Listening<span class="w"> </span>on<span class="w"> </span>port<span class="w"> 
         <li class="toc-list-item"><a href="#using-fwupdmgr"><span class="link-text">Using fwupdmgr</span></a></li>
           
         
-        <li class="toc-list-item"><a href="#debugging-fwupd"><span class="link-text">Debugging fwupd</span></a></li>
+        <li class="toc-list-item"><a href="#using-visual-studio-code-to-build-and-test"><span class="link-text">Using Visual Studio code to build and test</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#using-visual-studio-code-to-debug"><span class="link-text">Using Visual Studio Code to debug</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#debugging-fwupdtool-and-fwupdmgr"><span class="link-text">debugging fwupdtool and fwupdmgr</span></a></li>
+          
+            <li class="toc-list-item"><a href="#debugging-fwupd-daemon"><span class="link-text">debugging fwupd (daemon)</span></a></li>
+          
+          </ul>
           
         
       

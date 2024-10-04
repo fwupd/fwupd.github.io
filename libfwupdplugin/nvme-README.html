@@ -132,11 +132,12 @@ only activated when the system is either restarted or in some cases&nbsp;shutdow
 <h3 id="nvmeblocksize">NvmeBlockSize<a class="md-anchor" href="#nvmeblocksize" title="Permanent link"></a></h3>
 <p>The block size used for NVMe&nbsp;writes</p>
 <p>Since:&nbsp;1.1.3</p>
-<h3 id="flags">Flags<a class="md-anchor" href="#flags" title="Permanent link"></a></h3>
-<ul>
-<li><code>force-align</code> if image should be padded, since&nbsp;1.2.4</li>
-<li><code>commit-ca3</code> download and activate immediately, since&nbsp;1.8.15</li>
-</ul>
+<h3 id="flagsforce-align"><code>Flags=force-align</code><a class="md-anchor" href="#flagsforce-align" title="Permanent link"></a></h3>
+<p>Force alignment of the firmware&nbsp;file.</p>
+<p>Since&nbsp;1.2.4</p>
+<h3 id="flagscommit-ca3"><code>Flags=commit-ca3</code><a class="md-anchor" href="#flagscommit-ca3" title="Permanent link"></a></h3>
+<p>Replace, and activate immediately rather than on next&nbsp;reset.</p>
+<p>Since&nbsp;1.8.15</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the udev vendor, for example set to <code>NVME:0x1179</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -173,7 +174,9 @@ only activated when the system is either restarted or in some cases&nbsp;shutdow
           
             <li class="toc-list-item"><a href="#nvmeblocksize"><span class="link-text">NvmeBlockSize</span></a></li>
           
-            <li class="toc-list-item"><a href="#flags"><span class="link-text">Flags</span></a></li>
+            <li class="toc-list-item"><a href="#flagsforce-align"><span class="link-text">Flags=force-align</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscommit-ca3"><span class="link-text">Flags=commit-ca3</span></a></li>
           
           </ul>
           

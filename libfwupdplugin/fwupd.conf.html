@@ -97,7 +97,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <h2 id="name">NAME<a class="md-anchor" href="#name" title="Permanent link"></a></h2>
 <p><strong>fwupd.conf</strong> — configuration file for the fwupd&nbsp;daemon.</p>
 <h2 id="synopsis">SYNOPSIS<a class="md-anchor" href="#synopsis" title="Permanent link"></a></h2>
-<p>The <code>/home/supermario/src/fwupd/venv/bin/../dist/etc/fwupd/fwupd.conf</code> file is the main configuration file for the fwupd daemon.
+<p>The <code>/github/workspace/dist/etc/fwupd/fwupd.conf</code> file is the main configuration file for the fwupd daemon.
 The complete description of the file format and possible parameters are documented here for reference&nbsp;purposes.</p>
 <h2 id="file-format">FILE FORMAT<a class="md-anchor" href="#file-format" title="Permanent link"></a></h2>
 <p>The file consists of a multiple sections with optional parameters. Parameters are of the&nbsp;form:</p>
@@ -120,7 +120,10 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p>The <code>[fwupd]</code> section can contain the following&nbsp;parameters:</p>
 <p><strong>DisabledDevices=</strong></p>
 <p>Allow blocking specific devices by their <span class="caps">GUID</span>, using semicolons as&nbsp;delimiter.</p>
-<p><strong>DisabledPlugins=test;test_ble</strong></p>
+<p><strong>EmulatedDevices=</strong></p>
+<p>Allow adding specific devices by their device <span class="caps">ID</span>, using semicolons as&nbsp;delimiter.</p>
+<p>This config option is useful to build emulations of &#8220;internal&#8221; devices which typically cannot be&nbsp;hotplugged.</p>
+<p><strong>DisabledPlugins=</strong></p>
 <p>Allow blocking specific plugins by name.
   Use <strong>fwupdmgr get-plugins</strong> to get the list of&nbsp;plugins.</p>
 <p><strong>ArchiveSizeMax=</strong></p>
@@ -128,29 +131,36 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p><strong>IdleTimeout=</strong></p>
 <p>Idle time in seconds to shut down the daemon, where a value of <strong>0</strong> specifies&nbsp;&#8220;never&#8221;.</p>
 <p><strong><span class="caps">NOTE</span>:</strong> some plugins might inhibit the auto-shutdown, for instance&nbsp;thunderbolt.</p>
+<p><strong>IdleInhibitStartupThreshold=</strong></p>
+<p>If the daemon takes more than this time to startup (in milliseconds) then inhibit the idle
+  shutdown timer. A value of <strong>0</strong> specifies&nbsp;&#8220;never&#8221;.</p>
 <p><strong>VerboseDomains=</strong></p>
 <p>Comma separated list of domains to log in verbose mode.
   If unset, no domains are set to verbose.
   If set to &#8220;<em>&#8220;, all domains are verbose, which is the same as running the daemon with </em><em>&#8212;verbose &#8212;verbose</em>*.</p>
-<p><strong>UpdateMotd=true</strong></p>
+<p><strong>UpdateMotd=</strong></p>
 <p>Update the message of the day (<span class="caps">MOTD</span>) on device and metadata&nbsp;changes.</p>
-<p><strong>EnumerateAllDevices=true</strong></p>
+<p><strong>EnumerateAllDevices=</strong></p>
 <p>For some plugins, enumerate only devices supported by&nbsp;metadata.</p>
 <p><strong>ApprovedFirmware=</strong></p>
 <p>A list of firmware checksums that has been approved by the site admin
   If unset, all firmware is&nbsp;approved.</p>
 <p><strong>BlockedFirmware=</strong></p>
 <p>Allow blocking specific devices by their cabinet checksum, either <span class="caps">SHA</span>-1 or <span class="caps">SHA</span>-256.</p>
-<p><strong>UriSchemes=file;https;http;ipfs</strong></p>
+<p><strong>UriSchemes=</strong></p>
 <p>Allowed <span class="caps">URI</span> schemes in the preference order; failed downloads from the first scheme will be retried with the next in order until no choices&nbsp;remain.</p>
-<p><strong>IgnorePower=false</strong></p>
+<p><strong>IgnorePower=</strong></p>
 <p>Ignore power levels of devices when running&nbsp;updates.</p>
-<p><strong>OnlyTrusted=true</strong></p>
+<p><strong>IgnoreRequirements=</strong></p>
+<p>Ignore some device requirements, for instance removing the generic <span class="caps">GUID</span> requirement of a <span class="caps">CHID</span>,
+  child, parent or sibling.
+  This is not recommended for production systems, although it may be useful for firmware&nbsp;development.</p>
+<p><strong>OnlyTrusted=</strong></p>
 <p>Only support installing firmware signed with a trusted key.
   Do not set this to <code>false</code> on a production or trusted&nbsp;system.</p>
-<p><strong>ShowDevicePrivate=true</strong></p>
+<p><strong>ShowDevicePrivate=</strong></p>
 <p>Show data such as device serial numbers which some users may consider&nbsp;private.</p>
-<p><strong>AllowEmulation=false</strong></p>
+<p><strong>AllowEmulation=</strong></p>
 <p>Allow capturing and loading device emulation by logging all <span class="caps">USB</span> transfers.
   Enabling this will greatly increase the amount of memory fwupd uses when upgrading&nbsp;devices.</p>
 <p><strong>TrustedUids=</strong></p>
@@ -158,17 +168,17 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p><strong>HostBkc=</strong></p>
 <p>Comma separated list of best known configuration IDs to be used when using <code>fwupdmgr sync</code>.
   This can downgrade firmware to factory versions or upgrade firmware to a supported config level. e.g. <strong>vendor-factory-2021q1,mycompany-2023</strong></p>
-<p><strong>ReleaseDedupe=true</strong></p>
+<p><strong>ReleaseDedupe=</strong></p>
 <p>Deduplicate duplicate releases by the archive checksum are available from more than one&nbsp;source.</p>
-<p><strong>ReleasePriority=local</strong></p>
+<p><strong>ReleasePriority=</strong></p>
 <p>When the same version release is available from more than one source this option can be used to
   either prefer the local version (avoiding a potentially expensive download) or to prefer the
   remote version (which may have updated metadata such as release&nbsp;notes).</p>
 <p>The possible options are <code>local</code> or <code>remote</code> or empty to not make any adjustment to the policy,
   relying on the <code>OrderAfter</code> and <code>OrderBefore</code> sections in the&nbsp;remote.</p>
 <p><strong>EspLocation=</strong></p>
-<p>Override the location used for the <span class="caps">EFI</span> system partition (<span class="caps">ESP</span>) path.
-  This is typically used if UDisks is not available, or was not able to automatically identify the location for any&nbsp;reason.</p>
+<p>Set the preferred location used for the <span class="caps">EFI</span> system partition (<span class="caps">ESP</span>) path.
+  This is typically used if UDisks was not able to automatically identify the location for any&nbsp;reason.</p>
 <p><strong>Manufacturer=</strong></p>
 <p><strong>ProductName=</strong></p>
 <p><strong>ProductSku=</strong></p>
@@ -179,7 +189,7 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p>Override values for <span class="caps">SMBIOS</span> or Device Tree data on the local system.
   These are only required when the <span class="caps">SMBIOS</span> or Device Tree data is invalid, missing, or to simulate running on another system.
   Empty values should be used to populate blank entries or add values to populate specific&nbsp;entries.</p>
-<p><strong>TrustedReports=VendorId=$<span class="caps">OEM</span></strong></p>
+<p><strong>TrustedReports=</strong></p>
 <p>Vendor reports matching these expressions will have releases marked as <code>trusted-report</code>.
   Each <em><span class="caps">OR</span></em> section is delimited by a <code>;</code> and each <em><span class="caps">AND</span></em> section delimited by <code>&amp;</code>,&nbsp;e.g.</p>
 <ul>
@@ -213,15 +223,19 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <li>
 <p><code>DistroId=$ID,DistroVersion=$VERSION_ID</code></p>
 </li>
+<li>
+<p><code>Flags=is-upgrade,from-oem</code></p>
+</li>
 </ul>
-<p><strong>P2pPolicy=metadata</strong></p>
+<p>Any flags listed here must all be matched by the&nbsp;report.</p>
+<p><strong>P2pPolicy=</strong></p>
 <p>This tells the daemon what peer-to-peer policy to use. For instance, using Passim, an optional
   local caching service. Using peer-to-peer data might reduce the amount of bandwidth used on your
   network&nbsp;considerably.</p>
 <p>There are three possible&nbsp;values:</p>
 <ul>
 <li>
-<p><code>none</code>: Do not publish any&nbsp;files</p>
+<p><code>nothing</code>: Do not publish any&nbsp;files</p>
 </li>
 <li>
 <p><code>metadata</code>: Only publish shared metadata that is common to each&nbsp;machine.</p>
@@ -231,6 +245,9 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 </li>
 </ul>
 <p>At some point in the future fwupd will change the default to <code>metadata,firmware</code>.</p>
+<p><strong>TestDevices=</strong></p>
+<p>Create virtual test devices and remote for validating daemon flows.
+  This is only intended for <span class="caps">CI</span> testing and development&nbsp;purposes.</p>
 <h2 id="uefi_capsule-parameters">UEFI_CAPSULE PARAMETERS<a class="md-anchor" href="#uefi_capsule-parameters" title="Permanent link"></a></h2>
 <p>The <code>[uefi_capsule]</code> section can contain the following&nbsp;parameters:</p>
 <p><strong>EnableGrubChainLoad=false</strong></p>
@@ -252,6 +269,10 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p>Delete any capsule files copy to the <span class="caps">ESP</span>, and remove any <span class="caps">EFI</span> variables set for the&nbsp;update.</p>
 <p><strong><span class="caps">NOTE</span>:</strong> disabling this option is only required when debugging the flash process and normal
   users should not need to change this&nbsp;setting.</p>
+<p><strong>ScreenWidth=0</strong></p>
+<p>Override the screen width in pixels of the <span class="caps">EFI</span> framebuffer as used by the <span class="caps">UX</span>&nbsp;capsule.</p>
+<p><strong>ScreenHeight=0</strong></p>
+<p>Override the screen height in pixels of the <span class="caps">EFI</span> framebuffer as used by the <span class="caps">UX</span>&nbsp;capsule.</p>
 <h2 id="msr-parameters">MSR PARAMETERS<a class="md-anchor" href="#msr-parameters" title="Permanent link"></a></h2>
 <p>The <code>[msr]</code> section can contain the following&nbsp;parameter:</p>
 <p><strong>MinimumSmeKernelVersion=5.18.0</strong></p>
@@ -282,8 +303,32 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
   kernel with an old version&nbsp;number.</p>
 <p><strong>DelayedActivation=false</strong></p>
 <p>Forces delaying activation until&nbsp;shutdown/logout/reboot.</p>
+<h2 id="test-parameters">TEST PARAMETERS<a class="md-anchor" href="#test-parameters" title="Permanent link"></a></h2>
+<p>The <code>[test]</code> section can contain the following&nbsp;parameters:</p>
+<p><strong>AnotherWriteRequired=</strong></p>
+<p>Do two passes of the write&nbsp;function.</p>
+<p><strong>CompositeChild=</strong></p>
+<p>If the device should have a child&nbsp;device.</p>
+<p><strong>DecompressDelay=</strong></p>
+<p>Delay in milliseconds to use when decompressing the test&nbsp;device.</p>
+<p><strong>NeedsActivation=</strong></p>
+<p>If the device needs activating before deploying the&nbsp;update.</p>
+<p><strong>NeedsReboot=</strong></p>
+<p>If the device needs a reboot before deploying the&nbsp;update.</p>
+<p><strong>RegistrationSupported=</strong></p>
+<p>If the device should register with other&nbsp;plugins.</p>
+<p><strong>RequestDelay=</strong></p>
+<p>Delay in milliseconds to use when requesting user input from the&nbsp;user.</p>
+<p><strong>RequestSupported=</strong></p>
+<p>If the device interactive request is&nbsp;supported.</p>
+<p><strong>VerifyDelay=</strong></p>
+<p>Delay in milliseconds to use when verifying the test&nbsp;device.</p>
+<p><strong>WriteDelay=</strong></p>
+<p>Delay in milliseconds to use when writing the test&nbsp;device.</p>
+<p><strong>WriteSupported=</strong></p>
+<p>If the device write is supported. If unsupported the device write will not&nbsp;start.</p>
 <h2 id="notes">NOTES<a class="md-anchor" href="#notes" title="Permanent link"></a></h2>
-<p><code>/home/supermario/src/fwupd/venv/bin/../dist/etc/fwupd/fwupd.conf</code> may contain either hardcoded or autogenerated credentials and must only be
+<p><code>/github/workspace/dist/etc/fwupd/fwupd.conf</code> may contain either hardcoded or autogenerated credentials and must only be
 readable by the user that is running the fwupd process, which is typically <code>root</code>.</p>
 <h2 id="see-also">SEE ALSO<a class="md-anchor" href="#see-also" title="Permanent link"></a></h2>
 <p><a href="./fwupdmgr.html"><code>fwupdmgr(1)</code></a>
@@ -322,6 +367,9 @@ readable by the user that is running the fwupd process, which is typically <code
           
         
         <li class="toc-list-item"><a href="#thunderbolt-parameters"><span class="link-text">THUNDERBOLT PARAMETERS</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#test-parameters"><span class="link-text">TEST PARAMETERS</span></a></li>
           
         
         <li class="toc-list-item"><a href="#notes"><span class="link-text">NOTES</span></a></li>

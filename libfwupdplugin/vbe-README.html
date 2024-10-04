@@ -100,7 +100,7 @@ platform to be updated from user&nbsp;space.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>Firmware updates are held within a <span class="caps">CAB</span> file, a Windows format which allows
 files to be collected and compressed, similar to a tar file. The <span class="caps">CAB</span> file can be
-created using the <code>gcab</code> tool, as shown in the <span class="caps">VBE</span> <code>example</code> directory.</p>
+created using the <code>fwupdtool</code> tool, as shown in the <span class="caps">VBE</span> <code>example</code> directory.</p>
 <p>Inside the <span class="caps">CAB</span> file is the firmware itself, in Flat Image Tree (<span class="caps">FIT</span>) format.
 This is typically called <code>firmware.fit</code> and can be created by the <code>mkimage</code> tool,
 or using device tree tools such as <code>dtc</code> and <code>fdtput</code>.</p>

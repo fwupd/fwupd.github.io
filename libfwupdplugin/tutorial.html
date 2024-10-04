@@ -112,9 +112,9 @@ big changes all over the source&nbsp;tree.</p>
 is taken automatically from the&nbsp;GType.</p>
 <div class="codehilite"><pre><span></span><code>/* fu-foo-plugin.h
  *
- * Copyright (C) 2022 Richard Hughes &lt;richard@hughsie.com&gt;
+ * Copyright 2022 Richard Hughes &lt;richard@hughsie.com&gt;
  *
- * SPDX-License-Identifier: LGPL-2.1+
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
 #pragma once
@@ -125,9 +125,9 @@ G_DECLARE_FINAL_TYPE(FuFooPlugin, fu_foo_plugin, FU, FOO_PLUGIN, FuPlugin)
 
 /* fu-foo-plugin.c
  *
- * Copyright (C) Richard Hughes &lt;richard@hughsie.com&gt;
+ * Copyright Richard Hughes &lt;richard@hughsie.com&gt;
  *
- * SPDX-License-Identifier: LGPL-2.1+
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
 #include &quot;config.h&quot;
@@ -260,6 +260,27 @@ firmware to only be installable on hardware with a bootloader new enough to
 deploy&nbsp;it.</p>
 </li>
 </ul>
+<h3 id="setting-the-device-version">Setting the device version<a class="md-anchor" href="#setting-the-device-version" title="Permanent link"></a></h3>
+<p>Although the version can be set easily as a string using <code>fu_device_set_version()</code>
+directly, it is more flexible to tell fwupd what the <em>version format</em> should be,
+and to allow the daemon to convert it to a string&nbsp;internally.</p>
+<p>This also means that if we get the version format from a quirk file, or from metadata,
+or even if it changes at runtime &#8212; the correct string version is used at all&nbsp;times.</p>
+<div class="codehilite"><pre><span></span><code>static gchar *
+fu_foo_device_convert_version(FuDevice *device, guint64 version_raw)
+{
+    return fu_version_from_uint24(version_raw, FWUPD_VERSION_FORMAT_TRIPLET);
+}
+
+static void
+fu_foo_device_class_init(FuFooDeviceClass *klass)
+{
+    …
+    device_class-&gt;convert_version = fu_foo_device_convert_version;
+    …
+}
+</code></pre></div>
+
 <h2 id="mechanism-plugins">Mechanism Plugins<a class="md-anchor" href="#mechanism-plugins" title="Permanent link"></a></h2>
 <p>Although it would be a wonderful world if we could update all hardware using a
 standard shared protocol this is not the universe we live in.
@@ -744,7 +765,7 @@ device, there might be firmware dependencies between parent and child
 devices that require a specific update ordering (for instance, child
 devices first, then the parent). This can be modeled by setting an
 appropriate firmware priority in the firmware metainfo or by setting the
-<code>FWUPD_DEVICE_FLAG_INSTALL_PARENT_FIRST</code> device&nbsp;flag.</p>
+<code>FU_DEVICE_PRIVATE_FLAG_INSTALL_PARENT_FIRST</code> device&nbsp;flag.</p>
 <h3 id="how-to-add-a-delay">How to add a delay<a class="md-anchor" href="#how-to-add-a-delay" title="Permanent link"></a></h3>
 <p>In certain scenarios you may need to introduce small controlled delays
 in the plugin code, for instance, to comply with a communications
@@ -764,8 +785,7 @@ define a private&nbsp;flag:</p>
   2)</code>.  Note that this will be part of the <span class="caps">ABI</span>, so it must be&nbsp;versioned</li>
 <li>Call <code>fu_device_register_private_flag</code> in the device init function
   and assign a string identifier to the flag:
-  <code>fu_device_register_private_flag (FU_DEVICE (self), MY_PRIVATE_FLAG,
-  "myflag");</code></li>
+  <code>fu_device_register_private_flag(FU_DEVICE (self), MY_PRIVATE_FLAG);</code></li>
 </ol>
 <p>You can then add it to the device programmatically with
 <code>fu_device_add_private_flag</code>, remove it with <code>fu_device_remove_private_flag</code>
@@ -831,7 +851,7 @@ highlighting support work correctly.
 Although these files <em>look like</em> Rust files they&#8217;re <em>not actually compiled by
 rustc</em>, so small differences may be&nbsp;noticeable.</p>
 <div class="codehilite"><pre><span></span><code>#[derive(New, Validate, Parse)]
-struct ExampleHdr {
+struct FuExampleHdr {
     magic: Guid,
     hdrver: u8,
     hdrsz: u16le = $struct_size,
@@ -841,7 +861,7 @@ struct ExampleHdr {
 
 #[derive(ToString, FromString)]
 #[repr(u8)] // optional, and only required if using the enum as a struct item type
-enum ExampleFamily {
+enum FuExampleFamily {
     Unknown,
     Sps,
     Txe = 0x5,
@@ -849,7 +869,7 @@ enum ExampleFamily {
     Csme,
 }
 struct ExamplePacket {
-    family: ExampleFamily = Csme,
+    family: FuExampleFamily = Csme,
     data: [u8; 254],
 }
 </code></pre></div>
@@ -857,7 +877,7 @@ struct ExamplePacket {
 <p>The struct types currently supported&nbsp;are:</p>
 <ul>
 <li><code>u8</code>: a <code>guint8</code></li>
-<li><code>u16le</code>: a&nbsp;`guint16</li>
+<li><code>u16le</code>: little endian <code>guint16</code></li>
 <li><code>u24</code>: a 24 bit number represented as a <code>guint32</code></li>
 <li><code>u32le</code>:  little endian <code>guint32</code></li>
 <li><code>u64be</code>:  big endian <code>guint64</code></li>
@@ -960,6 +980,12 @@ reference without first casting to an integer of known&nbsp;width.</p>
           
         
         <li class="toc-list-item"><a href="#creating-an-abstract-device"><span class="link-text">Creating an abstract device</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#setting-the-device-version"><span class="link-text">Setting the device version</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#mechanism-plugins"><span class="link-text">Mechanism Plugins</span></a></li>

@@ -136,12 +136,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>The Public Key is product-specific and is required to identify the&nbsp;product.</p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
-<h3 id="has-mstar-scaler">has-mstar-scaler<a class="md-anchor" href="#has-mstar-scaler" title="Permanent link"></a></h3>
+<h3 id="flagshas-mstar-scaler"><code>Flags=has-mstar-scaler</code><a class="md-anchor" href="#flagshas-mstar-scaler" title="Permanent link"></a></h3>
 <p><span class="caps">USB</span> Hub has a MStar Semiconductor Scaler attached via&nbsp;I²C.</p>
 <p>Since&nbsp;1.7.6.</p>
-<h3 id="has-public-key">has-public-key<a class="md-anchor" href="#has-public-key" title="Permanent link"></a></h3>
+<h3 id="flagshas-public-key"><code>Flags=has-public-key</code><a class="md-anchor" href="#flagshas-public-key" title="Permanent link"></a></h3>
 <p>Device has a public-key appended to&nbsp;firmware.</p>
 <p>Since&nbsp;1.8.0</p>
+<h3 id="flagspause-r2-cpu"><code>Flags=pause-r2-cpu</code><a class="md-anchor" href="#flagspause-r2-cpu" title="Permanent link"></a></h3>
+<p>Pause R2 <span class="caps">CPU</span>.</p>
+<p>Since&nbsp;1.7.6</p>
+<h3 id="flagsuse-i2c-ch0"><code>Flags=use-i2c-ch0</code><a class="md-anchor" href="#flagsuse-i2c-ch0" title="Permanent link"></a></h3>
+<p>Use <span class="caps">I2C</span>&nbsp;ch0.</p>
+<p>Since&nbsp;1.7.6</p>
 <h3 id="genesysusbhubswitchrequest">GenesysUsbhubSwitchRequest<a class="md-anchor" href="#genesysusbhubswitchrequest" title="Permanent link"></a></h3>
 <p><span class="caps">USB</span> Hub Switch Request&nbsp;value.</p>
 <ul>
@@ -197,8 +203,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Monitor: <code>0xC84016</code></li>
 </ul>
 <p>Since&nbsp;1.8.2.</p>
-<h2 id="runtime-requirement">Runtime Requirement<a class="md-anchor" href="#runtime-requirement" title="Permanent link"></a></h2>
-<p>The <span class="caps">USB</span> Hub devices and its attached Scaler require libgusb version <a href="https://github.com/hughsie/libgusb/commit/4e118c154dde70e196c4381bd97790a9413c3552">0.3.8</a> or later to be&nbsp;detected.</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The devices are independently updated at runtime using <span class="caps">USB</span> control&nbsp;transfers.</p>
 <p>The firmware is deployed when the device is in normal runtime mode, and the device will reset when the new firmware has been&nbsp;written.</p>
@@ -240,9 +244,13 @@ consulted before making major or functional&nbsp;changes:</p>
           
           <ul class="toc-list">
           
-            <li class="toc-list-item"><a href="#has-mstar-scaler"><span class="link-text">has-mstar-scaler</span></a></li>
+            <li class="toc-list-item"><a href="#flagshas-mstar-scaler"><span class="link-text">Flags=has-mstar-scaler</span></a></li>
           
-            <li class="toc-list-item"><a href="#has-public-key"><span class="link-text">has-public-key</span></a></li>
+            <li class="toc-list-item"><a href="#flagshas-public-key"><span class="link-text">Flags=has-public-key</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagspause-r2-cpu"><span class="link-text">Flags=pause-r2-cpu</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-i2c-ch0"><span class="link-text">Flags=use-i2c-ch0</span></a></li>
           
             <li class="toc-list-item"><a href="#genesysusbhubswitchrequest"><span class="link-text">GenesysUsbhubSwitchRequest</span></a></li>
           
@@ -265,9 +273,6 @@ consulted before making major or functional&nbsp;changes:</p>
             <li class="toc-list-item"><a href="#genesysscalercfiflashid"><span class="link-text">GenesysScalerCfiFlashId</span></a></li>
           
           </ul>
-          
-        
-        <li class="toc-list-item"><a href="#runtime-requirement"><span class="link-text">Runtime Requirement</span></a></li>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>

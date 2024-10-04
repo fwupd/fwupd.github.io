@@ -115,7 +115,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-volume.h#L74">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-volume.h#L76">[src]</a>
         
       </h4>
 
@@ -135,12 +135,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-volume.c#L785">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-volume.c#L999">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Finds all volumes of a specific partition&nbsp;type.</p>
+        <p>Finds all volumes of a specific partition type.
+For <span class="caps">ESP</span> type partitions exclude any known partitions names that
+correspond to recovery&nbsp;partitions.</p>
       </div>
 
       <div class="docblock">

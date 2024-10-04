@@ -1,0 +1,557 @@
+<!--
+SPDX-FileCopyrightText: fwupd Development Team
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FwupdPlugin.Device.get_modified_usec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="org.freedesktop.fwupd.svg"/>
+  <meta property="og:image:alt" content="FwupdPlugin-1.0"/>
+  
+
+  
+  <meta priority="og:title" content="FwupdPlugin.Device.get_modified_usec"/>
+  <meta priority="og:description" content="Reference for FwupdPlugin.Device.get_modified_usec"/>
+  <meta name="twitter:title" content="FwupdPlugin.Device.get_modified_usec"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.Device.get_modified_usec"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap_fwupdplugin.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="org.freedesktop.fwupd.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">FwupdPlugin</a></h3>
+        <p>API Version: 1.0</p>
+        
+        <p>Library Version: 2.0.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Device.html">Device</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Device.activate.html">activate</a>
+  
+    <a class="method" href="method.Device.add_child.html">add_child</a>
+  
+    <a class="method" href="method.Device.add_counterpart_guid.html">add_counterpart_guid</a>
+  
+    <a class="method" href="method.Device.add_event.html">add_event</a>
+  
+    <a class="method" href="method.Device.add_flag.html">add_flag</a>
+  
+    <a class="method" href="method.Device.add_guid.html">add_guid</a>
+  
+    <a class="method" href="method.Device.add_guid_full.html">add_guid_full</a>
+  
+    <a class="method" href="method.Device.add_instance_id.html">add_instance_id</a>
+  
+    <a class="method" href="method.Device.add_instance_id_full.html">add_instance_id_full</a>
+  
+    <a class="method" href="method.Device.add_instance_str.html">add_instance_str</a>
+  
+    <a class="method" href="method.Device.add_instance_strsafe.html">add_instance_strsafe</a>
+  
+    <a class="method" href="method.Device.add_instance_strup.html">add_instance_strup</a>
+  
+    <a class="method" href="method.Device.add_instance_u16.html">add_instance_u16</a>
+  
+    <a class="method" href="method.Device.add_instance_u32.html">add_instance_u32</a>
+  
+    <a class="method" href="method.Device.add_instance_u4.html">add_instance_u4</a>
+  
+    <a class="method" href="method.Device.add_instance_u8.html">add_instance_u8</a>
+  
+    <a class="method" href="method.Device.add_parent_backend_id.html">add_parent_backend_id</a>
+  
+    <a class="method" href="method.Device.add_parent_guid.html">add_parent_guid</a>
+  
+    <a class="method" href="method.Device.add_parent_physical_id.html">add_parent_physical_id</a>
+  
+    <a class="method" href="method.Device.add_possible_plugin.html">add_possible_plugin</a>
+  
+    <a class="method" href="method.Device.add_private_flag.html">add_private_flag</a>
+  
+    <a class="method" href="method.Device.add_problem.html">add_problem</a>
+  
+    <a class="method" href="method.Device.add_security_attrs.html">add_security_attrs</a>
+  
+    <a class="method" href="method.Device.add_string.html">add_string</a>
+  
+    <a class="method" href="method.Device.attach.html">attach</a>
+  
+    <a class="method" href="method.Device.attach_full.html">attach_full</a>
+  
+    <a class="method" href="method.Device.bind_driver.html">bind_driver</a>
+  
+    <a class="method" href="method.Device.build_instance_id.html">build_instance_id</a>
+  
+    <a class="method" href="method.Device.build_instance_id_full.html">build_instance_id_full</a>
+  
+    <a class="method" href="method.Device.build_vendor_id.html">build_vendor_id</a>
+  
+    <a class="method" href="method.Device.build_vendor_id_u16.html">build_vendor_id_u16</a>
+  
+    <a class="method" href="method.Device.cleanup.html">cleanup</a>
+  
+    <a class="method" href="method.Device.clear_events.html">clear_events</a>
+  
+    <a class="method" href="method.Device.close.html">close</a>
+  
+    <a class="method" href="method.Device.convert_instance_ids.html">convert_instance_ids</a>
+  
+    <a class="method" href="method.Device.detach.html">detach</a>
+  
+    <a class="method" href="method.Device.detach_full.html">detach_full</a>
+  
+    <a class="method" href="method.Device.dump_firmware.html">dump_firmware</a>
+  
+    <a class="method" href="method.Device.emit_request.html">emit_request</a>
+  
+    <a class="method" href="method.Device.ensure_from_component.html">ensure_from_component</a>
+  
+    <a class="method" href="method.Device.ensure_id.html">ensure_id</a>
+  
+    <a class="method" href="method.Device.get_acquiesce_delay.html">get_acquiesce_delay</a>
+  
+    <a class="method" href="method.Device.get_backend.html">get_backend</a>
+  
+    <a class="method" href="method.Device.get_backend_id.html">get_backend_id</a>
+  
+    <a class="method" href="method.Device.get_backend_parent.html">get_backend_parent</a>
+  
+    <a class="method" href="method.Device.get_backend_parent_with_subsystem.html">get_backend_parent_with_subsystem</a>
+  
+    <a class="method" href="method.Device.get_battery_level.html">get_battery_level</a>
+  
+    <a class="method" href="method.Device.get_battery_threshold.html">get_battery_threshold</a>
+  
+    <a class="method" href="method.Device.get_children.html">get_children</a>
+  
+    <a class="method" href="method.Device.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Device.get_counterpart_guids.html">get_counterpart_guids</a>
+  
+    <a class="method" href="method.Device.get_created_usec.html">get_created_usec</a>
+  
+    <a class="method" href="method.Device.get_custom_flags.html">get_custom_flags</a>
+  
+    <a class="method" href="method.Device.get_equivalent_id.html">get_equivalent_id</a>
+  
+    <a class="method" href="method.Device.get_events.html">get_events</a>
+  
+    <a class="method" href="method.Device.get_firmware_gtype.html">get_firmware_gtype</a>
+  
+    <a class="method" href="method.Device.get_firmware_size_max.html">get_firmware_size_max</a>
+  
+    <a class="method" href="method.Device.get_firmware_size_min.html">get_firmware_size_min</a>
+  
+    <a class="method" href="method.Device.get_instance_str.html">get_instance_str</a>
+  
+    <a class="method" href="method.Device.get_logical_id.html">get_logical_id</a>
+  
+    <a class="method" href="method.Device.get_metadata.html">get_metadata</a>
+  
+    <a class="method" href="method.Device.get_metadata_boolean.html">get_metadata_boolean</a>
+  
+    <a class="method" href="method.Device.get_metadata_integer.html">get_metadata_integer</a>
+  
+    <a class="method current" href="method.Device.get_modified_usec.html">get_modified_usec</a>
+  
+    <a class="method" href="method.Device.get_order.html">get_order</a>
+  
+    <a class="method" href="method.Device.get_parent.html">get_parent</a>
+  
+    <a class="method" href="method.Device.get_parent_backend_ids.html">get_parent_backend_ids</a>
+  
+    <a class="method" href="method.Device.get_parent_guids.html">get_parent_guids</a>
+  
+    <a class="method" href="method.Device.get_parent_physical_ids.html">get_parent_physical_ids</a>
+  
+    <a class="method" href="method.Device.get_physical_id.html">get_physical_id</a>
+  
+    <a class="method" href="method.Device.get_pid.html">get_pid</a>
+  
+    <a class="method" href="method.Device.get_possible_plugins.html">get_possible_plugins</a>
+  
+    <a class="method" href="method.Device.get_priority.html">get_priority</a>
+  
+    <a class="method" href="method.Device.get_proxy.html">get_proxy</a>
+  
+    <a class="method" href="method.Device.get_proxy_gtype.html">get_proxy_gtype</a>
+  
+    <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
+  
+    <a class="method" href="method.Device.get_proxy_with_fallback.html">get_proxy_with_fallback</a>
+  
+    <a class="method" href="method.Device.get_remove_delay.html">get_remove_delay</a>
+  
+    <a class="method" href="method.Device.get_request_cnt.html">get_request_cnt</a>
+  
+    <a class="method" href="method.Device.get_results.html">get_results</a>
+  
+    <a class="method" href="method.Device.get_root.html">get_root</a>
+  
+    <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
+  
+    <a class="method" href="method.Device.get_update_image.html">get_update_image</a>
+  
+    <a class="method" href="method.Device.get_update_message.html">get_update_message</a>
+  
+    <a class="method" href="method.Device.get_update_request_id.html">get_update_request_id</a>
+  
+    <a class="method" href="method.Device.get_vid.html">get_vid</a>
+  
+    <a class="method" href="method.Device.has_counterpart_guid.html">has_counterpart_guid</a>
+  
+    <a class="method" href="method.Device.has_guid.html">has_guid</a>
+  
+    <a class="method" href="method.Device.has_inhibit.html">has_inhibit</a>
+  
+    <a class="method" href="method.Device.has_parent_backend_id.html">has_parent_backend_id</a>
+  
+    <a class="method" href="method.Device.has_parent_guid.html">has_parent_guid</a>
+  
+    <a class="method" href="method.Device.has_parent_physical_id.html">has_parent_physical_id</a>
+  
+    <a class="method" href="method.Device.has_private_flag.html">has_private_flag</a>
+  
+    <a class="method" href="method.Device.has_problem.html">has_problem</a>
+  
+    <a class="method" href="method.Device.incorporate.html">incorporate</a>
+  
+    <a class="method" href="method.Device.incorporate_flag.html">incorporate_flag</a>
+  
+    <a class="method" href="method.Device.inhibit.html">inhibit</a>
+  
+    <a class="method" href="method.Device.is_updatable.html">is_updatable</a>
+  
+    <a class="method" href="method.Device.load_event.html">load_event</a>
+  
+    <a class="method" href="method.Device.open.html">open</a>
+  
+    <a class="method" href="method.Device.poll.html">poll</a>
+  
+    <a class="method" href="method.Device.poll_locker_new.html">poll_locker_new</a>
+  
+    <a class="method" href="method.Device.prepare.html">prepare</a>
+  
+    <a class="method" href="method.Device.prepare_firmware.html">prepare_firmware</a>
+  
+    <a class="method" href="method.Device.probe.html">probe</a>
+  
+    <a class="method" href="method.Device.probe_complete.html">probe_complete</a>
+  
+    <a class="method" href="method.Device.probe_invalidate.html">probe_invalidate</a>
+  
+    <a class="method" href="method.Device.read_firmware.html">read_firmware</a>
+  
+    <a class="method" href="method.Device.register_private_flag.html">register_private_flag</a>
+  
+    <a class="method" href="method.Device.register_private_flag_safe.html">register_private_flag_safe</a>
+  
+    <a class="method" href="method.Device.reload.html">reload</a>
+  
+    <a class="method" href="method.Device.remove_child.html">remove_child</a>
+  
+    <a class="method" href="method.Device.remove_children.html">remove_children</a>
+  
+    <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
+  
+    <a class="method" href="method.Device.remove_metadata.html">remove_metadata</a>
+  
+    <a class="method" href="method.Device.remove_private_flag.html">remove_private_flag</a>
+  
+    <a class="method" href="method.Device.remove_problem.html">remove_problem</a>
+  
+    <a class="method" href="method.Device.replace.html">replace</a>
+  
+    <a class="method" href="method.Device.report_metadata_post.html">report_metadata_post</a>
+  
+    <a class="method" href="method.Device.report_metadata_pre.html">report_metadata_pre</a>
+  
+    <a class="method" href="method.Device.rescan.html">rescan</a>
+  
+    <a class="method" href="method.Device.retry.html">retry</a>
+  
+    <a class="method" href="method.Device.retry_add_recovery.html">retry_add_recovery</a>
+  
+    <a class="method" href="method.Device.retry_full.html">retry_full</a>
+  
+    <a class="method" href="method.Device.retry_set_delay.html">retry_set_delay</a>
+  
+    <a class="method" href="method.Device.save_event.html">save_event</a>
+  
+    <a class="method" href="method.Device.security_attr_new.html">security_attr_new</a>
+  
+    <a class="method" href="method.Device.set_acquiesce_delay.html">set_acquiesce_delay</a>
+  
+    <a class="method" href="method.Device.set_backend.html">set_backend</a>
+  
+    <a class="method" href="method.Device.set_backend_id.html">set_backend_id</a>
+  
+    <a class="method" href="method.Device.set_battery_level.html">set_battery_level</a>
+  
+    <a class="method" href="method.Device.set_battery_threshold.html">set_battery_threshold</a>
+  
+    <a class="method" href="method.Device.set_context.html">set_context</a>
+  
+    <a class="method" href="method.Device.set_created_usec.html">set_created_usec</a>
+  
+    <a class="method" href="method.Device.set_custom_flags.html">set_custom_flags</a>
+  
+    <a class="method" href="method.Device.set_equivalent_id.html">set_equivalent_id</a>
+  
+    <a class="method" href="method.Device.set_firmware_gtype.html">set_firmware_gtype</a>
+  
+    <a class="method" href="method.Device.set_firmware_size.html">set_firmware_size</a>
+  
+    <a class="method" href="method.Device.set_firmware_size_max.html">set_firmware_size_max</a>
+  
+    <a class="method" href="method.Device.set_firmware_size_min.html">set_firmware_size_min</a>
+  
+    <a class="method" href="method.Device.set_id.html">set_id</a>
+  
+    <a class="method" href="method.Device.set_logical_id.html">set_logical_id</a>
+  
+    <a class="method" href="method.Device.set_metadata.html">set_metadata</a>
+  
+    <a class="method" href="method.Device.set_metadata_boolean.html">set_metadata_boolean</a>
+  
+    <a class="method" href="method.Device.set_metadata_integer.html">set_metadata_integer</a>
+  
+    <a class="method" href="method.Device.set_modified_usec.html">set_modified_usec</a>
+  
+    <a class="method" href="method.Device.set_name.html">set_name</a>
+  
+    <a class="method" href="method.Device.set_order.html">set_order</a>
+  
+    <a class="method" href="method.Device.set_parent.html">set_parent</a>
+  
+    <a class="method" href="method.Device.set_physical_id.html">set_physical_id</a>
+  
+    <a class="method" href="method.Device.set_pid.html">set_pid</a>
+  
+    <a class="method" href="method.Device.set_poll_interval.html">set_poll_interval</a>
+  
+    <a class="method" href="method.Device.set_priority.html">set_priority</a>
+  
+    <a class="method" href="method.Device.set_progress.html">set_progress</a>
+  
+    <a class="method" href="method.Device.set_proxy.html">set_proxy</a>
+  
+    <a class="method" href="method.Device.set_proxy_gtype.html">set_proxy_gtype</a>
+  
+    <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
+  
+    <a class="method" href="method.Device.set_quirk_kv.html">set_quirk_kv</a>
+  
+    <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
+  
+    <a class="method" href="method.Device.set_specialized_gtype.html">set_specialized_gtype</a>
+  
+    <a class="method" href="method.Device.set_target.html">set_target</a>
+  
+    <a class="method" href="method.Device.set_update_image.html">set_update_image</a>
+  
+    <a class="method" href="method.Device.set_update_message.html">set_update_message</a>
+  
+    <a class="method" href="method.Device.set_update_request_id.html">set_update_request_id</a>
+  
+    <a class="method" href="method.Device.set_update_state.html">set_update_state</a>
+  
+    <a class="method" href="method.Device.set_vendor.html">set_vendor</a>
+  
+    <a class="method" href="method.Device.set_version.html">set_version</a>
+  
+    <a class="method" href="method.Device.set_version_bootloader.html">set_version_bootloader</a>
+  
+    <a class="method" href="method.Device.set_version_format.html">set_version_format</a>
+  
+    <a class="method" href="method.Device.set_version_lowest.html">set_version_lowest</a>
+  
+    <a class="method" href="method.Device.set_version_raw.html">set_version_raw</a>
+  
+    <a class="method" href="method.Device.set_vid.html">set_vid</a>
+  
+    <a class="method" href="method.Device.setup.html">setup</a>
+  
+    <a class="method" href="method.Device.sleep.html">sleep</a>
+  
+    <a class="method" href="method.Device.sleep_full.html">sleep_full</a>
+  
+    <a class="method" href="method.Device.to_string.html">to_string</a>
+  
+    <a class="method" href="method.Device.unbind_driver.html">unbind_driver</a>
+  
+    <a class="method" href="method.Device.uninhibit.html">uninhibit</a>
+  
+    <a class="method" href="method.Device.write_firmware.html">write_firmware</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2023.3</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span><a href="class.Device.html">Device</a><span class="sep"></span>get_modified_usec</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p><span class="emblem available">since: 2.0.0</span></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.h#L943">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gint64</span>
+<span class="n">fu_device_get_modified_usec</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">FuDevice</span><span class="o">*</span><span class="w"> </span><span class="n">self</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.c#L4263">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Gets when the device was&nbsp;modified.</p>
+<p>If the usec-precision value has not been set with fu_device_set_modified_usec(),
+the exported seconds-precision fallback value is returned&nbsp;instead.</p>
+      </div>
+
+      <div class="docblock">
+        
+        <p>Available since: 2.0.0</p>
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gint64</code></p>
+            <p><p>Value in microseconds, or -1 for&nbsp;invalid.</p></p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

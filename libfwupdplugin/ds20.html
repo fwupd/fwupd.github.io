@@ -124,7 +124,7 @@ This <span class="caps">UUID</span> is generated type-5 <span class="caps">SHA</
 Using this custom <span class="caps">UUID</span> will ensure that Microsoft Windows does not try to parse the capability descriptor as a <em>Microsoft <span class="caps">OS</span> 2.0 descriptor set</em>.</p>
 <h2 id="implementation">Implementation<a class="md-anchor" href="#implementation" title="Permanent link"></a></h2>
 <p>Create a <span class="caps">BOS</span> <span class="caps">DS20</span> descriptor such&nbsp;as:</p>
-<div class="codehilite"><pre><span></span><code>1C 10 05 00 63 ec 0a 01 74 f5 cd 52 9d da 28 52 55 0d 94 f0 05 08 01 00 20 00 2a 00
+<div class="codehilite"><pre><span></span><code>1C 10 05 00 63 ec 0a 01 74 f5 cd 52 9d da 28 52 55 0d 94 f0 0e 09 01 00 20 00 2a 00
 ├┘ ├┘ ├┘ ├┘ └─────────────┬───────────────────────────────┘ └─┬───────┘ └─┬─┘ ├┘ ├┘
 │  │  │  │                └─PlatformCapabilityUUID            │   wLength─┘   │  │
 │  │  │  └─bReserved                                dwVersion─┘   bVendorCode─┘  │
@@ -133,14 +133,14 @@ Using this custom <span class="caps">UUID</span> will ensure that Microsoft Wind
 └──────────bLength
 </code></pre></div>
 
-<p>The <code>dwVersion</code> encoded here is fwupd <code>1.8.5</code>, which is also the first version that supports <span class="caps">BOS</span> <span class="caps">DS20</span>&nbsp;descriptors.</p>
+<p>The <code>dwVersion</code> encoded here is fwupd <code>1.9.14</code>, which is also the first version that with working <span class="caps">BOS</span> <span class="caps">DS20</span>&nbsp;support.</p>
 <p>The <span class="caps">BOS</span> descriptors are sorted by the requester and can appear in any order.
 The descriptor with the highest <code>dwVersion</code> that is not newer than the current running daemon version is used.
 This means that <code>dwVersion</code> is effectively the minimum version of fwupd that should read the descriptor.
 This allows devices to set different quirks depending on the fwupd version, although in practice this should not be required.
 A suitable bVendorCode should be chosen that is not used for existing device&nbsp;operation.</p>
 <ul>
-<li>The <code>dwVersion</code> parameter <strong>must</strong> be larger than <code>0x00010805</code>, i.e.&nbsp;1.8.5.</li>
+<li>The <code>dwVersion</code> parameter <strong>must</strong> be larger than <code>0x0001090e</code>, i.e.&nbsp;1.9.14.</li>
 <li>The <code>bAltEnumCmd</code> parameter <strong>must</strong> be&nbsp;zero.</li>
 <li>The <code>PlatformCapabilityUUID</code> <strong>must</strong> be <code>010aec63-f574-52cd-9dda-2852550d94f0</code>.</li>
 </ul>

@@ -728,9 +728,9 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p>A local attacker could overwrite the S3 resume script to modify system <span class="caps">RAM</span> which can lead to privilege&nbsp;escalation.</p>
 <p><strong>Possible&nbsp;results:</strong></p>
 <ul>
-<li><code>enabled</code>: deep sleep enabled&nbsp;(failure)</li>
+<li><code>not-enabled</code>: deep sleep enabled&nbsp;(failure)</li>
 <li><code>not-valid</code>: could not determine the default&nbsp;(failure)</li>
-<li><code>not-enabled</code>: suspend-to-idle being used&nbsp;(success)</li>
+<li><code>enabled</code>: suspend-to-idle being used&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-3 on systems that run this test. <em>[v1.5.0]</em></p>
 <p><a id="org.fwupd.hsi.SuspendToRam"></a></p>

@@ -96,17 +96,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
 
   
-<div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Device.internal_flag_from_string.html">internal_flag_from_string</a>
-  
-    <a class="func" href="type_func.Device.internal_flag_to_string.html">internal_flag_to_string</a>
-  
-  </div>
-</div>
-
 
 
   
@@ -119,6 +108,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.add_child.html">add_child</a>
   
     <a class="method" href="method.Device.add_counterpart_guid.html">add_counterpart_guid</a>
+  
+    <a class="method" href="method.Device.add_event.html">add_event</a>
   
     <a class="method" href="method.Device.add_flag.html">add_flag</a>
   
@@ -143,8 +134,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.add_instance_u4.html">add_instance_u4</a>
   
     <a class="method" href="method.Device.add_instance_u8.html">add_instance_u8</a>
-  
-    <a class="method" href="method.Device.add_internal_flag.html">add_internal_flag</a>
   
     <a class="method" href="method.Device.add_parent_backend_id.html">add_parent_backend_id</a>
   
@@ -172,7 +161,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.build_instance_id_full.html">build_instance_id_full</a>
   
+    <a class="method" href="method.Device.build_vendor_id.html">build_vendor_id</a>
+  
+    <a class="method" href="method.Device.build_vendor_id_u16.html">build_vendor_id_u16</a>
+  
     <a class="method" href="method.Device.cleanup.html">cleanup</a>
+  
+    <a class="method" href="method.Device.clear_events.html">clear_events</a>
   
     <a class="method" href="method.Device.close.html">close</a>
   
@@ -192,11 +187,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_acquiesce_delay.html">get_acquiesce_delay</a>
   
-    <a class="method" href="method.Device.get_alternate.html">get_alternate</a>
-  
-    <a class="method" href="method.Device.get_alternate_id.html">get_alternate_id</a>
+    <a class="method" href="method.Device.get_backend.html">get_backend</a>
   
     <a class="method" href="method.Device.get_backend_id.html">get_backend_id</a>
+  
+    <a class="method" href="method.Device.get_backend_parent.html">get_backend_parent</a>
+  
+    <a class="method" href="method.Device.get_backend_parent_with_subsystem.html">get_backend_parent_with_subsystem</a>
   
     <a class="method" href="method.Device.get_battery_level.html">get_battery_level</a>
   
@@ -206,9 +203,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_context.html">get_context</a>
   
+    <a class="method" href="method.Device.get_counterpart_guids.html">get_counterpart_guids</a>
+  
+    <a class="method" href="method.Device.get_created_usec.html">get_created_usec</a>
+  
     <a class="method" href="method.Device.get_custom_flags.html">get_custom_flags</a>
   
     <a class="method" href="method.Device.get_equivalent_id.html">get_equivalent_id</a>
+  
+    <a class="method" href="method.Device.get_events.html">get_events</a>
   
     <a class="method" href="method.Device.get_firmware_gtype.html">get_firmware_gtype</a>
   
@@ -216,11 +219,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_firmware_size_min.html">get_firmware_size_min</a>
   
-    <a class="method" href="method.Device.get_guids_as_str.html">get_guids_as_str</a>
-  
     <a class="method" href="method.Device.get_instance_str.html">get_instance_str</a>
-  
-    <a class="method" href="method.Device.get_internal_flags.html">get_internal_flags</a>
   
     <a class="method" href="method.Device.get_logical_id.html">get_logical_id</a>
   
@@ -229,6 +228,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.get_metadata_boolean.html">get_metadata_boolean</a>
   
     <a class="method" href="method.Device.get_metadata_integer.html">get_metadata_integer</a>
+  
+    <a class="method" href="method.Device.get_modified_usec.html">get_modified_usec</a>
   
     <a class="method" href="method.Device.get_order.html">get_order</a>
   
@@ -242,13 +243,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_physical_id.html">get_physical_id</a>
   
+    <a class="method" href="method.Device.get_pid.html">get_pid</a>
+  
     <a class="method" href="method.Device.get_possible_plugins.html">get_possible_plugins</a>
   
     <a class="method" href="method.Device.get_priority.html">get_priority</a>
   
-    <a class="method" href="method.Device.get_private_flags.html">get_private_flags</a>
-  
     <a class="method" href="method.Device.get_proxy.html">get_proxy</a>
+  
+    <a class="method" href="method.Device.get_proxy_gtype.html">get_proxy_gtype</a>
   
     <a class="method" href="method.Device.get_proxy_guid.html">get_proxy_guid</a>
   
@@ -264,13 +267,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
   
+    <a class="method" href="method.Device.get_update_image.html">get_update_image</a>
+  
+    <a class="method" href="method.Device.get_update_message.html">get_update_message</a>
+  
     <a class="method" href="method.Device.get_update_request_id.html">get_update_request_id</a>
+  
+    <a class="method" href="method.Device.get_vid.html">get_vid</a>
+  
+    <a class="method" href="method.Device.has_counterpart_guid.html">has_counterpart_guid</a>
   
     <a class="method" href="method.Device.has_guid.html">has_guid</a>
   
     <a class="method" href="method.Device.has_inhibit.html">has_inhibit</a>
-  
-    <a class="method" href="method.Device.has_internal_flag.html">has_internal_flag</a>
   
     <a class="method" href="method.Device.has_parent_backend_id.html">has_parent_backend_id</a>
   
@@ -287,6 +296,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.incorporate_flag.html">incorporate_flag</a>
   
     <a class="method" href="method.Device.inhibit.html">inhibit</a>
+  
+    <a class="method" href="method.Device.is_updatable.html">is_updatable</a>
+  
+    <a class="method" href="method.Device.load_event.html">load_event</a>
   
     <a class="method" href="method.Device.open.html">open</a>
   
@@ -308,13 +321,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.register_private_flag.html">register_private_flag</a>
   
+    <a class="method" href="method.Device.register_private_flag_safe.html">register_private_flag_safe</a>
+  
     <a class="method" href="method.Device.reload.html">reload</a>
   
     <a class="method" href="method.Device.remove_child.html">remove_child</a>
   
-    <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
+    <a class="method" href="method.Device.remove_children.html">remove_children</a>
   
-    <a class="method" href="method.Device.remove_internal_flag.html">remove_internal_flag</a>
+    <a class="method" href="method.Device.remove_flag.html">remove_flag</a>
   
     <a class="method" href="method.Device.remove_metadata.html">remove_metadata</a>
   
@@ -338,13 +353,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.retry_set_delay.html">retry_set_delay</a>
   
+    <a class="method" href="method.Device.save_event.html">save_event</a>
+  
     <a class="method" href="method.Device.security_attr_new.html">security_attr_new</a>
   
     <a class="method" href="method.Device.set_acquiesce_delay.html">set_acquiesce_delay</a>
   
-    <a class="method" href="method.Device.set_alternate.html">set_alternate</a>
-  
-    <a class="method" href="method.Device.set_alternate_id.html">set_alternate_id</a>
+    <a class="method" href="method.Device.set_backend.html">set_backend</a>
   
     <a class="method" href="method.Device.set_backend_id.html">set_backend_id</a>
   
@@ -353,6 +368,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.set_battery_threshold.html">set_battery_threshold</a>
   
     <a class="method" href="method.Device.set_context.html">set_context</a>
+  
+    <a class="method" href="method.Device.set_created_usec.html">set_created_usec</a>
   
     <a class="method" href="method.Device.set_custom_flags.html">set_custom_flags</a>
   
@@ -368,8 +385,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.set_id.html">set_id</a>
   
-    <a class="method" href="method.Device.set_internal_flags.html">set_internal_flags</a>
-  
     <a class="method" href="method.Device.set_logical_id.html">set_logical_id</a>
   
     <a class="method" href="method.Device.set_metadata.html">set_metadata</a>
@@ -377,6 +392,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.set_metadata_boolean.html">set_metadata_boolean</a>
   
     <a class="method" href="method.Device.set_metadata_integer.html">set_metadata_integer</a>
+  
+    <a class="method" href="method.Device.set_modified_usec.html">set_modified_usec</a>
   
     <a class="method" href="method.Device.set_name.html">set_name</a>
   
@@ -386,21 +403,31 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.set_physical_id.html">set_physical_id</a>
   
+    <a class="method" href="method.Device.set_pid.html">set_pid</a>
+  
     <a class="method" href="method.Device.set_poll_interval.html">set_poll_interval</a>
   
     <a class="method" href="method.Device.set_priority.html">set_priority</a>
   
-    <a class="method" href="method.Device.set_private_flags.html">set_private_flags</a>
-  
     <a class="method" href="method.Device.set_progress.html">set_progress</a>
   
     <a class="method" href="method.Device.set_proxy.html">set_proxy</a>
+  
+    <a class="method" href="method.Device.set_proxy_gtype.html">set_proxy_gtype</a>
   
     <a class="method" href="method.Device.set_proxy_guid.html">set_proxy_guid</a>
   
     <a class="method" href="method.Device.set_quirk_kv.html">set_quirk_kv</a>
   
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
+  
+    <a class="method" href="method.Device.set_specialized_gtype.html">set_specialized_gtype</a>
+  
+    <a class="method" href="method.Device.set_target.html">set_target</a>
+  
+    <a class="method" href="method.Device.set_update_image.html">set_update_image</a>
+  
+    <a class="method" href="method.Device.set_update_message.html">set_update_message</a>
   
     <a class="method" href="method.Device.set_update_request_id.html">set_update_request_id</a>
   
@@ -418,13 +445,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.set_version_raw.html">set_version_raw</a>
   
-    <a class="method" href="method.Device.set_version_u16.html">set_version_u16</a>
-  
-    <a class="method" href="method.Device.set_version_u24.html">set_version_u24</a>
-  
-    <a class="method" href="method.Device.set_version_u32.html">set_version_u32</a>
-  
-    <a class="method" href="method.Device.set_version_u64.html">set_version_u64</a>
+    <a class="method" href="method.Device.set_vid.html">set_vid</a>
   
     <a class="method" href="method.Device.setup.html">setup</a>
   
@@ -450,11 +471,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Properties</h5>
   <div class="links">
   
+    <a class="property" href="property.Device.backend.html">backend</a>
+  
     <a class="property" href="property.Device.backend-id.html">backend-id</a>
   
     <a class="property" href="property.Device.context.html">context</a>
   
-    <a class="property" href="property.Device.internal-flags.html">internal-flags</a>
+    <a class="property" href="property.Device.equivalent-id.html">equivalent-id</a>
   
     <a class="property" href="property.Device.logical-id.html">logical-id</a>
   
@@ -462,9 +485,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="property" href="property.Device.physical-id.html">physical-id</a>
   
+    <a class="property" href="property.Device.pid.html">pid</a>
+  
     <a class="property" href="property.Device.private-flags.html">private-flags</a>
   
     <a class="property" href="property.Device.proxy.html">proxy</a>
+  
+    <a class="property" href="property.Device.update-image.html">update-image</a>
+  
+    <a class="property" href="property.Device.update-message.html">update-message</a>
+  
+    <a class="property" href="property.Device.vid.html">vid</a>
   
   </div>
 </div>
@@ -511,7 +542,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <summary>
       <div class="docblock">
-        <p></p>
+        <p><span class="emblem available">since: 1.0</span></p>
       </div>
 
       <div class="toggle-wrapper">
@@ -519,12 +550,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.c#L29">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-device.c#L31">[src]</a>
           
         </h4>
 
         <pre><code>class FwupdPlugin.Device : Fwupd.Device
-{
+  implements Fwupd.Codec {
   /* No available fields */
 }</pre></code>
 
@@ -536,6 +567,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <div class="docblock">
           
           
+          <p>Available since: 1.0</p>
+          
           
         </div>
 
@@ -543,65 +576,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       </div>
     </summary>
 
-    
-    <div class="toggle-wrapper hierarchy">
-      <h4 id="hierarchy">
-        Hierarchy
-        <a href="#hierarchy" class="anchor"></a>
-      </h4>
-      <div class="docblock" alt="Hierarchy for FwupdPlugin.Device">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 8.1.0 (20230707.0739)
- -->
-<!-- Title: hierarchy Pages: 1 -->
-<svg width="100pt" height="188pt"
- viewBox="0.00 0.00 99.75 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<title>hierarchy</title>
-<!-- this -->
-<g id="node1" class="node">
-<title>this</title>
-<g id="a_node1"><a xlink:title="FuDevice">
-<path fill="none" stroke="black" d="M68.12,-36C68.12,-36 23.62,-36 23.62,-36 17.62,-36 11.62,-30 11.62,-24 11.62,-24 11.62,-12 11.62,-12 11.62,-6 17.62,0 23.62,0 23.62,0 68.12,0 68.12,0 74.12,0 80.12,-6 80.12,-12 80.12,-12 80.12,-24 80.12,-24 80.12,-30 74.12,-36 68.12,-36"/>
-<text text-anchor="middle" x="45.88" y="-12.95" font-family="Times,serif" font-size="14.00">FuDevice</text>
-</a>
-</g>
-</g>
-<!-- ancestor_0 -->
-<g id="node2" class="node">
-<title>ancestor_0</title>
-<g id="a_node2"><a xlink:title="Fwupd.Device">
-<path fill="none" stroke="black" d="M79.75,-108C79.75,-108 12,-108 12,-108 6,-108 0,-102 0,-96 0,-96 0,-84 0,-84 0,-78 6,-72 12,-72 12,-72 79.75,-72 79.75,-72 85.75,-72 91.75,-78 91.75,-84 91.75,-84 91.75,-96 91.75,-96 91.75,-102 85.75,-108 79.75,-108"/>
-<text text-anchor="middle" x="45.88" y="-84.95" font-family="Times,serif" font-size="14.00">FwupdDevice</text>
-</a>
-</g>
-</g>
-<!-- ancestor_0&#45;&#45;this -->
-<g id="edge2" class="edge">
-<title>ancestor_0&#45;&#45;this</title>
-<path fill="none" stroke="black" d="M45.88,-71.7C45.88,-60.85 45.88,-46.92 45.88,-36.1"/>
-</g>
-<!-- ancestor_1 -->
-<g id="node3" class="node">
-<title>ancestor_1</title>
-<g id="a_node3"><a xlink:title="GObject.Object">
-<path fill="none" stroke="black" d="M64.75,-180C64.75,-180 27,-180 27,-180 21,-180 15,-174 15,-168 15,-168 15,-156 15,-156 15,-150 21,-144 27,-144 27,-144 64.75,-144 64.75,-144 70.75,-144 76.75,-150 76.75,-156 76.75,-156 76.75,-168 76.75,-168 76.75,-174 70.75,-180 64.75,-180"/>
-<text text-anchor="middle" x="45.88" y="-156.95" font-family="Times,serif" font-size="14.00">GObject</text>
-</a>
-</g>
-</g>
-<!-- ancestor_1&#45;&#45;ancestor_0 -->
-<g id="edge1" class="edge">
-<title>ancestor_1&#45;&#45;ancestor_0</title>
-<path fill="none" stroke="black" d="M45.88,-143.7C45.88,-132.85 45.88,-118.92 45.88,-108.1"/>
-</g>
-</g>
-</svg>
-
-      </div>
-    </div>
     
 
     
@@ -637,13 +611,28 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li class="class"><a href="class.CfiDevice.html" title="CfiDevice">FuCfiDevice</a></li>
         
           <li class="class"><a href="class.UdevDevice.html" title="UdevDevice">FuUdevDevice</a></li>
-        
-          <li class="class"><a href="class.UsbDevice.html" title="UsbDevice">FuUsbDevice</a></li>
         </ul>
       </div>
     </div>
     
 
+    
+    <div class="toggle-wrapper implements">
+      <h4 id="implements">
+        Implements
+        <a href="#implements" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="interface"><a class="external" href="javascript:void(0)" data-link="iface.Codec.html" data-namespace="Fwupd">FwupdCodec</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
     
 
     
@@ -669,37 +658,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     </div>
     
 
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Device.internal_flag_from_string.html">fu_device_internal_flag_from_string</a></h6>
-        <div class="docblock">
-          <p>Converts a string to an internal device&nbsp;flag.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem available">since: 1.5.5</span></p>
-        </div>
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Device.internal_flag_to_string.html">fu_device_internal_flag_to_string</a></h6>
-        <div class="docblock">
-          <p>Converts an internal device flag to a&nbsp;string.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem available">since: 1.5.5</span></p>
-        </div>
-      </div>
-      
-      </div>
-    </div>
     
 
     
@@ -741,6 +699,16 @@ is converted to a <span class="caps">GUID</span> using&nbsp;fwupd_guid_hash_stri
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.1.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.add_event.html">fu_device_add_event</a></h6>
+          <div class="docblock">
+            <p>Adds an event to the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -864,16 +832,6 @@ valid <span class="caps">GUID</span> then <code>fu_device_add_guid()</code> shou
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.7.7</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.add_internal_flag.html">fu_device_add_internal_flag</a></h6>
-          <div class="docblock">
-            <p>Adds a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.5.5</span></p>
           </div>
         </div>
       
@@ -1016,6 +974,26 @@ values are unset then no instance <span class="caps">ID</span> is&nbsp;added.</p
         </div>
       
         <div class="">
+          <h6><a href="method.Device.build_vendor_id.html">fu_device_build_vendor_id</a></h6>
+          <div class="docblock">
+            <p>Builds a device vendor <span class="caps">ID</span>, if <code>value</code> is not <code>NULL</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.build_vendor_id_u16.html">fu_device_build_vendor_id_u16</a></h6>
+          <div class="docblock">
+            <p>Builds a device vendor <span class="caps">ID</span>, if <code>value</code> is not&nbsp;0.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.cleanup.html">fu_device_cleanup</a></h6>
           <div class="docblock">
             <p>Cleans up a device after an update. A different plugin can handle each of
@@ -1023,6 +1001,17 @@ FuDevice-&gt;write_firmware(), FuDevice-&gt;attach() and&nbsp;FuDevice-&gt;clean
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.3.3</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.clear_events.html">fu_device_clear_events</a></h6>
+          <div class="docblock">
+            <p>Clears all the <code>FuDeviceEvent</code> objects added with fu_device_add_event(), typically after saving
+the device to an&nbsp;emulation.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1040,7 +1029,7 @@ FuDevice-&gt;write_firmware(), FuDevice-&gt;attach() and&nbsp;FuDevice-&gt;clean
           <h6><a href="method.Device.convert_instance_ids.html">fu_device_convert_instance_ids</a></h6>
           <div class="docblock">
             <p>Converts all the Device instance IDs added using <code>fu_device_add_instance_id()</code>
-into actual GUIDs, <strong>unless</strong> <code>FU_DEVICE_INTERNAL_FLAG_NO_AUTO_INSTANCE_IDS</code> has
+into actual GUIDs, <strong>unless</strong> <code>FU_DEVICE_PRIVATE_FLAG_NO_AUTO_INSTANCE_IDS</code> has
 been&nbsp;set.</p>
           </div>
           <div class="docblock">
@@ -1124,24 +1113,12 @@ after the update has&nbsp;completed.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.get_alternate.html">fu_device_get_alternate</a></h6>
+          <h6><a href="method.Device.get_backend.html">fu_device_get_backend</a></h6>
           <div class="docblock">
-            <p>Gets any alternate device. An alternate device may be linked to the primary
-device in some&nbsp;way.</p>
+            <p>Gets the backend, if set with&nbsp;fu_device_set_backend().</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7.2</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.get_alternate_id.html">fu_device_get_alternate_id</a></h6>
-          <div class="docblock">
-            <p>Gets any alternate device <span class="caps">ID</span>. An alternate device may be linked to the primary
-device in some&nbsp;way.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.1.0</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1154,6 +1131,26 @@ physical <span class="caps">ID</span> as this may be the same&nbsp;value.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.5.8</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_backend_parent.html">fu_device_get_backend_parent</a></h6>
+          <div class="docblock">
+            <p>Creates a device parent (of the correct type) using the current&nbsp;backend.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_backend_parent_with_subsystem.html">fu_device_get_backend_parent_with_subsystem</a></h6>
+          <div class="docblock">
+            <p>Creates a device parent (of the correct type) using the current backend for a given device&nbsp;kind.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1199,6 +1196,26 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_counterpart_guids.html">fu_device_get_counterpart_guids</a></h6>
+          <div class="docblock">
+            <p>Returns all the counterpart&nbsp;GUIDs.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.21</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_created_usec.html">fu_device_get_created_usec</a></h6>
+          <div class="docblock">
+            <p>Gets when the device was&nbsp;created.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_custom_flags.html">fu_device_get_custom_flags</a></h6>
           <div class="docblock">
             <p>Gets the custom flags for the device from the quirk&nbsp;system.</p>
@@ -1215,6 +1232,16 @@ device and this may be reflected in client&nbsp;tools.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.6.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_events.html">fu_device_get_events</a></h6>
+          <div class="docblock">
+            <p>Gets all the <code>FuDeviceEvent</code> objects added with&nbsp;fu_device_add_event().</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1249,32 +1276,12 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.get_guids_as_str.html">fu_device_get_guids_as_str</a></h6>
-          <div class="docblock">
-            <p>Gets the device GUIDs as a joined string, which may be useful for error&nbsp;messages.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.0.8</span></p>
-          </div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.get_instance_str.html">fu_device_get_instance_str</a></h6>
           <div class="docblock">
             <p>Looks up an instance <span class="caps">ID</span> by a&nbsp;key.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.8.15</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.get_internal_flags.html">fu_device_get_internal_flags</a></h6>
-          <div class="docblock">
-            <p>Gets all the internal&nbsp;flags.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.7.1</span></p>
           </div>
         </div>
       
@@ -1316,6 +1323,16 @@ same physical <span class="caps">ID</span>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.7</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_modified_usec.html">fu_device_get_modified_usec</a></h6>
+          <div class="docblock">
+            <p>Gets when the device was&nbsp;modified.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1387,6 +1404,16 @@ connection used to compare&nbsp;devices.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_pid.html">fu_device_get_pid</a></h6>
+          <div class="docblock">
+            <p>Gets the device product&nbsp;code.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_possible_plugins.html">fu_device_get_possible_plugins</a></h6>
           <div class="docblock">
             <p>Gets the list of possible plugin names, typically added from quirk&nbsp;files.</p>
@@ -1407,16 +1434,6 @@ connection used to compare&nbsp;devices.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.get_private_flags.html">fu_device_get_private_flags</a></h6>
-          <div class="docblock">
-            <p>Returns all the private flags that can be used by the plugin for any&nbsp;purpose.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.6.2</span></p>
-          </div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.get_proxy.html">fu_device_get_proxy</a></h6>
           <div class="docblock">
             <p>Gets any proxy device. A proxy device can be used to perform an action on
@@ -1424,6 +1441,16 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_proxy_gtype.html">fu_device_get_proxy_gtype</a></h6>
+          <div class="docblock">
+            <p>Gets the specialized type of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.15</span></p>
           </div>
         </div>
       
@@ -1441,7 +1468,7 @@ proxy between&nbsp;plugins.</p>
         <div class="">
           <h6><a href="method.Device.get_proxy_with_fallback.html">fu_device_get_proxy_with_fallback</a></h6>
           <div class="docblock">
-            <p>Gets the proxy device if <code>FU_DEVICE_INTERNAL_FLAG_USE_PROXY_FALLBACK</code> is set, falling back to the
+            <p>Gets the proxy device if <code>FU_DEVICE_PRIVATE_FLAG_USE_PROXY_FALLBACK</code> is set, falling back to the
 device&nbsp;itself.</p>
           </div>
           <div class="docblock">
@@ -1504,12 +1531,52 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_update_image.html">fu_device_get_update_image</a></h6>
+          <div class="docblock">
+            <p>Gets the update image <span class="caps">URL</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_update_message.html">fu_device_get_update_message</a></h6>
+          <div class="docblock">
+            <p>Gets the update message&nbsp;string.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_update_request_id.html">fu_device_get_update_request_id</a></h6>
           <div class="docblock">
             <p>Gets the update request <span class="caps">ID</span> as specified from <code>LVFS::UpdateRequestId</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.8.6</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_vid.html">fu_device_get_vid</a></h6>
+          <div class="docblock">
+            <p>Gets the device vendor&nbsp;code.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_counterpart_guid.html">fu_device_has_counterpart_guid</a></h6>
+          <div class="docblock">
+            <p>Finds out if the device has a specific counterpart <span class="caps">GUID</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.21</span></p>
           </div>
         </div>
       
@@ -1530,16 +1597,6 @@ device and this may be reflected in client&nbsp;tools.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.8.0</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.has_internal_flag.html">fu_device_has_internal_flag</a></h6>
-          <div class="docblock">
-            <p>Tests for a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.5.5</span></p>
           </div>
         </div>
       
@@ -1596,10 +1653,10 @@ device and this may be reflected in client&nbsp;tools.</p>
         <div class="">
           <h6><a href="method.Device.incorporate.html">fu_device_incorporate</a></h6>
           <div class="docblock">
-            <p>Copy all properties from the donor object if they have not already been&nbsp;set.</p>
+            <p>Copy some properties from the donor object if they have not already been&nbsp;set.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.1.0</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1621,6 +1678,26 @@ to <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> if not already&nbsp;inhibited
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.is_updatable.html">fu_device_is_updatable</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.load_event.html">fu_device_load_event</a></h6>
+          <div class="docblock">
+            <p>Loads a new event with a specific <span class="caps">ID</span> from the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1732,7 +1809,17 @@ device&nbsp;checksum.</p>
 correctly in debug&nbsp;output.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.6.2</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.register_private_flag_safe.html">fu_device_register_private_flag_safe</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       
@@ -1757,22 +1844,22 @@ correctly in debug&nbsp;output.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.remove_children.html">fu_device_remove_children</a></h6>
+          <div class="docblock">
+            <p>Removes all child&nbsp;devices.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.remove_flag.html">fu_device_remove_flag</a></h6>
           <div class="docblock">
             <p>Removes a device flag from the&nbsp;device.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.remove_internal_flag.html">fu_device_remove_internal_flag</a></h6>
-          <div class="docblock">
-            <p>Removes a private flag that stays internal to the engine and is not leaked to the&nbsp;client.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.5.5</span></p>
           </div>
         </div>
       
@@ -1891,6 +1978,16 @@ with a reset&nbsp;action.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.save_event.html">fu_device_save_event</a></h6>
+          <div class="docblock">
+            <p>Creates a new event with a specific <span class="caps">ID</span> and adds it to the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.security_attr_new.html">fu_device_security_attr_new</a></h6>
           <div class="docblock">
             <p>Creates a new <code>FwupdSecurityAttr</code> for this specific&nbsp;device.</p>
@@ -1912,24 +2009,12 @@ after the update has&nbsp;completed.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.set_alternate.html">fu_device_set_alternate</a></h6>
+          <h6><a href="method.Device.set_backend.html">fu_device_set_backend</a></h6>
           <div class="docblock">
-            <p>Sets any alternate device. An alternate device may be linked to the primary
-device in some&nbsp;way.</p>
+            <p>Sets the backend that created this&nbsp;device.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7.2</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.set_alternate_id.html">fu_device_set_alternate_id</a></h6>
-          <div class="docblock">
-            <p>Sets any alternate device <span class="caps">ID</span>. An alternate device may be linked to the primary
-device in some&nbsp;way.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.1.0</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -1974,6 +2059,16 @@ the device has been opened or&nbsp;probed.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_created_usec.html">fu_device_set_created_usec</a></h6>
+          <div class="docblock">
+            <p>Sets when the device was&nbsp;created.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -2051,16 +2146,6 @@ have a different <code>id</code> string.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.set_internal_flags.html">fu_device_set_internal_flags</a></h6>
-          <div class="docblock">
-            <p>Sets the internal&nbsp;flags.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.7.1</span></p>
-          </div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.set_logical_id.html">fu_device_set_logical_id</a></h6>
           <div class="docblock">
             <p>Sets the logical <span class="caps">ID</span> on the device. This is designed to disambiguate devices
@@ -2100,6 +2185,16 @@ base-10 string&nbsp;internally.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.7</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_modified_usec.html">fu_device_set_modified_usec</a></h6>
+          <div class="docblock">
+            <p>Sets when the device was&nbsp;modified.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -2146,6 +2241,16 @@ of the device to the system. Multiple <code>FuDevices</code> can share a physica
         </div>
       
         <div class="">
+          <h6><a href="method.Device.set_pid.html">fu_device_set_pid</a></h6>
+          <div class="docblock">
+            <p>Sets the product <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.set_poll_interval.html">fu_device_set_poll_interval</a></h6>
           <div class="docblock">
             <p>Polls the hardware every interval period. If the subclassed <code>-&gt;poll()</code> method
@@ -2168,16 +2273,6 @@ disabled until the next call to&nbsp;fu_device_set_poll_interval().</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Device.set_private_flags.html">fu_device_set_private_flags</a></h6>
-          <div class="docblock">
-            <p>Sets private flags that can be used by the plugin for any&nbsp;purpose.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.6.2</span></p>
-          </div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Device.set_progress.html">fu_device_set_progress</a></h6>
           <div class="docblock">
             <p>Sets steps on the progress object used to write&nbsp;firmware.</p>
@@ -2195,6 +2290,16 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_proxy_gtype.html">fu_device_set_proxy_gtype</a></h6>
+          <div class="docblock">
+            <p>Sets the specialized type of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 1.9.15</span></p>
           </div>
         </div>
       
@@ -2225,6 +2330,46 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.0.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_specialized_gtype.html">fu_device_set_specialized_gtype</a></h6>
+          <div class="docblock">
+            <p>Sets the specialized type of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_target.html">fu_device_set_target</a></h6>
+          <div class="docblock">
+            <p>Sets the target device where <code>FuDeviceEvent</code> objects added to <code>self</code> should actually be&nbsp;added.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_update_image.html">fu_device_set_update_image</a></h6>
+          <div class="docblock">
+            <p>Sets the update image <span class="caps">URL</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.set_update_message.html">fu_device_set_update_message</a></h6>
+          <div class="docblock">
+            <p>Sets the update message&nbsp;string.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -2309,42 +2454,12 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
         </div>
       
         <div class="">
-          <h6><a href="method.Device.set_version_u16.html">fu_device_set_version_u16</a></h6>
+          <h6><a href="method.Device.set_vid.html">fu_device_set_vid</a></h6>
           <div class="docblock">
-            <p>Sets the device version from a integer value and the device version&nbsp;format.</p>
+            <p>Sets the vendor <span class="caps">ID</span>.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.9.8</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.set_version_u24.html">fu_device_set_version_u24</a></h6>
-          <div class="docblock">
-            <p>Sets the device version from a integer value and the device version&nbsp;format.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.9.8</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.set_version_u32.html">fu_device_set_version_u32</a></h6>
-          <div class="docblock">
-            <p>Sets the device version from a integer value and the device version&nbsp;format.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.9.8</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.set_version_u64.html">fu_device_set_version_u64</a></h6>
-          <div class="docblock">
-            <p>Sets the device version from a integer value and the device version&nbsp;format.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 1.9.8</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -2427,7 +2542,7 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (114)</h5>
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (103)</h5>
           <div class="docblock">
           
             <div class="docblock">
@@ -2452,6 +2567,70 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
       
 
       
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="iface.Codec.html" data-namespace="Fwupd">FwupdCodec</a> (8)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.add_string.html">fwupd_codec_add_string</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> to a debug string, appending it to <code>str</code>.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.from_json.html">fwupd_codec_from_json</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> from a <span class="caps">JSON</span>&nbsp;object.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.from_json_string.html">fwupd_codec_from_json_string</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> from a <span class="caps">JSON</span>&nbsp;string.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.from_variant.html">fwupd_codec_from_variant</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> from a <code>GVariant</code> value.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.to_json.html">fwupd_codec_to_json</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> to a <span class="caps">JSON</span> builder&nbsp;object.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.to_json_string.html">fwupd_codec_to_json_string</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> to a <span class="caps">JSON</span>&nbsp;string.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.to_string.html">fwupd_codec_to_string</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> to a debug&nbsp;string.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="method.Codec.to_variant.html">fwupd_codec_to_variant</a></h6>
+            <div class="docblock">
+              <p>Converts an object that implements <code>FwupdCodec</code> to a <code>GVariant</code>.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
     </div>
     
 
@@ -2464,6 +2643,16 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 
       
       <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Device.backend.html">FwupdPlugin.Device:backend</a></h6>
+          <div class="docblock">
+            <p>The <code>FuBackend</code> that created the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
       
         <div class="">
           <h6><a href="property.Device.backend-id.html">FwupdPlugin.Device:backend-id</a></h6>
@@ -2486,12 +2675,12 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
         </div>
       
         <div class="">
-          <h6><a href="property.Device.internal-flags.html">FwupdPlugin.Device:internal-flags</a></h6>
+          <h6><a href="property.Device.equivalent-id.html">FwupdPlugin.Device:equivalent-id</a></h6>
           <div class="docblock">
-            <p>The device internal&nbsp;flags.</p>
+            <p>The device equivalent <span class="caps">ID</span>.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.9.1</span></p>
+            <p><span class="emblem available">since: 2.0.0</span></p>
           </div>
         </div>
       
@@ -2526,6 +2715,16 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
         </div>
       
         <div class="">
+          <h6><a href="property.Device.pid.html">FwupdPlugin.Device:pid</a></h6>
+          <div class="docblock">
+            <p>The device product <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="property.Device.private-flags.html">FwupdPlugin.Device:private-flags</a></h6>
           <div class="docblock">
             <p>The device private&nbsp;flags.</p>
@@ -2545,12 +2744,42 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
           </div>
         </div>
       
+        <div class="">
+          <h6><a href="property.Device.update-image.html">FwupdPlugin.Device:update-image</a></h6>
+          <div class="docblock">
+            <p>The update image for the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.update-message.html">FwupdPlugin.Device:update-message</a></h6>
+          <div class="docblock">
+            <p>The device update&nbsp;message.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.vid.html">FwupdPlugin.Device:vid</a></h6>
+          <div class="docblock">
+            <p>The device vendor <span class="caps">ID</span>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
       </div>
       
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (14)</h5>
+        <div class="toggle-wrapper default-hide ancestor-properties"><h5 style="display:block;">Properties inherited from <a class="external" href="javascript:void(0)" data-link="class.Device.html" data-namespace="Fwupd">FwupdDevice</a> (13)</h5>
           <div class="docblock">
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.battery-level.html">Fwupd.Device:battery-level</a></h6>
             <div class="docblock">
@@ -2572,6 +2801,13 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
             </div>
             <div class="docblock">
               <p><span class="emblem available">since: 0.9.3</span></p>
+            </div>
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.id.html">Fwupd.Device:id</a></h6>
+            <div class="docblock">
+              <p>The device <span class="caps">ID</span>.</p>
+            </div>
+            <div class="docblock">
+              <p><span class="emblem available">since: 2.0.0</span></p>
             </div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.parent.html">Fwupd.Device:parent</a></h6>
             <div class="docblock">
@@ -2615,20 +2851,6 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
             <div class="docblock">
               <p><span class="emblem available">since: 0.9.8</span></p>
             </div>
-          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-image.html">Fwupd.Device:update-image</a></h6>
-            <div class="docblock">
-              <p>The update image for the&nbsp;device.</p>
-            </div>
-            <div class="docblock">
-              <p><span class="emblem available">since: 1.4.5</span></p>
-            </div>
-          <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-message.html">Fwupd.Device:update-message</a></h6>
-            <div class="docblock">
-              <p>The device update&nbsp;message.</p>
-            </div>
-            <div class="docblock">
-              <p><span class="emblem available">since: 1.2.4</span></p>
-            </div>
           <h6><a class="external" href="javascript:void(0)" data-namespace="Fwupd" data-link="property.Device.update-state.html">Fwupd.Device:update-state</a></h6>
             <div class="docblock">
               <p>The device update&nbsp;state.</p>
@@ -2658,6 +2880,8 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
         
       
 
+      
+        
       
 
     </div>
@@ -2718,7 +2942,7 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
 its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
             </div>
             <div class="docblock">
-              <p></p>
+              <p><span class="emblem available">since: 2.0</span></p>
             </div>
           
           </div>
@@ -2726,6 +2950,8 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         
       
 
+      
+        
       
 
     </div>
@@ -2780,19 +3006,17 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
       
       
-      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
-      
       
       <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
       
+      
+      <li class="toc-list-item"><a href="#implements"><span class="link-text">Implements</span></a></li>
       
       
 <li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
 
 
       
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>

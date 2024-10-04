@@ -163,6 +163,54 @@ If set to 0000 then the <span class="caps">DFU</span> functionality is&nbsp;disa
 <h3 id="dfuforcetransfersize">DfuForceTransferSize<a class="md-anchor" href="#dfuforcetransfersize" title="Permanent link"></a></h3>
 <p>Forces a target transfer size, in&nbsp;bytes.</p>
 <p>Since:&nbsp;1.5.6</p>
+<h3 id="flagscan-download"><code>Flags=can-download</code><a class="md-anchor" href="#flagscan-download" title="Permanent link"></a></h3>
+<p>Can download from&nbsp;host-&gt;device.</p>
+<h3 id="flagscan-upload"><code>Flags=can-upload</code><a class="md-anchor" href="#flagscan-upload" title="Permanent link"></a></h3>
+<p>Can upload from&nbsp;device-&gt;host.</p>
+<h3 id="flagsmanifest-tol"><code>Flags=manifest-tol</code><a class="md-anchor" href="#flagsmanifest-tol" title="Permanent link"></a></h3>
+<p>Can answer GetStatus in&nbsp;manifest</p>
+<h3 id="flagswill-detach"><code>Flags=will-detach</code><a class="md-anchor" href="#flagswill-detach" title="Permanent link"></a></h3>
+<p>Will&nbsp;self-detach.</p>
+<h3 id="flagscan-accelerate"><code>Flags=can-accelerate</code><a class="md-anchor" href="#flagscan-accelerate" title="Permanent link"></a></h3>
+<p>Use a larger transfer size for&nbsp;speed.</p>
+<h3 id="flagsattach-upload-download"><code>Flags=attach-upload-download</code><a class="md-anchor" href="#flagsattach-upload-download" title="Permanent link"></a></h3>
+<p>An upload or download is required for&nbsp;attach.</p>
+<h3 id="flagsforce-dfu-mode"><code>Flags=force-dfu-mode</code><a class="md-anchor" href="#flagsforce-dfu-mode" title="Permanent link"></a></h3>
+<p>Force <span class="caps">DFU</span>&nbsp;mode.</p>
+<h3 id="flagsignore-polltimeout"><code>Flags=ignore-polltimeout</code><a class="md-anchor" href="#flagsignore-polltimeout" title="Permanent link"></a></h3>
+<p>Ignore the device download&nbsp;timeout.</p>
+<h3 id="flagsignore-runtime"><code>Flags=ignore-runtime</code><a class="md-anchor" href="#flagsignore-runtime" title="Permanent link"></a></h3>
+<p>Device has broken <span class="caps">DFU</span> runtime&nbsp;support.</p>
+<h3 id="flagsignore-upload"><code>Flags=ignore-upload</code><a class="md-anchor" href="#flagsignore-upload" title="Permanent link"></a></h3>
+<p>Uploading from the device is&nbsp;broken.</p>
+<h3 id="flagsno-dfu-runtime"><code>Flags=no-dfu-runtime</code><a class="md-anchor" href="#flagsno-dfu-runtime" title="Permanent link"></a></h3>
+<p>No <span class="caps">DFU</span> runtime interface is&nbsp;provided.</p>
+<h3 id="flagsno-get-status-upload"><code>Flags=no-get-status-upload</code><a class="md-anchor" href="#flagsno-get-status-upload" title="Permanent link"></a></h3>
+<p>Do not do GetStatus when&nbsp;uploading.</p>
+<h3 id="flagsno-pid-change"><code>Flags=no-pid-change</code><a class="md-anchor" href="#flagsno-pid-change" title="Permanent link"></a></h3>
+<p>Accept the same <span class="caps">VID</span>:<span class="caps">PID</span> when changing&nbsp;modes.</p>
+<h3 id="flagsuse-any-interface"><code>Flags=use-any-interface</code><a class="md-anchor" href="#flagsuse-any-interface" title="Permanent link"></a></h3>
+<p>Use any interface for <span class="caps">DFU</span>.</p>
+<h3 id="flagsuse-atmel-avr"><code>Flags=use-atmel-avr</code><a class="md-anchor" href="#flagsuse-atmel-avr" title="Permanent link"></a></h3>
+<p>Device uses the <span class="caps">ATMEL</span>&nbsp;bootloader.</p>
+<h3 id="flagsuse-protocol-zero"><code>Flags=use-protocol-zero</code><a class="md-anchor" href="#flagsuse-protocol-zero" title="Permanent link"></a></h3>
+<p>Fix up the protocol&nbsp;number.</p>
+<h3 id="flagslegacy-protocol"><code>Flags=legacy-protocol</code><a class="md-anchor" href="#flagslegacy-protocol" title="Permanent link"></a></h3>
+<p>Use a legacy protocol&nbsp;version.</p>
+<h3 id="flagsdetach-for-attach"><code>Flags=detach-for-attach</code><a class="md-anchor" href="#flagsdetach-for-attach" title="Permanent link"></a></h3>
+<p>Requires a FU_DFU_REQUEST_DETACH to&nbsp;attach.</p>
+<h3 id="flagsabsent-sector-size"><code>Flags=absent-sector-size</code><a class="md-anchor" href="#flagsabsent-sector-size" title="Permanent link"></a></h3>
+<p>In absence of sector size, assume&nbsp;byte.</p>
+<h3 id="flagsmanifest-poll"><code>Flags=manifest-poll</code><a class="md-anchor" href="#flagsmanifest-poll" title="Permanent link"></a></h3>
+<p>Requires polling via GetStatus in dfuManifest&nbsp;state.</p>
+<h3 id="flagsno-bus-reset-attach"><code>Flags=no-bus-reset-attach</code><a class="md-anchor" href="#flagsno-bus-reset-attach" title="Permanent link"></a></h3>
+<p>Do not require a bus reset to attach to&nbsp;normal.</p>
+<h3 id="flagsgd32"><code>Flags=gd32</code><a class="md-anchor" href="#flagsgd32" title="Permanent link"></a></h3>
+<p>Uses the slightly weird <span class="caps">GD32</span> variant of <span class="caps">DFU</span>.</p>
+<h3 id="flagsallow-zero-polltimeout"><code>Flags=allow-zero-polltimeout</code><a class="md-anchor" href="#flagsallow-zero-polltimeout" title="Permanent link"></a></h3>
+<p>Allows the zero bwPollTimeout from GetStatus in dfuDNLOAD-<span class="caps">SYNC</span>&nbsp;state.</p>
+<h3 id="flagsindex-force-detach"><code>Flags=index-force-detach</code><a class="md-anchor" href="#flagsindex-force-detach" title="Permanent link"></a></h3>
+<p>Requires Force Detach in wIndex to bypass status&nbsp;checking.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -208,6 +256,54 @@ If set to 0000 then the <span class="caps">DFU</span> functionality is&nbsp;disa
             <li class="toc-list-item"><a href="#dfuforcetimeout"><span class="link-text">DfuForceTimeout</span></a></li>
           
             <li class="toc-list-item"><a href="#dfuforcetransfersize"><span class="link-text">DfuForceTransferSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscan-download"><span class="link-text">Flags=can-download</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscan-upload"><span class="link-text">Flags=can-upload</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsmanifest-tol"><span class="link-text">Flags=manifest-tol</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagswill-detach"><span class="link-text">Flags=will-detach</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscan-accelerate"><span class="link-text">Flags=can-accelerate</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsattach-upload-download"><span class="link-text">Flags=attach-upload-download</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsforce-dfu-mode"><span class="link-text">Flags=force-dfu-mode</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsignore-polltimeout"><span class="link-text">Flags=ignore-polltimeout</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsignore-runtime"><span class="link-text">Flags=ignore-runtime</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsignore-upload"><span class="link-text">Flags=ignore-upload</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-dfu-runtime"><span class="link-text">Flags=no-dfu-runtime</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-get-status-upload"><span class="link-text">Flags=no-get-status-upload</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-pid-change"><span class="link-text">Flags=no-pid-change</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-any-interface"><span class="link-text">Flags=use-any-interface</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-atmel-avr"><span class="link-text">Flags=use-atmel-avr</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-protocol-zero"><span class="link-text">Flags=use-protocol-zero</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagslegacy-protocol"><span class="link-text">Flags=legacy-protocol</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsdetach-for-attach"><span class="link-text">Flags=detach-for-attach</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsabsent-sector-size"><span class="link-text">Flags=absent-sector-size</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsmanifest-poll"><span class="link-text">Flags=manifest-poll</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-bus-reset-attach"><span class="link-text">Flags=no-bus-reset-attach</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsgd32"><span class="link-text">Flags=gd32</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsallow-zero-polltimeout"><span class="link-text">Flags=allow-zero-polltimeout</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsindex-force-detach"><span class="link-text">Flags=index-force-detach</span></a></li>
           
           </ul>
           

@@ -100,8 +100,7 @@ defines the software interface between an <span class="caps">OS</span> and platf
 With the UpdateCapsule boot service it can be used to update system&nbsp;firmware.</p>
 <p>If you don&#8217;t want or need this functionality you can use the
 <code>-Dplugin_uefi_capsule=disabled</code> option.</p>
-<p>When this plugin is enabled, the companion <span class="caps">UEFI</span> binary may also be built from the <a href="https://github.com/fwupd/fwupd-efi">fwupd-efi</a> project if not already present on the filesystem.
-This behavior can be overridden using the meson option <code>-Defi_binary=false</code>.</p>
+<p>When this plugin is enabled, the companion <span class="caps">UEFI</span> binary may also be built from the <a href="https://github.com/fwupd/fwupd-efi">fwupd-efi</a> project if not already present on the filesystem by using the meson option <code>-Defi_binary=true</code>.</p>
 <p>For this companion binary to work with secure boot, it will need to be signed by an authority trusted with shim and/or the host&nbsp;environment.</p>
 <h2 id="lenovo-specific-behavior">Lenovo Specific Behavior<a class="md-anchor" href="#lenovo-specific-behavior" title="Permanent link"></a></h2>
 <p>On Lenovo hardware only the boot label is set to <code>Linux-Firmware-Updater</code> rather
@@ -142,10 +141,11 @@ VersionFormat = quad
 from that. This means that <code>fwupdmgr get-devices</code> may return the <span class="caps">UEFI</span> device as a number initially,
 then once <code>fwupdmgr refresh</code> has completed it may start showing the exact same device as <code>A.B.C.D</code>,
 aka <code>quad</code> format.</p>
-<p>The two main formats used by vendors are <code>triplet</code>, <code>quad</code> and <code>dell-bios</code>.</p>
+<p>The main formats used by vendors are <code>triplet</code>, <code>quad</code>, <code>dell-bios</code> and <code>dell-bios-msb</code>.</p>
 <div class="codehilite"><pre><span></span><code>0xAABBCCDD -&gt; 0xAA.0xBB.0xCCCC is `triplet`, used for Lenovo
 0xAABBCCDD -&gt; 0xAA.0xBB.0xCC.0xDD is `quad`, used for HP
 0xAABBCCDD -&gt; 0xBB.0xCC.0xDD is `dell-bios`, used for Dell
+0xAABBCCDD -&gt; 0xAA.0xBB.0xCC is `dell-bios-msb`, used for Dell since CY24
 </code></pre></div>
 
 <p>There are more details about firmware version formats and a full list of all the different allowed
@@ -156,9 +156,9 @@ portable to depend on the number &#8212; which will also work if the metadata ha
 <h3 id="capsule-update-on-disk">Capsule update on-disk<a class="md-anchor" href="#capsule-update-on-disk" title="Permanent link"></a></h3>
 <p>Described in  <a href="https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf"><span class="caps">UEFI</span> specification</a>
 § 8.5.5 - Delivery of Capsules via file on Mass Storage&nbsp;device.</p>
-<p>If the firmware supports this, it will be the preferred method of updating on
-aarch64 platforms. You can explicitly disable it by by modifying
-<em>DisableCapsuleUpdateOnDisk</em> in <code>/etc/fwupd/uefi_capsule.conf</code>.</p>
+<p>If the firmware supports this, it will be the preferred method of updating when supported.
+You can explicitly disable it by by modifying
+<em>DisableCapsuleUpdateOnDisk</em> in the <code>uefi_capsule</code> section of <code>/etc/fwupd/fwupd.conf</code>.</p>
 <p>The spec expects runtime <em>SetVariable</em> to be available in order to enable this
 feature, we need to set <code>EFI_OS_INDICATIONS_FILE_CAPSULE_DELIVERY_SUPPORTED</code>
 in <em>OsIndications</em> variable to trigger processing of submitted capsule on next
@@ -197,6 +197,27 @@ option <em>EspLocation</em> in <code>/etc/fwupd/fwupd.conf</code>.</p>
 <h3 id="flagscod-indexed-filename"><code>Flags=cod-indexed-filename</code><a class="md-anchor" href="#flagscod-indexed-filename" title="Permanent link"></a></h3>
 <p>Use a Capsule-on-Disk filename of <code>CapsuleUpdateFileXXXX.bin</code> rather than including the <span class="caps">ESRT</span> <span class="caps">GUID</span>.
 This alternative format may be needed for some early InsydeH2O&nbsp;firmwares.</p>
+<h3 id="flagsno-ux-capsule"><code>Flags=no-ux-capsule</code><a class="md-anchor" href="#flagsno-ux-capsule" title="Permanent link"></a></h3>
+<p>Do not use the additional <span class="caps">UX</span>&nbsp;capsule.</p>
+<h3 id="flagsuse-shim-unique"><code>Flags=use-shim-unique</code><a class="md-anchor" href="#flagsuse-shim-unique" title="Permanent link"></a></h3>
+<p>Use a unique shim filename to work around a common <span class="caps">BIOS</span>&nbsp;bug.</p>
+<h3 id="flagsuse-legacy-bootmgr-desc"><code>Flags=use-legacy-bootmgr-desc</code><a class="md-anchor" href="#flagsuse-legacy-bootmgr-desc" title="Permanent link"></a></h3>
+<p>Use the legacy boot manager description to work around a Lenovo <span class="caps">BIOS</span>&nbsp;bug.</p>
+<h3 id="flagssupports-boot-order-lock"><code>Flags=supports-boot-order-lock</code><a class="md-anchor" href="#flagssupports-boot-order-lock" title="Permanent link"></a></h3>
+<p>The <span class="caps">BIOS</span> might have Boot Order Lock enabled which can cause failures when not using grub
+chainloading or&nbsp;capsule-on-disk.</p>
+<h3 id="flagsuse-shim-for-sb"><code>Flags=use-shim-for-sb</code><a class="md-anchor" href="#flagsuse-shim-for-sb" title="Permanent link"></a></h3>
+<p>Use shim to load fwupdx64.efi when SecureBoot is turned&nbsp;on.</p>
+<h3 id="flagsno-rt-set-variable"><code>Flags=no-rt-set-variable</code><a class="md-anchor" href="#flagsno-rt-set-variable" title="Permanent link"></a></h3>
+<p>Do not use <span class="caps">RT</span>-&gt;SetVariable.</p>
+<h3 id="flagsno-capsule-header-fixup"><code>Flags=no-capsule-header-fixup</code><a class="md-anchor" href="#flagsno-capsule-header-fixup" title="Permanent link"></a></h3>
+<p>Do not prepend a plausible missing capsule&nbsp;header.</p>
+<h3 id="flagsenable-debugging"><code>Flags=enable-debugging</code><a class="md-anchor" href="#flagsenable-debugging" title="Permanent link"></a></h3>
+<p>Enable debugging the <span class="caps">EFI</span>&nbsp;binary.</p>
+<h3 id="flagsmodify-bootorder"><code>Flags=modify-bootorder</code><a class="md-anchor" href="#flagsmodify-bootorder" title="Permanent link"></a></h3>
+<p>Modify <code>BootOrder</code> as well as <code>BootNext</code> to work around <span class="caps">BIOS</span>&nbsp;bugs.</p>
+<h3 id="flagscod-dell-recovery"><code>Flags=cod-dell-recovery</code><a class="md-anchor" href="#flagscod-dell-recovery" title="Permanent link"></a></h3>
+<p>Use Dell customized file location for the capsule on&nbsp;disk.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin&nbsp;requires:</p>
 <ul>
@@ -257,6 +278,26 @@ This alternative format may be needed for some early InsydeH2O&nbsp;firmwares.</
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#flagscod-indexed-filename"><span class="link-text">Flags=cod-indexed-filename</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-ux-capsule"><span class="link-text">Flags=no-ux-capsule</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-shim-unique"><span class="link-text">Flags=use-shim-unique</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-legacy-bootmgr-desc"><span class="link-text">Flags=use-legacy-bootmgr-desc</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagssupports-boot-order-lock"><span class="link-text">Flags=supports-boot-order-lock</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsuse-shim-for-sb"><span class="link-text">Flags=use-shim-for-sb</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-rt-set-variable"><span class="link-text">Flags=no-rt-set-variable</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-capsule-header-fixup"><span class="link-text">Flags=no-capsule-header-fixup</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsenable-debugging"><span class="link-text">Flags=enable-debugging</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsmodify-bootorder"><span class="link-text">Flags=modify-bootorder</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscod-dell-recovery"><span class="link-text">Flags=cod-dell-recovery</span></a></li>
           
           </ul>
           

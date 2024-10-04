@@ -142,6 +142,13 @@ string. To satisfy those requirements coreboot adds the CBETxxxx prefix to the
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed to the <span class="caps">SPI</span> chip when the machine is in normal runtime
 mode, but it is only used when the device is&nbsp;rebooted.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsreset-cmos"><code>Flags=reset-cmos</code><a class="md-anchor" href="#flagsreset-cmos" title="Permanent link"></a></h3>
+<p>Flag to determine if the <span class="caps">CMOS</span> checksum should be reset after the flash is reprogrammed.
+This will force the <span class="caps">CMOS</span> defaults to be reloaded on the next&nbsp;boot.</p>
+<h3 id="flagsfn-m-me-unlock"><code>Flags=fn-m-me-unlock</code><a class="md-anchor" href="#flagsfn-m-me-unlock" title="Permanent link"></a></h3>
+<p>Flag to determine if manual <span class="caps">ME</span> unlocking by pressing Fn + M is&nbsp;supported.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">BIOS</span> vendor, for example <code>DMI:Google</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -180,6 +187,17 @@ This typically is <code>/sys/bus/spi</code> but there may be other interfaces as
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsreset-cmos"><span class="link-text">Flags=reset-cmos</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsfn-m-me-unlock"><span class="link-text">Flags=fn-m-me-unlock</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

@@ -101,7 +101,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p></p>
+      <p><span class="emblem available">since: 1.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -131,6 +131,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         
+        
+        <p>Available since: 1.0</p>
         
         
       </div>
@@ -227,11 +229,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             </ul>
           </dd>
         
+          <dt><a id="sysfsdir" href="#sysfsdir"><code>FU_PATH_KIND_SYSFSDIR</code></a></dt>
+          <dd>
+            <div><p>The sysfs base location (<span class="caps">IE</span>&nbsp;/sys)</p></div>
+            <ul>
+              <li>Value: <code>8</code></li>
+              <li>Nickname: <code>None</code></li>
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
           <dt><a id="sysfsdir_fw" href="#sysfsdir_fw"><code>FU_PATH_KIND_SYSFSDIR_FW</code></a></dt>
           <dd>
             <div><p>The sysfs firmware location (<span class="caps">IE</span>&nbsp;/sys/firmware)</p></div>
             <ul>
-              <li>Value: <code>8</code></li>
+              <li>Value: <code>9</code></li>
               <li>Nickname: <code>None</code></li>
               <li>Available since: 1.0</li>
             </ul>
@@ -241,7 +253,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dd>
             <div><p>The platform sysfs directory (<span class="caps">IE</span>&nbsp;/sys/bus/platform/drivers)</p></div>
             <ul>
-              <li>Value: <code>9</code></li>
+              <li>Value: <code>10</code></li>
               <li>Nickname: <code>None</code></li>
               <li>Available since: 1.0</li>
             </ul>
@@ -251,7 +263,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dd>
             <div><p>The <span class="caps">TPM</span> sysfs directory (<span class="caps">IE</span>&nbsp;/sys/class/tpm)</p></div>
             <ul>
-              <li>Value: <code>10</code></li>
+              <li>Value: <code>11</code></li>
               <li>Nickname: <code>None</code></li>
               <li>Available since: 1.0</li>
             </ul>
@@ -261,7 +273,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dd>
             <div><p>The procfs location (<span class="caps">IE</span>&nbsp;/proc)</p></div>
             <ul>
-              <li>Value: <code>11</code></li>
+              <li>Value: <code>12</code></li>
               <li>Nickname: <code>None</code></li>
               <li>Available since: 1.0</li>
             </ul>
@@ -270,16 +282,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dt><a id="polkit_actions" href="#polkit_actions"><code>FU_PATH_KIND_POLKIT_ACTIONS</code></a></dt>
           <dd>
             <div><p>The directory for policy kit actions (<span class="caps">IE</span>&nbsp;/usr/share/polkit-1/actions/)</p></div>
-            <ul>
-              <li>Value: <code>12</code></li>
-              <li>Nickname: <code>None</code></li>
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt><a id="offline_trigger" href="#offline_trigger"><code>FU_PATH_KIND_OFFLINE_TRIGGER</code></a></dt>
-          <dd>
-            <div><p>The file for the offline trigger (<span class="caps">IE</span>&nbsp;/system-update)</p></div>
             <ul>
               <li>Value: <code>13</code></li>
               <li>Nickname: <code>None</code></li>
@@ -444,6 +446,37 @@ other than /lib/firmware (<span class="caps">IE</span>&nbsp;/sys/module/firmware
             <div><p>The timezone symlink (<span class="caps">IE</span>&nbsp;/etc/localtime)</p></div>
             <ul>
               <li>Value: <code>29</code></li>
+              <li>Nickname: <code>None</code></li>
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt><a id="libexecdir" href="#libexecdir"><code>FU_PATH_KIND_LIBEXECDIR</code></a></dt>
+          <dd>
+            <div><p>The directory to launch executables
+<code>FU_PATH_KIND_LIBEXECDIR_PKG</code>        The directory launch executables packaged with&nbsp;daemon.</p></div>
+            <ul>
+              <li>Value: <code>30</code></li>
+              <li>Nickname: <code>None</code></li>
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt><a id="libexecdir_pkg" href="#libexecdir_pkg"><code>FU_PATH_KIND_LIBEXECDIR_PKG</code></a></dt>
+          <dd>
+            <div>No description available.</div>
+            <ul>
+              <li>Value: <code>31</code></li>
+              <li>Nickname: <code>None</code></li>
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt><a id="datadir_vendor_ids" href="#datadir_vendor_ids"><code>FU_PATH_KIND_DATADIR_VENDOR_IDS</code></a></dt>
+          <dd>
+            <div><p>The vendor <span class="caps">ID</span> store (<span class="caps">IE</span>&nbsp;/usr/share/hwdata)</p></div>
+            <ul>
+              <li>Value: <code>32</code></li>
               <li>Nickname: <code>None</code></li>
               <li>Available since: 1.0</li>
             </ul>

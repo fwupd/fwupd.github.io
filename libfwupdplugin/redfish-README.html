@@ -131,10 +131,20 @@ when the firmware will actually be written to the <span class="caps">SPI</span>&
 <p>Delay in ms to use before querying /redfish/v1/UpdateService after a cleanup reset,
 default&nbsp;0ms.</p>
 <p>Since:&nbsp;1.8.0</p>
-<h3 id="flagsno-manager-reset-request">Flags=no-manager-reset-request<a class="md-anchor" href="#flagsno-manager-reset-request" title="Permanent link"></a></h3>
+<h3 id="flagswildcard-targets"><code>Flags=wildcard-targets</code><a class="md-anchor" href="#flagswildcard-targets" title="Permanent link"></a></h3>
+<p>Do not specify the <code>odata.id</code> in the multipart update Targets array and allow the <span class="caps">BMC</span> to deploy the
+firmware onto all compatible&nbsp;hardware.</p>
+<p>To use this option the payload must contain metadata that restricts it to a specific&nbsp;SoftwareId.</p>
+<h3 id="flagsno-manager-reset-request"><code>Flags=no-manager-reset-request</code><a class="md-anchor" href="#flagsno-manager-reset-request" title="Permanent link"></a></h3>
 <p>The <span class="caps">BMC</span> device will auto-reboot and so fwupd should not explicitly call
 <code>/redfish/v1/Managers/1/Actions/Manager.Reset</code>.</p>
 <p>Since:&nbsp;1.9.11</p>
+<h3 id="flagsis-backup"><code>Flags=is-backup</code><a class="md-anchor" href="#flagsis-backup" title="Permanent link"></a></h3>
+<p>The device is the other half of a dual image&nbsp;firmware.</p>
+<h3 id="flagsunsigned-build"><code>Flags=unsigned-build</code><a class="md-anchor" href="#flagsunsigned-build" title="Permanent link"></a></h3>
+<p>Use unsigned development&nbsp;builds.</p>
+<h3 id="flagsmanager-reset"><code>Flags=manager-reset</code><a class="md-anchor" href="#flagsmanager-reset" title="Permanent link"></a></h3>
+<p>Reset the manager (typically the <span class="caps">BMC</span>) after updating this&nbsp;device.</p>
 <h2 id="setting-service-ip-manually">Setting Service IP Manually<a class="md-anchor" href="#setting-service-ip-manually" title="Permanent link"></a></h2>
 <p>The service <span class="caps">IP</span> may not be automatically discoverable due to the absence of
 Type 42 entry in <span class="caps">SMBIOS</span>. In this case, you have to specify the service <span class="caps">IP</span>
@@ -164,7 +174,7 @@ to one of &#8220;Manager Network&#8221; Interfaces. For&nbsp;example:</p>
 
 <p>In this example, the service <span class="caps">IP</span> is&nbsp;&#8220;192.168.0.133&#8221;.</p>
 <p>Since the conventional <span class="caps">HTTP</span> port is 80 and <span class="caps">HTTPS</span> port is 443, we can set
-RedfishUri to either &#8220;http://192.168.0.133:80&#8221; or &#8220;https://192.168.0.133:443&#8221;
+RedfishUri to either &#8220;<a href="http://192.168.0.133:80">http://192.168.0.133:80</a>&#8221; or &#8220;<a href="https://192.168.0.133:443">https://192.168.0.133:443</a>&#8221;
 and verify the uri&nbsp;with</p>
 <div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>http://192.168.0.133:80/redfish/v1/
 </code></pre></div>
@@ -212,7 +222,15 @@ and verify the uri&nbsp;with</p>
           
             <li class="toc-list-item"><a href="#redfishresetpostdelay"><span class="link-text">RedfishResetPostDelay</span></a></li>
           
+            <li class="toc-list-item"><a href="#flagswildcard-targets"><span class="link-text">Flags=wildcard-targets</span></a></li>
+          
             <li class="toc-list-item"><a href="#flagsno-manager-reset-request"><span class="link-text">Flags=no-manager-reset-request</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsis-backup"><span class="link-text">Flags=is-backup</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsunsigned-build"><span class="link-text">Flags=unsigned-build</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsmanager-reset"><span class="link-text">Flags=manager-reset</span></a></li>
           
           </ul>
           

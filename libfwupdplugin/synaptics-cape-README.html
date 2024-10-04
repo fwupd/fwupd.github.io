@@ -116,11 +116,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 device will reset when the new firmware has been&nbsp;written.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x1395</code></p>
-<h3 id="plugin-specific-flags">Plugin-specific flags<a class="md-anchor" href="#plugin-specific-flags" title="Permanent link"></a></h3>
-<ul>
-<li>use-in-report-interrupt: some devices will support IN_REPORT that allow host communicate with
-  device over interrupt instead of control endpoint, since:&nbsp;1.7.0</li>
-</ul>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsuse-in-report-interrupt"><code>Flags=use-in-report-interrupt</code><a class="md-anchor" href="#flagsuse-in-report-interrupt" title="Permanent link"></a></h3>
+<p>Some devices will support IN_REPORT that allow host communicate with device over interrupt instead
+of control&nbsp;endpoint.</p>
+<p>Since:&nbsp;1.7.0</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -157,9 +158,12 @@ consulted before making major or functional&nbsp;changes:</p>
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
           
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
           <ul class="toc-list">
           
-            <li class="toc-list-item"><a href="#plugin-specific-flags"><span class="link-text">Plugin-specific flags</span></a></li>
+            <li class="toc-list-item"><a href="#flagsuse-in-report-interrupt"><span class="link-text">Flags=use-in-report-interrupt</span></a></li>
           
           </ul>
           

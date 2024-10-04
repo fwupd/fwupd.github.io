@@ -125,10 +125,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">GPtrArray</span><span class="o">*</span>
 <span class="n">fu_chunk_array_new</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">data_sz</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">addr_start</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">page_sz</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">packet_sz</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">data_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">addr_start</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">page_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">packet_sz</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -190,7 +190,7 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
           
           <dt class="arg-name"><code>data_sz</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>Size of <code>data_sz</code>.</p></p>
             <table>
             
@@ -207,7 +207,7 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
           
           <dt class="arg-name"><code>addr_start</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>The hardware address offset, or&nbsp;0</p></p>
             <table>
             
@@ -224,7 +224,7 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
           
           <dt class="arg-name"><code>page_sz</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>The hardware page size, or&nbsp;0</p></p>
             <table>
             
@@ -241,7 +241,7 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
           
           <dt class="arg-name"><code>packet_sz</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p><p>The transfer size, or&nbsp;0</p></p>
             <table>
             

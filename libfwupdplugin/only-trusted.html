@@ -119,7 +119,7 @@ an unmodified fwupd package (without uploading to the <span class="caps">LVFS</s
 modified to&nbsp;suit.</p>
 <p>First, lets verify that an existing firmware binary and metainfo file without a Jcat signature
 refuses to install when packaged into a cabinet&nbsp;archive:</p>
-<div class="codehilite"><pre><span></span><code>$ gcab -c firmware.cab firmware.bin firmware.metainfo.xml 
+<div class="codehilite"><pre><span></span><code>$ fwupdtool build-cabinet firmware.cab firmware.bin firmware.metainfo.xml
 $ fwupdmgr install firmware.cab --allow-reinstall
 Decompressing…           [ -                                     ]
 firmware signature missing or not trusted; set OnlyTrusted=false in /etc/fwupd/fwupd.conf ONLY if you are a firmware developer
@@ -168,7 +168,7 @@ JcatFile:
 </code></pre></div>
 
 <p>We can then create the new firmware archive, this time with the self-signed Jcat file as&nbsp;well.</p>
-<div class="codehilite"><pre><span></span><code>gcab -c firmware.cab firmware.bin firmware.metainfo.xml firmware.jcat
+<div class="codehilite"><pre><span></span><code>fwupdtool build-cabinet firmware.cab firmware.bin firmware.metainfo.xml firmware.jcat
 </code></pre></div>
 
 <p>Now we need to install the <strong><span class="caps">CA</span></strong> certificate to the system-wide system store.

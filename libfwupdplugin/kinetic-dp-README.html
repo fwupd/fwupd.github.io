@@ -104,7 +104,14 @@ an unspecified binary file&nbsp;format.</p>
 <li>com.kinet-ic.dp</li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These devices use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
+<p>These devices use the standard <span class="caps">DPAUX</span> <span class="caps">GUID</span> values,&nbsp;e.g.</p>
+<ul>
+<li><code>DPAUX\OUI_0090CC24</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;HWREV_10</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;HWREV_10&amp;DEVID_SYNAB2</code> (only-quirk)</li>
+<li><code>DPAUX\OUI_0090CC24&amp;DEVID_SYNAB2</code> (only-quirk)</li>
+</ul>
+<p>These devices also use custom <span class="caps">GUID</span> values,&nbsp;e.g.</p>
 <ul>
 <li><code>MST\VEN_60AD&amp;DEV_${dev_id}&amp;CID_${customer_id}&amp;CHW_${customer_board}</code></li>
 <li><code>MST\VEN_60AD&amp;DEV_${dev_id}&amp;CID_${customer_id}</code> (only-quirk)</li>

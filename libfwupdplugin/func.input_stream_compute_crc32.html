@@ -107,7 +107,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-input-stream.h#L77">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-input-stream.h#L86">[src]</a>
         
       </h4>
 
@@ -115,8 +115,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">fu_input_stream_compute_crc32</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">GInputStream</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FuCrcKind</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint32</span><span class="o">*</span><span class="w"> </span><span class="n">crc</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">polynomial</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -129,13 +129,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-input-stream.c#L492">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-input-stream.c#L546">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
-<p><span class="caps">NOTE</span>: The initial <code>crc</code> differs from <code>fu_crc32_full()</code> in that it is inverted (to make it
+<p><span class="caps">NOTE</span>: The initial <code>crc</code> differs from <code>fu_crc32_step()</code> in that it is inverted (to make it
 symmetrical, and chainable), so for most uses you want to use the value of 0x0, not&nbsp;0xFFFFFFFF.</p>
       </div>
 
@@ -178,12 +178,12 @@ symmetrical, and chainable), so for most uses you want to use the value of 0x0, 
             </table>
           </dd>
           
-          <dt class="arg-name"><code>crc</code></dt>
+          <dt class="arg-name"><code>kind</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32*</code></p>
-            <p><p>Initial and final <span class="caps">CRC</span> value, typically&nbsp;0x0</p></p>
+            <p><em>Type:</em>&nbsp;<a href="enum.CrcKind.html"><code>FuCrcKind</code></a></p>
+            <p><p>A <code>FuCrcKind</code>, typically <code>FU_CRC_KIND_B32_STANDARD</code>.</p></p>
             <table>
-            <tr><td title="direction: out">The argument will be set by the function.</td></tr>
+            
             
             
             
@@ -195,12 +195,12 @@ symmetrical, and chainable), so for most uses you want to use the value of 0x0, 
             </table>
           </dd>
           
-          <dt class="arg-name"><code>polynomial</code></dt>
+          <dt class="arg-name"><code>crc</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
-            <p><p><span class="caps">CRC</span> polynomial, typically&nbsp;0xEDB88320</p></p>
+            <p><em>Type:</em>&nbsp;<code>guint32*</code></p>
+            <p><p>Initial and final <span class="caps">CRC</span>&nbsp;value.</p></p>
             <table>
-            
+            <tr><td title="direction: inout">The argument will be modified by the function.</td></tr>
             
             
             

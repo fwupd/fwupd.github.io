@@ -71,7 +71,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 1.9.10</p>
+        <p>Library Version: 2.0.0</p>
         
       </div>
       
@@ -99,17 +99,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_agreement.html">get_agreement</a>
   
-    <a class="method" href="method.Remote.get_approval_required.html">get_approval_required</a>
-  
-    <a class="method" href="method.Remote.get_automatic_reports.html">get_automatic_reports</a>
-  
-    <a class="method" href="method.Remote.get_automatic_security_reports.html">get_automatic_security_reports</a>
-  
     <a class="method" href="method.Remote.get_checksum.html">get_checksum</a>
   
     <a class="method" href="method.Remote.get_checksum_metadata.html">get_checksum_metadata</a>
-  
-    <a class="method" href="method.Remote.get_enabled.html">get_enabled</a>
   
     <a class="method" href="method.Remote.get_filename_cache.html">get_filename_cache</a>
   
@@ -117,13 +109,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_filename_source.html">get_filename_source</a>
   
-    <a class="method" href="method.Remote.get_firmware_base_uri.html">get_firmware_base_uri</a>
-  
     <a class="method" href="method.Remote.get_flags.html">get_flags</a>
   
     <a class="method" href="method.Remote.get_id.html">get_id</a>
-  
-    <a class="method" href="method.Remote.get_keyring_kind.html">get_keyring_kind</a>
   
     <a class="method" href="method.Remote.get_kind.html">get_kind</a>
   
@@ -139,21 +127,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.get_priority.html">get_priority</a>
   
+    <a class="method" href="method.Remote.get_privacy_uri.html">get_privacy_uri</a>
+  
     <a class="method" href="method.Remote.get_refresh_interval.html">get_refresh_interval</a>
   
     <a class="method" href="method.Remote.get_remotes_dir.html">get_remotes_dir</a>
   
     <a class="method" href="method.Remote.get_report_uri.html">get_report_uri</a>
   
-    <a class="method" href="method.Remote.get_security_report_uri.html">get_security_report_uri</a>
-  
     <a class="method" href="method.Remote.get_title.html">get_title</a>
   
     <a class="method" href="method.Remote.get_username.html">get_username</a>
   
     <a class="method" href="method.Remote.has_flag.html">has_flag</a>
-  
-    <a class="method" href="method.Remote.load_from_filename.html">load_from_filename</a>
   
     <a class="method" href="method.Remote.load_signature.html">load_signature</a>
   
@@ -163,13 +149,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.remove_flag.html">remove_flag</a>
   
-    <a class="method" href="method.Remote.save_to_filename.html">save_to_filename</a>
-  
     <a class="method" href="method.Remote.set_agreement.html">set_agreement</a>
   
-    <a class="method" href="method.Remote.set_checksum.html">set_checksum</a>
-  
-    <a class="method" href="method.Remote.set_enabled.html">set_enabled</a>
+    <a class="method" href="method.Remote.set_checksum_sig.html">set_checksum_sig</a>
   
     <a class="method" href="method.Remote.set_filename_cache.html">set_filename_cache</a>
   
@@ -179,29 +161,39 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.set_id.html">set_id</a>
   
-    <a class="method" href="method.Remote.set_keyring_kind.html">set_keyring_kind</a>
+    <a class="method" href="method.Remote.set_kind.html">set_kind</a>
   
     <a class="method" href="method.Remote.set_metadata_uri.html">set_metadata_uri</a>
   
     <a class="method" href="method.Remote.set_mtime.html">set_mtime</a>
   
+    <a class="method" href="method.Remote.set_order_after.html">set_order_after</a>
+  
+    <a class="method" href="method.Remote.set_order_before.html">set_order_before</a>
+  
+    <a class="method" href="method.Remote.set_password.html">set_password</a>
+  
     <a class="method" href="method.Remote.set_priority.html">set_priority</a>
+  
+    <a class="method" href="method.Remote.set_privacy_uri.html">set_privacy_uri</a>
+  
+    <a class="method" href="method.Remote.set_refresh_interval.html">set_refresh_interval</a>
   
     <a class="method" href="method.Remote.set_remotes_dir.html">set_remotes_dir</a>
   
+    <a class="method" href="method.Remote.set_report_uri.html">set_report_uri</a>
+  
     <a class="method" href="method.Remote.set_title.html">set_title</a>
   
+    <a class="method" href="method.Remote.set_username.html">set_username</a>
+  
     <a class="method" href="method.Remote.setup.html">setup</a>
-  
-    <a class="method" href="method.Remote.to_json.html">to_json</a>
-  
-    <a class="method" href="method.Remote.to_variant.html">to_variant</a>
   
   </div>
 </div>
 
       <div class="section generator">
-        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2023.1</p>
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2023.3</p>
       </div>
     </nav>
 
@@ -224,7 +216,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.10/libfwupd/fwupd-remote.h#L145">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupd/fwupd-remote.h#L191">[src]</a>
         
       </h4>
 
@@ -243,7 +235,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/1.9.10/libfwupd/fwupd-remote.c#L1219">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupd/fwupd-remote.c#L967">[src]</a>
         
       </h4>
 

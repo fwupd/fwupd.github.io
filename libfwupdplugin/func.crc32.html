@@ -100,20 +100,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.8.2</span></p>
+      <p><span class="emblem available">since: 2.0.0</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-crc.h#L20">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-crc.h#L57">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="n">guint32</span>
 <span class="n">fu_crc32</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">FuCrcKind</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">bufsz</span>
 <span class="p">)</span>
@@ -127,7 +128,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-crc.c#L131">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.0/libfwupdplugin/fu-crc.c#L294">[src]</a>
         
       </h4>
 
@@ -137,7 +138,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         
-        <p>Available since: 1.8.2</p>
+        <p>Available since: 2.0.0</p>
         
         
         
@@ -156,6 +157,23 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         <dl class="arguments">
+          
+          <dt class="arg-name"><code>kind</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="enum.CrcKind.html"><code>FuCrcKind</code></a></p>
+            <p><p>A <code>FuCrcKind</code>, typically <code>FU_CRC_KIND_B32_STANDARD</code>.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
           
           <dt class="arg-name"><code>buf</code></dt>
           <dd class="arg-description">
