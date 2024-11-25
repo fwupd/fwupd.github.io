@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Plugin: Nitrokey</title>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Raspberry Pi Pico Microcontrollers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Plugin: Nitrokey"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Nitrokey"/>
-  <meta name="twitter:title" content="FwupdPlugin: Plugin: Nitrokey"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Nitrokey"/>
+  <meta property="og:title" content="FwupdPlugin: Plugin: Raspberry Pi Pico Microcontrollers"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Raspberry Pi Pico Microcontrollers"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Raspberry Pi Pico Microcontrollers"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Raspberry Pi Pico Microcontrollers"/>
 
 
   
@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -89,7 +89,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   
   <h4 id="title" style="display:flex;">
-    Plugin: Nitrokey
+    Plugin: Raspberry Pi Pico Microcontrollers
     <a href="#title" class="anchor"></a>
     
   </h4>
@@ -97,35 +97,38 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <div class="docblock">
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
-<p>This plugin is used to get the correct version number on Nitrokey storage
-devices. These devices have updatable firmware but so far no updates are
-available from the&nbsp;vendor.</p>
-<p>The device is switched to a <span class="caps">DFU</span> bootloader only when the secret firmware pin
-is entered into the nitrokey-app tool. This cannot be&nbsp;automated.</p>
+<p>Raspberry Pi Pico Microcontrollers can expose a so-called &#8220;Reset&#8221; <span class="caps">USB</span> interface.
+When this is exposed, they can be reset into the bootrom and then updated (using the <span class="caps">UF2</span>&nbsp;plugin).</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<p>Raspberry Pi offers vendors to use the Raspberry Pi <span class="caps">USB</span> <span class="caps">PID</span> space.
+However, each vendor can chose their own <span class="caps">VID</span>/<span class="caps">PID</span>&nbsp;instead.</p>
+<p>Devices from <span class="caps">MNT</span> Research use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
 <ul>
-<li><code>USB\VID_20A0&amp;PID_4109</code></li>
+<li><code>USB\VID_1209&amp;PID_6D07</code></li>
+<li><code>USB\VID_1209&amp;PID_6D07&amp;REV_0001</code></li>
 </ul>
+<p>Note that the <span class="caps">VID</span> is the shared <a href="https://pid.codes/1209/">https://pid.codes/1209/</a> <span class="caps">VID</span>.</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
-<p>The device usually presents in runtime mode, but on detach re-enumerates with a
-different <span class="caps">USB</span> <span class="caps">VID</span> and <span class="caps">PID</span> in <span class="caps">DFU</span> mode. The device is then handled by the <code>dfu</code>
-plugin.</p>
-<p>On <span class="caps">DFU</span> attach the device again re-enumerates back to the runtime&nbsp;mode.</p>
-<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
-the bootloader and runtime modes are treated as the same&nbsp;device.</p>
-<h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
-<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x20A0</code>
-in runtime mode and <code>USB:0x03EB</code> in bootloader&nbsp;mode.</p>
+<p>The runtime interface should use a <a href="https://fwupd.github.io/libfwupdplugin/ds20.html"><span class="caps">DS</span>-20 <span class="caps">BOS</span> descriptor</a>
+with something like these as the&nbsp;contents:</p>
+<div class="codehilite"><pre><span></span><code>Plugin=rp_pico
+Flags=internal
+Version=1.2.3
+VersionFormat=triplet
+Icon=computer
+</code></pre></div>
+
+<p>Devices are updated by triggering a reset, and then entering the Raspberry Pi Pico&nbsp;bootrom.</p>
+<p>The bootrom speaks the <span class="caps">UF2</span>&nbsp;protocol.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
-<p>This plugin has been available since fwupd version <code>1.0.2</code>.</p>
+<p>This plugin has been available since fwupd version <code>2.0.2</code>.</p>
 <h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
 <p>Anyone can submit a pull request to modify this plugin, but the following people should be
 consulted before making major or functional&nbsp;changes:</p>
 <ul>
-<li>Szczepan Zalega: <code>szszszsz</code></li>
+<li>Lukas F. Hartmann: <code>mntmn</code></li>
 </ul>
     </div>
   </section>
@@ -146,9 +149,6 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
-          
-        
-        <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

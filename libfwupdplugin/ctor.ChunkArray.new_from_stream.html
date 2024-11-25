@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -90,6 +90,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="ctor.ChunkArray.new_from_bytes.html">new_from_bytes</a>
   
     <a class="method current" href="ctor.ChunkArray.new_from_stream.html">new_from_stream</a>
+  
+    <a class="method" href="ctor.ChunkArray.new_virtual.html">new_virtual</a>
   
   </div>
 </div>
@@ -110,14 +112,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.0.0</span></p>
+      <p><span class="emblem available">since: 2.0.2</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-chunk-array.h#L21">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-chunk-array.h#L23">[src]</a>
         
       </h4>
 
@@ -125,8 +127,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">FuChunkArray</span><span class="o">*</span>
 <span class="n">fu_chunk_array_new_from_stream</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">GInputStream</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">addr_start</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">packet_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">addr_offset</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">page_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">packet_sz</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -139,7 +142,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-chunk-array.c#L137">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-chunk-array.c#L220">[src]</a>
         
       </h4>
 
@@ -150,7 +153,7 @@ transfer&nbsp;size.</p>
 
       <div class="docblock">
         
-        <p>Available since: 2.0.0</p>
+        <p>Available since: 2.0.2</p>
         
         
         
@@ -188,10 +191,27 @@ transfer&nbsp;size.</p>
             </table>
           </dd>
           
-          <dt class="arg-name"><code>addr_start</code></dt>
+          <dt class="arg-name"><code>addr_offset</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
-            <p>The hardware address offset, or&nbsp;0x0.</p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p>The hardware address offset, or <code>FU_CHUNK_ADDR_OFFSET_NONE</code>.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>page_sz</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p>The hardware page size, typically <code>FU_CHUNK_PAGESZ_NONE</code>.</p>
             <table>
             
             
@@ -207,7 +227,7 @@ transfer&nbsp;size.</p>
           
           <dt class="arg-name"><code>packet_sz</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
             <p>The packet size, or&nbsp;0x0.</p>
             <table>
             

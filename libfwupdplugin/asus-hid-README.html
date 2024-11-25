@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin &ndash; 1.0: Plugin: DFU CSR — Cambridge Silicon Radio</title>
+  <title>FwupdPlugin &ndash; 1.0: Plugin: Asus HID</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin: Plugin: DFU CSR — Cambridge Silicon Radio"/>
-  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: DFU CSR — Cambridge Silicon Radio"/>
-  <meta name="twitter:title" content="FwupdPlugin: Plugin: DFU CSR — Cambridge Silicon Radio"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: DFU CSR — Cambridge Silicon Radio"/>
+  <meta property="og:title" content="FwupdPlugin: Plugin: Asus HID"/>
+  <meta property="og:description" content="Reference for FwupdPlugin-1.0: Plugin: Asus HID"/>
+  <meta name="twitter:title" content="FwupdPlugin: Plugin: Asus HID"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin-1.0: Plugin: Asus HID"/>
 
 
   
@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -89,7 +89,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   
   <h4 id="title" style="display:flex;">
-    Plugin: DFU CSR — Cambridge Silicon Radio
+    Plugin: Asus HID
     <a href="#title" class="anchor"></a>
     
   </h4>
@@ -97,47 +97,36 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <div class="docblock">
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
-<p><span class="caps">CSR</span> is often called “driverless <span class="caps">DFU</span>” and is used only by BlueCore chips from
-Cambridge Silicon Radio (now owned by Qualcomm). The driverless just means that
-it&#8217;s <span class="caps">DFU</span> like, and is routed over <span class="caps">HID</span>.</p>
-<p><span class="caps">CSR</span> is a <span class="caps">ODM</span> that makes most of the Bluetooth audio chips in vendor hardware.
-The hardware vendor can enable or disable features on the <span class="caps">CSR</span> microcontroller
-depending on licensing options (for instance echo cancellation), and there’s
-even a little virtual machine to do simple vendor-specific&nbsp;things.</p>
-<p>All the <span class="caps">CSR</span> chips are updatable in-field, and most vendors issue updates to fix
-sound quality issues or to add support for new protocols or&nbsp;devices.</p>
+<p>The <span class="caps">ASUS</span> <span class="caps">HID</span> plugin is used for interacting with the <span class="caps">ITE</span> MCUs on Asus&nbsp;devices.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
-<span class="caps">DFU</span> file&nbsp;format.</p>
+a packed binary file&nbsp;format.</p>
 <p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
 <ul>
-<li><code>com.qualcomm.dfu</code></li>
+<li><code>com.asus.hid</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<p>These devices use the a DeviceInstanceId value that also reflects the microcontroller <span class="caps">ID</span>.</p>
 <ul>
-<li><code>USB\VID_0A12&amp;PID_1337&amp;REV_2520</code></li>
-<li><code>USB\VID_0A12&amp;PID_1337</code></li>
+<li><code>USB\VID_0B05&amp;PID_1ABE&amp;PART_RC72LA</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
-<p>A <span class="caps">DFU</span> device usually presents in runtime mode (or with no interfaces defined),
-but if the user puts the device into bootloader mode using a physical button
-it then enumerates with a <span class="caps">HID</span> descriptor. On attach the device returns to
-runtime mode which <em>may</em> mean the device &#8220;goes&nbsp;away&#8221;.</p>
-<p>For this reason the <code>REPLUG_MATCH_GUID</code> internal device flag is used so that
-the bootloader and runtime modes are treated as the same&nbsp;device.</p>
-<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
-<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
-<h3 id="flagsrequire-delay"><code>Flags=require-delay</code><a class="md-anchor" href="#flagsrequire-delay" title="Permanent link"></a></h3>
-<p>Respect the write timeout value when performing actions.
-This is sometimes set to a huge amount of time, and so is not used by&nbsp;default.</p>
-<p>Since:&nbsp;1.0.3</p>
+<p>The device will restart after&nbsp;update.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
-<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x0A12</code></p>
+<p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x0B05</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
-<p>This plugin has been available since fwupd version <code>1.5.7</code>.</p>
+<p>This plugin has been available since fwupd version <code>2.0.0</code>.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="asushidnummcu">AsusHidNumMcu<a class="md-anchor" href="#asushidnummcu" title="Permanent link"></a></h3>
+<p>The number of MCUs connected to the <span class="caps">USB</span>&nbsp;endpoint.</p>
+<p>Since:&nbsp;2.0.0</p>
+<h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
+<p>Anyone can submit a pull request to modify this plugin, but the following people should be
+consulted before making major or functional&nbsp;changes:</p>
+<p><code>superm1</code></p>
     </div>
   </section>
 </section>
@@ -162,15 +151,6 @@ This is sometimes set to a huge amount of time, and so is not used by&nbsp;defau
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
           
         
-        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
-          
-          <ul class="toc-list">
-          
-            <li class="toc-list-item"><a href="#flagsrequire-delay"><span class="link-text">Flags=require-delay</span></a></li>
-          
-          </ul>
-          
-        
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
           
         
@@ -178,6 +158,18 @@ This is sometimes set to a huge amount of time, and so is not used by&nbsp;defau
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#asushidnummcu"><span class="link-text">AsusHidNumMcu</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#owners"><span class="link-text">Owners</span></a></li>
           
         
       

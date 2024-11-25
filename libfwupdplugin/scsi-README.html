@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -99,7 +99,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>This plugin adds support for <span class="caps">SCSI</span> storage hardware. Most <span class="caps">SCSI</span> devices are enumerated and some <span class="caps">UFS</span>
 devices may also be&nbsp;updatable.</p>
-<p>Firmware is sent in 4kB chunks and activated on next reboot&nbsp;only.</p>
+<p>Firmware is sent in chunks of 4kB by default and activated on next reboot only.
+There is a quirk to change the chunk size for specific&nbsp;device.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 an unspecified binary file&nbsp;format.</p>
@@ -120,6 +121,11 @@ an unspecified binary file&nbsp;format.</p>
 for <span class="caps">UFS</span>&nbsp;updates.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.7.6</code>.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="scsiwritebuffersize">ScsiWriteBufferSize<a class="md-anchor" href="#scsiwritebuffersize" title="Permanent link"></a></h3>
+<p>The block size used for WRITE_BUFFER commands to update the firmware.
+Must be a multiple of&nbsp;4k.</p>
     </div>
   </section>
 </section>
@@ -148,6 +154,15 @@ for <span class="caps">UFS</span>&nbsp;updates.</p>
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#scsiwritebuffersize"><span class="link-text">ScsiWriteBufferSize</span></a></li>
+          
+          </ul>
           
         
       

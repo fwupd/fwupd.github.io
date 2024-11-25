@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.usb_hid_descriptor_hdr_get_length</title>
+  <title>FwupdPlugin.crc32_bytes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.usb_hid_descriptor_hdr_get_length"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.usb_hid_descriptor_hdr_get_length"/>
-  <meta name="twitter:title" content="FwupdPlugin.usb_hid_descriptor_hdr_get_length"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.usb_hid_descriptor_hdr_get_length"/>
+  <meta property="og:title" content="FwupdPlugin.crc32_bytes"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.crc32_bytes"/>
+  <meta name="twitter:title" content="FwupdPlugin.crc32_bytes"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.crc32_bytes"/>
 
 
   
@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -97,26 +97,27 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Function </h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span>usb_hid_descriptor_hdr_get_length</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span>crc32_bytes</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p></p>
+      <p><span class="emblem available">since: 2.0.2</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-usb-struct.h#L159">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-crc.h#L59">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">guint8</span>
-<span class="n">fu_usb_hid_descriptor_hdr_get_length</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">FuUsbHidDescriptorHdr</span><span class="o">*</span><span class="w"> </span><span class="n">st</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">guint32</span>
+<span class="n">fu_crc32_bytes</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">FuCrcKind</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GBytes</span><span class="o">*</span><span class="w"> </span><span class="n">blob</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -128,18 +129,20 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-crc.c#L352">[src]</a>
+        
       </h4>
 
       <div class="docblock">
-        <p>No description available.</p>
+        <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
       </div>
 
       <div class="docblock">
         
+        <p>Available since: 2.0.2</p>
         
         
         
-        <p>This function is not directly available to language bindings.</p>
         
         
       </div>
@@ -157,10 +160,27 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>st</code></dt>
+          <dt class="arg-name"><code>kind</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="alias.UsbHidDescriptorHdr.html"><code>FuUsbHidDescriptorHdr</code></a></p>
-            <p>No description available.</p>
+            <p><em>Type:</em>&nbsp;<a href="enum.CrcKind.html"><code>FuCrcKind</code></a></p>
+            <p>A <code>FuCrcKind</code>, typically <code>FU_CRC_KIND_B32_STANDARD</code>.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>blob</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.Bytes.html" data-namespace="GLib" class="external"><code>GBytes</code></a></p>
+            <p>A <code>GBytes</code>.</p>
             <table>
             
             
@@ -191,8 +211,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
         <div class="returns">
           <div class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>guint8</code></p>
-            <p>No description available.</p>
+            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p><span class="caps">CRC</span>&nbsp;value.</p>
           </div>
           <div>
             <table>

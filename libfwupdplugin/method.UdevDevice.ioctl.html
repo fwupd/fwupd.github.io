@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -113,9 +113,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.UdevDevice.get_subsystem_depth.html">get_subsystem_depth</a>
   
+    <a class="method" href="method.UdevDevice.get_subsystem_devtype.html">get_subsystem_devtype</a>
+  
     <a class="method" href="method.UdevDevice.get_sysfs_path.html">get_sysfs_path</a>
   
     <a class="method current" href="method.UdevDevice.ioctl.html">ioctl</a>
+  
+    <a class="method" href="method.UdevDevice.ioctl_new.html">ioctl_new</a>
   
     <a class="method" href="method.UdevDevice.match_subsystem.html">match_subsystem</a>
   
@@ -138,6 +142,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.UdevDevice.set_bind_id.html">set_bind_id</a>
   
     <a class="method" href="method.UdevDevice.set_device_file.html">set_device_file</a>
+  
+    <a class="method" href="method.UdevDevice.set_devtype.html">set_devtype</a>
   
     <a class="method" href="method.UdevDevice.set_io_channel.html">set_io_channel</a>
   
@@ -172,7 +178,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.0.0</span></p>
+      <p></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -180,7 +186,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-udev-device.h#L72">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-udev-device-private.h#L32">[src]</a>
         
       </h4>
 
@@ -193,7 +199,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">bufsz</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gint</span><span class="o">*</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">timeout</span><span class="p">,</span>
-<span class="w">  </span><span class="n">FuUdevDeviceIoctlFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FuIoctlFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -206,19 +212,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-udev-device.c#L1109">[src]</a>
-        
       </h4>
 
       <div class="docblock">
-        <p>Control a device using a low-level&nbsp;request.</p>
-<p><span class="caps">NOTE</span>: In version 2.0.0 the <code>bufsz</code> parameter was added &#8212; which isn&#8217;t required to perform the
-ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;buffer.</p>
+        <p>No description available.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 2.0.0</p>
+        
         
         
         
@@ -242,7 +244,7 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           <dt class="arg-name"><code>request</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gulong</code></p>
-            <p>Request&nbsp;number.</p>
+            <p>No description available.</p>
             <table>
             
             
@@ -259,7 +261,7 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           <dt class="arg-name"><code>buf</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>guint8*</code></p>
-            <p>A buffer to use, which <em>must</em> be large enough for the&nbsp;request.</p>
+            <p>No description available.</p>
             <table>
             
             
@@ -276,7 +278,7 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           <dt class="arg-name"><code>bufsz</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gsize</code></p>
-            <p>The size of <code>buf</code>.</p>
+            <p>No description available.</p>
             <table>
             
             
@@ -293,16 +295,16 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           <dt class="arg-name"><code>rc</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gint*</code></p>
-            <p>The raw return value from the&nbsp;ioctl.</p>
+            <p>No description available.</p>
             <table>
-            <tr><td title="direction: out">The argument will be set by the function.</td></tr>
-            
-            <tr><td>The argument can be set to <code>NULL</code> by the method.</td></tr>
             
             
             
             
             
+            
+            
+            <tr><td title="transfer: none">The data is owned by the caller of the method.</td></tr>
             
             </table>
           </dd>
@@ -310,7 +312,7 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           <dt class="arg-name"><code>timeout</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>guint</code></p>
-            <p>Timeout in ms for the retry action, see <code>FU_UDEV_DEVICE_IOCTL_FLAG_RETRY</code>.</p>
+            <p>No description available.</p>
             <table>
             
             
@@ -326,8 +328,8 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
           
           <dt class="arg-name"><code>flags</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="flags.UdevDeviceIoctlFlags.html"><code>FuUdevDeviceIoctlFlags</code></a></p>
-            <p>Some <code>FuUdevDeviceIoctlFlags</code>, e.g. <code>FU_UDEV_DEVICE_IOCTL_FLAG_RETRY</code>.</p>
+            <p><em>Type:</em>&nbsp;<a href="flags.IoctlFlags.html"><code>FuIoctlFlags</code></a></p>
+            <p>No description available.</p>
             <table>
             
             
@@ -371,7 +373,7 @@ ioctl, but <em>is</em> required to accurately track and emulate the device&nbsp;
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><code>TRUE</code> for&nbsp;success.</p>
+            <p>No description available.</p>
           </div>
           <div>
             <table>

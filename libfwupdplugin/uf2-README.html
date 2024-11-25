@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -138,6 +138,12 @@ the <span class="caps">UF2</span> file&nbsp;format.</p>
 typically be written as the file is&nbsp;copied.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span>&nbsp;vendor.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagshas-runtime"><code>Flags=has-runtime</code><a class="md-anchor" href="#flagshas-runtime" title="Permanent link"></a></h3>
+<p>This is automatically set if the device is expected to go back to a runtime component, and it can
+also be set in the quirk file if the bootloader has a non-generic <span class="caps">VID</span> and <span class="caps">PID</span>.</p>
+<p>Since:&nbsp;2.0.2</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires permission to mount, write a file and unmount the mass
 storage&nbsp;device.</p>
@@ -168,6 +174,15 @@ storage&nbsp;device.</p>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagshas-runtime"><span class="link-text">Flags=has-runtime</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

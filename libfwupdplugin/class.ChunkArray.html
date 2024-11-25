@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -93,6 +93,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="ctor" href="ctor.ChunkArray.new_from_bytes.html">new_from_bytes</a>
   
     <a class="ctor" href="ctor.ChunkArray.new_from_stream.html">new_from_stream</a>
+  
+    <a class="ctor" href="ctor.ChunkArray.new_virtual.html">new_virtual</a>
   
   </div>
 </div>
@@ -167,7 +169,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-chunk-array.c#L15">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-chunk-array.c#L16">[src]</a>
           
         </h4>
 
@@ -178,8 +180,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
         <div class="docblock">
           <p>Create chunked data with address and index as&nbsp;required.</p>
-<p><span class="caps">NOTE</span>: If you need a page size, either use <code>fu_chunk_array_new()</code> or use two <code>FuChunkArray</code><span class="quo">&#8216;</span>s &#8212;
-e.g. once to split to page size, and once to split to packet&nbsp;size.</p>
         </div>
 
         <div class="docblock">
@@ -244,7 +244,18 @@ transfer&nbsp;size.</p>
 transfer&nbsp;size.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.0.0</span></p>
+            <p><span class="emblem available">since: 2.0.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="ctor.ChunkArray.new_virtual.html">fu_chunk_array_new_virtual</a></h6>
+          <div class="docblock">
+            <p>Chunks a virtual buffer memory into packets, ensuring each packet is less that a specific
+transfer&nbsp;size.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.2</span></p>
           </div>
         </div>
       

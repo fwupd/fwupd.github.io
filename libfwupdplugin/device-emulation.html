@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -162,9 +162,31 @@ fwupdmgr get-devices --filter emulated
 fwupdmgr install 17*.cab --allow-reinstall
 </code></pre></div>
 
+<h2 id="using-gnome-firmware">Using GNOME Firmware<a class="md-anchor" href="#using-gnome-firmware" title="Permanent link"></a></h2>
+<p>For supported devices, tagging, installing, emulation file loading and saving can be automated
+using <span class="caps">GNOME</span> Firmware 48 and newer, for&nbsp;example:</p>
+<p><img alt="GNOME Firmware emulation recording" src="device-emulation-gnome-firmware-record.png" /></p>
 <h2 id="upload-test-data-to-lvfs">Upload test data to LVFS<a class="md-anchor" href="#upload-test-data-to-lvfs" title="Permanent link"></a></h2>
 <p>Test data can be added to <span class="caps">LVFS</span> by visiting the <code>Assets</code> tab of the firmware release on <span class="caps">LVFS</span>.
 There is an upload button, and once uploaded a <span class="caps">URL</span> will be available that can be used for device&nbsp;tests.</p>
+<p><img alt="lvfs device page" src="device-emulation-assets.png" /></p>
+<h2 id="add-emulation-only-data-to-the-plugin">Add emulation-only data to the plugin<a class="md-anchor" href="#add-emulation-only-data-to-the-plugin" title="Permanent link"></a></h2>
+<p>Rather than simulating a complete firmware update, we can also simulate just enumerating the device.
+Normally this provides a decent amount of test coverage for the plugin, but is inferior to providing
+emulation of the entire firmware update process from one version to&nbsp;another.</p>
+<p>The advantage that the emulation-only test is that it can run as part of a quick <em>installed-test</em> on
+user systems without any internet access required.
+Creating the enumeration-only data also does not need redistributable firmware files uploaded to the
+<span class="caps">LVFS</span>.</p>
+<p>To create emulation-only data, mark the device for emulation using <code>fwupdmgr emulation-tag</code> as above,
+then replug the device or restart the daemon as&nbsp;required.</p>
+<p>Then the enumeration can be extracted into the plugin directory&nbsp;using:</p>
+<div class="codehilite"><pre><span></span><code>fwupdmgr emulation-save emulation.zip
+unzip emulation.zip
+mv setup.json tests/plugin-setup.json
+</code></pre></div>
+
+<p>The enumeration-only emulation can be added to the device-test <code>.json</code> in an <code>emulation-file</code> section.</p>
 <h2 id="device-tests">Device Tests<a class="md-anchor" href="#device-tests" title="Permanent link"></a></h2>
 <p>Device tests are utilized as part of continuous integration to ensure that all device updates
 continue to work as the software stack changes. Device tests will download a payload from the web
@@ -261,7 +283,13 @@ fwupdmgr get-devices --filter emulated
         <li class="toc-list-item"><a href="#test-your-data"><span class="link-text">Test your data</span></a></li>
           
         
+        <li class="toc-list-item"><a href="#using-gnome-firmware"><span class="link-text">Using GNOME Firmware</span></a></li>
+          
+        
         <li class="toc-list-item"><a href="#upload-test-data-to-lvfs"><span class="link-text">Upload test data to LVFS</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#add-emulation-only-data-to-the-plugin"><span class="link-text">Add emulation-only data to the plugin</span></a></li>
           
         
         <li class="toc-list-item"><a href="#device-tests"><span class="link-text">Device Tests</span></a></li>

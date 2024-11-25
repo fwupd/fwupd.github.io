@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -112,11 +112,15 @@ a packed binary file&nbsp;format.</p>
 <li><code>USB\VID_25A4&amp;PID_9312</code></li>
 <li><code>USB\VID_25A4&amp;PID_9313</code></li>
 <li><code>USB\VID_25A4&amp;PID_9411</code></li>
-<li><code>USB\VID_25A4&amp;PID_9412</code></li>
 <li><code>USB\VID_25A4&amp;PID_9421</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, and the device will reset when the new firmware has been&nbsp;programmed.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flagsers-skip-first-sector"><code>Flags=ers-skip-first-sector</code><a class="md-anchor" href="#flagsers-skip-first-sector" title="Permanent link"></a></h3>
+<p>Skip erasing the first sector, needed for <span class="caps">AG9411</span> and <span class="caps">AG9421</span>&nbsp;products.</p>
+<p>Since:&nbsp;2.0.2</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x25A4</code>.</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -149,6 +153,15 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flagsers-skip-first-sector"><span class="link-text">Flags=ers-skip-first-sector</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

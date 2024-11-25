@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -162,7 +162,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.0.1</td></tr>
+        <tr><td><em>Version</em></td><td>2.0.2</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -281,8 +281,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="supermicro-license.html">Supermicro BMC License</a></li>
         
-          <li><a href="fwupd-refresh.service.html">Message Of The Day Integration</a></li>
-        
           <li><a href="dbxtool.html">dbxtool command line utility</a></li>
         
           <li><a href="fwupdmgr.html">fwupdmgr client command line utility</a></li>
@@ -319,6 +317,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="android-boot-README.html">Plugin: Android Boot</a></li>
         
+          <li><a href="asus-hid-README.html">Plugin: Asus HID</a></li>
+        
           <li><a href="ata-README.html">Plugin: ATA</a></li>
         
           <li><a href="aver-hid-README.html">Plugin: Aver HID-ISP</a></li>
@@ -349,11 +349,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="dell-dock-README.html">Plugin: Dell USB-C Dock</a></li>
         
-          <li><a href="dell-k2-README.html">Plugin: Dell USB-C Dock</a></li>
+          <li><a href="dell-kestrel-README.html">Plugin: Dell USB-C Dock</a></li>
         
           <li><a href="dfu-README.html">Plugin: DFU</a></li>
-        
-          <li><a href="dfu-csr-README.html">Plugin: DFU CSR — Cambridge Silicon Radio</a></li>
         
           <li><a href="ebitdo-README.html">Plugin: 8BitDo</a></li>
         
@@ -441,8 +439,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="mtd-README.html">Plugin: MTD</a></li>
         
-          <li><a href="nitrokey-README.html">Plugin: Nitrokey</a></li>
-        
           <li><a href="nordic-hid-README.html">Plugin: Nordic HID</a></li>
         
           <li><a href="nvme-README.html">Plugin: NVMe</a></li>
@@ -470,6 +466,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="realtek-mst-README.html">Plugin: Realtek MST</a></li>
         
           <li><a href="redfish-README.html">Plugin: Redfish</a></li>
+        
+          <li><a href="rp-pico-README.html">Plugin: Raspberry Pi Pico Microcontrollers</a></li>
         
           <li><a href="rts54hid-README.html">Plugin: RTS54HID</a></li>
         
@@ -608,6 +606,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             
             <td class="docblock-summary">
             <p>See also: <code>FuUdevDevice</code>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="BlockPartition" class="symbol" href="class.BlockPartition.html">BlockPartition</a></td>
+            
+            <td class="docblock-summary">
+            <p>See also: <code>FuBlockDevice</code>.</p>
             <p></p>
             </td>
             
@@ -1173,6 +1181,16 @@ firmware blobs which are used in various Intel products using an <span class="ca
           </tr>
           
           <tr class="section-item">
+            <td><a title="Ioctl" class="symbol" href="class.Ioctl.html">Ioctl</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="LinearFirmware" class="symbol" href="class.LinearFirmware.html">LinearFirmware</a></td>
             
             <td class="docblock-summary">
@@ -1411,6 +1429,17 @@ backport new versions as new hardware is&nbsp;released.</p>
             
             <td class="docblock-summary">
             <p>This object is a thin glib wrapper around a&nbsp;libusb_endpoint_descriptor.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UsbHidDescriptor" class="symbol" href="class.UsbHidDescriptor.html">UsbHidDescriptor</a></td>
+            
+            <td class="docblock-summary">
+            <p>This object is a placeholder for the <span class="caps">HID</span> descriptor, and is populated with data after the
+device has been&nbsp;opened.</p>
             <p></p>
             </td>
             
@@ -2363,6 +2392,16 @@ backport new versions as new hardware is&nbsp;released.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="ContextQuirkSource" class="symbol" href="enum.ContextQuirkSource.html">ContextQuirkSource</a></td>
+            
+            <td class="docblock-summary">
+            <p>The source of the quirk data, ordered by how good the data&nbsp;is.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="CoswidEntityRole" class="symbol" href="enum.CoswidEntityRole.html">CoswidEntityRole</a></td>
             
             <td class="docblock-summary">
@@ -3042,6 +3081,16 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="IoctlFlags" class="symbol" href="flags.IoctlFlags.html">IoctlFlags</a></td>
+            
+            <td class="docblock-summary">
+            <p>Flags used when calling <code>fu_ioctl_execute()</code> and&nbsp;fu_udev_device_ioctl().</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="ProgressFlag" class="symbol" href="flags.ProgressFlag.html">ProgressFlag</a></td>
             
             <td class="docblock-summary">
@@ -3066,16 +3115,6 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             
             <td class="docblock-summary">
             <p>The flags to use when calculating an <span class="caps">HSI</span>&nbsp;version.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="UdevDeviceIoctlFlags" class="symbol" href="flags.UdevDeviceIoctlFlags.html">UdevDeviceIoctlFlags</a></td>
-            
-            <td class="docblock-summary">
-            <p>Flags used when calling&nbsp;fu_udev_device_ioctl().</p>
             <p></p>
             </td>
             
@@ -3163,6 +3202,16 @@ fu_usb_device_release_interface methods flags&nbsp;parameters.</p>
           
           <tr class="section-item">
             <td><a title="InputStreamChunkifyFunc" class="symbol" href="callback.InputStreamChunkifyFunc.html">InputStreamChunkifyFunc</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="IoctlFixupFunc" class="symbol" href="callback.IoctlFixupFunc.html">IoctlFixupFunc</a></td>
             
             <td class="docblock-summary">
             
@@ -3413,6 +3462,16 @@ This function will always return the same pointer for a given <code>GBytes</code
           </tr>
           
           <tr class="section-item">
+            <td><a title="coff_subsystem_to_string" class="symbol" href="func.coff_subsystem_to_string.html">coff_subsystem_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="common_align_up" class="symbol" href="func.common_align_up.html">common_align_up</a></td>
             
             <td class="docblock-summary">
@@ -3615,6 +3674,16 @@ return with failure and let the user&nbsp;decide.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="crc16_bytes" class="symbol" href="func.crc16_bytes.html">crc16_bytes</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.0.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="crc32" class="symbol" href="func.crc32.html">crc32</a></td>
             
             <td class="docblock-summary">
@@ -3625,11 +3694,31 @@ return with failure and let the user&nbsp;decide.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="crc32_bytes" class="symbol" href="func.crc32_bytes.html">crc32_bytes</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.0.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="crc8" class="symbol" href="func.crc8.html">crc8</a></td>
             
             <td class="docblock-summary">
             <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
             <p><span class="emblem available">since: 2.0.0</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="crc8_bytes" class="symbol" href="func.crc8_bytes.html">crc8_bytes</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.0.2</span></p>
             </td>
             
           </tr>
@@ -4549,6 +4638,16 @@ separator inserted between each of&nbsp;them.</p>
             <td class="docblock-summary">
             <p>Converts a string into something that can be safely&nbsp;printed.</p>
             <p><span class="emblem available">since: 1.8.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="strsafe_bytes" class="symbol" href="func.strsafe_bytes.html">strsafe_bytes</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts a <code>GBytes</code> into something that can be safely&nbsp;printed.</p>
+            <p><span class="emblem available">since: 2.0.2</span></p>
             </td>
             
           </tr>
@@ -12724,76 +12823,6 @@ The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;
           </tr>
           
           <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_class_descriptor_length" class="symbol" href="func.usb_hid_descriptor_hdr_get_class_descriptor_length.html">usb_hid_descriptor_hdr_get_class_descriptor_length</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_class_descriptor_type" class="symbol" href="func.usb_hid_descriptor_hdr_get_class_descriptor_type.html">usb_hid_descriptor_hdr_get_class_descriptor_type</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_country_code" class="symbol" href="func.usb_hid_descriptor_hdr_get_country_code.html">usb_hid_descriptor_hdr_get_country_code</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_hid" class="symbol" href="func.usb_hid_descriptor_hdr_get_hid.html">usb_hid_descriptor_hdr_get_hid</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_length" class="symbol" href="func.usb_hid_descriptor_hdr_get_length.html">usb_hid_descriptor_hdr_get_length</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_get_num_descriptors" class="symbol" href="func.usb_hid_descriptor_hdr_get_num_descriptors.html">usb_hid_descriptor_hdr_get_num_descriptors</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_hid_descriptor_hdr_parse_stream" class="symbol" href="func.usb_hid_descriptor_hdr_parse_stream.html">usb_hid_descriptor_hdr_parse_stream</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="uswid_payload_compression_from_string" class="symbol" href="func.uswid_payload_compression_from_string.html">uswid_payload_compression_from_string</a></td>
             
             <td class="docblock-summary">
@@ -13806,6 +13835,26 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CHUNK_ADDR_OFFSET_NONE" class="symbol" href="const.CHUNK_ADDR_OFFSET_NONE.html">CHUNK_ADDR_OFFSET_NONE</a></td>
+            
+            <td class="docblock-summary">
+            <p>No address offset is&nbsp;used.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CHUNK_PAGESZ_NONE" class="symbol" href="const.CHUNK_PAGESZ_NONE.html">CHUNK_PAGESZ_NONE</a></td>
+            
+            <td class="docblock-summary">
+            <p>No page size is&nbsp;used.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="COSWID_ENTITY_ROLE_LAST" class="symbol" href="const.COSWID_ENTITY_ROLE_LAST.html">COSWID_ENTITY_ROLE_LAST</a></td>
             
             <td class="docblock-summary">
@@ -13840,6 +13889,16 @@ then no member is&nbsp;added.</p>
             
             <td class="docblock-summary">
             <p><span class="caps">CPU</span> mitigations required. See the <span class="caps">CPU</span> plugin for more&nbsp;details.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_METADATA_CPU_SINKCLOSE_MICROCODE_VER" class="symbol" href="const.DEVICE_METADATA_CPU_SINKCLOSE_MICROCODE_VER.html">DEVICE_METADATA_CPU_SINKCLOSE_MICROCODE_VER</a></td>
+            
+            <td class="docblock-summary">
+            <p>Microcode version required to mitigate Sinkclose. See the <span class="caps">CPU</span> plugin for more&nbsp;details.</p>
             <p></p>
             </td>
             

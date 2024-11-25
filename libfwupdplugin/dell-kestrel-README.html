@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -97,22 +97,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <div class="docblock">
     <h2 id="dell-system">Dell System<a class="md-anchor" href="#dell-system" title="Permanent link"></a></h2>
-<p>This plugin supports Dell K2 dock with no dependencies on Dell&nbsp;system.</p>
+<p>This plugin supports Dell dock with no dependencies on Dell&nbsp;system.</p>
 <h2 id="components">Components<a class="md-anchor" href="#components" title="Permanent link"></a></h2>
 <p>Supported hardware&nbsp;devices:</p>
 <ul>
-<li><span class="caps">RTS5480</span> usb 3 gen 1 hub&nbsp;controller</li>
-<li><span class="caps">RTS5480</span> usb 3 gen 2 hub&nbsp;controller</li>
-<li><span class="caps">RTS5485</span> usb 3 gen 2 hub&nbsp;controller</li>
-<li><span class="caps">MST</span> 8430&nbsp;controller</li>
-<li><span class="caps">MST</span> 9430&nbsp;controller</li>
-<li><span class="caps">GR</span> thunderbolt&nbsp;controller</li>
-<li><span class="caps">BR</span> thunderbolt&nbsp;controller</li>
-<li>Embedded&nbsp;controller</li>
-<li>Ethernet&nbsp;controller</li>
-<li>Retimer/dpmux&nbsp;controller</li>
-<li><span class="caps">PD</span>&nbsp;controller</li>
-<li>Remote management&nbsp;controller</li>
+<li><span class="caps">USB</span>&nbsp;Hubs</li>
+<li><span class="caps">MST</span></li>
+<li><span class="caps">TBT</span></li>
+<li><span class="caps">EC</span></li>
+<li><span class="caps">LAN</span></li>
+<li>Retimer/dpmux</li>
+<li><span class="caps">PD</span></li>
+<li><span class="caps">RMM</span></li>
 </ul>
 <h2 id="device-topology">Device topology<a class="md-anchor" href="#device-topology" title="Permanent link"></a></h2>
 <p>When this plugin is used, devices present in other plugins may be shown in
@@ -127,19 +123,19 @@ with those plugins to manage the flashing of all&nbsp;components.</p>
 blobs with an unspecified binary file&nbsp;format.</p>
 <p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
 <ul>
-<li><code>com.dell.k2</code></li>
+<li><code>com.dell.kestrel</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use several different generation schemes,&nbsp;e.g.</p>
 <h3 id="dock-config-independent-devices">Dock config independent devices<a class="md-anchor" href="#dock-config-independent-devices" title="Permanent link"></a></h3>
 <ul>
 <li>Embedded Controller: <code>USB\VID_413C&amp;PID_B06E&amp;DOCKTYPE_07&amp;DEVTYPE_00</code></li>
-<li><span class="caps">RTS5480</span> usb 3 gen 1 hub: <code>USB\VID_413C&amp;PID_B0A1&amp;DOCKTYPE_07</code></li>
-<li><span class="caps">RTS5480</span> usb 3 gen 2 hub: <code>USB\VID_413C&amp;PID_B0A2&amp;DOCKTYPE_07</code></li>
-<li><span class="caps">RTS5485</span> usb 3 gen 2 hub: <code>USB\VID_413C&amp;PID_B0A3&amp;DOCKTYPE_07</code></li>
-<li>Remote Management Controller: <code>EC\DOCKTYPE_07&amp;DEVTYPE_09</code></li>
-<li><span class="caps">MST</span> 8430/9430: <code>USB\VID_413C&amp;PID_B0A5</code></li>
-<li>Ethernet: <code>EC\DOCKTYPE_07&amp;DEVTYPE_07</code></li>
+<li><span class="caps">RTS0</span> <span class="caps">USB</span> 3 G1 Hub: <code>USB\VID_413C&amp;PID_B0A1&amp;DOCKTYPE_07</code></li>
+<li><span class="caps">RTS0</span> <span class="caps">USB</span> 3 G2 hub: <code>USB\VID_413C&amp;PID_B0A2&amp;DOCKTYPE_07</code></li>
+<li><span class="caps">RTS5</span> <span class="caps">USB</span> 3 G2 hub: <code>USB\VID_413C&amp;PID_B0A3&amp;DOCKTYPE_07</code></li>
+<li><span class="caps">RMM</span>: <code>USB\VID_413C&amp;PID_B0A4</code></li>
+<li><span class="caps">MST</span>: <code>USB\VID_413C&amp;PID_B0A5</code></li>
+<li><span class="caps">LAN</span>: <code>EC\DOCKTYPE_07&amp;DEVTYPE_07</code></li>
 </ul>
 <h3 id="dp-alt-config">DP ALT config<a class="md-anchor" href="#dp-alt-config" title="Permanent link"></a></h3>
 <ul>
@@ -147,33 +143,35 @@ blobs with an unspecified binary file&nbsp;format.</p>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 5: <code>EC\DOCKTYPE_07&amp;DOCKSKU_01&amp;DEVTYPE_01&amp;INST_00</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 15: <code>EC\DOCKTYPE_07&amp;DOCKSKU_01&amp;DEVTYPE_01&amp;INST_01</code></li>
 </ul>
-<h3 id="tbt4-config">TBT4 config<a class="md-anchor" href="#tbt4-config" title="Permanent link"></a></h3>
+<h3 id="t4-config">T4 config<a class="md-anchor" href="#t4-config" title="Permanent link"></a></h3>
 <ul>
 <li>Package: <code>EC\DOCKTYPE_07&amp;DOCKSKU_02&amp;DEVTYPE_PACKAGE</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 5: <code>EC\DOCKTYPE_07&amp;DOCKSKU_02&amp;DEVTYPE_01&amp;INST_00</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 15: <code>EC\DOCKTYPE_07&amp;DOCKSKU_02&amp;DEVTYPE_01&amp;INST_01</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 17: <code>EC\DOCKTYPE_07&amp;DOCKSKU_02&amp;DEVTYPE_01&amp;INST_02</code></li>
-<li><span class="caps">TBT4</span> Controller: <code>TBT-00d4b0a1</code></li>
+<li><span class="caps">TBT</span> Controller: <code>TBT-00d4b0a1</code></li>
 </ul>
-<h3 id="tbt5-config">TBT5 config<a class="md-anchor" href="#tbt5-config" title="Permanent link"></a></h3>
+<h3 id="t5-config">T5 config<a class="md-anchor" href="#t5-config" title="Permanent link"></a></h3>
 <ul>
 <li>Package: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_PACKAGE</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 5: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_01&amp;INST_00</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 15: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_01&amp;INST_01</code></li>
 <li><span class="caps">PD</span> <span class="caps">UP</span> 17: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_01&amp;INST_02</code></li>
 <li>Retimer: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_06</code></li>
-<li>Weltrend <span class="caps">PD</span>: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_10</code></li>
-<li><span class="caps">TBT5</span> Controller: <code>TBT-00d4b0a2</code></li>
+<li><span class="caps">WT</span> <span class="caps">PD</span>: <code>EC\DOCKTYPE_07&amp;DOCKSKU_03&amp;DEVTYPE_10</code></li>
+<li><span class="caps">TBT</span> Controller: <code>TBT-00d4b0a2</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
-<p>The <code>rtsusb</code> hub, <code>mst</code> and <code>ec</code> use <code>hid</code> over usb interface for device
-communication while the <code>thunderbolt</code> controller use <code>usb</code>.  The <code>ethernet</code>,
-<code>retimer/dpmux</code>, <code>package</code>, various <code>pd</code> and the <code>remote management</code> controller
-will be updated through <code>ec</code> device over internal <code>i2c</code> interface.</p>
-<p>As this dock is a composite device with inclusion of various components, the
+<p>This dock is a composite device with inclusion of various components, the
 update takes particular order to&nbsp;completion.</p>
 <p>All updates will be staged on the device until the user manually disconnects
 the dock&#8217;s Type-C cable from the host, at which point they will take&nbsp;effect.</p>
+<h2 id="plugin-configuration">Plugin Configuration<a class="md-anchor" href="#plugin-configuration" title="Permanent link"></a></h2>
+<p>This plugin supports the following parameters by modifying <code>dell_kestrel</code> section
+of <code>/etc/fwupd/fwupd.conf</code>.</p>
+<h3 id="updateondisconnect">UpdateOnDisconnect<a class="md-anchor" href="#updateondisconnect" title="Permanent link"></a></h3>
+<p>The firmware updates are staged to the devices in the dell dock and activated
+when the user manually unplugs the dock cable. Default:&nbsp;true.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x413C</code></p>
 <h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
@@ -214,14 +212,23 @@ consulted before making major or functional&nbsp;changes:</p>
           
             <li class="toc-list-item"><a href="#dp-alt-config"><span class="link-text">DP ALT config</span></a></li>
           
-            <li class="toc-list-item"><a href="#tbt4-config"><span class="link-text">TBT4 config</span></a></li>
+            <li class="toc-list-item"><a href="#t4-config"><span class="link-text">T4 config</span></a></li>
           
-            <li class="toc-list-item"><a href="#tbt5-config"><span class="link-text">TBT5 config</span></a></li>
+            <li class="toc-list-item"><a href="#t5-config"><span class="link-text">T5 config</span></a></li>
           
           </ul>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#plugin-configuration"><span class="link-text">Plugin Configuration</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#updateondisconnect"><span class="link-text">UpdateOnDisconnect</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#vendor-id-security"><span class="link-text">Vendor ID Security</span></a></li>

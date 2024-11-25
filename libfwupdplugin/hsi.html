@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -221,6 +221,24 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p>This particular check is not for the Microsoft Pluton Security processor which is present on some&nbsp;chips.</p>
 <p>End users are not able to directly modify rollback protection, this is controlled by the&nbsp;manufacturer.</p>
 <p>On Lenovo systems it has been reported that if this is disabled it may potentially be enabled by loading &#8216;<span class="caps">OS</span> Optimized Defaults&#8217; in <span class="caps">BIOS</span>&nbsp;setup.</p>
+<p><a id="org.fwupd.hsi.Amd.SmmLocked"></a></p>
+<h3 id="smm-locked-down"><a href="#org.fwupd.hsi.Amd.SmmLocked">SMM locked down</a><a class="md-anchor" href="#smm-locked-down" title="Permanent link"></a></h3>
+<p>Disable SMM_BASE from being saved to and restored from the <span class="caps">SMM</span> save state&nbsp;area.</p>
+<p>Code in the ASeg and TSeg range and the <span class="caps">SMM</span> registers are Read-only and <span class="caps">SMI</span> interrupts are not intercepted in <span class="caps">SVM</span>.</p>
+<p>This check also ensures that the system is not affected by the Sinkclose&nbsp;vulnerability.</p>
+<p><strong>Impact:</strong></p>
+<p>An attacker with an existing unrelated vulnerability can the <span class="caps">SMM</span> save state area to exfiltrate&nbsp;data.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-locked</code>: <span class="caps">SMM</span> is not locked down&nbsp;(failure)</li>
+<li><code>not-valid</code>: Vulnerable to Sinkclose&nbsp;(failure)</li>
+<li><code>locked</code>: <span class="caps">SMM</span> is locked down&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v2.0.2]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7014.html"><span class="caps">AMD</span>&nbsp;Sinkclose</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.Amd.SpiReplayProtection"></a></p>
 <h3 id="amd-spi-write-protections"><a href="#org.fwupd.hsi.Amd.SpiReplayProtection">AMD SPI Write protections</a><a class="md-anchor" href="#amd-spi-write-protections" title="Permanent link"></a></h3>
 <p>SOCs may enforce control of the <span class="caps">SPI</span> bus to prevent writes other than by verified&nbsp;entities.</p>
@@ -942,6 +960,8 @@ As those become ratified standards that are available in hardware, there are opp
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#amd-secure-processor-rollback-protection"><span class="link-text">AMD Secure Processor Rollback protection</span></a></li>
+          
+            <li class="toc-list-item"><a href="#smm-locked-down"><span class="link-text">SMM locked down</span></a></li>
           
             <li class="toc-list-item"><a href="#amd-spi-write-protections"><span class="link-text">AMD SPI Write protections</span></a></li>
           

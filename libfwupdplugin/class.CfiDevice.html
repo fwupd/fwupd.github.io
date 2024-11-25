@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -163,6 +163,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="vfunc.CfiDevice.chip_select.html">chip_select</a>
   
+    <a class="method" href="vfunc.CfiDevice.read_jedec.html">read_jedec</a>
+  
     <a class="method" href="vfunc.CfiDevice.send_command.html">send_command</a>
   
   </div>
@@ -196,7 +198,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-cfi-device.c#L20">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-cfi-device.c#L20">[src]</a>
           
         </h4>
 
@@ -456,7 +458,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (179)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (183)</h5><div class="docblock">
           
             <div class="docblock">
               <p>Please see&nbsp;<a href="class.Device.html#methods">FuDevice</a>&nbsp;for a full list of methods.</em></p>
@@ -792,6 +794,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     FuProgress* progress,
     GError** error
   );
+  gboolean (* read_jedec) (
+    FuCfiDevice* self,
+    GError** error
+  );
   
 }</code></pre>
       </div>
@@ -827,6 +833,12 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
   )</code></dt>
           <dd><p>No description available.</p></dd>
         
+          <dt><code>read_jedec: gboolean (* read_jedec) (
+    FuCfiDevice* self,
+    GError** error
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
         </dd>
       </div>
       
@@ -849,6 +861,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </div>
         <div class="docblock">
           <p><span class="emblem available">since: 1.8.0</span></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-read_jedec"><a href="vfunc.CfiDevice.read_jedec.html">FwupdPlugin.CfiDeviceClass.read_jedec</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
         </div>
       </div>
       

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -170,6 +170,13 @@ exposed. The device is then switched to Firmware Download Modem (<span class="ca
 with the content of the firmware file. After an update, the device will not replug
 until an ignition is sent, or the device is&nbsp;rebooted.</p>
 <p>Update protocol: <code>com.cinterion.fdl</code></p>
+<h2 id="update-method-dfota">Update method: dfota<a class="md-anchor" href="#update-method-dfota" title="Permanent link"></a></h2>
+<p>If the device supports the &#8216;dfota&#8217; update method, it should have an <span class="caps">AT</span>-port
+exposed. The device is then switched to data mode and downloads the
+firmware to the ota partition via the <span class="caps">AT</span>-port. <span class="caps">DFOTA</span> updates require a specific
+firmware version to be installed on the device, since the update only contains
+a diff between the installed and target&nbsp;version.</p>
+<p>Update protocol: <code>com.quectel.dfota</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code> and <code>/dev/bus/pci</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -231,6 +238,9 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-method-cinterion-fdl"><span class="link-text">Update method: cinterion-fdl</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#update-method-dfota"><span class="link-text">Update method: dfota</span></a></li>
           
         
         <li class="toc-list-item"><a href="#external-interface-access"><span class="link-text">External Interface Access</span></a></li>

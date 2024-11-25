@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -852,7 +852,8 @@ This was done as the format is heavily inspired by Rust, and it makes editor
 highlighting support work correctly.
 Although these files <em>look like</em> Rust files they&#8217;re <em>not actually compiled by
 rustc</em>, so small differences may be&nbsp;noticeable.</p>
-<div class="codehilite"><pre><span></span><code>#[derive(New, Validate, Parse)]
+<div class="codehilite"><pre><span></span><code>#[derive(New, Validate, Parse, Default)]
+#[repr(C, packed)]
 struct FuExampleHdr {
     magic: Guid,
     hdrver: u8,
@@ -895,7 +896,7 @@ struct ExamplePacket {
 <li><code>str: [char; 4] = "ABCD"</code> for a C array of <code>gchar buf[4] = {'A','B','C','D'};</code>
   &#8212; <span class="caps">NOTE</span>: <code>fu_struct_example_get_str()</code> would return a <code>NUL</code>-terminated string of <code>ABCD\0</code>.</li>
 </ul>
-<p>Additionally, default or constant values can be&nbsp;auto-populated:</p>
+<p>Additionally, default or constant values can be auto-populated with the <code>Default</code> trait:</p>
 <ul>
 <li><code>$struct_size</code>: the total struct&nbsp;size</li>
 <li><code>$struct_offset</code>: the internal offset in the&nbsp;struct</li>

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.1</p>
+        <p>Library Version: 2.0.2</p>
         
       </div>
       
@@ -109,7 +109,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-input-stream.h#L58">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-input-stream.h#L62">[src]</a>
         
       </h4>
 
@@ -119,6 +119,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="w">  </span><span class="n">GInputStream</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">count</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FuProgress</span><span class="o">*</span><span class="w"> </span><span class="n">progress</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -131,7 +132,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.1/libfwupdplugin/fu-input-stream.c#L340">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.2/libfwupdplugin/fu-input-stream.c#L351">[src]</a>
         
       </h4>
 
@@ -210,6 +211,23 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             
             
             
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>progress</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="class.Progress.html"><code>FuProgress</code></a></p>
+            <p>An optional <code>FuProgress</code>.</p>
+            <table>
+            
+            <tr><td>The argument can be <code>NULL</code>.</td></tr>
+            
+            
+            
+            
+            
+            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
             
             </table>
           </dd>
