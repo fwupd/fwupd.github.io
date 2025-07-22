@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -154,6 +154,9 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p>Ignore some device requirements, for instance removing the generic <span class="caps">GUID</span> requirement of a <span class="caps">CHID</span>,
   child, parent or sibling.
   This is not recommended for production systems, although it may be useful for firmware&nbsp;development.</p>
+<p><strong>IgnoreEfivarsFreeSpace=false</strong></p>
+<p>Ignore the efivars free space requirement for db, dbx, <span class="caps">KEK</span> and <span class="caps">PK</span> updates.
+  This may be required on Linux kernels older than 6.4, or where the hardware does not support <span class="caps">UEFI</span> <code>RT-&gt;QueryVariableInfo</code>.</p>
 <p><strong>OnlyTrusted=true</strong></p>
 <p>Only support installing firmware signed with a trusted key.
   Do not set this to <code>false</code> on a production or trusted&nbsp;system.</p>
@@ -175,6 +178,10 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
 <p><strong>EspLocation=</strong></p>
 <p>Set the preferred location used for the <span class="caps">EFI</span> system partition (<span class="caps">ESP</span>) path.
   This is typically used if UDisks was not able to automatically identify the location for any&nbsp;reason.</p>
+<p><strong>RequireImmutableEnumeration=false</strong></p>
+<p>Don&#8217;t allow fwupd plugins to directly interact with devices during probe or setup stages.
+  The kernel should provide all device information in sysfs files or udev properties.
+  This will block some plugins from&nbsp;working.</p>
 <p><strong>Manufacturer=</strong></p>
 <p><strong>ProductName=</strong></p>
 <p><strong>ProductSku=</strong></p>

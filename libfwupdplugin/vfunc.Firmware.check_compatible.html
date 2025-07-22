@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -132,7 +132,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.9/libfwupdplugin/fu-firmware.h#L133">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.13/libfwupdplugin/fu-firmware.h#L40">[src]</a>
         
       </h4>
 
@@ -141,7 +141,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="n">check_compatible</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuFirmware</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
 <span class="w">  </span><span class="n">FuFirmware</span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="p">,</span>
-<span class="w">  </span><span class="n">FuFirmwareParseFlags</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -154,7 +154,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.9/libfwupdplugin/fu-firmware.c#L971">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.13/libfwupdplugin/fu-firmware.c#L900">[src]</a>
         
       </h4>
 
@@ -200,7 +200,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           
           <dt class="arg-name"><code>flags</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="flags.FirmwareParseFlags.html"><code>FuFirmwareParseFlags</code></a></p>
+            <p><em>Type:</em>&nbsp;<code>guint64</code></p>
             <p><code>FuFirmwareParseFlags</code>, e.g. <code>FWUPD_INSTALL_FLAG_FORCE</code>.</p>
             <table>
             

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -102,7 +102,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Functions</h5>
   <div class="links">
   
-    <a class="func" href="type_func.Device.instance_flag_to_string.html">instance_flag_to_string</a>
+    <a class="func" href="type_func.Device.instance_flags_to_string.html">instance_flags_to_string</a>
   
   </div>
 </div>
@@ -172,6 +172,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.build_vendor_id_u16.html">build_vendor_id_u16</a>
   
+    <a class="method" href="method.Device.check_fwupd_version.html">check_fwupd_version</a>
+  
     <a class="method" href="method.Device.cleanup.html">cleanup</a>
   
     <a class="method" href="method.Device.clear_events.html">clear_events</a>
@@ -212,6 +214,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_children.html">get_children</a>
   
+    <a class="method" href="method.Device.get_contents.html">get_contents</a>
+  
     <a class="method" href="method.Device.get_contents_bytes.html">get_contents_bytes</a>
   
     <a class="method" href="method.Device.get_context.html">get_context</a>
@@ -231,8 +235,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.get_firmware_size_max.html">get_firmware_size_max</a>
   
     <a class="method" href="method.Device.get_firmware_size_min.html">get_firmware_size_min</a>
-  
-    <a class="method" href="method.Device.get_fwupd_version.html">get_fwupd_version</a>
   
     <a class="method" href="method.Device.get_instance_str.html">get_instance_str</a>
   
@@ -276,9 +278,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.get_request_cnt.html">get_request_cnt</a>
   
+    <a class="method" href="method.Device.get_required_free.html">get_required_free</a>
+  
     <a class="method" href="method.Device.get_results.html">get_results</a>
   
     <a class="method" href="method.Device.get_root.html">get_root</a>
+  
+    <a class="method" href="method.Device.get_smbios_string.html">get_smbios_string</a>
   
     <a class="method" href="method.Device.get_specialized_gtype.html">get_specialized_gtype</a>
   
@@ -303,6 +309,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.has_parent_physical_id.html">has_parent_physical_id</a>
   
     <a class="method" href="method.Device.has_private_flag.html">has_private_flag</a>
+  
+    <a class="method" href="method.Device.has_private_flag_quark.html">has_private_flag_quark</a>
   
     <a class="method" href="method.Device.has_problem.html">has_problem</a>
   
@@ -337,8 +345,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Device.read_firmware.html">read_firmware</a>
   
     <a class="method" href="method.Device.register_private_flag.html">register_private_flag</a>
-  
-    <a class="method" href="method.Device.register_private_flag_safe.html">register_private_flag_safe</a>
   
     <a class="method" href="method.Device.reload.html">reload</a>
   
@@ -444,6 +450,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Device.set_remove_delay.html">set_remove_delay</a>
   
+    <a class="method" href="method.Device.set_required_free.html">set_required_free</a>
+  
     <a class="method" href="method.Device.set_specialized_gtype.html">set_specialized_gtype</a>
   
     <a class="method" href="method.Device.set_target.html">set_target</a>
@@ -516,6 +524,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="property" href="property.Device.proxy.html">proxy</a>
   
+    <a class="property" href="property.Device.required-free.html">required-free</a>
+  
     <a class="property" href="property.Device.update-image.html">update-image</a>
   
     <a class="property" href="property.Device.update-message.html">update-message</a>
@@ -575,7 +585,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.9/libfwupdplugin/fu-device.c#L33">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.13/libfwupdplugin/fu-device.c#L33">[src]</a>
           
         </h4>
 
@@ -765,7 +775,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
       
       <div class="">
-        <h6><a href="type_func.Device.instance_flag_to_string.html">fu_device_instance_flag_to_string</a></h6>
+        <h6><a href="type_func.Device.instance_flags_to_string.html">fu_device_instance_flags_to_string</a></h6>
         <div class="docblock">
           No description available.
         </div>
@@ -1088,6 +1098,16 @@ values are unset then no instance <span class="caps">ID</span> is&nbsp;added.</p
         </div>
       
         <div class="">
+          <h6><a href="method.Device.check_fwupd_version.html">fu_device_check_fwupd_version</a></h6>
+          <div class="docblock">
+            <p>Checks the fwupd version that created the&nbsp;emulation.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.13</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.cleanup.html">fu_device_cleanup</a></h6>
           <div class="docblock">
             <p>Cleans up a device after an update. A different plugin can handle each of
@@ -1300,9 +1320,19 @@ device and this may be reflected in client&nbsp;tools.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_contents.html">fu_device_get_contents</a></h6>
+          <div class="docblock">
+            <p>Reads a blob of <span class="caps">ASCII</span> text from the file, emulating if&nbsp;required.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.12</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_contents_bytes.html">fu_device_get_contents_bytes</a></h6>
           <div class="docblock">
-            <p>Writes <code>blob</code> to <code>filename</code>, emulating if&nbsp;required.</p>
+            <p>Reads a blob of data from the file, emulating if&nbsp;required.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0.2</span></p>
@@ -1396,16 +1426,6 @@ device and this may be reflected in client&nbsp;tools.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.2.6</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.get_fwupd_version.html">fu_device_get_fwupd_version</a></h6>
-          <div class="docblock">
-            <p>Gets the fwupd version that created the&nbsp;emulation.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 2.0.8</span></p>
           </div>
         </div>
       
@@ -1634,6 +1654,16 @@ plugins not yet ported to <code>FwupdRequest</code>.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Device.get_required_free.html">fu_device_get_required_free</a></h6>
+          <div class="docblock">
+            <p>Returns the required amount of free firmware&nbsp;space.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.12</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.get_results.html">fu_device_get_results</a></h6>
           <div class="docblock">
             <p>Gets the results of the last update operation on the device by calling a&nbsp;vfunc.</p>
@@ -1651,6 +1681,16 @@ device and this may be reflected in client&nbsp;tools.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.get_smbios_string.html">fu_device_get_smbios_string</a></h6>
+          <div class="docblock">
+            <p>Gets a hardware <span class="caps">SMBIOS</span>&nbsp;string.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.10</span></p>
           </div>
         </div>
       
@@ -1771,6 +1811,16 @@ device and this may be reflected in client&nbsp;tools.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.6.2</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Device.has_private_flag_quark.html">fu_device_has_private_flag_quark</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
           </div>
         </div>
       
@@ -1942,7 +1992,7 @@ serial numbers or user-configuration values and can be used to calculate the
 device&nbsp;checksum.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.0.8</span></p>
+            <p><span class="emblem available">since: 2.0.11</span></p>
           </div>
         </div>
       
@@ -1954,16 +2004,6 @@ correctly in debug&nbsp;output.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0.0</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Device.register_private_flag_safe.html">fu_device_register_private_flag_safe</a></h6>
-          <div class="docblock">
-            No description available.
-          </div>
-          <div class="docblock">
-            <p></p>
           </div>
         </div>
       
@@ -2508,6 +2548,16 @@ behalf of another device, for instance attach()ing it after a successful&nbsp;up
         </div>
       
         <div class="">
+          <h6><a href="method.Device.set_required_free.html">fu_device_set_required_free</a></h6>
+          <div class="docblock">
+            <p>Sets the required amount of free firmware&nbsp;size.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.12</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Device.set_specialized_gtype.html">fu_device_set_specialized_gtype</a></h6>
           <div class="docblock">
             <p>Sets the specialized type of the&nbsp;device.</p>
@@ -2893,6 +2943,16 @@ changing it from <code>FWUPD_DEVICE_FLAG_UPDATABLE_HIDDEN</code> to <code>FWUPD_
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Device.required-free.html">FwupdPlugin.Device:required-free</a></h6>
+          <div class="docblock">
+            <p>The required amount of free firmware&nbsp;space.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.12</span></p>
           </div>
         </div>
       

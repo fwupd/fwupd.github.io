@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -99,26 +99,196 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
 <p>This plugin is used to update the Intel graphics system controller via the Intel Management&nbsp;Engine.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
-<p>There are two firmware formats in&nbsp;use:</p>
+<h3 id="fwcode">FWCODE<a class="md-anchor" href="#fwcode" title="Permanent link"></a></h3>
 <ul>
-<li><code>$FPT</code> with children <code>FuIfwiFptFirmware</code>, where the <code>FW_DATA_IMAGE</code> is a <code>FuIfwiCpdFirmware</code></li>
-<li>A linear array of <code>FuOpromFirmware</code> images, each with a <code>FuIfwiCpdFirmware</code></li>
+<li>This is a superset of <code>FuIfwiFptFirmware</code></li>
+<li>The <code>INFO</code> partition is a <code>FuStructIgscFwuImageMetadataV1</code>, which gives the <code>id</code> and <code>version</code>,
+  and the <code>FuStructIgscFwuFwImageData</code> is also part of that. This then gives the <code>arb_svn</code>.</li>
+<li>The <code>IMGI</code> partition is a <code>FuStructIgscFwuGwsImageInfo</code>, which gives us <code>hw_sku</code></li>
 </ul>
-<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIgscCodeFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;id&gt;</span>BMG_<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>0021.1111<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;hw_sku&gt;</span>0x2<span class="nt">&lt;/hw_sku&gt;</span>
+<span class="w">  </span><span class="nt">&lt;arb_svn&gt;</span>0x2<span class="nt">&lt;/arb_svn&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>INFO<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>IMGI<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>FWIM<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="nt">&lt;/firmware&gt;</span>
+</code></pre></div>
+
+<h3 id="fwdata">FWDATA<a class="md-anchor" href="#fwdata" title="Permanent link"></a></h3>
+<ul>
+<li>This is a superset of <code>FuIfwiFptFirmware</code></li>
+<li>The <code>INFO</code> partition is a <code>FuIfwiCpdFirmware</code> is a <code>FuStructIgscFwdataVersion</code>.
+  This provides <code>oem_version</code>, <code>major_version</code> and <code>data_arb_svn</code>.</li>
+<li>The <code>SDTA</code> (also called a &#8220;<span class="caps">GDTA</span>&#8221;) data partition is a <code>FuIfwiCpdFirmware</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIgscAuxFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;oem_version&gt;</span>0x39<span class="nt">&lt;/oem_version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;major_version&gt;</span>0xcb<span class="nt">&lt;/major_version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;data_arb_svn&gt;</span>0x1<span class="nt">&lt;/data_arb_svn&gt;</span>
+<span class="w">  </span><span class="nt">&lt;device_infos&gt;</span>
+<span class="w">    </span><span class="nt">&lt;match&gt;</span>
+<span class="w">      </span><span class="nt">&lt;vendor_id&gt;</span>0x8086<span class="nt">&lt;/vendor_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;device_id&gt;</span>0xe20b<span class="nt">&lt;/device_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;subsys_vendor_id&gt;</span>0x8086<span class="nt">&lt;/subsys_vendor_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;subsys_device_id&gt;</span>0x1100<span class="nt">&lt;/subsys_device_id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/match&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/device_infos&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>INFO<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>CKSM<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>GDTA<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="nt">&lt;/firmware&gt;</span>
+</code></pre></div>
+
+<ul>
+<li>The <code>SDTA</code> is parsed&nbsp;as:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIfwiCpdFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;header_version&gt;</span>0x2<span class="nt">&lt;/header_version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;entry_version&gt;</span>0x1<span class="nt">&lt;/entry_version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>GDTA.man<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version_raw&gt;</span>0xcb<span class="nt">&lt;/version_raw&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x23<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x16<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x1d<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x25<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>GDTA<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>GDTA.met<span class="nt">&lt;/id&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="nt">&lt;/firmware&gt;</span>
+</code></pre></div>
+
+<ul>
+<li>The <code>GDTA.man</code> partition of the <span class="caps">CPD</span> contains the manifest&nbsp;extensions.</li>
+</ul>
+<h3 id="opromcode">OPROMCODE<a class="md-anchor" href="#opromcode" title="Permanent link"></a></h3>
+<ul>
+<li>This must be only the <em>first</em> oprom image in the&nbsp;payload.</li>
+<li>The oprom expansion header is formatted as a <code>FuIfwiCpdFirmware</code> image</li>
+<li>The <code>OROM.man</code> section has two unknown (and unparsed) extension&nbsp;types</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIgscOpromFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;idx&gt;</span>0xf1<span class="nt">&lt;/idx&gt;</span>
+<span class="w">  </span><span class="nt">&lt;size&gt;</span>0x800<span class="nt">&lt;/size&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIfwiCpdFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>cpd<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;idx&gt;</span>0x4d4f524f<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;header_version&gt;</span>0x2<span class="nt">&lt;/header_version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;entry_version&gt;</span>0x1<span class="nt">&lt;/entry_version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>OROM.man<span class="nt">&lt;/id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;version_raw&gt;</span>0x4200017<span class="nt">&lt;/version_raw&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">        </span><span class="nt">&lt;idx&gt;</span>0x23<span class="nt">&lt;/idx&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">        </span><span class="nt">&lt;idx&gt;</span>0x16<span class="nt">&lt;/idx&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>CODE<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>CODE.met<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="nt">&lt;/firmware&gt;</span>
+</code></pre></div>
+
+<h3 id="opromdata">OPROMDATA<a class="md-anchor" href="#opromdata" title="Permanent link"></a></h3>
+<ul>
+<li>This must be only the <em>first</em> oprom image in the&nbsp;payload.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIgscOpromFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;idx&gt;</span>0xf0<span class="nt">&lt;/idx&gt;</span>
+<span class="w">  </span><span class="nt">&lt;size&gt;</span>0x800<span class="nt">&lt;/size&gt;</span>
+<span class="w">  </span><span class="nt">&lt;device_infos&gt;</span>
+<span class="w">    </span><span class="nt">&lt;match&gt;</span>
+<span class="w">      </span><span class="nt">&lt;vendor_id&gt;</span>0x8086<span class="nt">&lt;/vendor_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;device_id&gt;</span>0xe20b<span class="nt">&lt;/device_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;subsys_vendor_id&gt;</span>0x8086<span class="nt">&lt;/subsys_vendor_id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;subsys_device_id&gt;</span>0x1100<span class="nt">&lt;/subsys_device_id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/match&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/device_infos&gt;</span>
+<span class="w">  </span><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIfwiCpdFirmware&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>cpd<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;idx&gt;</span>0x4d4f524f<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;header_version&gt;</span>0x2<span class="nt">&lt;/header_version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;entry_version&gt;</span>0x1<span class="nt">&lt;/entry_version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>OROM.man<span class="nt">&lt;/id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;version_raw&gt;</span>0x4200017<span class="nt">&lt;/version_raw&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">        </span><span class="nt">&lt;idx&gt;</span>0x23<span class="nt">&lt;/idx&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">        </span><span class="nt">&lt;idx&gt;</span>0x16<span class="nt">&lt;/idx&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">        </span><span class="nt">&lt;idx&gt;</span>0x25<span class="nt">&lt;/idx&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>VBT<span class="nt">&lt;/id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x1<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;firmware&gt;</span>
+<span class="w">      </span><span class="nt">&lt;id&gt;</span>VBT.met<span class="nt">&lt;/id&gt;</span>
+<span class="w">      </span><span class="nt">&lt;idx&gt;</span>0x2<span class="nt">&lt;/idx&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/firmware&gt;</span>
+<span class="nt">&lt;/firmware&gt;</span>
+</code></pre></div>
+
+<p>This plugin supports the following protocol <span class="caps">ID</span>, used by all devices and&nbsp;sub-devices:</p>
 <ul>
 <li><code>com.intel.gsc</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard <span class="caps">PCI</span> DeviceInstanceId values,&nbsp;e.g.</p>
 <ul>
-<li><code>PCI\VID_8086&amp;DEV_4905</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B</code></li>
 </ul>
 <p>They also define custom per-part <span class="caps">PCI</span> IDs such&nbsp;as:</p>
 <ul>
-<li><code>PCI\VID_8086&amp;DEV_4905&amp;PART_FWCODE</code></li>
-<li><code>PCI\VID_8086&amp;DEV_4905&amp;PART_FWDATA</code></li>
-<li><code>PCI\VID_8086&amp;DEV_4905&amp;PART_OPROMCODE</code></li>
-<li><code>PCI\VID_8086&amp;DEV_4905&amp;PART_OPROMDATA</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_FWCODE</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_FWDATA</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_OPROMCODE</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_OPROMDATA</code></li>
+</ul>
+<p>When the device needs recovery, the instance IDs will instead&nbsp;be:</p>
+<ul>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_FWCODE_RECOVERY</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_FWDATA_RECOVERY</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_OPROMCODE_RECOVERY</code></li>
+<li><code>PCI\VEN_8086&amp;DEV_E20B&amp;PART_OPROMDATA_RECOVERY</code></li>
 </ul>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
@@ -136,7 +306,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>Anyone can submit a pull request to modify this plugin, but the following people should be
 consulted before making major or functional&nbsp;changes:</p>
 <ul>
-<li>Vitaly Lubart: <code>vlubart</code></li>
+<li>Frank Scarbrough: <code>Fscarbr</code></li>
 </ul>
     </div>
   </section>
@@ -154,6 +324,18 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#firmware-format"><span class="link-text">Firmware Format</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#fwcode"><span class="link-text">FWCODE</span></a></li>
+          
+            <li class="toc-list-item"><a href="#fwdata"><span class="link-text">FWDATA</span></a></li>
+          
+            <li class="toc-list-item"><a href="#opromcode"><span class="link-text">OPROMCODE</span></a></li>
+          
+            <li class="toc-list-item"><a href="#opromdata"><span class="link-text">OPROMDATA</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>

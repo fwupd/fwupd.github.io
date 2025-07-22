@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -162,7 +162,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.0.9</td></tr>
+        <tr><td><em>Version</em></td><td>2.0.13</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -385,8 +385,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="gpio-README.html">Plugin: GPIO</a></li>
         
-          <li><a href="hailuck-README.html">Plugin: Hailuck</a></li>
-        
           <li><a href="hpi-cfu-README.html">Plugin: HPI CFU</a></li>
         
           <li><a href="huddly-usb-README.html">Plugin: Huddly Usb</a></li>
@@ -478,8 +476,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="redfish-README.html">Plugin: Redfish</a></li>
         
           <li><a href="rp-pico-README.html">Plugin: Raspberry Pi Pico Microcontrollers</a></li>
-        
-          <li><a href="rts54hid-README.html">Plugin: RTS54HID</a></li>
         
           <li><a href="rts54hub-README.html">Plugin: RTS54HUB</a></li>
         
@@ -1609,6 +1605,16 @@ device has been&nbsp;opened.</p>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="ErrorMapEntry" class="symbol" href="struct.ErrorMapEntry.html">ErrorMapEntry</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="PluginData" class="symbol" href="struct.PluginData.html">PluginData</a></td>
@@ -2871,7 +2877,7 @@ device has been&nbsp;opened.</p>
             <td><a title="FirmwareAlignment" class="symbol" href="enum.FirmwareAlignment.html">FirmwareAlignment</a></td>
             
             <td class="docblock-summary">
-            <p>The firmware alignment&nbsp;position.</p>
+            
             <p></p>
             </td>
             
@@ -3009,6 +3015,46 @@ device has been&nbsp;opened.</p>
           
           <tr class="section-item">
             <td><a title="MsgpackItemKind" class="symbol" href="enum.MsgpackItemKind.html">MsgpackItemKind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OpromCompressionType" class="symbol" href="enum.OpromCompressionType.html">OpromCompressionType</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OpromIndicatorFlags" class="symbol" href="enum.OpromIndicatorFlags.html">OpromIndicatorFlags</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OpromMachineType" class="symbol" href="enum.OpromMachineType.html">OpromMachineType</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="OpromSubsystem" class="symbol" href="enum.OpromSubsystem.html">OpromSubsystem</a></td>
             
             <td class="docblock-summary">
             
@@ -3179,7 +3225,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="UswidHeaderFlag" class="symbol" href="enum.UswidHeaderFlag.html">UswidHeaderFlag</a></td>
+            <td><a title="UswidHeaderFlags" class="symbol" href="enum.UswidHeaderFlags.html">UswidHeaderFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -3287,7 +3333,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="DeviceInstanceFlag" class="symbol" href="flags.DeviceInstanceFlag.html">DeviceInstanceFlag</a></td>
+            <td><a title="DeviceInstanceFlags" class="symbol" href="flags.DeviceInstanceFlags.html">DeviceInstanceFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -3310,7 +3356,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="FirmwareExportFlags" class="symbol" href="flags.FirmwareExportFlags.html">FirmwareExportFlags</a></td>
             
             <td class="docblock-summary">
-            <p>The firmware export&nbsp;flags.</p>
+            
             <p></p>
             </td>
             
@@ -3320,7 +3366,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="FirmwareFlags" class="symbol" href="flags.FirmwareFlags.html">FirmwareFlags</a></td>
             
             <td class="docblock-summary">
-            <p>The firmware&nbsp;flags.</p>
+            
             <p></p>
             </td>
             
@@ -3330,7 +3376,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="FirmwareParseFlags" class="symbol" href="flags.FirmwareParseFlags.html">FirmwareParseFlags</a></td>
             
             <td class="docblock-summary">
-            <p>The firmware parse&nbsp;flags.</p>
+            
             <p></p>
             </td>
             
@@ -3350,14 +3396,14 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="IfdAccess" class="symbol" href="flags.IfdAccess.html">IfdAccess</a></td>
             
             <td class="docblock-summary">
-            <p>The flags to use for <span class="caps">IFD</span> access&nbsp;permissions.</p>
+            
             <p></p>
             </td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="IntelThunderboltNvmSectionFlag" class="symbol" href="flags.IntelThunderboltNvmSectionFlag.html">IntelThunderboltNvmSectionFlag</a></td>
+            <td><a title="IntelThunderboltNvmSectionFlags" class="symbol" href="flags.IntelThunderboltNvmSectionFlags.html">IntelThunderboltNvmSectionFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -3377,7 +3423,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="IoChannelOpenFlag" class="symbol" href="flags.IoChannelOpenFlag.html">IoChannelOpenFlag</a></td>
+            <td><a title="IoChannelOpenFlags" class="symbol" href="flags.IoChannelOpenFlags.html">IoChannelOpenFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -3397,7 +3443,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="ProgressFlag" class="symbol" href="flags.ProgressFlag.html">ProgressFlag</a></td>
+            <td><a title="ProgressFlags" class="symbol" href="flags.ProgressFlags.html">ProgressFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -4192,28 +4238,8 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
             <td><a title="ifd_access_to_string" class="symbol" href="func.ifd_access_to_string.html">ifd_access_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts a <code>FuIfdAccess</code> to a&nbsp;string.</p>
-            <p><span class="emblem available">since: 1.6.2</span></p>
-            </td>
             
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="ifd_region_to_access" class="symbol" href="func.ifd_region_to_access.html">ifd_region_to_access</a></td>
-            
-            <td class="docblock-summary">
-            <p>Converts a <code>FuIfdRegion</code> to an access&nbsp;level.</p>
-            <p><span class="emblem available">since: 1.6.2</span></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="ifd_region_to_name" class="symbol" href="func.ifd_region_to_name.html">ifd_region_to_name</a></td>
-            
-            <td class="docblock-summary">
-            <p>Converts a <code>FuIfdRegion</code> to a name the user might&nbsp;recognize.</p>
-            <p><span class="emblem available">since: 1.6.2</span></p>
+            <p></p>
             </td>
             
           </tr>
@@ -4987,6 +5013,36 @@ of both the destination and the source allows us to check for buffer&nbsp;overfl
             <td class="docblock-summary">
             
             <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="mkhi_status_to_string" class="symbol" href="func.mkhi_status_to_string.html">mkhi_status_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="output_stream_from_path" class="symbol" href="func.output_stream_from_path.html">output_stream_from_path</a></td>
+            
+            <td class="docblock-summary">
+            <p>Opens the file as an output&nbsp;stream.</p>
+            <p><span class="emblem available">since: 2.0.12</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="output_stream_write_bytes" class="symbol" href="func.output_stream_write_bytes.html">output_stream_write_bytes</a></td>
+            
+            <td class="docblock-summary">
+            <p>Write bytes into the stream, retrying as required. Will block during the&nbsp;operation.</p>
+            <p><span class="emblem available">since: 2.0.12</span></p>
             </td>
             
           </tr>
@@ -14631,6 +14687,286 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_ICON_AC_ADAPTER" class="symbol" href="const.DEVICE_ICON_AC_ADAPTER.html">DEVICE_ICON_AC_ADAPTER</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of an <span class="caps">AC</span>&nbsp;adapter.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_APPLICATION_CERTIFICATE" class="symbol" href="const.DEVICE_ICON_APPLICATION_CERTIFICATE.html">DEVICE_ICON_APPLICATION_CERTIFICATE</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;certificate.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_AUDIO_CARD" class="symbol" href="const.DEVICE_ICON_AUDIO_CARD.html">DEVICE_ICON_AUDIO_CARD</a></td>
+            
+            <td class="docblock-summary">
+            <p>An icon of an audio&nbsp;card.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_AUTH_FINGERPRINT" class="symbol" href="const.DEVICE_ICON_AUTH_FINGERPRINT.html">DEVICE_ICON_AUTH_FINGERPRINT</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a fingerprint&nbsp;reader.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_COMPUTER" class="symbol" href="const.DEVICE_ICON_COMPUTER.html">DEVICE_ICON_COMPUTER</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;computer.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_DOCK" class="symbol" href="const.DEVICE_ICON_DOCK.html">DEVICE_ICON_DOCK</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;dock.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_DOCK_USB" class="symbol" href="const.DEVICE_ICON_DOCK_USB.html">DEVICE_ICON_DOCK_USB</a></td>
+            
+            <td class="docblock-summary">
+            <p>An icon of a dock attached via <span class="caps">USB</span>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_DRIVE_HARDDISK" class="symbol" href="const.DEVICE_ICON_DRIVE_HARDDISK.html">DEVICE_ICON_DRIVE_HARDDISK</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a hard disk&nbsp;drive.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_DRIVE_MULTIDISK" class="symbol" href="const.DEVICE_ICON_DRIVE_MULTIDISK.html">DEVICE_ICON_DRIVE_MULTIDISK</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a multidisk&nbsp;drive.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_DRIVE_SSD" class="symbol" href="const.DEVICE_ICON_DRIVE_SSD.html">DEVICE_ICON_DRIVE_SSD</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a hard disk&nbsp;drive.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_GPU" class="symbol" href="const.DEVICE_ICON_GPU.html">DEVICE_ICON_GPU</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;gpu.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_DIALPAD" class="symbol" href="const.DEVICE_ICON_INPUT_DIALPAD.html">DEVICE_ICON_INPUT_DIALPAD</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;dialpad.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_GAMING" class="symbol" href="const.DEVICE_ICON_INPUT_GAMING.html">DEVICE_ICON_INPUT_GAMING</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a gaming&nbsp;controller.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_KEYBOARD" class="symbol" href="const.DEVICE_ICON_INPUT_KEYBOARD.html">DEVICE_ICON_INPUT_KEYBOARD</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;keyboard.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_MOUSE" class="symbol" href="const.DEVICE_ICON_INPUT_MOUSE.html">DEVICE_ICON_INPUT_MOUSE</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;mouse.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_TABLET" class="symbol" href="const.DEVICE_ICON_INPUT_TABLET.html">DEVICE_ICON_INPUT_TABLET</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a drawing&nbsp;tablet.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_INPUT_TOUCHPAD" class="symbol" href="const.DEVICE_ICON_INPUT_TOUCHPAD.html">DEVICE_ICON_INPUT_TOUCHPAD</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;touchpad.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_MEMORY" class="symbol" href="const.DEVICE_ICON_MEMORY.html">DEVICE_ICON_MEMORY</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a memory&nbsp;card.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_MODEM" class="symbol" href="const.DEVICE_ICON_MODEM.html">DEVICE_ICON_MODEM</a></td>
+            
+            <td class="docblock-summary">
+            <p>An icon of a&nbsp;modem.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_NETWORK_WIRED" class="symbol" href="const.DEVICE_ICON_NETWORK_WIRED.html">DEVICE_ICON_NETWORK_WIRED</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a wired&nbsp;connection.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_NETWORK_WIRELESS" class="symbol" href="const.DEVICE_ICON_NETWORK_WIRELESS.html">DEVICE_ICON_NETWORK_WIRELESS</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a wireless&nbsp;connection.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_PDA" class="symbol" href="const.DEVICE_ICON_PDA.html">DEVICE_ICON_PDA</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a <span class="caps">PDA</span>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_THUNDERBOLT" class="symbol" href="const.DEVICE_ICON_THUNDERBOLT.html">DEVICE_ICON_THUNDERBOLT</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a thunderbolt&nbsp;device.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_USB_HUB" class="symbol" href="const.DEVICE_ICON_USB_HUB.html">DEVICE_ICON_USB_HUB</a></td>
+            
+            <td class="docblock-summary">
+            <p>An icon of a hub of <span class="caps">USB</span>&nbsp;devices.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_USB_RECEIVER" class="symbol" href="const.DEVICE_ICON_USB_RECEIVER.html">DEVICE_ICON_USB_RECEIVER</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of an <span class="caps">USB</span>&nbsp;receiver.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_VIDEO_CAMERA" class="symbol" href="const.DEVICE_ICON_VIDEO_CAMERA.html">DEVICE_ICON_VIDEO_CAMERA</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a video&nbsp;camera.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_VIDEO_DISPLAY" class="symbol" href="const.DEVICE_ICON_VIDEO_DISPLAY.html">DEVICE_ICON_VIDEO_DISPLAY</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a&nbsp;display.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_ICON_WEB_CAMERA" class="symbol" href="const.DEVICE_ICON_WEB_CAMERA.html">DEVICE_ICON_WEB_CAMERA</a></td>
+            
+            <td class="docblock-summary">
+            <p>A generic icon of a web&nbsp;camera.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_METADATA_CPU_MITIGATIONS_REQUIRED" class="symbol" href="const.DEVICE_METADATA_CPU_MITIGATIONS_REQUIRED.html">DEVICE_METADATA_CPU_MITIGATIONS_REQUIRED</a></td>
             
             <td class="docblock-summary">
@@ -14992,6 +15328,16 @@ Normally the child is installed before the&nbsp;parent.</p>
             
             <td class="docblock-summary">
             <p>Set the device name from the metadata <code>category</code> if&nbsp;available.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PRIVATE_FLAG_MD_SET_REQUIRED_FREE" class="symbol" href="const.DEVICE_PRIVATE_FLAG_MD_SET_REQUIRED_FREE.html">DEVICE_PRIVATE_FLAG_MD_SET_REQUIRED_FREE</a></td>
+            
+            <td class="docblock-summary">
+            <p>Set the device required free size from the metadata if&nbsp;available.</p>
             <p></p>
             </td>
             
@@ -15532,6 +15878,16 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="EFI_SIGNATURE_GUID_FRAMEWORK" class="symbol" href="const.EFI_SIGNATURE_GUID_FRAMEWORK.html">EFI_SIGNATURE_GUID_FRAMEWORK</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="EFI_SIGNATURE_GUID_MICROSOFT" class="symbol" href="const.EFI_SIGNATURE_GUID_MICROSOFT.html">EFI_SIGNATURE_GUID_MICROSOFT</a></td>
             
             <td class="docblock-summary">
@@ -15803,6 +16159,16 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           
           <tr class="section-item">
             <td><a title="EFIVARS_GUID_UX_CAPSULE" class="symbol" href="const.EFIVARS_GUID_UX_CAPSULE.html">EFIVARS_GUID_UX_CAPSULE</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="FIRMWARE_ALIGNMENT_LAST" class="symbol" href="const.FIRMWARE_ALIGNMENT_LAST.html">FIRMWARE_ALIGNMENT_LAST</a></td>
             
             <td class="docblock-summary">
             
@@ -16293,30 +16659,30 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="OPROM_FIRMWARE_COMPRESSION_TYPE_NONE" class="symbol" href="const.OPROM_FIRMWARE_COMPRESSION_TYPE_NONE.html">OPROM_FIRMWARE_COMPRESSION_TYPE_NONE</a></td>
+            <td><a title="OPROM_COMPRESSION_TYPE_LAST" class="symbol" href="const.OPROM_COMPRESSION_TYPE_LAST.html">OPROM_COMPRESSION_TYPE_LAST</a></td>
             
             <td class="docblock-summary">
-            <p>No&nbsp;compression.</p>
+            
             <p></p>
             </td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="OPROM_FIRMWARE_MACHINE_TYPE_X64" class="symbol" href="const.OPROM_FIRMWARE_MACHINE_TYPE_X64.html">OPROM_FIRMWARE_MACHINE_TYPE_X64</a></td>
+            <td><a title="OPROM_MACHINE_TYPE_LAST" class="symbol" href="const.OPROM_MACHINE_TYPE_LAST.html">OPROM_MACHINE_TYPE_LAST</a></td>
             
             <td class="docblock-summary">
-            <p><span class="caps">AMD64</span> machine&nbsp;type.</p>
+            
             <p></p>
             </td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV" class="symbol" href="const.OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV.html">OPROM_FIRMWARE_SUBSYSTEM_EFI_BOOT_SRV_DRV</a></td>
+            <td><a title="OPROM_SUBSYSTEM_LAST" class="symbol" href="const.OPROM_SUBSYSTEM_LAST.html">OPROM_SUBSYSTEM_LAST</a></td>
             
             <td class="docblock-summary">
-            <p><span class="caps">EFI</span>&nbsp;boot.</p>
+            
             <p></p>
             </td>
             

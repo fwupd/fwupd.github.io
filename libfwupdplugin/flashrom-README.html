@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -146,6 +146,9 @@ string. To satisfy those requirements coreboot adds the CBETxxxx prefix to the
 mode, but it is only used when the device is&nbsp;rebooted.</p>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="flashromfmapregions"><code>FlashromFmapRegions</code><a class="md-anchor" href="#flashromfmapregions" title="Permanent link"></a></h3>
+<p>A list of <span class="caps">FMAP</span> regions to be flashed, for instance <code>COREBOOT,EC,RW_MRC_CACHE</code></p>
+<p>Since:&nbsp;2.0.13</p>
 <h3 id="flagsreset-cmos"><code>Flags=reset-cmos</code><a class="md-anchor" href="#flagsreset-cmos" title="Permanent link"></a></h3>
 <p>Flag to determine if the <span class="caps">CMOS</span> checksum should be reset after the flash is reprogrammed.
 This will force the <span class="caps">CMOS</span> defaults to be reloaded on the next&nbsp;boot.</p>
@@ -194,6 +197,8 @@ This typically is <code>/sys/bus/spi</code> but there may be other interfaces as
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
           
           <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#flashromfmapregions"><span class="link-text">FlashromFmapRegions</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsreset-cmos"><span class="link-text">Flags=reset-cmos</span></a></li>
           

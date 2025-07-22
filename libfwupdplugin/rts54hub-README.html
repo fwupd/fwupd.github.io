@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -123,6 +123,11 @@ device will reset when the new firmware has been&nbsp;written.</p>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.2.0</code>.</p>
+<h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
+<p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
+<h3 id="rts54blocksize">Rts54BlockSize<a class="md-anchor" href="#rts54blocksize" title="Permanent link"></a></h3>
+<p>Defines the amount of data transferred in a single <span class="caps">USB</span> transaction, defaulting to 4096&nbsp;bytes.</p>
+<p>Since:&nbsp;2.0.11</p>
 <h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
 <p>Anyone can submit a pull request to modify this plugin, but the following people should be
 consulted before making major or functional&nbsp;changes:</p>
@@ -160,6 +165,15 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#version-considerations"><span class="link-text">Version Considerations</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#rts54blocksize"><span class="link-text">Rts54BlockSize</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#owners"><span class="link-text">Owners</span></a></li>

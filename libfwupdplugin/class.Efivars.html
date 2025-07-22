@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.9</p>
+        <p>Library Version: 2.0.13</p>
         
       </div>
       
@@ -147,6 +147,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Efivars.set_data_bytes.html">set_data_bytes</a>
   
+    <a class="method" href="method.Efivars.space_free.html">space_free</a>
+  
     <a class="method" href="method.Efivars.space_used.html">space_used</a>
   
     <a class="method" href="method.Efivars.supported.html">supported</a>
@@ -183,6 +185,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="vfunc.Efivars.get_names.html">get_names</a>
   
     <a class="method" href="vfunc.Efivars.set_data.html">set_data</a>
+  
+    <a class="method" href="vfunc.Efivars.space_free.html">space_free</a>
   
     <a class="method" href="vfunc.Efivars.space_used.html">space_used</a>
   
@@ -553,6 +557,16 @@ no names matching the <span class="caps">GUID</span>.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Efivars.space_free.html">fu_efivars_space_free</a></h6>
+          <div class="docblock">
+            <p>Gets the free size available for new <span class="caps">EFI</span> variables, as reported from&nbsp;QueryVariableInfo.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.12</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Efivars.space_used.html">fu_efivars_space_used</a></h6>
           <div class="docblock">
             <p>Gets the total size used by all <span class="caps">EFI</span> variables. This may be less than the size reported by the
@@ -641,6 +655,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     FuEfivars* self,
     GError** error
   );
+  guint64 (* space_free) (
+    FuEfivars* self,
+    GError** error
+  );
   gboolean (* exists) (
     FuEfivars* self,
     const gchar* guid,
@@ -711,6 +729,12 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <dd><p>No description available.</p></dd>
         
           <dt><code>space_used: guint64 (* space_used) (
+    FuEfivars* self,
+    GError** error
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>space_free: guint64 (* space_free) (
     FuEfivars* self,
     GError** error
   )</code></dt>
@@ -859,6 +883,16 @@ no names matching the <span class="caps">GUID</span>.</p>
         </div>
         <div class="docblock">
           <p><span class="emblem available">since: 2.0.0</span></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-space_free"><a href="vfunc.Efivars.space_free.html">FwupdPlugin.EfivarsClass.space_free</a></h6>
+        <div class="docblock">
+          <p>Gets the free size available for new <span class="caps">EFI</span> variables, as reported from&nbsp;QueryVariableInfo.</p>
+        </div>
+        <div class="docblock">
+          <p><span class="emblem available">since: 2.0.12</span></p>
         </div>
       </div>
       
