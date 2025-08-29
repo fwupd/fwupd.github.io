@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -97,13 +97,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <div class="docblock">
     <h2 id="introduction">Introduction<a class="md-anchor" href="#introduction" title="Permanent link"></a></h2>
-<p>This plugin allows to update firmware on SteelSeries&nbsp;gamepads:</p>
+<p>This plugin allows to update firmware on SteelSeries&nbsp;peripherals:</p>
 <ul>
 <li>Stratus&nbsp;Duo</li>
 <li>Stratus Duo <span class="caps">USB</span> wireless&nbsp;adapter</li>
 <li>Stratus+</li>
 <li>Aerox 3&nbsp;Wireless</li>
 <li>Rival 3&nbsp;Wireless</li>
+<li>Arctis Nova 5 headset and&nbsp;dongle</li>
+<li>Arctis Nova 3P headset and&nbsp;dongle</li>
 </ul>
 <p>SteelSeries Rival 100 gaming mice support is limited by getting the correct
 version number. These mice have updatable firmware but so far no updates are
@@ -124,6 +126,13 @@ available from the&nbsp;vendor.</p>
 <h3 id="flagsis-receiver">Flags:is-receiver<a class="md-anchor" href="#flagsis-receiver" title="Permanent link"></a></h3>
 <p>The device is a <span class="caps">USB</span>&nbsp;receiver.</p>
 <p>Since&nbsp;1.8.1</p>
+<h3 id="steelseriescmdinterface">SteelSeriesCmdInterface<a class="md-anchor" href="#steelseriescmdinterface" title="Permanent link"></a></h3>
+<p><span class="caps">USB</span> <span class="caps">HID</span> command interface&nbsp;number.</p>
+<p>Since&nbsp;2.0.14</p>
+<h3 id="steelseriesfizzprotocolrevision">SteelSeriesFizzProtocolRevision<a class="md-anchor" href="#steelseriesfizzprotocolrevision" title="Permanent link"></a></h3>
+<p>Defines the revision of the <span class="caps">FIZZ</span> protocol.
+Some replies should be parsed differently depending on the&nbsp;revision.</p>
+<p>Since&nbsp;2.0.14</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <h3 id="gamepad">Gamepad<a class="md-anchor" href="#gamepad" title="Permanent link"></a></h3>
 <p>Gamepad and/or its wireless adapter must be connected to host via <span class="caps">USB</span> cable
@@ -139,6 +148,10 @@ Wireless adapter must be connected to&nbsp;host.</p>
 <p>The mouse switch button underneath must be set to 2.4G, and its 2.4G <span class="caps">USB</span>
 Wireless adapter must be connected to host; or the mouse must be connected to
 host via the <span class="caps">USB</span>-A to <span class="caps">USB</span>-C&nbsp;cable.</p>
+<h3 id="arctis-nova-5-headset">Arctis Nova 5 headset<a class="md-anchor" href="#arctis-nova-5-headset" title="Permanent link"></a></h3>
+<p>The headset can only be updated via a direct <span class="caps">USB</span>-C&nbsp;connection.</p>
+<h3 id="arctis-nova-3p-headset-and-dongle">Arctis Nova 3P headset and dongle<a class="md-anchor" href="#arctis-nova-3p-headset-and-dongle" title="Permanent link"></a></h3>
+<p>The headset can only be updated via a direct <span class="caps">USB</span>-C&nbsp;connection.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x1038</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -170,6 +183,10 @@ host via the <span class="caps">USB</span>-A to <span class="caps">USB</span>-C&
           
             <li class="toc-list-item"><a href="#flagsis-receiver"><span class="link-text">Flags:is-receiver</span></a></li>
           
+            <li class="toc-list-item"><a href="#steelseriescmdinterface"><span class="link-text">SteelSeriesCmdInterface</span></a></li>
+          
+            <li class="toc-list-item"><a href="#steelseriesfizzprotocolrevision"><span class="link-text">SteelSeriesFizzProtocolRevision</span></a></li>
+          
           </ul>
           
         
@@ -186,6 +203,10 @@ host via the <span class="caps">USB</span>-A to <span class="caps">USB</span>-C&
             <li class="toc-list-item"><a href="#rival-3-wireless"><span class="link-text">Rival 3 Wireless</span></a></li>
           
             <li class="toc-list-item"><a href="#aerox-3-wireless"><span class="link-text">Aerox 3 Wireless</span></a></li>
+          
+            <li class="toc-list-item"><a href="#arctis-nova-5-headset"><span class="link-text">Arctis Nova 5 headset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#arctis-nova-3p-headset-and-dongle"><span class="link-text">Arctis Nova 3P headset and dongle</span></a></li>
           
           </ul>
           

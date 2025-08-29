@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -122,6 +122,12 @@ the firmware as&nbsp;required.</p>
 <p>This is now the recommended mode for all modem devices with a carrier-specific firmware image,
 although it requires that the firmware branch is also set in the firmware&nbsp;metadata.</p>
 <p>Since:&nbsp;1.9.8</p>
+<h3 id="flagsmake-serial-raw"><code>Flags=make-serial-raw</code><a class="md-anchor" href="#flagsmake-serial-raw" title="Permanent link"></a></h3>
+<p>When using a port that was not previously configured by ModemManager (an &#8216;ignored&#8217; port), we need
+to configure the serial port&nbsp;manually.</p>
+<p>This is automatically added for any ports being used from <code>mm_modem_get_ignored_ports()</code> and should
+not need to be added in quirk&nbsp;files.</p>
+<p>Since:&nbsp;2.0.14</p>
 <h3 id="flagsdetach-at-fastboot-has-no-response"><code>Flags=detach-at-fastboot-has-no-response</code><a class="md-anchor" href="#flagsdetach-at-fastboot-has-no-response" title="Permanent link"></a></h3>
 <p>If no <span class="caps">AT</span> response is expected when entering fastboot&nbsp;mode.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
@@ -209,6 +215,8 @@ consulted before making major or functional&nbsp;changes:</p>
             <li class="toc-list-item"><a href="#modemmanagerfirehoseprogfile"><span class="link-text">ModemManagerFirehoseProgFile</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsuse-branch"><span class="link-text">Flags=use-branch</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsmake-serial-raw"><span class="link-text">Flags=make-serial-raw</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsdetach-at-fastboot-has-no-response"><span class="link-text">Flags=detach-at-fastboot-has-no-response</span></a></li>
           

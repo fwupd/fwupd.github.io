@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -113,6 +113,8 @@ payload that needs to be written to the device in&nbsp;chunks.</p>
 <p>These devices build their GUIDs by adding the <code>OUI</code> from the DpAux <span class="caps">DPCD</span> with
 additional B&amp;R-specific device, variant and revision metadata,&nbsp;e.g.</p>
 <ul>
+<li><code>DPAUX\OUI_00006065&amp;DEV_00002F1A</code></li>
+<li><code>DPAUX\OUI_00006065&amp;DEV_00002F1A&amp;VARIANT_00000000</code></li>
 <li><code>DPAUX\OUI_00006065&amp;DEV_00002F1A&amp;VARIANT_00000000&amp;HW_REV_A0</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -162,7 +162,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.0.13</td></tr>
+        <tr><td><em>Version</em></td><td>2.0.14</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -355,6 +355,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="ebitdo-README.html">Plugin: 8BitDo</a></li>
         
+          <li><a href="egis-moc-README.html">Plugin: Egis Fingerprint Sensor</a></li>
+        
           <li><a href="elantp-README.html">Plugin: Elan TouchPad</a></li>
         
           <li><a href="elanfp-README.html">Plugin: Elan Fingerprint Sensor</a></li>
@@ -373,6 +375,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="fpc-README.html">Plugin: FPC Fingerprint Sensor</a></li>
         
+          <li><a href="framework-qmk-README.html">Plugin: Framework QMK</a></li>
+        
           <li><a href="fresco-pd-README.html">Plugin: Fresco PD</a></li>
         
           <li><a href="genesys-README.html">Plugin: Genesys Logic</a></li>
@@ -390,6 +394,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="huddly-usb-README.html">Plugin: Huddly Usb</a></li>
         
           <li><a href="hughski-colorhug-README.html">Plugin: ColorHug</a></li>
+        
+          <li><a href="ilitek-its-README.html">Plugin: Ilitek Its</a></li>
         
           <li><a href="intel-amt-README.html">Plugin: Intel AMT</a></li>
         
@@ -1605,6 +1611,16 @@ device has been&nbsp;opened.</p>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="ErrorConvertEntry" class="symbol" href="struct.ErrorConvertEntry.html">ErrorConvertEntry</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="ErrorMapEntry" class="symbol" href="struct.ErrorMapEntry.html">ErrorMapEntry</a></td>
@@ -2904,6 +2920,16 @@ device has been&nbsp;opened.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="HidrawBusType" class="symbol" href="enum.HidrawBusType.html">HidrawBusType</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="IfdRegion" class="symbol" href="enum.IfdRegion.html">IfdRegion</a></td>
             
             <td class="docblock-summary">
@@ -3284,6 +3310,16 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
           
           <tr class="section-item">
             <td><a title="BackendSetupFlags" class="symbol" href="flags.BackendSetupFlags.html">BackendSetupFlags</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="ConfigLoadFlags" class="symbol" href="flags.ConfigLoadFlags.html">ConfigLoadFlags</a></td>
             
             <td class="docblock-summary">
             
@@ -4199,7 +4235,7 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
             
             <td class="docblock-summary">
             <p>Convert the error to a <code>FwupdError</code>, if&nbsp;required.</p>
-            <p><span class="emblem available">since: 2.0.0</span></p>
+            <p><span class="emblem available">since: 2.0.14</span></p>
             </td>
             
           </tr>
@@ -4226,6 +4262,16 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           
           <tr class="section-item">
             <td><a title="hid_item_tag_to_string" class="symbol" href="func.hid_item_tag_to_string.html">hid_item_tag_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="hidraw_bus_type_to_string" class="symbol" href="func.hidraw_bus_type_to_string.html">hidraw_bus_type_to_string</a></td>
             
             <td class="docblock-summary">
             
@@ -14651,6 +14697,16 @@ then no member is&nbsp;added.</p>
             
             <td class="docblock-summary">
             <p>No page size is&nbsp;used.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CONTEXT_HWID_FLAG_LOAD_ALL" class="symbol" href="const.CONTEXT_HWID_FLAG_LOAD_ALL.html">CONTEXT_HWID_FLAG_LOAD_ALL</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             

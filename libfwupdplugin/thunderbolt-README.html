@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -142,6 +142,8 @@ The update will complete on&nbsp;unplug.</p>
 be staged but not completed until <code>activate</code> is separately called such as at
 logout or&nbsp;shutdown.</p>
 <h3 id="usb4-retimer">USB4 Retimer<a class="md-anchor" href="#usb4-retimer" title="Permanent link"></a></h3>
+<p><strong><span class="caps">IMPORTANT</span> <span class="caps">NOTE</span>:</strong> The retimer devices will only appear when using <code>fwupd</code> (the daemon) and not
+<code>fwupdtool</code> (the standalone tool) as they need to be enabled and then added after a few&nbsp;seconds.</p>
 <p>To update the retimer userspace need to set the port offline (<code>echo 1 &gt; offline</code>), and then
 rescan it (<code>echo 1 &gt; rescan</code>).
 This will cause the retimer to be visible to the <span class="caps">OS</span>, it will be added to sysfs and thus a fwupd

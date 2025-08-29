@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.13</p>
+        <p>Library Version: 2.0.14</p>
         
       </div>
       
@@ -100,8 +100,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>The Unified Extensible Firmware Interface (<span class="caps">UEFI</span>) is a specification that
 defines the software interface between an <span class="caps">OS</span> and platform firmware.
 With the UpdateCapsule boot service it can be used to update system&nbsp;firmware.</p>
-<p>When this plugin is enabled, the companion <span class="caps">UEFI</span> binary may also be built from the <a href="https://github.com/fwupd/fwupd-efi">fwupd-efi</a> project if not already present on the filesystem by using the meson option <code>-Defi_binary=true</code>.</p>
+<h2 id="companion-efi-application">Companion EFI application<a class="md-anchor" href="#companion-efi-application" title="Permanent link"></a></h2>
+<p>When this plugin is enabled, for it to work properly a <span class="caps">UEFI</span> binary must be available to flash capsules that have been staged.
+This can be satisfied either by the <a href="https://github.com/fwupd/fwupd-efi">fwupd-efi</a> project or by a 3rd party&nbsp;bootloader.</p>
+<h3 id="fwupd-efi-project">fwupd-efi project<a class="md-anchor" href="#fwupd-efi-project" title="Permanent link"></a></h3>
+<p>The companion <span class="caps">UEFI</span> binary may be built from the <a href="https://github.com/fwupd/fwupd-efi">fwupd-efi</a> project if not already present on the filesystem by using the meson option <code>-Defi_binary=true</code>.</p>
 <p>For this companion binary to work with secure boot, it will need to be signed by an authority trusted with shim and/or the host&nbsp;environment.</p>
+<h3 id="3rd-party-bootloader">3rd party bootloader<a class="md-anchor" href="#3rd-party-bootloader" title="Permanent link"></a></h3>
+<p>If a 3rd party bootloader has implemented the fwupd <span class="caps">UEFI</span> capsule update protocol then it can create a 1 byte <span class="caps">EFI</span> variable <code>BootloaderSupportsFwupd</code> under the <span class="caps">GUID</span> namespace <code>0abba7dc-e516-4167-bbf5-4d9d1c739416</code>. fwupd will discover this at runtime and avoid the use of&nbsp;fwupd-efi.</p>
 <h2 id="lenovo-specific-behavior">Lenovo Specific Behavior<a class="md-anchor" href="#lenovo-specific-behavior" title="Permanent link"></a></h2>
 <p>On Lenovo hardware only the boot label is set to <code>Linux-Firmware-Updater</code> rather
 than &#8220;Linux Firmware Updater&#8221; (with spaces) due to long-fixed <span class="caps">EFI</span> boot manager
@@ -221,6 +227,9 @@ chainloading or&nbsp;capsule-on-disk.</p>
 <p>The <span class="caps">UEFI</span> <span class="caps">ESRT</span> entry does not need extra <span class="caps">ESP</span> space to write a backup <span class="caps">ROM</span>.
 If this flag is set then the <code>RequireESPFreeSpace</code> config file option is&nbsp;ignored.</p>
 <p>Since:&nbsp;2.0.7</p>
+<h3 id="flagsno-capsule-on-disk"><code>Flags=no-capsule-on-disk</code><a class="md-anchor" href="#flagsno-capsule-on-disk" title="Permanent link"></a></h3>
+<p>Do not use Capsule-on-Disk support even if <code>OsIndicationsSupported</code> says it should be&nbsp;used.</p>
+<p>Since:&nbsp;2.0.14</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin&nbsp;requires:</p>
 <ul>
@@ -245,6 +254,17 @@ If this flag is set then the <code>RequireESPFreeSpace</code> config file option
       
         
         <li class="toc-list-item"><a href="#introduction"><span class="link-text">Introduction</span></a></li>
+          
+        
+        <li class="toc-list-item"><a href="#companion-efi-application"><span class="link-text">Companion EFI application</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#fwupd-efi-project"><span class="link-text">fwupd-efi project</span></a></li>
+          
+            <li class="toc-list-item"><a href="#3rd-party-bootloader"><span class="link-text">3rd party bootloader</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#lenovo-specific-behavior"><span class="link-text">Lenovo Specific Behavior</span></a></li>
@@ -303,6 +323,8 @@ If this flag is set then the <code>RequireESPFreeSpace</code> config file option
             <li class="toc-list-item"><a href="#flagscod-dell-recovery"><span class="link-text">Flags=cod-dell-recovery</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsno-esp-backup"><span class="link-text">Flags=no-esp-backup</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagsno-capsule-on-disk"><span class="link-text">Flags=no-capsule-on-disk</span></a></li>
           
           </ul>
           
