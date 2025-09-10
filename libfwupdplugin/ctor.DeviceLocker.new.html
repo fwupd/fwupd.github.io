@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.14</p>
+        <p>Library Version: 2.0.15</p>
         
       </div>
       
@@ -117,14 +117,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.14/libfwupdplugin/fu-device-locker.h#L23">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.15/libfwupdplugin/fu-device-locker.h#L23">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="n">FuDeviceLocker</span><span class="o">*</span>
 <span class="n">fu_device_locker_new</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">device</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FuDevice</span><span class="o">*</span><span class="w"> </span><span class="n">device</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -137,7 +137,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.14/libfwupdplugin/fu-device-locker.c#L97">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.15/libfwupdplugin/fu-device-locker.c#L97">[src]</a>
         
       </h4>
 
@@ -146,9 +146,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 will be closed and any error will just be directed to the console.
 This object is typically called using <code>g_autoptr()</code> but the device can also be
 manually closed using&nbsp;g_clear_object().</p>
-<p>The functions used for opening and closing the device are set automatically.
-If the <code>device</code> is not a type or supertype of <code>FuDevice</code> then this function will not&nbsp;work.</p>
-<p>For custom objects please use&nbsp;fu_device_locker_new_full().</p>
+<p>The functions used for opening and closing the device are set&nbsp;automatically.</p>
 <p><span class="caps">NOTE</span>: If the <code>open_func</code> failed then the <code>close_func</code> will not be&nbsp;called.</p>
 <p>Think of this object as the device&nbsp;ownership.</p>
       </div>
@@ -178,11 +176,11 @@ If the <code>device</code> is not a type or supertype of <code>FuDevice</code> t
           
           <dt class="arg-name"><code>device</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>gpointer</code></p>
-            <p>A <code>GObject</code>.</p>
+            <p><em>Type:</em>&nbsp;<a href="class.Device.html"><code>FuDevice</code></a></p>
+            <p>A <code>FuDevice</code>.</p>
             <table>
             
-            <tr><td>The argument can be <code>NULL</code>.</td></tr>
+            
             
             
             
