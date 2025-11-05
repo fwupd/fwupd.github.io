@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -117,6 +117,7 @@ be used instead,&nbsp;e.g.</p>
 <li><code>MTD\NAME_Factory</code></li>
 <li><code>MTD\VEN_1234&amp;DEV_5678</code></li>
 <li><code>MTD\VEN_1234&amp;DEV_5678&amp;NAME_Factory</code></li>
+<li><code>MTD\DRIVER_xe</code> (quirk-only)</li>
 </ul>
 <p>If the <code>FirmwareGType</code> quirk is set for the device then the firmware is read back from the device at
 daemon startup and parsed for the version number.
@@ -145,6 +146,17 @@ data section and then parse the metadata from that. Any of the firmware formats 
 to avoid dumping a huge amount of <span class="caps">MTD</span> data to access a tiny chunk of data that will not be before a
 known&nbsp;offset.</p>
 <p>Since:&nbsp;1.9.1</p>
+<h3 id="mtdfmapregions">MtdFmapRegions<a class="md-anchor" href="#mtdfmapregions" title="Permanent link"></a></h3>
+<p>A comma-separated list of region names that should be written to the device as images in the
+specified order. Each image should have the required offset set as a physical&nbsp;address.</p>
+<p>This can be used to selectively target coreboot <span class="caps">FMAP</span>&nbsp;regions.</p>
+<p>Since:&nbsp;2.0.17</p>
+<h3 id="mtdfmapoffset">MtdFmapOffset<a class="md-anchor" href="#mtdfmapoffset" title="Permanent link"></a></h3>
+<p>An offset where the <code>__FMAP__</code> header can be found, for example <code>0x1090000</code>.</p>
+<p>This can be used to avoid loading and searching the entire <span class="caps">SPI</span> rom for a <span class="caps">FMAP</span> image.
+If this option is set then the device <code>FirmwareGType</code> is automatically set to <code>FuFmapFirmware</code>.</p>
+<p>To test actual firmware blobs with mtram, use <code>sudo modprobe mtdram total_size=32768</code></p>
+<p>Since:&nbsp;2.0.17</p>
 <h3 id="mtdmetadatasize">MtdMetadataSize<a class="md-anchor" href="#mtdmetadatasize" title="Permanent link"></a></h3>
 <p>The size of data to read from the <span class="caps">MTD</span> partition when using <code>FirmwareGType</code>. This is provided to
 avoid dumping a huge amount of <span class="caps">MTD</span> data to access a tiny chunk of&nbsp;data.</p>
@@ -181,6 +193,10 @@ avoid dumping a huge amount of <span class="caps">MTD</span> data to access a ti
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#mtdmetadataoffset"><span class="link-text">MtdMetadataOffset</span></a></li>
+          
+            <li class="toc-list-item"><a href="#mtdfmapregions"><span class="link-text">MtdFmapRegions</span></a></li>
+          
+            <li class="toc-list-item"><a href="#mtdfmapoffset"><span class="link-text">MtdFmapOffset</span></a></li>
           
             <li class="toc-list-item"><a href="#mtdmetadatasize"><span class="link-text">MtdMetadataSize</span></a></li>
           

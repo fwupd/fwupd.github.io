@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -967,8 +967,8 @@ They are verified during <code>_validate()</code> and <code>_parse()</code> howe
 <p>There are traits that control the generation of enum code. These&nbsp;include:</p>
 <ul>
 <li><code>ToString</code>: for <code>fu_example_family_to_string()</code>, needed to create&nbsp;output</li>
-<li><code>ToBitString</code>: for <code>fu_example_family_to_string()</code>, needed to create output for&nbsp;bitfields</li>
 <li><code>FromString</code>: for <code>fu_example_family_from_string()</code>, needed to parse&nbsp;input</li>
+<li><code>Bitfield</code>: for <code>ToString</code> and <code>FromString</code>, to hint these are actually&nbsp;bitfields</li>
 </ul>
 <p><strong><span class="caps">NOTE</span>:</strong> Enums are defined as a native unsigned type, and should not be copied by
 reference without first casting to an integer of known&nbsp;width.</p>

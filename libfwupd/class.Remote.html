@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -130,6 +130,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Remote.build_report_uri.html">build_report_uri</a>
   
+    <a class="method" href="method.Remote.ensure_checksum_sig.html">ensure_checksum_sig</a>
+  
+    <a class="method" href="method.Remote.ensure_mtime.html">ensure_mtime</a>
+  
     <a class="method" href="method.Remote.get_age.html">get_age</a>
   
     <a class="method" href="method.Remote.get_agreement.html">get_agreement</a>
@@ -155,6 +159,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Remote.get_metadata_uri.html">get_metadata_uri</a>
   
     <a class="method" href="method.Remote.get_metadata_uri_sig.html">get_metadata_uri_sig</a>
+  
+    <a class="method" href="method.Remote.get_mtime.html">get_mtime</a>
   
     <a class="method" href="method.Remote.get_order_after.html">get_order_after</a>
   
@@ -290,7 +296,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.16/libfwupd/fwupd-remote.c#L17">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.17/libfwupd/fwupd-remote.c#L17">[src]</a>
           
         </h4>
 
@@ -495,6 +501,26 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.ensure_checksum_sig.html">fwupd_remote_ensure_checksum_sig</a></h6>
+          <div class="docblock">
+            <p>Calculates the signature checksum of the remote using the filename&nbsp;cache.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.17</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Remote.ensure_mtime.html">fwupd_remote_ensure_mtime</a></h6>
+          <div class="docblock">
+            <p>Calculates the mtime of the remote using the filename&nbsp;cache.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.17</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.get_age.html">fwupd_remote_get_age</a></h6>
           <div class="docblock">
             <p>Gets the age of the remote in&nbsp;seconds.</p>
@@ -625,9 +651,19 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.Remote.get_mtime.html">fwupd_remote_get_mtime</a></h6>
+          <div class="docblock">
+            <p>Gets the remote mtime in&nbsp;seconds.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.17</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Remote.get_order_after.html">fwupd_remote_get_order_after</a></h6>
           <div class="docblock">
-            <p>Gets the list of remotes this plugin should be ordered&nbsp;after.</p>
+            <p>Gets the list of remotes this remote should be ordered&nbsp;after.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.5</span></p>
@@ -637,7 +673,7 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         <div class="">
           <h6><a href="method.Remote.get_order_before.html">fwupd_remote_get_order_before</a></h6>
           <div class="docblock">
-            <p>Gets the list of remotes this plugin should be ordered&nbsp;before.</p>
+            <p>Gets the list of remotes this remote should be ordered&nbsp;before.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.5</span></p>
@@ -677,7 +713,7 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         <div class="">
           <h6><a href="method.Remote.get_refresh_interval.html">fwupd_remote_get_refresh_interval</a></h6>
           <div class="docblock">
-            <p>Gets the plugin refresh interval in&nbsp;seconds.</p>
+            <p>Gets the remote refresh interval in&nbsp;seconds.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.9.4</span></p>
@@ -867,7 +903,7 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         <div class="">
           <h6><a href="method.Remote.set_mtime.html">fwupd_remote_set_mtime</a></h6>
           <div class="docblock">
-            <p>Sets the plugin modification&nbsp;time.</p>
+            <p>Sets the remote modification&nbsp;time.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.5</span></p>
@@ -907,7 +943,7 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         <div class="">
           <h6><a href="method.Remote.set_priority.html">fwupd_remote_set_priority</a></h6>
           <div class="docblock">
-            <p>Sets the plugin&nbsp;priority.</p>
+            <p>Sets the remote&nbsp;priority.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.5</span></p>
@@ -927,7 +963,7 @@ including any basename <span class="caps">URI</span>&nbsp;substitution.</p>
         <div class="">
           <h6><a href="method.Remote.set_refresh_interval.html">fwupd_remote_set_refresh_interval</a></h6>
           <div class="docblock">
-            <p>Sets the plugin refresh interval in&nbsp;seconds.</p>
+            <p>Sets the remote refresh interval in&nbsp;seconds.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0.0</span></p>

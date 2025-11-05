@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -121,6 +121,15 @@ Please refer to this document for more details on how to add support for
 <ul>
 <li><code>NVME\VEN_1179&amp;DEV_010F&amp;VER_3B2QGXA7</code></li>
 </ul>
+<p>Additionally, an extra instance IDs containing the serial number suffix may be&nbsp;added.</p>
+<ul>
+<li><code>NVME\VEN_1179&amp;DEV_010F&amp;SNSUFFIX_12345</code></li>
+</ul>
+<p>When the model name can be read from the controller data the instance <span class="caps">ID</span> also
+includes&nbsp;it:</p>
+<ul>
+<li><code>NVME\VEN_1179&amp;DEV_010F&amp;SNSUFFIX_12345&amp;NAME_Lexar-SSD-NM790-1TB</code></li>
+</ul>
 <p>Additionally, for NVMe drives with Dell vendor firmware two extra GUIDs are&nbsp;added:</p>
 <ul>
 <li><code>STORAGE-DELL-${component-id}</code></li>
@@ -134,6 +143,9 @@ only activated when the system is either restarted or in some cases&nbsp;shutdow
 <h3 id="nvmeblocksize">NvmeBlockSize<a class="md-anchor" href="#nvmeblocksize" title="Permanent link"></a></h3>
 <p>The block size used for NVMe&nbsp;writes</p>
 <p>Since:&nbsp;1.1.3</p>
+<h3 id="nvmeserialsuffixchars">NvmeSerialSuffixChars<a class="md-anchor" href="#nvmeserialsuffixchars" title="Permanent link"></a></h3>
+<p>The number of characters of the serial number to use for <code>SNSUFFIX</code> in the instance <span class="caps">ID</span>. Defaults to&nbsp;0.</p>
+<p>Since:&nbsp;2.0.17</p>
 <h3 id="flagsforce-align"><code>Flags=force-align</code><a class="md-anchor" href="#flagsforce-align" title="Permanent link"></a></h3>
 <p>Force alignment of the firmware&nbsp;file.</p>
 <p>Since&nbsp;1.2.4</p>
@@ -175,6 +187,8 @@ only activated when the system is either restarted or in some cases&nbsp;shutdow
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#nvmeblocksize"><span class="link-text">NvmeBlockSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#nvmeserialsuffixchars"><span class="link-text">NvmeSerialSuffixChars</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsforce-align"><span class="link-text">Flags=force-align</span></a></li>
           

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -224,7 +224,7 @@ An<span class="w"> </span>update<span class="w"> </span>requires<span class="w">
 <em><span class="caps">NOTE</span>:</em> To debug errors, use the <code>--verbose</code> argument to see messages related to the&nbsp;error.</p>
 <h2 id="firmware-setting-policies">Firmware setting policies<a class="md-anchor" href="#firmware-setting-policies" title="Permanent link"></a></h2>
 <p><code>fwupd</code> has the ability to enforce the <span class="caps">BIOS</span> settings policy of a system administrator.  To use this feature, create a json payload using <code>fwupdmgr get-bios-setting --json</code> that reflects the settings you would like to see&nbsp;enforced.</p>
-<p>Then copy this payload into <code>/etc/fwupd/bios-settings.d</code> with a filename ending in <code>.json</code>.  The next time that the fwupd daemon is started (such as a system bootup) it will ensure that all <span class="caps">BIOS</span> settings are programed to your desired values.  It will also mark those settings as read-only so no fwupd clients will be able to modify&nbsp;them.</p>
+<p>Then copy this payload into <code>/etc/fwupd/bios-settings.d</code> with a filename ending in <code>.json</code>.  The next time that the fwupd daemon is started (such as a system boot-up) it will ensure that all <span class="caps">BIOS</span> settings are programed to your desired values.  It will also mark those settings as read-only so no fwupd clients will be able to modify&nbsp;them.</p>
 <p>This <em>does not</em> stop the kernel firmware-attributes <span class="caps">API</span> from working.  So a determined user with appropriate permissions would be able to modify settings from the kernel <span class="caps">API</span> directly, but they would be changed again on fwupd daemon&nbsp;startup.</p>
 <h2 id="settings-types">Settings types<a class="md-anchor" href="#settings-types" title="Permanent link"></a></h2>
 <p>The Linux kernel will offer the following types of <span class="caps">BIOS</span>&nbsp;settings:</p>

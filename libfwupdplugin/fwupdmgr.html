@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -128,8 +128,116 @@ These applications may be more useful to many users compared to using the comman
 <p>Most users who want to just update all devices to the latest versions can do <code>fwupdmgr refresh</code> and then <code>fwupdmgr update</code>.
 At this point the system will asking for confirmation, update some devices, and may then reboot to deploy updates that require a&nbsp;restart.</p>
 <h2 id="options">OPTIONS<a class="md-anchor" href="#options" title="Permanent link"></a></h2>
-<p>The fwupdmgr command takes various options depending on the action.
-Run <strong>fwupdmgr &#8212;help</strong> for the full&nbsp;list.</p>
+<p>The fwupdmgr command takes various options depending on the action. The actions are split into
+rough behavior groups as&nbsp;follows:</p>
+<h3 id="interacting-with-discovered-devices">Interacting With Discovered Devices<a class="md-anchor" href="#interacting-with-discovered-devices" title="Permanent link"></a></h3>
+<p>The following actions can be used to view details about the enumerated devices on the&nbsp;system:</p>
+<p><strong>get-devices</strong>: Show all devices, with optional filtering applied using <code>--filter</code>.</p>
+<p><strong>get-updates</strong>: Show all the available updates for a specific&nbsp;device.</p>
+<p><strong>get-releases</strong>: Show all the installable versions (older, the same, or newer) for a specific&nbsp;device.</p>
+<p><strong>get-details</strong>: View details about a specific .cab archive, even if the target device has not been found on this&nbsp;system.</p>
+<p><strong>search</strong>: Find updates present in the metadata, regardless if the device has been enumerated on the system.
+Searching will match firmware releases&nbsp;by:</p>
+<ul>
+<li>
+<p>The full <span class="caps">GUID</span> of a device, e.g. <code>eb68dbae-3aef-5077-92ae-9016d1f0c856</code></p>
+</li>
+<li>
+<p>The AppStream <span class="caps">ID</span> of a device, e.g. <code>work.frame.Desktop.RyzenAIMax300.BIOS.firmware</code></p>
+</li>
+<li>
+<p>The name (full or subset) of a firmware update, e.g. <code>Desktop Ryzen AI MAX 300</code></p>
+</li>
+<li>
+<p>The name (full or subset) of a firmware vendor, e.g. <code>Framework</code></p>
+</li>
+<li>
+<p>The protocol used by the firmware, e.g. <code>org.uefi.capsule</code></p>
+</li>
+<li>
+<p>Any issue reported as solved by the update, e.g. <code>CVE-2022-21894</code></p>
+</li>
+<li>
+<p>Any cabinet checksum included with the update, in <span class="caps">SHA</span>-1 or <span class="caps">SHA</span>-256 format, e.g. <code>b34950fc65dabc0cb50e4c5f081829e40bf92e13</code></p>
+</li>
+</ul>
+<h3 id="deploying-firmware">Deploying Firmware<a class="md-anchor" href="#deploying-firmware" title="Permanent link"></a></h3>
+<p>The following actions can be used to install firmware onto&nbsp;devices:</p>
+<p><strong>update</strong>: Update each device in turn to the newest available&nbsp;version.</p>
+<p><strong>install</strong>: Install any available release to a specific&nbsp;device.</p>
+<p><strong>reinstall</strong>: Re-install the same version to a specific device if&nbsp;available.</p>
+<p><strong>downgrade</strong>: Install an older release to a specific release if&nbsp;available.</p>
+<p><strong>switch-branch</strong>: Switch between different firmware &#8220;branches&#8221; for a specific device.
+For instance, there may be a &#8220;community supported&#8221; branch and a &#8220;non-free upstream vendor&#8221; branch for
+the exact same hardware, both available on the <span class="caps">LVFS</span>.</p>
+<p><strong>local-install</strong>: Install a local firmware archive. The regular <strong>install</strong> will also fall back to this if the first argument is a local file that&nbsp;exists.</p>
+<p><strong>activate</strong>: Set the installed firmware version as running, which may mean the device becomes offline or unresponsive for a few&nbsp;moments.</p>
+<p><strong>sync</strong>: Install all releases with a matching <span class="caps">BKC</span> tag if a &#8220;Best Known Configuration&#8221; has been set for the local&nbsp;machine.</p>
+<h3 id="approved-and-blocked-firmware">Approved and Blocked Firmware<a class="md-anchor" href="#approved-and-blocked-firmware" title="Permanent link"></a></h3>
+<p>The following actions can be used to block or allow specific firmware releases from being&nbsp;installed:</p>
+<p><strong>get-blocked-firmware</strong>: Gets the list of blocked firmware as a list of&nbsp;checksums.</p>
+<p><strong>block-firmware</strong>: Blocks a specific firmware from being installed by <strong>install</strong> or <strong>update</strong>.</p>
+<p><strong>unblock-firmware</strong>: Unblocks a specific firmware from being installed or&nbsp;updated.</p>
+<p>The following actions can be used to control the allowlist of specific&nbsp;firmwares:</p>
+<p><strong>set-approved-firmware</strong>: Sets the list of approved firmware.
+Once the allow-list has been set to a non-empty value only firmware matching these checksums will be&nbsp;installable.</p>
+<p><strong>get-approved-firmware</strong>: Gets the list of approved firmware, returning an empty list if there is no allow-list in&nbsp;place.</p>
+<p>The checksums used for allowing or disallowing are the cabinet archive checksums in <span class="caps">SHA</span>-1 or <span class="caps">SHA</span>-256&nbsp;format.</p>
+<h3 id="emulation">Emulation<a class="md-anchor" href="#emulation" title="Permanent link"></a></h3>
+<p>Device emulation allows recording the device behavior so that we can replay the device responses
+and test writing firmware without that actual hardware plugged&nbsp;in.</p>
+<p>The following actions can be used when emulating&nbsp;devices:</p>
+<p><strong>emulation-tag</strong>: Adds devices to watch for future&nbsp;emulation.</p>
+<p><strong>emulation-save</strong>: Save captured device emulation data to a <span class="caps">JSON</span> file.
+Only data from devices that have previously been tagged for emulation will be&nbsp;returned.</p>
+<p><strong>emulation-load</strong>: Load device emulation data from a <span class="caps">JSON</span>&nbsp;file.</p>
+<p><strong>emulation-untag</strong>: Removes devices to watch for future&nbsp;emulation.</p>
+<p>When tagging devices, either the device <span class="caps">ID</span> or <span class="caps">GUID</span> can be used to identify the&nbsp;device.</p>
+<p>The following actions can be used to run automated device&nbsp;tests:</p>
+<p><strong>device-emulate</strong>: Emulate a device using a <span class="caps">JSON</span> manifest, which will operate on emulated devices&nbsp;only.</p>
+<p><strong>device-test</strong>: Test a device using a <span class="caps">JSON</span> manifest which downloads and verifies cabinet archives and deploys them on actual physical&nbsp;devices.</p>
+<h3 id="remotes">Remotes<a class="md-anchor" href="#remotes" title="Permanent link"></a></h3>
+<p>The following actions can be used to control the remotes (the online firmware metadata store)
+configured in the&nbsp;daemon:</p>
+<p><strong>refresh</strong>: Download the latest online metadata from configured and enabled&nbsp;remotes.</p>
+<p><strong>get-remotes</strong>: Get the list of configured remotes, which may or may not be&nbsp;enabled.</p>
+<p><strong>enable-remote</strong>: Enable a pre-configured remote so that it can be refreshed and&nbsp;used.</p>
+<p><strong>disable-remote</strong>: Disable a remote, but do not delete or remote stored&nbsp;metadata.</p>
+<p><strong>modify-remote</strong>: Edit a remote, for instance turning on properties such as <code>AutomaticReports</code>.</p>
+<p><strong>clean-remote</strong>: Cleans a remote, deleting metadata where&nbsp;required.</p>
+<h3 id="historical-data">Historical Data<a class="md-anchor" href="#historical-data" title="Permanent link"></a></h3>
+<p>The following actions can be used to upload, export or clear historical&nbsp;data:</p>
+<p><strong>report-export</strong>: Export firmware history as an offline file for manual upload to a service such as the <span class="caps">LVFS</span>.</p>
+<p><strong>report-history</strong>: Share firmware history with the remote owner, typically used to indicate the success ratio for a specific update.
+In some cases, sharing the history will return results to webpages describing the failure in more details, some with&nbsp;workarounds.</p>
+<p><strong>get-history</strong>: Show the firmware update history as stored by&nbsp;fwupd.</p>
+<p><strong>get-results</strong>: Show the result of the last firmware update for a specific&nbsp;device.</p>
+<p><strong>clear-results</strong>: Clears the results from the last update if&nbsp;possible.</p>
+<p><strong>report-devices</strong>: Upload the list of updatable devices to a remote server so that they can put pressure on the vendor to support Linux&nbsp;users.</p>
+<h3 id="platform-security">Platform Security<a class="md-anchor" href="#platform-security" title="Permanent link"></a></h3>
+<p>The following actions can be used to view or fix platform security&nbsp;issues:</p>
+<p><strong>security</strong>: Gets the list of host security attributes which are used to evaluate the security level of the&nbsp;machine.</p>
+<p><strong>security-fix</strong>: Fix a specific host security attribute&nbsp;failure.</p>
+<p><strong>security-undo</strong>: Undo the host security attribute fix, which may be required if <strong>security-fix</strong> caused a&nbsp;regression.</p>
+<p>The following actions can be used to list or set firmware <span class="caps">BIOS</span>&nbsp;settings:</p>
+<p><strong>get-bios-settings</strong>: Retrieve <span class="caps">BIOS</span> firmware settings and the allowable&nbsp;values.</p>
+<p><strong>set-bios-setting</strong>: Sets one or more <span class="caps">BIOS</span> firmware&nbsp;settings.</p>
+<p><strong>verify-update</strong>: Update the stored checksums that are used by the <strong>verify</strong>&nbsp;action.</p>
+<h3 id="others">Others<a class="md-anchor" href="#others" title="Permanent link"></a></h3>
+<p>The following actions may be for from non-interactive scripts or use in <span class="caps">CI</span>:</p>
+<p><strong>check-reboot-needed</strong>: Check if any devices are pending a reboot to complete&nbsp;update.</p>
+<p><strong>device-wait</strong>: Wait for a device to appear in the daemon device&nbsp;list.</p>
+<p><strong>download</strong>: Download a file using the same mechanisms that firmware and metadata are&nbsp;used.</p>
+<p><strong>modify-config</strong>: Modifies a daemon configuration value such as <code>IgnorePower</code>.
+See <code>man fwupd.conf</code> for the full list of&nbsp;variables.</p>
+<p><strong>reset-config</strong>: Resets a daemon configuration section back to the default&nbsp;values.</p>
+<p><strong>quit</strong>: Asks the daemon to quit after it has finished any firmware update in&nbsp;progress.</p>
+<p><strong>inhibit</strong>: Inhibit the system to prevent accidental manual or automatic&nbsp;upgrades.</p>
+<p><strong>uninhibit</strong>: Uninhibit the system to allow&nbsp;upgrades.</p>
+<p><strong>unlock</strong>: Unlocks the device for firmware access, which may be required for some platform&nbsp;devices.</p>
+<p><strong>get-plugins</strong>: Show all plugins registered with the&nbsp;daemon.</p>
+<p><strong>hwids</strong>: Return all the hardware IDs for the machine.
+These GUIDs are sometimes called CHIDs when using Microsoft Windows, and the values returned by fwupd should also match those from <code>ComputerHardwareIds.exe</code>.</p>
 <h2 id="exit-status">EXIT STATUS<a class="md-anchor" href="#exit-status" title="Permanent link"></a></h2>
 <p>Commands that successfully execute will return &#8220;0&#8221;, with generic failure as&nbsp;&#8220;1&#8221;.</p>
 <p>There are also several other exit codes used:
@@ -162,6 +270,26 @@ and &#8220;3&#8221; is used when a resource was not&nbsp;found.</p>
           
         
         <li class="toc-list-item"><a href="#options"><span class="link-text">OPTIONS</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#interacting-with-discovered-devices"><span class="link-text">Interacting With Discovered Devices</span></a></li>
+          
+            <li class="toc-list-item"><a href="#deploying-firmware"><span class="link-text">Deploying Firmware</span></a></li>
+          
+            <li class="toc-list-item"><a href="#approved-and-blocked-firmware"><span class="link-text">Approved and Blocked Firmware</span></a></li>
+          
+            <li class="toc-list-item"><a href="#emulation"><span class="link-text">Emulation</span></a></li>
+          
+            <li class="toc-list-item"><a href="#remotes"><span class="link-text">Remotes</span></a></li>
+          
+            <li class="toc-list-item"><a href="#historical-data"><span class="link-text">Historical Data</span></a></li>
+          
+            <li class="toc-list-item"><a href="#platform-security"><span class="link-text">Platform Security</span></a></li>
+          
+            <li class="toc-list-item"><a href="#others"><span class="link-text">Others</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#exit-status"><span class="link-text">EXIT STATUS</span></a></li>

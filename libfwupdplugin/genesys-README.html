@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -127,6 +127,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>Additionally, some customized instance IDs are added.&nbsp;e.g.</p>
 <ul>
 <li><code>USB\VID_03F0&amp;PID_0610&amp;IC_352330&amp;BONDING_0F</code></li>
+<li><code>USB\VID_03F0&amp;PID_0610&amp;IC_352330&amp;BONDING_0F&amp;RUNMODE_M</code></li>
 <li><code>USB\VID_03F0&amp;PID_0610&amp;VENDOR_GENESYSLOGIC&amp;IC_352330&amp;BONDING_0F&amp;PORTNUM_23&amp;VENDORSUP_C09B5DD3-1A23-51D2-995A-F7366AAB3CA4</code></li>
 <li><code>USB\VID_05E3&amp;PID_0630&amp;PROJECT_1885D34D-0418-5EF8-8E69-4CEF77B6B6E8</code></li>
 <li><code>USB\VID_03F0&amp;PID_0610&amp;PUBKEY_AB859399-95B8-5817-B521-9AD8CC7F5BD6</code></li>
@@ -168,12 +169,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <li><span class="caps">HP</span> Mxfd <span class="caps">FHD</span> Monitors: <code>0xA3</code></li>
 </ul>
 <p>Since&nbsp;1.7.6.</p>
-<h3 id="use-i2c-ch0">use-i2c-ch0<a class="md-anchor" href="#use-i2c-ch0" title="Permanent link"></a></h3>
-<p>Scalar uses I²C channel&nbsp;0.</p>
-<p>Since&nbsp;1.7.6.</p>
-<h3 id="pause-r2-cpu">pause-r2-cpu<a class="md-anchor" href="#pause-r2-cpu" title="Permanent link"></a></h3>
-<p>Scalar pause R2 <span class="caps">CPU</span>.</p>
-<p>Since&nbsp;1.7.6.</p>
 <h3 id="genesysscalerdevicetransfersize">GenesysScalerDeviceTransferSize<a class="md-anchor" href="#genesysscalerdevicetransfersize" title="Permanent link"></a></h3>
 <p>Scaler Block size to use for&nbsp;transfers.</p>
 <ul>
@@ -205,6 +200,42 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <li><span class="caps">HP</span> M27fd <span class="caps">USB</span>-C Monitor: <code>0xC84016</code></li>
 </ul>
 <p>Since&nbsp;1.8.2.</p>
+<h2 id="firmware-bank-quirk-use">Firmware Bank Quirk Use<a class="md-anchor" href="#firmware-bank-quirk-use" title="Permanent link"></a></h2>
+<p>These parameters are used to configure and manage Genesys firmware&nbsp;banks.</p>
+<p>This plugin uses the following plugin-specific quirks to indicate firmware bank&nbsp;detail:</p>
+<h3 id="genesyssupportdualbank">GenesysSupportDualBank<a class="md-anchor" href="#genesyssupportdualbank" title="Permanent link"></a></h3>
+<p>Indicates if dual-bank support is&nbsp;enabled.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyssupportcodesize">GenesysSupportCodeSize<a class="md-anchor" href="#genesyssupportcodesize" title="Permanent link"></a></h3>
+<p>Indicatess if code size support is&nbsp;enabled.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyshubbank1address-genesyshubbank2address">GenesysHubBank1Address / GenesysHubBank2Address<a class="md-anchor" href="#genesyshubbank1address-genesyshubbank2address" title="Permanent link"></a></h3>
+<p>Memory addresses for Hub bank 1 and&nbsp;2.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyshubbankcapacity">GenesysHubBankCapacity<a class="md-anchor" href="#genesyshubbankcapacity" title="Permanent link"></a></h3>
+<p>Capacity of the Hub&nbsp;bank.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesysdevbank1address-genesysdevbank2address">GenesysDevBank1Address / GenesysDevBank2Address<a class="md-anchor" href="#genesysdevbank1address-genesysdevbank2address" title="Permanent link"></a></h3>
+<p>Memory addresses for Device bank 1 and&nbsp;2.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesysdevbankcapacity">GenesysDevBankCapacity<a class="md-anchor" href="#genesysdevbankcapacity" title="Permanent link"></a></h3>
+<p>Capacity of the Device&nbsp;bank.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyspdbank1address-genesyspdbank2address">GenesysPdBank1Address / GenesysPdBank2Address<a class="md-anchor" href="#genesyspdbank1address-genesyspdbank2address" title="Permanent link"></a></h3>
+<p>Memory addresses for <span class="caps">PD</span> bank 1 and&nbsp;2.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyspdbankcapacity">GenesysPdBankCapacity<a class="md-anchor" href="#genesyspdbankcapacity" title="Permanent link"></a></h3>
+<p>Capacity of the <span class="caps">PD</span>&nbsp;bank.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyscodesignbank1address-genesyscodesignbank2address">GenesysCodesignBank1Address / GenesysCodesignBank2Address<a class="md-anchor" href="#genesyscodesignbank1address-genesyscodesignbank2address" title="Permanent link"></a></h3>
+<p>Memory addresses for Codesign bank 1 and&nbsp;2.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesyscodesignbankcapacity">GenesysCodesignBankCapacity<a class="md-anchor" href="#genesyscodesignbankcapacity" title="Permanent link"></a></h3>
+<p>Capacity of the Codesign&nbsp;bank.</p>
+<p>Since&nbsp;2.0.17</p>
+<h3 id="genesysfwdatamaxcount">GenesysFwDataMaxCount<a class="md-anchor" href="#genesysfwdatamaxcount" title="Permanent link"></a></h3>
+<p>Maximum count of firmware&nbsp;data.</p>
+<p>Since&nbsp;2.0.17</p>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The devices are independently updated at runtime using <span class="caps">USB</span> control&nbsp;transfers.</p>
 <p>The firmware is deployed when the device is in normal runtime mode, and the device will reset when the new firmware has been&nbsp;written.</p>
@@ -260,10 +291,6 @@ consulted before making major or functional&nbsp;changes:</p>
           
             <li class="toc-list-item"><a href="#genesysusbhubwriterequest"><span class="link-text">GenesysUsbhubWriteRequest</span></a></li>
           
-            <li class="toc-list-item"><a href="#use-i2c-ch0"><span class="link-text">use-i2c-ch0</span></a></li>
-          
-            <li class="toc-list-item"><a href="#pause-r2-cpu"><span class="link-text">pause-r2-cpu</span></a></li>
-          
             <li class="toc-list-item"><a href="#genesysscalerdevicetransfersize"><span class="link-text">GenesysScalerDeviceTransferSize</span></a></li>
           
             <li class="toc-list-item"><a href="#genesysscalergpiooutputregister"><span class="link-text">GenesysScalerGpioOutputRegister</span></a></li>
@@ -273,6 +300,35 @@ consulted before making major or functional&nbsp;changes:</p>
             <li class="toc-list-item"><a href="#genesysscalergpiovalue"><span class="link-text">GenesysScalerGpioValue</span></a></li>
           
             <li class="toc-list-item"><a href="#genesysscalercfiflashid"><span class="link-text">GenesysScalerCfiFlashId</span></a></li>
+          
+          </ul>
+          
+        
+        <li class="toc-list-item"><a href="#firmware-bank-quirk-use"><span class="link-text">Firmware Bank Quirk Use</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#genesyssupportdualbank"><span class="link-text">GenesysSupportDualBank</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyssupportcodesize"><span class="link-text">GenesysSupportCodeSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyshubbank1address-genesyshubbank2address"><span class="link-text">GenesysHubBank1Address / GenesysHubBank2Address</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyshubbankcapacity"><span class="link-text">GenesysHubBankCapacity</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysdevbank1address-genesysdevbank2address"><span class="link-text">GenesysDevBank1Address / GenesysDevBank2Address</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysdevbankcapacity"><span class="link-text">GenesysDevBankCapacity</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyspdbank1address-genesyspdbank2address"><span class="link-text">GenesysPdBank1Address / GenesysPdBank2Address</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyspdbankcapacity"><span class="link-text">GenesysPdBankCapacity</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyscodesignbank1address-genesyscodesignbank2address"><span class="link-text">GenesysCodesignBank1Address / GenesysCodesignBank2Address</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesyscodesignbankcapacity"><span class="link-text">GenesysCodesignBankCapacity</span></a></li>
+          
+            <li class="toc-list-item"><a href="#genesysfwdatamaxcount"><span class="link-text">GenesysFwDataMaxCount</span></a></li>
           
           </ul>
           

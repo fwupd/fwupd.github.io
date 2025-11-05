@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -102,7 +102,7 @@ firmware onto a mass storage&nbsp;device.</p>
 <p>A <span class="caps">UF2</span> device exposes a <span class="caps">VFAT</span> block device which has a virtual file
 <code>INFO_UF2.TXT</code> where metadata can be read from. It may also have a the
 current firmware exported as a file <code>CURRENT.UF2</code> which is in a 512
-byte-block <span class="caps">UF2</span>&nbsp;format.</p>
+byte-block <a href="https://github.com/Microsoft/uf2&gt;"><span class="caps">UF2</span> format</a>.</p>
 <p>Writing any file to the <span class="caps">MSD</span> will cause the firmware to be written.
 Sometimes the device will restart and the volume will be unmounted and then
 mounted again. In some cases the volume may not “come back” until the user
@@ -114,7 +114,6 @@ on non-<span class="caps">UF2</span> volumes. To get the <span class="caps">UUID
 <div class="codehilite"><pre><span></span><code>udisksctl info -b /dev/sda1
 </code></pre></div>
 
-<p>The <span class="caps">UF2</span> format is specified <a href="https://github.com/Microsoft/uf2&gt;">here</a>.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 the <span class="caps">UF2</span> file&nbsp;format.</p>

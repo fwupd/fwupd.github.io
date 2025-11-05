@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -101,6 +101,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
 
   
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.FmapFirmware.get_signature_offset.html">get_signature_offset</a>
+  
+    <a class="method" href="method.FmapFirmware.set_signature_offset.html">set_signature_offset</a>
+  
+  </div>
+</div>
+
 
 
   
@@ -141,7 +152,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.16/libfwupdplugin/fu-fmap-firmware.c#L17">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.17/libfwupdplugin/fu-fmap-firmware.c#L19">[src]</a>
           
         </h4>
 
@@ -228,12 +239,33 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
       
+        <div class="">
+          <h6><a href="method.FmapFirmware.get_signature_offset.html">fu_fmap_firmware_get_signature_offset</a></h6>
+          <div class="docblock">
+            <p>Gets the signature&nbsp;offset.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.17</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FmapFirmware.set_signature_offset.html">fu_fmap_firmware_set_signature_offset</a></h6>
+          <div class="docblock">
+            <p>Sets the signature offset. This is different to the offset returned by <code>fu_firmware_get_offset()</code>
+which points to the position of the entire image with regards to the&nbsp;parent.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.17</span></p>
+          </div>
+        </div>
+      
       </div>
 
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Firmware.html">FuFirmware</a> (67)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.Firmware.html">FuFirmware</a> (66)</h5><div class="docblock">
           
             <div class="docblock">
               <p>Please see&nbsp;<a href="class.Firmware.html#methods">FuFirmware</a>&nbsp;for a full list of methods.</em></p>
@@ -383,6 +415,8 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
 
       
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
 
       
 

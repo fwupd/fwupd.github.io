@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -488,7 +488,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p><a id="org.fwupd.hsi.Mei.KeyManifest"></a></p>
 <h3 id="me-bootguard-platform-key"><a href="#org.fwupd.hsi.Mei.KeyManifest">ME BootGuard Platform Key</a><a class="md-anchor" href="#me-bootguard-platform-key" title="Permanent link"></a></h3>
 <p>The BootGuard Platform Key is fused into the <span class="caps">CPU</span> <span class="caps">PCH</span> during manufacturing by the <span class="caps">OEM</span>.</p>
-<p>At bootup, an authenticated code module computes a hash of the Platform Key and compares it with the one stored in field-programmable&nbsp;fuses.</p>
+<p>At boot-up, an authenticated code module computes a hash of the Platform Key and compares it with the one stored in field-programmable&nbsp;fuses.</p>
 <p>If the key matches the <span class="caps">ACM</span> will pass control to the firmware, otherwise the boot process will&nbsp;stop.</p>
 <p>In 2022 a number of Platform <strong>secret</strong> Keys were leaked by Lenovo and confirmed by&nbsp;Intel.</p>
 <p><strong>Impact:</strong></p>

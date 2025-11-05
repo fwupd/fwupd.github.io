@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -190,7 +190,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 </ul>
 <h3 id="opromcode">OPROMCODE<a class="md-anchor" href="#opromcode" title="Permanent link"></a></h3>
 <ul>
-<li>This must be only the <em>first</em> oprom image in the&nbsp;payload.</li>
 <li>The oprom expansion header is formatted as a <code>FuIfwiCpdFirmware</code> image</li>
 <li>The <code>OROM.man</code> section has two unknown (and unparsed) extension&nbsp;types</li>
 </ul>
@@ -223,9 +222,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 </code></pre></div>
 
 <h3 id="opromdata">OPROMDATA<a class="md-anchor" href="#opromdata" title="Permanent link"></a></h3>
-<ul>
-<li>This must be only the <em>first</em> oprom image in the&nbsp;payload.</li>
-</ul>
 <div class="codehilite"><pre><span></span><code><span class="nt">&lt;firmware</span><span class="w"> </span><span class="na">gtype=</span><span class="s">&quot;FuIgscOpromFirmware&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;idx&gt;</span>0xf0<span class="nt">&lt;/idx&gt;</span>
 <span class="w">  </span><span class="nt">&lt;size&gt;</span>0x800<span class="nt">&lt;/size&gt;</span>

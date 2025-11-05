@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -162,16 +162,30 @@ blobs with an unspecified binary file&nbsp;format.</p>
 <li><span class="caps">TBT</span> Controller: <code>TBT-00d4b0a2</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
-<p>This dock is a composite device with inclusion of various components, the
-update takes particular order to&nbsp;completion.</p>
-<p>All updates will be staged on the device until the user manually disconnects
-the dock&#8217;s Type-C cable from the host, at which point they will take&nbsp;effect.</p>
+<p>This dock contains multiple components and updates in a specific&nbsp;sequence.</p>
+<p>Components don&#8217;t reboot during firmware writing; updates are staged and managed
+activation according to the plugin-defined process during the <code>composite_cleanup</code>
+phase. The Power Button <span class="caps">LED</span> of the dock will flash three times to indicate the
+update is&nbsp;completed.</p>
+<p>There are two ways to trigger the staged firmware, and the update behavior can
+be adjusted via the plugin configuration <code>UpdateOnDisconnect</code>.</p>
+<h3 id="update-on-connected-uoc">Update on Connected (UOC)<a class="md-anchor" href="#update-on-connected-uoc" title="Permanent link"></a></h3>
+<p>When all the component updates are installed and staged to the dock, the dock
+reboots the devices to activate the new version immediately. The connected
+peripherals on the dock side will be disconnected from the host, and take a few
+minutes to&nbsp;finish.</p>
+<p>Starting from fwupd <code>2.0.17</code>, or <code>1.9.33</code>, this is the default update&nbsp;behavior.</p>
+<h3 id="update-on-disconnected-uod">Update on Disconnected (UOD)<a class="md-anchor" href="#update-on-disconnected-uod" title="Permanent link"></a></h3>
+<p>Staged updates are activated when the dock&#8217;s Type-C cable is disconnected from
+the host, while the power cable must remain connected to support the update process.
+This design ensures devices remain usable during firmware installation in the
+user&#8217;s <span class="caps">OS</span> runtime&nbsp;session.</p>
 <h2 id="plugin-configuration">Plugin Configuration<a class="md-anchor" href="#plugin-configuration" title="Permanent link"></a></h2>
 <p>This plugin supports the following parameters by modifying <code>dell_kestrel</code> section
 of <code>/etc/fwupd/fwupd.conf</code>.</p>
 <h3 id="updateondisconnect">UpdateOnDisconnect<a class="md-anchor" href="#updateondisconnect" title="Permanent link"></a></h3>
 <p>The firmware updates are staged to the devices in the dell dock and activated
-when the user manually unplugs the dock cable. Default:&nbsp;true.</p>
+when the user manually unplugs the dock cable. Default:&nbsp;false.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">USB</span> vendor, in this instance set to <code>USB:0x413C</code></p>
 <h2 id="owners">Owners<a class="md-anchor" href="#owners" title="Permanent link"></a></h2>
@@ -220,6 +234,14 @@ consulted before making major or functional&nbsp;changes:</p>
           
         
         <li class="toc-list-item"><a href="#update-behavior"><span class="link-text">Update Behavior</span></a></li>
+          
+          <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#update-on-connected-uoc"><span class="link-text">Update on Connected (UOC)</span></a></li>
+          
+            <li class="toc-list-item"><a href="#update-on-disconnected-uod"><span class="link-text">Update on Disconnected (UOD)</span></a></li>
+          
+          </ul>
           
         
         <li class="toc-list-item"><a href="#plugin-configuration"><span class="link-text">Plugin Configuration</span></a></li>

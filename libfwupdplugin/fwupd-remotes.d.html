@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.16</p>
+        <p>Library Version: 2.0.17</p>
         
       </div>
       
@@ -147,6 +147,13 @@ Case is not significant in boolean values, but is preserved in string&nbsp;value
   firmware update has&nbsp;completed.</p>
 <p><strong>AutomaticSecurityReports=false</strong></p>
 <p>If <code>true</code>, automatically sent <span class="caps">HSI</span> platform security reports when running <code>fwupdmgr security</code>.</p>
+<p><strong>NoPhasedUpdates=false</strong></p>
+<p>If <code>true</code>, disregard the requirement check for random client phased&nbsp;deployment.</p>
+<p>A systems eligibility to a phased update is determined by seeding random number generator
+  with /etc/machine-id, the archive filename, and the remote cache mtime. If the seed divides
+  by the metadata-provided <code>phased_update</code> value with no remainder then the release is considered.
+  This also implies that the seed will be different on a different machine, for a different update
+  or if the metadata is&nbsp;refreshed.</p>
 <p><strong>OrderBefore=</strong></p>
 <p>This remote will be ordered before any remotes listed here, using commas as the&nbsp;delimiter.</p>
 <p><strong><span class="caps">NOTE</span>:</strong> When the same firmware release is available from multiple remotes, the one with the
