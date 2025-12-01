@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.17</p>
+        <p>Library Version: 2.0.18</p>
         
       </div>
       
@@ -161,6 +161,11 @@ If this option is set then the device <code>FirmwareGType</code> is automaticall
 <p>The size of data to read from the <span class="caps">MTD</span> partition when using <code>FirmwareGType</code>. This is provided to
 avoid dumping a huge amount of <span class="caps">MTD</span> data to access a tiny chunk of&nbsp;data.</p>
 <p>Since:&nbsp;1.9.1</p>
+<h3 id="flagssmbios-version-fallback"><code>Flags=smbios-version-fallback</code><a class="md-anchor" href="#flagssmbios-version-fallback" title="Permanent link"></a></h3>
+<p>Fall back to the <span class="caps">SMBIOS</span> reported version if no version metadata could be found.
+This uses a version from the <span class="caps">DMI</span> <span class="caps">BIOS</span> version string, falling back to a <code>pair</code> version format
+using the <span class="caps">BIOS</span> major and minor&nbsp;release.</p>
+<p>Since:&nbsp;2.0.18</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the system vendor, for example <code>DMI:LENOVO</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
@@ -199,6 +204,8 @@ avoid dumping a huge amount of <span class="caps">MTD</span> data to access a ti
             <li class="toc-list-item"><a href="#mtdfmapoffset"><span class="link-text">MtdFmapOffset</span></a></li>
           
             <li class="toc-list-item"><a href="#mtdmetadatasize"><span class="link-text">MtdMetadataSize</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagssmbios-version-fallback"><span class="link-text">Flags=smbios-version-fallback</span></a></li>
           
           </ul>
           

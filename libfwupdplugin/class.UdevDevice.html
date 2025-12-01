@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.17</p>
+        <p>Library Version: 2.0.18</p>
         
       </div>
       
@@ -151,6 +151,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.UdevDevice.read.html">read</a>
   
+    <a class="method" href="method.UdevDevice.read_byte_array.html">read_byte_array</a>
+  
     <a class="method" href="method.UdevDevice.read_bytes.html">read_bytes</a>
   
     <a class="method" href="method.UdevDevice.read_property.html">read_property</a>
@@ -180,6 +182,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.UdevDevice.set_subsystem.html">set_subsystem</a>
   
     <a class="method" href="method.UdevDevice.write.html">write</a>
+  
+    <a class="method" href="method.UdevDevice.write_byte_array.html">write_byte_array</a>
   
     <a class="method" href="method.UdevDevice.write_bytes.html">write_bytes</a>
   
@@ -258,7 +262,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.17/libfwupdplugin/fu-udev-device.c#L32">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-udev-device.c#L33">[src]</a>
           
         </h4>
 
@@ -624,6 +628,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         </div>
       
         <div class="">
+          <h6><a href="method.UdevDevice.read_byte_array.html">fu_udev_device_read_byte_array</a></h6>
+          <div class="docblock">
+            <p>Read a buffer from a file&nbsp;descriptor.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.18</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.UdevDevice.read_bytes.html">fu_udev_device_read_bytes</a></h6>
           <div class="docblock">
             <p>Read a buffer from a file&nbsp;descriptor.</p>
@@ -778,6 +792,16 @@ over <code>pci</code> for a mouse&nbsp;device.</p>
         </div>
       
         <div class="">
+          <h6><a href="method.UdevDevice.write_byte_array.html">fu_udev_device_write_byte_array</a></h6>
+          <div class="docblock">
+            <p>Write a buffer to a file&nbsp;descriptor.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.18</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.UdevDevice.write_bytes.html">fu_udev_device_write_bytes</a></h6>
           <div class="docblock">
             <p>Write a buffer to a file&nbsp;descriptor.</p>
@@ -822,7 +846,7 @@ over <code>pci</code> for a mouse&nbsp;device.</p>
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (193)</h5><div class="docblock">
+          <h5 style="display:block;">Methods inherited from <a href="class.Device.html">FuDevice</a> (197)</h5><div class="docblock">
           
             <div class="docblock">
               <p>Please see&nbsp;<a href="class.Device.html#methods">FuDevice</a>&nbsp;for a full list of methods.</em></p>

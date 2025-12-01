@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.17</p>
+        <p>Library Version: 2.0.18</p>
         
       </div>
       
@@ -634,7 +634,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     const gchar* name,
     guint8** data,
     gsize* data_sz,
-    guint32* attr,
+    FuEfiVariableAttrs* attr,
     GError** error
   );
   gboolean (* set_data) (
@@ -643,7 +643,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     const gchar* name,
     const guint8* data,
     gsize sz,
-    guint32 attr,
+    FuEfiVariableAttrs attr,
     GError** error
   );
   gboolean (* delete) (
@@ -719,7 +719,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     const gchar* name,
     guint8** data,
     gsize* data_sz,
-    guint32* attr,
+    FuEfiVariableAttrs* attr,
     GError** error
   )</code></dt>
           <dd><p>No description available.</p></dd>
@@ -730,7 +730,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     const gchar* name,
     const guint8* data,
     gsize sz,
-    guint32 attr,
+    FuEfiVariableAttrs attr,
     GError** error
   )</code></dt>
           <dd><p>No description available.</p></dd>

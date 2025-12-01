@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.17</p>
+        <p>Library Version: 2.0.18</p>
         
       </div>
       
@@ -162,7 +162,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.0.17</td></tr>
+        <tr><td><em>Version</em></td><td>2.0.18</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -335,10 +335,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="cfu-README.html">Plugin: CFU - Component Firmware Update</a></li>
         
-          <li><a href="ch341a-README.html">Plugin: CH341A</a></li>
-        
-          <li><a href="ch347-README.html">Plugin: CH347</a></li>
-        
           <li><a href="corsair-README.html">Plugin: Corsair</a></li>
         
           <li><a href="cpu-README.html">Plugin: CPU Microcode</a></li>
@@ -420,6 +416,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="jabra-gnp-README.html">Plugin: Jabra GNP</a></li>
         
           <li><a href="kinetic-dp-README.html">Plugin: Kinetic DP</a></li>
+        
+          <li><a href="legion-hid-README.html">Plugin: Legion HID</a></li>
         
           <li><a href="legion-hid2-README.html">Plugin: Legion HID 2</a></li>
         
@@ -546,6 +544,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="wacom-raw-README.html">Plugin: Wacom RAW</a></li>
         
           <li><a href="wacom-usb-README.html">Plugin: Wacom USB</a></li>
+        
+          <li><a href="wch-ch341a-README.html">Plugin: CH341A</a></li>
+        
+          <li><a href="wch-ch347-README.html">Plugin: CH347</a></li>
         
           <li><a href="wistron-dock-README.html">Plugin: Wistron Dock</a></li>
         
@@ -1275,6 +1277,16 @@ firmware blobs which are used in various Intel products using an <span class="ca
             
             <td class="docblock-summary">
             
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonFirmware" class="symbol" href="class.JsonFirmware.html">JsonFirmware</a></td>
+            
+            <td class="docblock-summary">
+            <p>A &#8220;dummy&#8221; loader that just checks if the file can be parsed as <span class="caps">JSON</span>&nbsp;format.</p>
             <p></p>
             </td>
             
@@ -2695,7 +2707,7 @@ device has been&nbsp;opened.</p>
             <td><a title="ContextQuirkSource" class="symbol" href="enum.ContextQuirkSource.html">ContextQuirkSource</a></td>
             
             <td class="docblock-summary">
-            <p>The source of the quirk data, ordered by how good the data&nbsp;is.</p>
+            
             <p></p>
             </td>
             
@@ -2912,7 +2924,17 @@ device has been&nbsp;opened.</p>
           </tr>
           
           <tr class="section-item">
-            <td><a title="EfiVariableAttributes" class="symbol" href="enum.EfiVariableAttributes.html">EfiVariableAttributes</a></td>
+            <td><a title="EfiStatus" class="symbol" href="enum.EfiStatus.html">EfiStatus</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EfiVariableAttrs" class="symbol" href="enum.EfiVariableAttrs.html">EfiVariableAttrs</a></td>
             
             <td class="docblock-summary">
             
@@ -3444,7 +3466,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="ContextEspFileFlags" class="symbol" href="flags.ContextEspFileFlags.html">ContextEspFileFlags</a></td>
             
             <td class="docblock-summary">
-            <p>The flags to use when loading files in the <span class="caps">ESP</span>.</p>
+            
             <p></p>
             </td>
             
@@ -3454,7 +3476,7 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             <td><a title="ContextFlags" class="symbol" href="flags.ContextFlags.html">ContextFlags</a></td>
             
             <td class="docblock-summary">
-            <p>The context&nbsp;flags.</p>
+            
             <p></p>
             </td>
             
@@ -3495,6 +3517,16 @@ Plugins are expected to add rules in&nbsp;fu_plugin_initialize().</p>
             
             <td class="docblock-summary">
             <p>The flags to use when configuring&nbsp;debugging.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EfiCapsuleHeaderFlags" class="symbol" href="flags.EfiCapsuleHeaderFlags.html">EfiCapsuleHeaderFlags</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -4343,6 +4375,16 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
+            <td><a title="efi_status_to_string" class="symbol" href="func.efi_status_to_string.html">efi_status_to_string</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="efi_timestamp_build" class="symbol" href="func.efi_timestamp_build.html">efi_timestamp_build</a></td>
             
             <td class="docblock-summary">
@@ -4363,7 +4405,7 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
-            <td><a title="efi_variable_attributes_from_string" class="symbol" href="func.efi_variable_attributes_from_string.html">efi_variable_attributes_from_string</a></td>
+            <td><a title="efi_variable_attrs_from_string" class="symbol" href="func.efi_variable_attrs_from_string.html">efi_variable_attrs_from_string</a></td>
             
             <td class="docblock-summary">
             
@@ -4373,7 +4415,7 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
-            <td><a title="efi_variable_attributes_to_string" class="symbol" href="func.efi_variable_attributes_to_string.html">efi_variable_attributes_to_string</a></td>
+            <td><a title="efi_variable_attrs_to_string" class="symbol" href="func.efi_variable_attrs_to_string.html">efi_variable_attrs_to_string</a></td>
             
             <td class="docblock-summary">
             
@@ -4577,7 +4619,7 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
             
             <td class="docblock-summary">
             <p>Find a memory buffer within an input stream, without loading the entire stream into a&nbsp;buffer.</p>
-            <p><span class="emblem available">since: 2.0.0</span></p>
+            <p><span class="emblem available">since: 2.0.18</span></p>
             </td>
             
           </tr>
@@ -5071,6 +5113,17 @@ of both the destination and the source allows us to check for buffer&nbsp;overfl
             <td class="docblock-summary">
             <p>Write bytes into the stream, retrying as required. Will block during the&nbsp;operation.</p>
             <p><span class="emblem available">since: 2.0.12</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="path_build" class="symbol" href="func.path_build.html">path_build</a></td>
+            
+            <td class="docblock-summary">
+            <p>Gets a fwupd-specific system path. These can be overridden with various
+environment variables, for instance <code>FWUPD_DATADIR</code>.</p>
+            <p><span class="emblem available">since: 2.0.18</span></p>
             </td>
             
           </tr>
@@ -6525,6 +6578,16 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CONTEXT_QUIRK_SOURCE_LAST" class="symbol" href="const.CONTEXT_QUIRK_SOURCE_LAST.html">CONTEXT_QUIRK_SOURCE_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="COSWID_ENTITY_ROLE_LAST" class="symbol" href="const.COSWID_ENTITY_ROLE_LAST.html">COSWID_ENTITY_ROLE_LAST</a></td>
             
             <td class="docblock-summary">
@@ -7152,6 +7215,16 @@ Normally the child is installed before the&nbsp;parent.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="DEVICE_PRIVATE_FLAG_LAZY_VERFMT" class="symbol" href="const.DEVICE_PRIVATE_FLAG_LAZY_VERFMT.html">DEVICE_PRIVATE_FLAG_LAZY_VERFMT</a></td>
+            
+            <td class="docblock-summary">
+            <p>Allow the device version to be specified as an integer in the release <span class="caps">XML</span>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DEVICE_PRIVATE_FLAG_MD_ONLY_CHECKSUM" class="symbol" href="const.DEVICE_PRIVATE_FLAG_MD_ONLY_CHECKSUM.html">DEVICE_PRIVATE_FLAG_MD_ONLY_CHECKSUM</a></td>
             
             <td class="docblock-summary">
@@ -7316,6 +7389,16 @@ Normally the child is installed before the&nbsp;parent.</p>
             
             <td class="docblock-summary">
             <p>Do not attempt to read the device serial&nbsp;number.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="DEVICE_PRIVATE_FLAG_NO_VERSION_EXPECTED" class="symbol" href="const.DEVICE_PRIVATE_FLAG_NO_VERSION_EXPECTED.html">DEVICE_PRIVATE_FLAG_NO_VERSION_EXPECTED</a></td>
+            
+            <td class="docblock-summary">
+            <p>Allow the device version to be&nbsp;unset.</p>
             <p></p>
             </td>
             
@@ -7907,76 +7990,6 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           
           <tr class="section-item">
             <td><a title="EFI_VOLUME_GUID_PFH2" class="symbol" href="const.EFI_VOLUME_GUID_PFH2.html">EFI_VOLUME_GUID_PFH2</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_APPEND_WRITE" class="symbol" href="const.EFIVARS_ATTR_APPEND_WRITE.html">EFIVARS_ATTR_APPEND_WRITE</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_AUTHENTICATED_WRITE_ACCESS" class="symbol" href="const.EFIVARS_ATTR_AUTHENTICATED_WRITE_ACCESS.html">EFIVARS_ATTR_AUTHENTICATED_WRITE_ACCESS</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_BOOTSERVICE_ACCESS" class="symbol" href="const.EFIVARS_ATTR_BOOTSERVICE_ACCESS.html">EFIVARS_ATTR_BOOTSERVICE_ACCESS</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_HARDWARE_ERROR_RECORD" class="symbol" href="const.EFIVARS_ATTR_HARDWARE_ERROR_RECORD.html">EFIVARS_ATTR_HARDWARE_ERROR_RECORD</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_NON_VOLATILE" class="symbol" href="const.EFIVARS_ATTR_NON_VOLATILE.html">EFIVARS_ATTR_NON_VOLATILE</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_RUNTIME_ACCESS" class="symbol" href="const.EFIVARS_ATTR_RUNTIME_ACCESS.html">EFIVARS_ATTR_RUNTIME_ACCESS</a></td>
-            
-            <td class="docblock-summary">
-            
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="EFIVARS_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS" class="symbol" href="const.EFIVARS_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS.html">EFIVARS_ATTR_TIME_BASED_AUTHENTICATED_WRITE_ACCESS</a></td>
             
             <td class="docblock-summary">
             

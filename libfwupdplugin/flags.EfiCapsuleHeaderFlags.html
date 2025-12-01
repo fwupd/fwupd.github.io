@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FwupdPlugin.EfiVariableAttributes</title>
+  <title>FwupdPlugin.EfiCapsuleHeaderFlags</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -23,10 +23,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="FwupdPlugin.EfiVariableAttributes"/>
-  <meta property="og:description" content="Reference for FwupdPlugin.EfiVariableAttributes"/>
-  <meta name="twitter:title" content="FwupdPlugin.EfiVariableAttributes"/>
-  <meta name="twitter:description" content="Reference for FwupdPlugin.EfiVariableAttributes"/>
+  <meta property="og:title" content="FwupdPlugin.EfiCapsuleHeaderFlags"/>
+  <meta property="og:description" content="Reference for FwupdPlugin.EfiCapsuleHeaderFlags"/>
+  <meta name="twitter:title" content="FwupdPlugin.EfiCapsuleHeaderFlags"/>
+  <meta name="twitter:description" content="Reference for FwupdPlugin.EfiCapsuleHeaderFlags"/>
 
 
   
@@ -73,14 +73,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.17</p>
+        <p>Library Version: 2.0.18</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="enum.EfiVariableAttributes.html">EfiVariableAttributes</a>
+    <a class="current" href="flags.EfiCapsuleHeaderFlags.html">EfiCapsuleHeaderFlags</a>
   </div>
 </div>
 
@@ -98,7 +98,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Enumeration</h3>
-    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span>EfiVariableAttributes</h1>
+    <h1><a href="index.html">FwupdPlugin</a><span class="sep"></span>EfiCapsuleHeaderFlags</h1>
   </header>
 
   <section>
@@ -114,7 +114,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>enum FwupdPlugin.EfiVariableAttributes</code></pre>
+        <pre><code>flags FwupdPlugin.EfiCapsuleHeaderFlags</code></pre>
       </div>
     </div>
 
@@ -148,104 +148,39 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <dl class="enum-members">
         
           <dt>
-            <code id="none">FU_EFI_VARIABLE_ATTRIBUTES_NONE</code>
-            <a class="anchor" href="#none"></a>
+            <code id="persist_across_reset">FU_EFI_CAPSULE_HEADER_FLAG_PERSIST_ACROSS_RESET</code>
+            <a class="anchor" href="#persist_across_reset"></a>
           </dt>
           <dd>
             <div><p>No description available.</p></div>
             <ul>
-              <li>Value: <code>0</code></li>
+              <li>Value: <code>65536</code></li>
               
               <li>Available since: 1.0</li>
             </ul>
           </dd>
         
           <dt>
-            <code id="non_volatile">FU_EFI_VARIABLE_ATTRIBUTES_NON_VOLATILE</code>
-            <a class="anchor" href="#non_volatile"></a>
+            <code id="populate_system_table">FU_EFI_CAPSULE_HEADER_FLAG_POPULATE_SYSTEM_TABLE</code>
+            <a class="anchor" href="#populate_system_table"></a>
           </dt>
           <dd>
             <div><p>No description available.</p></div>
             <ul>
-              <li>Value: <code>1</code></li>
+              <li>Value: <code>131072</code></li>
               
               <li>Available since: 1.0</li>
             </ul>
           </dd>
         
           <dt>
-            <code id="bootservice_access">FU_EFI_VARIABLE_ATTRIBUTES_BOOTSERVICE_ACCESS</code>
-            <a class="anchor" href="#bootservice_access"></a>
+            <code id="initiate_reset">FU_EFI_CAPSULE_HEADER_FLAG_INITIATE_RESET</code>
+            <a class="anchor" href="#initiate_reset"></a>
           </dt>
           <dd>
             <div><p>No description available.</p></div>
             <ul>
-              <li>Value: <code>2</code></li>
-              
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt>
-            <code id="runtime_access">FU_EFI_VARIABLE_ATTRIBUTES_RUNTIME_ACCESS</code>
-            <a class="anchor" href="#runtime_access"></a>
-          </dt>
-          <dd>
-            <div><p>No description available.</p></div>
-            <ul>
-              <li>Value: <code>4</code></li>
-              
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt>
-            <code id="hardware_error_record">FU_EFI_VARIABLE_ATTRIBUTES_HARDWARE_ERROR_RECORD</code>
-            <a class="anchor" href="#hardware_error_record"></a>
-          </dt>
-          <dd>
-            <div><p>No description available.</p></div>
-            <ul>
-              <li>Value: <code>8</code></li>
-              
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt>
-            <code id="authenticated_write_access">FU_EFI_VARIABLE_ATTRIBUTES_AUTHENTICATED_WRITE_ACCESS</code>
-            <a class="anchor" href="#authenticated_write_access"></a>
-          </dt>
-          <dd>
-            <div><p>No description available.</p></div>
-            <ul>
-              <li>Value: <code>16</code></li>
-              
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt>
-            <code id="time_based_authenticated_write_access">FU_EFI_VARIABLE_ATTRIBUTES_TIME_BASED_AUTHENTICATED_WRITE_ACCESS</code>
-            <a class="anchor" href="#time_based_authenticated_write_access"></a>
-          </dt>
-          <dd>
-            <div><p>No description available.</p></div>
-            <ul>
-              <li>Value: <code>32</code></li>
-              
-              <li>Available since: 1.0</li>
-            </ul>
-          </dd>
-        
-          <dt>
-            <code id="append_write">FU_EFI_VARIABLE_ATTRIBUTES_APPEND_WRITE</code>
-            <a class="anchor" href="#append_write"></a>
-          </dt>
-          <dd>
-            <div><p>No description available.</p></div>
-            <ul>
-              <li>Value: <code>64</code></li>
+              <li>Value: <code>262144</code></li>
               
               <li>Available since: 1.0</li>
             </ul>
