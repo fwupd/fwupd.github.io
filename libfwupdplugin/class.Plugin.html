@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -116,6 +116,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
+    <a class="method" href="method.Plugin.add_device.html">add_device</a>
+  
     <a class="method" href="method.Plugin.add_device_gtype.html">add_device_gtype</a>
   
     <a class="method" href="method.Plugin.add_device_udev_subsystem.html">add_device_udev_subsystem</a>
@@ -138,11 +140,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.cache_remove.html">cache_remove</a>
   
-    <a class="method" href="method.Plugin.device_add.html">device_add</a>
-  
     <a class="method" href="method.Plugin.device_register.html">device_register</a>
-  
-    <a class="method" href="method.Plugin.device_remove.html">device_remove</a>
   
     <a class="method" href="method.Plugin.get_config_value.html">get_config_value</a>
   
@@ -176,6 +174,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.Plugin.order_compare.html">order_compare</a>
   
+    <a class="method" href="method.Plugin.remove_device.html">remove_device</a>
+  
     <a class="method" href="method.Plugin.reset_config_values.html">reset_config_values</a>
   
     <a class="method" href="method.Plugin.runner_activate.html">runner_activate</a>
@@ -195,6 +195,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.Plugin.runner_coldplug.html">runner_coldplug</a>
   
     <a class="method" href="method.Plugin.runner_composite_cleanup.html">runner_composite_cleanup</a>
+  
+    <a class="method" href="method.Plugin.runner_composite_peek_firmware.html">runner_composite_peek_firmware</a>
   
     <a class="method" href="method.Plugin.runner_composite_prepare.html">runner_composite_prepare</a>
   
@@ -331,6 +333,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="vfunc.Plugin.composite_cleanup.html">composite_cleanup</a>
   
+    <a class="method" href="vfunc.Plugin.composite_peek_firmware.html">composite_peek_firmware</a>
+  
     <a class="method" href="vfunc.Plugin.composite_prepare.html">composite_prepare</a>
   
     <a class="method" href="vfunc.Plugin.detach.html">detach</a>
@@ -396,7 +400,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-plugin.c#L28">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-plugin.c#L28">[src]</a>
           
         </h4>
 
@@ -532,6 +536,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
       
         <div class="">
+          <h6><a href="method.Plugin.add_device.html">fu_plugin_add_device</a></h6>
+          <div class="docblock">
+            <p>Asks the daemon to add a device to the exported list. If this device <span class="caps">ID</span>
+has already been added by a different plugin then this request will be&nbsp;ignored.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.Plugin.add_device_gtype.html">fu_plugin_add_device_gtype</a></h6>
           <div class="docblock">
             <p>Adds the device <code>GType</code> which is used when creating&nbsp;devices.</p>
@@ -555,11 +570,10 @@ Use <code>fu_plugin_add_udev_subsystem()</code> if you just want to ensure the s
         <div class="">
           <h6><a href="method.Plugin.add_firmware_gtype.html">fu_plugin_add_firmware_gtype</a></h6>
           <div class="docblock">
-            <p>Adds a firmware <code>GType</code> which is used when creating devices. If <code>id</code> is not
-specified then it is guessed using the <code>GType</code> name.</p>
+            <p>Adds a firmware <code>GType</code> which is used when creating&nbsp;devices.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.3.3</span></p>
+            <p><span class="emblem available">since: 2.1.1</span></p>
           </div>
         </div>
       
@@ -647,33 +661,12 @@ when <code>FU_PLUGIN_RULE_RUN_AFTER</code> is&nbsp;used.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.Plugin.device_add.html">fu_plugin_device_add</a></h6>
-          <div class="docblock">
-            <p>Asks the daemon to add a device to the exported list. If this device <span class="caps">ID</span>
-has already been added by a different plugin then this request will be&nbsp;ignored.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 0.8.0</span></p>
-          </div>
-        </div>
-      
-        <div class="">
           <h6><a href="method.Plugin.device_register.html">fu_plugin_device_register</a></h6>
           <div class="docblock">
             <p>Registers the device with other plugins so they can set&nbsp;metadata.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.9.7</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="method.Plugin.device_remove.html">fu_plugin_device_remove</a></h6>
-          <div class="docblock">
-            <p>Asks the daemon to remove a device from the exported&nbsp;list.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 0.8.0</span></p>
           </div>
         </div>
       
@@ -741,8 +734,8 @@ has already been added by a different plugin then this request will be&nbsp;igno
         <div class="">
           <h6><a href="method.Plugin.get_devices.html">fu_plugin_get_devices</a></h6>
           <div class="docblock">
-            <p>Returns all devices added by the plugin using <code>fu_plugin_device_add()</code> and
-not yet removed with <code>fu_plugin_device_remove()</code>.</p>
+            <p>Returns all devices added by the plugin using <code>fu_plugin_add_device()</code> and
+not yet removed with <code>fu_plugin_remove_device()</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.5.6</span></p>
@@ -836,6 +829,16 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.0.8</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.remove_device.html">fu_plugin_remove_device</a></h6>
+          <div class="docblock">
+            <p>Asks the daemon to remove a device from the exported&nbsp;list.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
           </div>
         </div>
       
@@ -936,6 +939,16 @@ not yet removed with <code>fu_plugin_device_remove()</code>.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.0.9</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Plugin.runner_composite_peek_firmware.html">fu_plugin_runner_composite_peek_firmware</a></h6>
+          <div class="docblock">
+            <p>Notify when the firmware has been parsed and the update is ready to be&nbsp;deployed.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.0.19</span></p>
           </div>
         </div>
       
@@ -1627,6 +1640,14 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
     const gchar* value,
     GError** error
   );
+  gboolean (* composite_peek_firmware) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuFirmware* firmware,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  );
   
 }</code></pre>
       </div>
@@ -1900,6 +1921,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
   )</code></dt>
           <dd><p>No description available.</p></dd>
         
+          <dt><code>composite_peek_firmware: gboolean (* composite_peek_firmware) (
+    FuPlugin* self,
+    FuDevice* device,
+    FuFirmware* firmware,
+    FuProgress* progress,
+    FwupdInstallFlags flags,
+    GError** error
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
         </dd>
       </div>
       
@@ -2077,6 +2108,16 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
       <div class="">
         <h6 id="vfunc-composite_cleanup"><a href="vfunc.Plugin.composite_cleanup.html">FwupdPlugin.PluginClass.composite_cleanup</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-composite_peek_firmware"><a href="vfunc.Plugin.composite_peek_firmware.html">FwupdPlugin.PluginClass.composite_peek_firmware</a></h6>
         <div class="docblock">
           No description available.
         </div>

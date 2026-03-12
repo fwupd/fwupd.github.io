@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -129,9 +129,12 @@ Nearly all TPMs in the wild have this behavior disabled, and are instead updated
 vendor-specific commands used from a <span class="caps">UEFI</span> UpdateCapsule and with an <span class="caps">OEM</span>-provided <span class="caps">ESRT</span>&nbsp;entry.</p>
 <p>If a vendor wanted to use the plugin code provided here they would still need to tell us how to
 set up the correct <code>keyHandle</code> for <code>FieldUpgradeStart</code> and how to handle&nbsp;authorization.</p>
-<p>We do not know of any vendor that does <span class="caps">TPM</span> updates using the standardized <span class="caps">API</span>, and so the code
+<blockquote>
+<p>[!<span class="caps">WARNING</span>]
+We do not know of any vendor that does <span class="caps">TPM</span> updates using the standardized <span class="caps">API</span>, and so the code
 provided here is more of a <em>this is how it should be implemented</em> rather than with any expectation
 it is actually going to just&nbsp;work.</p>
+</blockquote>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">TPM</span> vendor, e.g. <code>TPM:STM</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>

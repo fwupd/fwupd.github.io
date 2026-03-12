@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -114,9 +114,6 @@ implemented as ioctls like ethtool&nbsp;does.</p>
 <p>The device usually presents in runtime mode, and the firmware is written to the
 device without disconnecting the working kernel driver. Once complete the <span class="caps">APE</span>
 is reset which may cause a brief link&nbsp;reconnection.</p>
-<p>On flash failure the device is nonfunctional, but is recoverable using direct
-<span class="caps">BAR</span> writes, which is typically much slower than updating the device using the
-kernel driver and the ethtool <span class="caps">API</span>.</p>
 <h2 id="vendor-id-security">Vendor ID Security<a class="md-anchor" href="#vendor-id-security" title="Permanent link"></a></h2>
 <p>The vendor <span class="caps">ID</span> is set from the <span class="caps">PCI</span> vendor, in this instance set to <code>PCI:0x14E4</code></p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>

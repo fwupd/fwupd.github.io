@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -109,11 +109,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.DeviceEvent.copy_data.html">copy_data</a>
   
+    <a class="method" href="method.DeviceEvent.get_byte_array.html">get_byte_array</a>
+  
     <a class="method" href="method.DeviceEvent.get_bytes.html">get_bytes</a>
   
     <a class="method" href="method.DeviceEvent.get_i64.html">get_i64</a>
   
     <a class="method" href="method.DeviceEvent.get_str.html">get_str</a>
+  
+    <a class="method" href="method.DeviceEvent.set_byte_array.html">set_byte_array</a>
   
     <a class="method" href="method.DeviceEvent.set_bytes.html">set_bytes</a>
   
@@ -168,7 +172,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-device-event.c#L14">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-device-event.c#L15">[src]</a>
           
         </h4>
 
@@ -289,6 +293,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         </div>
       
         <div class="">
+          <h6><a href="method.DeviceEvent.get_byte_array.html">fu_device_event_get_byte_array</a></h6>
+          <div class="docblock">
+            <p>Gets a memory blob from the&nbsp;event.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.DeviceEvent.get_bytes.html">fu_device_event_get_bytes</a></h6>
           <div class="docblock">
             <p>Gets a memory blob from the&nbsp;event.</p>
@@ -315,6 +329,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.DeviceEvent.set_byte_array.html">fu_device_event_set_byte_array</a></h6>
+          <div class="docblock">
+            <p>Sets a blob on the event. Note: blobs are stored internally as <span class="caps">BASE</span>-64&nbsp;strings.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
           </div>
         </div>
       

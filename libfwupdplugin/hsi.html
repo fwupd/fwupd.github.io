@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -197,6 +197,25 @@ There are currently no tests implemented for <span class="caps">HSI</span>:5 and
 <h2 id="tests-included-in-fwupd"><a href="#tests">Tests included in fwupd</a><a class="md-anchor" href="#tests-included-in-fwupd" title="Permanent link"></a></h2>
 <p>The set of tests is currently x86 <span class="caps">UEFI</span>-centric, but will be expanded in the future for various <span class="caps">ARM</span> or <span class="caps">RISC</span>-V firmware protections as required.
 Where the requirement is architecture or processor specific it has been&nbsp;noted.</p>
+<p><a id="org.fwupd.hsi.Amd.PlatformSecureBoot"></a></p>
+<h3 id="amd-platform-secure-boot"><a href="#org.fwupd.hsi.Amd.PlatformSecureBoot">AMD Platform Secure Boot</a><a class="md-anchor" href="#amd-platform-secure-boot" title="Permanent link"></a></h3>
+<p>Platform secure boot is a processor feature that prevents the machine from running firmware images not released by the system&nbsp;manufacturer.</p>
+<p>It forms a root-of-trust by fusing in cryptographic keys into the processor&nbsp;itself.</p>
+<p><strong>Impact:</strong></p>
+<p>When Platform Secure boot is not set up then the chain-of-trust between the <span class="caps">CPU</span> and the bootloader can not be&nbsp;verified.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-enabled</code>: boot is not verified&nbsp;(failure)</li>
+<li><code>enabled</code>: Platform Secure Boot enabled&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v2.1.1]</em></p>
+<p><strong>Resolution:</strong> Contact your <span class="caps">OEM</span>, who may be able to issue a firmware&nbsp;update.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://www.ioactive.com/exploring-amd-platform-secure-boot/">PlatformSecureBoot&nbsp;article</a></li>
+</ul>
+<p><strong>Hardware&nbsp;requirements:</strong></p>
+<p>This attribute will only be available when using <span class="caps">AMD</span>&nbsp;CPUs.</p>
 <p><a id="org.fwupd.hsi.Amd.RollbackProtection"></a></p>
 <h3 id="amd-secure-processor-rollback-protection"><a href="#org.fwupd.hsi.Amd.RollbackProtection">AMD Secure Processor Rollback protection</a><a class="md-anchor" href="#amd-secure-processor-rollback-protection" title="Permanent link"></a></h3>
 <p><span class="caps">AMD</span> SOCs include the ability to prevent a rollback attack by a rollback protection feature on the secure&nbsp;processor.</p>
@@ -475,7 +494,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p><a id="org.fwupd.hsi.Kernel.Tainted"></a></p>
 <h3 id="kernel-tainted"><a href="#org.fwupd.hsi.Kernel.Tainted">Kernel Tainted</a><a class="md-anchor" href="#kernel-tainted" title="Permanent link"></a></h3>
 <p>When calculating the <span class="caps">HSI</span> value fwupd has to ask the Linux Kernel for&nbsp;information.</p>
-<p>If the kernel has been tainted by overriding a firmware table or by loading a proprietary module then we cannot trust the data it&nbsp;reports.</p>
+<p>If the kernel has been tainted by overriding a firmware table or by loading an out-of-tree module then we cannot trust the data it&nbsp;reports.</p>
 <p><strong>Impact:</strong></p>
 <p>Using a tainted kernel means that values obtained from the kernel cannot be&nbsp;trusted.</p>
 <p><strong>Possible&nbsp;results:</strong></p>
@@ -558,6 +577,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <ul>
 <li><code>not-valid</code>: affected by one of the critical CVEs&nbsp;(failure)</li>
 <li><code>valid</code>: is not affected by the most critical CVEs&nbsp;(success)</li>
+<li><code>not-enabled</code>: has been disabled using <span class="caps">HAP</span>&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v1.5.0]</em></p>
 <p><strong>Resolution:</strong> Update your Management Engine&nbsp;firmware</p>
@@ -1031,6 +1051,8 @@ As those become ratified standards that are available in hardware, there are opp
         <li class="toc-list-item"><a href="#tests-included-in-fwupd"><span class="link-text">Tests included in fwupd</span></a></li>
           
           <ul class="toc-list">
+          
+            <li class="toc-list-item"><a href="#amd-platform-secure-boot"><span class="link-text">AMD Platform Secure Boot</span></a></li>
           
             <li class="toc-list-item"><a href="#amd-secure-processor-rollback-protection"><span class="link-text">AMD Secure Processor Rollback protection</span></a></li>
           

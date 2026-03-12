@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -191,7 +191,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <a class="anchor" href="#has_checksum"></a>
           </dt>
           <dd>
-            <div><p>No description available.</p></div>
+            <div><p>Or <span class="caps">CRC</span>.</p></div>
             <ul>
               <li>Value: <code>4</code></li>
               
@@ -243,7 +243,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <a class="anchor" href="#always_search"></a>
           </dt>
           <dd>
-            <div><p>No description available.</p></div>
+            <div><p>Useful has an <em>unparsed</em> variable-length&nbsp;header.</p></div>
             <ul>
               <li>Value: <code>64</code></li>
               
@@ -256,7 +256,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <a class="anchor" href="#no_auto_detection"></a>
           </dt>
           <dd>
-            <div><p>No description available.</p></div>
+            <div><p>Has no known&nbsp;header.</p></div>
             <ul>
               <li>Value: <code>128</code></li>
               
@@ -282,7 +282,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <a class="anchor" href="#is_last_image"></a>
           </dt>
           <dd>
-            <div><p>No description available.</p></div>
+            <div><p>Use for FuLinearFirmware when padding is&nbsp;present.</p></div>
             <ul>
               <li>Value: <code>512</code></li>
               
@@ -295,9 +295,22 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <a class="anchor" href="#allow_linear"></a>
           </dt>
           <dd>
-            <div><p>No description available.</p></div>
+            <div><p>Parse as an array of&nbsp;firmwares.</p></div>
             <ul>
               <li>Value: <code>1024</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="is_abstract">FU_FIRMWARE_FLAG_IS_ABSTRACT</code>
+            <a class="anchor" href="#is_abstract"></a>
+          </dt>
+          <dd>
+            <div><p>Cannot parse a blob&nbsp;directly.</p></div>
+            <ul>
+              <li>Value: <code>2048</code></li>
               
               <li>Available since: 1.0</li>
             </ul>

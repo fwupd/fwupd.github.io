@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -508,7 +508,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-device-private.h#L99">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-device-private.h#L99">[src]</a>
         
       </h4>
 
@@ -516,7 +516,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">fu_device_from_json</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">FuDevice</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">JsonObject</span><span class="o">*</span><span class="w"> </span><span class="n">json_object</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FwupdJsonObject</span><span class="o">*</span><span class="w"> </span><span class="n">json_obj</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -560,9 +560,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           
 
           
-          <dt class="arg-name"><code>json_object</code></dt>
+          <dt class="arg-name"><code>json_obj</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.Object.html" data-namespace="Json" class="external"><code>JsonObject</code></a></p>
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.JsonObject.html" data-namespace="Fwupd" class="external"><code>FwupdJsonObject</code></a></p>
             <p>No description available.</p>
             <table>
             

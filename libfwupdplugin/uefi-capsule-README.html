@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -113,11 +113,14 @@ This can be satisfied either by the <a href="https://github.com/fwupd/fwupd-efi"
 than &#8220;Linux Firmware Updater&#8221; (with spaces) due to long-fixed <span class="caps">EFI</span> boot manager
 bugs. Many users will have these old <span class="caps">BIOS</span> versions installed and so we use the
 <code>use-legacy-bootmgr-desc</code> quirk to use the safe&nbsp;name.</p>
-<p>On some Lenovo hardware only one capsule is installable due to possible problems
+<blockquote>
+<p>[!<span class="caps">NOTE</span>]
+On some Lenovo hardware only one capsule is installable due to possible problems
 with the UpdateCapsule coalesce operation. As soon as one <span class="caps">UEFI</span> device has been
 scheduled for update the other <span class="caps">UEFI</span> devices found in the <span class="caps">ESRT</span> will be marked
 as <code>updatable-hidden</code> rather than <code>updatable</code>. Rebooting will restore them so
 they can be updated on next <span class="caps">OS</span>&nbsp;boot.</p>
+</blockquote>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 <span class="caps">EFI</span> capsule file&nbsp;format.</p>
@@ -156,8 +159,11 @@ aka <code>quad</code> format.</p>
 
 <p>There are more details about firmware version formats and a full list of all the different allowed
 values on the <a href="https://lvfs.readthedocs.io/en/latest/metainfo.html#version-format"><span class="caps">LVFS</span></a>.</p>
-<p><span class="caps">NOTE</span>: Firmware can require either the <code>quad</code> or <code>triplet</code> string version format, but it may be more
+<blockquote>
+<p>[!<span class="caps">TIP</span>]
+Firmware can require either the <code>quad</code> or <code>triplet</code> string version format, but it may be more
 portable to depend on the number &#8212; which will also work if the metadata has not been refreshed&nbsp;yet.</p>
+</blockquote>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <h3 id="capsule-update-on-disk">Capsule update on-disk<a class="md-anchor" href="#capsule-update-on-disk" title="Permanent link"></a></h3>
 <p>Described in  <a href="https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_6.pdf"><span class="caps">UEFI</span> specification</a>
@@ -204,8 +210,6 @@ option <em>EspLocation</em> in <code>/etc/fwupd/fwupd.conf</code>.</p>
 This alternative format may be needed for some early InsydeH2O&nbsp;firmwares.</p>
 <h3 id="flagsno-ux-capsule"><code>Flags=no-ux-capsule</code><a class="md-anchor" href="#flagsno-ux-capsule" title="Permanent link"></a></h3>
 <p>Do not use the additional <span class="caps">UX</span>&nbsp;capsule.</p>
-<h3 id="flagsuse-shim-unique"><code>Flags=use-shim-unique</code><a class="md-anchor" href="#flagsuse-shim-unique" title="Permanent link"></a></h3>
-<p>Use a unique shim filename to work around a common <span class="caps">BIOS</span>&nbsp;bug.</p>
 <h3 id="flagsuse-legacy-bootmgr-desc"><code>Flags=use-legacy-bootmgr-desc</code><a class="md-anchor" href="#flagsuse-legacy-bootmgr-desc" title="Permanent link"></a></h3>
 <p>Use the legacy boot manager description to work around a Lenovo <span class="caps">BIOS</span>&nbsp;bug.</p>
 <h3 id="flagssupports-boot-order-lock"><code>Flags=supports-boot-order-lock</code><a class="md-anchor" href="#flagssupports-boot-order-lock" title="Permanent link"></a></h3>
@@ -303,8 +307,6 @@ If this flag is set then the <code>RequireESPFreeSpace</code> config file option
             <li class="toc-list-item"><a href="#flagscod-indexed-filename"><span class="link-text">Flags=cod-indexed-filename</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsno-ux-capsule"><span class="link-text">Flags=no-ux-capsule</span></a></li>
-          
-            <li class="toc-list-item"><a href="#flagsuse-shim-unique"><span class="link-text">Flags=use-shim-unique</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsuse-legacy-bootmgr-desc"><span class="link-text">Flags=use-legacy-bootmgr-desc</span></a></li>
           

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -210,7 +210,7 @@ fu_foo_plugin_coldplug(FuPlugin *plugin, FuProgress *progress, GError **error)
     fu_device_get_version_bootloader(dev, &quot;0.1.2&quot;);
     fu_device_add_icon(dev, &quot;computer&quot;);
     fu_device_add_flag(dev, FWUPD_DEVICE_FLAG_UPDATABLE);
-    fu_plugin_device_add(plugin, dev);
+    fu_plugin_add_device(plugin, dev);
     return TRUE;
 }
 
@@ -588,13 +588,20 @@ before updating it is&nbsp;possible.</p>
 <p>If implemented, this takes care of decompressing or parsing the firmware
 data. For example, to check if the firmware is valid, if it&#8217;s suitable
 for the device,&nbsp;etc.</p>
-<p>It takes a stream of bytes (<code>GBytes</code>) as a parameter, representing the
+<p>It takes a stream of payload (<code>GInputStream</code>) as a parameter, representing the
 raw binary firmware&nbsp;data.</p>
+<p>If the firmware type can be set with <code>fu_device_set_firmware_gtype()</code> and
+parsed as a single image, then implementing <code>-&gt;check_firmware()</code> is usually a
+better choice than using <code>-&gt;prepare_firmware()</code>.</p>
 <p>It should create the firmware object and call the appropriate method to
 load the firmware. Otherwise, if it&#8217;s not implemented for the specific
 device type, the generic implementation in
 <a href="https://github.com/fwupd/fwupd/blob/main/libfwupdplugin/fu-device.c">libfwupdplugin/fu-device.c</a>:<code>fu_device_prepare_firmware()</code>
 creates a firmware object loaded with a provided&nbsp;image.</p>
+<h4 id="check_firmware">check_firmware<a class="md-anchor" href="#check_firmware" title="Permanent link"></a></h4>
+<p>If implemented, this checks that the firmware is compatible with the&nbsp;device.</p>
+<p>It takes a firmware subclass (e.g. a <code>FuIhexFirmware</code>) as a parameter, representing the
+parsed firmware&nbsp;data.</p>
 <h4 id="detach">detach<a class="md-anchor" href="#detach" title="Permanent link"></a></h4>
 <p>Implemented if the device needs to be put in bootloader mode before
 updating, this does all the necessary operations to put the device in

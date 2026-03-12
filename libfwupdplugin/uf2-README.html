@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -109,11 +109,11 @@ mounted again. In some cases the volume may not “come back” until the user
 manually puts the device back in programming&nbsp;mode.</p>
 <p>Match the block devices using the <span class="caps">VID</span>, <span class="caps">PID</span> and <span class="caps">UUID</span>, and then create a
 <span class="caps">UF2</span> device which can be used to flash&nbsp;firmware.</p>
-<p>Note: We only read metadata from allow-listed IDs to avoid causing regressions
-on non-<span class="caps">UF2</span> volumes. To get the <span class="caps">UUID</span> you can use commands&nbsp;like:</p>
-<div class="codehilite"><pre><span></span><code>udisksctl info -b /dev/sda1
-</code></pre></div>
-
+<blockquote>
+<p>[!<span class="caps">IMPORTANT</span>]
+We only read metadata from allow-listed IDs to avoid causing regressions on non-<span class="caps">UF2</span> volumes.
+To get the <span class="caps">UUID</span> you can use commands like <code>udisksctl info -b /dev/sda1</code></p>
+</blockquote>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 the <span class="caps">UF2</span> file&nbsp;format.</p>

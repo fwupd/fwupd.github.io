@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -109,9 +109,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>All devices handled by one object (FuCorsairDevice). Receivers with wireless-only
 devices will be shown as two entities: parent device as a receiver and wireless
 device as a child. Difference in behavior is handled by private&nbsp;flags.</p>
-<p>FuCorsairBp contains low-level protocol related routines. Device objects should
-call correct versions of these routines in order to update firmware. Correct
-routines chosen by device quirks and private&nbsp;flags.</p>
 <h2 id="wired-mice-update-behavior">Wired mice update behavior<a class="md-anchor" href="#wired-mice-update-behavior" title="Permanent link"></a></h2>
 <p>Mice and/or it&#8217;s wireless adapter must be connected to host via <span class="caps">USB</span> cable
 to apply an update. The device is switched to bootloader mode to flash
@@ -119,21 +116,26 @@ updates, and is reset automatically to new firmware after&nbsp;flashing.</p>
 <h2 id="wireless-mice-update-behavior">Wireless mice update behavior<a class="md-anchor" href="#wireless-mice-update-behavior" title="Permanent link"></a></h2>
 <p>The receiver should be connected to host and the mouse should be turned on
 and not&nbsp;sleeping.</p>
+<h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
+<p>These devices use the standard <span class="caps">USB</span> DeviceInstanceId values,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1B1C&amp;PID_1B94</code></li>
+</ul>
+<p>Additionally, an extra instance <span class="caps">ID</span> is used for the wireless subdevice,&nbsp;e.g.</p>
+<ul>
+<li><code>USB\VID_1B1C&amp;PID_1B94&amp;DEV_MOUSE</code></li>
+</ul>
 <h2 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h2>
 <p>This plugin uses the following plugin-specific&nbsp;quirks:</p>
 <h3 id="corsairvendorinterfaceid">CorsairVendorInterfaceId<a class="md-anchor" href="#corsairvendorinterfaceid" title="Permanent link"></a></h3>
 <p>Some devices have non-standard <span class="caps">USB</span> interface for protocol communication.
 This quirk should be set if protocol interface is not&nbsp;1.</p>
 <p>Since:&nbsp;1.8.0</p>
-<h3 id="corsairsubdeviceid">CorsairSubdeviceId<a class="md-anchor" href="#corsairsubdeviceid" title="Permanent link"></a></h3>
-<p>Specifies <span class="caps">ID</span> of any wireless child device which can be updated. Polling will
-be turned on if a subdevice is not connected when parent is being&nbsp;probed.</p>
+<h3 id="flagsis-receiver">Flags:is-receiver<a class="md-anchor" href="#flagsis-receiver" title="Permanent link"></a></h3>
+<p>This flag is used if the device is a wireless&nbsp;receiver.</p>
+<p>Since:&nbsp;2.1.1</p>
 <h3 id="flagslegacy-attach">Flags:legacy-attach<a class="md-anchor" href="#flagslegacy-attach" title="Permanent link"></a></h3>
-<p>This flag is used if legacy attach command should be&nbsp;used</p>
-<h3 id="flagsno-version-in-bl">Flags:no-version-in-bl<a class="md-anchor" href="#flagsno-version-in-bl" title="Permanent link"></a></h3>
-<p>This flag handles cases if device reports incorrect firmware version in bootloader&nbsp;mode.</p>
-<h3 id="flagsis-subdevice">Flags:is-subdevice<a class="md-anchor" href="#flagsis-subdevice" title="Permanent link"></a></h3>
-<p>This flag tells device that it is a child device. All subdevice behavior tweaks will be&nbsp;applied.</p>
+<p>This flag is used if legacy attach command should be&nbsp;used.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
 <p>This plugin has been available since fwupd version <code>1.8.0</code>.</p>
     </div>
@@ -160,19 +162,18 @@ be turned on if a subdevice is not connected when parent is being&nbsp;probed.</
         <li class="toc-list-item"><a href="#wireless-mice-update-behavior"><span class="link-text">Wireless mice update behavior</span></a></li>
           
         
+        <li class="toc-list-item"><a href="#guid-generation"><span class="link-text">GUID Generation</span></a></li>
+          
+        
         <li class="toc-list-item"><a href="#quirk-use"><span class="link-text">Quirk Use</span></a></li>
           
           <ul class="toc-list">
           
             <li class="toc-list-item"><a href="#corsairvendorinterfaceid"><span class="link-text">CorsairVendorInterfaceId</span></a></li>
           
-            <li class="toc-list-item"><a href="#corsairsubdeviceid"><span class="link-text">CorsairSubdeviceId</span></a></li>
+            <li class="toc-list-item"><a href="#flagsis-receiver"><span class="link-text">Flags:is-receiver</span></a></li>
           
             <li class="toc-list-item"><a href="#flagslegacy-attach"><span class="link-text">Flags:legacy-attach</span></a></li>
-          
-            <li class="toc-list-item"><a href="#flagsno-version-in-bl"><span class="link-text">Flags:no-version-in-bl</span></a></li>
-          
-            <li class="toc-list-item"><a href="#flagsis-subdevice"><span class="link-text">Flags:is-subdevice</span></a></li>
           
           </ul>
           

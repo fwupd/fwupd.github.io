@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -88,6 +88,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method current" href="type_func.Firmware.flags_to_string.html">flags_to_string</a>
+  
+    <a class="method" href="type_func.Firmware.roundtrip_from_filename.html">roundtrip_from_filename</a>
+  
+    <a class="method" href="type_func.Firmware.roundtrip_from_xml.html">roundtrip_from_xml</a>
   
     <a class="method" href="type_func.Firmware.strparse_uint16_safe.html">strparse_uint16_safe</a>
   
@@ -125,7 +129,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-firmware-struct.h#L34">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-firmware-struct.h#L161">[src]</a>
         
       </h4>
 
@@ -144,10 +148,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-firmware-struct.c#L21">[src]</a>
+        
       </h4>
 
       <div class="docblock">
-        <p>No description available.</p>
+        <p>Converts an enumerated value to a&nbsp;string.</p>
       </div>
 
       <div class="docblock">
@@ -176,7 +182,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <dt class="arg-name"><code>val</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<a href="flags.FirmwareFlags.html"><code>FuFirmwareFlags</code></a></p>
-            <p>No description available.</p>
+            <p>Value, e.g. <code>FU_FIRMWARE_FLAG_DEDUPE_ID</code>.</p>
             <table>
             
             
@@ -208,7 +214,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gchar*</code></p>
-            <p>No description available.</p>
+            <p>Identifier&nbsp;string.</p>
           </div>
           <div>
             <table>

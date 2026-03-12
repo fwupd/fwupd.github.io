@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -88,6 +88,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a href="#interfaces">Interfaces</a>
   
+  
+    <a href="#structs">Structs</a>
   
   
   
@@ -131,10 +133,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <a href="https://docs.gtk.org/gio/" class="external">Gio</a>
     
   
-    
-      <a href="https://gnome.pages.gitlab.gnome.org/json-glib/" class="external">Json</a>
-    
-  
   </div>
 </div>
 
@@ -158,7 +156,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.0.18</td></tr>
+        <tr><td><em>Version</em></td><td>2.1.1</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -218,17 +216,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <tr>
             <td></td>
             <td><a href="https://docs.gtk.org/gio/" class="external">Browse documentation</a></td>
-          </tr>
-          
-        
-          
-          <tr>
-            <td><strong>Json</strong>&mdash;1.0</td>
-            <td>API for efficient parsing and writing of JSON (JavaScript Object Notation) streams</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><a href="https://gnome.pages.gitlab.gnome.org/json-glib/" class="external">Browse documentation</a></td>
           </tr>
           
         
@@ -298,6 +285,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             
             <td class="docblock-summary">
             <p>A physical device on the host with optionally updatable&nbsp;firmware.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonParser" class="symbol" href="class.JsonParser.html">JsonParser</a></td>
+            
+            <td class="docblock-summary">
+            <p>A streaming tokenizer <span class="caps">JSON</span> parser that is resistant to malicious&nbsp;input.</p>
             <p></p>
             </td>
             
@@ -398,6 +395,53 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   </section>
   
   
+  <section>
+    <div class="toggle-wrapper default-hide">
+      <h4 id="structs" class="section-header" style="display:flex;">
+        Structs
+        <a href="#structs" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table style="display:block;">
+          <tbody>
+          
+          <tr class="section-item">
+            <td><a title="JsonArray" class="symbol" href="struct.JsonArray.html">JsonArray</a></td>
+            
+            <td class="docblock-summary">
+            <p>A <span class="caps">JSON</span>&nbsp;array.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonNode" class="symbol" href="struct.JsonNode.html">JsonNode</a></td>
+            
+            <td class="docblock-summary">
+            <p>A <span class="caps">JSON</span>&nbsp;node.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonObject" class="symbol" href="struct.JsonObject.html">JsonObject</a></td>
+            
+            <td class="docblock-summary">
+            <p>A <span class="caps">JSON</span>&nbsp;object.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
   
   
   <section>
@@ -444,6 +488,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             
             <td class="docblock-summary">
             <p>The type of <span class="caps">BIOS</span>&nbsp;setting.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonNodeKind" class="symbol" href="enum.JsonNodeKind.html">JsonNodeKind</a></td>
+            
+            <td class="docblock-summary">
+            <p><span class="caps">JSON</span> node&nbsp;kind.</p>
             <p></p>
             </td>
             
@@ -523,7 +577,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <td><a title="VersionFormat" class="symbol" href="enum.VersionFormat.html">VersionFormat</a></td>
             
             <td class="docblock-summary">
-            <p>The flags used when parsing version&nbsp;numbers.</p>
+            <p>The flags used when parsing version numbers.
+If no verification is required then <code>PLAIN</code> should be used to signify an unparsable text&nbsp;string.</p>
             <p></p>
             </td>
             
@@ -591,7 +646,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <td><a title="DeviceProblem" class="symbol" href="flags.DeviceProblem.html">DeviceProblem</a></td>
             
             <td class="docblock-summary">
-            <p>Problems are reasons why the device is not&nbsp;updatable.</p>
+            <p>Problems are reasons why the device is not updatable.
+All problems have to be fixable by the user, rather than the plugin&nbsp;author.</p>
             <p></p>
             </td>
             
@@ -622,6 +678,26 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             
             <td class="docblock-summary">
             <p>Flags to set when performing the firmware update or&nbsp;install.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonExportFlags" class="symbol" href="flags.JsonExportFlags.html">JsonExportFlags</a></td>
+            
+            <td class="docblock-summary">
+            <p><span class="caps">JSON</span> export&nbsp;flags.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JsonLoadFlags" class="symbol" href="flags.JsonLoadFlags.html">JsonLoadFlags</a></td>
+            
+            <td class="docblock-summary">
+            <p><span class="caps">JSON</span> load&nbsp;flags.</p>
             <p></p>
             </td>
             
@@ -838,7 +914,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <td><a title="feature_flag_from_string" class="symbol" href="func.feature_flag_from_string.html">feature_flag_from_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts a string to an enumerated feature&nbsp;flag.</p>
+            <p>Converts a string to an enumerated&nbsp;value.</p>
             <p><span class="emblem available">since: 1.4.5</span></p>
             </td>
             
@@ -848,7 +924,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <td><a title="feature_flag_to_string" class="symbol" href="func.feature_flag_to_string.html">feature_flag_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts a feature flag to a&nbsp;string.</p>
+            <p>Converts an enumerated value to a&nbsp;string.</p>
             <p><span class="emblem available">since: 1.4.5</span></p>
             </td>
             
@@ -911,7 +987,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="install_flags_from_string" class="symbol" href="func.install_flags_from_string.html">install_flags_from_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts text to an install&nbsp;flag.</p>
+            <p>Converts a string to an enumerated&nbsp;value.</p>
             <p><span class="emblem available">since: 2.0.4</span></p>
             </td>
             
@@ -921,7 +997,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="install_flags_to_string" class="symbol" href="func.install_flags_to_string.html">install_flags_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts an install flag to&nbsp;text.</p>
+            <p>Converts an enumerated value to a&nbsp;string.</p>
             <p><span class="emblem available">since: 2.0.0</span></p>
             </td>
             
@@ -931,7 +1007,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="status_from_string" class="symbol" href="func.status_from_string.html">status_from_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts a string to an enumerated&nbsp;status.</p>
+            <p>Converts a string to an enumerated&nbsp;value.</p>
             <p><span class="emblem available">since: 0.1.1</span></p>
             </td>
             
@@ -941,7 +1017,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="status_to_string" class="symbol" href="func.status_to_string.html">status_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts an enumerated status to a&nbsp;string.</p>
+            <p>Converts an enumerated value to a&nbsp;string.</p>
             <p><span class="emblem available">since: 0.1.1</span></p>
             </td>
             
@@ -961,7 +1037,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="update_state_from_string" class="symbol" href="func.update_state_from_string.html">update_state_from_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts a string to an enumerated update&nbsp;state.</p>
+            <p>Converts a string to an enumerated&nbsp;value.</p>
             <p><span class="emblem available">since: 0.7.0</span></p>
             </td>
             
@@ -971,8 +1047,28 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="update_state_to_string" class="symbol" href="func.update_state_to_string.html">update_state_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts an enumerated update state to a&nbsp;string.</p>
+            <p>Converts an enumerated value to a&nbsp;string.</p>
             <p><span class="emblem available">since: 0.7.0</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="variant_get_uint32" class="symbol" href="func.variant_get_uint32.html">variant_get_uint32</a></td>
+            
+            <td class="docblock-summary">
+            <p>Gets an unsigned integer from a variant, handling both &#8216;u&#8217; and &#8216;i&#8217;&nbsp;types.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="variant_get_uint64" class="symbol" href="func.variant_get_uint64.html">variant_get_uint64</a></td>
+            
+            <td class="docblock-summary">
+            <p>Gets an unsigned integer from a variant, handling both &#8216;t&#8217; and &#8216;x&#8217;&nbsp;types.</p>
+            <p></p>
             </td>
             
           </tr>
@@ -981,7 +1077,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="version_format_from_string" class="symbol" href="func.version_format_from_string.html">version_format_from_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts text to a display version&nbsp;type.</p>
+            <p>Converts a string to an enumerated&nbsp;value.</p>
             <p><span class="emblem available">since: 1.2.9</span></p>
             </td>
             
@@ -991,7 +1087,7 @@ differences in the <code>str</code> will produce radically different return&nbsp
             <td><a title="version_format_to_string" class="symbol" href="func.version_format_to_string.html">version_format_to_string</a></td>
             
             <td class="docblock-summary">
-            <p>Converts an enumerated version format to&nbsp;text.</p>
+            <p>Converts an enumerated value to a&nbsp;string.</p>
             <p><span class="emblem available">since: 1.2.9</span></p>
             </td>
             
@@ -1075,6 +1171,16 @@ be&nbsp;discovered.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="BIOS_SETTING_KIND_LAST" class="symbol" href="const.BIOS_SETTING_KIND_LAST.html">BIOS_SETTING_KIND_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="BIOS_SETTING_PENDING_REBOOT" class="symbol" href="const.BIOS_SETTING_PENDING_REBOOT.html">BIOS_SETTING_PENDING_REBOOT</a></td>
             
             <td class="docblock-summary">
@@ -1145,6 +1251,26 @@ be&nbsp;discovered.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="ERROR_LAST" class="symbol" href="const.ERROR_LAST.html">ERROR_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="JSON_NODE_KIND_LAST" class="symbol" href="const.JSON_NODE_KIND_LAST.html">JSON_NODE_KIND_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="MAJOR_VERSION" class="symbol" href="const.MAJOR_VERSION.html">MAJOR_VERSION</a></td>
             
             <td class="docblock-summary">
@@ -1169,6 +1295,26 @@ be&nbsp;discovered.</p>
             
             <td class="docblock-summary">
             <p>The compile-time minor&nbsp;version.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RELEASE_URGENCY_LAST" class="symbol" href="const.RELEASE_URGENCY_LAST.html">RELEASE_URGENCY_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="REMOTE_KIND_LAST" class="symbol" href="const.REMOTE_KIND_LAST.html">REMOTE_KIND_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -1263,6 +1409,16 @@ be&nbsp;discovered.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="REQUEST_KIND_LAST" class="symbol" href="const.REQUEST_KIND_LAST.html">REQUEST_KIND_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="RESULT_KEY_APPSTREAM_ID" class="symbol" href="const.RESULT_KEY_APPSTREAM_ID.html">RESULT_KEY_APPSTREAM_ID</a></td>
             
             <td class="docblock-summary">
@@ -1299,6 +1455,16 @@ Expressed from 0-100%, or 101 for invalid or&nbsp;unset.</p>
             
             <td class="docblock-summary">
             <p>Result key to represent the current value of <span class="caps">BIOS</span>&nbsp;setting.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RESULT_KEY_BIOS_SETTING_FILENAME" class="symbol" href="const.RESULT_KEY_BIOS_SETTING_FILENAME.html">RESULT_KEY_BIOS_SETTING_FILENAME</a></td>
+            
+            <td class="docblock-summary">
+            <p>Result key to represent the filename within <code>path</code> for <span class="caps">BIOS</span> setting value&nbsp;operations.</p>
             <p></p>
             </td>
             
@@ -2099,6 +2265,16 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_AMD_PLATFORM_SECURE_BOOT" class="symbol" href="const.SECURITY_ATTR_ID_AMD_PLATFORM_SECURE_BOOT.html">SECURITY_ATTR_ID_AMD_PLATFORM_SECURE_BOOT</a></td>
+            
+            <td class="docblock-summary">
+            <p>Host Security <span class="caps">ID</span> attribute for Platform Secure Boot of <span class="caps">AMD</span> platform&nbsp;firmware.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION" class="symbol" href="const.SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION.html">SECURITY_ATTR_ID_AMD_ROLLBACK_PROTECTION</a></td>
             
             <td class="docblock-summary">
@@ -2223,6 +2399,16 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
             
             <td class="docblock-summary">
             <p>Host Security <span class="caps">ID</span> attribute for host&nbsp;emulation.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_ID_HP_SURESTART" class="symbol" href="const.SECURITY_ATTR_ID_HP_SURESTART.html">SECURITY_ATTR_ID_HP_SURESTART</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             
@@ -2563,6 +2749,56 @@ or maximum length for string <span class="caps">BIOS</span>&nbsp;setting.</p>
             
             <td class="docblock-summary">
             <p>Host Security <span class="caps">ID</span> attribute for <span class="caps">UEFI</span> secure&nbsp;boot.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_LEVEL_LAST" class="symbol" href="const.SECURITY_ATTR_LEVEL_LAST.html">SECURITY_ATTR_LEVEL_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="SECURITY_ATTR_RESULT_LAST" class="symbol" href="const.SECURITY_ATTR_RESULT_LAST.html">SECURITY_ATTR_RESULT_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="STATUS_LAST" class="symbol" href="const.STATUS_LAST.html">STATUS_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="UPDATE_STATE_LAST" class="symbol" href="const.UPDATE_STATE_LAST.html">UPDATE_STATE_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="VERSION_FORMAT_LAST" class="symbol" href="const.VERSION_FORMAT_LAST.html">VERSION_FORMAT_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
             <p></p>
             </td>
             

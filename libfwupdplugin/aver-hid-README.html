@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -100,13 +100,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <p>The AVer <span class="caps">HID</span> In-System-Programming plugin is used for various products that can be updated using
 a proprietary <span class="caps">HID</span>&nbsp;protocol.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
-<p>The daemon will decompress the cabinet archive and extract a firmware blob in
-a packed binary file&nbsp;format.</p>
-<p>This plugin supports the following protocol <span class="caps">ID</span>:</p>
+<p>The daemon will decompress the cabinet archive and&nbsp;load:</p>
 <ul>
-<li><code>com.aver.hid</code></li>
-<li><code>com.aver.safeisp</code></li>
+<li><span class="caps">HID</span>: a <code>.tar.bz2</code> payload, typically with extension <code>.audio.dat</code></li>
+<li>SafeISP: a zip archive containing the compressed payload files, e.g. <code>update/cx3uvc.img</code></li>
 </ul>
+<p>This plugin supports the following protocol&nbsp;IDs:</p>
+<ul>
+<li><code>com.aver.hid2</code></li>
+<li><code>com.aver.safeisp2</code></li>
+</ul>
+<p>Versions of fwupd prior to 2.1.1 Aver <span class="caps">HID</span> expected the firmware payload to be composed of compressed
+images inside an <code>archive.tar.bz2</code> themselves inside another <code>archive.tar.bz2</code>; these used the
+protocol values of <code>com.aver.hid</code> and <code>com.aver.safeisp</code>.</p>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
 <p>These devices use the standard DeviceInstanceId values,&nbsp;e.g.</p>
 <ul>

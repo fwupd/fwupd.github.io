@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -173,16 +173,14 @@ the exact same hardware, both available on the <span class="caps">LVFS</span>.</
 <p><strong>local-install</strong>: Install a local firmware archive. The regular <strong>install</strong> will also fall back to this if the first argument is a local file that&nbsp;exists.</p>
 <p><strong>activate</strong>: Set the installed firmware version as running, which may mean the device becomes offline or unresponsive for a few&nbsp;moments.</p>
 <p><strong>sync</strong>: Install all releases with a matching <span class="caps">BKC</span> tag if a &#8220;Best Known Configuration&#8221; has been set for the local&nbsp;machine.</p>
-<h3 id="approved-and-blocked-firmware">Approved and Blocked Firmware<a class="md-anchor" href="#approved-and-blocked-firmware" title="Permanent link"></a></h3>
-<p>The following actions can be used to block or allow specific firmware releases from being&nbsp;installed:</p>
-<p><strong>get-blocked-firmware</strong>: Gets the list of blocked firmware as a list of&nbsp;checksums.</p>
-<p><strong>block-firmware</strong>: Blocks a specific firmware from being installed by <strong>install</strong> or <strong>update</strong>.</p>
-<p><strong>unblock-firmware</strong>: Unblocks a specific firmware from being installed or&nbsp;updated.</p>
+<h3 id="approved-firmware">Approved Firmware<a class="md-anchor" href="#approved-firmware" title="Permanent link"></a></h3>
+<p>The following actions can be used to allow specific firmware releases from being&nbsp;installed:</p>
 <p>The following actions can be used to control the allowlist of specific&nbsp;firmwares:</p>
-<p><strong>set-approved-firmware</strong>: Sets the list of approved firmware.
-Once the allow-list has been set to a non-empty value only firmware matching these checksums will be&nbsp;installable.</p>
+<p><strong>set-approved-firmware</strong>: Sets the list of approved firmware for remotes.
+Once the allow-list has been set to a non-empty value only firmware matching these checksums will be marked as installable.
+It is still possible to install firmware &#8220;manually&#8221; using <code>fwupdmgr install</code> &#8212; this setting only affects firmware updates referenced in enabled remotes with the <code>ApprovalRequired=true</code> setting.</p>
 <p><strong>get-approved-firmware</strong>: Gets the list of approved firmware, returning an empty list if there is no allow-list in&nbsp;place.</p>
-<p>The checksums used for allowing or disallowing are the cabinet archive checksums in <span class="caps">SHA</span>-1 or <span class="caps">SHA</span>-256&nbsp;format.</p>
+<p>The checksums used for allowing are the cabinet archive checksums in <span class="caps">SHA</span>-1 or <span class="caps">SHA</span>-256&nbsp;format.</p>
 <h3 id="emulation">Emulation<a class="md-anchor" href="#emulation" title="Permanent link"></a></h3>
 <p>Device emulation allows recording the device behavior so that we can replay the device responses
 and test writing firmware without that actual hardware plugged&nbsp;in.</p>
@@ -277,7 +275,7 @@ and &#8220;3&#8221; is used when a resource was not&nbsp;found.</p>
           
             <li class="toc-list-item"><a href="#deploying-firmware"><span class="link-text">Deploying Firmware</span></a></li>
           
-            <li class="toc-list-item"><a href="#approved-and-blocked-firmware"><span class="link-text">Approved and Blocked Firmware</span></a></li>
+            <li class="toc-list-item"><a href="#approved-firmware"><span class="link-text">Approved Firmware</span></a></li>
           
             <li class="toc-list-item"><a href="#emulation"><span class="link-text">Emulation</span></a></li>
           

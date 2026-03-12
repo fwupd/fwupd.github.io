@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -124,6 +124,10 @@ an unspecified binary file&nbsp;format.</p>
 <ul>
 <li><code>ELANTP\ICTYPE_09&amp;MOD_1234</code></li>
 </ul>
+<p>Additionally another instance <span class="caps">ID</span> is added which corresponds to the <span class="caps">IC</span> type, module <span class="caps">ID</span> and&nbsp;part:</p>
+<ul>
+<li><code>ELANTP\ICTYPE_09&amp;MOD_1234&amp;PART_MCU</code></li>
+</ul>
 <p>Additionally another instance <span class="caps">ID</span> is added which corresponds to the <span class="caps">IC</span> Type <span class="amp">&amp;</span> module <span class="caps">ID</span> and Driver in order to distinguish <span class="caps">HID</span>/<span class="caps">ABS</span>&nbsp;devices:</p>
 <ul>
 <li><code>ELANTP\ICTYPE_09&amp;MOD_1234&amp;DRIVER_HID</code> -&gt; <span class="caps">HID</span>&nbsp;Device</li>
@@ -149,6 +153,9 @@ recovered by the same i2c&nbsp;device.</p>
 <h3 id="elantpiappassword">ElantpIapPassword<a class="md-anchor" href="#elantpiappassword" title="Permanent link"></a></h3>
 <p>The <span class="caps">IAP</span>&nbsp;password.</p>
 <p>Since:&nbsp;1.4.6</p>
+<h3 id="flagscan-query-haptic-function">Flags=can-query-haptic-function<a class="md-anchor" href="#flagscan-query-haptic-function" title="Permanent link"></a></h3>
+<p>The <span class="caps">IC</span> supports querying the haptic&nbsp;functionality.</p>
+<p>Since:&nbsp;2.1.1</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires ioctl access to <code>HIDIOCSFEATURE</code> and <code>HIDIOCGFEATURE</code>.</p>
 <h2 id="version-considerations">Version Considerations<a class="md-anchor" href="#version-considerations" title="Permanent link"></a></h2>
@@ -187,6 +194,8 @@ recovered by the same i2c&nbsp;device.</p>
             <li class="toc-list-item"><a href="#elantpicpagecount"><span class="link-text">ElantpIcPageCount</span></a></li>
           
             <li class="toc-list-item"><a href="#elantpiappassword"><span class="link-text">ElantpIapPassword</span></a></li>
+          
+            <li class="toc-list-item"><a href="#flagscan-query-haptic-function"><span class="link-text">Flags=can-query-haptic-function</span></a></li>
           
           </ul>
           

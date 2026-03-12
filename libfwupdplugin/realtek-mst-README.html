@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -106,8 +106,11 @@ the device is connected for a given&nbsp;system.</p>
 identified partially through the presence of Realtek&#8217;s <span class="caps">OUI</span> in the Branch
 Device <span class="caps">OUI</span> fields of <span class="caps">DPCD</span> (DisplayPort Configuration Data), they do not have
 unique Device Identification&nbsp;strings.</p>
-<p>This plugin was neither written, verified, supported or endorsed by Realtek
+<blockquote>
+<p>[!<span class="caps">CAUTION</span>]
+This plugin was neither written, verified, supported or endorsed by Realtek
 Semiconductor&nbsp;Corp.</p>
+</blockquote>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>
 <p>The daemon will decompress the cabinet archive and extract a firmware blob in
 an unspecified binary file format, which is written to the partition of the

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -104,8 +104,7 @@ how the firmware should be matched to&nbsp;hardware.</p>
 a <code>.jcat</code> file also included in the image.
 The original firmware is never modified, which is why the <a href="https://github.com/hughsie/libjcat">Jcat</a>
 file exists as both a detached checksum (<span class="caps">SHA</span>-1, <span class="caps">SHA</span>-256 and <span class="caps">SHA</span>-512) and a detached signature.
-The <span class="caps">LVFS</span> can add either <span class="caps">GPG</span> or <span class="caps">PKCS</span>#7 signatures in the Jcat file, and currently does <em>both</em> for
-maxmum compatibility with how client systems have been&nbsp;configured.</p>
+The <span class="caps">LVFS</span> uses several <span class="caps">PKCS</span>#7 signatures in the Jcat&nbsp;file.</p>
 <p>The keys in <code>/etc/pki/fwupd</code> and <code>/etc/pki/fwupd-metadata</code> are used for per-system trust and are
 currently used for &#8220;did the firmware update <em>come from</em> somewhere I trust&#8221; rather than &#8220;verify the
 vendor signed the update&#8221; &#8212; on the logic the &#8220;signed the update&#8221; is probably already covered by

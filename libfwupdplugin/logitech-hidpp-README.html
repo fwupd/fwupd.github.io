@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -180,11 +180,8 @@ paired&nbsp;devices.</p>
 </ul>
 <p>FuLogitechHidppDevice effectively handles all devices that use the
 <span class="caps">HID</span>++2.0&nbsp;protocol.</p>
-<p>Every device contains two updatable entities, the main application <span class="caps">FW</span>
-and the radio stack <span class="caps">FW</span> (SoftDevice). The latter will show up as a child
-device of the actual device and is handled by FuLogitechHidppRadio
-(fu-logitech-hidpp-radio.c), which simply defers to the parent device
-for most&nbsp;operations.</p>
+<p>Every device contains two updatable entities, the main application <span class="caps">FW</span> and the radio stack <span class="caps">FW</span> (SoftDevice).
+The SoftDevice must be updated at the same time as the main application and is not exposed as a child&nbsp;device.</p>
 <h3 id="quirk-use">Quirk Use<a class="md-anchor" href="#quirk-use" title="Permanent link"></a></h3>
 <p>Even though the same code handles multiple different devices, there are
 some inherent differences in them that makes it necessary to handle some
@@ -206,9 +203,6 @@ specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</p>
 <p>Since:&nbsp;1.7.0</p>
 <h3 id="flagsno-request-required"><code>Flags=no-request-required</code><a class="md-anchor" href="#flagsno-request-required" title="Permanent link"></a></h3>
 <p>No user-action is required for detach and&nbsp;attach.</p>
-<p>Since:&nbsp;1.7.0</p>
-<h3 id="flagsadd-radio"><code>Flags=add-radio</code><a class="md-anchor" href="#flagsadd-radio" title="Permanent link"></a></h3>
-<p>The device should add a softdevice (index 0x5), typically a&nbsp;radio.</p>
 <p>Since:&nbsp;1.7.0</p>
 <h2 id="external-interface-access">External Interface Access<a class="md-anchor" href="#external-interface-access" title="Permanent link"></a></h2>
 <p>This plugin requires read/write access to <code>/dev/bus/usb</code>.</p>
@@ -258,8 +252,6 @@ specific <span class="caps">HID</span>++ <span class="caps">ID</span>.</p>
             <li class="toc-list-item"><a href="#flagsis-signed"><span class="link-text">Flags=is-signed</span></a></li>
           
             <li class="toc-list-item"><a href="#flagsno-request-required"><span class="link-text">Flags=no-request-required</span></a></li>
-          
-            <li class="toc-list-item"><a href="#flagsadd-radio"><span class="link-text">Flags=add-radio</span></a></li>
           
           </ul>
           

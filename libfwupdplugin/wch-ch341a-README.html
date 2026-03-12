@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -110,10 +110,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 7    D7/22   SO/2    DIN
 </code></pre></div>
 
-<p><span class="caps">IMPORTANT</span> <span class="caps">NOTE</span>:</p>
-<p>You must perform the 3.3V signal output modification if you are using the <span class="caps">CH341A</span> with 3.3V <span class="caps">SPI</span>
+<blockquote>
+<p>[!<span class="caps">WARNING</span>]
+You must perform the 3.3V signal output modification if you are using the <span class="caps">CH341A</span> with 3.3V <span class="caps">SPI</span>
 chips. The <span class="caps">CH341A</span> has a design flaw that outputs 5V on the <span class="caps">MISO</span> and <span class="caps">MOSI</span> pins even when <span class="caps">VCC</span> is 3V
 which will almost certainly be out-of-specification for the device you are trying to&nbsp;program.</p>
+</blockquote>
 <p><img alt="CH341A Signal Output Modification" src="wch-ch341a-vmod.png" /></p>
 <p>See <a href="https://www.chucknemeth.com/usb-devices/wch-ch341a/3v-wch-ch341a-mod">this guide</a> for more&nbsp;details.</p>
 <h2 id="firmware-format">Firmware Format<a class="md-anchor" href="#firmware-format" title="Permanent link"></a></h2>

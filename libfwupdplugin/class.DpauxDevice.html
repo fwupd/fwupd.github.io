@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -102,6 +102,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.DpauxDevice.get_dpcd_ieee_oui.html">get_dpcd_ieee_oui</a>
   
+    <a class="method" href="method.DpauxDevice.get_dpcd_offset.html">get_dpcd_offset</a>
+  
     <a class="method" href="method.DpauxDevice.read.html">read</a>
   
     <a class="method" href="method.DpauxDevice.set_dpcd_dev_id.html">set_dpcd_dev_id</a>
@@ -109,6 +111,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.DpauxDevice.set_dpcd_hw_rev.html">set_dpcd_hw_rev</a>
   
     <a class="method" href="method.DpauxDevice.set_dpcd_ieee_oui.html">set_dpcd_ieee_oui</a>
+  
+    <a class="method" href="method.DpauxDevice.set_dpcd_offset.html">set_dpcd_offset</a>
   
     <a class="method" href="method.DpauxDevice.write.html">write</a>
   
@@ -164,7 +168,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupdplugin/fu-dpaux-device.c#L18">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-dpaux-device.c#L18">[src]</a>
           
         </h4>
 
@@ -286,6 +290,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         </div>
       
         <div class="">
+          <h6><a href="method.DpauxDevice.get_dpcd_offset.html">fu_dpaux_device_get_dpcd_offset</a></h6>
+          <div class="docblock">
+            <p>Gets the <span class="caps">DPCD</span>&nbsp;offset.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="method.DpauxDevice.read.html">fu_dpaux_device_read</a></h6>
           <div class="docblock">
             <p>Read multiple bytes from the <span class="caps">DP</span> <span class="caps">AUX</span>&nbsp;device.</p>
@@ -322,6 +336,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.9.8</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.DpauxDevice.set_dpcd_offset.html">fu_dpaux_device_set_dpcd_offset</a></h6>
+          <div class="docblock">
+            <p>Sets the <span class="caps">DPCD</span> offset. Must be either <code>FU_DPAUX_DEVICE_DPCD_OFFSET_SOURCE_DEVICE</code>,
+<code>FU_DPAUX_DEVICE_DPCD_OFFSET_SINK_DEVICE</code>, or <code>FU_DPAUX_DEVICE_DPCD_OFFSET_BRANCH_DEVICE</code>.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 2.1.1</span></p>
           </div>
         </div>
       

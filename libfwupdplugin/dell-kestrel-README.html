@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -169,12 +169,18 @@ phase. The Power Button <span class="caps">LED</span> of the dock will flash thr
 update is&nbsp;completed.</p>
 <p>There are two ways to trigger the staged firmware, and the update behavior can
 be adjusted via the plugin configuration <code>UpdateOnDisconnect</code>.</p>
+<p>fwupd versions with <span class="caps">UOC</span> approach are listed below, otherwise use <span class="caps">UOD</span>.</p>
+<ul>
+<li>1.9.33</li>
+<li>2.0.17</li>
+<li>2.0.18</li>
+<li>2.0.19</li>
+</ul>
 <h3 id="update-on-connected-uoc">Update on Connected (UOC)<a class="md-anchor" href="#update-on-connected-uoc" title="Permanent link"></a></h3>
 <p>When all the component updates are installed and staged to the dock, the dock
 reboots the devices to activate the new version immediately. The connected
 peripherals on the dock side will be disconnected from the host, and take a few
 minutes to&nbsp;finish.</p>
-<p>Starting from fwupd <code>2.0.17</code>, or <code>1.9.33</code>, this is the default update&nbsp;behavior.</p>
 <h3 id="update-on-disconnected-uod">Update on Disconnected (UOD)<a class="md-anchor" href="#update-on-disconnected-uod" title="Permanent link"></a></h3>
 <p>Staged updates are activated when the dock&#8217;s Type-C cable is disconnected from
 the host, while the power cable must remain connected to support the update process.

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.0.18</p>
+        <p>Library Version: 2.1.1</p>
         
       </div>
       
@@ -109,14 +109,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupd/fwupd-enums.h#L1451">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupd/fwupd-enums-struct.h#L347">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span>
 <span class="n">fwupd_update_state_to_string</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">FwupdUpdateState</span><span class="w"> </span><span class="n">update_state</span>
+<span class="w">  </span><span class="n">FwupdUpdateState</span><span class="w"> </span><span class="n">val</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -128,12 +128,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.0.18/libfwupd/fwupd-enums.c#L507">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupd/fwupd-enums-struct.c#L256">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Converts an enumerated update state to a&nbsp;string.</p>
+        <p>Converts an enumerated value to a&nbsp;string.</p>
       </div>
 
       <div class="docblock">
@@ -159,10 +159,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>update_state</code></dt>
+          <dt class="arg-name"><code>val</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<a href="enum.UpdateState.html"><code>FwupdUpdateState</code></a></p>
-            <p>The update state, e.g. <code>FWUPD_UPDATE_STATE_PENDING</code>.</p>
+            <p>Value, e.g. <code>FWUPD_UPDATE_STATE_PENDING</code>.</p>
             <table>
             
             
