@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -115,6 +115,10 @@ The plugin programs flash in <strong>4 KiB sectors</strong> with <strong>256-byt
 <p>These devices use the standard <span class="caps">HID</span> DeviceInstanceId values,&nbsp;e.g.</p>
 <ul>
 <li><code>HIDRAW\VEN_093A&amp;DEV_0343</code></li>
+</ul>
+<p>Additionally, the plugin reads the internal Part <span class="caps">ID</span> from the device to generate a custom, quirk-specific instance <span class="caps">ID</span>. This allows for targeting quirks to specific silicon regardless of the <span class="caps">USB</span>/<span class="caps">HID</span> <span class="caps">PID</span>:</p>
+<ul>
+<li><code>PIXARTTP\PARTID_0274</code></li>
 </ul>
 <blockquote>
 <p>Note: If the same silicon enumerates as a <span class="caps">USB</span> interface on some systems,

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -123,7 +123,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-device-struct.h#L41">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.2/libfwupdplugin/fu-device-struct.h#L41">[src]</a>
         
       </h4>
 
@@ -417,6 +417,136 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <div><p>Set the device instance&nbsp;keys.</p></div>
             <ul>
               <li>Value: <code>1048576</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="proxy">FU_DEVICE_INCORPORATE_FLAG_PROXY</code>
+            <a class="anchor" href="#proxy"></a>
+          </dt>
+          <dd>
+            <div><p>Set the proxy&nbsp;device.</p></div>
+            <ul>
+              <li>Value: <code>2097152</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="private_flags">FU_DEVICE_INCORPORATE_FLAG_PRIVATE_FLAGS</code>
+            <a class="anchor" href="#private_flags"></a>
+          </dt>
+          <dd>
+            <div><p>Set the private&nbsp;flags.</p></div>
+            <ul>
+              <li>Value: <code>4194304</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="created_modified">FU_DEVICE_INCORPORATE_FLAG_CREATED_MODIFIED</code>
+            <a class="anchor" href="#created_modified"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the created and modified&nbsp;values.</p></div>
+            <ul>
+              <li>Value: <code>8388608</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="equivalent_id">FU_DEVICE_INCORPORATE_FLAG_EQUIVALENT_ID</code>
+            <a class="anchor" href="#equivalent_id"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the device equivalent <span class="caps">ID</span>.</p></div>
+            <ul>
+              <li>Value: <code>16777216</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="set_quirk_kv">FU_DEVICE_INCORPORATE_FLAG_SET_QUIRK_KV</code>
+            <a class="anchor" href="#set_quirk_kv"></a>
+          </dt>
+          <dd>
+            <div><p>Call the <code>set_quirk_kv()</code> vfunc for the superclassed&nbsp;object.</p></div>
+            <ul>
+              <li>Value: <code>33554432</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="metadata">FU_DEVICE_INCORPORATE_FLAG_METADATA</code>
+            <a class="anchor" href="#metadata"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the&nbsp;metadata.</p></div>
+            <ul>
+              <li>Value: <code>67108864</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="parent_ids">FU_DEVICE_INCORPORATE_FLAG_PARENT_IDS</code>
+            <a class="anchor" href="#parent_ids"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the various parent&nbsp;IDs.</p></div>
+            <ul>
+              <li>Value: <code>134217728</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="required_free">FU_DEVICE_INCORPORATE_FLAG_REQUIRED_FREE</code>
+            <a class="anchor" href="#required_free"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the required free&nbsp;space.</p></div>
+            <ul>
+              <li>Value: <code>268435456</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="update_request_id">FU_DEVICE_INCORPORATE_FLAG_UPDATE_REQUEST_ID</code>
+            <a class="anchor" href="#update_request_id"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the update request <span class="caps">ID</span>.</p></div>
+            <ul>
+              <li>Value: <code>536870912</code></li>
+              
+              <li>Available since: 1.0</li>
+            </ul>
+          </dd>
+        
+          <dt>
+            <code id="custom_flags">FU_DEVICE_INCORPORATE_FLAG_CUSTOM_FLAGS</code>
+            <a class="anchor" href="#custom_flags"></a>
+          </dt>
+          <dd>
+            <div><p>Sets the custom&nbsp;flags.</p></div>
+            <ul>
+              <li>Value: <code>1073741824</code></li>
               
               <li>Available since: 1.0</li>
             </ul>

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -108,9 +108,13 @@ an unspecified binary file&nbsp;format.</p>
 <li><code>com.goodix.goodixtp</code></li>
 </ul>
 <h2 id="guid-generation">GUID Generation<a class="md-anchor" href="#guid-generation" title="Permanent link"></a></h2>
-<p>These device uses the standard DeviceInstanceId values,&nbsp;e.g.</p>
+<p>These devices use the standard Instance <span class="caps">ID</span> values,&nbsp;e.g.</p>
 <ul>
-<li><code>HIDRAW\VEN_27C6&amp;DEV_1234</code></li>
+<li><code>HIDRAW\VEN_27C6&amp;DEV_012D</code></li>
+</ul>
+<p>It also supports one extra Instance <span class="caps">ID</span> to represent the &#8220;patch <span class="caps">PID</span>&#8221;,&nbsp;e.g.</p>
+<ul>
+<li><code>HIDRAW\VEN_27C6&amp;DEV_012D&amp;PID_GT7936L</code></li>
 </ul>
 <h2 id="update-behavior">Update Behavior<a class="md-anchor" href="#update-behavior" title="Permanent link"></a></h2>
 <p>The firmware is deployed when the device is in normal runtime mode, and the

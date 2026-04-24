@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -124,8 +124,10 @@ is taken automatically from the&nbsp;GType.</p>
 #include &lt;fwupdplugin.h&gt;
 
 G_DECLARE_FINAL_TYPE(FuFooPlugin, fu_foo_plugin, FU, FOO_PLUGIN, FuPlugin)
+</code></pre></div>
 
-/* fu-foo-plugin.c
+<p>And the corresponding source&nbsp;file:</p>
+<div class="codehilite"><pre><span></span><code>/* fu-foo-plugin.c
  *
  * Copyright Richard Hughes &lt;richard@hughsie.com&gt;
  *
@@ -330,7 +332,7 @@ certain threshold, or it could be as complicated as ensuring a vendor-specific
 <div class="codehilite"><pre><span></span><code>static gboolean
 fu_foo_plugin_prepare(FuPlugin *plugin, FuDevice *device, GError **error)
 {
-    if (fu_device_has_flag(device, FWUPD_DEVICE_FLAG_REQUIRE_AC &amp;&amp; !on_ac_power()) {
+    if (fu_device_has_flag(device, FWUPD_DEVICE_FLAG_REQUIRE_AC) &amp;&amp; !on_ac_power()) {
             g_set_error_literal(error,
                                 FWUPD_ERROR,
                                 FWUPD_ERROR_AC_POWER_REQUIRED,
@@ -361,13 +363,13 @@ fu_foo_plugin_class_init(FuFooPluginClass *klass)
 <h2 id="detaching-to-bootloader-mode">Detaching to bootloader mode<a class="md-anchor" href="#detaching-to-bootloader-mode" title="Permanent link"></a></h2>
 <p>Some hardware can only be updated in a special bootloader mode, which for most
 devices can be switched to automatically.
-In some cases the user to do something manually, for instance re-inserting the
-hardware with a secret button&nbsp;pressed.</p>
+In some cases the user is required to do something manually, for instance
+re-inserting the hardware with a secret button&nbsp;pressed.</p>
 <p>Before the device update is performed the fwupd daemon runs an optional
-<code>update_detach()</code> vfunc which switches the device to bootloader&nbsp;mode.</p>
+<code>detach()</code> vfunc which switches the device to bootloader&nbsp;mode.</p>
 <p>After the update (or if the update fails) an the daemon runs an optional
-<code>update_attach()</code> vfunc which should switch the hardware back to runtime mode.
-Finally an optional <code>update_reload()</code> vfunc is run to get the new firmware
+<code>attach()</code> vfunc which should switch the hardware back to runtime mode.
+Finally an optional <code>reload()</code> vfunc is run to get the new firmware
 version from the&nbsp;hardware.</p>
 <p>The optional vfuncs are <strong>only</strong> run on the plugin currently registered to
 handle the device <span class="caps">ID</span>, although the registered plugin can change during the

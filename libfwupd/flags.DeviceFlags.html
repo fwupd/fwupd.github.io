@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">Fwupd</a></h3>
         <p>API Version: 2.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -123,7 +123,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupd/fwupd-device-struct.h#L9">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.2/libfwupd/fwupd-device-struct.h#L9">[src]</a>
         
       </h4>
 
@@ -233,7 +233,7 @@ level at a minimum threshold to&nbsp;update.</p></div>
             <a class="anchor" href="#needs_bootloader"></a>
           </dt>
           <dd>
-            <div><p>The device requires entering a bootloader mode to be&nbsp;manually.</p></div>
+            <div><p>The device requires entering a bootloader mode to be&nbsp;updated.</p></div>
             <ul>
               <li>Value: <code>64</code></li>
               
@@ -298,7 +298,7 @@ level at a minimum threshold to&nbsp;update.</p></div>
             <a class="anchor" href="#wait_for_replug"></a>
           </dt>
           <dd>
-            <div><p>The device is in the middle of and update and the hardware is waiting to be probed or&nbsp;replugged.</p></div>
+            <div><p>The device is in the middle of an update and the hardware is waiting to be probed or&nbsp;replugged.</p></div>
             <ul>
               <li>Value: <code>16384</code></li>
               
@@ -573,7 +573,7 @@ Supported clients will display this information as a warning to the&nbsp;user.</
           </dt>
           <dd>
             <div><p>The device is no longer supported by the original hardware vendor as it is considered
-end-of-life. It it unlikely to receive firmware updates, even for security&nbsp;issues.</p></div>
+end-of-life. It is unlikely to receive firmware updates, even for security&nbsp;issues.</p></div>
             <ul>
               <li>Value: <code>70368744177664</code></li>
               
@@ -586,7 +586,7 @@ end-of-life. It it unlikely to receive firmware updates, even for security&nbsp;
             <a class="anchor" href="#signed_payload"></a>
           </dt>
           <dd>
-            <div><p>The firmware payload is verified on-device the payload using strong cryptography such
+            <div><p>The firmware payload is verified on-device using strong cryptography such
 as <span class="caps">RSA</span>, <span class="caps">AES</span> or <span class="caps">ECC</span>.
 It is usually not possible to modify or flash custom firmware not provided by the&nbsp;vendor.</p></div>
             <ul>

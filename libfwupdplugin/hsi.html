@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -197,6 +197,23 @@ There are currently no tests implemented for <span class="caps">HSI</span>:5 and
 <h2 id="tests-included-in-fwupd"><a href="#tests">Tests included in fwupd</a><a class="md-anchor" href="#tests-included-in-fwupd" title="Permanent link"></a></h2>
 <p>The set of tests is currently x86 <span class="caps">UEFI</span>-centric, but will be expanded in the future for various <span class="caps">ARM</span> or <span class="caps">RISC</span>-V firmware protections as required.
 Where the requirement is architecture or processor specific it has been&nbsp;noted.</p>
+<p><a id="org.fwupd.hsi.Amd.EntrySign"></a></p>
+<h3 id="amd-microcode-signature-vulnerability"><a href="#org.fwupd.hsi.Amd.EntrySign">AMD Microcode signature vulnerability</a><a class="md-anchor" href="#amd-microcode-signature-vulnerability" title="Permanent link"></a></h3>
+<p><span class="caps">AMD</span> systems from Zen 1 through Zen 4 have a vulnerability that may allow an attacker with system administrative privilege to load malicious <span class="caps">CPU</span> microcode&nbsp;patches.</p>
+<p>There are software mitigations for this vulnerability, but this check is whether the firmware has been updated to prevent&nbsp;it.</p>
+<p><strong>Impact:</strong></p>
+<p>The attacker is able to load malicious&nbsp;microcode.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-locked</code>: platform is vulnerable to the attack&nbsp;(failure)</li>
+<li><code>locked</code>: platform is not vulnerable to the attack&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v2.1.2]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://bughunters.google.com/blog/5424842357473280/zen-and-the-art-of-microcode-hacking">Zen and the Art of Microcode&nbsp;Hacking</a></li>
+<li><a href="https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7033.html"><span class="caps">AMD</span> <span class="caps">SB</span>-7033</a></li>
+</ul>
 <p><a id="org.fwupd.hsi.Amd.PlatformSecureBoot"></a></p>
 <h3 id="amd-platform-secure-boot"><a href="#org.fwupd.hsi.Amd.PlatformSecureBoot">AMD Platform Secure Boot</a><a class="md-anchor" href="#amd-platform-secure-boot" title="Permanent link"></a></h3>
 <p>Platform secure boot is a processor feature that prevents the machine from running firmware images not released by the system&nbsp;manufacturer.</p>
@@ -288,6 +305,18 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <p><strong>Resolution:</strong> Contact your <span class="caps">OEM</span>, who may be able to issue a firmware&nbsp;update.</p>
 <p><strong>Hardware&nbsp;requirements:</strong></p>
 <p>This attribute will only be available when using <span class="caps">AMD</span>&nbsp;CPUs.</p>
+<p><a id="org.fwupd.hsi.Bios.CapsuleUpdates"></a></p>
+<h3 id="bios-capsule-updates"><a href="#org.fwupd.hsi.Bios.CapsuleUpdates">BIOS Capsule updates</a><a class="md-anchor" href="#bios-capsule-updates" title="Permanent link"></a></h3>
+<p>Some OEMs offer a switch in the <span class="caps">BIOS</span> to allow capsule updates to be&nbsp;enabled.</p>
+<p><strong>Impact:</strong></p>
+<p>When this switch is present but disabled, <span class="caps">BIOS</span> firmware updates for Linux may not&nbsp;work.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-enabled</code>: <span class="caps">BIOS</span> capsule updates disabled&nbsp;(failure)</li>
+<li><code>enabled</code>: <span class="caps">BIOS</span> capsule updates enabled&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-1 on systems that run this test. <em>[v1.9.6]</em></p>
+<p><strong>Resolution:</strong> Turn on &#8216;firmware updates&#8217; in the <span class="caps">UEFI</span> firmware&nbsp;setup.</p>
 <p><a id="org.fwupd.hsi.Bios.RollbackProtection"></a></p>
 <h3 id="bios-firmware-rollback-protection"><a href="#org.fwupd.hsi.Bios.RollbackProtection">BIOS Firmware Rollback protection</a><a class="md-anchor" href="#bios-firmware-rollback-protection" title="Permanent link"></a></h3>
 <p>Some OEMs include an optional firmware protection feature in their <span class="caps">BIOS</span> that would prevent installation of older firmware that may have security&nbsp;vulnerabilities.</p>
@@ -358,6 +387,25 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <ul>
 <li><a href="https://software.intel.com/content/www/us/en/develop/blogs/intel-releases-new-technology-specification-for-memory-encryption.html">Intel <span class="caps">TME</span> Press&nbsp;Release</a></li>
 <li><a href="https://en.wikichip.org/wiki/x86/sme">WikiChip <span class="caps">SME</span>&nbsp;Overview</a></li>
+</ul>
+<p><a id="org.fwupd.hsi.Hp.Surestart"></a></p>
+<h3 id="hp-surestart"><a href="#org.fwupd.hsi.Hp.Surestart">HP SureStart</a><a class="md-anchor" href="#hp-surestart" title="Permanent link"></a></h3>
+<p><span class="caps">HP</span> SureStart is an advanced self-healing <span class="caps">BIOS</span> that automatically recovers the <span class="caps">BIOS</span> code if it becomes corrupted or is compromised by malicious&nbsp;software.</p>
+<p>When enabled, SureStart monitors the <span class="caps">BIOS</span> for unauthorized changes and can automatically restore the <span class="caps">BIOS</span> to a known-good&nbsp;state.</p>
+<p>This provides runtime intrusion prevention and detection for the firmware, protecting against both malware and physical attacks on the <span class="caps">BIOS</span>&nbsp;chip.</p>
+<p><strong>Impact:</strong></p>
+<p>Without <span class="caps">HP</span> SureStart enabled, the system firmware is vulnerable to persistent malware that could survive operating system&nbsp;reinstallation.</p>
+<p>An attacker who compromises the <span class="caps">BIOS</span> could maintain persistent access to the system and potentially bypass security features like Secure&nbsp;Boot.</p>
+<p>Physical attacks on the <span class="caps">BIOS</span> chip could result in permanent system compromise without&nbsp;detection.</p>
+<p><strong>Possible&nbsp;results:</strong></p>
+<ul>
+<li><code>not-enabled</code>: <span class="caps">HP</span> SureStart is disabled&nbsp;(failure)</li>
+<li><code>enabled</code>: <span class="caps">HP</span> SureStart is enabled&nbsp;(success)</li>
+</ul>
+<p>A test success result is needed to meet <span class="caps">HSI</span>-2 on systems that run this test. <em>[v2.1.1]</em></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://h20195.www2.hp.com/v2/GetPDF.aspx/4aa6-4194enw.pdf"><span class="caps">HP</span> SureStart White&nbsp;Paper</a></li>
 </ul>
 <p><a id="org.fwupd.hsi.IntelBootguard.Acm"></a></p>
 <h3 id="intel-bootguard-acm"><a href="#org.fwupd.hsi.IntelBootguard.Acm">Intel BootGuard: ACM</a><a class="md-anchor" href="#intel-bootguard-acm" title="Permanent link"></a></h3>
@@ -800,6 +848,7 @@ Where the requirement is architecture or processor specific it has been&nbsp;not
 <li><code>not-enabled</code>: deep sleep enabled&nbsp;(failure)</li>
 <li><code>not-valid</code>: could not determine the default&nbsp;(failure)</li>
 <li><code>enabled</code>: suspend-to-idle being used&nbsp;(success)</li>
+<li><code>not-supported</code>: not applicable for this platform&nbsp;(success)</li>
 </ul>
 <p>A test success result is needed to meet <span class="caps">HSI</span>-3 on systems that run this test. <em>[v1.5.0]</em></p>
 <p><strong>Resolution:</strong> Change this setting in the <span class="caps">UEFI</span> setup screen, if&nbsp;supported.</p>
@@ -1052,6 +1101,8 @@ As those become ratified standards that are available in hardware, there are opp
           
           <ul class="toc-list">
           
+            <li class="toc-list-item"><a href="#amd-microcode-signature-vulnerability"><span class="link-text">AMD Microcode signature vulnerability</span></a></li>
+          
             <li class="toc-list-item"><a href="#amd-platform-secure-boot"><span class="link-text">AMD Platform Secure Boot</span></a></li>
           
             <li class="toc-list-item"><a href="#amd-secure-processor-rollback-protection"><span class="link-text">AMD Secure Processor Rollback protection</span></a></li>
@@ -1062,6 +1113,8 @@ As those become ratified standards that are available in hardware, there are opp
           
             <li class="toc-list-item"><a href="#amd-spi-write-protections"><span class="link-text">AMD SPI Write protections</span></a></li>
           
+            <li class="toc-list-item"><a href="#bios-capsule-updates"><span class="link-text">BIOS Capsule updates</span></a></li>
+          
             <li class="toc-list-item"><a href="#bios-firmware-rollback-protection"><span class="link-text">BIOS Firmware Rollback protection</span></a></li>
           
             <li class="toc-list-item"><a href="#cet-utilized-by-os"><span class="link-text">CET Utilized by OS</span></a></li>
@@ -1069,6 +1122,8 @@ As those become ratified standards that are available in hardware, there are opp
             <li class="toc-list-item"><a href="#cet-available"><span class="link-text">CET: Available</span></a></li>
           
             <li class="toc-list-item"><a href="#dram-memory-encryption"><span class="link-text">DRAM memory encryption</span></a></li>
+          
+            <li class="toc-list-item"><a href="#hp-surestart"><span class="link-text">HP SureStart</span></a></li>
           
             <li class="toc-list-item"><a href="#intel-bootguard-acm"><span class="link-text">Intel BootGuard: ACM</span></a></li>
           

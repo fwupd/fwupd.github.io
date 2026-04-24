@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -112,14 +112,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.5.6</span></p>
+      <p><span class="emblem available">since: 2.1.2</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration" style="display:flex;">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-chunk.h#L72">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.2/libfwupdplugin/fu-chunk.h#L73">[src]</a>
         
       </h4>
 
@@ -130,7 +130,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">data_sz</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">addr_offset</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">page_sz</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">packet_sz</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">packet_sz</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -142,7 +143,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.1/libfwupdplugin/fu-chunk.c#L367">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/fwupd/fwupd/blob/2.1.2/libfwupdplugin/fu-chunk.c#L367">[src]</a>
         
       </h4>
 
@@ -153,7 +154,7 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
 
       <div class="docblock">
         
-        <p>Available since: 1.5.6</p>
+        <p>Available since: 2.1.2</p>
         
         
         
@@ -260,6 +261,18 @@ cross a package boundary and is less that a specific transfer&nbsp;size.</p>
           </dd>
           
 
+          
+          <dt class="arg-name"><code>error</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-namespace="GLib" data-link="struct.Error.html" class="external"><code>GError **</code></a></p>
+            <p>The return location for <a href="https://docs.gtk.org/glib/error-reporting.html#rules-for-use-of-gerror">a recoverable error</a>.</p>
+            <table>
+              <tr><td>The argument can be <code>NULL</code>.</td></tr>
+              <tr><td>If the return location is not <code>NULL</code>, then you must initialize it to a <code>NULL</code> <code>GError*</code>.</td></tr>
+              <tr><td>The argument will be left initialized to <code>NULL</code> by the function if there are no errors.</td></tr>
+              <tr><td>In case of error, the argument will be set to a newly allocated <code>GError</code>; the caller will take ownership of the data, and be responsible for freeing it.</td></tr>
+            </table>
+          </dd>
           
         </dl>
       </div>

@@ -73,7 +73,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <h3><a href="index.html">FwupdPlugin</a></h3>
         <p>API Version: 1.0</p>
         
-        <p>Library Version: 2.1.1</p>
+        <p>Library Version: 2.1.2</p>
         
       </div>
       
@@ -160,7 +160,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>2.1.1</td></tr>
+        <tr><td><em>Version</em></td><td>2.1.2</td></tr>
         <tr><td><em>Authors</em></td><td>fwupd Development Team</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://www.fwupd.org" class="external">https://www.fwupd.org</a></td></tr>
@@ -266,6 +266,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="uefi-db.html">UEFI Secure Boot Certificates</a></li>
         
           <li><a href="device-emulation.html">Device Emulation</a></li>
+        
+          <li><a href="device-version-blocklist.html">Device Version Blocklist</a></li>
         
           <li><a href="ds20.html">BOS DS20 Specification</a></li>
         
@@ -431,6 +433,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="lenovo-accessory-README.html">Unknown document</a></li>
         
+          <li><a href="lenovo-dock-README.html">Plugin: Lenovo Dock</a></li>
+        
           <li><a href="lenovo-thinklmi-README.html">Plugin: Lenovo ThinkLMI</a></li>
         
           <li><a href="linux-display-README.html">Plugin: Linux Display</a></li>
@@ -454,6 +458,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="logitech-scribe-README.html">Plugin: Logitech Scribe</a></li>
         
           <li><a href="logitech-tap-README.html">Plugin: Logitech Tap — Video Collaboration</a></li>
+        
+          <li><a href="lxs-touch-README.html">Unknown document</a></li>
         
           <li><a href="mediatek-scaler-README.html">Plugin: Mediatek Display Controller</a></li>
         
@@ -489,6 +495,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         
           <li><a href="qsi-dock-README.html">Plugin: QSI Dock</a></li>
         
+          <li><a href="raydium-tp-README.html">Plugin: Raydium Touch Controller Sensor</a></li>
+        
           <li><a href="realtek-mst-README.html">Plugin: Realtek MST</a></li>
         
           <li><a href="redfish-README.html">Plugin: Redfish</a></li>
@@ -498,6 +506,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           <li><a href="rts54hub-README.html">Plugin: RTS54HUB</a></li>
         
           <li><a href="steelseries-README.html">Plugin: SteelSeries</a></li>
+        
+          <li><a href="sunplus-camera-README.html">Plugin: Sunplus Camera</a></li>
         
           <li><a href="scsi-README.html">Plugin: SCSI</a></li>
         
@@ -1603,6 +1613,16 @@ backport new versions as new hardware is&nbsp;released.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="UsbDescriptor" class="symbol" href="class.UsbDescriptor.html">UsbDescriptor</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="UsbDevice" class="symbol" href="class.UsbDevice.html">UsbDevice</a></td>
             
             <td class="docblock-summary">
@@ -1761,6 +1781,16 @@ device has been&nbsp;opened.</p>
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="CborItem" class="symbol" href="struct.CborItem.html">CborItem</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="ErrorConvertEntry" class="symbol" href="struct.ErrorConvertEntry.html">ErrorConvertEntry</a></td>
@@ -3010,6 +3040,16 @@ device has been&nbsp;opened.</p>
           <tbody>
           
           <tr class="section-item">
+            <td><a title="AcpiFadtPmProfile" class="symbol" href="enum.AcpiFadtPmProfile.html">AcpiFadtPmProfile</a></td>
+            
+            <td class="docblock-summary">
+            <p><span class="caps">ACPI</span> Fixed <span class="caps">ACPI</span> Description Table (<span class="caps">FADT</span>) Preferred_PM_Profile&nbsp;values.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="CabCompression" class="symbol" href="enum.CabCompression.html">CabCompression</a></td>
             
             <td class="docblock-summary">
@@ -3021,6 +3061,46 @@ device has been&nbsp;opened.</p>
           
           <tr class="section-item">
             <td><a title="CabFileAttribute" class="symbol" href="enum.CabFileAttribute.html">CabFileAttribute</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CborItemKind" class="symbol" href="enum.CborItemKind.html">CborItemKind</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CborLen" class="symbol" href="enum.CborLen.html">CborLen</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CborSpecialValue" class="symbol" href="enum.CborSpecialValue.html">CborSpecialValue</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CborTag" class="symbol" href="enum.CborTag.html">CborTag</a></td>
             
             <td class="docblock-summary">
             
@@ -3193,7 +3273,7 @@ device has been&nbsp;opened.</p>
             <td><a title="DisplayState" class="symbol" href="enum.DisplayState.html">DisplayState</a></td>
             
             <td class="docblock-summary">
-            <p>The device lid&nbsp;state.</p>
+            <p>The device display&nbsp;state.</p>
             <p></p>
             </td>
             
@@ -4323,6 +4403,16 @@ fu_usb_device_release_interface methods flags&nbsp;parameters.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="CoswidItemFunc" class="symbol" href="callback.CoswidItemFunc.html">CoswidItemFunc</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="DeviceLockerFunc" class="symbol" href="callback.DeviceLockerFunc.html">DeviceLockerFunc</a></td>
             
             <td class="docblock-summary">
@@ -4644,6 +4734,26 @@ This function will always return the same pointer for a given <code>GBytes</code
           </tr>
           
           <tr class="section-item">
+            <td><a title="cbor_special_value_to_string" class="symbol" href="func.cbor_special_value_to_string.html">cbor_special_value_to_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts an enumerated value to a&nbsp;string.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="cbor_tag_to_string" class="symbol" href="func.cbor_tag_to_string.html">cbor_tag_to_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Converts an enumerated value to a&nbsp;string.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="cfu_content_status_to_string" class="symbol" href="func.cfu_content_status_to_string.html">cfu_content_status_to_string</a></td>
             
             <td class="docblock-summary">
@@ -4785,6 +4895,46 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
+            <td><a title="coswid_parse_one_or_many" class="symbol" href="func.coswid_parse_one_or_many.html">coswid_parse_one_or_many</a></td>
+            
+            <td class="docblock-summary">
+            <p>Parses an item that <em>may</em> be an array, calling <code>func</code> on each map&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_read_string" class="symbol" href="func.coswid_read_string.html">coswid_read_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Reads a string value. If a bytestring is provided it is converted to a <span class="caps">GUID</span>.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_read_tag" class="symbol" href="func.coswid_read_tag.html">coswid_read_tag</a></td>
+            
+            <td class="docblock-summary">
+            <p>Reads a tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_read_version_scheme" class="symbol" href="func.coswid_read_version_scheme.html">coswid_read_version_scheme</a></td>
+            
+            <td class="docblock-summary">
+            <p>Reads a version-scheme&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="coswid_tag_from_string" class="symbol" href="func.coswid_tag_from_string.html">coswid_tag_from_string</a></td>
             
             <td class="docblock-summary">
@@ -4820,6 +4970,56 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
             <td class="docblock-summary">
             <p>Converts an enumerated value to a&nbsp;string.</p>
             <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_write_tag_bool" class="symbol" href="func.coswid_write_tag_bool.html">coswid_write_tag_bool</a></td>
+            
+            <td class="docblock-summary">
+            <p>Writes a #gboolean tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_write_tag_bytestring" class="symbol" href="func.coswid_write_tag_bytestring.html">coswid_write_tag_bytestring</a></td>
+            
+            <td class="docblock-summary">
+            <p>Writes a bytestring tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_write_tag_integer" class="symbol" href="func.coswid_write_tag_integer.html">coswid_write_tag_integer</a></td>
+            
+            <td class="docblock-summary">
+            <p>Writes an integer tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_write_tag_item" class="symbol" href="func.coswid_write_tag_item.html">coswid_write_tag_item</a></td>
+            
+            <td class="docblock-summary">
+            <p>Writes a raw tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="coswid_write_tag_string" class="symbol" href="func.coswid_write_tag_string.html">coswid_write_tag_string</a></td>
+            
+            <td class="docblock-summary">
+            <p>Writes a string tag&nbsp;value.</p>
+            <p><span class="emblem available">since: 1.9.17</span></p>
             </td>
             
           </tr>
@@ -4875,6 +5075,16 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
+            <td><a title="crc16_safe" class="symbol" href="func.crc16_safe.html">crc16_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="crc32" class="symbol" href="func.crc32.html">crc32</a></td>
             
             <td class="docblock-summary">
@@ -4895,6 +5105,16 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
           </tr>
           
           <tr class="section-item">
+            <td><a title="crc32_safe" class="symbol" href="func.crc32_safe.html">crc32_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="crc8" class="symbol" href="func.crc8.html">crc8</a></td>
             
             <td class="docblock-summary">
@@ -4910,6 +5130,16 @@ to align to. If <code>alignment</code> is zero then <code>value</code> is always
             <td class="docblock-summary">
             <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
             <p><span class="emblem available">since: 2.0.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="crc8_safe" class="symbol" href="func.crc8_safe.html">crc8_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the cyclic redundancy check value for the given memory&nbsp;buffer.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
             </td>
             
           </tr>
@@ -5911,6 +6141,16 @@ Any results are sorted. No matching files will set <code>error</code>.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="path_verify_safe" class="symbol" href="func.path_verify_safe.html">path_verify_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Verifies the path is safe to use from an&nbsp;archive.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="power_state_is_ac" class="symbol" href="func.power_state_is_ac.html">power_state_is_ac</a></td>
             
             <td class="docblock-summary">
@@ -5996,6 +6236,38 @@ Any results are sorted. No matching files will set <code>error</code>.</p>
             <td class="docblock-summary">
             <p>Performs a checked addition of a and b, ensuring the result does not&nbsp;overflow.</p>
             <p><span class="emblem available">since: 2.0.19</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="size_checked_inc" class="symbol" href="func.size_checked_inc.html">size_checked_inc</a></td>
+            
+            <td class="docblock-summary">
+            <p>Performs a checked increment of <code>value</code> and <code>len</code>, ensuring the result does not&nbsp;overflow.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="size_checked_inc_product" class="symbol" href="func.size_checked_inc_product.html">size_checked_inc_product</a></td>
+            
+            <td class="docblock-summary">
+            <p>Performs a checked increment of <code>value</code> and <code>a</code> x <code>b</code>, ensuring the result does not&nbsp;overflow.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="size_from_uint64" class="symbol" href="func.size_from_uint64.html">size_from_uint64</a></td>
+            
+            <td class="docblock-summary">
+            <p>Safely converts a 64-bit unsigned integer to a #gsize value, ensuring the value
+fits within the platform&#8217;s #gsize range. On 32-bit platforms where #gsize is 32 bits,
+this prevents silent truncation that could lead to security&nbsp;vulnerabilities.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
             </td>
             
           </tr>
@@ -6180,6 +6452,16 @@ set to 16&nbsp;automatically.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="sum16_safe" class="symbol" href="func.sum16_safe.html">sum16_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the arithmetic sum of all bytes in <code>buf</code>, adding them one byte at a&nbsp;time.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="sum16w" class="symbol" href="func.sum16w.html">sum16w</a></td>
             
             <td class="docblock-summary">
@@ -6264,6 +6546,16 @@ The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;
           </tr>
           
           <tr class="section-item">
+            <td><a title="sum8_safe" class="symbol" href="func.sum8_safe.html">sum8_safe</a></td>
+            
+            <td class="docblock-summary">
+            <p>Returns the arithmetic sum of all bytes in <code>buf</code>.</p>
+            <p><span class="emblem available">since: 2.1.2</span></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="tpm_alg_from_string" class="symbol" href="func.tpm_alg_from_string.html">tpm_alg_from_string</a></td>
             
             <td class="docblock-summary">
@@ -6285,26 +6577,6 @@ The caller must ensure that the size of <code>blob</code> is a multiple of&nbsp;
           
           <tr class="section-item">
             <td><a title="usb_class_to_string" class="symbol" href="func.usb_class_to_string.html">usb_class_to_string</a></td>
-            
-            <td class="docblock-summary">
-            <p>Converts an enumerated value to a&nbsp;string.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_descriptor_kind_from_string" class="symbol" href="func.usb_descriptor_kind_from_string.html">usb_descriptor_kind_from_string</a></td>
-            
-            <td class="docblock-summary">
-            <p>Converts a string to an enumerated&nbsp;value.</p>
-            <p></p>
-            </td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="usb_descriptor_kind_to_string" class="symbol" href="func.usb_descriptor_kind_to_string.html">usb_descriptor_kind_to_string</a></td>
             
             <td class="docblock-summary">
             <p>Converts an enumerated value to a&nbsp;string.</p>
@@ -6738,6 +7010,16 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_get_details_url" class="symbol" href="func.device_get_details_url.html">device_get_details_url</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_get_flags" class="symbol" href="func.device_get_flags.html">device_get_flags</a></td>
             
             <td class="docblock-summary">
@@ -6998,6 +7280,26 @@ then no member is&nbsp;added.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="device_get_version_highest" class="symbol" href="func.device_get_version_highest.html">device_get_version_highest</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_get_version_highest_raw" class="symbol" href="func.device_get_version_highest_raw.html">device_get_version_highest_raw</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="device_get_version_lowest" class="symbol" href="func.device_get_version_lowest.html">device_get_version_lowest</a></td>
             
             <td class="docblock-summary">
@@ -7099,6 +7401,16 @@ then no member is&nbsp;added.</p>
           
           <tr class="section-item">
             <td><a title="device_set_description" class="symbol" href="func.device_set_description.html">device_set_description</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="device_set_details_url" class="symbol" href="func.device_set_details_url.html">device_set_details_url</a></td>
             
             <td class="docblock-summary">
             
@@ -7276,6 +7588,16 @@ then no member is&nbsp;added.</p>
           <tbody>
           
           <tr class="section-item">
+            <td><a title="ACPI_FADT_PM_PROFILE_LAST" class="symbol" href="const.ACPI_FADT_PM_PROFILE_LAST.html">ACPI_FADT_PM_PROFILE_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="BLUEZ_DEVICE_UUID_DI_FIRMWARE_REVISION" class="symbol" href="const.BLUEZ_DEVICE_UUID_DI_FIRMWARE_REVISION.html">BLUEZ_DEVICE_UUID_DI_FIRMWARE_REVISION</a></td>
             
             <td class="docblock-summary">
@@ -7347,6 +7669,26 @@ then no member is&nbsp;added.</p>
           
           <tr class="section-item">
             <td><a title="BLUEZ_DEVICE_UUID_DI_SYSTEM_ID" class="symbol" href="const.BLUEZ_DEVICE_UUID_DI_SYSTEM_ID.html">BLUEZ_DEVICE_UUID_DI_SYSTEM_ID</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CBOR_ITEM_KIND_LAST" class="symbol" href="const.CBOR_ITEM_KIND_LAST.html">CBOR_ITEM_KIND_LAST</a></td>
+            
+            <td class="docblock-summary">
+            
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="CBOR_TAG_LAST" class="symbol" href="const.CBOR_TAG_LAST.html">CBOR_TAG_LAST</a></td>
             
             <td class="docblock-summary">
             
@@ -9059,6 +9401,16 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="GB" class="symbol" href="const.GB.html">GB</a></td>
+            
+            <td class="docblock-summary">
+            <p>The number of bytes in 1&nbsp;GiB.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="HECI_DEVICE_UUID_FWUPDATE" class="symbol" href="const.HECI_DEVICE_UUID_FWUPDATE.html">HECI_DEVICE_UUID_FWUPDATE</a></td>
             
             <td class="docblock-summary">
@@ -9369,10 +9721,30 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="KB" class="symbol" href="const.KB.html">KB</a></td>
+            
+            <td class="docblock-summary">
+            <p>The number of bytes in 1&nbsp;KiB.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="LID_STATE_LAST" class="symbol" href="const.LID_STATE_LAST.html">LID_STATE_LAST</a></td>
             
             <td class="docblock-summary">
             
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="MB" class="symbol" href="const.MB.html">MB</a></td>
+            
+            <td class="docblock-summary">
+            <p>The number of bytes in 1&nbsp;MiB.</p>
             <p></p>
             </td>
             
@@ -9690,6 +10062,17 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
           </tr>
           
           <tr class="section-item">
+            <td><a title="QUIRKS_DETAILS_URL" class="symbol" href="const.QUIRKS_DETAILS_URL.html">QUIRKS_DETAILS_URL</a></td>
+            
+            <td class="docblock-summary">
+            <p>The quirk key for the device-specific product page, e.g.
+<code>https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p50/22tp2wpwp50</code>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
             <td><a title="QUIRKS_FIRMWARE_GTYPE" class="symbol" href="const.QUIRKS_FIRMWARE_GTYPE.html">QUIRKS_FIRMWARE_GTYPE</a></td>
             
             <td class="docblock-summary">
@@ -9955,6 +10338,26 @@ e.g. unplug, press a magic button and then&nbsp;replug.</p>
             
             <td class="docblock-summary">
             <p>The quirk key for the version format, e.g. <code>quad</code>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_VERSION_HIGHEST" class="symbol" href="const.QUIRKS_VERSION_HIGHEST.html">QUIRKS_VERSION_HIGHEST</a></td>
+            
+            <td class="docblock-summary">
+            <p>The quirk key for the highest allowed version, e.g. <code>1.2.3</code>.</p>
+            <p></p>
+            </td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="QUIRKS_VERSION_LOWEST" class="symbol" href="const.QUIRKS_VERSION_LOWEST.html">QUIRKS_VERSION_LOWEST</a></td>
+            
+            <td class="docblock-summary">
+            <p>The quirk key for the lowest allowed version, e.g. <code>1.2.3</code>.</p>
             <p></p>
             </td>
             
